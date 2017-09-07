@@ -59,7 +59,7 @@
                     <div class="form-group" data-ng-show="ctrl.editMode">
                         <div class="input-group">
                             <input type="text"
-                                   class="form-control"
+                                   class="form-control input-lg"
                                    id="displayNameField"
                                    name="displayNameField"
                                    required
@@ -67,13 +67,13 @@
                                    maxlength="50"
                                    data-ng-model="ctrl.displayName">
                             <div class="input-group-btn">
-                                <button class="btn btn-success"
+                                <button class="btn btn-success btn-lg"
                                         type="submit"
                                         aria-label="{{i18n.exchange_dashboard_display_name_save}}"
                                         data-ng-disabled="ctrl.formExchangeDisplayName.displayNameField.$invalid">
                                     <span class="fa fa-check" aria-hidden="true"></span>
                                 </button>
-                                <button class="btn btn-danger"
+                                <button class="btn btn-danger btn-lg"
                                         type="button"
                                         aria-label="{{i18n.common_cancel}}"
                                         data-ng-click="ctrl.resetDisplayName()">
