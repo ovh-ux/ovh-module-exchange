@@ -1,0 +1,13 @@
+<div data-ng-controller="ExchangeToolboxSharedAccountsCtrl as ctrl" class="popover-menu">
+    <button class="btn btn-link" 
+            type="button"
+            data-i18n-static="exchange_tab_ACCOUNTS_popover_delegation"
+            data-ng-disabled="ctrl.isDisabled(account)"
+            data-ng-click="ctrl.delegationSettings(account)"></button>
+
+    <button type="button"
+            class="btn btn-link"
+            data-i18n-static="exchange_tab_ACCOUNTS_popover_delete"
+            data-ng-disabled="ctrl.isDisabled(account)"
+            data-ng-click="ctrl.deleteAccount(account)"></button>
+</div>

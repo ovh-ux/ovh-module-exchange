@@ -1,0 +1,170 @@
+<div data-ovh-alert="{{ctrl.alerts.dashboard}}"></div>
+
+<div class="alert m-0"
+     role="alert"
+     data-ng-class="ctrl.services.messaging.alertType"
+     data-ng-if="ctrl.services.messaging.message">
+    <button type="button"
+            class="close"
+            data-dismiss="alert"
+            aria-label="tr('wizard_close')"
+            data-ng-click="resetMessages()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+
+    <span data-ng-bind-html="ctrl.services.messaging.message"></span>
+
+    <div data-ng-show="ctrl.services.messaging.messageDetails != null"
+         data-linkedpopover="exchange/error-messages.popover.html"
+         data-linkedpopover-placement="bottom"
+         data-linkedpopover-remote="true"
+         data-linkedpopover-single="false">
+        <strong class="pointer underline"
+                data-i18n-static="exchange_dashboard_message_see_more"
+                data-ng-if="ctrl.services.messaging.messageDetails.length > 0"></strong>
+    </div>
+</div>
+
+<div data-ng-if="ctrl.isLoading">
+    <div class="loader text-center"></div>
+</div>
+
+<div data-ng-if="!ctrl.isLoading">
+    <div class="page-header">
+        <div class="row">
+            <div class="col-sm-9">
+                <form name="ctrl.formExchangeDisplayName"
+                      novalidate
+                      data-ng-submit="ctrl.submittingDisplayName()">
+                    <label for="displayNameField"
+                           data-ng-bind="tr('exchange_offer_type_' + ctrl.exchange.offer)"
+                           data-ng-if="!ctrl.services.accountTypes.is25g()"></label>
+                    <label for="displayNameField"
+                           data-ng-bind="tr('exchange_offer_type_25g')"
+                           data-ng-if="ctrl.services.accountTypes.is25g()"></label>
+                    <h1 data-ng-show="!ctrl.editMode">
+                        <span data-ng-bind="ctrl.exchange.displayName"></span>
+                        <button class="btn btn-icon"
+                                type="button"
+                                aria-label="{{i18n.exchange_dashboard_display_name_edit}}"
+                                data-ng-click="ctrl.editDisplayName()">
+                            <span class="oui-icon oui-icon-pen_line oui-icon_small" aria-hidden="true"></span>
+                        </button>
+                    </h1>
+                    <div class="form-group" data-ng-show="ctrl.editMode">
+                        <div class="input-group">
+                            <input type="text"
+                                   class="form-control"
+                                   id="displayNameField"
+                                   name="displayNameField"
+                                   required
+                                   minlength="4"
+                                   maxlength="50"
+                                   data-ng-model="ctrl.displayName">
+                            <div class="input-group-btn">
+                                <button class="btn btn-success"
+                                        type="submit"
+                                        aria-label="{{i18n.exchange_dashboard_display_name_save}}"
+                                        data-ng-disabled="ctrl.formExchangeDisplayName.displayNameField.$invalid">
+                                    <span class="fa fa-check" aria-hidden="true"></span>
+                                </button>
+                                <button class="btn btn-danger"
+                                        type="button"
+                                        aria-label="{{i18n.common_cancel}}"
+                                        data-ng-click="ctrl.resetDisplayName()">
+                                    <span class="fa fa-remove" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="font-italic"
+                       data-ng-bind="ctrl.exchange.domain"
+                       data-ng-if="ctrl.exchange.domain != null && ctrl.exchange.domain !== ctrl.exchange.displayName"></p>
+                </form>
+            </div>
+            <div class="col-sm-3 text-right">
+                <div class="btn-group mt-4">
+                    <button class="btn btn-default dropdown-toggle"
+                            type="button"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            data-toggle="dropdown">
+                        <span data-i18n-static="common_actions"></span>
+                        <span class="caret ml-2" aria-hidden="true"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li data-ng-if="ctrl.canSubscribeToSharepoint">
+                            <i class="ovh-font ovh-font-cart" aria-hidden="true"></i>
+                            <a data-ng-href="#/configuration/sharepoint/activate/{{ctrl.exchange.organization}}/{{ctrl.exchange.domain}}"
+                               data-i18n-static="exchange_tab_INFORMATIONS_order_sharepoint"></a>
+                        </li>
+                        <li data-ng-if="!ctrl.canSubscribeToOfficeAttach">
+                            <i class="ovh-font ovh-font-cart" aria-hidden="true"></i>
+                            <a href="#/configuration/microsoft/office/license/order"
+                               data-i18n-static="exchange_tab_INFORMATIONS_order_office"></a>
+                        </li>
+                        <li data-ng-if="ctrl.canSubscribeToOfficeAttach">
+                            <button class="btn btn-link"
+                                    type="button"
+                                    data-i18n-static="exchange_ACTION_export_accounts_office_attached_button"
+                                    data-ng-click="ctrl.services.navigation.setAction('exchange/office-attached/dialog/office-attached-dialog', ctrl.exchange)"></button>
+                        </li>
+                        <li class="dropdown-divider">
+                            <button class="btn btn-link"
+                                    type="button"
+                                    data-i18n-static="exchange_action_license_history_button"
+                                    data-ng-click="ctrl.services.navigation.setAction('exchange/header/license/service-license-history', ctrl.exchange)"></button>
+                        </li>
+                        <li>
+                            <button class="btn btn-link"
+                                    type="button"
+                                    data-i18n-static="exchange_update_billing_button_title"
+                                    data-ng-click="ctrl.services.navigation.setAction('exchange/header/update-renew/update-renew', ctrl.exchange)"
+                                    data-ng-if="ctrl.exchange.renewOptionAvailable"></button>
+                        </li>
+                        <li class="dropdown-divider" data-ng-if="ctrl.exchange.deleteOptionAvailable">
+                            <i class="oui-icon oui-icon-error_circle" aria-hidden="true"></i>
+                            <button class="btn btn-link"
+                                    type="button"
+                                    data-ng-click="ctrl.services.navigation.setAction('exchange/header/remove/exchange-remove', ctrl.exchange)">
+                                <span data-i18n-static="exchange_resilitation_action_button" data-ng-if="!ctrl.exchange.renewType.deleteAtExpiration"></span>
+                                <span data-i18n-static="exchange_resilitation_action_button_cancel" data-ng-if="ctrl.exchange.renewType.deleteAtExpiration"></span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-ng-controller="ExchangeTabsCtrl" data-ng-if="!exchange.isExpired">
+        <ovh-tabs tabs="tabs"
+                  selected-tab="selectedTab"
+                  change-tab="changeTab"
+                  product="exchange"
+                  menu="dropdownMenuItems"
+                  tr="tr"></ovh-tabs>
+        <div class="tab-content">
+            <div class="tab-pane active"
+                 data-ng-include="selectedTab && 'exchange/' + kebabCase(selectedTab) + '/' + kebabCase(selectedTab) + '.html'"></div>
+        </div>
+    </div>
+
+    <!-- Migration to Exchange 2016. Display a link to follow the status of the migration -->
+    <div class="container-fluid px-5 mt-5" data-ng-if="exchange.serverDiagnostic.individual2010">
+        <div class="alert alert-warning"
+             role="alert">
+            <a data-ng-href="http://migrationstatus.mail.ovh.net" target="_blank" title="{{tr('exchange_dashboard_2016_migration')}} ({{tr('exchange_dashboard_new_window')}})">
+                <span data-i18n-static="exchange_dashboard_2016_migration"></span>
+                <span class="fa fa-external-link" aria-hidden="true"></span>
+            </a>
+        </div>
+    </div>
+
+    <div class="modal fade currentAction" id="currentAction" role="dialog">
+        <div class="modal-dialog">
+            <div id="modal-container" class="modal-content" data-ng-include="ctrl.services.navigation.stepPath"></div>
+            <div id="modal-help" class="help4wizards"></div>
+        </div>
+    </div>
+</div>

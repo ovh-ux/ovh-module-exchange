@@ -1,0 +1,49 @@
+<div class="page-header mb-5">
+    <h1 data-i18n-static="exchange_order_view_intro_title"></h1>
+</div>
+<div class="container-fluid px-5">
+    <div data-ovh-alert="{{alerts.dashboard}}"></div>
+
+    <p data-i18n-static="exchange_order_view_intro_question"></p>
+
+    <div class="row">
+        <div class="col-md-6">
+            <form name="exchangeOrderForm">
+                <div class="radio">
+                    <label>
+                        <input type="radio" id="standAlone" name="exchangeType"
+                               data-ng-model="ctrl.alreadyHasAnExchange"
+                               data-ng-value="false">
+                        <span data-i18n-static="exchange_order_view_stand_alone_option"></span>
+                    </label>
+                </div>
+
+                <div class="radio">
+                    <label>
+                        <input type="radio" id="associated" name="exchangeType"
+                               data-ng-model="ctrl.alreadyHasAnExchange"
+                               data-ng-value="true">
+                        <span data-i18n-static="exchange_order_view_attached_option"></span>
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="sharepointAssociatedExchange"
+                           data-i18n-static="sharepoint_activate_which_service_label"
+                           data-ng-class="{'required': ctrl.alreadyHasAnExchange}"></label>
+                    <select class="form-control" id="sharepointAssociatedExchange" name="sharepointAssociatedExchange"
+                            data-ng-change="ctrl.selectAssociatedExchange()"
+                            data-ng-disabled="!ctrl.alreadyHasAnExchange"
+                            data-ng-model="ctrl.firstExchangeAccount"
+                            data-ng-options="exchange.displayName for exchange in ctrl.exchanges | orderBy:'displayName' track by exchange.name + exchange.organization"
+                            data-ng-required="ctrl.alreadyHasAnExchange"></select>
+                    <span class="fa fa-spinner fa-spin" data-ng-hide="ctrl.exchanges != null"></span>
+                </div>
+
+                <a data-ng-href="{{ctrl.getExchangeOrderUrl()}}" class="btn btn-primary mt-4" target="{{ ctrl.alreadyHasAnExchange ? '_self' : '_blank'}}"
+                   title="{{ ctrl.alreadyHasAnExchange ? tr('exchange_order_view_button_attached_title', [ctrl.firstExchangeAccount.displayName]) : tr('exchange_order_view_button_stand_alone_title') }}{{ ctrl.alreadyHasAnExchange ? '' : '('+tr('core_new_window')+')'}}"
+                   data-i18n-static="exchange_order_view_button_label"></a>
+            </form>
+        </div>
+    </div>
+</div>

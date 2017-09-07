@@ -1,0 +1,54 @@
+angular
+    .module("Module.exchange.controllers")
+    .controller("ExchangeMigration2016Ctrl", class ExchangeMigration2016Ctrl {
+        constructor ($scope, Exchange, navigation, messaging, translator, $window) {
+            this.services = {
+                $scope,
+                Exchange,
+                navigation,
+                messaging,
+                translator,
+                $window
+            };
+
+            this.curExchange = navigation.currentActionData;
+            this.model = {};
+            this.agree = {
+                value: false
+            };
+
+            $scope.retrievingContracts = () => this.retrievingContracts();
+            $scope.submitting = () => this.submitting();
+        }
+
+        retrievingContracts () {
+            this.agree.value = false;
+
+            return this.services
+                .Exchange
+                .getUpgradeInfos(this.curExchange)
+                .then((data) => {
+                    this.model.contracts = data.contracts;
+                })
+                .catch((failure) => {
+                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_upgrade_get_contracts_error"), failure);
+                    this.services.navigation.resetAction();
+                });
+        }
+
+        submitting () {
+            return this.services
+                .Exchange
+                .upgradeExchange(this.curExchange)
+                .then((order) => {
+                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_ACTION_order_upgrade_success", [order.url, order.orderId]));
+                    this.services.$window.open(order.url, "_blank");
+                })
+                .catch((failure) => {
+                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_order_upgrade_error"), failure);
+                })
+                .finally(() => {
+                    this.services.navigation.resetAction();
+                });
+        }
+    });

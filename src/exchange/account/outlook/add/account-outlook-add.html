@@ -1,0 +1,124 @@
+<div data-ng-controller="ExchangeAddOutlookCtrl as ctrl">
+    <div data-wizard
+         data-wizard-confirm-button-text="i18n.wizard_pay"
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="displayOutlookOrder"
+         data-wizard-title="i18n.exchange_ACTION_add_outlook_title">
+
+        <div data-wizard-step
+             data-wizard-step-valid="isStep1Valid()"
+             data-wizard-step-on-load="loadOptionsList">
+
+            <p data-ng-bind="tr('exchange_ACTION_add_outlook_into_label', [ctrl.selectedAccount.primaryEmailDisplayName])"></p>
+
+            <div class="loader text-center" data-ng-if="!ctrl.optionsList"></div>
+
+            <div data-ng-show="ctrl.optionsList">
+                <form class="form-horizontal" name="orderAccountForm">
+                    <div class="form-group">
+                        <label class="control-label col-md-4"
+                               data-i18n-static="exchange_ACTION_add_outlook_duration_label"></label>
+                        <div class="col-md-8">
+                            <div class="radio" data-ng-repeat="option in ctrl.selectedVersion.options track by $index">
+                                <label>
+                                    <input type="radio" name="durationTypeGroup"
+                                           data-ng-click="ctrl.selectDuration(option)"
+                                           data-ng-disabled="ctrl.selectedVersion === null"
+                                           data-ng-model="ctrl.model.duration"
+                                           data-ng-value="option.duration.duration">
+                                    <span data-ng-bind="tr('exchange_ACTION_add_outlook_duration_type_' + option.duration.duration)"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-4"
+                               data-i18n-static="exchange_ACTION_add_outlook_price_withoutIVA_label"
+                               data-ng-if="ctrl.getTarget() === 'EU'"></label>
+                        <label class="control-label col-md-4"
+                               data-i18n-static="exchange_ACTION_add_outlook_price_label"
+                               data-ng-if="ctrl.getTarget() === 'CA'"></label>
+                        <div class="col-md-8">
+                            <span class="d-block form-control-static" data-ng-hide="ctrl.selectedOption"> - </span>
+                            <span class="d-block form-control-static text-danger"
+                                  data-ng-bind="ctrl.selectedOption.order.prices.withoutTax.text"
+                                  data-ng-show="ctrl.selectedOption"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" data-ng-if="ctrl.getTarget() === 'EU'">
+                        <label class="control-label col-md-4"
+                               data-i18n-static="exchange_ACTION_add_outlook_price_withIVA_label"></label>
+                        <div class="col-md-8">
+                            <span class="d-block form-control-static" data-ng-hide="ctrl.selectedOption"> - </span>
+                            <span class="d-block form-control-static text-danger"
+                                  data-ng-bind="ctrl.selectedOption.order.prices.withTax.text"
+                                  data-ng-show="ctrl.selectedOption"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" data-ng-show="ctrl.selectedOption.order.contracts.length > 0">
+                        <label class="control-label col-md-4"
+                               data-i18n-static="exchange_ACTION_add_outlook_contracts_label"></label>
+                        <div class="col-md-8">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"
+                                           data-ng-model="ctrl.selectedOption.contractsValidated">
+                                    <span data-i18n-static="exchange_ACTION_add_outlook_contracts__checkbox"></span>
+                                </label>
+                            </div>
+
+                            <ul>
+                                <li data-ng-repeat="contract in ctrl.selectedOption.order.contracts track by $index">
+                                    <a data-ng-href="{{ctrl.contract.url}}" target="_blank"
+                                       data-ng-bind="ctrl.contract.name"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div data-wizard-step-help>
+                <h3 data-i18n-static="exchange_ACTION_add_outlook_wizard_help_title"></h3>
+                <h4 data-i18n-static="exchange_ACTION_add_outlook_wizard_help_title"></h4>
+                <p data-i18n-static="exchange_ACTION_add_outlook_wizard_help"></p>
+            </div>
+        </div>
+
+        <div data-wizard-step>
+            <p data-ng-bind="tr('exchange_ACTION_add_outlook_intro_step2_label', [ctrl.selectedAccount.primaryEmailDisplayName])"></p>
+
+            <dl class="dl-horizontal dl-lg">
+                <dt data-i18n-static="exchange_ACTION_add_outlook_duration_label"></dt>
+                <dd data-ng-bind="tr('exchange_ACTION_add_outlook_duration_type_' + ctrl.model.duration)"></dd>
+
+                <dt data-ng-if="ctrl.getTarget() === 'EU'" data-i18n-static="exchange_ACTION_add_outlook_price_withoutIVA_label"></dt>
+                <dt data-ng-if="ctrl.getTarget() === 'CA'" data-i18n-static="exchange_ACTION_add_outlook_price_label"></dt>
+                <dd data-ng-bind="ctrl.selectedOption.order.prices.withoutTax.text"></dd>
+
+                <dt data-ng-if="ctrl.getTarget() === 'EU'" data-i18n-static="exchange_ACTION_add_outlook_price_withIVA_label"></dt>
+                <dd data-ng-if="ctrl.getTarget() === 'EU'" data-ng-bind="ctrl.selectedOption.order.prices.withTax.text"></dd>
+            </dl>
+        </div>
+
+        <div data-wizard-step
+             data-wizard-step-on-load="orderOutlook"
+             data-wizard-step-valid="isStep2Valid()">
+
+            <div class="text-center" data-ng-if="!ctrl.previewOrder.url">
+                <div class="loader" aria-hidden="true"></div>
+                <span data-i18n-static="exchange_ACTION_add_outlook_order_step2_generation_bc"></span>
+            </div>
+
+            <div data-ng-if="ctrl.previewOrder.url">
+                <span data-i18n-static="exchange_ACTION_add_outlook_order_step2_bc_ok"></span>
+                <strong data-i18n-static="exchange_ACTION_add_outlook_order_step2_continue"></strong>
+                <span data-i18n-static="exchange_ACTION_add_outlook_order_step2_explication"></span>
+                <span class="font-italic" data-i18n-static="exchange_ACTION_add_outlook_order_step2_explication2"></span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,80 @@
+<div data-ng-controller="ExchangeUpdateResourceController as ctrl">
+    <div data-wizard
+         data-wizard-bread-crumb
+         data-wizard-confirm-button-text="i18n.exchange_tab_RESOURCES_edit_resource_confirm"
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="updateResource"
+         data-wizard-title="i18n.exchange_tab_RESOURCES_edit_resource">
+
+        <div data-wizard-step
+             data-wizard-step-valid="ctrl.isValid()">
+
+            <p data-ng-bind="tr('exchange_tab_RESOURCES_edit_resource_step2_title', [ctrl.model.slicedEmail])"></p>
+
+            <form class="form-horizontal mt-4" name="ctrl.updateResourceForm">
+                <div class="form-group"
+                     data-ng-class="{'has-error': ctrl.updateResourceForm.displayName.$dirty && ctrl.updateResourceForm.displayName.$invalid}">
+                    <label class="control-label col-md-4 required"
+                           for="displayName"
+                           data-i18n-static="exchange_tab_RESOURCES_add_resource_name"></label>
+                    <div class="col-md-6">
+                        <input type="text"
+                               class="form-control"
+                               id="displayName"
+                               name="displayName"
+                               required
+                               maxlength="256"
+                               data-ng-model="ctrl.model.displayName">
+                    </div>
+                </div>
+
+                <div class="form-group"
+                     data-ng-class="{'has-error': ctrl.updateResourceForm.resourceCapacity.$dirty && ctrl.updateResourceForm.resourceCapacity.$invalid}">
+                    <label class="control-label col-md-4 required"
+                           for="resourceCapacity"
+                           data-i18n-static="exchange_tab_RESOURCES_add_resource_capacity"></label>
+                    <div class="col-md-6">
+                        <input type="number"
+                               class="form-control"
+                               id="resourceCapacity"
+                               name="resourceCapacity"
+                               required
+                               data-ng-min="0"
+                               min="0"
+                               data-ng-max="1024"
+                               max="1024"
+                               data-ng-model="ctrl.model.capacity"
+                               data-uib-tooltip="{{i18n.exchange_tab_RESOURCES_add_resource_capacity_tooltip}}">
+                        <small class="help-block"
+                               data-i18n-static="exchange_tab_RESOURCES_add_resource_capacity_warning"
+                               data-ng-if="ctrl.updateResourceForm.resourceCapacity.$dirty && ctrl.updateResourceForm.resourceCapacity.$invalid"></small>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="checkbox col-md-8 col-md-offset-4">
+                        <label>
+                            <input type="checkbox" data-ng-model="ctrl.model.allowConflict">
+                            <span data-i18n-static="exchange_tab_RESOURCES_add_resource_allow_conflict"></span>
+                        </label>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div data-wizard-step>
+            <p data-ng-bind="tr('exchange_tab_RESOURCES_edit_resource_step2_title', [ctrl.model.slicedEmail])"></p>
+            <dl class="dl-horizontal dl-lg">
+                <dt data-ng-if="ctrl.model.displayName" data-i18n-static="exchange_tab_RESOURCES_add_resource_name"></dt>
+                <dd data-ng-if="ctrl.model.displayName" data-ng-bind-html="ctrl.model.displayName | sliceContent: 150" class="word-break"></dd>
+
+                <dt data-i18n-static="exchange_tab_RESOURCES_add_resource_capacity"></dt>
+                <dd data-ng-bind="ctrl.model.capacity"></dd>
+
+                <dt data-i18n-static="exchange_tab_RESOURCES_add_resource_allow_conflict"></dt>
+                <dd data-ng-if="ctrl.model.allowConflict" data-i18n-static="exchange_tab_RESOURCES_allow_conflicts_true"></dd>
+                <dd data-ng-if="!ctrl.model.allowConflict" data-i18n-static="exchange_tab_RESOURCES_allow_conflicts_false"></dd>
+            </dl>
+        </div>
+    </div>
+</div>

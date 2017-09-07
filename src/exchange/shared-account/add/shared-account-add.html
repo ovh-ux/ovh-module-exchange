@@ -1,0 +1,165 @@
+<div data-ng-controller="ExchangeAddSharedAccountCtrl as ctrl">
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="addingAccount"
+         data-wizard-title="i18n.exchange_SHARED_ACCOUNTS_add_action_title">
+
+        <div data-wizard-step
+             data-wizard-step-valid="isAccountValid()"
+             data-wizard-step-on-load="loadingCreationOptions">
+
+            <div class="loader text-center" data-ng-if="ctrl.optionsToCreateNewAccounts == null"></div>
+
+            <form name="ctrl.sharedAccountForm" data-ng-if="ctrl.optionsToCreateNewAccounts != null">
+                <div class="form-group" data-ng-class="{ 'has-error': ctrl.hasEmailAccountFieldErrors() }">
+                    <label class="control-label required"
+                           for="localPart"
+                           data-i18n-static="exchange_ACTION_add_account_step1_email_label"></label>
+                    <div class="input-group">
+                        <input type="text"
+                               class="form-control"
+                               id="localPart"
+                               name="localPart"
+                               required
+                               maxlength="256"
+                               data-ng-change="ctrl.emailOnChange()"
+                               data-ng-model="ctrl.localPart"
+                               data-ng-pattern="ctrl.localPartValidationRegex"
+                               aria-describedby="emailAlreadyTakenError noLocalPartError acceptedCharactersDescription">
+                        <span class="input-group-addon">@</span>
+                        <select class="form-control"
+                                required
+                                data-ng-change="ctrl.emailOnChange()"
+                                data-ng-model="ctrl.domain"
+                                data-ng-options="domain.displayName for domain in ctrl.optionsToCreateNewAccounts.availableDomains | orderBy:'formattedName'"
+                                aria-describedby="emailAlreadyTakenError"></select>
+                    </div>
+                    <p class="help-block"
+                       id="emailAlreadyTakenError"
+                       data-i18n-static="exchange_tab_ALIAS_taken_error_message"
+                       data-ng-if="ctrl.errors.emailIsAlreadyTaken"></p>
+                    <p class="help-block"
+                       id="noLocalPartError"
+                       data-i18n-static="exchange_tab_ALIAS_creation_error_no_local_part"
+                       data-ng-if="ctrl.errors.emailLocalPartIsEmpty"></p>
+                    <p class="help-block"
+                       id="acceptedCharactersDescription"
+                       data-ng-bind-html="tr('exchange_tab_ALIAS_creation_error_regex', [ctrl.localPartValidationRegex])"></p>
+                </div>
+
+                <div class="form-horizontal">
+                    <div class="form-group"
+                         data-ng-class="{ 'has-error': ctrl.hasQuotaFieldErrors() }">
+                        <label class="control-label col-md-4"
+                               for="quota"
+                               data-i18n-static="exchange_action_SHARED_add_quota_label"></label>
+                        <div class="col-md-8">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <input type="number"
+                                               class="form-control"
+                                               id="quota"
+                                               name="quota"
+                                               aria-describedby="quotaDescription"
+                                               data-ng-min="ctrl.optionsToCreateNewAccounts.minQuota.value"
+                                               min="{{ctrl.optionsToCreateNewAccounts.minQuota.value}}"
+                                               data-ng-max="ctrl.optionsToCreateNewAccounts.maxQuota.value"
+                                               max="{{ctrl.optionsToCreateNewAccounts.maxQuota.value}}"
+                                               data-ng-model="ctrl.accountBeingCreated.quota"
+                                               data-uib-tooltip="{{tr('exchange_action_SHARED_add_quota_tooltip', [ctrl.optionsToCreateNewAccounts.maxQuota.value, tr('unit_size_' + ctrl.optionsToCreateNewAccounts.maxQuota.unit)])}}">
+                                        <span class="input-group-addon" data-ng-bind="tr('unit_size_' + ctrl.optionsToCreateNewAccounts.maxQuota.unit)"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="help-block"
+                               id="quotaDescription"
+                               data-ng-bind-html="tr('exchange_tab_ALIAS_creation_quota_description', [ctrl.optionsToCreateNewAccounts.minQuota.value, tr('unit_size_' + ctrl.optionsToCreateNewAccounts.maxQuota.unit), ctrl.optionsToCreateNewAccounts.maxQuota.value])"></p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label"
+                               for="firstName"
+                               data-i18n-static="exchange_ACTION_add_account_step1_first_name_label"></label>
+                        <div class="col-md-8">
+                            <input type="text"
+                                   class="form-control"
+                                   id="firstName"
+                                   maxlength="256"
+                                   data-ng-change="ctrl.buildDisplayName()"
+                                   data-ng-model="ctrl.accountBeingCreated.firstName">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label"
+                               for="lastName"
+                               data-i18n-static="exchange_ACTION_add_account_step1_last_name_label"></label>
+                        <div class="col-md-8">
+                            <input type="text"
+                                   class="form-control"
+                                   id="lastName"
+                                   maxlength="256"
+                                   data-ng-change="ctrl.buildDisplayName()"
+                                   data-ng-model="ctrl.accountBeingCreated.lastName">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label"
+                               for="displayName"
+                               data-i18n-static="exchange_ACTION_add_account_step1_display_name_label"></label>
+                        <div class="col-md-8">
+                            <input type="text"
+                                   class="form-control"
+                                   id="displayName"
+                                   maxlength="256"
+                                   data-ng-model="ctrl.accountBeingCreated.displayName">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-8">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" data-ng-model="ctrl.accountBeingCreated.hiddenFromGAL">
+                                    <span data-i18n-static="exchange_ACTION_update_account_step1_GAL_label"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="required" data-i18n-static="exchange_ACTION_add_account_step1_mandatory_fields"></p>
+            </form>
+        </div>
+
+        <div data-wizard-step>
+            <p data-i18n-static="exchange_ACTION_add_account_step2_confirmation_intro"></p>
+
+            <dl class="dl-horizontal dl-long">
+                <dt data-i18n-static="exchange_ACTION_add_account_step2_email_label"></dt>
+                <dd data-ng-bind-template="{{ctrl.localPart.toLowerCase()}}@{{ctrl.domain.name}}"></dd>
+
+                <dt data-i18n-static="exchange_action_SHARED_add_quota_label"></dt>
+                <dd data-ng-bind="ctrl.accountBeingCreated.quota + ' '+ tr('unit_size_' + ctrl.optionsToCreateNewAccounts.maxQuota.unit)"></dd>
+
+                <dt data-ng-if="ctrl.accountBeingCreated.firstName" data-i18n-static="exchange_ACTION_add_account_step2_first_name_label"></dt>
+                <dd data-ng-if="ctrl.accountBeingCreated.firstName" data-ng-bind="ctrl.accountBeingCreated.firstName | sliceContent: 150" class="word-break"></dd>
+
+                <dt data-ng-if="ctrl.accountBeingCreated.lastName" data-i18n-static="exchange_ACTION_add_account_step2_last_name_label"></dt>
+                <dd data-ng-if="ctrl.accountBeingCreated.lastName" data-ng-bind="ctrl.accountBeingCreated.lastName | sliceContent: 150" class="word-break"></dd>
+
+                <dt data-ng-if="ctrl.accountBeingCreated.displayName" data-i18n-static="exchange_ACTION_add_account_step2_display_name_label"></dt>
+                <dd data-ng-if="ctrl.accountBeingCreated.displayName" data-ng-bind="ctrl.accountBeingCreated.displayName | sliceContent: 150" class="word-break"></dd>
+
+                <dt data-i18n-static="exchange_ACTION_add_account_step2_security_label"></dt>
+                <dd data-ng-bind="tr('exchange_ACTION_add_account_security_VADERETRO')"></dd>
+
+                <dt data-i18n-static="exchange_ACTION_update_account_step2_GAL_label"></dt>
+                <dd data-ng-bind="tr('exchange_ACTION_update_account_GAL_' + ctrl.accountBeingCreated.hiddenFromGAL)"></dd>
+            </dl>
+        </div>
+    </div>
+</div>

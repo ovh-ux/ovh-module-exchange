@@ -1,0 +1,79 @@
+angular
+    .module("Module.exchange.controllers")
+    .controller("ExchangeDomainMxAutoconfigCtrl", class ExchangeDomainMxAutoconfigCtrl {
+        constructor ($scope, Exchange, ExchangeDomains, EXCHANGE_MX_CONFIG, constants, messaging, navigation, translator, exchangeStates) {
+            this.services = {
+                $scope,
+                Exchange,
+                ExchangeDomains,
+                EXCHANGE_MX_CONFIG,
+                constants,
+                messaging,
+                navigation,
+                translator,
+                exchangeStates
+            };
+
+            this.$routerParams = Exchange.getParams();
+            this.domain = navigation.currentActionData;
+
+            this.services
+                .ExchangeDomains
+                .gettingDNSSettings(this.$routerParams.organization, this.$routerParams.productId, this.domain.name)
+                .then((data) => {
+                    this.domainDiag = data;
+
+                    if (constants.target === "CA") {
+                        this.domainDiag.mx.spam = EXCHANGE_MX_CONFIG.CA.spam;
+                    } else if (constants.target === "EU") {
+                        this.domainDiag.mx.spam = EXCHANGE_MX_CONFIG.EU.spam;
+                    }
+
+                    if (this.domainDiag.isOvhDomain) {
+                        this.model = {
+                            antiSpam: false
+                        };
+                    }
+                }).catch((failure) => {
+                    navigation.resetAction();
+                    messaging.writeError(translator.tr("exchange_tab_domain_diagnostic_add_field_failure"), failure);
+                });
+
+            $scope.configMX = () => this.configMX();
+        }
+
+        prepareModel () {
+            let data = this.domainDiag.mx.noSpam;
+
+            if (this.model.antiSpam) {
+                data = this.domainDiag.mx.spam;
+            }
+
+            return {
+                domain: this.domain.name,
+                fieldList: data
+            };
+        }
+
+        configMX () {
+            this.services
+                .ExchangeDomains
+                .addingZoneDnsField(this.$routerParams.organization, this.$routerParams.productId, this.prepareModel())
+                .then((data) => {
+                    if (this.services.exchangeStates.isOk(data)) {
+                        this.services.messaging.writeSuccess(this.services.translator.tr("exchange_tab_domain_diagnostic_add_field_success"));
+                    } else {
+                        this.services.messaging.writeError(this.services.translator.tr("exchange_tab_domain_diagnostic_add_field_failure"), data);
+                    }
+                })
+                .catch((failure) => {
+                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_domain_diagnostic_add_field_failure"), {
+                        code: this.domain.name,
+                        message: failure.message
+                    });
+                })
+                .finally(() => {
+                    this.services.navigation.resetAction();
+                });
+        }
+    });

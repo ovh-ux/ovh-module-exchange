@@ -1,0 +1,123 @@
+<div data-ng-controller="ExchangeOrderAccountCtrl as ctrl">
+    <div data-wizard
+         data-wizard-bread-crumb
+         data-wizard-confirm-button-text="i18n.wizard_pay"
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="addExchangeAccount"
+         data-wizard-title="i18n.exchange_ACTION_order_accounts_title">
+
+        <div data-wizard-step
+             data-wizard-step-valid="isValid()">
+
+            <div class="loader text-center" data-ng-if="!ctrl.ordersList"></div>
+
+            <div data-ng-if="ctrl.ordersList">
+                <p data-i18n-static="exchange_ACTION_order_accounts_step1_intro"></p>
+
+                <form class="form-horizontal" name="ctrl.orderAccountForm">
+
+                    <div class="form-group" data-ng-if="ctrl.services.accountTypes.isHosted() || ctrl.services.accountTypes.isProvider()">
+                        <label class="control-label col-md-4" for="orderAccountAccountType"
+                               data-i18n-static="exchange_ACTION_order_accounts_step1_account_type"></label>
+                        <div class="col-md-6">
+                            <select class="form-control" name="orderAccountAccountType" id="orderAccountAccountType"
+                                    data-ng-change="ctrl.loadOrderList(ctrl.selectedAccountType.value)"
+                                    data-ng-model="ctrl.selectedAccountType.value"
+                                    data-ng-options="accountType as accountType.label for accountType in ctrl.accountsTypes | orderBy:'reference'">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-4"
+                               data-i18n-static="exchange_ACTION_order_accounts_step1_pay_type"></label>
+                        <div class="col-md-8">
+                            <span class="fa fa-spinner fa-spin" data-ng-hide="ctrl.ordersList.length"></span>
+                            <div class="radio" data-ng-repeat="orderAvailable in (ctrl.ordersList | orderBy:'duration') track by $index">
+                                <label>
+                                    <input type="radio" name="payTypeGroup[{{$index}}]"
+                                           data-ng-model="ctrl.accountsToAdd.duration"
+                                           data-ng-value="orderAvailable.duration">
+                                    <span data-ng-bind-html="tr('exchange_ACTION_order_accounts_step1_pay_type_' + orderAvailable.duration)"></span>
+                                    (<span class="text-danger" data-ng-bind="orderAvailable.prices.withTax.text"></span>)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" data-ng-class="{'has-error': ctrl.orderAccountForm.accountNumber.$invalid}">
+                        <label class="control-label col-md-4" for="accountNumber"
+                               data-i18n-static="exchange_ACTION_order_accounts_step1_number"></label>
+                        <div class="col-md-4">
+                            <input type="number"
+                                   class="form-control"
+                                   name="accountNumber"
+                                   id="accountNumber"
+                                   required
+                                   data-ng-min="1"
+                                   min="1"
+                                   data-ng-max="100"
+                                   max="100"
+                                   data-ng-model="ctrl.accountsToAdd.accountsNumber"
+                                   data-ng-pattern="/^\d+$/"
+                                   data-uib-tooltip="{{i18n.exchange_ACTION_order_accounts_step1_number_tooltip}}">
+                            <small class="help-block"
+                                   data-i18n-static="exchange_ACTION_order_accounts_step1_number_not_valid"
+                                   data-ng-if="ctrl.orderAccountForm.accountNumber.$invalid"></small>
+                        </div>
+                    </div>
+
+                    <div class="checkbox" data-ng-if="ctrl.worldPart === 'EU'">
+                        <label>
+                            <input type="checkbox"
+                                   data-ng-model="ctrl.valid.legalWarning">
+                            <span data-ng-bind-html="tr('exchange_ACTION_add_account_legal_warning')"></span>
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div data-wizard-step
+             data-wizard-step-on-load="order"
+             data-wizard-step-valid="getPreviewOrder()">
+
+            <div class="text-center" data-ng-if="!ctrl.previewOrder">
+                <div class="loader" aria-hidden="true"></div>
+                <span data-i18n-static="exchange_ACTION_order_accounts_step2_loader"></span>
+            </div>
+
+            <div data-ng-if="ctrl.previewOrder">
+                <p data-i18n-static="exchange_ACTION_order_accounts_step2_intro"></p>
+                <dl class="dl-horizontal dl-lg">
+                    <dt data-i18n-static="exchange_ACTION_order_accounts_step2_pay_type"></dt>
+                    <dd data-ng-bind="tr('exchange_ACTION_order_accounts_step1_pay_type_' + ctrl.accountsToAdd.duration)"></dd>
+                    
+                    <dt data-i18n-static="exchange_ACTION_order_accounts_step2_number"></dt>
+                    <dd data-ng-bind="ctrl.accountsToAdd.accountsNumber"></dd>
+
+                    <dt data-i18n-static="exchange_ACTION_order_accounts_step2_total"></dt>
+                    <dd class="text-danger" data-ng-bind="tr('exchange_ACTION_order_accounts_step2_price', [ctrl.previewOrder.prices.withoutTax.text, ctrl.previewOrder.prices.withTax.text])"></dd>
+                </dl>
+            </div>
+        </div>
+
+        <div data-wizard-step
+             data-wizard-step-valid="getURL()">
+
+            <div class="text-center" data-ng-if="!ctrl.url">
+                <div class="loader" aria-hidden="true"></div>
+                <span data-i18n-static="exchange_ACTION_order_accounts_step3_generation_bc"></span>
+            </div>
+
+            <div data-ng-if="ctrl.url">
+                <p data-i18n-static="exchange_ACTION_order_accounts_step3_bc"></p>
+                <p class="font-weight-bold" data-i18n-static="exchange_ACTION_order_accounts_step3_continue"></p>
+                <p data-i18n-static="exchange_ACTION_order_accounts_step3_explication2"></p>
+                <div class="alert alert-info"
+                     role="alert"
+                     data-i18n-static="exchange_ACTION_order_accounts_step3_explication"></div>
+            </div>
+        </div>
+	</div>
+</div>

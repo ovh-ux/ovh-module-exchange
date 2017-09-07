@@ -1,0 +1,17 @@
+<div data-ng-controller="ExchangeExportToCsvAccountsCtrl as ctrl">
+    <div data-wizard
+         data-wizard-on-cancel="cancelExport"
+         data-wizard-on-finish="exportAccounts"
+         data-wizard-title="i18n.exchange_ACTION_export_accounts_button">
+
+        <div data-wizard-step>
+
+            <div class="loader text-center" data-ng-if="ctrl.loading.exportCsv"></div>
+
+            <div data-ng-if="!ctrl.loading.exportCsv">
+                <p data-i18n-static="exchange_ACTION_export_explain"></p>
+                <p data-i18n-static="exchange_ACTION_export_confirm"></p>
+            </div>
+        </div>
+    </div>
+</div>

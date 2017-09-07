@@ -1,0 +1,102 @@
+angular
+    .module("Module.exchange.controllers")
+    .controller("ExchangeTabDomainsCtrl", class ExchangeTabDomainsCtrl {
+        constructor ($scope, $http, Exchange, ExchangeDomains, translator, exchangeStates, accountTypes) {
+            this.services = {
+                $scope,
+                $http,
+                Exchange,
+                ExchangeDomains,
+                translator,
+                exchangeStates,
+                accountTypes
+            };
+
+            this.$routerParams = Exchange.getParams();
+
+            this.domainTypeAuthoritative = "AUTHORITATIVE";
+            this.domainTypeNonAuthoritative = "NON_AUTHORITATIVE";
+
+            this.loading = false;
+            this.paginated = null;
+            this.search = {
+                value: null
+            };
+
+            this.exchange = Exchange.value;
+
+            if (accountTypes.isProvider()) {
+                this.cnameRedirection = "ex-mail.biz";
+            } else {
+                this.cnameRedirection = "ovh.com";
+            }
+
+            $scope.$on(Exchange.events.domainsChanged, () => $scope.$broadcast("paginationServerSide.reload", "domainsTable"));
+
+            $scope.getDomains = (count, offset) => this.getDomains(count, offset);
+            $scope.getPaginated = () => this.paginated;
+            $scope.getLoading = () => this.loading;
+        }
+
+        goSearch () {
+            this.services.$scope.$broadcast("paginationServerSide.loadPage", 1, "domainsTable");
+        }
+
+        emptySearch () {
+            this.search.value = "";
+            this.goSearch();
+        }
+
+        getDomains (count, offset) {
+            this.loading = true;
+
+            this.services
+                .ExchangeDomains
+                .gettingDomains(this.$routerParams.organization, this.$routerParams.productId, count, offset, this.search.value)
+                .then((domains) => {
+                    this.paginated = domains;
+
+                    for (const domain of this.paginated.domains) {
+                        domain.domainTypes = domains.domainTypes;
+                    }
+
+                    this.setTooltips();
+                })
+                .finally(() => { this.loading = false; });
+        }
+
+        setTooltips () {
+            if (_.has(this.paginated, "domains") && !_.isEmpty(this.paginated.domains)) {
+                for (const domain of this.paginated.domains) {
+                    if (this.exchange != null) {
+                        this.setMxTooltip(domain);
+                        this.setSrvTooltip(domain);
+                    }
+                }
+            }
+        }
+
+        setMxTooltip (domain) {
+            if (domain.mxValid) {
+                domain.mxTooltip = this.services.translator.tr("exchange_tab_domain_diagnostic_mx_toolbox_ok");
+            } else {
+                domain.mxTooltip = this.services.translator.tr("exchange_tab_domain_diagnostic_mx_toolbox", [this.exchange.hostname]);
+            }
+        }
+
+        setSrvTooltip (domain) {
+            if (domain.srvValid) {
+                domain.srvTooltip = this.services.translator.tr("exchange_tab_domain_diagnostic_srv_toolbox_ok");
+            } else {
+                domain.srvTooltip = this.services.translator.tr("exchange_tab_domain_diagnostic_srv_toolbox", [this.exchange.hostname]);
+            }
+        }
+
+        containPartial () {
+            if (_.has(this.paginated, "domains") && !_.isEmpty(this.paginated.domains)) {
+                return _.find(this.paginated.domains, "partial") != null;
+            }
+
+            return false;
+        }
+    });

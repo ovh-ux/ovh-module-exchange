@@ -1,0 +1,66 @@
+<div data-ng-controller="ExchangeTabGroupAliasCtrl as ctrl">
+    <div class="col-md-9">
+        <div class="d-flex align-items-center mb-5">
+            <button class="btn btn-default"
+                    data-ng-click="ctrl.hide()">
+                <span class="fa fa-chevron-left mr-2" aria-hidden="true"></span>
+                <span data-i18n-static="exchange_tab_ALIAS_back_button"></span>
+            </button>
+            <span class="ml-4" data-ng-bind-html="tr('exchange_tab_ALIAS_GROUP_intro', ctrl.services.navigation.selectedGroup.mailingListDisplayName)"></span>
+        </div>
+
+        <div class="loader text-center" data-ng-if="ctrl.loading"></div>
+
+        <div class="alert alert-info"
+             role="alert"
+             data-i18n-static="exchange_tab_ALIAS_GROUP_table_empty"
+             data-ng-if="!ctrl.loading && ctrl.aliases.list.results.length === 0">
+        </div>
+        
+        <div data-ng-show="!ctrl.loading && ctrl.aliases.list.results.length > 0">
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col" data-i18n-static="exchange_tab_ALIAS_header"></th>
+                        <th class="min-width" scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-ng-repeat="alias in ctrl.aliases.list.results track by $index">
+                        <td class="word-break" data-ng-bind="alias.displayName"></td>
+                        <td class="text-center">
+                            <span class="label label-info"
+                                  data-i18n-static="exchange_tab_ALIAS_state_TASK_ON_DOING"
+                                  data-ng-if="alias.taskPendingId"
+                                  data-uib-tooltip="{{i18n.exchange_tab_ALIAS_state_TASK_ON_DOING_tooltip}}"></span>
+                            <button class="btn btn-icon" type="button" aria-label="{{i18n.exchange_tab_ALIAS_delete_tooltip}}"
+                                    data-ng-click="ctrl.deleteGroupAlias(alias)"
+                                    data-ng-if="!alias.taskPendingId"
+                                    data-uib-tooltip="{{i18n.exchange_tab_ALIAS_delete_tooltip}}"
+                                    data-tooltip-append-to-body="true">
+                                <span class="oui-icon oui-icon-trash_line oui-icon_small" aria-hidden="true"></span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="clearfix"
+                 data-pagination-server-side="groupAliasTable"
+                 data-pagination-server-side-function="getAliases"
+                 data-pagination-server-side-paginated-stuff="getAliaseObjects()"
+                 data-pagination-server-side-table-loading="getLoading()"></div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mt-5 mt-lg-0">
+        <span data-uib-tooltip="{{ctrl.getAddAliasTooltip()}}"
+              data-tooltip-append-to-body="true">
+            <button class="btn btn-block btn-default" type="button"
+                    data-i18n-static="exchange_tab_ALIAS_add_button"
+                    data-ng-click="ctrl.addGroupAlias()"
+                    data-ng-disabled="ctrl.services.navigation.selectedGroup.aliases >= ctrl.aliasMaxLimit || ctrl.services.navigation.selectedGroup.state !== 'OK'">
+            </button>
+        </span>
+    </div>
+</div>

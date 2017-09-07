@@ -1,0 +1,97 @@
+<div data-ng-controller="ExchangeOrderDiskSpaceCtrl as ctrl">
+    <div data-wizard
+         data-wizard-bread-crumb="true"
+         data-wizard-title="i18n.exchange_action_order_space_disk_title"
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="submitting"
+         data-wizard-confirm-button-text="i18n.exchange_action_order_space_disk_button">
+        <div data-wizard-step
+             data-wizard-step-on-load="retrievingDiskSpaceOptions">
+            <p data-ng-bind-html="tr('exchange_action_order_space_disk_intro')"></p>
+
+            <div class="text-center loader" data-ng-if="ctrl.loading"></div>
+
+            <div data-ng-if="!ctrl.loading">
+                <div class="order-resume-list">
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr data-ng-repeat="detail in ctrl.order.details track by $index">
+                                <td data-ng-bind="detail.description"></td>
+                                <td data-ng-bind="ctrl.getResumePrice(detail.totalPrice)"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="order-resume">
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span data-i18n-static="exchange_action_order_space_disk_price"></span>
+                                    <span class="price" data-ng-bind="ctrl.order.prices.withoutTax.text"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span data-i18n-static="exchange_action_order_space_disk_price_iva"></span>
+                                    <span class="price" data-ng-bind="ctrl.order.prices.withTax.text"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2: Contracts -->
+        <div data-wizard-step
+             data-wizard-step-on-load="loadContracts"
+             data-wizard-step-valid="getAgreementValue()">
+
+            <div data-contracts="ctrl.order.contracts"
+                 data-full-text="false"
+                 data-ng-model="ctrl.agree.value"></div>
+        </div>
+
+        <!-- Step 3: Resume -->
+        <div data-wizard-step
+             data-wizard-step-on-previous="backToContracts">
+            <p data-i18n-static="exchange_action_order_space_disk_summary"></p>
+
+            <div class="order-resume-list">
+                <table class="table table-hover">
+                    <tbody>
+                        <tr data-ng-repeat="detail in ctrl.order.details track by $index">
+                            <td data-ng-bind="detail.description"></td>
+                            <td data-ng-bind="ctrl.getResumePrice(detail.totalPrice)"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="order-resume">
+                <table class="table table-hover">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span data-i18n-static="exchange_action_order_space_disk_price"></span>
+                                <span data-ng-bind="ctrl.order.prices.withoutTax.text"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span data-i18n-static="exchange_action_order_space_disk_price_iva"></span>
+                                <span data-ng-bind="ctrl.order.prices.withTax.text"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p data-i18n-static="exchange_action_order_space_disk_final_txt"></p>
+            <p class="muted" data-i18n-static="exchange_action_order_space_disk_final_txt2"></p>
+        </div>
+
+    </div>
+</div>

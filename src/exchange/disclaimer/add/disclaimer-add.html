@@ -1,0 +1,69 @@
+<div data-ng-controller="ExchangeAddDisclaimerCtrl as ctrl">
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="saveDisclaimer"
+         data-wizard-title="i18n.exchange_ACTION_add_disclaimer_title">
+
+        <div data-wizard-step
+             data-wizard-step-valid="isStep1Valid()">
+
+            <div class="loader text-center" data-ng-if="ctrl.loadingData"></div>
+
+            <div data-ng-if="!ctrl.loadingData">
+                <form class="form-horizontal mt-4">
+                    <div class="form-group">
+                        <label class="control-label col-md-4 required" for="completeDomain"
+                               data-i18n-static="exchange_ACTION_disclaimer_associated_domains"></label>
+                        <div class="col-md-6">
+                            <select class="form-control" id="completeDomain" required
+                                    data-ng-model="ctrl.data.completeDomain"
+                                    data-ng-options="domain.displayName for domain in ctrl.availableDomains | orderBy:'formattedName'">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-5">
+                        <div class="col-md-9 col-md-offset-1">
+                            <div class="input-group">
+                                <select class="form-control" id="variableSelect"
+                                        data-ng-model="ctrl.data.selectedAttribute"
+                                        data-ng-options="tr('exchange_ACTION_add_disclaimer_option_' + variable) for variable in ctrl.availableAttributes">
+                                </select>
+                                <div class="input-group-btn">
+                                    <button class="btn btn-info" type="button"
+                                            data-i18n-static="exchange_ACTION_disclaimer_insert"
+                                            data-ng-click="ctrl.insertVariable()"
+                                            data-ng-disabled="!ctrl.data.selectedAttribute">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <textarea id="add-disclaimer-editor"
+                              data-ckeditor
+                              data-ng-model="ctrl.data.content"
+                              data-ng-value="ctrl.data.content"></textarea>
+
+                    <div class="checkbox mt-4">
+                        <label>
+                            <input type="checkbox" data-ng-model="ctrl.data.outsideOnly">
+                            <span data-i18n-static="exchange_ACTION_add_disclaimer_outside"></span>
+                        </label>
+                    </div>
+                </form>
+
+                <div class="alert alert-warning"
+                     role="alert"
+                     data-i18n-static="exchange_ACTION_update_disclaimer_length_warning"
+                     data-ng-if="ctrl.data.content.length > 5000">
+                </div>
+            </div>
+
+            <div data-wizard-step-help>
+                <h3 data-i18n-static="exchange_ACTION_add_disclaimer_helpwizard_title"></h3>
+                <p data-ng-bind-html="tr('exchange_ACTION_add_disclaimer_helpwizard_details')"></p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="popover-menu" data-ng-controller="ExchangeToolboxResourcesCtrl as ctrl">
+    <button class="btn btn-link"
+            type="button"
+            data-i18n-static="exchange_tab_RESOURCES_tooltip_edit"
+            data-ng-click="ctrl.updateResource(resource)"
+            data-ng-disabled="!ctrl.services.exchangeStates.constructor.isOk(resource)"></button>
+    <button class="btn btn-link"
+            type="button"
+            data-i18n-static="exchange_tab_ACCOUNTS_popover_delegation"
+            data-ng-click="ctrl.resourceDelegation(resource)"
+            data-ng-disabled="!ctrl.services.exchangeStates.constructor.isOk(resource)"></button>
+    <button class="btn btn-link"
+            type="button"
+            data-i18n-static="exchange_tab_RESOURCES_popover_delete"
+            data-ng-click="ctrl.deleteResource(resource)"
+            data-ng-disabled="!ctrl.services.exchangeStates.constructor.isOk(resource)"></button>
+</div>

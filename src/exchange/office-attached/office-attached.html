@@ -1,0 +1,21 @@
+<div class="row" data-ng-if="officeAttachedCtrl.shouldDisplayOfficeAttached">
+    <div class="col-md-9">
+        <div class="alert alert-info" role="note">
+            <button type="button"
+                    class="close"
+                    aria-label="Close"
+                    data-dismiss="alert"
+                    data-ng-click="officeAttachedCtrl.saveHideOfficeAttached()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+
+            <p data-ng-bind-html="tr('exchange_office_attached_alert_main')"></p>
+            <p data-ng-bind-html="tr('exchange_office_attached_alert_details', [officeAttachedCtrl.maxNumberOfAccounts])"></p>
+
+            <button class="btn btn-info mt-3"
+                    type="button"
+                    data-i18n-static="exchange_office_attached_alert_button"
+                    data-ng-click="setAction('exchange/office-attached/dialog/office-attached-dialog')"></button>
+        </div>
+    </div>
+</div>

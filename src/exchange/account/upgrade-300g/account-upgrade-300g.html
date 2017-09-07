@@ -1,0 +1,43 @@
+<div data-ng-controller="ExchangeUpgrade300GCtrl as ctrl">
+    <div data-wizard
+         data-wizard-confirm-button-text="i18n.exchange_ACTION_order_upgrade_300G_button_label"
+         data-wizard-on-cancel="closeExportWindow"
+         data-wizard-on-finish="confirmAction"
+         data-wizard-title="i18n.exchange_ACTION_order_upgrade_300G_title_label">
+
+        <div data-wizard-step
+             data-wizard-step-on-load="getPrices"
+             data-wizard-step-valid="getDuration()">
+
+            <p data-i18n-static="exchange_ACTION_order_upgrade_300G_question_intro"></p>
+
+            <div class="loader text-center" data-ng-if="!ctrl.price1M || !ctrl.price12M"></div>
+
+            <form class="form-horizontal" data-ng-if="ctrl.price1M && ctrl.price12M">
+                <div class="form-group">
+                    <label class="control-label col-md-4"
+                           data-i18n-static="exchange_ACTION_order_upgrade_300G_price_label"></label>
+                    <div class="col-md-8">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="durationRadioGroup" value="01"
+                                       data-ng-model="ctrl.duration.value">
+                                <span data-i18n-static="exchange_ACTION_order_upgrade_300G_price_monthly_label"></span>
+                                (<strong class="text-danger" data-ng-bind="ctrl.price1M.withTax.text"></strong>)
+                            </label>
+                        </div>
+
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="durationRadioGroup" value="12"
+                                       data-ng-model="ctrl.duration.value">
+                                <span data-i18n-static="exchange_ACTION_order_upgrade_300G_price_yearly_label"></span>
+                                (<strong class="text-danger" data-ng-bind="ctrl.price12M.withTax.text"></strong>)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,192 @@
+<div data-ng-controller="ExchangeUpdateRenewCtrl as ctrl">
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="submit"
+         data-wizard-title="i18n.exchange_update_billing_action_title">
+
+        <div data-wizard-step
+             data-wizard-step-valid="hasChanged()">
+
+            <p data-ng-bind-html="tr('exchange_update_billing_periode_intro')"></p>
+
+            <div class="alert alert-warning"
+                 role="alert"
+                 data-ng-if="!ctrl.loading && ctrl.bufferedAccounts && ctrl.bufferedAccounts.list.messages.length > 0">
+                <div>
+                    <strong data-i18n-static="exchange_tab_ACCOUNTS_warning"></strong>
+                    <span data-i18n-static="exchange_tab_ACCOUNTS_partial"></span>
+                </div>
+            </div>
+
+            <form class="form-inline d-md-flex justify-content-md-end mb-3 mt-4" name="searchAccountForm">
+                <div class="form-group">
+                    <label class="sr-only" for="accountSearch"
+                           data-ng-bind="::i18n.common_search"></label>
+                    <div class="input-group">
+                        <input type="text"
+                               class="form-control"
+                               id="accountSearch"
+                               name="accountSearch"
+                               placeholder="{{::i18n.exchange_tab_ACCOUNTS_table_email}}"
+                               maxlength="256"
+                               data-ng-change="ctrl.onSearchValueChange()"
+                               data-ng-disabled="ctrl.loading"
+                               data-ng-model="ctrl.search.value"
+                               data-ng-model-options="{ debounce: 800 }">
+                        <div class="input-group-btn" data-ng-if="ctrl.search.value">
+                            <button class="btn btn-default"
+                                    type="button"
+                                    aria-label="{{i18n.common_cancel}}"
+                                    data-ng-click="ctrl.resetSearch()"
+                                    data-ng-disabled="ctrl.loading">
+                                <span class="fa fa-times" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                        <span class="input-group-addon disabled" data-ng-if="!ctrl.search.value">
+                            <span class="fa fa-search" aria-hidden="true"></span>
+                        </span>
+                    </div>
+                </div>
+            </form>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col" data-i18n-static="exchange_tab_ACCOUNTS_table_email"></th>
+                        <th scope="col" data-i18n-static="exchange_update_billing_expiration_date_label"></th>
+                        <th scope="col"
+                            data-ng-if="!(ctrl.services.accountTypes.isProvider() && ctrl.services.exchangeVersion.isVersion(2010))">
+                            <label class="font-weight-normal m-0">
+                                <input type="checkbox" class="mr-2"
+                                       data-tri-state-checkbox="monthlySelectAll"
+                                       data-tsc-ids-all="ctrl.buffer.ids"
+                                       data-tsc-ids-selected="ctrl.buffer.selectedMonthly"
+                                       data-tsc-on-click="ctrl.checkboxStateChange('MONTHLY')">
+                                <span data-i18n-static="exchange_update_billing_header_1M"></span>
+                            </label>
+                        </th>
+                        <th scope="col">
+                            <label class="font-weight-normal m-0">
+                                <input type="checkbox" class="mr-2"
+                                       data-tri-state-checkbox="yearlySelectAll"
+                                       data-tsc-ids-all="ctrl.buffer.ids"
+                                       data-tsc-ids-selected="ctrl.buffer.selectedYearly"
+                                       data-tsc-on-click="ctrl.checkboxStateChange('YEARLY')">
+                                <span data-i18n-static="exchange_update_billing_header_1Y"></span>
+                            </label>
+                        </th>
+                        <th scope="col"
+                            data-ng-if="ctrl.services.accountTypes.isHosted() || ctrl.services.accountTypes.isProvider()">
+                            <label class="font-weight-normal m-0 required">
+                                <input type="checkbox" class="mr-2"
+                                       data-tri-state-checkbox="deleteSelectAll"
+                                       data-tsc-ids-all="ctrl.buffer.ids"
+                                       data-tsc-ids-selected="ctrl.buffer.selectedDeleteAtExpiration"
+                                       data-tsc-on-click="ctrl.checkboxStateChange('DELETE_AT_EXPIRATION')">
+                                <span data-ng-bind-html="i18n.exchange_update_billing_header_terminate"></span>
+                            </label>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody data-ng-if="ctrl.loading">
+                    <tr>
+                        <td class="loader text-center" colspan="5"></td>
+                    </tr>
+                </tbody>
+
+                <tbody data-ng-if="!ctrl.loading && ctrl.bufferedAccounts.list.results.length === 0 && ctrl.bufferedAccounts.list.messages.length === 0">
+                    <tr>
+                        <td class="text-center" colspan="5">
+                            <span data-i18n-static="exchange_tab_ACCOUNTS_table_empty" data-ng-if="!ctrl.search.value"></span>
+                            <span data-i18n-static="exchange_tab_ACCOUNTS_table_empty_search" data-ng-if="ctrl.search.value"></span>
+                        </td>
+                    </tr>
+                </tbody>
+
+                <tbody data-ng-if="!ctrl.loading && (ctrl.bufferedAccounts.list.results.length > 0 || ctrl.bufferedAccounts.list.messages.length > 0)">
+                    <tr data-ng-repeat="account in (ctrl.bufferedAccounts.list.results | orderBy:'primaryEmailAddress':false) track by $index">
+                        <td data-ng-bind="account.primaryEmailDisplayName | sliceContent: 150" class="word-break"></td>
+                        <td data-ng-bind="account.expirationDate | date:'mediumDate'"></td>
+
+                        <td colspan="3" data-ng-if="ctrl.account.partial"></td>
+
+                        <td class="text-center"
+                            data-ng-if="!ctrl.account.partial && !(ctrl.services.accountTypes.isProvider() && ctrl.services.exchangeVersion.isVersion(2010))">
+                            <label>
+                                <input type="radio"
+                                       value="MONTHLY"
+                                       data-ng-change="ctrl.trackSelected(account.primaryEmailAddress, account.renewPeriod)"
+                                       data-ng-model="account.renewPeriod">
+                            </label>
+                        </td>
+
+                        <td class="text-center"
+                            data-ng-if="!account.partial">
+                            <label>
+                                <input type="radio"
+                                       value="YEARLY"
+                                       data-ng-change="ctrl.trackSelected(account.primaryEmailAddress, account.renewPeriod)"
+                                       data-ng-model="account.renewPeriod">
+                            </label>
+                        </td>
+
+                        <td class="text-center"
+                            data-ng-if="!account.partial && (ctrl.services.accountTypes.isHosted() || ctrl.services.accountTypes.isProvider())">
+                            <label>
+                                <input type="radio"
+                                       value="DELETE_AT_EXPIRATION"
+                                       data-ng-change="ctrl.trackSelected(account.primaryEmailAddress, account.renewPeriod);"
+                                       data-ng-model="account.renewPeriod">
+                            </label>
+                        </td>
+                    </tr>
+
+                    <tr data-ng-repeat="account in ctrl.bufferedAccounts.list.messages | orderBy: 'id':false track by $index">
+                        <td colspan="5" data-uib-tooltip="{{i18n.exchange_tab_ACCOUNTS_partial_account}}">
+                            <span class="fa fa-exclamation-triangle mr-2" aria-hidden="true"></span>
+                            <span data-ng-bind="account.id"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="clearfix"
+                 data-pagination-server-side="accountsTable"
+                 data-pagination-server-side-function="retrieveAccounts"
+                 data-pagination-server-side-paginated-stuff="getBufferedAccounts()"
+                 data-pagination-server-side-table-loading="getLoading()"></div>
+
+            <div class="alert alert-warning"
+                 role="alert"
+                 data-i18n-static="exchange_update_billing_periode_delete_warning"
+                 data-ng-if="(ctrl.services.accountTypes.isHosted() || ctrl.services.accountTypes.isProvider()) && ctrl.services.exchangeVersion.isAfter(2010) && !ctrl.account.partial"
+                 data-ng-show="ctrl.model.displayDeleteWarning"></div>
+        </div>
+
+        <div data-wizard-step>
+            <p data-i18n-static="exchange_update_billing_periode_resume"></p>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col" data-i18n-static="exchange_tab_ACCOUNTS_table_email"></th>
+                        <th class="text-center" scope="col" data-i18n-static="exchange_update_billing_header_new_periode"></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr data-ng-repeat="account in (ctrl.bufferedAccounts.list.results | orderBy:'primaryEmailAddress':false) track by $index">
+                        <td data-ng-bind="account.primaryEmailDisplayName"></td>
+                        <td class="text-center" data-ng-bind="tr('exchange_update_billing_periode_value_'+ [account.renewPeriod])"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="alert alert-warning"
+                 role="alert"
+                 data-ng-if="ctrl.model.displayDeleteWarning"
+                 data-i18n-static="exchange_update_billing_periode_delete_warning"></div>
+        </div>
+    </div>
+</div>

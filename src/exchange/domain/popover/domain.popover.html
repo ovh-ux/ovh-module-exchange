@@ -1,0 +1,14 @@
+<div data-ng-controller="ExchangeToolboxDomainsCtrl as ctrl" class="popover-menu">
+    <button class="btn btn-link"
+            type="button"
+            data-i18n-static="exchange_tab_domain_popover_update"
+            data-ng-click="setAction('exchange/domain/update/domain-update', domain)"
+            data-ng-disabled="ctrl.isUpdateDisabled(domain)"></button>
+    <button class="btn btn-link"
+            type="button"
+            data-i18n-static="exchange_tab_domain_popover_delete"
+            data-ng-click="setAction('exchange/domain/remove/domain-remove', domain)"
+            data-ng-disabled="ctrl.isDeleteDisabled(domain)"
+            data-uib-tooltip="{{ctrl.getDeleteTooltip(domain)}}"
+            data-uib-tooltip-append-to-body="true"></button>
+</div>

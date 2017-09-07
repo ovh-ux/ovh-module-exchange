@@ -1,0 +1,30 @@
+<div data-ng-controller="ExchangeLicenseHistoryCtrl as ctrl">
+    <div data-wizard
+         data-wizard-hide-confirm-button
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="resetAction"
+         data-wizard-title="i18n.exchange_action_license_history_title">
+
+        <div data-wizard-step
+             data-wizard-step-on-load="loadMonitoring">
+
+            <div class="loader text-center" data-ng-if="ctrl.loading"></div>
+
+            <div data-ng-if="!ctrl.loading">
+
+                <div class="form-group mt-5">
+                    <select class="form-control"
+                            data-ng-change="ctrl.loadMonitoring()"
+                            data-ng-model="ctrl.selectedPeriod.period"
+                            data-ng-options="period as tr('exchange_action_license_history_period_' + period) for period in ctrl.licenseHistory.periods">
+                    </select>
+                </div>
+
+                <p class="font-weight-bold text-center" data-i18n-static="exchange_action_license_history_button"></p>
+
+                <div class="chart-container" style="height: 320px;"
+                     data-chartjs="ctrl.chart"></div>
+            </div>
+        </div>
+    </div>
+</div>

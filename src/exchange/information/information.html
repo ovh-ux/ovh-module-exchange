@@ -1,0 +1,198 @@
+<div class="container-fluid px-0" data-ng-controller="ExchangeTabInformationCtrl as ctrl">
+    <office-attached></office-attached>
+
+    <div class="row">
+        <div class="col-md-9">
+            <div class="row d-md-flex">
+                <div class="col-sm-6">
+                    <div class="oui-tile h-100">
+                        <h3 class="oui-header__title" data-i18n-static="exchange_tab_INFORMATIONS_summary"></h3>
+                        <ul>
+                            <li>
+                                <strong data-i18n-static="exchange_tab_INFORMATIONS_infrastructure"></strong>
+                                <span data-ng-bind="tr('exchange_offer_type_' + ctrl.exchange.offer) || ctrl.exchange.offer"></span>
+                            </li>
+                            <li>
+                                <div class="d-flex w-100">
+                                    <div>
+                                        <strong data-i18n-static="exchange_tab_INFORMATIONS_version"></strong>
+                                        <span data-ng-bind="tr('exchange_server_commercial_version' + ctrl.exchange.serverDiagnostic.commercialVersion) || ctrl.exchange.serverDiagnostic.commercialVersion"></span>
+                                    </div>
+                                    <button class="btn btn-default ml-auto my-auto"
+                                            type="button"
+                                            data-i18n-static="exchange_upgrade_button_title"
+                                            data-ng-click="setAction('exchange/information/migration-2016/service-migration-2016', ctrl.exchange)"
+                                            data-ng-if="ctrl.shouldDisplayMigration2016()"></button>
+                                </div>
+                            </li>
+                            <li>
+                                <strong data-i18n-static="exchange_dashboard_name"></strong>
+                                <span data-ng-bind="ctrl.exchange.domain"></span>
+                            </li>
+                            <li data-ng-if="ctrl.shouldDisplayDiagnostic()">
+                                <strong data-i18n-static="exchange_dashboard_diag"></strong>
+                                <span>
+                                    <button class="btn btn-xs"
+                                            type="button"
+                                            data-i18n-static="exchange_dashboard_diag_a_label"
+                                            data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isAValid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isAValid}"
+                                            data-ng-if="!ctrl.services.accountTypes.isProvider()"
+                                            data-simplepopover="{{ctrl.exchange.serverDiagnostic.aTooltip}}"
+                                            data-simplepopover-title="{{tr('exchange_dashboard_diag_a_tooltip_title')}}"
+                                            data-simplepopover-placement="bottom"
+                                            data-simplepopover-single="true"></button>
+                                    <button class="btn btn-xs"
+                                            type="button"
+                                            data-i18n-static="exchange_dashboard_diag_aaaa_label"
+                                            data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isAaaaValid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isAaaaValid}"
+                                            data-ng-if="ctrl.services.accountTypes.isDedicated()"
+                                            data-simplepopover="{{ctrl.exchange.serverDiagnostic.aaaaTooltip}}"
+                                            data-simplepopover-title="{{tr('exchange_dashboard_diag_aaaa_tooltip_title')}}"
+                                            data-simplepopover-placement="bottom"
+                                            data-simplepopover-single="true"></button>
+                                    <button class="btn btn-xs"
+                                            type="button"
+                                            data-i18n-static="exchange_dashboard_diag_ptr_label"
+                                            data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isPtrValid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isPtrValid}"
+                                            data-ng-if="ctrl.services.accountTypes.isDedicated()"
+                                            data-simplepopover="{{ctrl.exchange.serverDiagnostic.ptrTooltip}}"
+                                            data-simplepopover-title="{{tr('exchange_dashboard_diag_ptr_tooltip_title')}}"
+                                            data-simplepopover-placement="bottom"
+                                            data-simplepopover-single="true"></button>
+                                    <button class="btn btn-xs"
+                                            type="button"
+                                            data-i18n-static="exchange_dashboard_diag_ptrv6_label"
+                                            data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isPtrV6Valid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isPtrV6Valid}"
+                                            data-ng-if="ctrl.services.accountTypes.isDedicated()"
+                                            data-simplepopover="{{ctrl.exchange.serverDiagnostic.ptrv6Tooltip}}"
+                                            data-simplepopover-title="{{tr('exchange_dashboard_diag_ptrv6_tooltip_title')}}"
+                                            data-simplepopover-placement="bottom"
+                                            data-simplepopover-single="true"></button>
+                                </span>
+                            </li>
+                            <li data-ng-if="ctrl.exchange.sslExpirationDate">
+                                <div class="d-flex w-100">
+                                    <div>
+                                        <strong data-i18n-static="exchange_dashboard_ssl_expiration"></strong>
+                                        <span data-ng-bind="ctrl.exchange.sslExpirationDate | date:'mediumDate'"></span>
+                                    </div>
+                                    <button class="btn btn-default ml-auto my-auto"
+                                            type="button"
+                                            data-i18n-static="exchange_action_renew_ssl"
+                                            data-ng-click="ctrl.sslRenew()"
+                                            data-ng-if="ctrl.shouldDisplaySSLRenewValue"
+                                            data-uib-tooltip="{{ctrl.getSSLRenewTooltipText()}}"
+                                            data-tooltip-append-to-body="true">
+                                    </button>
+                                </div>
+                            </li>
+                            <li data-ng-if="ctrl.displayRenewDate()">
+                                <strong data-i18n-static="exchange_dashboard_expiration"></strong>
+                                <span data-ng-bind="ctrl.exchange.expiration | date:'mediumDate'"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="oui-tile h-100">
+                        <h3 class="oui-header__title" data-i18n-static="exchange_tab_INFORMATIONS_stats"></h3>
+                        <ul>
+                            <li>
+                                <strong data-i18n-static="exchange_dashboard_domains"></strong>
+                                <span data-ng-bind="ctrl.exchange.domainsNumber"></span>
+                            </li>
+                            <li>
+                                <strong data-i18n-static="exchange_dashboard_accounts"></strong>
+                                <span data-ng-bind="ctrl.exchange.accountsNumber"></span>
+                            </li>
+                            <li>
+                                <strong data-i18n-static="exchange_dashboard_tasks"></strong>
+                                <span data-ng-bind="ctrl.exchange.tasksNumber"></span>
+                            </li>
+                            <li data-ng-if="ctrl.exchange.diskPercent">
+                                <div>
+                                    <strong class="d-inline-block mr-2" data-i18n-static="exchange_dashboard_disk_usage"></strong>
+                                    <span class="fa fa-question-circle"
+                                          aria-hidden="true"
+                                          data-uib-tooltip="{{tr('exchange_action_order_space_disk_tooltip')}}"
+                                          data-tooltip-append-to-body="true"></span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar"
+                                         role="progressbar"
+                                         aria-valuemin="0"
+                                         aria-valuemax="100"
+                                         aria-valuenow="{{ctrl.exchange.diskPercent}}"
+                                         data-ng-class="{
+                                            'progress-bar-success': ctrl.exchange.diskPercent < 51,
+                                            'progress-bar-warning': ctrl.exchange.diskPercent > 50 && ctrl.exchange.diskPercent < 81,
+                                            'progress-bar-danger': ctrl.exchange.diskPercent > 80
+                                        }"
+                                         data-ng-style="{'width': ctrl.exchange.diskPercent + '%'}">
+                                    </div>
+                                    <span class="progress-bar-label"
+                                          data-ng-bind="ctrl.exchange.currentDiskUsage.value + ' ' + tr('unit_size_'+ ctrl.exchange.currentDiskUsage.unit) + ' / ' + ctrl.exchange.totalDiskSize.value + ' ' + tr('unit_size_'+ ctrl.exchange.totalDiskSize.unit)"></span>
+                                </div>
+                                <div class="mt-3">
+                                    <button class="btn btn-block btn-default"
+                                            type="button"
+                                            data-i18n-static="exchange_action_order_space_disk"
+                                            data-ng-click="ctrl.orderDiskSpace()"
+                                            data-ng-disabled="ctrl.services.accountTypes.is25g()"
+                                            data-ng-if="ctrl.displayOrderDiskSpace()"></button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mt-md-5 mt-lg-0">
+            <div class="oui-tile">
+                <h3 class="oui-header__title" data-i18n-static="exchange_tab_INFORMATIONS_connexion"></h3>
+                <ul>
+                    <li>
+                        <strong data-i18n-static="exchange_tab_INFORMATIONS_webmail"></strong>
+                        <a data-ng-href="https://{{ctrl.exchange.hostname}}"
+                           class="word-break"
+                           target="_blank"
+                           title="{{i18n.exchange_tab_INFORMATIONS_webmail}} ({{i18n.common_newtab}})">
+                            <span data-ng-bind="'https://' + ctrl.exchange.hostname"></span>
+                            <span class="fa fa-external-link" aria-hidden="true"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <strong data-i18n-static="exchange_tab_INFORMATIONS_messaging"></strong>
+                        <a data-ng-href="{{ctrl.displayGuides}}"
+                           target="_blank"
+                           title="{{i18n.exchange_dashboard_guides_url}} ({{i18n.common_newtab}})">
+                            <span data-i18n-static="exchange_dashboard_guides_url"></span>
+                            <span class="fa fa-external-link" aria-hidden="true"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="loader text-center" data-ng-if="!ctrl.isGetSharepointDone"></div>
+            <div class="oui-tile" data-ng-if="ctrl.isGetSharepointDone && ctrl.sharepoint">
+                <h3 class="oui-header__title" data-i18n-static="exchange_tab_INFORMATIONS_sharepoint"></h3>
+                <ul>
+                    <li>
+                        <strong data-i18n-static="exchange_tab_INFORMATIONS_sharepoint_url"></strong>
+                        <a data-ng-href="https://{{ctrl.sharepoint.url}}"
+                           class="word-break"
+                           target="_blank"
+                           data-ng-if="ctrl.sharepoint.state !== 'creating'">
+                            <span data-ng-bind="'https://' + ctrl.sharepoint.url"></span>
+                            <span class="fa fa-external-link" aria-hidden="true"></span>
+                        </a>
+                        <span data-i18n-static="exchange_tab_INFORMATIONS_wait_activation"
+                              data-ng-if="ctrl.sharepoint.state === 'creating'"></span>
+                        <div class="mt-3">
+                            <a data-ng-href="#/configuration/sharepoint/{{ctrl.exchange.domain}}/{{ctrl.sharepoint.domain}}" data-i18n-static="exchange_tab_INFORMATIONS_service_url"></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
