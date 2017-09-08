@@ -28,9 +28,10 @@
                                id="accountSearch"
                                placeholder="{{::i18n.exchange_tab_ACCOUNTS_table_email}}"
                                maxlength="256"
+                               data-ng-change="ctrl.onSearch()"
                                data-ng-disabled="ctrl.loading"
                                data-ng-model="ctrl.search.value"
-                               data-ng-change="ctrl.onSearch()">
+                               data-ng-model-options="{ debounce: 800 }">
                         <div class="input-group-btn" data-ng-if="ctrl.search.value">
                             <button class="btn btn-default"
                                     type="button"
