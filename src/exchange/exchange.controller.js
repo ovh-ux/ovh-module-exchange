@@ -64,6 +64,8 @@ angular
             } else {
                 this.retrievingExchange();
             }
+
+            Exchange.updateValue();
         }
 
         submittingDisplayName () {
