@@ -11,8 +11,6 @@ angular
                 Exchange,
                 OvhHttp
             };
-
-            this.exchange = Exchange.value;
         }
 
         gettingDomains (organization, serviceName, pageSize = 5, offset = 0, search = undefined) {
@@ -61,8 +59,8 @@ angular
                 .post("/email/exchange/{organizationName}/service/{exchangeService}/domain", {
                     rootPath: "apiv6",
                     urlParams: {
-                        organizationName: this.exchange.organization,
-                        exchangeService: this.exchange.domain
+                        organizationName: this.services.Exchange.value.organization,
+                        exchangeService: this.services.Exchange.value.domain
                     },
                     data: transformDomain
                 })
