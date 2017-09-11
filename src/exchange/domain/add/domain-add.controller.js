@@ -19,6 +19,7 @@ angular
 
             this.OVH_DOMAIN = "ovh-domain";
             this.NON_OVH_DOMAIN = "non-ovh-domain";
+            this.exchange = Exchange.value;
 
             this.debouncedResetName = _.debounce(this.search, 300);
 
