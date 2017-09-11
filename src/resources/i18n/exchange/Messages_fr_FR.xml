@@ -553,7 +553,7 @@
 
    <translation id="exchange_tab_domain_add_step1_main_domain" qtlid="191070">Domaine principal d'une organisation</translation>
    <translation id="exchange_tab_domain_add_step1_main_domain_tooltip" qtlid="191083">Domaine principal de l'organisation</translation>
-   <translation id="exchange_tab_domain_add_step1_new_organization_intro" qtlid="191096">Le domaine de votre organisation va être "{0}"</translation>
+   <translation id="exchange_tab_domain_add_step1_new_organization_intro" qtlid="191096">Le domaine de votre organisation va être <strong>{0}</strong></translation>
    <translation id="exchange_tab_domain_add_step1_new_organization_placeholder" qtlid="191109">Nom de l'organisation</translation>
    <translation id="exchange_tab_domain_add_step2_main_domain" qtlid="191122">Domaine principal</translation>
    <translation id="exchange_tab_domain_add_step2_organization" qtlid="32278">Organisation</translation>

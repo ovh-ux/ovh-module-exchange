@@ -252,9 +252,9 @@
                         </label>
                     </div>
                     <div class="form-group ml-4 pl-2" data-ng-if="!ctrl.model.main">
-                        <label class="control-label required"
-                               for="mainDomainAttached"
-                               data-i18n-static="exchange_tab_domain_add_step1_attach_organization_intro"></label>
+                        <div class="required"
+                             for="mainDomainAttached"
+                             data-i18n-static="exchange_tab_domain_add_step1_attach_organization_intro"></div>
                         <select class="form-control"
                                 id="mainDomainAttached"
                                 name="mainDomainAttached"
@@ -263,7 +263,7 @@
                                 data-ng-options="domain.displayName for domain in ctrl.availableMainDomains track by domain.displayName"></select>
                     </div>
                     <p class="ml-4 pl-2"
-                       data-ng-bind="tr('exchange_tab_domain_add_step1_new_organization_intro', [ctrl.model.displayName])"
+                       data-ng-bind-html="tr('exchange_tab_domain_add_step1_new_organization_intro', [ctrl.model.displayName])"
                        data-ng-if="ctrl.model.main"></p>
                 </div>
             </form>
