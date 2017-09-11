@@ -9,14 +9,12 @@
             <div class="alert alert-info"
                  role="alert"
                  data-ng-if="!ctrl.loading && ctrl.search.value == null && ctrl.paginated.domains.length === 0">
-                <div>
-                    <span data-i18n-static="exchange_tab_domain_no_domains_1"></span>
-                    <button class="btn btn-link p-0"
-                            type="button"
-                            data-i18n-static="exchange_tab_domain_no_domains_2"
-                            data-ng-click="ctrl.setAction('exchange/domain/add/domain-add')"></button>
-                    <span data-i18n-static="exchange_tab_domain_no_domains_3"></span>
-                </div>
+                <span data-i18n-static="exchange_tab_domain_no_domains_1"></span>
+                <button class="btn btn-link p-0"
+                        type="button"
+                        data-i18n-static="exchange_tab_domain_no_domains_2"
+                        data-ng-click="ctrl.setAction('exchange/domain/add/domain-add')"></button>
+                <span data-i18n-static="exchange_tab_domain_no_domains_3"></span>
             </div>
 
             <div class="mb-3">
@@ -35,7 +33,7 @@
                                    data-ng-change="ctrl.goSearch()"
                                    data-ng-disabled="ctrl.loading"
                                    data-ng-model="ctrl.search.value"
-                                   data-ng-model-options='{ debounce: 800 }'>
+                                   data-ng-model-options="{ debounce: 800 }">
 
                             <div class="input-group-btn" data-ng-if="ctrl.search.value">
                                 <button class="btn btn-default"
@@ -55,16 +53,15 @@
             </div>
 
             <div class="table-responsive">
-                <table class="table"
-                       data-ng-class="{'table-hover table-striped': !ctrl.loading}">
+                <table class="table" data-ng-class="{'table-hover table-striped': !ctrl.loading}">
                     <thead>
                         <tr>
                             <th scope="col" data-i18n-static="exchange_tab_domain_domain"></th>
                             <th scope="col" data-i18n-static="exchange_tab_domain_type"></th>
-                            <th class="text-center" scope="col" data-i18n-static="exchange_tab_domain_accounts_count"></th>
-                            <th class="text-center" scope="col" data-i18n-static="exchange_tab_domain_diagnostic"></th>
-                            <th class="text-center" scope="col" data-i18n-static="exchange_tab_domain_status"></th>
-                            <th class="text-center min-width"></th>
+                            <th scope="col" data-i18n-static="exchange_tab_domain_accounts_count" class="text-center"></th>
+                            <th scope="col" data-i18n-static="exchange_tab_domain_diagnostic" class="text-center"></th>
+                            <th scope="col" data-i18n-static="exchange_tab_domain_status" class="text-center"></th>
+                            <th scope="col" class="text-center min-width"></th>
                         </tr>
                     </thead>
 
@@ -102,14 +99,11 @@
                                       data-ng-bind="tr('exchange_tab_domain_' + domain.type)"></span>
                             </td>
 
-                            <td class="text-center"
-                                data-ng-bind="domain.accountsCount"
-                                data-ng-if="!domain.partial && domain.domainValidated">
-                            </td>
+                            <td class="text-center" data-ng-bind="domain.accountsCount" data-ng-if="!domain.partial && domain.domainValidated"></td>
 
-                            <td colspan="2" data-ng-if="!domain.partial && !domain.domainValidated" >
-                                <span data-i18n-static="exchange_tab_domain_validation_doing"></span>
-                                <span data-i18n-static="exchange_tab_domain_validation_cname" data-ng-if="domain.cname"></span>
+                            <td class="text-center" colspan="2" data-ng-if="!domain.partial && !domain.domainValidated">
+                                <p data-i18n-static="exchange_tab_domain_validation_doing"></p>
+                                <p data-i18n-static="exchange_tab_domain_validation_cname" data-ng-if="domain.cname"></p>
                             </td>
 
                             <td class="text-center" data-ng-if="!domain.partial">
@@ -117,39 +111,35 @@
                                     <button class="btn btn-danger btn-xs" type="button"
                                             data-i18n-static="exchange_tab_domain_diagnostic_mx"
                                             data-ng-click="setAction('exchange/domain/mx-autoconfig/domain-mx-autoconfig', domain)"
-                                            data-ng-if="!domain.mxValid">
-                                    </button>
+                                            data-ng-if="!domain.mxValid"></button>
                                     <button class="btn btn-success btn-xs" type="button"
                                             data-i18n-static="exchange_tab_domain_diagnostic_mx"
                                             data-ng-if="domain.mxValid"
                                             data-simplepopover="{{domain.mxTooltip}}"
                                             data-simplepopover-title="{{tr('exchange_tab_domain_diagnostic_mx_title')}}"
                                             data-simplepopover-placement="top"
-                                            data-simplepopover-single="true">
-                                    </button>
+                                            data-simplepopover-single="true"></button>
                                     <button class="btn btn-danger btn-xs" type="button"
                                             data-i18n-static="exchange_tab_domain_diagnostic_srv"
                                             data-ng-click="setAction('exchange/domain/srv-autoconfig/domain-srv-autoconfig', domain)"
-                                            data-ng-if="!domain.srvValid">
-                                    </button>
+                                            data-ng-if="!domain.srvValid"></button>
                                     <button class="btn btn-success btn-xs" type="button"
                                             data-i18n-static="exchange_tab_domain_diagnostic_srv"
                                             data-ng-if="domain.srvValid"
                                             data-simplepopover="{{domain.srvTooltip}}"
                                             data-simplepopover-title="{{tr('exchange_tab_domain_diagnostic_srv_title')}}"
                                             data-simplepopover-placement="top"
-                                            data-simplepopover-single="true">
-                                    </button>
+                                            data-simplepopover-single="true"></button>
                                 </div>
 
-                                <button class="btn btn-danger btn-xs" type="button"
+                                <button class="btn btn-danger btn-xs"
+                                        type="button"
                                         data-i18n-static="exchange_tab_domain_diagnostic_cname"
                                         data-ng-if="!domain.domainValidated && domain.cname"
                                         data-simplepopover="{{tr('exchange_tab_domain_validation_cname_details', [domain.cname, domain.name, ctrl.cnameRedirection])}}"
                                         data-simplepopover-title="{{tr('exchange_tab_domain_validation_cname_title')}}"
                                         data-simplepopover-placement="top"
-                                        data-simplepopover-single="true">
-                                </button>
+                                        data-simplepopover-single="true"></button>
                             </td>
                             <td class="text-center" data-ng-if="!domain.partial">
                                 <div data-ng-if="ctrl.services.exchangeStates.constructor.isOk(domain)">
@@ -193,9 +183,9 @@
                  data-pagination-server-side="domainsTable"
                  data-pagination-server-side-function="getDomains"
                  data-pagination-server-side-paginated-stuff="getPaginated()"
-                 data-pagination-server-side-table-loading="getLoading()">
-            </div>
+                 data-pagination-server-side-table-loading="getLoading()"></div>
         </div>
+
         <div class="col-md-3 mt-5 mt-lg-0">
             <button class="btn btn-block btn-default"
                     data-ng-click="setAction('exchange/domain/add/domain-add', {})">
