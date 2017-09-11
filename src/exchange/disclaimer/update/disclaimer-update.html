@@ -16,11 +16,13 @@
                     <div class="form-group mt-5">
                         <div class="col-md-9 col-md-offset-1">
                             <div class="input-group">
-                                <select class="form-control" id="variableSelect"
+                                <select class="form-control"
+                                        id="variableSelect"
                                         data-ng-model="ctrl.data.selectedAttribute"
                                         data-ng-options="tr('exchange_ACTION_add_disclaimer_option_' +variable) for variable in ctrl.availableAttributes"></select>
                                 <div class="input-group-btn">
-                                    <button class="btn btn-default" type="button"
+                                    <button class="btn btn-default"
+                                            type="button"
                                             data-i18n-static="exchange_ACTION_disclaimer_insert"
                                             data-ng-click="ctrl.insertAttribute()"
                                             data-ng-disabled="!ctrl.data.selectedAttribute"></button>
