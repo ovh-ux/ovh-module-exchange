@@ -1482,7 +1482,7 @@ L'antispam Vade Secure est compatible avec le mode non autoritatif (uniquement s
    <translation id="exchange_ACTION_order_upgrade_300G_error_options_message" qtlid="368180">Une erreur est survenue lors de lors de la récupération des tarifs.</translation>
 <!-- Order Exchange -->
    <translation id="exchange_order_view_intro_title" qtlid="368193">Commander un Exchange</translation>
-   <translation id="exchange_order_view_intro_question" qtlid="368206">Souahitez vous créer un nouveau service Exchange ou ajouter un compte à un service existant ?</translation>
+   <translation id="exchange_order_view_intro_question" qtlid="368206">Souhaitez-vous créer un nouveau service Exchange ou ajouter un compte à un service existant ?</translation>
    <translation id="exchange_order_view_stand_alone_option" qtlid="368219">Créer un nouveau service</translation>
    <translation id="exchange_order_view_attached_option" qtlid="368232">Ajouter un compte à un service existant</translation>
    <translation id="exchange_order_view_button_label" qtlid="368245">Commander votre Exchange</translation>
