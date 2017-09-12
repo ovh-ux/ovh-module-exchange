@@ -18,6 +18,7 @@ angular
             this.isGetSharepointDone = false;
             this.$routerParams = Exchange.getParams();
             this.shouldDisplaySSLRenewValue = false;
+            this.hasSSLTask = false;
 
             Exchange.getSharepointService()
                 .then((sharepoint) => {
@@ -28,11 +29,8 @@ angular
                 });
 
             Exchange.getDcvEmails(this.$routerParams.organization, this.$routerParams.productId)
-                .then(() => {
-                    this.enableSSLButton = true;
-                })
                 .catch((err) => {
-                    if (_.has(err, "data.message") && err.data.message === "You can't get dcv email if there is a pending task for installSSL") {
+                    if (_.has(err, "message") && err.message === "You can't get dcv email if there is a pending task for installSSL") {
                         this.hasSSLTask = true;
                     }
                 })
@@ -58,7 +56,7 @@ angular
         }
 
         sslRenew () {
-            if (this.exchange.sslRenewAvailable && this.enableSSLButton) {
+            if (this.exchange.sslRenewAvailable) {
                 this.services.navigation.setAction("exchange/information/ssl/service-ssl-renew");
             }
         }
@@ -83,7 +81,7 @@ angular
             const isDedicatedAccount = this.services.accountTypes.isDedicated();
             const is2010DedicatedOrProvider = this.services.exchangeVersion.isVersion(2010) && !this.services.accountTypes.isHosted();
 
-            this.shouldDisplaySSLRenewValue = (isDedicatedAccount || is2010DedicatedOrProvider) && !this.hasSSLTask;
+            this.shouldDisplaySSLRenewValue = isDedicatedAccount || is2010DedicatedOrProvider;
         }
 
         getSSLRenewTooltipText () {
