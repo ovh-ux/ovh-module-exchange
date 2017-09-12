@@ -17,13 +17,13 @@ angular
 
             $scope.updateDelegationRight = () => this.updateDelegationRight();
             $scope.hasChanged = () => this.hasChanged();
-            $scope.retrieveAccounts = (count, offset) => this.retrieveAccounts(count, offset);
+            $scope.retrievingAccounts = (count, offset) => this.retrievingAccounts(count, offset);
             $scope.getLoading = () => this.loading;
             $scope.getAccounts = () => this.accounts;
 
-            $scope.$on(Exchange.events.accountsChanged, () => $scope.retrieveAccounts());
+            $scope.$on(Exchange.events.accountsChanged, () => $scope.retrievingAccounts());
 
-            this.debouncedRetrieveAccounts = _.debounce(this.retrieveAccounts, 300);
+            this.debouncedRetrievingAccounts = _.debounce(this.retrievingAccounts, 300);
         }
 
         /**
@@ -79,12 +79,12 @@ angular
         }
 
         onSearchValueChange () {
-            this.debouncedRetrieveAccounts();
+            this.debouncedRetrievingAccounts();
         }
 
         resetSearch () {
             this.searchValue = null;
-            this.retrieveAccounts();
+            this.retrievingAccounts();
         }
 
         getAccounts () {
@@ -152,7 +152,7 @@ angular
             return !_.isEmpty(listOfChanges.sendRights) || !_.isEmpty(listOfChanges.fullAccessRights) || !_.isEmpty(listOfChanges.sendOnBehalfToRights);
         }
 
-        retrieveAccounts (count, offset) {
+        retrievingAccounts (count, offset) {
             this.services.messaging.resetMessages();
             this.loading = true;
 
