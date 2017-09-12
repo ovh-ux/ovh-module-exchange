@@ -7,7 +7,7 @@
 
         <div data-wizard-step
              data-wizard-step-valid="hasChanged()"
-             data-wizard-step-on-load="retrieveAccounts">
+             data-wizard-step-on-load="retrievingAccounts">
 
             <p data-ng-bind-html="tr('exchange_ACTION_delegation_step1_intro', [ctrl.currentAccount])"></p>
 
@@ -164,7 +164,7 @@
 
             <div class="clearfix"
                  data-pagination-server-side
-                 data-pagination-server-side-function="retrieveAccounts"
+                 data-pagination-server-side-function="retrievingAccounts"
                  data-pagination-server-side-paginated-stuff="getAccounts()"
                  data-pagination-server-side-table-loading="getLoading()">
             </div>
@@ -210,7 +210,7 @@
 
             <div class="clearfix"
                  data-pagination-server-side
-                 data-pagination-server-side-function="retrieveAccounts"
+                 data-pagination-server-side-function="retrievingAccounts"
                  data-pagination-server-side-paginated-stuff="getAccounts()"
                  data-pagination-server-side-table-loading="getLoading()">
             </div>

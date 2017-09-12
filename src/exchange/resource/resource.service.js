@@ -15,7 +15,7 @@ angular
         /**
          * Return the selected resources for the current exchange account
          */
-        getResources (organization, serviceName, pageSize = 5, offset = 0, search = "") {
+        getResources (organization, serviceName, count = 10, offset = 0, search = "") {
             return this.services
                 .OvhHttp
                 .get("/sws/exchange/{organization}/{exchange}/resources", {
@@ -26,7 +26,7 @@ angular
                         exchange: serviceName
                     },
                     params: {
-                        count: pageSize,
+                        count,
                         offset,
                         search
                     }
@@ -123,7 +123,7 @@ angular
         /**
          * Get accounts by resource
          */
-        getAccountsByResource (organization, serviceName, resourceEmailAddress, pageSize = 5, offset = 0, search = "") {
+        getAccountsByResource (organization, serviceName, resourceEmailAddress, count = 10, offset = 0, search = "") {
             return this.services
                 .OvhHttp
                 .get("/sws/exchange/{organization}/{exchange}/resources/{resourceEmailAddress}/rights", {
@@ -135,7 +135,7 @@ angular
                         resourceEmailAddress
                     },
                     params: {
-                        count: pageSize,
+                        count,
                         offset,
                         search
                     }
