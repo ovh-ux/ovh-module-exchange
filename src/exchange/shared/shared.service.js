@@ -13,7 +13,7 @@ angular
             };
         }
 
-        retrievingPublicFolders (organization, serviceName, pageSize = 5, offset = 0, search = "") {
+        retrievingPublicFolders (organization, serviceName, count = 10, offset = 0, search = "") {
             return this.services
                 .OvhHttp
                 .get("/sws/exchange/{organization}/{exchange}/publicFolders", {
@@ -23,7 +23,7 @@ angular
                         exchange: serviceName
                     },
                     params: {
-                        count: pageSize,
+                        count,
                         offset,
                         search
                     }
@@ -113,7 +113,7 @@ angular
                 });
         }
 
-        retrievingAccountsByPublicFolder (organization, serviceName, path, pageSize = 5, offset = 0, search = "") {
+        retrievingAccountsByPublicFolder (organization, serviceName, path, count = 10, offset = 0, search = "") {
             return this.services
                 .OvhHttp
                 .get("/sws/exchange/{organization}/{exchange}/publicFolders/{path}/accounts", {
@@ -124,14 +124,14 @@ angular
                         path
                     },
                     params: {
-                        count: pageSize,
+                        count,
                         offset,
                         search
                     }
                 });
         }
 
-        retrievingPublicFoldersPermissions (organization, serviceName, path, pageSize = 5, offset = 0) {
+        retrievingPublicFoldersPermissions (organization, serviceName, path, count = 10, offset = 0) {
             return this.services
                 .OvhHttp
                 .get("/sws/exchange/{organization}/{exchange}/publicFolders/{path}/permissions", {
@@ -142,7 +142,7 @@ angular
                         path
                     },
                     params: {
-                        count: pageSize,
+                        count,
                         offset
                     }
                 });
