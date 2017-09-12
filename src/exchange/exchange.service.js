@@ -16,16 +16,16 @@ angular
                 exchangeDetails: null
             };
 
-            this.tasksCache = $cacheFactory("UNIVERS_WEB_EXCHANGE_TASKS");
-            this.delegationRightsCache = $cacheFactory("UNIVERS_WEB_EXCHANGE_DELEGATION_RIGHTS");
-            this.disclaimersCache = $cacheFactory("UNIVERS_WEB_EXCHANGE_DISCLAIMERS");
-            this.exchangeCache = $cacheFactory("UNIVERS_WEB_EXCHANGE");
-            this.domainsCache = $cacheFactory("UNIVERS_WEB_EXCHANGE_DOMAINS");
-            this.accountsCache = $cacheFactory("UNIVERS_WEB_EXCHANGE_ACCOUNTS");
-            this.sharedAccountsCache = $cacheFactory("UNIVERS_WEB_EXCHANGE_SHARED_ACCOUNTS");
-            this.resourcesCache = $cacheFactory("UNIVERS_WEB_EXCHANGE_RESOURCES");
-            this.groupsCache = $cacheFactory("UNIVERS_WEB_EXCHANGE_GROUPS");
-            this.publicFolderCache = $cacheFactory("UNIVERS_WEB_EXCHANGE_PUBLIC_FOLDERS");
+            this.tasksCache = $cacheFactory.get("UNIVERS_WEB_EXCHANGE_TASKS") || $cacheFactory("UNIVERS_WEB_EXCHANGE_TASKS");
+            this.delegationRightsCache = $cacheFactory.get("UNIVERS_WEB_EXCHANGE_DELEGATION_RIGHTS") || $cacheFactory("UNIVERS_WEB_EXCHANGE_DELEGATION_RIGHTS");
+            this.disclaimersCache = $cacheFactory.get("UNIVERS_WEB_EXCHANGE_DISCLAIMERS") || $cacheFactory("UNIVERS_WEB_EXCHANGE_DISCLAIMERS");
+            this.exchangeCache = $cacheFactory.get("UNIVERS_WEB_EXCHANGE") || $cacheFactory("UNIVERS_WEB_EXCHANGE");
+            this.domainsCache = $cacheFactory.get("UNIVERS_WEB_EXCHANGE_DOMAINS") || $cacheFactory("UNIVERS_WEB_EXCHANGE_DOMAINS");
+            this.accountsCache = $cacheFactory.get("UNIVERS_WEB_EXCHANGE_ACCOUNTS") || $cacheFactory("UNIVERS_WEB_EXCHANGE_ACCOUNTS");
+            this.sharedAccountsCache = $cacheFactory.get("UNIVERS_WEB_EXCHANGE_SHARED_ACCOUNTS") || $cacheFactory("UNIVERS_WEB_EXCHANGE_SHARED_ACCOUNTS");
+            this.resourcesCache = $cacheFactory.get("UNIVERS_WEB_EXCHANGE_RESOURCES") || $cacheFactory("UNIVERS_WEB_EXCHANGE_RESOURCES");
+            this.groupsCache = $cacheFactory.get("UNIVERS_WEB_EXCHANGE_GROUPS") || $cacheFactory("UNIVERS_WEB_EXCHANGE_GROUPS");
+            this.publicFolderCache = $cacheFactory.get("UNIVERS_WEB_EXCHANGE_PUBLIC_FOLDERS") || $cacheFactory("UNIVERS_WEB_EXCHANGE_PUBLIC_FOLDERS");
 
             this.updateAccountAction = "UPDATE_ACCOUNT";
             this.changePasswordAction = "CHANGE_PASSWORD";

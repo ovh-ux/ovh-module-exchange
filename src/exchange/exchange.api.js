@@ -5,7 +5,7 @@
         .module("Module.exchange.services")
         .service("APIExchange", class APIExchange {
             constructor (Api, $q, constants, $cacheFactory) {
-                const cache = $cacheFactory("exchangeService");
+                const cache = $cacheFactory.get("exchangeService") || $cacheFactory("exchangeService");
 
                 for (const verb of VERBS) {
                     this[verb] = (path, optionsParam) => {
