@@ -161,7 +161,7 @@ angular
             const formerPermission = this.permissions.former.list.results.find((formerPerm) => formerPerm.primaryAddressDisplayName === accountName);
             const formerPermissionName = this.getPermissionName(formerPermission);
 
-            if (this.permissions.selectedPermissions[formerPermissionName].includes(accountName)) {
+            if (_(this.permissions.selectedPermissions[formerPermissionName]).includes(accountName)) {
                 this.permissions.selectedPermissions[formerPermissionName] = this.permissions.selectedPermissions[formerPermissionName].filter((currentAccountName) => currentAccountName !== accountName);
             }
         }

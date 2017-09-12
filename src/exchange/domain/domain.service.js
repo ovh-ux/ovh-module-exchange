@@ -13,7 +13,7 @@ angular
             };
         }
 
-        gettingDomains (organization, serviceName, pageSize = 5, offset = 0, search = undefined) {
+        gettingDomains (organization, serviceName, count = 10, offset = 0, search = "") {
             return this.services
                 .OvhHttp
                 .get("/sws/exchange/{organization}/{exchange}/domains", {
@@ -23,7 +23,7 @@ angular
                         exchange: serviceName
                     },
                     params: {
-                        count: pageSize,
+                        count,
                         offset,
                         search
                     }

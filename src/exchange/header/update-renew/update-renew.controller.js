@@ -176,7 +176,7 @@ angular.module("Module.exchange.controllers")
             if (matchingAccount != null) {
                 matchingAccount.renewPeriod = period;
 
-                if (!this.buffer[matchingProperty].includes(matchingAccount.primaryEmailAddress)) {
+                if (!_(this.buffer[matchingProperty]).includes(matchingAccount.primaryEmailAddress)) {
                     this.buffer[matchingProperty].push(matchingAccount.primaryEmailAddress);
                 }
 

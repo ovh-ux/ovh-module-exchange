@@ -199,7 +199,7 @@ angular
         /**
          * Return the last 2 days task list for the selected exchange
          */
-        getTasks (organization, serviceName, pageSize = 5, offset = 0) {
+        getTasks (organization, serviceName, count = 10, offset = 0) {
             return this.services.OvhHttp.get("/sws/exchange/{organization}/{exchange}/tasks", {
                 rootPath: "2api",
                 urlParams: {
@@ -207,7 +207,7 @@ angular
                     exchange: serviceName
                 },
                 params: {
-                    count: pageSize,
+                    count,
                     offset
                 }
             });
@@ -268,7 +268,7 @@ angular
          * @param search - filter over primaryEmail value
          * @param configurableOnly - Integer value: "0" to get all, "1" to filter out dummy accounts and creating/deleting ones
          */
-        getAccountsForExchange (exchange, cache, pageSize = 5, offset = 0, search = "", configurableOnly = 0, type = "", timeout = null) {
+        getAccountsForExchange (exchange, cache, count = 10, offset = 0, search = "", configurableOnly = 0, type = "", timeout = null) {
             return this.services.OvhHttp.get("/sws/exchange/{organization}/{exchange}/accounts", {
                 rootPath: "2api",
                 urlParams: {
@@ -276,7 +276,7 @@ angular
                     exchange: exchange.domain
                 },
                 params: {
-                    count: pageSize,
+                    count,
                     offset,
                     search,
                     configurableOnly,
@@ -293,7 +293,7 @@ angular
          * @param search - filter over primaryEmail value
          * @param configurableOnly - Integer value: "0" to get all, "1" to filter out dummy accounts and creating/deleting ones
          */
-        getAccountsAndContacts (organization, serviceName, pageSize = 5, offset = 0, search = "", configurableOnly = 0) {
+        getAccountsAndContacts (organization, serviceName, count = 10, offset = 0, search = "", configurableOnly = 0) {
             return this.services
                 .OvhHttp
                 .get("/sws/exchange/{organization}/{exchange}/accounts/contacts", {
@@ -303,7 +303,7 @@ angular
                         exchange: serviceName
                     },
                     params: {
-                        count: pageSize,
+                        count,
                         offset,
                         search,
                         configurableOnly
@@ -533,7 +533,7 @@ angular
             return isDedicated || (isProvider && _(this.value.serverDiagnostic.commercialVersion).includes(2010));
         }
 
-        retrieveAccountDelegationRight (organization, exchange, account, count = 5, offset = 0, search = "") {
+        retrieveAccountDelegationRight (organization, exchange, account, count = 10, offset = 0, search = "") {
             return this.services
                 .OvhHttp
                 .get("/sws/exchange/{organization}/{exchange}/accounts/{account}/rights", {
@@ -580,7 +580,7 @@ angular
         /**
          * Get Exchange accounts aliases
          */
-        getAliases (organization, serviceName, account, pageSize = 5, offset = 0) {
+        getAliases (organization, serviceName, account, count = 10, offset = 0) {
             return this.services
                 .OvhHttp
                 .get("/sws/exchange/{organization}/{exchange}/accounts/{account}/alias", {
@@ -591,7 +591,7 @@ angular
                         account
                     },
                     params: {
-                        count: pageSize,
+                        count,
                         offset
                     }
                 });
@@ -669,7 +669,7 @@ angular
         /**
          * Get groups this Exchange account belongs to
          */
-        getGroups (organization, serviceName, pageSize = 5, offset = 0, search = "") {
+        getGroups (organization, serviceName, count = 10, offset = 0, search = "") {
             return this.services
                 .OvhHttp
                 .get("/sws/exchange/{organization}/{exchange}/groups", {
@@ -680,7 +680,7 @@ angular
                         exchange: serviceName
                     },
                     params: {
-                        count: pageSize,
+                        count,
                         offset,
                         search
                     }
@@ -690,7 +690,7 @@ angular
         /**
          * Get Exchange mailing list delegation rights
          */
-        getMailingListDelegationRights (organization, productId, mailinglist, pageSize = 5, offset = 0, search = "") {
+        getMailingListDelegationRights (organization, productId, mailinglist, count = 10, offset = 0, search = "") {
             return this.services
                 .OvhHttp
                 .get("/sws/exchange/{organization}/{exchange}/groups/{mailinglist}/rights", {
@@ -702,7 +702,7 @@ angular
                         mailinglist
                     },
                     params: {
-                        count: pageSize,
+                        count,
                         offset,
                         search
                     }
@@ -759,7 +759,7 @@ angular
         /**
          * Get accounts by group
          */
-        getAccountsByGroup (organization, serviceName, groupName, pageSize = 5, offset = 0, search = "") {
+        getAccountsByGroup (organization, serviceName, groupName, count = 10, offset = 0, search = "") {
             return this.services
                 .OvhHttp
                 .get("/sws/exchange/{organization}/{exchange}/groups/{mailinglist}/accounts", {
@@ -771,7 +771,7 @@ angular
                         mailinglist: groupName
                     },
                     params: {
-                        count: pageSize,
+                        count,
                         offset,
                         search
                     }
@@ -895,7 +895,7 @@ angular
         /**
          * Get group aliases
          */
-        getGroupAliasList (organization, serviceName, groupName, pageSize = 5, offset = 0) {
+        getGroupAliasList (organization, serviceName, groupName, count = 10, offset = 0) {
             return this.services
                 .OvhHttp
                 .get("/sws/exchange/{organization}/{exchange}/group/{group}/alias", {
@@ -907,7 +907,7 @@ angular
                         group: groupName
                     },
                     params: {
-                        count: pageSize,
+                        count,
                         offset
                     }
                 });
@@ -963,7 +963,7 @@ angular
         /**
          * Return disclaimers list for a given Exchange service
          */
-        getDisclaimers (organization, serviceName, pageSize = 5, offset = 0) {
+        getDisclaimers (organization, serviceName, count = 10, offset = 0) {
             return this.services
                 .OvhHttp
                 .get("/sws/exchange/{organization}/{exchange}/disclaimers", {
@@ -973,7 +973,7 @@ angular
                         exchange: serviceName
                     },
                     params: {
-                        count: pageSize,
+                        count,
                         offset
                     }
                 });

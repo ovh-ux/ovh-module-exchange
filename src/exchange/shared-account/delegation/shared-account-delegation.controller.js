@@ -14,6 +14,7 @@ angular
 
             this.$routerParams = Exchange.getParams();
             this.primaryEmailAddress = navigation.currentActionData.primaryEmailAddress;
+            this.isLoading = false;
             this.searchValue = null;
 
             $scope.$on(Exchange.events.accountsChanged, () => {
