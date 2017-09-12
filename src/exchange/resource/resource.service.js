@@ -15,7 +15,7 @@ angular
         /**
          * Return the selected resources for the current exchange account
          */
-        getResources (organization, serviceName, count = 10, offset = 0, search = "") {
+        retrievingResources (organization, serviceName, count = 10, offset = 0, search = "") {
             return this.services
                 .OvhHttp
                 .get("/sws/exchange/{organization}/{exchange}/resources", {
