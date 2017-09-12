@@ -8,31 +8,32 @@ angular
             this.loading = false;
             this.urls = { guides: {} };
             this.exchange = Exchange.value;
-            this.search = {
-                value: null
-            };
+            this.searchValue = null;
 
-            $scope.$on(Exchange.events.resourcesChanged, () => $scope.$broadcast("paginationServerSide.reload", "resourcesTable"));
-
-            User.getUser().then((data) => {
-                try {
-                    this.urls.guides.resources = EXCHANGE_CONFIG.URLS.GUIDES.RESOURCES[data.ovhSubsidiary];
-                    return data;
-                } catch (exception) {
-                    return "";
-                }
+            $scope.$on(Exchange.events.resourcesChanged, () => {
+                $scope.$broadcast("paginationServerSide.reload", "resourcesTable");
             });
+
+            User.getUser()
+                .then((data) => {
+                    try {
+                        this.urls.guides.resources = EXCHANGE_CONFIG.URLS.GUIDES.RESOURCES[data.ovhSubsidiary];
+                        return data;
+                    } catch (exception) {
+                        return "";
+                    }
+                });
 
             $scope.retrievingResources = (count, offset) => this.retrievingResources(count, offset);
             this.debouncedRetrievingResources = _.debounce(this.retrievingResources, 300);
         }
 
-        onSearch () {
+        onSearchValueChanged () {
             this.debouncedRetrievingResources();
         }
 
         resetSearch () {
-            this.search.value = null;
+            this.searchValue = null;
             this.services.$scope.$broadcast("paginationServerSide.loadPage", 1, "resourcesTable");
         }
 
@@ -46,7 +47,7 @@ angular
 
             return this.services
                 .ExchangeResources
-                .getResources(this.$routerParams.organization, this.$routerParams.productId, count, offset, this.search.value)
+                .retrievingResources(this.$routerParams.organization, this.$routerParams.productId, count, offset, this.searchValue)
                 .then((resources) => {
                     this.resources = resources;
                 })
