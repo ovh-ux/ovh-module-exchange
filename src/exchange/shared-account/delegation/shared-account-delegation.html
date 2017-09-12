@@ -6,8 +6,7 @@
          data-wizard-on-finish="updatingDelegationRight">
 
         <div data-wizard-step
-             data-wizard-step-valid="hasChanged()"
-             data-wizard-step-on-load="retrievingAccounts">
+             data-wizard-step-valid="hasChanged()">
 
              <p data-ng-bind-html="tr('exchange_ACTION_delegation_step1_intro', [ctrl.primaryEmailAddress])"></p>
 
@@ -133,7 +132,7 @@
                                        data-ng-model="account.newFullAccess"
                                        disabled>
                             </div>
-                            <input type="checkbox" 
+                            <input type="checkbox"
                                    data-ng-if="!account.fullAccessOnDoing"
                                    data-ng-model="account.newFullAccess">
                         </td>
@@ -147,13 +146,14 @@
                     </tr>
                 </tbody>
             </table>
-            
+
             <div class="clearfix"
-                 data-pagination-server-side
+                 data-pagination-server-side="delegationTable"
                  data-pagination-server-side-function="retrievingAccounts"
                  data-pagination-server-side-paginated-stuff="getAccounts()"
                  data-pagination-server-side-table-loading="getIsLoading()"></div>
         </div>
+
         <div data-wizard-step>
             <p data-ng-bind-html="tr('exchange_ACTION_delegation_step2_intro', [ctrl.primaryEmailDisplayName])"></p>
 
@@ -190,7 +190,7 @@
                  data-pagination-server-side
                  data-pagination-server-side-function="retrievingAccounts"
                  data-pagination-server-side-paginated-stuff="getAccounts()"
-                 data-pagination-server-side-table-loading="getLoading()"></div>
+                 data-pagination-server-side-table-loading="getIsLoading()"></div>
         </div>
     </div>
 </div>
