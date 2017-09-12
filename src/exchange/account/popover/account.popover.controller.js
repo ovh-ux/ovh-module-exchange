@@ -1,15 +1,17 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeToolboxAccountsCtrl", class ExchangeToolboxAccountsCtrl {
-        constructor ($scope, Exchange, ExchangeAccountService, navigation, $rootScope, exchangeStates) {
+        constructor ($scope, Exchange, ExchangeAccountService, navigation, $rootScope, exchangeStates, accountTypes) {
             this.services = {
                 $scope,
                 Exchange,
                 ExchangeAccountService,
                 navigation,
                 $rootScope,
-                exchangeStates
+                exchangeStates,
+                accountTypes
             };
+
             this.removeAccountInsteadOfReset = Exchange.removeAccountInsteadOfReset(Exchange.value);
         }
 
