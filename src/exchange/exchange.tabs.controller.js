@@ -99,7 +99,7 @@ angular
         changeTab (tab) {
             const upperCaseSelectedTab = angular.uppercase(tab);
             const tabHasAName = upperCaseSelectedTab != null;
-            const tabExists = this.tabs != null && this.tabs.includes(upperCaseSelectedTab);
+            const tabExists = _(this.tabs).includes(upperCaseSelectedTab);
             const tabIsMenuItem = this.dropdownMenuItems != null && _(this.dropdownMenuItems.items).find((item) => item.target === upperCaseSelectedTab);
 
             if (tabHasAName && (tabExists || tabIsMenuItem)) {
