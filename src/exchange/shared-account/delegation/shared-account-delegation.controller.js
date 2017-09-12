@@ -14,16 +14,28 @@ angular
 
             this.$routerParams = Exchange.getParams();
             this.primaryEmailAddress = navigation.currentActionData.primaryEmailAddress;
+            this.searchValue = null;
 
             $scope.$on(Exchange.events.accountsChanged, () => {
                 $scope.retrievingAccounts();
             });
+
+            this.debouncedRetrievingAccounts = _.debounce(this.retrievingAccounts, 300);
 
             $scope.updatingDelegationRight = () => this.updatingDelegationRight();
             $scope.hasChanged = () => this.hasChanged();
             $scope.retrievingAccounts = (count, offset) => this.retrievingAccounts(count, offset);
             $scope.getAccounts = () => this.accounts;
             $scope.getIsLoading = () => this.isLoading;
+        }
+
+        onSearchValueChange () {
+            this.debouncedRetrievingAccounts();
+        }
+
+        onResetSearchValue () {
+            this.searchValue = null;
+            this.retrievingAccounts();
         }
 
         hasChanged () {
@@ -55,7 +67,7 @@ angular
 
             return this.services
                 .ExchangeSharedAccounts
-                .retrievingSharedAccountDelegations(this.$routerParams.organization, this.$routerParams.productId, this.primaryEmailAddress, count, offset)
+                .retrievingSharedAccountDelegations(this.$routerParams.organization, this.$routerParams.productId, this.primaryEmailAddress, count, offset, this.searchValue)
                 .then((accounts) => {
                     this.accounts = angular.copy(accounts); // make a deep copy of accounts list to use it as model
                     this.bufferedAccounts = angular.copy(accounts);
