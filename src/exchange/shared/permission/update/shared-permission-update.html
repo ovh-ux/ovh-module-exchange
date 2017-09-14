@@ -74,7 +74,7 @@
                                    data-ng-change="ctrl.onSinglePermissionChange(account.primaryAddressDisplayName, account.accessRights)"
                                    data-ng-value="'EDITOR'"
                                    data-ng-model="account.accessRights"
-                                   data-ng-disabled="account.state !== ctrl.isOk">
+                                   data-ng-disabled="!ctrl.services.exchangeStates.constructor.isOk(account)">
                         </td>
 
                         <td data-ng-if="!account.partial">
@@ -83,7 +83,7 @@
                                    data-ng-change="ctrl.onSinglePermissionChange(account.primaryAddressDisplayName, account.accessRights)"
                                    data-ng-value="'REVIEWER'"
                                    data-ng-model="account.accessRights"
-                                   data-ng-disabled="account.state !== ctrl.isOk">
+                                   data-ng-disabled="!ctrl.services.exchangeStates.constructor.isOk(account)">
                         </td>
 
                         <td data-ng-if="!account.partial">
@@ -92,7 +92,7 @@
                                    data-ng-change="ctrl.onSinglePermissionChange(account.primaryAddressDisplayName, account.accessRights)"
                                    data-ng-value="'NONE'"
                                    data-ng-model="account.accessRights"
-                                   data-ng-disabled="account.state !== ctrl.isOk">
+                                   data-ng-disabled="!ctrl.services.exchangeStates.constructor.isOk(account)">
                         </td>
 
                         <td data-ng-if="!account.partial">
@@ -101,7 +101,7 @@
                                    data-ng-change="ctrl.onSinglePermissionChange(account.primaryAddressDisplayName, account.accessRights)"
                                    data-ng-value="'DEFAULT'"
                                    data-ng-model="account.accessRights"
-                                   data-ng-disabled="account.state !== ctrl.isOk">
+                                   data-ng-disabled="!ctrl.services.exchangeStates.constructor.isOk(account)">
                         </td>
                     </tr>
 
