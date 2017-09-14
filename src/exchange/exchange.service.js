@@ -216,19 +216,26 @@ angular
         /**
          * Return the list of e-mails available to be used for SSL renew operation
          */
-        getDcvEmails (organization, serviceName) {
-            return this.services.OvhHttp.get("/email/exchange/{organizationName}/service/{exchangeService}/dcvEmails", {
-                rootPath: "apiv6",
-                urlParams: {
-                    organizationName: organization,
-                    exchangeService: serviceName
-                },
-                returnKey: ""
-            }).then((dcvs) => dcvs.data.map((dcv) => ({
-                name: dcv,
-                displayName: punycode.toUnicode(dcv),
-                formattedName: punycode.toUnicode(dcv)
-            })));
+        retrievingDVCEmails (organization, serviceName) {
+            return this.services
+                .OvhHttp
+                .get("/email/exchange/{organizationName}/service/{exchangeService}/dcvEmails", {
+                    rootPath: "apiv6",
+                    urlParams: {
+                        organizationName: organization,
+                        exchangeService: serviceName
+                    },
+                    returnKey: ""
+                })
+                .then((dcvs) => {
+                    const data = dcvs || dcvs.data;
+
+                    return data.map((dcv) => ({
+                        name: dcv,
+                        displayName: punycode.toUnicode(dcv),
+                        formattedName: punycode.toUnicode(dcv)
+                    }));
+                });
         }
 
         /**
