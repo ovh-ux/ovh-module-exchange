@@ -14,14 +14,14 @@ angular
 
         cacheDiagnostic (email) {
             this.diagnosticCache = {
-                organizationName: this.services.Exchange.organization,
-                exchangeService: this.services.Exchange.domain,
+                organizationName: this.services.Exchange.value.organization,
+                exchangeService: this.services.Exchange.value.domain,
                 primaryEmailAddress: email
             };
         }
 
         gettingLastDiagnostic () {
-            if (this.diagnosticCache.organizationName === this.services.Exchange.organization && this.diagnosticCache.exchangeService === this.services.Exchange.domain) {
+            if (this.diagnosticCache.organizationName === this.services.Exchange.value.organization && this.diagnosticCache.exchangeService === this.services.Exchange.value.domain) {
                 return this.diagnosticCache.primaryEmailAddress;
             }
 
@@ -36,8 +36,8 @@ angular
                 .post("/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/diagnostics", {
                     rootPath: "apiv6",
                     urlParams: {
-                        organizationName: this.services.Exchange.organization,
-                        exchangeService: this.services.Exchange.domain,
+                        organizationName: this.services.Exchange.value.organization,
+                        exchangeService: this.services.Exchange.value.domain,
                         primaryEmailAddress: email
                     },
                     data: {
@@ -52,8 +52,8 @@ angular
                 .get("/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/diagnostics", {
                     rootPath: "apiv6",
                     urlParams: {
-                        organizationName: this.services.Exchange.organization,
-                        exchangeService: this.services.Exchange.domain,
+                        organizationName: this.services.Exchange.value.organization,
+                        exchangeService: this.services.Exchange.value.domain,
                         primaryEmailAddress: email
                     }
                 });
@@ -81,8 +81,8 @@ angular
                 .get("/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/tasks", {
                     rootPath: "apiv6",
                     urlParams: {
-                        organizationName: this.services.Exchange.organization,
-                        exchangeService: this.services.Exchange.domain,
+                        organizationName: this.services.Exchange.value.organization,
+                        exchangeService: this.services.Exchange.value.domain,
                         primaryEmailAddress: email
                     }
                 });
@@ -94,8 +94,8 @@ angular
                 .get("/email/exchange/{organizationName}/service/{exchangeService}/account/{primaryEmailAddress}/tasks/{id}", {
                     rootPath: "apiv6",
                     urlParams: {
-                        organizationName: this.services.Exchange.organization,
-                        exchangeService: this.services.Exchange.domain,
+                        organizationName: this.services.Exchange.value.organization,
+                        exchangeService: this.services.Exchange.value.domain,
                         primaryEmailAddress: email,
                         id
                     }
@@ -111,7 +111,7 @@ angular
                 opts.successSates = [opts.successSates];
             }
 
-            const url = `apiv6/email/exchange/${this.services.Exchange.organization}/service/${this.services.Exchange.domain}/account/${email}/tasks/${opts.id}`;
+            const url = `apiv6/email/exchange/${this.services.Exchange.value.organization}/service/${this.services.Exchange.value.domain}/account/${email}/tasks/${opts.id}`;
             const pollParameters = {
                 interval: 2000,
                 successRule: {
