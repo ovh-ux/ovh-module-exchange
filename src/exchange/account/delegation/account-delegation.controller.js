@@ -18,7 +18,7 @@ angular
             $scope.updateDelegationRight = () => this.updateDelegationRight();
             $scope.hasChanged = () => this.hasChanged();
             $scope.retrievingAccounts = (count, offset) => this.retrievingAccounts(count, offset);
-            $scope.getLoading = () => this.loading;
+            $scope.getIsLoading = () => this.isLoading;
             $scope.getAccounts = () => this.accounts;
 
             $scope.$on(Exchange.events.accountsChanged, () => $scope.retrievingAccounts());
@@ -84,15 +84,7 @@ angular
 
         resetSearch () {
             this.searchValue = null;
-            this.retrievingAccounts();
-        }
-
-        getAccounts () {
-            return this.accounts;
-        }
-
-        getLoading () {
-            return this.loading;
+            this.debouncedRetrievingAccounts();
         }
 
         constructResult (data) {
@@ -154,7 +146,7 @@ angular
 
         retrievingAccounts (count, offset) {
             this.services.messaging.resetMessages();
-            this.loading = true;
+            this.isLoading = true;
 
             this.services
                 .Exchange
@@ -176,7 +168,7 @@ angular
                     this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ACCOUNTS_error_message"), failure);
                 })
                 .finally(() => {
-                    this.loading = false;
+                    this.isLoading = false;
                 });
         }
 
