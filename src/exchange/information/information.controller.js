@@ -28,9 +28,11 @@ angular
                     this.isGetSharepointDone = true;
                 });
 
-            Exchange.getDcvEmails(this.$routerParams.organization, this.$routerParams.productId)
+            Exchange.retrievingDVCEmails(this.$routerParams.organization, this.$routerParams.productId)
                 .catch((err) => {
-                    if (_.has(err, "message") && err.message === "You can't get dcv email if there is a pending task for installSSL") {
+                    const message = err.message || err;
+
+                    if (message === "You can't get dcv email if there is a pending task for installSSL") {
                         this.hasSSLTask = true;
                     }
                 })

@@ -12,6 +12,7 @@ angular
 
             this.$routerParams = Exchange.getParams();
             this.loading = false;
+            this.exchange = Exchange.value;
 
             $scope.retrievingDCVEmails = () => this.retrievingDCVEmails();
             $scope.submitting = () => this.submitting();
@@ -22,7 +23,7 @@ angular
 
             return this.services
                 .Exchange
-                .getDcvEmails(this.$routerParams.organization, this.$routerParams.productId)
+                .retrievingDVCEmails(this.$routerParams.organization, this.$routerParams.productId)
                 .then((data) => {
                     this.loading = false;
                     this.availableDomains = data;
