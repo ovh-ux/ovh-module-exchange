@@ -75,7 +75,7 @@
 
                     <tbody data-ng-show="!ctrl.isLoading">
                         <tr data-ng-repeat="account in (ctrl.accounts.list.results | orderBy: 'primaryEmailDisplayName':false) track by $index">
-                            <td data-ng-bind="account.primaryEmailDisplayName"></td>
+                            <td class="word-break" data-ng-bind="account.primaryEmailDisplayName"></td>
                             <td class="text-center">
                                 <!-- A task is on doing (activation or deactivation, sendAs or sendOnBehalf)-->
                                 <div data-ng-if="account.sendAsOnDoing || account.sendOnBehalfToOnDoing">
