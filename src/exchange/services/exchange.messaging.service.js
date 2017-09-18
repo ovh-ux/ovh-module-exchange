@@ -92,7 +92,7 @@ angular
                     }
                 } else if (failure.messages != null) {
                     if (!_.isEmpty(failure.messages)) {
-                        alertType = "alert alert-warning";
+                        alertType = "alert";
 
                         switch (failure.state.toUpperCase()) {
                         case "ERROR":
@@ -100,7 +100,7 @@ angular
                             messageToSend = message.ERROR || message;
                             break;
                         case "PARTIAL":
-                            alertType += " alert-danger";
+                            alertType += " alert-warning";
                             messageToSend = message.PARTIAL || message;
                             break;
                         case "OK":
@@ -108,6 +108,7 @@ angular
                             messageToSend = message.OK || message;
                             break;
                         default:
+                            alertType += " alert-warning";
                             messageToSend = message;
                             break;
                         }
