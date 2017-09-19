@@ -80,10 +80,16 @@ angular
         }
 
         shouldDisplaySSLRenew () {
+            const now = moment();
+            const sslExpirationDate = moment(this.exchange.sslExpirationDate);
+            const aMonthBeforeSSLExpirationDate = sslExpirationDate.subtract(30, "days");
+            const isAlreadyExpired = now.isAfter(sslExpirationDate);
+            const canRenewBeforeExpiration = now.isAfter(aMonthBeforeSSLExpirationDate);
+
             const isDedicatedAccount = this.services.accountTypes.isDedicated();
             const is2010DedicatedOrProvider = this.services.exchangeVersion.isVersion(2010) && !this.services.accountTypes.isHosted();
 
-            this.shouldDisplaySSLRenewValue = isDedicatedAccount || is2010DedicatedOrProvider;
+            this.shouldDisplaySSLRenewValue = (isDedicatedAccount || is2010DedicatedOrProvider) && (canRenewBeforeExpiration || isAlreadyExpired);
         }
 
         getSSLRenewTooltipText () {
