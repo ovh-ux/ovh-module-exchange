@@ -1,7 +1,8 @@
 angular.module("Module.exchange.controllers")
     .controller("ExchangeGroupAccountsCtrl", class ExchangeGroupAccountsCtrl {
-        constructor ($scope, Exchange, messaging, navigation, translator) {
+        constructor ($rootScope, $scope, Exchange, messaging, navigation, translator) {
             this.services = {
+                $rootScope,
                 $scope,
                 Exchange,
                 messaging,
@@ -113,6 +114,8 @@ angular.module("Module.exchange.controllers")
                     } else {
                         this.services.messaging.setMessage(addGroupMessages, data);
                     }
+
+                    this.services.$rootScope.$broadcast(this.services.Exchange.events.accountsChanged);
                 })
                 .catch((failure) => {
                     this.services.messaging.writeError(this.services.translator.tr("exchange_GROUPS_settings_error_message", this.selectedGroup.mailingListDisplayName), failure);
