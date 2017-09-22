@@ -66,6 +66,18 @@ angular
                 displayName = this.exchange.displayName.replace(/hosted/i, "Office").replace(/exchange/i, "Office").replace(/private/i, "Office");
             }
 
+            const alreadyKnownAccounts = [];
+            const accountsToSave = [];
+
+            for (const alreadyKnownAccount of this.selectedAccounts) {
+                if (!alreadyKnownAccounts.includes(alreadyKnownAccount.primaryEmailDisplayName)) {
+                    alreadyKnownAccounts.push(alreadyKnownAccount.primaryEmailDisplayName);
+                    accountsToSave.push(alreadyKnownAccount);
+                }
+            }
+
+            this.selectedAccounts = accountsToSave;
+
             const answer = [
                 {
                     planCode: "office-tenant",
@@ -196,14 +208,13 @@ angular
                 const currentDisplayedAccountEmailAddresses = this.accounts.list.results.map((account) => account.primaryEmailDisplayName);
                 const selectedAccountsCurrentBeingDisplayed = this.selectedAccounts.filter((currentSelectedAccount) => currentDisplayedAccountEmailAddresses.includes(currentSelectedAccount.primaryEmailDisplayName));
 
-                const currentlySelectedAccountsEmailAddresses = Object.keys(this.selectedCheckboxes).filter((key) => this.selectedCheckboxes[key]).map((account) => account.primaryEmailDisplayName);
+                const currentlySelectedAccountsEmailAddresses = Object.keys(this.selectedCheckboxes).filter((key) => this.selectedCheckboxes[key]);
                 const currentlyDislayedAccountsThatAreSelected = this.accounts.list.results.filter((account) => currentlySelectedAccountsEmailAddresses.includes(account.primaryEmailDisplayName));
 
                 const alreadyPresentAccounts = currentlyDislayedAccountsThatAreSelected.map((account) => account.primaryEmailDisplayName);
                 this.selectedAccounts = currentlyDislayedAccountsThatAreSelected.concat(selectedAccountsCurrentBeingDisplayed.filter((account) => !alreadyPresentAccounts.includes(account.primaryEmailDisplayName)));
 
-                const currentlyNotSelectedAccountsEmailAddresses = Object.keys(this.selectedCheckboxes)
-                    .filter((key) => !this.selectedCheckboxes[key]);
+                const currentlyNotSelectedAccountsEmailAddresses = Object.keys(this.selectedCheckboxes).filter((key) => !this.selectedCheckboxes[key]);
 
                 this.selectedAccounts = this.selectedAccounts.filter((account) => !currentlyNotSelectedAccountsEmailAddresses.includes(account.primaryEmailDisplayName));
 
