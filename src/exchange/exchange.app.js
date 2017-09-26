@@ -17,10 +17,10 @@ angular
 
         const exchangeStates = [{
             "abstract": true,
-            name: "app.microsoft.exchange",
+            name: "web.microsoft.exchange",
             template: "<div ui-view></div>"
         }, {
-            name: "app.microsoft.exchange.dedicated",
+            name: "web.microsoft.exchange.dedicated",
             url: "/configuration/exchange_dedicated/:organization/:productId?tab",
             templateUrl: "exchange/exchange.html",
             controller: "ExchangeCtrl",
@@ -35,7 +35,7 @@ angular
                 translator
             }
         }, {
-            name: "app.microsoft.exchange.hosted",
+            name: "web.microsoft.exchange.hosted",
             url: "/configuration/exchange_hosted/:organization/:productId?tab",
             templateUrl: "exchange/exchange.html",
             controller: "ExchangeCtrl",
@@ -51,7 +51,7 @@ angular
             }
         },
         {
-            name: "app.microsoft.exchange.provider",
+            name: "web.microsoft.exchange.provider",
             url: "/configuration/exchange_provider/:organization/:productId?tab",
             templateUrl: "exchange/exchange.html",
             controller: "ExchangeCtrl",
@@ -67,7 +67,7 @@ angular
             }
         },
         {
-            name: "app.microsoft.exchange.order",
+            name: "web.microsoft.exchange.order",
             url: "/configuration/exchange/order",
             templateUrl: "exchange/order/order.html",
             controller: "ExchangeOrderCtrl",
