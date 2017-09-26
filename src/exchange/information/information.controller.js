@@ -82,7 +82,7 @@ angular
         shouldDisplaySSLRenew () {
             const now = moment();
             const sslExpirationDate = moment(this.exchange.sslExpirationDate);
-            const aMonthBeforeSSLExpirationDate = sslExpirationDate.subtract(30, "days");
+            const aMonthBeforeSSLExpirationDate = sslExpirationDate.subtract(1, "months");
             const isAlreadyExpired = now.isAfter(sslExpirationDate);
             const canRenewBeforeExpiration = now.isAfter(aMonthBeforeSSLExpirationDate);
 
@@ -95,7 +95,7 @@ angular
         getSSLRenewTooltipText () {
             const now = moment();
             const sslExpirationDate = moment(this.exchange.sslExpirationDate);
-            const aMonthBeforeSSLExpirationDate = sslExpirationDate.subtract(30, "days");
+            const aMonthBeforeSSLExpirationDate = sslExpirationDate.subtract(1, "months");
 
             if (this.hasSSLTask) {
                 return this.services.translator.tr("exchange_action_renew_ssl_info");
