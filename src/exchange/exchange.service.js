@@ -766,7 +766,7 @@ angular
         /**
          * Get accounts by group
          */
-        getAccountsByGroup (organization, serviceName, groupName, count = 10, offset = 0, search = "") {
+        retrievingAccountsByGroup (organization, serviceName, groupName, count = 10, offset = 0, search = "") {
             return this.services
                 .OvhHttp
                 .get("/sws/exchange/{organization}/{exchange}/groups/{mailinglist}/accounts", {
@@ -861,7 +861,7 @@ angular
                 });
         }
 
-        updateGroups (organizationName, exchangeService, groupName, data) {
+        updatingGroups (organizationName, exchangeService, groupName, data) {
             return this.services
                 .OvhHttp
                 .put("/sws/exchange/{organizationName}/{exchangeService}/groups/{mailingListAddress}/update", {
