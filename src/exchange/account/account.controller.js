@@ -138,6 +138,14 @@ angular
             }
         }
 
+        archiveSettings (account) {
+            this.services.navigation.setAction("exchange/account/archive/account-archive", account);
+        }
+
+        legacyHoldOnSettings (account) {
+            this.services.navigation.setAction("exchange/account/archive/account-legacy-hold-on", account);
+        }
+
         displayAliases (account) {
             if (!this.services.accountTypes.is25g()) {
                 this.services.ExchangeAccountService.displayAliases(account);

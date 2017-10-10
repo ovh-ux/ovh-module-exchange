@@ -124,6 +124,8 @@
    <translation id="exchange_tab_ACCOUNTS_table_email" qtlid="137244">Compte e-mail</translation>
    <translation id="exchange_tab_ACCOUNTS_table_type" qtlid="2642">Type</translation>
    <translation id="exchange_tab_ACCOUNTS_table_size" qtlid="7726">Taille</translation>
+   <translation id="exchange_tab_ACCOUNTS_table_archive">Archivage</translation>
+   <translation id="exchange_tab_ACCOUNTS_table_legacy_hold_on">Legacy Hold On</translation>
    <translation id="exchange_tab_ACCOUNTS_table_alias" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ACCOUNTS_table_group" qtlid="59507">Groupe</translation>
    <translation id="exchange_tab_ACCOUNTS_table_outlook" qtlid="24427">Outlook</translation>
@@ -149,6 +151,15 @@
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Suspendu</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Suspension en cours</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SPAM" qtlid="70409">Spam</translation>
+
+   <translation id="exchange_tab_ACCOUNTS_archive_enabled">Actif</translation>
+   <translation id="exchange_tab_ACCOUNTS_archive_disabled">Inactif</translation>
+   <translation id="exchange_tab_ACCOUNTS_legacy_hold_on_unavailable">Indisponible</translation>
+   <translation id="exchange_tab_ACCOUNTS_archive_unlimited">Illimité</translation>
+   <translation id="exchange_tab_ACCOUNTS_archive_remaining_days">{0} jours restants</translation>
+   <translation id="exchange_tab_ACCOUNTS_archive_explanation">L'option d'archivage de courriels permet de conserver vos emails blabla...</translation>
+   <translation id="exchange_tab_ACCOUNTS_legacy_hold_on_explanation">L'option "Legacy Hold On" permet de blabla...</translation>
+   <translation id="exchange_tab_ACCOUNTS_legacy_hold_on_disabled_explanation">Pour configurer le Legacy Hold On, vous devez d'abord activer l'option d'archivage de courriels. Vous pouvez le faire en cliquant <a href="{0}">ici</a>.</translation>
 
    <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="31522">Ok</translation>
    <translation id="exchange_tab_ACCOUNTS_state_creating" qtlid="168185">Création</translation>
@@ -179,6 +190,7 @@
    <translation id="exchange_tab_ACCOUNTS_popover_antivirus" qtlid="80526">Antivirus</translation>
    <translation id="exchange_tab_ACCOUNTS_popover_delete" qtlid="143473">Supprimer ce compte</translation>
    <translation id="exchange_tab_ACCOUNTS_popover_reset" qtlid="376011">Réinitialiser ce compte</translation>
+   <translation id="exchange_tab_ACCOUNTS_popover_synchronize_active_directory">Synchroniser Active Directory</translation>
    <translation id="exchange_tab_ACCOUNTS_error_message" qtlid="143915">Une erreur est survenue lors du chargement de vos comptes.</translation>
    <translation id="exchange_tab_ACCOUNTS_popover_span_title" qtlid="277676">Compte bloqué SPAM</translation>
    <translation id="exchange_tab_ACCOUNTS_popover_span_text" qtlid="277689">L'envoi d'e-mail à partir de ce compte a été bloqué pour cause de SPAM. <br />Afin de débloquer ce compte, il est nécessaire de répondre au ticket en attente.<br /><br /><a href="{0}" class="link pull-right">Répondre au ticket</a><br /></translation>

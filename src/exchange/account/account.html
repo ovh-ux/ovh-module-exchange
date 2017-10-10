@@ -73,6 +73,22 @@
                             <th scope="col" class="text-center" data-i18n-static="exchange_tab_ACCOUNTS_table_type"
                                 data-ng-if="ctrl.services.exchangeVersion.isVersion(2010) && !ctrl.services.accountTypes.isHosted()"></th>
                             <th scope="col" class="text-center" data-i18n-static="exchange_tab_ACCOUNTS_table_size" style="min-width: 140px"></th>
+                            <th scope="col" class="text-center">
+                                <span data-i18n-static="exchange_tab_ACCOUNTS_table_archive"></span>
+                                <button class="btn btn-icon"
+                                  data-simplepopover-placement="right"
+                                  data-simplepopover-single="true"
+                                  data-simplepopover-title="{{i18n.exchange_tab_ACCOUNTS_table_archive}}"
+                                  data-simplepopover="{{i18n.exchange_tab_ACCOUNTS_archive_explanation}}"><span class="fa fa-question-circle"></span></button>
+                            </th>
+                            <th scope="col" class="text-center">
+                                <span data-i18n-static="exchange_tab_ACCOUNTS_table_legacy_hold_on"></span>
+                                <button class="btn btn-icon"
+                                  data-simplepopover-placement="right"
+                                  data-simplepopover-single="true"
+                                  data-simplepopover-title="{{i18n.exchange_tab_ACCOUNTS_table_legacy_hold_on}}"
+                                  data-simplepopover="{{i18n.exchange_tab_ACCOUNTS_legacy_hold_on_explanation}}"><span class="fa fa-question-circle"></span></button>
+                            </th>
                             <th scope="col" class="text-center" data-i18n-static="exchange_tab_ACCOUNTS_table_alias"
                                 data-ng-if="!account.partial"></th>
                             <th scope="col" class="text-center" data-i18n-static="exchange_tab_ACCOUNTS_table_outlook"></th>
@@ -120,6 +136,36 @@
                                     </div>
                                     <span class="progress-bar-label" data-ng-bind="::account.usedQuota.value + ' ' + tr('unit_size_' + account.usedQuota.unit) + ' / ' + account.totalQuota.value + ' ' + tr('unit_size_' + account.totalQuota.unit)"></span>
                                 </div>
+                            </td>
+
+                            <td class="text-center">
+                                 <button class="btn btn-xs"
+                                         type="button"
+                                         data-ng-class="{'btn-success': account.archive}"
+                                         data-ng-bind="tr(account.archive ? 'exchange_tab_ACCOUNTS_archive_enabled' : 'exchange_tab_ACCOUNTS_archive_disabled')"
+                                         data-ng-click="ctrl.archiveSettings(account)"></button>
+                            </td>
+
+                            <td class="text-center">
+                                <button class="btn btn-xs"
+                                        data-ng-if="account.archive"
+                                        type="button"
+                                        data-ng-class="{'btn-success': account.litigation}"
+                                        data-ng-bind="!account.litigation ? tr('exchange_tab_ACCOUNTS_archive_disabled') :
+                                        account.litigationPeriod > 0 ? tr('exchange_tab_ACCOUNTS_archive_remaining_days', [account.litigationPeriod]) : tr('exchange_tab_ACCOUNTS_archive_unlimited')"
+                                        data-ng-click="ctrl.legacyHoldOnSettings(account)"></button>
+
+                                <span data-ng-if="!account.archive"
+                                      data-i18n-static="exchange_tab_ACCOUNTS_legacy_hold_on_unavailable"></span>
+                                <button class="btn btn-icon"
+                                  data-ng-if="!account.archive"
+                                  data-linkedpopover="exchange/account/legacy-hold-on.popover.html"
+                                  data-linkedpopover-placement="right"
+                                  data-linkedpopover-single="true"
+                                  data-linkedpopover-remote="true"
+                                  data-linkedpopover-title="{{i18n.exchange_tab_ACCOUNTS_table_legacy_hold_on}}">
+                                    <span class="fa fa-question-circle"></span>
+                                </button>
                             </td>
 
                             <td class="text-center" data-ng-if="!account.partial">
