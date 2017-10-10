@@ -82,11 +82,13 @@ angular
                     this.optionsToUpdateAccount = data;
                     this.alreadyTakenEmails = data.takenEmails;
 
+                    // Check if max quota is not under min quota
+                    if (_.get(data, "maxQuota.value") < _.get(data, "minQuota.value")) {
+                        this.optionsToUpdateAccount.maxQuota = this.optionsToUpdateAccount.minQuota;
+                    }
+
                     if (_.isEmpty(data.availableDomains)) {
                         this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_add_no_domains"));
-                        this.services.navigation.resetAction();
-                    } else if (this.optionsToUpdateAccount.maxQuota.value < this.optionsToUpdateAccount.minQuota.value) {
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_SHARED_ACCOUNTS_total_quota_error_message"));
                         this.services.navigation.resetAction();
                     } else {
                         for (const domain of data.availableDomains) {
