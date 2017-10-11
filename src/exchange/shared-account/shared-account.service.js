@@ -11,12 +11,8 @@ angular
         retrievingSharedAccounts (organization, exchange, count = 5, offset = 0, search = "") {
             return this.services
                 .OvhHttp
-                .get("/sws/exchange/{organization}/{exchange}/sharedAccounts", {
+                .get(`/sws/exchange/${organization}/${exchange}/sharedAccounts`, {
                     rootPath: "2api",
-                    urlParams: {
-                        organization,
-                        exchange
-                    },
                     params: {
                         count,
                         offset,
@@ -28,24 +24,16 @@ angular
         retrievingNewSharedAccountOptions (organization, exchange) {
             return this.services
                 .OvhHttp
-                .get("/sws/exchange/{organization}/{exchange}/sharedAccounts/options", {
-                    rootPath: "2api",
-                    urlParams: {
-                        organization,
-                        exchange
-                    }
+                .get(`/sws/exchange/${organization}/${exchange}/sharedAccounts/options`, {
+                    rootPath: "2api"
                 });
         }
 
         addingSharedAccount (organization, exchange, data) {
             return this.services
                 .OvhHttp
-                .post("/email/exchange/{organization}/service/{exchange}/sharedAccount", {
+                .post(`/email/exchange/${organization}/service/${exchange}/sharedAccount`, {
                     rootPath: "apiv6",
-                    urlParams: {
-                        organization,
-                        exchange
-                    },
                     data
                 }).then((response) => {
                     this.services.Exchange.resetSharedAccounts();
@@ -55,16 +43,11 @@ angular
                 });
         }
 
-        updatingSharedAccount (organization, exchange, data) {
+        updatingSharedAccount (organization, exchange, sharedEmailAddress, data) {
             return this.services
                 .OvhHttp
-                .put("/email/exchange/{organization}/service/{exchange}/sharedAccount/{primaryEmail}", {
+                .put(`/email/exchange/${organization}/service/${exchange}/sharedAccount/${sharedEmailAddress}`, {
                     rootPath: "apiv6",
-                    urlParams: {
-                        organization,
-                        exchange,
-                        primaryEmail: data.sharedEmailAddress
-                    },
                     data
                 }).then((response) => {
                     this.services.Exchange.resetSharedAccounts();
@@ -77,13 +60,8 @@ angular
         deletingSharedAccount (organization, exchange, sharedEmailAddress) {
             return this.services
                 .OvhHttp
-                .delete("/email/exchange/{organization}/service/{exchange}/sharedAccount/{sharedEmailAddress}", {
-                    rootPath: "apiv6",
-                    urlParams: {
-                        organization,
-                        exchange,
-                        sharedEmailAddress
-                    }
+                .delete(`/email/exchange/${organization}/service/${exchange}/sharedAccount/${sharedEmailAddress}`, {
+                    rootPath: "apiv6"
                 }).then((response) => {
                     this.services.Exchange.resetSharedAccounts();
                     this.services.Exchange.resetTasks();
@@ -95,13 +73,8 @@ angular
         retrievingSharedAccountDelegations (organization, exchange, account, count = 5, offset = 0, search = "") {
             return this.services
                 .OvhHttp
-                .get("/sws/exchange/{organization}/{exchange}/sharedAccounts/{account}/delegations", {
+                .get(`/sws/exchange/${organization}/${exchange}/sharedAccounts/${account}/delegations`, {
                     rootPath: "2api",
-                    urlParams: {
-                        organization,
-                        exchange,
-                        account
-                    },
                     params: {
                         count,
                         offset,
@@ -113,13 +86,8 @@ angular
         updatingSharedAccountDelegations (organization, exchange, model) {
             return this.services
                 .OvhHttp
-                .put("/sws/exchange/{organization}/{exchange}/sharedAccounts/{primaryEmail}/delegations-update", {
+                .put(`/sws/exchange/${organization}/${exchange}/sharedAccounts/${model.primaryEmail}/delegations-update`, {
                     rootPath: "2api",
-                    urlParams: {
-                        organization,
-                        exchange,
-                        primaryEmail: model.primaryEmail
-                    },
                     data: {
                         sendRights: model.sendRights,
                         fullAccessRights: model.fullAccessRights,
@@ -136,12 +104,8 @@ angular
         retrievingQuota (organization, exchange) {
             return this.services
                 .OvhHttp
-                .get("/email/exchange/{organization}/service/{exchange}/sharedAccountQuota", {
-                    rootPath: "apiv6",
-                    urlParams: {
-                        organization,
-                        exchange
-                    }
+                .get(`/email/exchange/${organization}/service/${exchange}/sharedAccountQuota`, {
+                    rootPath: "apiv6"
                 });
         }
     });
