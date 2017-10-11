@@ -57,10 +57,6 @@ angular
             this.services.$scope.$broadcast("paginationServerSide.loadPage", 1, "accountsTable");
         }
 
-        shouldShowAccounts () {
-            return this.services.ExchangeAccountService.shouldShowAccounts;
-        }
-
         getAccounts (count, offset) {
             this.services.messaging.resetMessages();
             this.loading = true;
@@ -139,6 +135,11 @@ angular
         }
 
         archiveSettings (account) {
+            if (account.archive !== null && (account.archive.state === "creating" || account.archive.state === "deleting")) {
+                // do nothing
+                return;
+            }
+
             this.services.navigation.setAction("exchange/account/archive/account-archive", account);
         }
 
@@ -155,6 +156,10 @@ angular
 
         shouldDisplayAliases () {
             return this.services.ExchangeAccountService.shouldDisplayAliases;
+        }
+
+        shouldDisplayActiveDirectory () {
+            return this.services.ExchangeAccountService.shouldDisplayActiveDirectory;
         }
 
         configureAccountIsAuthorized () {

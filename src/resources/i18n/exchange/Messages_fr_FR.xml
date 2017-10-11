@@ -152,7 +152,9 @@
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Suspension en cours</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SPAM" qtlid="70409">Spam</translation>
 
-   <translation id="exchange_tab_ACCOUNTS_archive_enabled">Actif</translation>
+   <translation id="exchange_tab_ACCOUNTS_archive_ok">Actif</translation>
+   <translation id="exchange_tab_ACCOUNTS_archive_creating">En création</translation>
+   <translation id="exchange_tab_ACCOUNTS_archive_deleting">En suppression</translation>
    <translation id="exchange_tab_ACCOUNTS_archive_disabled">Inactif</translation>
    <translation id="exchange_tab_ACCOUNTS_legacy_hold_on_unavailable">Indisponible</translation>
    <translation id="exchange_tab_ACCOUNTS_archive_unlimited">Illimité</translation>
@@ -230,6 +232,10 @@
    <translation id="exchange_tab_ALIAS_add_no_domains" qtlid="170746">Vous n'avez pas encore ajouté de domaine ou il n'a pas encore été validé. <br/>Vous devez d'abord ajouter un domaine et attendre qu'il soit validé pour créer un alias à votre compte Exchange.</translation>
    <translation id="exchange_tab_ALIAS_domain_loading_failure" qtlid="144045">Une erreur est survenue lors du chargement de vos domaines.</translation>
    <translation id="exchange_tab_ALIAS_add_alias_limit_tooltip" qtlid="148201">Vous avez atteint la limite de 1000 alias par compte Exchange.</translation>
+
+<!-- ########################################## -->
+<!-- ACTIVE DIRECTORY -->
+   <translation id="exchange_tab_ACTIVEDIRECTORY_intro">Synchroniser Active Directory</translation>
 
 <!-- ########################################## -->
 <!-- TASKS -->
@@ -541,6 +547,20 @@
    <translation id="exchange_ACTION_update_account_title" qtlid="137712">Modifier le compte Exchange</translation>
    <translation id="exchange_ACTION_update_account_tooltip" qtlid="37875">Modifier</translation>
    <translation id="exchange_ACTION_update_account_shared_password_warning" qtlid="316918">Le mot de passe sera également modifié pour le service SharePoint associé.</translation>
+
+   <translation id="exchange_ACTION_archive_activate_title">Activer l'option d'archivage</translation>
+   <translation id="exchange_ACTION_archive_modify_title">Modifier l'option d'archivage</translation>
+   <translation id="exchange_ACTION_archive_modify_button">Valider</translation>
+   <translation id="exchange_ACTION_archive_delete_warning">Attention ! En désactivant l'option d'archivage, vous désactivez également l'option "Legacy Hold On" et vous <strong>perdez toutes vos archives</strong>.</translation>
+   <translation id="exchange_ACTION_archive_add_success_message">L'archive a bien été créée.</translation>
+   <translation id="exchange_ACTION_archive_delete_success_message">L'archive a bien été supprimée.</translation>
+   <translation id="exchange_ACTION_archive_activate_button_private">Activer</translation>
+   <translation id="exchange_ACTION_archive_activate_button_hosted">Payer et activer</translation>
+   <translation id="exchange_ACTION_archive_description">Vous pouvez désactiver à tout moment l'option d'archivage.</translation>
+   <translation id="exchange_ACTION_archive_activate">Souhaitez-vous activer l'option d'archivage de courriels sur le compte Exchange ?</translation>
+   <translation id="exchange_ACTION_archive_activate_description_private">L'option d'archivage coûte {0}/mois. Le montant de votre utilisation s'ajoutera à votre prochaine facture.</translation>
+   <translation id="exchange_ACTION_archive_activate_description_hosted">L'option d'archivage coûte {0}/mois. Elle ne sera activée qu'après le paiement du bon de commande (étape suivante).</translation>
+
    <translation id="exchange_tab_account_reset_account" qtlid="376024">Réinitialiser un compte</translation>
    <translation id="exchange_tab_account_reset_email_info" qtlid="376037">La réinitialisation d'un compte consiste à supprimer les données et le nom associé, celui-ci est toujours facturé. Si vous ne souhaitez plus être facturé, cliquez sur "mode de facturation", puis cochez "Aucun" pour le compte concerné et validez.</translation>
    <translation id="exchange_tab_account_reset_title" qtlid="376050">Voulez-vous réellement réinitialiser le compte suivant de votre service Exchange ?</translation>

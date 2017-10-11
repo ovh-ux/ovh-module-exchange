@@ -1426,4 +1426,38 @@ angular
                     }
                 });
         }
+
+        addArchive (organization, exchange, account) {
+            return this.services
+                .OvhHttp
+                .post("/email/exchange/{organization}/service/{exchange}/account/{account}/archive", {
+                    rootPath: "apiv6",
+                    urlParams: {
+                        organization,
+                        exchange,
+                        account
+                    }
+                }).then((data) => {
+                    this.resetAccounts();
+                    this.resetTasks();
+                    return data;
+                });
+        }
+
+        deleteArchive (organization, exchange, account) {
+            return this.services
+                .OvhHttp
+                .delete("/email/exchange/{organization}/service/{exchange}/account/{account}/archive", {
+                    rootPath: "apiv6",
+                    urlParams: {
+                        organization,
+                        exchange,
+                        account
+                    }
+                }).then((data) => {
+                    this.resetAccounts();
+                    this.resetTasks();
+                    return data;
+                });
+        }
     });

@@ -1,5 +1,6 @@
 <div class="container-fluid px-0" data-ng-controller="ExchangeTabAccountsCtrl as ctrl">
     <div data-ng-if="ctrl.shouldDisplayAliases()" data-ng-include="'exchange/account/alias/account-alias.html'"></div>
+    <div data-ng-if="ctrl.shouldDisplayActiveDirectory()" data-ng-include="'exchange/account/active-directory/account-active-directory.html'"></div>
 
     <div class="row" data-ng-if="ctrl.shouldDisplayAccounts()">
         <div class="col-md-9">
@@ -141,8 +142,11 @@
                             <td class="text-center">
                                  <button class="btn btn-xs"
                                          type="button"
-                                         data-ng-class="{'btn-success': account.archive}"
-                                         data-ng-bind="tr(account.archive ? 'exchange_tab_ACCOUNTS_archive_enabled' : 'exchange_tab_ACCOUNTS_archive_disabled')"
+                                         data-ng-class="{
+                                           'btn-success': (account.archive && account.archive.state === 'ok'),
+                                           'btn-warning': (account.archive && (account.archive.state === 'creating' || account.archive.state === 'deleting'))
+                                         }"
+                                         data-ng-bind="tr(account.archive ? 'exchange_tab_ACCOUNTS_archive_' + account.archive.state : 'exchange_tab_ACCOUNTS_archive_disabled')"
                                          data-ng-click="ctrl.archiveSettings(account)"></button>
                             </td>
 
@@ -159,7 +163,7 @@
                                       data-i18n-static="exchange_tab_ACCOUNTS_legacy_hold_on_unavailable"></span>
                                 <button class="btn btn-icon"
                                   data-ng-if="!account.archive"
-                                  data-linkedpopover="exchange/account/legacy-hold-on.popover.html"
+                                  data-linkedpopover="exchange/account/archive/account-legacy-hold-on.popover.html"
                                   data-linkedpopover-placement="right"
                                   data-linkedpopover-single="true"
                                   data-linkedpopover-remote="true"

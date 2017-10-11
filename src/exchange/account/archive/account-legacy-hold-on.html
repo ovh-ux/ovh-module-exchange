@@ -1,0 +1,12 @@
+<div data-ng-controller="ExchangeAccountLegacyHoldOnCtrl as ctrl">
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="update"
+         data-wizard-title="">
+        <div data-wizard-step
+             data-wizard-step-valid="ctrl.needsUpdate()">
+
+            <div class="loader text-center" data-ng-if="!ctrl.account"></div>
+        </div>
+    </div>
+</div>
