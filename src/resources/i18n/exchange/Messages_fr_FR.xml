@@ -552,8 +552,8 @@
    <translation id="exchange_ACTION_archive_modify_title">Modifier l'option d'archivage</translation>
    <translation id="exchange_ACTION_archive_modify_button">Valider</translation>
    <translation id="exchange_ACTION_archive_delete_warning">Attention ! En désactivant l'option d'archivage, vous désactivez également l'option "Legacy Hold On" et vous <strong>perdez toutes vos archives</strong>.</translation>
-   <translation id="exchange_ACTION_archive_add_success_message">L'archive a bien été créée.</translation>
-   <translation id="exchange_ACTION_archive_delete_success_message">L'archive a bien été supprimée.</translation>
+   <translation id="exchange_ACTION_archive_add_success_message">La demande d'activation de l'archive a bien été prise en compte.</translation>
+   <translation id="exchange_ACTION_archive_delete_success_message">La demande de suppression de l'archive a bien été prise en compte.</translation>
    <translation id="exchange_ACTION_archive_activate_button_private">Activer</translation>
    <translation id="exchange_ACTION_archive_activate_button_hosted">Payer et activer</translation>
    <translation id="exchange_ACTION_archive_description">Vous pouvez désactiver à tout moment l'option d'archivage.</translation>
