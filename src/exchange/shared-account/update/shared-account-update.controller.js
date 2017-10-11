@@ -82,9 +82,12 @@ angular
                     this.optionsToUpdateAccount = data;
                     this.alreadyTakenEmails = data.takenEmails;
 
-                    // Check if max quota is not under min quota
-                    if (_.get(data, "maxQuota.value") < _.get(data, "minQuota.value")) {
-                        this.optionsToUpdateAccount.maxQuota = this.optionsToUpdateAccount.minQuota;
+                    // Check if max quota is not under account quota or min quota
+                    if (
+                        _.get(this.optionsToUpdateAccount, "maxQuota.value") < this.originalQuota ||
+                        _.get(this.optionsToUpdateAccount, "maxQuota.value") < _.get(this.optionsToUpdateAccount, "minQuota.value")
+                    ) {
+                        this.optionsToUpdateAccount.maxQuota.value = Math.max(this.originalQuota, this.optionsToUpdateAccount.minQuota.value);
                     }
 
                     if (_.isEmpty(data.availableDomains)) {
