@@ -152,17 +152,17 @@
 
                             <td class="text-center">
                                 <button class="btn btn-xs"
-                                        data-ng-if="account.archive"
+                                        data-ng-if="account.archive && account.archive.state === 'ok'"
                                         type="button"
                                         data-ng-class="{'btn-success': account.litigation}"
                                         data-ng-bind="!account.litigation ? tr('exchange_tab_ACCOUNTS_archive_disabled') :
                                         account.litigationPeriod > 0 ? tr('exchange_tab_ACCOUNTS_archive_remaining_days', [account.litigationPeriod]) : tr('exchange_tab_ACCOUNTS_archive_unlimited')"
                                         data-ng-click="ctrl.legacyHoldOnSettings(account)"></button>
 
-                                <span data-ng-if="!account.archive"
+                                <span data-ng-if="!account.archive || account.archive.state !== 'ok'"
                                       data-i18n-static="exchange_tab_ACCOUNTS_legacy_hold_on_unavailable"></span>
                                 <button class="btn btn-icon"
-                                  data-ng-if="!account.archive"
+                                  data-ng-if="!account.archive || account.archive.state !== 'ok'"
                                   data-linkedpopover="exchange/account/archive/account-legacy-hold-on.popover.html"
                                   data-linkedpopover-placement="right"
                                   data-linkedpopover-single="true"

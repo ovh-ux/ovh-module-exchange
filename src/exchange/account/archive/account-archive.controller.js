@@ -20,10 +20,14 @@ angular
             this.originalValue = this.account.archive != null;
             this.value = this.originalValue;
 
-            this.isPrivate = null;
+            this.offer = Exchange.value.offer;
+
+            this.firstTime = false;
             if (!this.value) {
-                this.isPrivate = Exchange.value.offer === "DEDICATED";
+                // we always want to subscribe to the offer
+                // if it is the first time we are presented this form
                 this.value = true;
+                this.firstTime = true;
             }
         }
 
@@ -34,13 +38,18 @@ angular
         update () {
             if (this.needsUpdate()) {
                 if (this.value) {
-                    this.services.Exchange.addArchive(this.$routerParams.organization, this.$routerParams.productId, this.account.primaryEmailAddress).then((data) => {
-                        this.services.messaging.writeSuccess(this.services.translator.tr("exchange_ACTION_archive_add_success_message"));
-                    }).catch((failure) => {
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_common_error"), failure);
-                    }).finally(() => {
-                        this.services.navigation.resetAction();
-                    });
+                    if (this.offer == "DEDICATED") {
+                        this.services.Exchange.addArchive(this.$routerParams.organization, this.$routerParams.productId, this.account.primaryEmailAddress).then((data) => {
+                            this.services.messaging.writeSuccess(this.services.translator.tr("exchange_ACTION_archive_add_success_message"));
+                        }).catch((failure) => {
+                            this.services.messaging.writeError(this.services.translator.tr("exchange_common_error"), failure);
+                        }).finally(() => {
+                            this.services.navigation.resetAction();
+                        });
+                    } else {
+
+                        // bc
+                    }
                 } else {
                     this.services.Exchange.deleteArchive(this.$routerParams.organization, this.$routerParams.productId, this.account.primaryEmailAddress).then((data) => {
                         this.services.messaging.writeSuccess(this.services.translator.tr("exchange_ACTION_archive_delete_success_message"));

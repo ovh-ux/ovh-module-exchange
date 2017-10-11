@@ -2,16 +2,16 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="update"
-         data-wizard-confirm-button-text="ctrl.isPrivate === null ? i18n.exchange_ACTION_archive_modify_button :
-         ctrl.isPrivate ? i18n.exchange_ACTION_archive_activate_button_private : i18n.exchange_ACTION_archive_activate_button_hosted"
-         data-wizard-title="ctrl.isPrivate === null ? i18n.exchange_ACTION_archive_modify_title : i18n.exchange_ACTION_archive_activate_title">
+         data-wizard-confirm-button-text="!ctrl.firstTime ? i18n.exchange_ACTION_archive_modify_button :
+         ctrl.offer === 'DEDICATED' ? i18n.exchange_ACTION_archive_activate_button_private : i18n.exchange_ACTION_archive_activate_button_hosted"
+         data-wizard-title="ctrl.firstTime ? i18n.exchange_ACTION_archive_activate_title : i18n.exchange_ACTION_archive_modify_title">
 
         <div data-wizard-step
              data-wizard-step-valid="ctrl.needsUpdate()">
 
-            <p data-ng-if="ctrl.isPrivate === null" data-i18n-static="exchange_ACTION_archive_description"></p>
+            <p data-ng-if="!ctrl.firstTime" data-i18n-static="exchange_ACTION_archive_description"></p>
 
-            <div class="radio ml-3" data-ng-if="ctrl.isPrivate === null">
+            <div class="radio ml-3" data-ng-if="!ctrl.firstTime">
                 <label class="m-3">
                     <input type="radio" name="archive" data-ng-model="ctrl.value" data-ng-value="true">
                     <span data-i18n-static="exchange_tab_ACCOUNTS_archive_ok"></span>
@@ -25,11 +25,11 @@
             <div class="alert alert-warning mt-4"
                  role="alert"
                  data-ng-bind-html="tr('exchange_ACTION_archive_delete_warning')"
-                 data-ng-if="!ctrl.value && ctrl.isPrivate === null"></div>
+                 data-ng-if="!ctrl.value && !ctrl.firstTime"></div>
 
-            <p data-ng-if="ctrl.isPrivate !== null" data-i18n-static="exchange_ACTION_archive_activate"></p>
-            <p data-ng-if="ctrl.isPrivate === true" data-i18n-static="exchange_ACTION_archive_activate_description_private"></p>
-            <p data-ng-if="ctrl.isPrivate === false" data-i18n-static="exchange_ACTION_archive_activate_description_hosted"></p>
+            <p data-ng-if="ctrl.firstTime" data-i18n-static="exchange_ACTION_archive_activate"></p>
+            <p data-ng-if="ctrl.firstTime && ctrl.offer === 'DEDICATED'" data-ng-bind-html="tr('exchange_ACTION_archive_activate_description_private', '/!\\ 999999999999999!!!! euros')"></p>
+            <p data-ng-if="ctrl.firstTime && ctrl.offer === 'HOSTED'" data-ng-bind-html="tr('exchange_ACTION_archive_activate_description_hosted', '/!\\ 999999999999999!!!! euros')"></p>
 
             <div class="loader text-center" data-ng-if="!ctrl.account"></div>
         </div>
