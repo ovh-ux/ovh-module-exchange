@@ -548,6 +548,9 @@
    <translation id="exchange_ACTION_update_account_tooltip" qtlid="37875">Modifier</translation>
    <translation id="exchange_ACTION_update_account_shared_password_warning" qtlid="316918">Le mot de passe sera également modifié pour le service SharePoint associé.</translation>
 
+<!-- ########################################## -->
+<!-- ARCHIVE -->
+
    <translation id="exchange_ACTION_archive_activate_title">Activer l'option d'archivage</translation>
    <translation id="exchange_ACTION_archive_modify_title">Modifier l'option d'archivage</translation>
    <translation id="exchange_ACTION_archive_modify_button">Valider</translation>
@@ -556,10 +559,23 @@
    <translation id="exchange_ACTION_archive_delete_success_message">La demande de suppression de l'archive a bien été prise en compte.</translation>
    <translation id="exchange_ACTION_archive_activate_button_private">Activer</translation>
    <translation id="exchange_ACTION_archive_activate_button_hosted">Payer et activer</translation>
-   <translation id="exchange_ACTION_archive_description">Vous pouvez désactiver à tout moment l'option d'archivage.</translation>
-   <translation id="exchange_ACTION_archive_activate">Souhaitez-vous activer l'option d'archivage de courriels sur le compte Exchange ?</translation>
+   <translation id="exchange_ACTION_archive_description">Vous pouvez désactiver à tout moment l'option d'archivage du compte <strong>{0}</strong>.</translation>
+   <translation id="exchange_ACTION_archive_activate">Souhaitez-vous activer l'option d'archivage de courriels sur le compte Exchange <strong>{0}</strong> ?</translation>
    <translation id="exchange_ACTION_archive_activate_description_private">L'option d'archivage coûte {0}/mois. Le montant de votre utilisation s'ajoutera à votre prochaine facture.</translation>
    <translation id="exchange_ACTION_archive_activate_description_hosted">L'option d'archivage coûte {0}/mois. Elle ne sera activée qu'après le paiement du bon de commande (étape suivante).</translation>
+
+<!-- ########################################## -->
+<!-- LEGACY HOLD ON -->
+
+   <translation id="exchange_ACTION_legacy_hold_on_title">Activer l'option Legacy Hold On</translation>
+   <translation id="exchange_ACTION_legacy_hold_on_description">Vous pouvez modifier le nombre de jour d'activation ou tout simplement désactiver l'option pour le compte <strong>{0}</strong>.</translation>
+   <translation id="exchange_ACTION_legacy_hold_on_first_time_description">Vous pouvez activer l'option Legacy Hold On, et spécifier sa durée d'activation pour le compte <strong>{0}</strong>.</translation>
+   <translation id="exchange_ACTION_legacy_hold_on_form_days">jours</translation>
+   <translation id="exchange_ACTION_legacy_hold_on_form_unlimited">Période illimitée</translation>
+   <translation id="exchange_ACTION_legacy_hold_on_warning">Attention ! En désactivant l'option Legacy Hold On, les courriels supprimés à partir du Webmail ne seront plus récupérables.</translation>
+
+<!-- ########################################## -->
+<!-- ACCOUNT -->
 
    <translation id="exchange_tab_account_reset_account" qtlid="376024">Réinitialiser un compte</translation>
    <translation id="exchange_tab_account_reset_email_info" qtlid="376037">La réinitialisation d'un compte consiste à supprimer les données et le nom associé, celui-ci est toujours facturé. Si vous ne souhaitez plus être facturé, cliquez sur "mode de facturation", puis cochez "Aucun" pour le compte concerné et validez.</translation>

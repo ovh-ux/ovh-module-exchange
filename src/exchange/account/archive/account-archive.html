@@ -9,15 +9,15 @@
         <div data-wizard-step
              data-wizard-step-valid="ctrl.needsUpdate()">
 
-            <p data-ng-if="!ctrl.firstTime" data-i18n-static="exchange_ACTION_archive_description"></p>
+            <p data-ng-if="!ctrl.firstTime" data-ng-bind-html="tr('exchange_ACTION_archive_description', ctrl.account.primaryEmailAddress)"></p>
 
-            <div class="radio ml-3" data-ng-if="!ctrl.firstTime">
-                <label class="m-3">
-                    <input type="radio" name="archive" data-ng-model="ctrl.value" data-ng-value="true">
+            <div class="form-group ml-3" data-ng-if="!ctrl.firstTime">
+                <label class="radio-inline">
+                    <input type="radio" name="radio-archive" data-ng-model="ctrl.value" data-ng-value="true" />
                     <span data-i18n-static="exchange_tab_ACCOUNTS_archive_ok"></span>
                 </label>
-                <label class="m-3">
-                    <input type="radio" name="archive" data-ng-model="ctrl.value" data-ng-value="false">
+                <label class="radio-inline">
+                    <input type="radio" name="radio-archive" data-ng-model="ctrl.value" data-ng-value="false">
                     <span data-i18n-static="exchange_tab_ACCOUNTS_archive_disabled"></span>
                 </label>
             </div>
@@ -27,7 +27,7 @@
                  data-ng-bind-html="tr('exchange_ACTION_archive_delete_warning')"
                  data-ng-if="!ctrl.value && !ctrl.firstTime"></div>
 
-            <p data-ng-if="ctrl.firstTime" data-i18n-static="exchange_ACTION_archive_activate"></p>
+            <p data-ng-if="ctrl.firstTime" data-ng-bind-html="tr('exchange_ACTION_archive_activate', ctrl.account.primaryEmailAddress)"></p>
             <p data-ng-if="ctrl.firstTime && ctrl.offer === 'DEDICATED'" data-ng-bind-html="tr('exchange_ACTION_archive_activate_description_private', '/!\\ 999999999999999!!!! euros')"></p>
             <p data-ng-if="ctrl.firstTime && ctrl.offer === 'HOSTED'" data-ng-bind-html="tr('exchange_ACTION_archive_activate_description_hosted', '/!\\ 999999999999999!!!! euros')"></p>
 
