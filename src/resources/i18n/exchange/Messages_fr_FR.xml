@@ -161,7 +161,7 @@
    <translation id="exchange_tab_ACCOUNTS_archive_remaining_days">{0} jours restants</translation>
    <translation id="exchange_tab_ACCOUNTS_archive_explanation">L'option d'archivage de courriels permet de conserver vos emails blabla...</translation>
    <translation id="exchange_tab_ACCOUNTS_legacy_hold_on_explanation">L'option "Legacy Hold On" permet de blabla...</translation>
-   <translation id="exchange_tab_ACCOUNTS_legacy_hold_on_disabled_explanation">Pour configurer le Legacy Hold On, vous devez d'abord activer l'option d'archivage de courriels. Vous pouvez le faire en cliquant <a href="{0}">ici</a>.</translation>
+   <translation id="exchange_tab_ACCOUNTS_legacy_hold_on_disabled_explanation">Pour configurer le Legacy Hold On, vous devez d'abord activer l'option d'archivage de courriels.</translation>
 
    <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="31522">Ok</translation>
    <translation id="exchange_tab_ACCOUNTS_state_creating" qtlid="168185">Création</translation>
