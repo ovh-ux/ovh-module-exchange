@@ -140,14 +140,22 @@
                             </td>
 
                             <td class="text-center">
-                                 <button class="btn btn-xs"
-                                         type="button"
-                                         data-ng-class="{
-                                           'btn-success': (account.archive && account.archive.state === 'ok'),
-                                           'btn-warning': (account.archive && (account.archive.state === 'creating' || account.archive.state === 'deleting'))
-                                         }"
-                                         data-ng-bind="tr(account.archive ? 'exchange_tab_ACCOUNTS_archive_' + account.archive.state : 'exchange_tab_ACCOUNTS_archive_disabled')"
-                                         data-ng-click="ctrl.archiveSettings(account)"></button>
+                                <span class="label" data-ng-if="account.archive && (account.archive.state !== 'ok')"
+                                      data-ng-class="{
+                                          'label-info': account.archive.state === 'creating',
+                                          'label-danger': account.archive.state === 'deleting'
+                                        }"
+                                      data-ng-bind="tr('exchange_tab_ACCOUNTS_archive_' + account.archive.state)"></span>
+
+                                <button class="btn btn-xs" data-ng-if="!account.archive || (account.archive && account.archive.state === 'ok')"
+                                        type="button"
+                                        data-ng-class="{
+                                          'btn-success': (account.archive && account.archive.state === 'ok'),
+                                          'btn-info': (account.archive && account.archive.state === 'creating'),
+                                          'btn-danger': (account.archive && account.archive.state === 'deleting')
+                                        }"
+                                        data-ng-bind="tr(account.archive ? 'exchange_tab_ACCOUNTS_archive_' + account.archive.state : 'exchange_tab_ACCOUNTS_archive_disabled')"
+                                        data-ng-click="ctrl.archiveSettings(account)"></button>
                             </td>
 
                             <td class="text-center">

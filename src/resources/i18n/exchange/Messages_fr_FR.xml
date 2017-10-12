@@ -573,6 +573,7 @@
    <translation id="exchange_ACTION_legacy_hold_on_form_days">jours</translation>
    <translation id="exchange_ACTION_legacy_hold_on_form_unlimited">Période illimitée</translation>
    <translation id="exchange_ACTION_legacy_hold_on_warning">Attention ! En désactivant l'option Legacy Hold On, les courriels supprimés à partir du Webmail ne seront plus récupérables.</translation>
+   <translation id="exchange_ACTION_legacy_hold_on_success_message">Vos modifications de l'option Legacy Hold On ont bien été prises en compte.</translation>
 
 <!-- ########################################## -->
 <!-- ACCOUNT -->

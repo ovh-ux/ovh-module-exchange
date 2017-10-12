@@ -22,11 +22,11 @@
             </div>
 
             <div class="form-group" data-ng-if="ctrl.value">
+                <label>
+                    <input type="checkbox" name="unlimited" data-ng-model="ctrl.unlimited" data-ng-click="ctrl.updateUnlimited()" />
+                    <span data-i18n-static="exchange_ACTION_legacy_hold_on_form_unlimited"></span>
+                </label>
                 <div class="input-group">
-                    <span class="input-group-addon">
-                        <input type="checkbox" name="unlimited" data-ng-model="ctrl.unlimited" />
-                        <span data-i18n-static="exchange_ACTION_legacy_hold_on_form_unlimited"></span>
-                    </span>
                     <input class="form-control" type="number" name="days" data-ng-model="ctrl.days" data-ng-disabled="ctrl.unlimited">
                     <span class="input-group-addon" data-i18n-static="exchange_ACTION_legacy_hold_on_form_days"></span>
                 </div>
