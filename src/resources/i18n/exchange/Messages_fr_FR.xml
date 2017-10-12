@@ -319,6 +319,8 @@
    <translation id="exchange_tab_TASKS_DELETE_SHARED_ACCOUNT_FULL_ACCESS" qtlid="215286">Suppression de droits d’accès pour compte partagé</translation>
    <translation id="exchange_tab_TASKS_DELETE_SHARED_ACCOUNT_SEND_AS" qtlid="215299">Suppression de droits d'envoi pour compte partagé</translation>
    <translation id="exchange_tab_TASKS_DELETE_SHARED_ACCOUNT_SEND_ON_BEHALF_TO" qtlid="215312">Suppression de droits d'envoyer de la part pour compte partagé</translation>
+   <translation id="exchange_tab_TASKS_ADD_ACCOUNT_ARCHIVE">Activation de l'archivage</translation>
+   <translation id="exchange_tab_TASKS_DELETE_ACCOUNT_ARCHIVE">Suppression de l'archivage</translation>
    <translation id="exchange_tab_TASKS_table_start_date" qtlid="201328">Début</translation>
    <translation id="exchange_tab_TASKS_table_finish_date" qtlid="201341">Fin</translation>
    <translation id="exchange_tab_TASKS_warning" qtlid="136347">Attention!</translation>
