@@ -39,26 +39,44 @@ angular
             if (this.needsUpdate()) {
                 if (this.value) {
                     if (this.offer == "DEDICATED") {
-                        this.services.Exchange.addArchive(this.$routerParams.organization, this.$routerParams.productId, this.account.primaryEmailAddress).then((data) => {
-                            this.services.messaging.writeSuccess(this.services.translator.tr("exchange_ACTION_archive_add_success_message"));
-                        }).catch((failure) => {
-                            this.services.messaging.writeError(this.services.translator.tr("exchange_common_error"), failure);
-                        }).finally(() => {
-                            this.services.navigation.resetAction();
-                        });
+                        this.addArchive();
                     } else {
-
-                        // bc
+                        this.services.navigation.resetAction();
+                        this.goToOrder();
                     }
                 } else {
-                    this.services.Exchange.deleteArchive(this.$routerParams.organization, this.$routerParams.productId, this.account.primaryEmailAddress).then((data) => {
-                        this.services.messaging.writeSuccess(this.services.translator.tr("exchange_ACTION_archive_delete_success_message"));
-                    }).catch((failure) => {
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_common_error"), failure);
-                    }).finally(() => {
-                        this.services.navigation.resetAction();
-                    });
+                    this.deleteArchive();
                 }
             }
+        }
+
+        addArchive () {
+            this.services.Exchange.addArchive(this.$routerParams.organization, this.$routerParams.productId, this.account.primaryEmailAddress).then((data) => {
+                this.services.messaging.writeSuccess(this.services.translator.tr("exchange_ACTION_archive_add_success_message"));
+            }).catch((failure) => {
+                this.services.messaging.writeError(this.services.translator.tr("exchange_common_error"), failure);
+            }).finally(() => {
+                this.services.navigation.resetAction();
+            });
+        }
+
+        deleteArchive () {
+            this.services.Exchange.deleteArchive(this.$routerParams.organization, this.$routerParams.productId, this.account.primaryEmailAddress).then((data) => {
+                this.services.messaging.writeSuccess(this.services.translator.tr("exchange_ACTION_archive_delete_success_message"));
+            }).catch((failure) => {
+                this.services.messaging.writeError(this.services.translator.tr("exchange_common_error"), failure);
+            }).finally(() => {
+                this.services.navigation.resetAction();
+            });
+        }
+
+        goToOrder () {
+            const answer = {
+
+            };
+
+            this.services.User.getUrlOfEndsWithSubsidiary("express_order").then((expressOrderUrl) => {
+                this.services.$window.open(`${expressOrderUrl}#/new/express/resume?products=${JSURL.stringify(answer)}`, "_blank");
+            });
         }
     });
