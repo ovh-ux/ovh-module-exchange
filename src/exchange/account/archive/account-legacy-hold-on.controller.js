@@ -38,9 +38,12 @@ angular
         }
 
         applyValues (account) {
-            account.litigation = this.value;
-            account.litigationPeriod = !this.value || this.unlimited ? 0 : this.days;
-            return account;
+            let values = {
+                primaryEmailAddress: account.primaryEmailAddress,
+                litigation: this.value,
+                litigationPeriod: !this.value || this.unlimited ? 0 : this.days
+            }
+            return values;
         }
 
         update () {
