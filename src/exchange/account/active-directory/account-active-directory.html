@@ -6,16 +6,52 @@
                 <span class="fa fa-chevron-left mr-2" aria-hidden="true"></span>
                 <span data-i18n-static="exchange_tab_ALIAS_back_button"></span>
             </button>
-            <span class="ml-4" data-i18n-static="exchange_tab_ACTIVEDIRECTORY_intro"></span>
+            <h4 class="ml-4 m-1" data-i18n-static="exchange_tab_ACTIVEDIRECTORY_intro"></h4>
         </div>
-
-        <div class="loader text-center" data-ng-if="ctrl.activeDirectoryLoading"></div>
 
         <div class="alert alert-info mt-4"
              role="alert"
-             data-i18n-static="lol"
-             data-ng-if="!ctrl.activeDirectoryLoading"></div>
+             data-ng-bind-html="::tr('exchange_tab_ACTIVEDIRECTORY_info', ctrl.getActiveDirectoryPrice())"></div>
 
-        <div data-ng-show="!ctrl.activeDirectoryLoading"></div>
+        <h5 data-i18n-static="exchange_tab_ACTIVEDIRECTORY_title"></h5>
+
+        <ol>
+            <li>
+                <div class="mb-2" data-i18n-static="exchange_tab_ACTIVEDIRECTORY_step1"></div>
+                <div class="m-3">
+                    <button class="btn btn-default" type="button"
+                            data-i18n-static="exchange_tab_ACTIVEDIRECTORY_download_button"
+                            data-ng-click=""></button>
+                </div>
+            </li>
+            <li>
+                <div class="mb-2" data-i18n-static="exchange_tab_ACTIVEDIRECTORY_step2"></div>
+                <div class="m-3 row">
+                    <div class="col-md-9 col-lg-6">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="inputUser" class="col-sm-4 control-label" data-i18n-static="exchange_tab_ACTIVEDIRECTORY_username"></label>
+                                <div class="col-sm-6">
+                                    <input class="form-control" id="inputUser"
+                                           type="text" readonly
+                                           placeholder="{{::i18n.exchange_tab_ACTIVEDIRECTORY_username}}"
+                                           data-ng-model="ctrl.username">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword" class="col-sm-4 control-label" data-i18n-static="exchange_tab_ACTIVEDIRECTORY_password"></label>
+                                <div class="col-sm-6">
+                                    <input class="form-control" id="inputPassword"
+                                           type="password" readonly
+                                           placeholder="{{::i18n.exchange_tab_ACTIVEDIRECTORY_password}}"
+                                           data-ng-model="ctrl.password">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </li>
+            <li data-i18n-static="exchange_tab_ACTIVEDIRECTORY_step3"></li>
+        </ol>
     </div>
 </div>

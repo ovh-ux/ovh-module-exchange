@@ -147,6 +147,10 @@ angular
             this.services.navigation.setAction("exchange/account/archive/account-legacy-hold-on", account);
         }
 
+        activeDirectorySettings (account) {
+            this.services.ExchangeAccountService.displayActiveDirectory();
+        }
+
         displayAliases (account) {
             if (!this.services.accountTypes.is25g()) {
                 this.services.ExchangeAccountService.displayAliases(account);

@@ -313,6 +313,11 @@
                 <span data-ng-bind="tr('exchange_ACTION_export_accounts_doing_button')" data-ng-if="ctrl.loadingAction.exportCsv"></span>
                 <span data-ng-bind="tr('exchange_ACTION_export_accounts_button')" data-ng-if="!ctrl.loadingAction.exportCsv"></span>
             </button>
+            <button class="btn btn-block btn-default"
+                    type="button"
+                    data-ng-click="ctrl.activeDirectorySettings()">
+                <span data-i18n-static="exchange_ACTION_synchronize_active_directory"></span>
+            </button>
         </div>
     </div>
 </div>

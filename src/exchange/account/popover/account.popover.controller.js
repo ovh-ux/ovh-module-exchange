@@ -48,12 +48,6 @@ angular
             }
         }
 
-        activeDirectoryDisplay (account) {
-            if (this.services.exchangeStates.constructor.isOk(account)) {
-                this.services.ExchangeAccountService.displayActiveDirectory(account);
-            }
-        }
-
         outlookSettings (account) {
             if (this.services.exchangeStates.constructor.isOk(account)) {
                 this.services.navigation.setAction("exchange/account/outlook/account-outlook", angular.copy(account));

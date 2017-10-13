@@ -192,7 +192,6 @@
    <translation id="exchange_tab_ACCOUNTS_popover_antivirus" qtlid="80526">Antivirus</translation>
    <translation id="exchange_tab_ACCOUNTS_popover_delete" qtlid="143473">Supprimer ce compte</translation>
    <translation id="exchange_tab_ACCOUNTS_popover_reset" qtlid="376011">Réinitialiser ce compte</translation>
-   <translation id="exchange_tab_ACCOUNTS_popover_synchronize_active_directory">Synchroniser Active Directory</translation>
    <translation id="exchange_tab_ACCOUNTS_error_message" qtlid="143915">Une erreur est survenue lors du chargement de vos comptes.</translation>
    <translation id="exchange_tab_ACCOUNTS_popover_span_title" qtlid="277676">Compte bloqué SPAM</translation>
    <translation id="exchange_tab_ACCOUNTS_popover_span_text" qtlid="277689">L'envoi d'e-mail à partir de ce compte a été bloqué pour cause de SPAM. <br />Afin de débloquer ce compte, il est nécessaire de répondre au ticket en attente.<br /><br /><a href="{0}" class="link pull-right">Répondre au ticket</a><br /></translation>
@@ -236,6 +235,14 @@
 <!-- ########################################## -->
 <!-- ACTIVE DIRECTORY -->
    <translation id="exchange_tab_ACTIVEDIRECTORY_intro">Synchroniser Active Directory</translation>
+   <translation id="exchange_tab_ACTIVEDIRECTORY_info">La synchronisation de l'Active Directory engendre un coût supplémentaire de 0,20 €/compte/mois.<br /> Le montant de votre utilisation s'ajoutera à votre prochaine facture.</translation>
+   <translation id="exchange_tab_ACTIVEDIRECTORY_title">Étapes à suivre pour effectuer la synchronisation:</translation>
+   <translation id="exchange_tab_ACTIVEDIRECTORY_step1">Télécharger l'utilitaire sur votre ordinateur.</translation>
+   <translation id="exchange_tab_ACTIVEDIRECTORY_step2">Se connecter à l'utilitaire à l'aide des identifiants suivants:</translation>
+   <translation id="exchange_tab_ACTIVEDIRECTORY_step3">Suivre les étapes de synchronisation à partir de l'utilitaire.</translation>
+   <translation id="exchange_tab_ACTIVEDIRECTORY_download_button">Télécharger</translation>
+   <translation id="exchange_tab_ACTIVEDIRECTORY_username">Nom d'utilisateur</translation>
+   <translation id="exchange_tab_ACTIVEDIRECTORY_password">Mot de passe</translation>
 
 <!-- ########################################## -->
 <!-- TASKS -->
@@ -549,6 +556,7 @@
    <translation id="exchange_ACTION_update_account_title" qtlid="137712">Modifier le compte Exchange</translation>
    <translation id="exchange_ACTION_update_account_tooltip" qtlid="37875">Modifier</translation>
    <translation id="exchange_ACTION_update_account_shared_password_warning" qtlid="316918">Le mot de passe sera également modifié pour le service SharePoint associé.</translation>
+   <translation id="exchange_ACTION_synchronize_active_directory">Synchroniser Active Directory</translation>
 
 <!-- ########################################## -->
 <!-- ARCHIVE -->

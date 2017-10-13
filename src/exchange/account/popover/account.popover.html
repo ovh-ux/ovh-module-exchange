@@ -36,11 +36,6 @@
             data-ng-if="ctrl.services.accountTypes.isHosted() || ctrl.services.accountTypes.isProvider()"></button>
     <button class="btn btn-link"
             type="button"
-            data-i18n-static="exchange_tab_ACCOUNTS_popover_synchronize_active_directory"
-            data-ng-click="ctrl.activeDirectoryDisplay(account)"
-            data-ng-disabled="ctrl.isDisabled(account)"></button>
-    <button class="btn btn-link"
-            type="button"
             data-ng-bind="ctrl.removeAccountInsteadOfReset ? i18n.exchange_tab_ACCOUNTS_popover_delete : i18n.exchange_tab_ACCOUNTS_popover_reset"
             data-ng-click="ctrl.removeAccount(account)"
             data-ng-disabled="ctrl.isDisabled(account)"></button>

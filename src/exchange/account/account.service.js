@@ -14,8 +14,8 @@ angular
             this.shouldDisplayActiveDirectory = false;
         }
 
-        displayActiveDirectory (selectedAccount) {
-            this.selectedAccount = selectedAccount;
+        displayActiveDirectory () {
+            this.selectedAccount = null;
             this.shouldDisplayAccounts = false;
             this.shouldDisplayAliases = false;
             this.shouldDisplayActiveDirectory = true;
