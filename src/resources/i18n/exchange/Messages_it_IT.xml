@@ -600,7 +600,7 @@
    <translation id="exchange_tab_domain_target_mail_server_label" qtlid="316957">Server di posta di destinazione</translation>
    <translation id="exchange_tab_domain_noovh_mx_info" qtlid="317126">Le modifiche MX e SRV dovranno essere effettuate manualmente nella tua zona DNS. Una volta convalidato il record CNAME, le informazioni necessarie saranno disponibili nella sezione "Domini associati".</translation>
    <translation id="exchange_tab_domain_modify_domain" qtlid="137101">Modifica un dominio</translation>
-<translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="416397;416410;416410;169498;416423;416449">
+<translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="416397">
 L'antispam Vade Secure è compatibile con la modalità non autoritativa (solo se i tuoi account POP/IMAP sono ospitati in OVH). In questo caso, ti consigliamo di utilizzare: <strong qtlid="266365">{0}</strong>, <strong qtlid="78906">{1}</strong>, <strong qtlid="183112">{2}</strong> e <strong qtlid="292228">{3}</strong>
 <br/><br/> Se hai attivato la modalità non autoritativa per account email non ospitati in OVH, utilizza: <strong qtlid="416436">{4}</strong> (vedi sezione domini associati)
 </translation>
