@@ -13,28 +13,21 @@
             <div class="mb-3">
                 <form class="form-inline d-md-flex justify-content-md-end" name="searchResourceForm">
                     <div class="form-group">
-                        <label class="sr-only"
-                               for="searchResourceSearch"
+                        <label class="sr-only" for="searchResourceSearch"
                                data-ng-bind="::i18n.common_search"></label>
                         <div class="input-group">
-                            <input type="text"
-                                   class="form-control"
-                                   id="searchResourceSearch"
-                                   name="searchResourceSearch"
-                                   placeholder="{{::i18n.exchange_tab_ACCOUNTS_table_email}}"
+                            <input type="text" class="form-control" id="searchResourceSearch" name="searchResourceSearch" placeholder="{{::i18n.exchange_tab_ACCOUNTS_table_email}}"
                                    data-ng-change="ctrl.onSearchValueChanged()"
                                    data-ng-disabled="ctrl.loading"
                                    data-ng-model="ctrl.searchValue">
                             <div class="input-group-btn" data-ng-if="ctrl.searchValue">
-                                <button class="btn btn-default"
-                                        type="button"
-                                        aria-label="{{i18n.common_cancel}}"
+                                <button class="btn btn-default" type="button" aria-label="{{i18n.common_cancel}}"
                                         data-ng-click="ctrl.resetSearch()"
                                         data-ng-disabled="ctrl.loading">
                                     <span class="fa fa-times" aria-hidden="true"></span>
                                 </button>
                             </div>
-                            <span class="input-group-addon disabled" data-ng-if="!ctrl.searchValue">
+                            <span class="input-group-addon" data-ng-if="!ctrl.searchValue">
                                 <span class="fa fa-search" aria-hidden="true"></span>
                             </span>
                         </div>
@@ -42,7 +35,8 @@
                 </form>
             </div>
 
-            <table class="table" data-ng-class="{'table-hover table-striped': !ctrl.loading}">
+            <table class="table"
+                   data-ng-class="{'table-hover table-striped': !ctrl.loading}">
                 <thead>
                     <tr>
                         <th scope="col" data-i18n-static="exchange_tab_RESOURCES_table_account"></th>
@@ -50,7 +44,7 @@
                         <th scope="col" data-i18n-static="exchange_tab_RESOURCES_table_capacity"></th>
                         <th scope="col" data-i18n-static="exchange_tab_RESOURCES_table_email"></th>
                         <th scope="col" data-i18n-static="exchange_tab_RESOURCES_table_state" class="text-center"></th>
-                        <th scope="col" class="min-width text-center"></th>
+                        <th scope="col" class="min-width"></th>
                     </tr>
                 </thead>
 
@@ -62,17 +56,20 @@
 
                 <tbody data-ng-if="!ctrl.loading && ctrl.resources.list.results.length === 0 && ctrl.resources.list.messages.length === 0">
                     <tr>
-                        <td class="text-center" colspan="6" data-i18n-static="exchange_tab_RESOURCES_table_empty"></td>
+                        <td class="text-center" colspan="6"
+                            data-i18n-static="exchange_tab_RESOURCES_table_empty"></td>
                     </tr>
                 </tbody>
 
                 <tbody data-ng-if="!ctrl.loading && (ctrl.resources.list.results.length > 0 || ctrl.resources.list.messages.length > 0)">
                     <tr data-ng-repeat="resource in (ctrl.resources.list.results | orderBy:'displayName':false) track by $index"
                         data-ng-class="isRowSelected(resource.id)">
-                        <td data-ng-bind-html="resource.displayName | sliceContent: 150" class="word-break"></td>
+                        <td class="word-break"
+                            data-ng-bind-html="resource.displayName | sliceContent: 150"></td>
                         <td data-ng-bind="tr('exchange_tab_RESOURCES_type_' + resource.resourceType)"></td>
                         <td data-ng-bind="resource.capacity"></td>
-                        <td data-ng-bind="resource.resourceEmailDisplayName | sliceContent: 150" class="word-break"></td>
+                        <td class="word-break"
+                            data-ng-bind="resource.resourceEmailDisplayName | sliceContent: 150"></td>
                         <td class="text-center">
                             <span class="label label-danger"
                                   data-i18n-static="exchange_tab_ACCOUNTS_state_TASK_ON_ERROR"
@@ -99,9 +96,8 @@
                                   data-i18n-static="exchange_tab_ACCOUNTS_state_ok"
                                   data-ng-if="ctrl.services.exchangeStates.constructor.isOk(resource) && resource.taskPendingId === 0"></span>
                         </td>
-                        <td class="text-center">
-                            <button class="btn btn-icon"
-                                    type="button"
+                        <td>
+                            <button class="btn btn-icon" type="button"
                                     data-ng-disabled="ctrl.services.exchangeStates.constructor.isCreating(resource)"
                                     data-linkedpopover="exchange/resource/popover/resource.popover.html"
                                     data-linkedpopover-placement="left"
@@ -133,8 +129,7 @@
         </div>
 
         <div class="col-md-3 mt-5 mt-lg-0">
-            <button class="btn btn-block btn-default"
-                    type="button"
+            <button class="btn btn-block btn-default" type="button"
                     data-i18n-static="exchange_tab_RESOURCES_action_add_resource_account"
                     data-ng-click="ctrl.addResource()">
             </button>

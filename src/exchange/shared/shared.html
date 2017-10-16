@@ -3,41 +3,35 @@
         <div class="col-md-9">
             <form class="mb-3 form-inline d-md-flex justify-content-md-end">
                 <div class="form-group">
-                    <label class="sr-only"
-                           for="groupSearch"
-                           data-ng-bind="::i18n.common_search"></label>
+                    <label class="sr-only" for="groupSearch"
+                           data-i18n-static="common_search"></label>
                     <div class="input-group">
-                        <input type="text"
-                               class="form-control"
-                               id="groupSearch"
-                               maxlength="256"
+                        <input type="text" class="form-control" id="groupSearch" maxlength="256" placeholder="{{i18n.exchange_tab_SHARED_header_path}}"
                                data-ng-disabled="ctrl.loading"
                                data-ng-model="ctrl.search.value"
-                               data-ng-change="ctrl.onSearch()"
-                               placeholder="{{i18n.exchange_tab_SHARED_header_path}}">
+                               data-ng-change="ctrl.onSearch()">
                         <div class="input-group-btn" data-ng-if="ctrl.search.value">
-                            <button class="btn btn-default"
-                                    type="button"
-                                    aria-label="{{i18n.exchange_reset_search_value}}"
+                            <button class="btn btn-default" type="button" aria-label="{{i18n.common_cancel}}"
                                     data-ng-click="ctrl.resetSearch()"
                                     data-ng-disabled="ctrl.loading">
-                                <span class="sr-only" data-i18n-static="table_delete_search"></span>
                                 <span class="fa fa-times" aria-hidden="true"></span>
                             </button>
                         </div>
-                        <span class="input-group-addon disabled" data-ng-if="!ctrl.search.value">
+                        <span class="input-group-addon"
+                              data-ng-if="!ctrl.search.value">
                             <span class="fa fa-search" aria-hidden="true"></span>
                         </span>
                     </div>
                 </div>
             </form>
 
-            <p class="alert alert-info"
-               role="alert"
-               data-ng-if="ctrl.publicFoldersList.list.messages.length > 0 && !ctrl.loading">
-                <strong data-i18n-static="exchange_tab_ACCOUNTS_warning"></strong>
-                <span data-i18n-static="exchange_tab_ACCOUNTS_partial"></span>
-            </p>
+            <div class="alert alert-info" role="alert"
+                 data-ng-if="ctrl.publicFoldersList.list.messages.length > 0 && !ctrl.loading">
+                <div>
+                    <strong data-i18n-static="exchange_tab_ACCOUNTS_warning"></strong>
+                    <span data-i18n-static="exchange_tab_ACCOUNTS_partial"></span>
+                </div>
+            </div>
 
             <div class="table-responsive">
                 <table class="table"
@@ -45,39 +39,35 @@
                     <thead>
                         <tr>
                             <th scope="col" data-i18n-static="exchange_tab_SHARED_header_path"></th>
-                            <th scope="col"
-                                class="text-center"
+                            <th class="text-center" scope="col"
                                 data-i18n-static="exchange_tab_SHARED_header_type"></th>
-                            <th scope="col"
-                                class="text-right"
+                            <th class="text-right" scope="col"
                                 data-i18n-static="exchange_tab_SHARED_permissions_header_quota"></th>
-                            <th scope="col"
-                                class="text-center"
+                            <th class="text-center" scope="col"
                                 data-i18n-static="exchange_tab_SHARED_header_access"></th>
-                            <th scope="col"
-                                class="text-center"
+                            <th class="text-center" scope="col"
                                 data-i18n-static="exchange_tab_GROUPS_all_table_status"></th>
-                            <th scope="col" class="min-width text-center"></th>
+                            <th class="min-width" scope="col"></th>
                         </tr>
                     </thead>
 
                     <tbody data-ng-if="ctrl.loading">
                         <tr>
-                            <td class="text-center" colspan="6">
-                                <div class="loader" aria-hidden="true"></div>
-                            </td>
+                            <td class="loader text-center" colspan="6"></td>
                         </tr>
                     </tbody>
 
                     <tbody data-ng-if="ctrl.publicFoldersList.list.results.length === 0 && ctrl.publicFoldersList.list.messages.length === 0 && !ctrl.loading && ctrl.search.value == null">
                         <tr>
-                            <td colspan="6" data-i18n-static="exchange_tab_SHARED_table_empty"></td>
+                            <td colspan="6"
+                                data-i18n-static="exchange_tab_SHARED_table_empty"></td>
                         </tr>
                     </tbody>
 
                     <tbody data-ng-if="ctrl.publicFoldersList.list.results.length === 0 && ctrl.publicFoldersList.list.messages.length === 0 && !ctrl.loading && ctrl.search.value != null">
                         <tr>
-                            <td colspan="6" data-i18n-static="exchange_tab_SHARED_table_empty_search"></td>
+                            <td colspan="6"
+                                data-i18n-static="exchange_tab_SHARED_table_empty_search"></td>
                         </tr>
                     </tbody>
 
@@ -85,29 +75,32 @@
                         <tr data-ng-repeat="folder in (ctrl.publicFoldersList.list.results | orderBy : 'displayName' : false) track by $index">
 
                             <td data-ng-bind="folder.path"></td>
-                            <td class="text-center" data-ng-bind="tr('exchange_tab_SHARED_header_access_' + folder.type)"></td>
-                            <td class="text-right" data-ng-bind="folder.quota.value + ' ' + tr('unit_size_' + folder.quota.unit)"></td>
+                            <td class="text-center"
+                                data-ng-bind="tr('exchange_tab_SHARED_header_access_' + folder.type)"></td>
+                            <td class="text-right"
+                                data-ng-bind="folder.quota.value + ' ' + tr('unit_size_' + folder.quota.unit)"></td>
                             <td class="text-center">
-                                <button class="btn btn-danger btn-xs"
+                                <button class="btn btn-danger btn-xs" type="button"
                                         data-ng-bind="folder.permissions"
-                                        type="button"
-                                        data-ng-click="ctrl.displayPermissions(folder)"></button>
+                                        data-ng-click="ctrl.displayPermissions(folder)">
+                                </button>
                             </td>
                             <td class="text-center">
                                 <span class="badge"
-                                      data-ng-if="ctrl.services.exchangeStates.constructor.isCreating(folder)"
-                                      data-i18n-static="exchange_tab_ACCOUNTS_state_CREATING"></span>
+                                      data-i18n-static="exchange_tab_ACCOUNTS_state_CREATING"
+                                      data-ng-if="ctrl.services.exchangeStates.constructor.isCreating(folder)">
+                                </span>
                                 <span class="badge"
-                                      data-ng-if="ctrl.services.exchangeStates.constructor.isDeleting(folder)"
-                                      data-i18n-static="exchange_tab_ACCOUNTS_state_DELETING"></span>
-                                <em class="state-pending"
-                                    data-ng-if="ctrl.services.exchangeStates.constructor.isOk(folder) && folder.taskPendingId"
-                                    data-uib-tooltip="{{tr('exchange_tab_ACCOUNTS_state_TASK_ON_DOING')}}"></em>
+                                      data-i18n-static="exchange_tab_ACCOUNTS_state_DELETING"
+                                      data-ng-if="ctrl.services.exchangeStates.constructor.isDeleting(folder)">
+                                </span>
+                                <span class="fa fa fa-hourglass-half"
+                                      data-ng-if="ctrl.services.exchangeStates.constructor.isOk(folder) && folder.taskPendingId"
+                                      data-uib-tooltip="{{tr('exchange_tab_ACCOUNTS_state_TASK_ON_DOING')}}">
+                                </span>
                             </td>
                             <td class="text-center">
-                                <button class="btn btn-icon"
-                                        type="button"
-                                        title="{{i18n.exchange_tab_ACCOUNTS_menu_account_tooltip}}"
+                                <button class="btn btn-icon" type="button" title="{{i18n.exchange_tab_ACCOUNTS_menu_account_tooltip}}"
                                         data-linkedpopover="exchange/shared/popover/shared-popover.html"
                                         data-linkedpopover-placement="left"
                                         data-linkedpopover-single="true"
@@ -133,18 +126,19 @@
                  data-pagination-server-side="publicFoldersTable"
                  data-pagination-server-side-function="retrievingMailingLists"
                  data-pagination-server-side-paginated-stuff="getPublicFoldersList()"
-                 data-pagination-server-side-table-loading="getLoading()"></div>
+                 data-pagination-server-side-table-loading="getLoading()">
+            </div>
         </div>
 
         <div class="col-md-3 mt-5 mt-lg-0">
-            <button class="btn btn-block btn-default"
-                    type="button"
+            <button class="btn btn-block btn-default" type="button"
+                    data-i18n-static="exchange_tab_SHARED_button_add"
                     data-ng-click="ctrl.newShared()">
-                <span class="icon-add-group" aria-hidden="true"></span>
-                <span data-i18n-static="exchange_tab_SHARED_button_add"></span>
             </button>
         </div>
     </div>
 
-    <div data-ng-if="ctrl.showPermissions" data-ng-include="'exchange/shared/permission/shared-permission.html'"></div>
+    <div data-ng-if="ctrl.showPermissions"
+         data-ng-include="'exchange/shared/permission/shared-permission.html'">
+    </div>
 </div>

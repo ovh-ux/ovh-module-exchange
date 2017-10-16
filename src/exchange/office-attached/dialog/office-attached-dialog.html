@@ -8,47 +8,43 @@
              data-wizard-step-on-load="onWizardLoad"
              data-wizard-step-valid="isStep1Valid">
 
-            <div class="loader text-center" data-ng-show="ctrl.loading.step1.general"></div>
+            <div class="text-center" data-ng-show="ctrl.loading.step1.general">
+                <oui-loader inline="true"></oui-loader>
+            </div>
 
             <div data-ng-show="!ctrl.loading.step1.general">
                 <p data-ng-bind-html="tr('exchange_office_attached_alert_modale_header', [ctrl.maxNumberOfAccounts])"></p>
 
-                <form class="form-inline d-md-flex justify-content-md-end mb-3 mt-5">
+                <form class="form-inline d-md-flex justify-content-md-end mb-3">
                     <div class="form-group mr-md-2">
-                        <label class="sr-only"
-                               for="officeAttachedTypeFormInput"
+                        <label class="sr-only" for="officeAttachedTypeFormInput"
                                data-i18n-static="exchange_office_attached_alert_modale_account_types"></label>
-                        <select id="officeAttachedTypeFormInput"
-                                class="form-control"
-                                data-ng-change="ctrl.setFilter()"
-                                data-ng-model="ctrl.filterType"
-                                data-ng-options="tr('exchange_tab_ACCOUNTS_type_' + type) for type in ctrl.accountTypes"
-                                data-ng-show="ctrl.services.exchangeVersion.isVersion(2010)">
-                        </select>
+                        <div class="oui-select d-md-inline-block align-middle m-0">
+                            <select class="oui-select__input" id="officeAttachedTypeFormInput"
+                                    data-ng-change="ctrl.setFilter()"
+                                    data-ng-model="ctrl.filterType"
+                                    data-ng-options="tr('exchange_tab_ACCOUNTS_type_' + type) for type in ctrl.accountTypes"
+                                    data-ng-show="ctrl.services.exchangeVersion.isVersion(2010)">
+                            </select>
+                            <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
+                        </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="sr-only"
-                               for="officeAttachedSearchFormInput"
+                        <label class="sr-only" for="officeAttachedSearchFormInput"
                                data-i18n-static="exchange_office_attached_alert_modale_search_form"></label>
                         <div class="input-group">
-                            <input type="text"
-                                   class="form-control"
-                                   id="officeAttachedSearchFormInput"
-                                   placeholder="{{i18n.exchange_tab_ACCOUNTS_table_email}}"
-                                   maxlength="256"
+                            <input type="text" class="form-control" id="officeAttachedSearchFormInput" maxlength="256" placeholder="{{i18n.exchange_tab_ACCOUNTS_table_email}}"
                                    data-ng-change="ctrl.onSearchValueChange()"
                                    data-ng-model="ctrl.searchValue">
                             <div class="input-group-btn">
-                                <button class="btn btn-default"
-                                        type="button"
-                                        aria-label="{{i18n.common_cancel}}"
+                                <button class="btn btn-default" type="button" aria-label="{{i18n.common_cancel}}"
                                         data-ng-click="ctrl.resetSearch()"
                                         data-ng-if="ctrl.searchValue">
                                     <span class="fa fa-times" aria-hidden="true"></span>
                                 </button>
                             </div>
-                            <span class="input-group-addon disabled" data-ng-if="!ctrl.searchValue">
+                            <span class="input-group-addon" data-ng-if="!ctrl.searchValue">
                                 <span class="fa fa-search" aria-hidden="true"></span>
                             </span>
                         </div>
@@ -58,7 +54,7 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th scope="col" class="min-width"></th>
+                            <th class="min-width" scope="col"></th>
                             <th scope="col" data-i18n-static="exchange_tab_ACCOUNT"></th>
                         </tr>
                     </thead>
@@ -88,8 +84,7 @@
                                        data-ng-model="ctrl.selectedCheckboxes[account.primaryEmailDisplayName]">
                             </td>
                             <td>
-                                <label class="font-weight-normal m-0"
-                                       for="checkbox_{{account.exchangeGuid}}"
+                                <label class="oui-label m-0" for="checkbox_{{account.exchangeGuid}}"
                                        data-ng-bind="account.primaryEmailDisplayName"></label>
                             </td>
                         </tr>
@@ -113,19 +108,29 @@
              data-wizard-step-on-load="loadSelectedAccounts"
              data-wizard-step-valid="isStep2Valid()">
 
-            <div class="loader text-center" data-ng-if="ctrl.loading.step2.general"></div>
+            <div class="text-center" data-ng-if="ctrl.loading.step2.general">
+                <oui-loader inline="true"></oui-loader>
+            </div>
 
             <div data-ng-if="!ctrl.loading.step2.general">
                 <p data-ng-bind-html="tr('exchange_office_attached_alert_modale_confirmation_header', ['<strong>' + ctrl.numberOfSelectedCheckboxes + '</strong>'])"></p>
+
                 <ul>
-                    <li data-ng-repeat="account in ctrl.loadSelectedAccounts() track by $index" data-ng-bind="account"></li>
+                    <li data-ng-repeat="account in ctrl.loadSelectedAccounts() track by $index"
+                        data-ng-bind="account"></li>
                 </ul>
-                <div class="checkbox mt-4">
-                    <label>
-                        <input type="checkbox"
-                               id="confirmationCheckbox"
-                               data-ng-model="ctrl.confirmationCheckbox">
-                        <span data-i18n-static="exchange_office_attached_alert_modale_confirmation_checkbox"></span>
+
+                <div class="oui-checkbox">
+                    <input type="checkbox" class="oui-checkbox__input" id="confirmationCheckbox"
+                           data-ng-model="ctrl.confirmationCheckbox">
+                    <label class="oui-checkbox__label-container" for="confirmationCheckbox">
+                        <span class="oui-checkbox__label"
+                              data-i18n-static="exchange_office_attached_alert_modale_confirmation_checkbox"></span>
+                        <span class="oui-checkbox__icon">
+                            <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
+                            <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
+                            <span class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></span>
+                        </span>
                     </label>
                 </div>
             </div>

@@ -1,9 +1,10 @@
 <div class="container-fluid px-0" data-ng-controller="ExchangeTabTasksCtrl as ctrl">
-    <div class="loader text-center" data-ng-if="ctrl.tableLoading"></div>
+    <div class="text-center" data-ng-if="ctrl.tableLoading">
+        <oui-loader size="l" inline="true"></oui-loader>
+    </div>
 
     <div data-ng-if="!ctrl.tableLoading">
-        <div class="alert alert-warning"
-             role="alert"
+        <div class="alert alert-warning" role="alert"
              data-ng-if="ctrl.tasksList.list.messages.length > 0">
             <div>
                 <strong data-i18n-static="exchange_tab_TASKS_warning"></strong>
@@ -11,24 +12,25 @@
             </div>
         </div>
 
-        <div class="alert alert-info"
-             role="alert"
+        <div class="alert alert-info" role="alert"
              data-i18n-static="exchange_tab_TASKS_table_empty"
              data-ng-if="ctrl.tasksList.list.results.length === 0">
         </div>
 
         <div class="table-responsive">
-            <table class="table table-hover table-striped" data-ng-if="ctrl.tasksList.list.results.length > 0">
+            <table class="table table-hover"
+                   data-ng-if="ctrl.tasksList.list.results.length > 0">
                 <thead>
                     <tr>
                         <th scope="col" data-i18n-static="exchange_tab_TASKS_table_function"></th>
-                        <th scope="col" data-i18n-static="exchange_tab_TASKS_table_state" class="text-center min-width"></th>
-                        <th scope="col" data-i18n-static="exchange_tab_TASKS_table_start_date" class="text-center"></th>
-                        <th scope="col" data-i18n-static="exchange_tab_TASKS_table_finish_date" class="text-center"></th>
+                        <th class="text-center" scope="col" data-i18n-static="exchange_tab_TASKS_table_state"></th>
+                        <th scope="col" data-i18n-static="exchange_tab_TASKS_table_start_date"></th>
+                        <th scope="col" data-i18n-static="exchange_tab_TASKS_table_finish_date"></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr data-ng-repeat="task in (ctrl.tasksList.list.results | orderBy:'todoDate':true) track by $index">
+                    <tr data-ng-repeat="task in (ctrl.tasksList.list.results | orderBy:'todoDate':true) track by $index"
+                        data-ng-if="task.function">
                         <td data-ng-bind-html="tr('exchange_tab_TASKS_'+ task.function)"></td>
                         <td class="text-center">
                             <span class="fa fa-lg" title="{{tr('exchange_tab_TASKS_'+ task.status)}}"
@@ -40,8 +42,8 @@
                             <span data-ng-bind="tr('exchange_tab_TASKS_'+ task.status)"
                                   data-ng-if="task.status === ctrl.states.done"></span>
                         </td>
-                        <td data-ng-bind="::task.todoDate | date:'short'" class="text-center"></td>
-                        <td data-ng-bind="::task.finishDate | date:'short'" class="text-center"></td>
+                        <td data-ng-bind="::task.todoDate | date:'short'"></td>
+                        <td data-ng-bind="::task.finishDate | date:'short'"></td>
                     </tr>
                 </tbody>
             </table>
@@ -52,7 +54,7 @@
          data-ng-show="!ctrl.tableLoading && ctrl.tasksList.list.results.length > 0"
          data-pagination-server-side="tasksTable"
          data-pagination-server-side-function="retrieveTasks"
-         data-pagination-server-side-paginated-stuff="getTasksList()"
-         data-pagination-server-side-table-loading="getTableLoading()">
+         data-pagination-server-side-paginated-stuff="ctrl.tasksList"
+         data-pagination-server-side-table-loading="ctrl.tableLoading">
     </div>
 </div>
