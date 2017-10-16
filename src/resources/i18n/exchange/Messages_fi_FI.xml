@@ -601,7 +601,7 @@ Valitse: <br /> Tyyppi: <span class="bold">A</span> <br /> Aliverkkotunnus: <spa
    <translation id="exchange_tab_domain_target_mail_server_label" qtlid="316957">Kohde sähköpostipalvelin</translation>
    <translation id="exchange_tab_domain_noovh_mx_info" qtlid="317126">MX- ja SRV-muokkaukset toteutetaan manuaalisesti DNS alueellasi. Löydät tarvittavat tiedot osiosta liitetyt verkkotunnukset, kun CNAMEn vahvistus on tapahtunut.</translation>
    <translation id="exchange_tab_domain_modify_domain" qtlid="137101">Verkkotunnuksen konfigurointi</translation>
-<translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="416397;416410;416410;169498;416423;416449">
+<translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="416397">
 Vade Secure -roskapostisuodatin on yhteensopiva ei-autoritatiivisen tilan kanssa (ainoastaan jos POP-/IMAP-tilit ovat OVH:lla). Tässä tapauksessa suosittelemme käytettäväksi: <strong qtlid="266365">{0}</strong>, <strong qtlid="78906">{1}</strong>, <strong qtlid="183112">{2}</strong> ja <strong qtlid="292228">{3}</strong>
 <br/><br/> Mikäli OVH:n ulkopuolisia sähköpostitilejä käytetään ei-autoritatiivisessa tilassa, käytä: <strong qtlid="416436">{4}</strong> (katso osiosta liittyvät verkkotunnukset)
 </translation>
