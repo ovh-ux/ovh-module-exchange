@@ -161,7 +161,7 @@ angular
             const formerPermission = this.permissions.former.list.results.find((formerPerm) => formerPerm.primaryAddressDisplayName === accountName);
             const formerPermissionName = this.getPermissionName(formerPermission);
 
-            if (this.permissions.selectedPermissions[formerPermissionName].includes(accountName)) {
+            if (_(this.permissions.selectedPermissions[formerPermissionName]).includes(accountName)) {
                 this.permissions.selectedPermissions[formerPermissionName] = this.permissions.selectedPermissions[formerPermissionName].filter((currentAccountName) => currentAccountName !== accountName);
             }
         }
@@ -194,6 +194,7 @@ angular
         }
 
         updatingPermissions () {
+            this.services.navigation.resetAction();
             this.services.messaging.writeSuccess(this.services.translator.tr("exchange_dashboard_action_doing"));
 
             const model = [];
@@ -224,9 +225,6 @@ angular
                 })
                 .catch((failure) => {
                     this.services.messaging.writeError(this.services.translator.tr("exchange_action_SHARED_permissions_update_error_message", this.folder.path), failure);
-                })
-                .finally(() => {
-                    this.services.navigation.resetAction();
                 });
         }
     });

@@ -60,7 +60,7 @@ angular
                 .ExchangeDomains
                 .addingZoneDnsField(this.$routerParams.organization, this.$routerParams.productId, this.prepareModel())
                 .then((data) => {
-                    if (this.services.exchangeStates.isOk(data)) {
+                    if (this.services.exchangeStates.constructor.isOk(data)) {
                         this.services.messaging.writeSuccess(this.services.translator.tr("exchange_tab_domain_diagnostic_add_field_success"));
                     } else {
                         this.services.messaging.writeError(this.services.translator.tr("exchange_tab_domain_diagnostic_add_field_failure"), data);

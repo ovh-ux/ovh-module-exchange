@@ -18,6 +18,7 @@ angular
             this.isGetSharepointDone = false;
             this.$routerParams = Exchange.getParams();
             this.shouldDisplaySSLRenewValue = false;
+            this.hasSSLTask = false;
 
             Exchange.getSharepointService()
                 .then((sharepoint) => {
@@ -27,12 +28,11 @@ angular
                     this.isGetSharepointDone = true;
                 });
 
-            Exchange.getDcvEmails(this.$routerParams.organization, this.$routerParams.productId)
-                .then(() => {
-                    this.enableSSLButton = true;
-                })
+            Exchange.retrievingDVCEmails(this.$routerParams.organization, this.$routerParams.productId)
                 .catch((err) => {
-                    if (_.has(err, "data.message") && err.data.message === "You can't get dcv email if there is a pending task for installSSL") {
+                    const message = err.message || err;
+
+                    if (message === "You can't get dcv email if there is a pending task for installSSL") {
                         this.hasSSLTask = true;
                     }
                 })
@@ -58,7 +58,7 @@ angular
         }
 
         sslRenew () {
-            if (this.exchange.sslRenewAvailable && this.enableSSLButton) {
+            if (this.exchange.sslRenewAvailable) {
                 this.services.navigation.setAction("exchange/information/ssl/service-ssl-renew");
             }
         }
@@ -80,16 +80,22 @@ angular
         }
 
         shouldDisplaySSLRenew () {
+            const now = moment();
+            const sslExpirationDate = moment(this.exchange.sslExpirationDate);
+            const aMonthBeforeSSLExpirationDate = sslExpirationDate.subtract(1, "months");
+            const isAlreadyExpired = now.isAfter(sslExpirationDate);
+            const canRenewBeforeExpiration = now.isAfter(aMonthBeforeSSLExpirationDate);
+
             const isDedicatedAccount = this.services.accountTypes.isDedicated();
             const is2010DedicatedOrProvider = this.services.exchangeVersion.isVersion(2010) && !this.services.accountTypes.isHosted();
 
-            this.shouldDisplaySSLRenewValue = (isDedicatedAccount || is2010DedicatedOrProvider) && !this.hasSSLTask;
+            this.shouldDisplaySSLRenewValue = (isDedicatedAccount || is2010DedicatedOrProvider) && (canRenewBeforeExpiration || isAlreadyExpired);
         }
 
         getSSLRenewTooltipText () {
             const now = moment();
             const sslExpirationDate = moment(this.exchange.sslExpirationDate);
-            const aMonthBeforeSSLExpirationDate = sslExpirationDate.subtract(30, "days");
+            const aMonthBeforeSSLExpirationDate = sslExpirationDate.subtract(1, "months");
 
             if (this.hasSSLTask) {
                 return this.services.translator.tr("exchange_action_renew_ssl_info");

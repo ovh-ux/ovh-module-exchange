@@ -8,7 +8,7 @@ angular
             };
         }
 
-        retrievingSharedAccounts (organization, exchange, count = 5, offset = 0, search = "") {
+        retrievingSharedAccounts (organization, exchange, count = 10, offset = 0, search = "") {
             return this.services
                 .OvhHttp
                 .get(`/sws/exchange/${organization}/${exchange}/sharedAccounts`, {
@@ -70,7 +70,7 @@ angular
                 });
         }
 
-        retrievingSharedAccountDelegations (organization, exchange, account, count = 5, offset = 0, search = "") {
+        retrievingSharedAccountDelegations (organization, exchange, account, count = 10, offset = 0, search = "") {
             return this.services
                 .OvhHttp
                 .get(`/sws/exchange/${organization}/${exchange}/sharedAccounts/${account}/delegations`, {

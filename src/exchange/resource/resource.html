@@ -10,11 +10,11 @@
                 </a>
             </p>
 
-            <!-- TODO 2API
             <div class="mb-3">
                 <form class="form-inline d-md-flex justify-content-md-end" name="searchResourceForm">
                     <div class="form-group">
-                        <label class="sr-only" for="searchResourceSearch"
+                        <label class="sr-only"
+                               for="searchResourceSearch"
                                data-ng-bind="::i18n.common_search"></label>
                         <div class="input-group">
                             <input type="text"
@@ -22,28 +22,27 @@
                                    id="searchResourceSearch"
                                    name="searchResourceSearch"
                                    placeholder="{{::i18n.exchange_tab_ACCOUNTS_table_email}}"
-                                   data-ng-change="ctrl.onSearch()"
+                                   data-ng-change="ctrl.onSearchValueChanged()"
                                    data-ng-disabled="ctrl.loading"
-                                   data-ng-model="ctrl.search.value"
-                                   data-ng-model-options="{ debounce: 800 }">
-                            <div class="input-group-btn" data-ng-if="ctrl.search.value">
-                                <button class="btn btn-default" type="button" aria-label="{{i18n.common_cancel}}"
+                                   data-ng-model="ctrl.searchValue">
+                            <div class="input-group-btn" data-ng-if="ctrl.searchValue">
+                                <button class="btn btn-default"
+                                        type="button"
+                                        aria-label="{{i18n.common_cancel}}"
                                         data-ng-click="ctrl.resetSearch()"
                                         data-ng-disabled="ctrl.loading">
                                     <span class="fa fa-times" aria-hidden="true"></span>
                                 </button>
                             </div>
-                            <span class="input-group-addon disabled"
-                                  data-ng-if="!ctrl.search.value">
+                            <span class="input-group-addon disabled" data-ng-if="!ctrl.searchValue">
                                 <span class="fa fa-search" aria-hidden="true"></span>
                             </span>
                         </div>
                     </div>
                 </form>
-            </div>-->
+            </div>
 
-            <table class="table"
-                   data-ng-class="{'table-hover table-striped': !ctrl.loading}">
+            <table class="table" data-ng-class="{'table-hover table-striped': !ctrl.loading}">
                 <thead>
                     <tr>
                         <th scope="col" data-i18n-static="exchange_tab_RESOURCES_table_account"></th>

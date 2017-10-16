@@ -80,11 +80,12 @@
                                             type="button"
                                             data-i18n-static="exchange_action_renew_ssl"
                                             data-ng-click="ctrl.sslRenew()"
+                                            data-ng-disabled="ctrl.hasSSLTask"
                                             data-ng-if="ctrl.shouldDisplaySSLRenewValue"
-                                            data-uib-tooltip="{{ctrl.getSSLRenewTooltipText()}}"
-                                            data-tooltip-append-to-body="true">
+                                            aria-describedby="sslRenewal">
                                     </button>
                                 </div>
+                                <p class="alert alert-info mt-2 mb-0" data-ng-bind="ctrl.getSSLRenewTooltipText()" id="sslRenewal"></p>
                             </li>
                             <li data-ng-if="ctrl.displayRenewDate()">
                                 <strong data-i18n-static="exchange_dashboard_expiration"></strong>

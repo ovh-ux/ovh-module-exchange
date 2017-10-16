@@ -15,15 +15,16 @@ angular
             this.currentAccount = navigation.currentActionData.primaryEmailAddress;
             this.searchValue = null;
 
-            $scope.updateDelegationRight = () => this.updateDelegationRight();
-            $scope.hasChanged = () => this.hasChanged();
-            $scope.retrieveAccounts = (count, offset) => this.retrieveAccounts(count, offset);
-            $scope.getLoading = () => this.loading;
-            $scope.getAccounts = () => this.accounts;
+            this.services.$scope.updateDelegationRight = () => this.updateDelegationRight();
+            this.services.$scope.hasChanged = () => this.hasChanged();
+            this.services.$scope.retrievingAccounts = (count, offset) => this.retrievingAccounts(count, offset);
+            this.services.$scope.getIsLoading = () => this.isLoading;
+            this.services.$scope.getAccounts = () => this.accounts;
 
-            $scope.$on(Exchange.events.accountsChanged, () => $scope.retrieveAccounts());
+            this.services.$scope.$on(Exchange.events.accountsChanged, () => this.services.$scope.retrievingAccounts());
 
-            this.debouncedRetrieveAccounts = _.debounce(this.retrieveAccounts, 300);
+            this.debouncedRetrievingAccounts = _.debounce(this.retrievingAccounts, 300);
+            this.bufferAccounts = [];
         }
 
         /**
@@ -37,62 +38,39 @@ angular
                 fullAccessRights: []
             };
 
-            if (_.has(this.accounts, "list.results")) {
-                changesList.sendRights = this.accounts.list.results
-                    .filter((account, index) => {
-                        const matchingAccountInBuffer = this.bufferAccounts.list.results[index];
+            this.checkForLocalChanges();
 
-                        // record the operation to be done for sendAs rights:
-                        return account.newSendAsValue !== matchingAccountInBuffer.sendAs;
-                    })
-                    .map((account) => ({
-                        id: account.id,
-                        operation: account.newSendAsValue ? "POST" : "DELETE"
-                    }));
+            changesList.sendRights = this.bufferAccounts
+                .filter((account) => account.newSendAsValue !== account.sendAs)
+                .map((account) => ({
+                    id: account.id,
+                    operation: account.newSendAsValue ? "POST" : "DELETE"
+                }));
 
-                changesList.sendOnBehalfToRights = this.accounts.list.results
-                    .filter((account, index) => {
-                        const matchingAccountInBuffer = this.bufferAccounts.list.results[index];
+            changesList.sendOnBehalfToRights = this.bufferAccounts
+                .filter((account) => account.newSendOnBehalfToValue !== account.sendOnBehalfTo)
+                .map((account) => ({
+                    id: account.id,
+                    operation: account.newSendOnBehalfToValue ? "POST" : "DELETE"
+                }));
 
-                        // record the operation to be done for sendAs rights:
-                        return account.newSendOnBehalfToValue !== matchingAccountInBuffer.sendOnBehalfTo;
-                    })
-                    .map((account) => ({
-                        id: account.id,
-                        operation: account.newSendOnBehalfToValue ? "POST" : "DELETE"
-                    }));
-
-                changesList.fullAccessRights = this.accounts.list.results
-                    .filter((account, index) => {
-                        const matchingAccountInBuffer = this.bufferAccounts.list.results[index];
-
-                        // record the operation to be done for sendAs rights:
-                        return account.newFullAccessValue !== matchingAccountInBuffer.fullAccess;
-                    })
-                    .map((account) => ({
-                        id: account.id,
-                        operation: account.newFullAccessValue ? "POST" : "DELETE"
-                    }));
-            }
+            changesList.fullAccessRights = this.bufferAccounts
+                .filter((account) => account.newFullAccessValue !== account.fullAccess)
+                .map((account) => ({
+                    id: account.id,
+                    operation: account.newFullAccessValue ? "POST" : "DELETE"
+                }));
 
             return changesList;
         }
 
         onSearchValueChange () {
-            this.debouncedRetrieveAccounts();
+            this.debouncedRetrievingAccounts();
         }
 
         resetSearch () {
             this.searchValue = null;
-            this.retrieveAccounts();
-        }
-
-        getAccounts () {
-            return this.accounts;
-        }
-
-        getLoading () {
-            return this.loading;
+            this.debouncedRetrievingAccounts();
         }
 
         constructResult (data) {
@@ -131,16 +109,27 @@ angular
             });
         }
 
-        checkForBufferChanges (account) {
-            if (_.has(this.bufferAccounts, "list.results")) {
-                _.forEach(this.bufferAccounts.list.results, (bufferAccount) => {
-                    if (bufferAccount.id === account.id) {
-                        account.newSendAsValue = bufferAccount.newSendAsValue;
-                        account.newSendOnBehalfToValue = bufferAccount.newSendOnBehalfToValue;
-                        account.newFullAccessValue = bufferAccount.newFullAccessValue;
+        checkForLocalChanges () {
+            if (_.has(this.accounts, "list.results")) {
+                _.forEach(this.accounts.list.results, (account) => {
+                    const matchBuffer = _.find(this.bufferAccounts, (buffer) => buffer.id === account.id);
+                    if (matchBuffer) {
+                        matchBuffer.newSendOnBehalfToValue = account.newSendOnBehalfToValue;
+                        matchBuffer.newSendAsValue = account.newSendAsValue;
+                        matchBuffer.newFullAccessValue = account.newFullAccessValue;
                     }
                 });
             }
+        }
+
+        checkForBufferChanges (account) {
+            _.forEach(this.bufferAccounts, (bufferAccount) => {
+                if (bufferAccount.id === account.id) {
+                    account.newSendAsValue = bufferAccount.newSendAsValue;
+                    account.newSendOnBehalfToValue = bufferAccount.newSendOnBehalfToValue;
+                    account.newFullAccessValue = bufferAccount.newFullAccessValue;
+                }
+            });
         }
 
         /**
@@ -152,31 +141,33 @@ angular
             return !_.isEmpty(listOfChanges.sendRights) || !_.isEmpty(listOfChanges.fullAccessRights) || !_.isEmpty(listOfChanges.sendOnBehalfToRights);
         }
 
-        retrieveAccounts (count, offset) {
+        retrievingAccounts (count, offset) {
             this.services.messaging.resetMessages();
-            this.loading = true;
+            this.isLoading = true;
 
             this.services
                 .Exchange
                 .retrieveAccountDelegationRight(this.$routerParams.organization, this.$routerParams.productId, this.currentAccount, count, offset, this.searchValue)
                 .then((accounts) => {
-                    this.accounts = angular.copy(accounts); // make a deep copy of accounts list to use it as model
+                    this.accounts = accounts;
 
                     _.forEach(this.accounts.list.results, (account) => {
                         account.newSendAsValue = account.sendAs;
                         account.newSendOnBehalfToValue = account.sendOnBehalfTo;
                         account.newFullAccessValue = account.fullAccess;
                         this.checkForBufferChanges(account);
-                    });
 
-                    this.bufferAccounts = this.accounts; // keep the original data as a reference point to compare changes
+                        if (!_.find(this.bufferAccounts, (buffer) => buffer.id === account.id)) {
+                            this.bufferAccounts.push(account); // keep the original data as a reference point to compare changes
+                        }
+                    });
                 })
                 .catch((failure) => {
                     this.services.navigation.resetAction();
                     this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ACCOUNTS_error_message"), failure);
                 })
                 .finally(() => {
-                    this.loading = false;
+                    this.isLoading = false;
                 });
         }
 
