@@ -35,6 +35,7 @@ angular
             this.localPart = navigation.currentActionData.login;
             this.domain = this.services.navigation.currentActionData.completeDomain;
             this.originalQuota = navigation.currentActionData.quota.value;
+            this.originalSharedEmailAddress = navigation.currentActionData.sharedEmailAddress;
 
             $scope.updatingAccount = () => this.updatingAccount();
             $scope.isAccountValid = () => this.isAccountValid();
@@ -118,7 +119,7 @@ angular
         updatingAccount () {
             return this.services
                 .ExchangeSharedAccounts
-                .updatingSharedAccount(this.$routerParams.organization, this.$routerParams.productId, this.accountBeingUpdated)
+                .updatingSharedAccount(this.$routerParams.organization, this.$routerParams.productId, this.originalSharedEmailAddress, this.accountBeingUpdated)
                 .then(() => {
                     this.services.messaging.writeSuccess(this.services.translator.tr("exchange_SHARED_ACCOUNTS_update_success_message"));
                 })
