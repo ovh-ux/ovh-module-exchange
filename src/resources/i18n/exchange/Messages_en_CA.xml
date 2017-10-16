@@ -600,7 +600,7 @@ I therefore explicitly renounce my right to cancel under the provisions of Artic
    <translation id="exchange_tab_domain_target_mail_server_label" qtlid="316957">Target email server </translation>
    <translation id="exchange_tab_domain_noovh_mx_info" qtlid="317126">MX and SRV changes must be carried out manually in your DNS zone. You can find the necessary information in the associated domains section, once the CNAME has been validated.</translation>
    <translation id="exchange_tab_domain_modify_domain" qtlid="137101">Modify a domain</translation>
-<translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="416397;416410;416410;169498;416423;416449">
+<translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="416397">
 The Vade Secure anti-spam solution is compatible with non-authoritative mode (only if your POP/IMAP accounts are hosted by OVH). In this case, we recommend that you use: <strong qtlid="266365">{0}</strong>, <strong qtlid="78906">{1}</strong>, <strong qtlid="183112">{2}</strong> and <strong qtlid="292228">{3}</strong>
 <br/><br/> If you use non-authoritative mode with your email accounts that are not hosted by OVH, you must use: <strong qtlid="416436">{4}</strong> (see associated domains section)
 </translation>

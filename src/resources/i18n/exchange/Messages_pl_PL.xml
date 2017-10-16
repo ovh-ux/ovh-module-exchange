@@ -598,7 +598,7 @@
    <translation id="exchange_tab_domain_target_mail_server_label" qtlid="316957">Docelowy serwer e-mail</translation>
    <translation id="exchange_tab_domain_noovh_mx_info" qtlid="317126">Zmiany dotyczące MX i SRV należy wykonać ręcznie w strefie DNS. Informacje na ten temat będą dostępne w sekcji Domeny przypisane po zaakceptowaniu wpisu  CNAME.</translation>
    <translation id="exchange_tab_domain_modify_domain" qtlid="137101">Konfiguracja domeny</translation>
-<translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="416397;416410;416410;169498;416423;416449">
+<translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="416397">
 Ochrona antyspamowa Vade Secure jest kompatybilna z trybem nieautorytatywnym (wyłącznie, jeśli Twoje konta pop/imap są obsługiwane przez OVH). W tym przypadku należy używać: <strong qtlid="266365">{0}</strong>, <strong qtlid="78906">{1}</strong>, <strong qtlid="183112">{2}</strong> i <strong qtlid="292228">{3}</strong>
 <br/><br/> Jeśli korzystasz z trybu nieautorytatywnego z kontami e-mail nieobsługiwanymi przez OVH, musisz używać: <strong qtlid="416436">{4}</strong> (zobacz w sekcji przypisanych domen)
 </translation>

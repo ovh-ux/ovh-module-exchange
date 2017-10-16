@@ -35,6 +35,7 @@ angular
             this.localPart = navigation.currentActionData.login;
             this.domain = this.services.navigation.currentActionData.completeDomain;
             this.originalQuota = navigation.currentActionData.quota.value;
+            this.originalSharedEmailAddress = navigation.currentActionData.sharedEmailAddress;
 
             $scope.updatingAccount = () => this.updatingAccount();
             $scope.isAccountValid = () => this.isAccountValid();
@@ -82,11 +83,17 @@ angular
                     this.optionsToUpdateAccount = data;
                     this.alreadyTakenEmails = data.takenEmails;
 
+                    // Check if max quota is not under min quota or account quota + max quota
+                    const minQuota = _.get(this.optionsToUpdateAccount, "minQuota.value", 0);
+                    const maxQuota = _.get(this.optionsToUpdateAccount, "maxQuota.value", 0);
+                    const maxUpdateQuota = Math.max(minQuota, this.originalQuota + maxQuota);
+
+                    if (maxQuota < maxUpdateQuota) {
+                        this.optionsToUpdateAccount.maxQuota.value = maxUpdateQuota;
+                    }
+
                     if (_.isEmpty(data.availableDomains)) {
                         this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_add_no_domains"));
-                        this.services.navigation.resetAction();
-                    } else if (this.optionsToUpdateAccount.maxQuota.value < this.optionsToUpdateAccount.minQuota.value) {
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_SHARED_ACCOUNTS_total_quota_error_message"));
                         this.services.navigation.resetAction();
                     } else {
                         for (const domain of data.availableDomains) {
@@ -112,7 +119,7 @@ angular
         updatingAccount () {
             return this.services
                 .ExchangeSharedAccounts
-                .updatingSharedAccount(this.$routerParams.organization, this.$routerParams.productId, this.accountBeingUpdated)
+                .updatingSharedAccount(this.$routerParams.organization, this.$routerParams.productId, this.originalSharedEmailAddress, this.accountBeingUpdated)
                 .then(() => {
                     this.services.messaging.writeSuccess(this.services.translator.tr("exchange_SHARED_ACCOUNTS_update_success_message"));
                 })
