@@ -1,7 +1,7 @@
 <div data-ng-controller="ExchangeGroupAccountsCtrl as ctrl">
     <div data-wizard
          data-wizard-on-cancel="resetAction"
-         data-wizard-on-finish="updateAccounts"
+         data-wizard-on-finish="updatingAccounts"
          data-wizard-title="i18n.exchange_GROUPS_accounts_title">
 
         <div data-wizard-step>
@@ -109,7 +109,7 @@
 
             <div class="clearfix"
                  data-pagination-server-side="accountsByGroupTable"
-                 data-pagination-server-side-function="getAccounts"
+                 data-pagination-server-side-function="retrievingAccounts"
                  data-pagination-server-side-paginated-stuff="getAccountsList()"
                  data-pagination-server-side-table-loading="getLoading()">
             </div>
