@@ -10,7 +10,7 @@
 
             <p data-ng-bind-html="tr('exchange_ACTION_delegation_step1_intro', [ctrl.primaryEmailAddress])"></p>
 
-            <form class="mb-3">
+            <form class="form-inline d-md-flex justify-content-md-end mb-3">
                 <div class="form-group">
                     <label class="sr-only" for="groupSearch"
                            data-ng-bind="::i18n.common_search"></label>
@@ -34,7 +34,7 @@
                 </div>
             </form>
 
-            <div data-ng-if="ctrl.accounts.list.messages.length > 0 && !ctrl.loading">
+            <div data-ng-if="!ctrl.loading && ctrl.accounts.list.messages.length > 0">
                 <div class="alert alert-info" role="alert">
                     <div>
                         <strong data-i18n-static="exchange_tab_ACCOUNTS_warning"></strong>

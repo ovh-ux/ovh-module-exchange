@@ -19,50 +19,48 @@
                 </div>
             </div>
 
-            <div class="mb-3">
-                <form class="form-inline d-md-flex justify-content-md-end" name="searchAccountForm">
-                    <div class="form-group mr-md-2">
-                        <label class="sr-only"
-                               for="accountFilter"
-                               data-ng-bind="::i18n.table_filter"></label>
-                        <select class="form-control"
-                                id="accountFilter"
-                                data-ng-change="ctrl.setFilter()"
-                                data-ng-if="ctrl.services.exchangeVersion.isVersion(2010)"
-                                data-ng-model="ctrl.filterType"
-                                data-ng-options="tr('exchange_tab_ACCOUNTS_type_' + type) for type in ctrl.accountTypes"></select>
-                    </div>
-                    <div class="form-group">
-                        <label class="sr-only"
-                               for="accountSearch"
-                               data-ng-bind="::i18n.common_search"></label>
-                        <div class="input-group">
-                            <input type="text"
-                                   class="form-control"
-                                   id="accountSearch"
-                                   name="accountSearch"
-                                   maxlength="256"
-                                   placeholder="{{::i18n.exchange_tab_ACCOUNTS_table_email}}"
-                                   data-ng-change="ctrl.onSearch()"
-                                   data-ng-disabled="ctrl.loading"
-                                   data-ng-model="ctrl.search.value"
-                                   data-ng-model-options="{ debounce: 800 }">
-                            <div class="input-group-btn" data-ng-if="ctrl.search.value">
-                                <button class="btn btn-default"
-                                        type="button"
-                                        aria-label="{{i18n.common_cancel}}"
-                                        data-ng-click="ctrl.resetSearch()"
-                                        data-ng-disabled="ctrl.loading">
-                                    <span class="fa fa-times" aria-hidden="true"></span>
-                                </button>
-                            </div>
-                            <span class="input-group-addon disabled" data-ng-if="!ctrl.search.value">
-                                <span class="fa fa-search" aria-hidden="true"></span>
-                            </span>
+            <form class="form-inline d-md-flex justify-content-md-end mb-3" name="searchAccountForm">
+                <div class="form-group mr-md-2">
+                    <label class="sr-only"
+                           for="accountFilter"
+                           data-ng-bind="::i18n.table_filter"></label>
+                    <select class="form-control"
+                            id="accountFilter"
+                            data-ng-change="ctrl.setFilter()"
+                            data-ng-if="ctrl.services.exchangeVersion.isVersion(2010)"
+                            data-ng-model="ctrl.filterType"
+                            data-ng-options="tr('exchange_tab_ACCOUNTS_type_' + type) for type in ctrl.accountTypes"></select>
+                </div>
+                <div class="form-group">
+                    <label class="sr-only"
+                           for="accountSearch"
+                           data-ng-bind="::i18n.common_search"></label>
+                    <div class="input-group">
+                        <input type="text"
+                               class="form-control"
+                               id="accountSearch"
+                               name="accountSearch"
+                               maxlength="256"
+                               placeholder="{{::i18n.exchange_tab_ACCOUNTS_table_email}}"
+                               data-ng-change="ctrl.onSearch()"
+                               data-ng-disabled="ctrl.loading"
+                               data-ng-model="ctrl.search.value"
+                               data-ng-model-options="{ debounce: 800 }">
+                        <div class="input-group-btn" data-ng-if="ctrl.search.value">
+                            <button class="btn btn-default"
+                                    type="button"
+                                    aria-label="{{i18n.common_cancel}}"
+                                    data-ng-click="ctrl.resetSearch()"
+                                    data-ng-disabled="ctrl.loading">
+                                <span class="fa fa-times" aria-hidden="true"></span>
+                            </button>
                         </div>
+                        <span class="input-group-addon disabled" data-ng-if="!ctrl.search.value">
+                            <span class="fa fa-search" aria-hidden="true"></span>
+                        </span>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
 
             <div class="table-responsive">
                 <table class="table"
@@ -234,7 +232,7 @@
                  data-pagination-server-side-paginated-stuff="getAccountValue()"
                  data-pagination-server-side-table-loading="getLoading()"></div>
         </div>
- 
+
         <div class="col-md-3 mt-5 mt-lg-0">
             <button class="btn btn-block btn-default"
                     type="button"

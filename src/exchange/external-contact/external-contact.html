@@ -2,39 +2,29 @@
     <div class="row">
         <div class="col-md-9">
 
-            <div class="mb-3">
-                <form class="form-inline d-md-flex justify-content-md-end" name="searchExternalContactForm">
-                    <div class="form-group">
-                        <label class="sr-only"
-                               for="externalContactSearch"
-                               data-ng-bind="::i18n.common_search"></label>
-                        <div class="input-group">
-                            <input type="text"
-                                   class="form-control"
-                                   id="externalContactSearch"
-                                   name="externalContactSearch"
-                                   placeholder="{{::i18n.exchange_tab_EXTERNAL_CONTACTS_search_placeholder}}"
-                                   maxlength="256"
-                                   data-ng-change="ctrl.onSearchValueChange()"
-                                   data-ng-disabled="ctrl.contactsLoading"
-                                   data-ng-model="ctrl.filter"
-                                   data-ng-model-options="{ debounce: 800 }">
-                            <div class="input-group-btn" data-ng-if="ctrl.filter">
-                                <button class="btn btn-default"
-                                        type="button"
-                                        aria-label="{{i18n.common_cancel}}"
-                                        data-ng-click="ctrl.filter = '';ctrl.onSearchValueChange()"
-                                        data-ng-disabled="ctrl.contactsLoading">
-                                    <span class="fa fa-times" aria-hidden="true"></span>
-                                </button>
-                            </div>
-                            <span class="input-group-addon disabled" data-ng-if="!ctrl.filter">
-                                <span class="fa fa-search" aria-hidden="true"></span>
-                            </span>
+            <form class="form-inline d-md-flex justify-content-md-end mb-3" name="searchExternalContactForm">
+                <div class="form-group">
+                    <label class="sr-only" for="externalContactSearch"
+                           data-i18n-static="common_search"></label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="externalContactSearch" maxlength="256" name="externalContactSearch" placeholder="{{::i18n.exchange_tab_EXTERNAL_CONTACTS_search_placeholder}}"
+                               data-ng-change="ctrl.onSearchValueChange()"
+                               data-ng-disabled="ctrl.contactsLoading"
+                               data-ng-model="ctrl.filter"
+                               data-ng-model-options="{ debounce: 800 }">
+                        <div class="input-group-btn" data-ng-if="ctrl.filter">
+                            <button class="btn btn-default" type="button" aria-label="{{i18n.common_cancel}}"
+                                    data-ng-click="ctrl.filter = '';ctrl.onSearchValueChange()"
+                                    data-ng-disabled="ctrl.contactsLoading">
+                                <span class="fa fa-times" aria-hidden="true"></span>
+                            </button>
                         </div>
+                        <span class="input-group-addon" data-ng-if="!ctrl.filter">
+                            <span class="fa fa-search" aria-hidden="true"></span>
+                        </span>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
 
             <div class="table-responsive">
                 <table class="table"
@@ -58,15 +48,19 @@
 
                     <tbody data-ng-if="!ctrl.contactsLoading && ctrl.contacts.list.results.length === 0">
                         <tr>
-                            <td class="text-center" colspan="6" data-i18n-static="exchange_tab_EXTERNAL_CONTACTS_table_empty"></td>
+                            <td class="text-center" colspan="6"
+                                data-i18n-static="exchange_tab_EXTERNAL_CONTACTS_table_empty"></td>
                         </tr>
                     </tbody>
 
                     <tbody data-ng-if="!ctrl.contactsLoading">
                         <tr data-ng-repeat="element in ctrl.contacts.list.results track by $index">
-                            <th class="word-break" scope="row" data-ng-bind="element.externalEmailAddress | sliceContent: 150"></th>
-                            <td class="word-break" data-ng-bind="element.displayName | sliceContent: 150"></td>
-                            <td class="text-center" data-ng-bind="element.creationDate | date:'mediumDate'"></td>
+                            <th class="word-break" scope="row"
+                                data-ng-bind="element.externalEmailAddress | sliceContent: 150"></th>
+                            <td class="word-break"
+                                data-ng-bind="element.displayName | sliceContent: 150"></td>
+                            <td class="text-center text-nowrap"
+                                data-ng-bind="element.creationDate | date:'mediumDate'"></td>
                             <td class="text-center">
                                 <span class="oui-icon" aria-hidden="true"
                                       data-ng-class="{'oui-icon-success text-success': !element.hiddenFromGAL, 'oui-icon-error text-danger': element.hiddenFromGAL}"
@@ -99,9 +93,7 @@
                             </td>
 
                             <td class="text-center">
-                                <button class="btn btn-icon"
-                                        type="button"
-                                        title="{{element.externalEmailAddress}} {{i18n.table_manage_entry}}"
+                                <button class="btn btn-icon" type="button" title="{{element.externalEmailAddress}} {{i18n.table_manage_entry}}"
                                         data-linkedpopover="exchange/external-contact/popover/external-contact-popover.html"
                                         data-linkedpopover-placement="left"
                                         data-linkedpopover-remote="true"
@@ -120,13 +112,14 @@
                  data-pagination-server-side="externalContactsTable"
                  data-pagination-server-side-function="loadContacts"
                  data-pagination-server-side-paginated-stuff="getContacts()"
-                 data-pagination-server-side-table-loading="getContactsLoading()"></div>
+                 data-pagination-server-side-table-loading="getContactsLoading()">
+            </div>
         </div>
         <div class="col-md-3 mt-5 mt-lg-0">
-            <button class="btn btn-block btn-default"
-                    type="button"
+            <button class="btn btn-block btn-default" type="button"
                     data-i18n-static="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_title_button"
-                    data-ng-click="setAction('exchange/external-contact/add/external-contact-add')"></button>
+                    data-ng-click="setAction('exchange/external-contact/add/external-contact-add')">
+            </button>
         </div>
     </div>
 </div>

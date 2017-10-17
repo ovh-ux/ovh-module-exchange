@@ -9,21 +9,19 @@
              data-wizard-step-on-load="loadDomainData"
              data-wizard-step-valid="aliasIsValid()">
 
-            <div class="loader text-center" data-ng-if="!ctrl.availableDomains"></div>
+            <div class="text-center" data-ng-if="!ctrl.availableDomains">
+                <oui-loader inline="true"></oui-loader>
+            </div>
 
             <div data-ng-if="ctrl.availableDomains">
                 <p data-ng-bind-html="tr('exchange_tab_GROUPS_add_alias_intro', ctrl.selectedMailingList.mailingListDisplayName)"></p>
 
                 <form name="ctrl.exchangeAddGroupAliasForm">
-                    <div class="form-group" data-ng-class="{'has-error': ctrl.exchangeAddGroupAliasForm.aliasInput.$dirty && (ctrl.exchangeAddGroupAliasForm.aliasInput.$invalid || ctrl.takenEmailError)}">
+                    <div class="form-group"
+                         data-ng-class="{'has-error': ctrl.exchangeAddGroupAliasForm.aliasInput.$dirty && (ctrl.exchangeAddGroupAliasForm.aliasInput.$invalid || ctrl.takenEmailError)}">
                         <div class="input-group">
-                            <input type="text"
-                                   class="form-control"
-                                   name="aliasInput"
-                                   placeholder="{{i18n.exchange_tab_GROUPS_add_alias_placeholder}}"
-                                   required
+                            <input type="text" class="form-control" maxlength="256" name="aliasInput" placeholder="{{i18n.exchange_tab_GROUPS_add_alias_placeholder}}" required
                                    data-ng-change="ctrl.checkTakenEmails()"
-                                   maxlength="256"
                                    data-ng-model="ctrl.model.alias"
                                    data-ng-pattern="/^[-_a-zA-Z0-9]+((\.|\+)[-_a-z0-9]+)*$/">
                             <span class="input-group-addon">@</span>
@@ -42,8 +40,7 @@
                     </div>
                 </form>
 
-                <div class="alert alert-info"
-                     role="alert"
+                <div class="alert alert-info" role="alert"
                      data-i18n-static="exchange_tab_GROUPS_add_alias_valid">
                 </div>
             </div>
@@ -51,12 +48,14 @@
 
         <div data-wizard-step>
             <p data-i18n-static="exchange_tab_GROUPS_add_alias_step2_intro"></p>
-            <dl class="dl-horizontal">
+            <dl class="dl-horizontal dl-lg">
                 <dt data-i18n-static="exchange_tab_GROUPS_add_alias_step2_alias_label"></dt>
-                <dd data-ng-bind-template="{{ctrl.model.alias}}@{{ctrl.model.domain.displayName}}"></dd>
+                <dd class="word-break"
+                    data-ng-bind-template="{{ctrl.model.alias}}@{{ctrl.model.domain.displayName}}"></dd>
 
                 <dt data-i18n-static="exchange_tab_GROUPS_add_alias_step2_account_label"></dt>
-                <dd data-ng-bind="ctrl.selectedMailingList.mailingListDisplayName | sliceContent: 150" class="word-break"></dd>
+                <dd class="word-break"
+                    data-ng-bind="ctrl.selectedMailingList.mailingListDisplayName | sliceContent: 150"></dd>
             </dl>
         </div>
     </div>

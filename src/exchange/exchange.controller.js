@@ -34,10 +34,6 @@ angular
             $scope.resetMessages = messaging.resetMessages.bind(messaging);
             $scope.setMessage = messaging.setMessage.bind(messaging);
 
-            this.alerts = {
-                dashboard: "exchangeDashboardAlert"
-            };
-
             this.isLoading = true;
 
             this.currentAction = null;

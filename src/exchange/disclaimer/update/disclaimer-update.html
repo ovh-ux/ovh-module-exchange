@@ -7,47 +7,53 @@
         <div data-wizard-step
              data-wizard-step-valid="isStep1Valid()">
 
-            <div class="loader text-center" data-ng-if="ctrl.loadingData"></div>
+            <div class="text-center" data-ng-if="ctrl.loadingData">
+                <oui-loader inline="true"></oui-loader>
+            </div>
 
             <div data-ng-if="!ctrl.loadingData">
                 <p data-ng-bind-html="tr('exchange_ACTION_update_disclaimer_info', [ctrl.data.domain.displayName])"></p>
 
-                <form class="form-horizontal mt-4">
-                    <div class="form-group mt-5">
-                        <div class="col-md-9 col-md-offset-1">
-                            <div class="input-group">
-                                <select class="form-control"
-                                        id="variableSelect"
-                                        data-ng-model="ctrl.data.selectedAttribute"
-                                        data-ng-options="tr('exchange_ACTION_add_disclaimer_option_' +variable) for variable in ctrl.availableAttributes"></select>
-                                <div class="input-group-btn">
-                                    <button class="btn btn-default"
-                                            type="button"
-                                            data-i18n-static="exchange_ACTION_disclaimer_insert"
-                                            data-ng-click="ctrl.insertAttribute()"
-                                            data-ng-disabled="!ctrl.data.selectedAttribute"></button>
-                                </div>
-                            </div>
+                <form name="updateDisclaimerForm">
+                    <div class="text-center">
+                        <div class="oui-select oui-select_inline">
+                            <select class="oui-select__input" id="variableSelect"
+                                    data-ng-model="ctrl.data.selectedAttribute"
+                                    data-ng-options="tr('exchange_ACTION_add_disclaimer_option_' +variable) for variable in ctrl.availableAttributes">
+                            </select>
+                            <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
                         </div>
+                        <button class="btn btn-default" type="button"
+                                data-i18n-static="exchange_ACTION_disclaimer_insert"
+                                data-ng-click="ctrl.insertAttribute()"
+                                data-ng-disabled="!ctrl.data.selectedAttribute">
+                        </button>
                     </div>
 
-                    <textarea id="update-disclaimer-editor"
+                    <textarea class="oui-textarea" id="update-disclaimer-editor"
                               data-ckeditor
                               data-ng-model="ctrl.data.content"
-                              data-ng-value="ctrl.data.content"></textarea>
+                              data-ng-value="ctrl.data.content">
+                    </textarea>
 
-                    <div class="checkbox mt-4">
-                        <label>
-                            <input type="checkbox" data-ng-model="ctrl.data.outsideOnly">
-                            <span data-i18n-static="exchange_ACTION_add_disclaimer_outside"></span>
+                    <div class="oui-checkbox mt-4">
+                        <input type="checkbox" class="oui-checkbox__input" id="outsideOnly"
+                               data-ng-model="ctrl.data.outsideOnly">
+                        <label class="oui-checkbox__label-container" for="outsideOnly">
+                            <span class="oui-checkbox__label"
+                                  data-i18n-static="exchange_ACTION_add_disclaimer_outside"></span>
+                            <span class="oui-checkbox__icon">
+                                <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
+                                <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
+                                <span class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></span>
+                            </span>
                         </label>
                     </div>
                 </form>
 
-                <div class="alert alert-warning"
-                     role="alert"
-                     data-ng-show="ctrl.data.content.length > 5000">
-                    <span data-i18n-static="exchange_ACTION_update_disclaimer_length_warning"></span>
+                <div class="alert alert-warning mt-4" role="alert"
+                     data-i18n-static="exchange_ACTION_update_disclaimer_length_warning"
+                     data-ng-if="ctrl.data.content.length > 5000">
                 </div>
             </div>
 

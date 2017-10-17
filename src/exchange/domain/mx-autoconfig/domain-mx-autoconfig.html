@@ -8,7 +8,9 @@
         <div data-wizard-step
              data-wizard-step-valid="ctrl.domainDiag.isOvhDomain">
 
-            <div class="loader text-center" data-ng-if="!ctrl.domainDiag"></div>
+            <div class="text-center" data-ng-if="!ctrl.domainDiag">
+                <oui-loader inline="true"></oui-loader>
+            </div>
 
             <div data-ng-if="ctrl.domainDiag">
                 <p data-ng-bind="tr('exchange_tab_domain_diagnostic_mx_intro_ovh', ctrl.domain.displayName)"
@@ -16,15 +18,16 @@
                 <p data-ng-bind="tr('exchange_tab_domain_diagnostic_mx_no_ovh')"
                    data-ng-if="!ctrl.domainDiag.isOvhDomain"></p>
 
-                <div class="radio" data-ng-if="ctrl.domainDiag.isOvhDomain">
-                    <label>
-                        <input type="radio" name="addOption"
-                               data-ng-checked="true"
-                               data-ng-model="ctrl.model.antiSpam"
-                               data-ng-value="false">
-                        <span data-i18n-static="exchange_tab_domain_diagnostic_mx_no_antispam"></span>
+                <div class="oui-radio" data-ng-if="ctrl.domainDiag.isOvhDomain">
+                    <input type="radio" class="oui-radio__input" id="antiSpam-no" name="addOption" checked
+                           data-ng-model="ctrl.model.antiSpam"
+                           data-ng-value="false">
+                    <label class="oui-radio__label-container" for="antiSpam-no">
+                        <span class="oui-radio__label"
+                              data-i18n-static="exchange_tab_domain_diagnostic_mx_no_antispam"></span>
                     </label>
                 </div>
+
                 <p data-i18n-static="exchange_tab_domain_diagnostic_mx_no_antispam"
                    data-ng-if="ctrl.domainDiag.isOvhDomain === false"></p>
 
@@ -33,18 +36,20 @@
                     <dd data-ng-bind-html="tr('exchange_tab_domain_diagnostic_mx_no_antispam_config', [ctrl.domainDiag.mx.noSpam[0].priority, ctrl.domainDiag.mx.noSpam[0].target])"></dd>
                 </dl>
 
-                <div class="radio" data-ng-if="ctrl.domainDiag.isOvhDomain">
-                    <label>
-                        <input type="radio" name="addOption"
-                               data-ng-model="ctrl.model.antiSpam"
-                               data-ng-value="true">
-                        <span data-i18n-static="exchange_tab_domain_diagnostic_mx_antispam"></span>
+                <div class="oui-radio" data-ng-if="ctrl.domainDiag.isOvhDomain">
+                    <input type="radio" class="oui-radio__input" id="antiSpam-yes" name="addOption"
+                           data-ng-model="ctrl.model.antiSpam"
+                           data-ng-value="true">
+                    <label class="oui-radio__label-container" for="antiSpam-yes">
+                        <span class="oui-radio__label"
+                              data-i18n-static="exchange_tab_domain_diagnostic_mx_antispam"></span>
                     </label>
                 </div>
+
                 <p data-i18n-static="exchange_tab_domain_diagnostic_mx_antispam"
                    data-ng-if="ctrl.domainDiag.isOvhDomain === false"></p>
 
-                <dl class="dl-horizontal dl-medium">
+                <dl class="dl-horizontal">
                     <dt data-i18n-static="exchange_tab_domain_diagnostic_mx_label_champs"></dt>
                     <dd data-ng-bind-html="tr('exchange_tab_domain_diagnostic_mx_antispam_config', [
                         ctrl.domainDiag.mx.spam[0].priority, ctrl.domainDiag.mx.spam[0].target,
@@ -58,19 +63,24 @@
         <div data-wizard-step>
             <p data-i18n-static="exchange_tab_domain_diagnostic_mx_recap"></p>
 
-            <dl class="dl-horizontal dl-lg">
+            <dl class="dl-horizontal">
                 <dt data-i18n-static="exchange_tab_domain_domain"></dt>
-                <dd data-ng-bind="ctrl.domain.displayName | sliceContent: 150" class="word-break"></dd>
+                <dd class="word-break"
+                    data-ng-bind="ctrl.domain.displayName | sliceContent: 150"></dd>
 
-                <dt data-ng-if="!ctrl.model.antiSpam" data-i18n-static="exchange_tab_domain_diagnostic_mx_label_champs"></dt>
-                <dd data-ng-if="!ctrl.model.antiSpam" data-ng-bind-html="tr('exchange_tab_domain_diagnostic_mx_no_antispam_config', [ctrl.domainDiag.mx.noSpam[0].priority, ctrl.domainDiag.mx.noSpam[0].target])"></dd>
+                <dt data-ng-if="!ctrl.model.antiSpam"
+                    data-i18n-static="exchange_tab_domain_diagnostic_mx_label_champs"></dt>
+                <dd data-ng-if="!ctrl.model.antiSpam"
+                    data-ng-bind-html="tr('exchange_tab_domain_diagnostic_mx_no_antispam_config', [ctrl.domainDiag.mx.noSpam[0].priority, ctrl.domainDiag.mx.noSpam[0].target])"></dd>
 
-                <dt data-ng-if="ctrl.model.antiSpam" data-i18n-static="exchange_tab_domain_diagnostic_mx_label_champs"></dt>
-                <dd data-ng-if="ctrl.model.antiSpam" data-ng-bind-html="tr('exchange_tab_domain_diagnostic_mx_antispam_config', [
-                    ctrl.domainDiag.mx.spam[0].priority, ctrl.domainDiag.mx.spam[0].target,
-                    ctrl.domainDiag.mx.spam[1].priority, ctrl.domainDiag.mx.spam[1].target,
-                    ctrl.domainDiag.mx.spam[2].priority, ctrl.domainDiag.mx.spam[2].target,
-                    ctrl.domainDiag.mx.spam[3].priority, ctrl.domainDiag.mx.spam[3].target])"></dd>
+                <dt data-ng-if="ctrl.model.antiSpam"
+                    data-i18n-static="exchange_tab_domain_diagnostic_mx_label_champs"></dt>
+                <dd data-ng-if="ctrl.model.antiSpam"
+                    data-ng-bind-html="tr('exchange_tab_domain_diagnostic_mx_antispam_config', [
+                        ctrl.domainDiag.mx.spam[0].priority, ctrl.domainDiag.mx.spam[0].target,
+                        ctrl.domainDiag.mx.spam[1].priority, ctrl.domainDiag.mx.spam[1].target,
+                        ctrl.domainDiag.mx.spam[2].priority, ctrl.domainDiag.mx.spam[2].target,
+                        ctrl.domainDiag.mx.spam[3].priority, ctrl.domainDiag.mx.spam[3].target])"></dd>
             </dl>
         </div>
     </div>

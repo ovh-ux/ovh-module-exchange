@@ -9,18 +9,19 @@ angular
                 translator,
                 messaging
             };
+        }
 
-            this.$routerParams = Exchange.getParams();
-            this.ml = navigation.currentActionData;
+        $onInit () {
+            this.$routerParams = this.services.Exchange.getParams();
+            this.ml = this.services.navigation.currentActionData;
 
-            $scope.submit = () => this.submit();
+            this.services.$scope.submit = () => this.submit();
         }
 
         submit () {
             this.services.$scope.$broadcast("paginationServerSide.loadPage", 1, "groupsTable");
 
-            this.services
-                .Exchange
+            this.services.Exchange
                 .deleteGroup(this.$routerParams.organization, this.$routerParams.productId, this.ml.mailingListName)
                 .then((success) => {
                     this.services.messaging.writeSuccess(this.services.translator.tr("exchange_tab_GROUPS_delete_group_success"), success);

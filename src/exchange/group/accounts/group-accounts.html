@@ -8,8 +8,7 @@
 
             <p data-i18n-static="exchange_GROUPS_accounts_step1_intro"></p>
 
-            <div class="alert alert-warning mt-4"
-                 role="alert"
+            <div class="alert alert-warning" role="alert"
                  data-ng-if="!ctrl.loading && ctrl.accountsList && ctrl.accountsList.list.messages.length > 0">
                 <div>
                     <strong data-i18n-static="exchange_tab_ACCOUNTS_warning"></strong>
@@ -17,31 +16,24 @@
                 </div>
             </div>
 
-            <form class="mb-3 mt-4">
+            <form class="form-inline d-md-flex justify-content-md-end mb-3">
                 <div class="form-group">
-                    <label class="sr-only"
-                           for="accountSearch"
-                           data-ng-bind="::i18n.common_search"></label>
+                    <label class="sr-only" for="accountSearch"
+                           data-i18n-static="common_search"></label>
                     <div class="input-group">
-                        <input type="text"
-                               class="form-control"
-                               id="accountSearch"
-                               placeholder="{{::i18n.exchange_tab_ACCOUNTS_table_email}}"
-                               maxlength="256"
+                        <input type="text" class="form-control" id="accountSearch" maxlength="256" placeholder="{{::i18n.exchange_tab_ACCOUNTS_table_email}}"
                                data-ng-change="ctrl.onSearch()"
                                data-ng-disabled="ctrl.loading"
                                data-ng-model="ctrl.search.value"
                                data-ng-model-options="{ debounce: 800 }">
                         <div class="input-group-btn" data-ng-if="ctrl.search.value">
-                            <button class="btn btn-default"
-                                    type="button"
-                                    aria-label="{{i18n.common_cancel}}"
+                            <button class="btn btn-default" type="button" aria-label="{{i18n.common_cancel}}"
                                     data-ng-click="ctrl.resetSearch()"
                                     data-ng-disabled="ctrl.loading">
                                 <span class="fa fa-times" aria-hidden="true"></span>
                             </button>
                         </div>
-                        <span class="input-group-addon disabled" data-ng-if="!ctrl.search.value">
+                        <span class="input-group-addon" data-ng-if="!ctrl.search.value">
                             <span class="fa fa-search" aria-hidden="true"></span>
                         </span>
                     </div>
@@ -114,9 +106,9 @@
                  data-pagination-server-side-table-loading="getLoading()">
             </div>
 
-            <div class="alert alert-info mt-4"
-                 role="alert"
-                 data-i18n-static="exchange_GROUPS_add_group_contact_as_manager_info"></div>
+            <div class="alert alert-info mt-5" role="alert"
+                 data-i18n-static="exchange_GROUPS_add_group_contact_as_manager_info">
+            </div>
         </div>
     </div>
 </div>

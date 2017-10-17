@@ -2,17 +2,17 @@
     <div class="row">
         <div class="col-md-9">
 
-            <div class="loader text-center" data-ng-if="ctrl.tableLoading"></div>
+            <div class="text-center" data-ng-if="ctrl.tableLoading">
+                <oui-loader size="l" inline="true"></oui-loader>
+            </div>
 
             <div data-ng-if="!ctrl.tableLoading">
-                <div class="alert alert-info"
-                     role="alert"
+                <div class="alert alert-info" role="alert"
                      data-i18n-static="exchange_tab_DISCLAIMER_table_no_domain"
                      data-ng-if="ctrl.addDomainMessageFlag">
                 </div>
 
-                <div class="alert alert-info"
-                     role="alert"
+                <div class="alert alert-info" role="alert"
                      data-i18n-static="exchange_tab_DISCLAIMER_table_empty"
                      data-ng-if="ctrl.noDisclaimerMessageFlag">
                 </div>
@@ -24,21 +24,23 @@
                             <tr>
                                 <th scope="col" data-i18n-static="exchange_tab_DISCLAIMER_associated_domains"></th>
                                 <th scope="col" data-i18n-static="exchange_tab_DISCLAIMER_disclaimer_content"></th>
-                                <th scope="col" class="text-center" data-i18n-static="exchange_tab_DISCLAIMER_disclaimer_outside_only"></th>
-                                <th scope="col" class="text-center min-width" data-i18n-static="exchange_tab_DISCLAIMER_state_header"></th>
-                                <th scope="col" class="text-center min-width"></th>
+                                <th class="text-center" scope="col" data-i18n-static="exchange_tab_DISCLAIMER_disclaimer_outside_only"></th>
+                                <th class="text-center min-width" scope="col" data-i18n-static="exchange_tab_DISCLAIMER_state_header"></th>
+                                <th class="text-center min-width" scope="col"></th>
                             </tr>
                         </thead>
 
                         <tbody>
                             <tr data-ng-repeat="disclaimer in (ctrl.disclaimersList.list.results | filter: {'emptySlotFlag': false} | orderBy:'domain.formattedName') track by $index">
-                                <th class="word-break" scope="row" data-ng-bind="disclaimer.domain.displayName"></th>
-                                <td class="word-break" data-ng-bind-html="disclaimer.strippedContent | sliceContent: 60" data-tooltip-html="{{disclaimer.strippedContent | sliceContent: 250}}"></td>
+                                <th class="word-break" scope="row"
+                                    data-ng-bind="disclaimer.domain.displayName"></th>
+                                <td class="word-break"
+                                    data-ng-bind-html="disclaimer.strippedContent | sliceContent: 60" data-tooltip-html="{{disclaimer.strippedContent | sliceContent: 250}}"></td>
                                 <td class="text-center">
-                                    <span data-ng-show="disclaimer.outsideOnly"
+                                    <span data-ng-if="disclaimer.outsideOnly"
                                           data-i18n-static="exchange_tab_DISCLAIMER_disclaimer_outside_only_true"
                                           data-uib-tooltip="{{i18n.exchange_tab_DISCLAIMER_disclaimer_outside_only_tooltip}}"></span>
-                                    <span data-ng-hide="disclaimer.outsideOnly"
+                                    <span data-ng-if="!disclaimer.outsideOnly"
                                           data-i18n-static="exchange_tab_DISCLAIMER_disclaimer_outside_only_false"
                                           data-uib-tooltip="{{i18n.exchange_tab_DISCLAIMER_disclaimer_outside_only_tooltip}}"></span>
                                 </td>
@@ -52,6 +54,7 @@
                                 </td>
                                 <td class="text-center">
                                     <button class="btn btn-icon" type="button" title="{{i18n.exchange_tab_ACCOUNTS_menu_account_tooltip}}"
+                                            data-ng-disabled="disclaimer.taskPendingId !== 0"
                                             data-linkedpopover="exchange/disclaimer/popover/disclaimer.popover.html"
                                             data-linkedpopover-placement="left"
                                             data-linkedpopover-single="true"
@@ -76,7 +79,7 @@
         </div>
 
         <div class="col-md-3 mt-5 mt-lg-0">
-            <button class="btn btn-block btn-default"
+            <button class="btn btn-block btn-default" type="button"
                     data-i18n-static="exchange_ACTION_add_disclaimer_button"
                     data-ng-click="ctrl.addDisclaimer()"
                     data-ng-disabled="ctrl.tableLoading || ctrl.newDisclaimersDisabled()">

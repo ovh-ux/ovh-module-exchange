@@ -10,30 +10,28 @@
                 </a>
             </p>
 
-            <div class="mb-3">
-                <form class="form-inline d-md-flex justify-content-md-end" name="searchResourceForm">
-                    <div class="form-group">
-                        <label class="sr-only" for="searchResourceSearch"
-                               data-ng-bind="::i18n.common_search"></label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="searchResourceSearch" name="searchResourceSearch" placeholder="{{::i18n.exchange_tab_ACCOUNTS_table_email}}"
-                                   data-ng-change="ctrl.onSearchValueChanged()"
-                                   data-ng-disabled="ctrl.loading"
-                                   data-ng-model="ctrl.searchValue">
-                            <div class="input-group-btn" data-ng-if="ctrl.searchValue">
-                                <button class="btn btn-default" type="button" aria-label="{{i18n.common_cancel}}"
-                                        data-ng-click="ctrl.resetSearch()"
-                                        data-ng-disabled="ctrl.loading">
-                                    <span class="fa fa-times" aria-hidden="true"></span>
-                                </button>
-                            </div>
-                            <span class="input-group-addon" data-ng-if="!ctrl.searchValue">
-                                <span class="fa fa-search" aria-hidden="true"></span>
-                            </span>
+            <form class="form-inline d-md-flex justify-content-md-end mb-3" name="searchResourceForm">
+                <div class="form-group">
+                    <label class="sr-only" for="searchResourceSearch"
+                           data-ng-bind="::i18n.common_search"></label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="searchResourceSearch" name="searchResourceSearch" placeholder="{{::i18n.exchange_tab_ACCOUNTS_table_email}}"
+                               data-ng-change="ctrl.onSearchValueChanged()"
+                               data-ng-disabled="ctrl.loading"
+                               data-ng-model="ctrl.searchValue">
+                        <div class="input-group-btn" data-ng-if="ctrl.searchValue">
+                            <button class="btn btn-default" type="button" aria-label="{{i18n.common_cancel}}"
+                                    data-ng-click="ctrl.resetSearch()"
+                                    data-ng-disabled="ctrl.loading">
+                                <span class="fa fa-times" aria-hidden="true"></span>
+                            </button>
                         </div>
+                        <span class="input-group-addon" data-ng-if="!ctrl.searchValue">
+                            <span class="fa fa-search" aria-hidden="true"></span>
+                        </span>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
 
             <table class="table"
                    data-ng-class="{'table-hover table-striped': !ctrl.loading}">

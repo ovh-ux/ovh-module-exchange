@@ -1,27 +1,3 @@
-<div data-ovh-alert="{{ctrl.alerts.dashboard}}"></div>
-
-<div class="alert m-0" role="alert"
-     data-ng-class="ctrl.services.messaging.alertType"
-     data-ng-if="ctrl.services.messaging.message">
-    <button class="close" type="button" aria-label="tr('wizard_close')"
-            data-dismiss="alert"
-            data-ng-click="resetMessages()">
-        <span aria-hidden="true">&times;</span>
-    </button>
-
-    <span data-ng-bind-html="ctrl.services.messaging.message"></span>
-
-    <div data-ng-show="ctrl.services.messaging.messageDetails != null"
-         data-linkedpopover="exchange/error-messages.popover.html"
-         data-linkedpopover-placement="bottom"
-         data-linkedpopover-remote="true"
-         data-linkedpopover-single="false">
-        <strong class="pointer underline"
-                data-i18n-static="exchange_dashboard_message_see_more"
-                data-ng-if="ctrl.services.messaging.messageDetails.length > 0"></strong>
-    </div>
-</div>
-
 <div class="text-center" data-ng-if="ctrl.isLoading">
     <oui-loader size="l" inline="true"></oui-loader>
 </div>
@@ -54,15 +30,13 @@
                     <div class="oui-input-group">
                         <input type="text" class="oui-input" id="displayNameField" name="displayNameField" minlength="4" maxlength="50" required
                                data-ng-model="ctrl.displayName">
-                        <button class="oui-button" type="submit"
+                        <button class="oui-button oui-button_small-width" type="submit" aria-label="{{i18n.exchange_dashboard_display_name_save}}"
                                 data-ng-disabled="ctrl.formExchangeDisplayName.displayNameField.$invalid">
                             <span class="oui-icon oui-icon-success oui-icon_small" aria-hidden="true"></span>
-                            <span class="sr-only" data-i18n-static="exchange_dashboard_display_name_save"></span>
                         </button>
-                        <button class="oui-button" type="button"
+                        <button class="oui-button oui-button_small-width" type="button" aria-label="{{i18n.common_cancel}}"
                                 data-ng-click="ctrl.resetDisplayName()">
                             <span class="oui-icon oui-icon-error oui-icon_small" aria-hidden="true"></span>
-                            <span class="sr-only" data-i18n-static="common_cancel"></span>
                         </button>
                     </div>
                 </form>
@@ -97,11 +71,10 @@
                                     data-ng-click="ctrl.services.navigation.setAction('exchange/header/license/service-license-history', ctrl.exchange)">
                             </button>
                         </li>
-                        <li>
+                        <li data-ng-if="ctrl.exchange.renewOptionAvailable">
                             <button class="btn btn-link" type="button"
                                     data-i18n-static="exchange_update_billing_button_title"
-                                    data-ng-click="ctrl.services.navigation.setAction('exchange/header/update-renew/update-renew', ctrl.exchange)"
-                                    data-ng-if="ctrl.exchange.renewOptionAvailable">
+                                    data-ng-click="ctrl.services.navigation.setAction('exchange/header/update-renew/update-renew', ctrl.exchange)">
                             </button>
                         </li>
                         <li class="dropdown-divider" data-ng-if="ctrl.exchange.deleteOptionAvailable">
@@ -120,7 +93,7 @@
         </div>
     </div>
 
-    <div data-ng-controller="ExchangeTabsCtrl" data-ng-if="!exchange.isExpired">
+    <div data-ng-controller="ExchangeTabsCtrl" data-ng-if="!ctrl.exchange.isExpired">
         <ovh-tabs tabs="tabs"
                   selected-tab="selectedTab"
                   change-tab="changeTab"
@@ -128,7 +101,26 @@
                   menu="dropdownMenuItems"
                   tr="tr"></ovh-tabs>
         <div class="tab-content">
-            <div data-ovh-alert="{{ctrl.alerts.tabs}}"></div>
+            <div class="alert alert-dismissible" role="alert"
+                 data-ng-class="ctrl.services.messaging.alertType"
+                 data-ng-if="ctrl.services.messaging.message">
+                <button class="close" type="button" aria-label="tr('wizard_close')"
+                        data-dismiss="alert"
+                        data-ng-click="resetMessages()">
+                </button>
+
+                <span data-ng-bind-html="ctrl.services.messaging.message"></span>
+
+                <div data-ng-show="ctrl.services.messaging.messageDetails != null"
+                     data-linkedpopover="exchange/error-messages.popover.html"
+                     data-linkedpopover-placement="bottom"
+                     data-linkedpopover-remote="true"
+                     data-linkedpopover-single="false">
+                    <strong class="pointer underline"
+                            data-i18n-static="exchange_dashboard_message_see_more"
+                            data-ng-if="ctrl.services.messaging.messageDetails.length > 0"></strong>
+                </div>
+            </div>
 
             <div class="tab-pane active"
                  data-ng-include="selectedTab && 'exchange/' + kebabCase(selectedTab) + '/' + kebabCase(selectedTab) + '.html'"></div>

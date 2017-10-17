@@ -1,60 +1,58 @@
 <div data-ng-controller="ExchangeTabManagersByGroupsCtrl as ctrl">
-    <div class="col-md-9">
-        <div class="d-flex align-items-center mb-5">
-            <button class="btn btn-default" type="button"
-                    data-ng-click="ctrl.hide()">
-                <span class="fa fa-chevron-left mr-2" aria-hidden="true"></span>
-                <span data-i18n-static="exchange_GROUPS_manager_back_button"></span>
-            </button>
-            <span class="ml-4" data-ng-bind-html="tr('exchange_GROUPS_manager_intro', ctrl.services.navigation.selectedGroup.mailingListDisplayName)"></span>
-        </div>
+    <button class="oui-button oui-button_link oui-button_icon-left" type="button"
+            data-ng-click="ctrl.hide()">
+        <span class="oui-icon oui-icon-chevron-left" aria-hidden="true"></span>
+        <span data-i18n-static="common_back"></span>
+    </button>
+    <h2 data-ng-bind-html="tr('exchange_GROUPS_manager_intro', ctrl.services.navigation.selectedGroup.mailingListDisplayName)"></h2>
 
-        <div class="loader text-center" data-ng-if="ctrl.loading"></div>
+    <div class="text-center" data-ng-if="ctrl.loading">
+        <oui-loader size="l" inline="true"></oui-loader>
+    </div>
 
-        <div class="alert alert-info"
-             role="alert"
-             data-i18n-static="exchange_GROUPS_manager_table_empty"
-             data-ng-if="!ctrl.loading && (ctrl.managersList.list.results | filter:{manager:true}).length === 0">
-        </div>
+    <div class="alert alert-info" role="alert"
+         data-i18n-static="exchange_GROUPS_manager_table_empty"
+         data-ng-if="!ctrl.loading && (ctrl.managersList.list.results | filter:{manager:true}).length === 0">
+    </div>
 
-        <table class="table table-hover table-striped"
-               data-ng-if="!ctrl.loading && ((ctrl.managersList.list.results | filter:{manager:true}).length > 0 || ctrl.managersList.list.messages.length > 0)">
-            <thead>
-                <tr>
-                    <th scope="col" data-i18n-static="exchange_tab_GROUPS_all_table_manager"></th>
-                    <th class="min-width" scope="col"></th>
-                </tr>
-            </thead>
+    <table class="table table-hover table-striped"
+           data-ng-if="!ctrl.loading && ((ctrl.managersList.list.results | filter:{manager:true}).length > 0 || ctrl.managersList.list.messages.length > 0)">
+        <thead>
+            <tr>
+                <th scope="col" data-i18n-static="exchange_tab_GROUPS_all_table_manager"></th>
+                <th class="min-width" scope="col"></th>
+            </tr>
+        </thead>
 
-            <tbody>
-                <tr data-ng-repeat="manager in (ctrl.managersList.list.results | filter:{manager:true}) track by $index">
-                    <td data-ng-bind="manager.displayAddress"></td>
-                    <td class="text-center">
-                        <button class="btn btn-icon" type="button" aria-label="{{i18n.exchange_GROUPS_manager_delete_tooltip}}"
-                                data-ng-click="ctrl.removeManager(manager)"
-                                data-uib-tooltip="{{i18n.exchange_GROUPS_manager_delete_tooltip}}"
-                                data-tooltip-append-to-body="true">
-                            <span class="oui-icon oui-icon-trash_line oui-icon_small" aria-hidden="true"></span>
-                        </button>
-                    </td>
-                </tr>
-                <tr data-ng-repeat="ml in (ctrl.managersList.list.messages | orderBy:'id':false) track by $index"
-                    data-ng-if="ctrl.managersList.list.messages.length > 0">
-                    <td colspan="2">
-                        <span class="fa fa-exclamation-triangle mr-2" aria-hidden="true"></span>
-                        <span data-ng-bind="ml.id"
-                              data-uib-tooltip="{{tr('exchange_GROUPS_partial_account', [ml.message])}}"></span>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <tbody>
+            <tr data-ng-repeat="manager in (ctrl.managersList.list.results | filter:{manager:true}) track by $index">
+                <td data-ng-bind="manager.displayAddress"></td>
+                <td class="text-center">
+                    <button class="btn btn-icon" type="button" aria-label="{{i18n.exchange_GROUPS_manager_delete_tooltip}}"
+                            data-ng-click="ctrl.removeManager(manager)"
+                            data-uib-tooltip="{{i18n.exchange_GROUPS_manager_delete_tooltip}}"
+                            data-tooltip-append-to-body="true"
+                            data-tooltip-placement="left">
+                        <span class="oui-icon oui-icon-trash_line oui-icon_small" aria-hidden="true"></span>
+                    </button>
+                </td>
+            </tr>
+            <tr data-ng-repeat="ml in (ctrl.managersList.list.messages | orderBy:'id':false) track by $index"
+                data-ng-if="ctrl.managersList.list.messages.length > 0">
+                <td colspan="2">
+                    <span class="fa fa-exclamation-triangle mr-2" aria-hidden="true"></span>
+                    <span data-ng-bind="ml.id"
+                          data-uib-tooltip="{{tr('exchange_GROUPS_partial_account', [ml.message])}}"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
-        <div class="clearfix"
-             data-ng-show="!ctrl.loading && ((ctrl.managersList.list.results | filter:{manager:true}).length > 0 || ctrl.managersList.list.messages.length > 0)"
-             data-pagination-server-side="managersTable"
-             data-pagination-server-side-function="getManagersByGroup"
-             data-pagination-server-side-paginated-stuff="getManagersList()"
-             data-pagination-server-side-table-loading="getLoading()">
-        </div>
+    <div class="clearfix"
+         data-ng-show="!ctrl.loading && ((ctrl.managersList.list.results | filter:{manager:true}).length > 0 || ctrl.managersList.list.messages.length > 0)"
+         data-pagination-server-side="managersTable"
+         data-pagination-server-side-function="getManagersByGroup"
+         data-pagination-server-side-paginated-stuff="getManagersList()"
+         data-pagination-server-side-table-loading="getLoading()">
     </div>
 </div>
