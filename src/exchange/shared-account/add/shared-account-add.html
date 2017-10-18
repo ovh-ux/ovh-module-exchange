@@ -8,9 +8,7 @@
              data-wizard-step-on-load="loadingCreationOptions"
              data-wizard-step-valid="isAccountValid()">
 
-            <div class="text-center" data-ng-if="ctrl.optionsToCreateNewAccounts == null">
-                <oui-loader inline="true"></oui-loader>
-            </div>
+            <oui-loader data-ng-if="ctrl.optionsToCreateNewAccounts == null"></oui-loader>
 
             <form name="ctrl.sharedAccountForm" data-ng-if="ctrl.optionsToCreateNewAccounts != null">
                 <p>

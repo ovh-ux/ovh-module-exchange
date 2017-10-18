@@ -8,9 +8,7 @@
         <div data-wizard-step
              data-wizard-step-valid="ctrl.domainDiag.isOvhDomain">
 
-            <div class="text-center" data-ng-if="!ctrl.domainDiag">
-                <oui-loader inline="true"></oui-loader>
-            </div>
+            <oui-loader data-ng-if="!ctrl.domainDiag"></oui-loader>
 
             <div data-ng-if="ctrl.domainDiag">
                 <p data-ng-bind="tr('exchange_tab_domain_diagnostic_mx_intro_ovh', ctrl.domain.displayName)"

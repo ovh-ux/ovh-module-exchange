@@ -8,9 +8,7 @@
              data-wizard-step-on-load="retrievingPublicFolderOptions"
              data-wizard-step-valid="isThereAnyValidationError()">
 
-            <div class="text-center" data-ng-if="!ctrl.publicFoldersOptions">
-                <oui-loader inline="true"></oui-loader>
-            </div>
+            <oui-loader data-ng-if="!ctrl.publicFoldersOptions"></oui-loader>
 
             <form name="sharedAddForm">
                 <p>

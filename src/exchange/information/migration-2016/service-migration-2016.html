@@ -8,9 +8,7 @@
              data-wizard-step-valid="ctrl.agree.value">
             <p data-i18n-static="exchange_ACTION_upgrade_intro"></p>
 
-            <div class="text-center" data-ng-if="!ctrl.model.contracts">
-                <oui-loader inline="true"></oui-loader>
-            </div>
+            <oui-loader data-ng-if="!ctrl.model.contracts"></oui-loader>
 
             <div data-contracts="ctrl.model.contracts"
                  data-full-text="false"

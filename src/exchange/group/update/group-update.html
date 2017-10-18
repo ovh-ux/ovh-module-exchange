@@ -8,9 +8,7 @@
              data-wizard-step-on-load="retrievingOptionsToCreateNewGroup"
              data-wizard-step-valid="groupIsValid()">
 
-            <div class="text-center" data-ng-if="!ctrl.groupOptions">
-                <oui-loader inline="true"></oui-loader>
-            </div>
+            <oui-loader data-ng-if="!ctrl.groupOptions"></oui-loader>
 
             <form name="ctrl.updateGroupForm">
                 <p>

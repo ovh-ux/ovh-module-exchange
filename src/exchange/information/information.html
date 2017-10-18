@@ -212,9 +212,9 @@
                     </ul>
                 </div>
             </div>
-            <div class="text-center" data-ng-if="!ctrl.isGetSharepointDone">
-                <oui-loader inline="true"></oui-loader>
-            </div>
+
+            <oui-loader data-ng-if="!ctrl.isGetSharepointDone"></oui-loader>
+
             <div class="oui-tile mb-5" data-ng-if="ctrl.isGetSharepointDone && ctrl.sharepoint">
                 <h3 class="oui-tile__title"
                     data-i18n-static="exchange_tab_INFORMATIONS_sharepoint"></h3>

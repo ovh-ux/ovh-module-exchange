@@ -1,42 +1,42 @@
 <div class="popover-menu" data-ng-controller="ExchangeToolboxAccountsCtrl as ctrl">
-    <button class="btn btn-link"
-            type="button"
+    <button class="btn btn-link" type="button"
             data-i18n-static="exchange_tab_ACCOUNTS_popover_alias"
             data-ng-click="ctrl.aliasDisplay(account)"
             data-ng-disabled="ctrl.isDisabled(account)"
-            data-ng-if="!ctrl.services.accountTypes.is25g()"></button>
-    <button class="btn btn-link"
-            type="button"
+            data-ng-if="!ctrl.services.accountTypes.is25g()">
+    </button>
+    <button class="btn btn-link" type="button"
             data-i18n-static="exchange_tab_ACCOUNTS_popover_delegation"
             data-ng-click="ctrl.delegationSettings(account)"
             data-ng-disabled="ctrl.isDisabled(account)"
-            data-ng-if="!ctrl.services.accountTypes.is25g()"></button>
-    <button class="btn btn-link"
-            type="button"
+            data-ng-if="!ctrl.services.accountTypes.is25g()">
+    </button>
+    <button class="btn btn-link" type="button"
             data-i18n-static="exchange_tab_ACCOUNTS_popover_outlook_settings"
             data-ng-click="ctrl.outlookSettings(account)"
             data-ng-disabled="ctrl.isDisabled(account)"
-            data-ng-if="account.outlook && account.canBeConfigured"></button>
-    <button class="btn btn-link"
-            type="button"
+            data-ng-if="account.outlook && account.canBeConfigured">
+    </button>
+    <button class="btn btn-link" type="button"
             data-ng-bind="account.deleteOutlook ? i18n.exchange_tab_ACCOUNTS_popover_outlook_remove_cancel : i18n.exchange_tab_ACCOUNTS_popover_outlook_remove"
             data-ng-click="ctrl.removeOutlook(account)"
             data-ng-disabled="ctrl.isDisabled(account)"
-            data-ng-if="account.outlook && account.canBeConfigured"></button>
-    <button class="btn btn-link"
-            type="button"
+            data-ng-if="account.outlook && account.canBeConfigured">
+    </button>
+    <button class="btn btn-link" type="button"
             data-i18n-static="exchange_tab_ACCOUNTS_popover_pst"
             data-ng-click="ctrl.exportAsPst(account)"
-            data-ng-disabled="ctrl.isDisabled(account)"></button>
-    <button class="btn btn-link"
-            type="button"
+            data-ng-disabled="ctrl.isDisabled(account)">
+    </button>
+    <button class="btn btn-link" type="button"
             data-i18n-static="exchange_ACTION_order_upgrade_300G_menu_item"
             data-ng-click="ctrl.upgrade300G(account)"
             data-ng-disabled="ctrl.isDisabled(account)"
-            data-ng-if="ctrl.services.accountTypes.isHosted() || ctrl.services.accountTypes.isProvider()"></button>
-    <button class="btn btn-link"
-            type="button"
+            data-ng-if="ctrl.services.accountTypes.isHosted() || ctrl.services.accountTypes.isProvider()">
+    </button>
+    <button class="btn btn-link" type="button"
             data-ng-bind="ctrl.removeAccountInsteadOfReset ? i18n.exchange_tab_ACCOUNTS_popover_delete : i18n.exchange_tab_ACCOUNTS_popover_reset"
             data-ng-click="ctrl.removeAccount(account)"
-            data-ng-disabled="ctrl.isDisabled(account)"></button>
+            data-ng-disabled="ctrl.isDisabled(account)">
+    </button>
 </div>

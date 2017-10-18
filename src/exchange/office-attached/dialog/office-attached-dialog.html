@@ -8,16 +8,14 @@
              data-wizard-step-on-load="onWizardLoad"
              data-wizard-step-valid="isStep1Valid">
 
-            <div class="text-center" data-ng-if="ctrl.loading.step1.general">
-                <oui-loader inline="true"></oui-loader>
-            </div>
+            <oui-loader data-ng-if="ctrl.loading.step1.general"></oui-loader>
 
             <div data-ng-show="!ctrl.loading.step1.general">
                 <p data-ng-bind-html="tr('exchange_office_attached_alert_modale_header', [ctrl.maxNumberOfAccounts])"></p>
 
                 <form class="form-inline d-md-flex justify-content-md-end mb-3">
                     <div class="form-group mr-md-2"
-                         data-ng-show="ctrl.services.exchangeVersion.isVersion(2010)">
+                         data-ng-if="ctrl.services.exchangeVersion.isVersion(2010)">
                         <label class="sr-only" for="officeAttachedTypeFormInput"
                                data-i18n-static="exchange_office_attached_alert_modale_account_types"></label>
                         <div class="oui-select d-md-inline-block align-middle m-0">
@@ -109,9 +107,7 @@
              data-wizard-step-on-load="loadSelectedAccounts"
              data-wizard-step-valid="isStep2Valid()">
 
-            <div class="text-center" data-ng-if="ctrl.loading.step2.general">
-                <oui-loader inline="true"></oui-loader>
-            </div>
+            <oui-loader data-ng-if="ctrl.loading.step2.general"></oui-loader>
 
             <div data-ng-if="!ctrl.loading.step2.general">
                 <p data-ng-bind-html="tr('exchange_office_attached_alert_modale_confirmation_header', ['<strong>' + ctrl.numberOfSelectedCheckboxes + '</strong>'])"></p>

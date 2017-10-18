@@ -1,93 +1,85 @@
 <div class="container-fluid px-0" data-ng-controller="ExchangeTabDiagnosticsCtrl as ctrl">
     <div class="row">
-        <div class="col-md-9 col-lg-6">
+        <div class="col-md-9">
             <p data-i18n-static="exchange_DIAGNOSTICS_description"></p>
 
             <!-- REQUESTING_NEW_DIAGNOSTIC -->
-            <form class="form-horizontal mt-5"
-                  name="ctrl.diagnosticForm"
-                  data-ng-submit="ctrl.launchDiagnostic()"
-                  data-ng-if="ctrl.state === ctrl.states.REQUESTING_NEW_DIAGNOSTIC">
+            <form class="form-horizontal mt-5" name="ctrl.diagnosticForm"
+                  data-ng-if="ctrl.state === ctrl.states.REQUESTING_NEW_DIAGNOSTIC"
+                  data-ng-submit="ctrl.launchDiagnostic()">
                 <div class="form-group">
-                    <label class="control-label col-md-4 required"
-                           for="exchange_DIAGNOSTICS_input_email"
+                    <label class="control-label col-md-4 required" for="exchange_DIAGNOSTICS_input_email"
                            data-i18n-static="exchange_DIAGNOSTICS_input_email"></label>
                     <div class="col-md-6">
-                        <input type="email"
-                               class="form-control"
-                               name="exchangeDiagnosticEmail"
-                               id="exchange_DIAGNOSTICS_input_email"
-                               required
+                        <input type="email" class="form-control" id="exchange_DIAGNOSTICS_input_email" name="exchangeDiagnosticEmail" required
                                data-ng-model="ctrl.email">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-4 required"
-                           for="exchange_DIAGNOSTICS_input_password"
+                    <label class="control-label col-md-4 required" for="exchange_DIAGNOSTICS_input_password"
                            data-i18n-static="exchange_DIAGNOSTICS_input_password"></label>
                     <div class="col-md-6">
-                        <input type="password"
-                               class="form-control"
-                               name="exchangeDiagnosticPassword"
-                               id="exchange_DIAGNOSTICS_input_password"
-                               required
+                        <input type="password" class="form-control" id="exchange_DIAGNOSTICS_input_password" name="exchangeDiagnosticPassword" required
                                data-ng-model="ctrl.password">
                     </div>
                 </div>
 
                 <div class="row mt-5">
                     <div class="col-md-8 col-md-offset-4">
-                        <button class="btn btn-primary "
-                                type="submit"
+                        <button class="oui-button oui-button_primary oui-button_large-height" type="submit"
                                 data-ng-disabled="ctrl.diagnosticForm.$invalid || ctrl.loaders.diagnosticInProgress">
-                            <span data-ng-if="!ctrl.loaders.diagnosticInProgress" data-i18n-static="exchange_DIAGNOSTICS_button_launch_diagnostic"></span>
+                            <span data-i18n-static="exchange_DIAGNOSTICS_button_launch_diagnostic"
+                                  data-ng-if="!ctrl.loaders.diagnosticInProgress"></span>
                             <span data-ng-if="ctrl.loaders.diagnosticInProgress">
-                                <span class="fa fa-spinner fa-spin mr-2" aria-hidden="true"></span>
+                                <span class="oui-loader oui-loader_inline oui-loader_s">
+                                    <span class="oui-loader__container">
+                                        <span class="oui-loader__image"></span>
+                                    </span>
+                                </span>
                                 <span data-i18n-static="exchange_DIAGNOSTICS_button_diagnostic_in_progress"></span>
                             </span>
                         </button>
                     </div>
                 </div>
 
-                <div class="alert alert-warning mt-5"
-                     role="alert"
+                <div class="alert alert-warning mt-5" role="alert"
                      data-i18n-static="exchange_DIAGNOSTICS_stay_on_page_while_diagnostic_is_running"
-                     data-ng-if="ctrl.loaders.diagnosticInProgress"></div>
+                     data-ng-if="ctrl.loaders.diagnosticInProgress">
+                </div>
             </form>
 
             <!-- DISPLAYING_DIAGNOSTIC_RESULT -->
             <div data-ng-if="ctrl.state === ctrl.states.DISPLAYING_DIAGNOSTIC_RESULT">
-                <button class="btn btn-primary mt-4"
-                        type="button"
+                <button class="oui-button oui-button_primary oui-button_icon-left oui-button_large-height mt-4" type="button"
                         data-ng-click="ctrl.requestNewDiagnostic()">
-                    <span class="fa fa-plus-circle mr-2" aria-hidden="true"></span>
+                    <span class="oui-icon oui-icon-add oui-icon_circle" aria-hidden="true"></span>
                     <span data-i18n-static="exchange_DIAGNOSTICS_button_new_diagnostic"></span>
                 </button>
 
-                <p class="mt-5">
+                <p>
                     <span data-i18n-static="exchange_DIAGNOSTICS_label_analyzed_email"></span>
                     <strong data-ng-bind="ctrl.email"></strong>
                 </p>
 
                 <p data-ng-if="ctrl.diagnosticGuideUrl && !ctrl.isAllOK()">
                     <span data-i18n-static="exchange_diagnostic_guide"></span>
-                    <a data-ng-href="{{ctrl.diagnosticGuideUrl}}"
-                       target="_blank"
-                       title="{{tr('exchange_diagnostic_guides_url')}} ({{tr('exchange_dashboard_new_window')}})">
+                    <a target="_blank" title="{{tr('exchange_diagnostic_guides_url')}} ({{tr('exchange_dashboard_new_window')}})"
+                       data-ng-href="{{ctrl.diagnosticGuideUrl}}">
                         <span data-i18n-static="exchange_diagnostic_guides_url"></span>
                         <span class="fa fa-external-link" aria-hidden="true"></span>
                     </a>
                 </p>
 
-                <ul class="my-3 list-unstyled">
+                <ul class="my-5 list-unstyled">
                     <li class="exchange-diagnostic-result-item"
                         data-ng-repeat="(key, value) in ctrl.diagnostic track by key"
                         data-ng-class="{'exchange-diagnostic-result-item-error': !ctrl.isOK(key)}"
                         data-ng-if="ctrl.diagnosticStatuses[key] != null">
                         <div class="d-flex"
                              data-ng-class="{'align-items-center': ctrl.isOK(key), 'align-items-start': !ctrl.isOK(key)}">
-                            <span class="fa fa-3x" aria-hidden="true" data-ng-class="{'fa-check-circle-o text-success': ctrl.isOK(key), 'fa-exclamation-triangle text-warning': !ctrl.isOK(key) }"></span>
+                            <span class="fa fa-3x" aria-hidden="true"
+                                  data-ng-class="{'fa-check-circle-o text-success': ctrl.isOK(key), 'fa-exclamation-triangle text-warning': !ctrl.isOK(key) }"></span>
                             <div class="pl-5">
                                 <strong data-ng-bind="ctrl.statusMessage(key)"></strong>
                                 <div class="mt-2"
@@ -99,10 +91,10 @@
                     </li>
                 </ul>
 
-                <button class="btn btn-primary my-5"
-                        type="button"
+                <button class="oui-button oui-button_primary oui-button_large-height" type="button"
                         data-i18n-static="exchange_DIAGNOSTICS_create_ticket"
-                        data-ng-click="ctrl.openSupportTicket()"></button>
+                        data-ng-click="ctrl.openSupportTicket()">
+                </button>
             </div>
         </div>
     </div>

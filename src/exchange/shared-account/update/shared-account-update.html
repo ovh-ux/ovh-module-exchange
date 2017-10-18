@@ -8,9 +8,7 @@
              data-wizard-step-valid="isAccountValid()"
              data-wizard-step-on-load="loadingUpdateOptions">
 
-            <div class="text-center" data-ng-if="!ctrl.isLoading">
-                <oui-loader inline="true"></oui-loader>
-            </div>
+            <oui-loader data-ng-if="!ctrl.isLoading"></oui-loader>
 
             <form name="ctrl.sharedAccountForm" data-ng-if="ctrl.isLoading">
                 <p>

@@ -7,9 +7,7 @@
         <div data-wizard-step
              data-wizard-step-valid="isStep1Valid()">
 
-            <div class="text-center" data-ng-if="ctrl.loadingData">
-                <oui-loader inline="true"></oui-loader>
-            </div>
+            <oui-loader data-ng-if="ctrl.loadingData"></oui-loader>
 
             <div data-ng-if="!ctrl.loadingData">
                 <form name="addDisclaimerForm">
