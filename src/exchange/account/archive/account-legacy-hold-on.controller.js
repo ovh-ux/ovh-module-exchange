@@ -38,11 +38,11 @@ angular
         }
 
         applyValues (account) {
-            let values = {
+            const values = {
                 primaryEmailAddress: account.primaryEmailAddress,
                 litigation: this.value,
                 litigationPeriod: !this.value || this.unlimited ? 0 : this.days
-            }
+            };
             return values;
         }
 

@@ -235,7 +235,7 @@
 <!-- ########################################## -->
 <!-- ACTIVE DIRECTORY -->
    <translation id="exchange_tab_ACTIVEDIRECTORY_intro">Synchroniser Active Directory</translation>
-   <translation id="exchange_tab_ACTIVEDIRECTORY_info">La synchronisation de l'Active Directory engendre un coût supplémentaire de 0,20 €/compte/mois.<br /> Le montant de votre utilisation s'ajoutera à votre prochaine facture.</translation>
+   <translation id="exchange_tab_ACTIVEDIRECTORY_info">La synchronisation de l'Active Directory engendre un coût supplémentaire de {0}/compte/mois.<br /> Le montant de votre utilisation s'ajoutera à votre prochaine facture.</translation>
    <translation id="exchange_tab_ACTIVEDIRECTORY_title">Étapes à suivre pour effectuer la synchronisation:</translation>
    <translation id="exchange_tab_ACTIVEDIRECTORY_step1">Télécharger l'utilitaire sur votre ordinateur.</translation>
    <translation id="exchange_tab_ACTIVEDIRECTORY_step2">Se connecter à l'utilitaire à l'aide des identifiants suivants:</translation>

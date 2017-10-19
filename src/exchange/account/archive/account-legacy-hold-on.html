@@ -27,7 +27,7 @@
                     <span data-i18n-static="exchange_ACTION_legacy_hold_on_form_unlimited"></span>
                 </label>
                 <div class="input-group">
-                    <input class="form-control" type="number" name="days" data-ng-model="ctrl.days" data-ng-disabled="ctrl.unlimited">
+                    <input class="form-control" type="number" min="0" required name="days" data-ng-model="ctrl.days" data-ng-disabled="ctrl.unlimited">
                     <span class="input-group-addon" data-i18n-static="exchange_ACTION_legacy_hold_on_form_days"></span>
                 </div>
             </div>

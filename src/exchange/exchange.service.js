@@ -1460,4 +1460,28 @@ angular
                     return data;
                 });
         }
+
+        getActiveDirectoryPrice (ovhSubsidiary) {
+            return this.services
+                .OvhHttp
+                .post("/order/cart", {
+                    rootPath: "apiv6",
+                    data: {
+                        ovhSubsidiary
+                    }
+                }).then((cart) => this.services
+                    .OvhHttp
+                    .get("/order/cart/{cartId}/microsoft/options", {
+                        rootPath: "apiv6",
+                        urlParams: {
+                            cartId: cart.cartId
+                        },
+                        params: {
+                            planCode: "activedirectory-account-provider"
+                        }
+                    }).then((data) => {
+                        const product = _.find(data, (product) => product.planCode === "activedirectory-account-sync-provider");
+                        return _.get(product, "prices[0].price.text");
+                    }));
+        }
     });

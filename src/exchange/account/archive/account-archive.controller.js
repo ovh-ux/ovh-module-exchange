@@ -79,4 +79,12 @@ angular
                 this.services.$window.open(`${expressOrderUrl}#/new/express/resume?products=${JSURL.stringify(answer)}`, "_blank");
             });
         }
+
+        getDedicatedPrice () {
+            return "loremipsum €";
+        }
+
+        getHostedPrice () {
+            return "loremipsum €";
+        }
     });

@@ -28,8 +28,8 @@
                  data-ng-if="!ctrl.value && !ctrl.firstTime"></div>
 
             <p data-ng-if="ctrl.firstTime" data-ng-bind-html="tr('exchange_ACTION_archive_activate', ctrl.account.primaryEmailAddress)"></p>
-            <p data-ng-if="ctrl.firstTime && ctrl.offer === 'DEDICATED'" data-ng-bind-html="tr('exchange_ACTION_archive_activate_description_private', '/!\\ 999999999999999!!!! euros')"></p>
-            <p data-ng-if="ctrl.firstTime && ctrl.offer === 'HOSTED'" data-ng-bind-html="tr('exchange_ACTION_archive_activate_description_hosted', '/!\\ 999999999999999!!!! euros')"></p>
+            <p data-ng-if="ctrl.firstTime && ctrl.offer === 'DEDICATED'" data-ng-bind-html="tr('exchange_ACTION_archive_activate_description_private', ctrl.getDedicatedPrice())"></p>
+            <p data-ng-if="ctrl.firstTime && ctrl.offer === 'HOSTED'" data-ng-bind-html="tr('exchange_ACTION_archive_activate_description_hosted', ctrl.getHostedPrice())"></p>
 
             <div class="loader text-center" data-ng-if="!ctrl.account"></div>
         </div>
