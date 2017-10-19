@@ -13,38 +13,40 @@
          data-ng-if="!ctrl.loading && (ctrl.membersList.list.results | filter:{member:true}).length === 0">
     </div>
 
-    <table class="table table-hover table-striped"
-           data-ng-if="!ctrl.loading && ((ctrl.membersList.list.results | filter:{member:true}).length > 0 || ctrl.membersList.list.messages.length > 0)">
-        <thead>
-            <tr>
-                <th scope="col" data-i18n-static="exchange_tab_GROUPS_all_table_user"></th>
-                <th class="min-width" scope="col"></th>
-            </tr>
-        </thead>
+    <div class="table-responsive"
+         data-ng-if="!ctrl.loading && ((ctrl.membersList.list.results | filter:{member:true}).length > 0 || ctrl.membersList.list.messages.length > 0)">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col" data-i18n-static="exchange_tab_GROUPS_all_table_user"></th>
+                    <th class="min-width" scope="col"></th>
+                </tr>
+            </thead>
 
-        <tbody>
-            <tr data-ng-repeat="member in (ctrl.membersList.list.results | filter: {member:true}) track by $index">
-                <td data-ng-bind="member.displayAddress"></td>
-                <td class="text-center">
-                    <button class="btn btn-icon" type="button" aria-label="{{i18n.exchange_GROUPS_member_delete_tooltip}}"
-                            data-ng-click="ctrl.removeMember(member)"
-                            data-uib-tooltip="{{i18n.exchange_GROUPS_member_delete_tooltip}}"
-                            data-tooltip-append-to-body="true"
-                            data-tooltip-placement="left">
-                        <span class="oui-icon oui-icon-trash_line oui-icon_small" aria-hidden="true"></span>
-                    </button>
-                </td>
-            </tr>
-            <tr data-ng-repeat="ml in (ctrl.membersList.list.messages | orderBy:'id':false) track by $index"
-                data-ng-if="ctrl.membersList.list.messages.length > 0">
-                <td colspan="2">
-                    <span class="fa fa-exclamation-triangle mr-2" aria-hidden="true"></span>
-                    <span data-ng-bind="ml.id"
-                          data-uib-tooltip="{{tr('exchange_GROUPS_partial_account', [ml.message])}}"></span>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+            <tbody>
+                <tr data-ng-repeat="member in (ctrl.membersList.list.results | filter: {member:true}) track by $index">
+                    <td data-ng-bind="member.displayAddress"></td>
+                    <td class="text-center">
+                        <button class="btn btn-icon" type="button" aria-label="{{i18n.exchange_GROUPS_member_delete_tooltip}}"
+                                data-ng-click="ctrl.removeMember(member)"
+                                data-uib-tooltip="{{i18n.exchange_GROUPS_member_delete_tooltip}}"
+                                data-tooltip-append-to-body="true"
+                                data-tooltip-placement="left">
+                            <span class="oui-icon oui-icon-trash_line oui-icon_small" aria-hidden="true"></span>
+                        </button>
+                    </td>
+                </tr>
+                <tr data-ng-repeat="ml in (ctrl.membersList.list.messages | orderBy:'id':false) track by $index"
+                    data-ng-if="ctrl.membersList.list.messages.length > 0">
+                    <td colspan="2">
+                        <span class="fa fa-exclamation-triangle mr-2" aria-hidden="true"></span>
+                        <span data-ng-bind="ml.id"
+                              data-uib-tooltip="{{tr('exchange_GROUPS_partial_account', [ml.message])}}"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <div class="clearfix"
          data-ng-show="!ctrl.loading && ((ctrl.membersList.list.results | filter:{member:true}).length > 0 || ctrl.membersList.list.messages.length > 0)"

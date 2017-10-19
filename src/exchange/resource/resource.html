@@ -33,89 +33,90 @@
                 </div>
             </form>
 
-            <table class="table"
-                   data-ng-class="{'table-hover table-striped': !ctrl.loading}">
-                <thead>
-                    <tr>
-                        <th scope="col" data-i18n-static="exchange_tab_RESOURCES_table_account"></th>
-                        <th scope="col" data-i18n-static="exchange_tab_RESOURCES_table_type"></th>
-                        <th scope="col" data-i18n-static="exchange_tab_RESOURCES_table_capacity"></th>
-                        <th scope="col" data-i18n-static="exchange_tab_RESOURCES_table_email"></th>
-                        <th scope="col" data-i18n-static="exchange_tab_RESOURCES_table_state" class="text-center"></th>
-                        <th scope="col" class="min-width"></th>
-                    </tr>
-                </thead>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col" data-i18n-static="exchange_tab_RESOURCES_table_account"></th>
+                            <th scope="col" data-i18n-static="exchange_tab_RESOURCES_table_type"></th>
+                            <th scope="col" data-i18n-static="exchange_tab_RESOURCES_table_capacity"></th>
+                            <th scope="col" data-i18n-static="exchange_tab_RESOURCES_table_email"></th>
+                            <th scope="col" data-i18n-static="exchange_tab_RESOURCES_table_state" class="text-center"></th>
+                            <th scope="col" class="min-width"></th>
+                        </tr>
+                    </thead>
 
-                <tbody data-ng-if="ctrl.loading">
-                    <tr>
-                        <td class="loader text-center" colspan="6"></td>
-                    </tr>
-                </tbody>
+                    <tbody data-ng-if="ctrl.loading">
+                        <tr>
+                            <td class="loader text-center" colspan="6"></td>
+                        </tr>
+                    </tbody>
 
-                <tbody data-ng-if="!ctrl.loading && ctrl.resources.list.results.length === 0 && ctrl.resources.list.messages.length === 0">
-                    <tr>
-                        <td class="text-center" colspan="6"
-                            data-i18n-static="exchange_tab_RESOURCES_table_empty"></td>
-                    </tr>
-                </tbody>
+                    <tbody data-ng-if="!ctrl.loading && ctrl.resources.list.results.length === 0 && ctrl.resources.list.messages.length === 0">
+                        <tr>
+                            <td class="text-center" colspan="6"
+                                data-i18n-static="exchange_tab_RESOURCES_table_empty"></td>
+                        </tr>
+                    </tbody>
 
-                <tbody data-ng-if="!ctrl.loading && (ctrl.resources.list.results.length > 0 || ctrl.resources.list.messages.length > 0)">
-                    <tr data-ng-repeat="resource in (ctrl.resources.list.results | orderBy:'displayName':false) track by $index"
-                        data-ng-class="isRowSelected(resource.id)">
-                        <td class="word-break"
-                            data-ng-bind-html="resource.displayName | sliceContent: 150"></td>
-                        <td data-ng-bind="tr('exchange_tab_RESOURCES_type_' + resource.resourceType)"></td>
-                        <td data-ng-bind="resource.capacity"></td>
-                        <td class="word-break"
-                            data-ng-bind="resource.resourceEmailDisplayName | sliceContent: 150"></td>
-                        <td class="text-center">
-                            <span class="label label-danger"
-                                  data-i18n-static="exchange_tab_ACCOUNTS_state_TASK_ON_ERROR"
-                                  data-ng-if="ctrl.services.exchangeStates.constructor.isInError(resource)"></span>
-                            <span class="label label-info"
-                                  data-i18n-static="exchange_tab_ACCOUNTS_state_TASK_ON_DOING"
-                                  data-ng-if="ctrl.services.exchangeStates.constructor.isDoing(resource) || resource.taskPendingId !== 0"></span>
-                            <span class="label label-info"
-                                  data-i18n-static="exchange_tab_ACCOUNTS_state_CREATING"
-                                  data-ng-if="ctrl.services.exchangeStates.constructor.isCreating(resource)"></span>
-                            <span class="label label-info"
-                                  data-i18n-static="exchange_tab_ACCOUNTS_state_DELETING"
-                                  data-ng-if="ctrl.services.exchangeStates.constructor.isDeleting(resource)"></span>
-                            <span class="label label-warning"
-                                  data-i18n-static="exchange_tab_ACCOUNTS_state_SUSPENDED"
-                                  data-ng-if="ctrl.services.exchangeStates.constructor.isSuspended(resource)"></span>
-                            <span class="label label-warning"
-                                  data-i18n-static="exchange_tab_ACCOUNTS_state_SUSPENDING"
-                                  data-ng-if="ctrl.services.exchangeStates.constructor.isSuspending(resource)"></span>
-                            <span class="label label-info"
-                                  data-i18n-static="exchange_tab_ACCOUNTS_state_REOPENING"
-                                  data-ng-if="ctrl.services.exchangeStates.constructor.isReopening(resource)"></span>
-                            <span class="label label-success"
-                                  data-i18n-static="exchange_tab_ACCOUNTS_state_ok"
-                                  data-ng-if="ctrl.services.exchangeStates.constructor.isOk(resource) && resource.taskPendingId === 0"></span>
-                        </td>
-                        <td>
-                            <button class="btn btn-icon" type="button"
-                                    data-ng-disabled="ctrl.services.exchangeStates.constructor.isCreating(resource)"
-                                    data-linkedpopover="exchange/resource/popover/resource.popover.html"
-                                    data-linkedpopover-placement="left"
-                                    data-linkedpopover-remote="true"
-                                    data-linkedpopover-single="true"
-                                    data-linkedpopover-title="{{i18n.common_actions}}">
-                                <span class="oui-icon oui-icon-gear_line oui-icon_small" aria-hidden="true"></span>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr data-ng-repeat="resource in (ctrl.resources.list.messages | orderBy:'id':false) track by $index">
-                        <td colspan="6">
-                            <div data-uib-tooltip="{{i18n.exchange_tab_ACCOUNTS_partial_account}}">
-                                <span class="fa fa-exclamation-triangle mr-2" aria-hidden="true"></span>
-                                <span data-ng-bind="resource.id"></span>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                    <tbody data-ng-if="!ctrl.loading && (ctrl.resources.list.results.length > 0 || ctrl.resources.list.messages.length > 0)">
+                        <tr data-ng-repeat="resource in (ctrl.resources.list.results | orderBy:'displayName':false) track by $index"
+                            data-ng-class="isRowSelected(resource.id)">
+                            <td class="word-break"
+                                data-ng-bind-html="resource.displayName | sliceContent: 150"></td>
+                            <td data-ng-bind="tr('exchange_tab_RESOURCES_type_' + resource.resourceType)"></td>
+                            <td data-ng-bind="resource.capacity"></td>
+                            <td class="word-break"
+                                data-ng-bind="resource.resourceEmailDisplayName | sliceContent: 150"></td>
+                            <td class="text-center">
+                                <span class="label label-danger"
+                                      data-i18n-static="exchange_tab_ACCOUNTS_state_TASK_ON_ERROR"
+                                      data-ng-if="ctrl.services.exchangeStates.constructor.isInError(resource)"></span>
+                                <span class="label label-info"
+                                      data-i18n-static="exchange_tab_ACCOUNTS_state_TASK_ON_DOING"
+                                      data-ng-if="ctrl.services.exchangeStates.constructor.isDoing(resource) || resource.taskPendingId !== 0"></span>
+                                <span class="label label-info"
+                                      data-i18n-static="exchange_tab_ACCOUNTS_state_CREATING"
+                                      data-ng-if="ctrl.services.exchangeStates.constructor.isCreating(resource)"></span>
+                                <span class="label label-info"
+                                      data-i18n-static="exchange_tab_ACCOUNTS_state_DELETING"
+                                      data-ng-if="ctrl.services.exchangeStates.constructor.isDeleting(resource)"></span>
+                                <span class="label label-warning"
+                                      data-i18n-static="exchange_tab_ACCOUNTS_state_SUSPENDED"
+                                      data-ng-if="ctrl.services.exchangeStates.constructor.isSuspended(resource)"></span>
+                                <span class="label label-warning"
+                                      data-i18n-static="exchange_tab_ACCOUNTS_state_SUSPENDING"
+                                      data-ng-if="ctrl.services.exchangeStates.constructor.isSuspending(resource)"></span>
+                                <span class="label label-info"
+                                      data-i18n-static="exchange_tab_ACCOUNTS_state_REOPENING"
+                                      data-ng-if="ctrl.services.exchangeStates.constructor.isReopening(resource)"></span>
+                                <span class="label label-success"
+                                      data-i18n-static="exchange_tab_ACCOUNTS_state_ok"
+                                      data-ng-if="ctrl.services.exchangeStates.constructor.isOk(resource) && resource.taskPendingId === 0"></span>
+                            </td>
+                            <td>
+                                <button class="btn btn-icon" type="button"
+                                        data-ng-disabled="ctrl.services.exchangeStates.constructor.isCreating(resource)"
+                                        data-linkedpopover="exchange/resource/popover/resource.popover.html"
+                                        data-linkedpopover-placement="left"
+                                        data-linkedpopover-remote="true"
+                                        data-linkedpopover-single="true"
+                                        data-linkedpopover-title="{{i18n.common_actions}}">
+                                    <span class="oui-icon oui-icon-gear_line oui-icon_small" aria-hidden="true"></span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr data-ng-repeat="resource in (ctrl.resources.list.messages | orderBy:'id':false) track by $index">
+                            <td colspan="6">
+                                <div data-uib-tooltip="{{i18n.exchange_tab_ACCOUNTS_partial_account}}">
+                                    <span class="fa fa-exclamation-triangle mr-2" aria-hidden="true"></span>
+                                    <span data-ng-bind="resource.id"></span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
             <div class="clearfix"
                  data-ng-show="!ctrl.loading && ctrl.resources.list.results.length > 0"
