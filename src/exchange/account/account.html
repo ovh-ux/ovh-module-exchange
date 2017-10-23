@@ -181,6 +181,9 @@
                                 <span class="label label-info"
                                       data-i18n-static="exchange_tab_ACCOUNTS_state_REOPENING"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isReopening(account)"></span>
+                                <span class="label label-info"
+                                      data-i18n-static="exchange_tab_ACCOUNTS_state_MIGRATING"
+                                      data-ng-if="ctrl.services.exchangeStates.constructor.isMigrating(account)"></span>
                                 <span class="label label-success"
                                       data-i18n-static="exchange_tab_ACCOUNTS_state_OK"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isOk(account) && account.taskPendingId === 0"></span>
