@@ -454,7 +454,6 @@ I therefore explicitly renounce my right to cancel under the provisions of Artic
    <translation id="exchange_ACTION_add_account_step2_password_confirmation_label" qtlid="9983">Confirmation</translation>
    <translation id="exchange_ACTION_add_account_step2_type_label" qtlid="48938">Type of account</translation>
    <translation id="exchange_ACTION_add_account_step2_outlook_label" qtlid="136724">Outlook License </translation>
-   <translation id="exchange_ACTION_add_account_step2_security_label" qtlid="136750">Security options</translation>
    <translation id="exchange_ACTION_add_account_step2_GAL_label" qtlid="191954">Hide the address in Outlook</translation>
    <translation id="exchange_ACTION_add_account_security_NONE" qtlid="8674">None</translation>
    <translation id="exchange_ACTION_add_account_security_VADERETRO" qtlid="324821">Vade Secure protection </translation>

@@ -453,7 +453,6 @@
    <translation id="exchange_ACTION_add_account_step2_password_confirmation_label" qtlid="9983">Potwierdź</translation>
    <translation id="exchange_ACTION_add_account_step2_type_label" qtlid="48938">Typ konta</translation>
    <translation id="exchange_ACTION_add_account_step2_outlook_label" qtlid="136724">Licencja Outlook</translation>
-   <translation id="exchange_ACTION_add_account_step2_security_label" qtlid="136750">Opcje zabezpieczeń</translation>
    <translation id="exchange_ACTION_add_account_step2_GAL_label" qtlid="191954">Ukryj adres w programie Outlook</translation>
    <translation id="exchange_ACTION_add_account_security_NONE" qtlid="8674">Brak</translation>
    <translation id="exchange_ACTION_add_account_security_VADERETRO" qtlid="324821">Ochrona Vade Secure</translation>

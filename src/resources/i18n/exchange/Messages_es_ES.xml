@@ -453,7 +453,6 @@
    <translation id="exchange_ACTION_add_account_step2_password_confirmation_label" qtlid="9983">Repetir contraseña</translation>
    <translation id="exchange_ACTION_add_account_step2_type_label" qtlid="48938">Tipo de cuenta</translation>
    <translation id="exchange_ACTION_add_account_step2_outlook_label" qtlid="136724">Licencia Outlook</translation>
-   <translation id="exchange_ACTION_add_account_step2_security_label" qtlid="136750">Opc. de seguridad</translation>
    <translation id="exchange_ACTION_add_account_step2_GAL_label" qtlid="191954">Ocultar la dirección en Outlook</translation>
    <translation id="exchange_ACTION_add_account_security_NONE" qtlid="8674">Ninguno </translation>
    <translation id="exchange_ACTION_add_account_security_VADERETRO" qtlid="324821">Protección Vade Secure</translation>
