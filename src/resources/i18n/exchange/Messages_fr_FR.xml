@@ -1163,8 +1163,8 @@ L'antispam Vade Secure est compatible avec le mode non autoritatif (uniquement s
    <translation id="exchange_ACTION_configure_services_label_minPasswordLength" qtlid="174828">Longueur minimale du mot de passe</translation>
    <translation id="exchange_ACTION_configure_services_label_complexityEnabled" qtlid="178003">Exigences de complexité</translation>
    <translation id="exchange_ACTION_configure_services_label_incoming_messages" qtlid="81871">Messages entrants</translation>
-   <translation id="exchange_ACTION_configure_services_label_spf" qtlid="402399">Activer la protection SPF</translation>
-   <translation id="exchange_ACTION_configure_services_label_dkim" qtlid="402412">Activer la signature DKIM</translation>
+   <translation id="exchange_ACTION_configure_services_label_spf">Activer la vérification de la protection SPF</translation>
+   <translation id="exchange_ACTION_configure_services_label_dkim">Activer la vérification de la signature DKIM</translation>
    <translation id="exchange_ACTION_configure_services_label_spam" qtlid="402425">Messages indésirables</translation>
    <translation id="exchange_ACTION_configure_services_label_tag_spam" qtlid="402438">Identifier les messages indésirables.</translation>
    <translation id="exchange_ACTION_configure_services_label_putinjunk" qtlid="402451">Déplacer les messages indésirables dans la corbeille.</translation>

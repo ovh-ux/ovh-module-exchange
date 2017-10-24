@@ -80,6 +80,12 @@ angular
                     },
                     data: dataToSend
                 })
+                .then(() => this.services.APIExchange.post("/{organizationName}/service/{exchangeService}/updateFlagsOnAllAccounts", {
+                    urlParams: {
+                        organizationName: this.exchange.organization,
+                        exchangeService: this.exchange.domain
+                    }
+                }))
                 .then(() => {
                     this.services.Exchange.resetAccounts();
                     this.services.messaging.writeSuccess(this.services.translator.tr("exchange_ACTION_configure_success"));
