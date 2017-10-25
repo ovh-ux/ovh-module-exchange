@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.services")
     .service("Exchange", class Exchange {
-        constructor ($cacheFactory, $rootScope, ovhUserPref, Products, $http, $q, OvhHttp, $injector) {
+        constructor ($cacheFactory, $rootScope, Products, $http, $q, OvhHttp, APIExchange, $injector) {
             this.services = {
                 $cacheFactory,
                 $rootScope,
@@ -10,6 +10,7 @@ angular
                 $http,
                 $q,
                 OvhHttp,
+                APIExchange,
                 $injector
             };
 
@@ -202,6 +203,21 @@ angular
                 .then((exchange) => {
                     this.value = exchange;
                 });
+        }
+
+        setConfiguration (organization, serviceName, data) {
+            return this.services.APIExchange.put("/{organizationName}/service/{exchangeService}", {
+                urlParams: {
+                    organizationName: organization,
+                    exchangeService: serviceName
+                },
+                data
+            }).then(() => this.services.APIExchange.post("/{organizationName}/service/{exchangeService}/updateFlagsOnAllAccounts", {
+                urlParams: {
+                    organizationName: organization,
+                    exchangeService: serviceName
+                }
+            }));
         }
 
         /**
