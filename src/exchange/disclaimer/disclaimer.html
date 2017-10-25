@@ -1,23 +1,23 @@
-<div class="container-fluid px-0" data-ng-controller="ExchangeDisclaimerCtrl as ctrl">
+<div class="container-fluid px-0" data-ng-controller="ExchangeDisclaimerCtrl as ctrlDisclaimer">
     <div class="row">
         <div class="col-md-9">
 
-            <oui-loader size="l" data-ng-if="ctrl.tableLoading"></oui-loader>
+            <oui-loader size="l" data-ng-if="ctrlDisclaimer.loading.table"></oui-loader>
 
-            <div data-ng-if="!ctrl.tableLoading">
+            <div data-ng-if="!ctrlDisclaimer.loading.table">
                 <div class="alert alert-info" role="alert"
                      data-i18n-static="exchange_tab_DISCLAIMER_table_no_domain"
-                     data-ng-if="ctrl.addDomainMessageFlag">
+                     data-ng-if="ctrlDisclaimer.addDomainMessageFlag">
                 </div>
 
                 <div class="alert alert-info" role="alert"
                      data-i18n-static="exchange_tab_DISCLAIMER_table_empty"
-                     data-ng-if="ctrl.noDisclaimerMessageFlag">
+                     data-ng-if="ctrlDisclaimer.noDisclaimerMessageFlag">
                 </div>
 
                 <div class="table-responsive">
                     <table class="table table-hover"
-                           data-ng-if="(ctrl.disclaimersList.list.results | filter: {'emptySlotFlag': false}).length > 0">
+                           data-ng-if="(ctrlDisclaimer.disclaimersList.list.results | filter: {'emptySlotFlag': false}).length > 0">
                         <thead>
                             <tr>
                                 <th scope="col" data-i18n-static="exchange_tab_DISCLAIMER_associated_domains"></th>
@@ -29,7 +29,7 @@
                         </thead>
 
                         <tbody>
-                            <tr data-ng-repeat="disclaimer in (ctrl.disclaimersList.list.results | filter: {'emptySlotFlag': false} | orderBy:'domain.formattedName') track by $index">
+                            <tr data-ng-repeat="disclaimer in (ctrlDisclaimer.disclaimersList.list.results | filter: {'emptySlotFlag': false} | orderBy:'domain.formattedName') track by $index">
                                 <th class="word-break" scope="row"
                                     data-ng-bind="disclaimer.domain.displayName"></th>
                                 <td class="word-break"
@@ -68,19 +68,19 @@
             </div>
 
             <div class="clearfix"
-                 data-ng-show="!ctrl.tableLoading && (ctrl.disclaimersList.list.results | filter: {'emptySlotFlag': false}).length > 0"
+                 data-ng-show="!ctrlDisclaimer.loading.table && (ctrlDisclaimer.disclaimersList.list.results | filter: {'emptySlotFlag': false}).length > 0"
                  data-pagination-server-side="disclaimersTable"
                  data-pagination-server-side-function="loadPaginated"
-                 data-pagination-server-side-paginated-stuff="getDisclaimersList()"
-                 data-pagination-server-side-table-loading="getTableLoading()">
+                 data-pagination-server-side-paginated-stuff="ctrlDisclaimer.disclaimersList"
+                 data-pagination-server-side-table-loading="ctrlDisclaimer.loading.table">
             </div>
         </div>
 
         <div class="col-md-3 mt-5 mt-lg-0">
             <button class="btn btn-block btn-default" type="button"
                     data-i18n-static="exchange_ACTION_add_disclaimer_button"
-                    data-ng-click="ctrl.addDisclaimer()"
-                    data-ng-disabled="ctrl.tableLoading || ctrl.newDisclaimersDisabled()">
+                    data-ng-click="ctrlDisclaimer.addDisclaimer()"
+                    data-ng-disabled="ctrlDisclaimer.loading.table || ctrlDisclaimer.newDisclaimersDisabled()">
             </button>
         </div>
     </div>
