@@ -834,7 +834,7 @@ L'antispam Vade Secure est compatible avec le mode non autoritatif (uniquement s
    <translation id="exchange_tab_GROUPS_header" qtlid="32962">Groupes</translation>
    <translation id="exchange_tab_GROUPS_remove_account_tooltip" qtlid="150073">Enlever le compte de ce groupe</translation>
    <translation id="exchange_tab_GROUPS_intro" qtlid="155873">Liste des groupes du compte <span class="bold">{0}</span></translation>
-   <translation id="exchange_tab_GROUPS_table_empty" qtlid="150099">Vous n'avez pas de groupes pour ce compte</translation>
+   <translation id="exchange_tab_GROUPS_table_empty" qtlid="150099">Vous n'avez pas de groupe pour ce compte</translation>
    <translation id="exchange_tab_GROUPS_table_empty_search" qtlid="150112">Vous n'avez pas de groupe correspondant au terme recherché</translation>
    <translation id="exchange_tab_GROUPS_state_TASK_ON_DOING" qtlid="26383">En cours</translation>
    <translation id="exchange_tab_GROUPS_state_TASK_ON_DOING_tooltip" qtlid="150125">Une tâche concernant ce groupe est planifiée ou en cours d'exécution</translation>
@@ -872,7 +872,7 @@ L'antispam Vade Secure est compatible avec le mode non autoritatif (uniquement s
    <translation id="exchange_tab_GROUPS_all_table_manager" qtlid="81487">Administrateurs</translation>
    <translation id="exchange_tab_GROUPS_all_table_user" qtlid="32206">Contacts</translation>
    <translation id="exchange_tab_GROUPS_all_table_status" qtlid="8230">Etat</translation>
-   <translation id="exchange_tab_GROUPS_all_table_empty" qtlid="150346">Vous n'avez pas de groupes</translation>
+   <translation id="exchange_tab_GROUPS_all_table_empty" qtlid="150346">Vous n'avez pas de groupe</translation>
    <translation id="exchange_tab_GROUPS_all_error_message" qtlid="150359">Une erreur est survenue lors du chargement de votre liste de groupes.</translation>
    <translation id="exchange_tab_GROUPS_all_add_ml_button" qtlid="150372">Créer un groupe de contact</translation>
    <translation id="exchange_tab_GROUPS_menu_settings" qtlid="150385">Configurer le groupe</translation>
