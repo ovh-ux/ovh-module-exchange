@@ -35,6 +35,7 @@ angular
             $scope.setMessage = messaging.setMessage.bind(messaging);
 
             this.isLoading = true;
+            this.loadingExchangeError = false;
 
             this.currentAction = null;
             this.currentActionData = null;
@@ -141,6 +142,8 @@ angular
                         } else {
                             this.services.messaging.writeError(this.services.translator.tr("exchange_dashboard_loading_error"), data);
                         }
+                    } else {
+                        this.loadingExchangeError = true;
                     }
                 })
                 .finally(() => {

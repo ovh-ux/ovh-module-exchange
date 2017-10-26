@@ -1,6 +1,12 @@
 <oui-loader size="l" data-ng-if="ctrl.isLoading"></oui-loader>
 
-<div data-ng-if="!ctrl.isLoading">
+<div class="oui-message oui-message_error oui-message_l" role="alert"
+     data-ng-if="ctrl.loadingExchangeError">
+    <span class="oui-message_l-icon" aria-hidden="true"></span>
+    <h1 class="oui-message__title" data-i18n-static="exchange_dashboard_loading_error"></h1>
+</div>
+
+<div data-ng-if="!ctrl.isLoading && !ctrl.loadingExchangeError">
     <div class="page-header">
         <div class="row">
             <div class="col-sm-9">
