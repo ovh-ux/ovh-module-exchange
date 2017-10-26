@@ -91,7 +91,7 @@ angular
         // STATE 2 : "Partial" -> "ALL"
         /* eslint-disable no-fallthrough */
         onCheckboxStateClick (state, permission) {
-            for (const account of this.permissions.current.list.results) {
+            _.forEach(this.permissions.current.list.results, account => {
                 switch (state) {
 
                 // "All" -> "None"
@@ -110,7 +110,7 @@ angular
                 default:
                     throw `Unknown case ${state}`;
                 }
-            }
+            });
         }
         /* eslint-enable no-fallthrough */
 
@@ -199,7 +199,7 @@ angular
 
             const model = [];
 
-            for (const accountName of Object.keys(this.permissions.changes)) {
+            _.forEach(Object.keys(this.permissions.changes), accountName => {
                 const newPermission = this.permissions.changes[accountName];
                 const former = this.permissions.former.list.results.find((formerPermission) => formerPermission.primaryAddressDisplayName === accountName);
 
@@ -209,7 +209,7 @@ angular
                     accessRights: newPermission,
                     operation: this.getOperationType(accountName)
                 });
-            }
+            });
 
             return this.services
                 .ExchangePublicFolders

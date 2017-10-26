@@ -17,7 +17,7 @@ angular
                     failure.data
                 ];
 
-                for (const currentValue of value) {
+                _.forEach(value, currentValue => {
                     /* eslint-disable no-continue */
                     if (_.isEmpty(currentValue)) {
                         continue;
@@ -32,7 +32,7 @@ angular
                         this.messageDetails = currentValue.messages.map((currentMessage) => ({ id: currentMessage.code, message: currentMessage.message }));
                         this.messageDetails = _.uniq(this.messageDetails, (currentMessage) => `${currentMessage.id}${currentMessage.message}`);
                     }
-                }
+                });
             }
         }
 

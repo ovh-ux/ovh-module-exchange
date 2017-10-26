@@ -7,7 +7,7 @@
             constructor (Api, $q, constants, $cacheFactory) {
                 const cache = $cacheFactory.get("exchangeService") || $cacheFactory("exchangeService");
 
-                for (const verb of VERBS) {
+                _.forEach(VERBS, verb => {
                     this[verb] = (path, optionsParam) => {
                         let options = optionsParam || {};
                         options.cache = cache;
@@ -16,7 +16,7 @@
                         return Api[verb](`${constants.swsProxyRootPath}email/exchange${path}`, options)
                             .then((data) => data, (reason) => $q.reject(reason));
                     };
-                }
+                });
             }
         });
 }
