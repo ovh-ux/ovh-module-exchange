@@ -17,10 +17,10 @@ angular
                     failure.data
                 ];
 
-                _.forEach(value, currentValue => {
+                _.forEach(value, (currentValue) => {
                     /* eslint-disable no-continue */
                     if (_.isEmpty(currentValue)) {
-                        continue;
+                        return;
                     }
                     /* eslint-enable no-continue */
 
