@@ -81,7 +81,7 @@ angular
                 this.publicFolderCache.removeAll();
                 this.disclaimersCache.removeAll();
 
-                _.forEach(Object.keys(this.requests), request => {
+                _.forEach(Object.keys(this.requests), (request) => {
                     this.requests[request] = null;
                 });
             }

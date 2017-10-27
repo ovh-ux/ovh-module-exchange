@@ -96,7 +96,7 @@ angular
                         this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_add_no_domains"));
                         this.services.navigation.resetAction();
                     } else {
-                        _.forEach(data.availableDomains, domain => {
+                        _.forEach(data.availableDomains, (domain) => {
                             if (this.domain.name === domain.name) {
                                 this.domain = domain;
                             }

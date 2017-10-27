@@ -68,7 +68,7 @@ angular.module("Module.exchange.controllers")
             this.model.displayDeleteWarning = false;
 
             if (_(this.bufferedAccounts).has("list.results") && this.bufferedAccounts.list.results != null) {
-                _.forEach(this.bufferedAccounts.list.results, bufferedAccount => {
+                _.forEach(this.bufferedAccounts.list.results, (bufferedAccount) => {
                     const currentAccount = _(this.accounts.list.results).find({
                         primaryEmailAddress: bufferedAccount.primaryEmailAddress
                     });
@@ -128,7 +128,7 @@ angular.module("Module.exchange.controllers")
 
                         // roll previous buffered changes
                         if (this.buffer.hasChanged) {
-                            _.forEach(this.bufferedAccounts.list.results, currentBufferedAccount => {
+                            _.forEach(this.bufferedAccounts.list.results, (currentBufferedAccount) => {
                                 const buffer = _(this.buffer.changes).find({
                                     primaryEmailAddress: currentBufferedAccount.primaryEmailAddress
                                 });
@@ -140,7 +140,7 @@ angular.module("Module.exchange.controllers")
                         }
 
                         // needed by selectAll checkbox
-                        _.forEach(this.bufferedAccounts.list.results, account => {
+                        _.forEach(this.bufferedAccounts.list.results, (account) => {
                             this.trackSelected(account.primaryEmailAddress, account.renewPeriod);
                         });
                     }
@@ -160,7 +160,7 @@ angular.module("Module.exchange.controllers")
          */
         checkboxStateChange (value) {
             if (_.has(this.buffer, "ids") && this.buffer.ids != null) {
-                _.forEach(this.buffer.ids, id => {
+                _.forEach(this.buffer.ids, (id) => {
                     this.trackSelected(id, value);
                 });
             }
@@ -182,7 +182,7 @@ angular.module("Module.exchange.controllers")
 
                 const otherPeriods = this.periods.filter((currentPeriod) => currentPeriod !== period);
 
-                _.forEach(otherPeriods, otherPeriod => {
+                _.forEach(otherPeriods, (otherPeriod) => {
                     const matchingOtherProperty = ExchangeUpdateRenewCtrl.GetPropertyNameFromPeriodName(otherPeriod);
                     this.buffer[matchingOtherProperty] = this.buffer[matchingOtherProperty].filter((bufferedAccount) => bufferedAccount !== matchingAccount.primaryEmailAddress);
                 });
@@ -203,7 +203,7 @@ angular.module("Module.exchange.controllers")
             this.services.messaging.writeSuccess(this.services.translator.tr("exchange_dashboard_action_doing"));
 
             if (_.has(this.buffer, "changes") && this.buffer.changes != null) {
-                _.forEach(this.buffer.changes, change => {
+                _.forEach(this.buffer.changes, (change) => {
                     change.is25g = this.services.accountTypes.is25g();
                 });
             }

@@ -125,7 +125,7 @@ angular
                 this.selectedDomain.mxRelay = this.removeTrailingDot(this.selectedDomain.mxRelay);
             }
 
-            let data = {
+            const data = {
                 type: _.camelCase(this.selectedDomain.type),
                 mxRelay: this.selectedDomain.mxRelay
             };

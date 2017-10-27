@@ -43,7 +43,7 @@ angular
             let hasChanged = false;
 
             if (_.has(this.accounts, "list.results") && this.accounts.list.results != null && _.has(this.bufferedAccounts, "list.results") && this.bufferedAccounts.list.results != null) {
-                _.forEach(this.accounts.list.results, account => {
+                _.forEach(this.accounts.list.results, (account) => {
                     const matchingBufferedAccount = this.bufferedAccounts.list.results.find((bufferedAccount) => bufferedAccount.id === account.id);
                     matchingBufferedAccount.newSendAs = account.newSendAs;
                     matchingBufferedAccount.newSendOnBehalfTo = account.newSendOnBehalfTo;
@@ -74,7 +74,7 @@ angular
                     this.bufferedAccounts = angular.copy(accounts);
 
                     if (_.has(this.accounts, "list.results") && this.accounts.list.results != null) {
-                        _.forEach(this.accounts.list.results, account => {
+                        _.forEach(this.accounts.list.results, (account) => {
                             account.newSendAs = account.sendAs;
                             account.newSendOnBehalfTo = account.sendOnBehalfTo;
                             account.newFullAccess = account.fullAccess;

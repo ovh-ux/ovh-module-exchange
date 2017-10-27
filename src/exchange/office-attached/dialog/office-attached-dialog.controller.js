@@ -69,7 +69,7 @@ angular
             const alreadyKnownAccounts = [];
             const accountsToSave = [];
 
-            _.forEach(this.selectedAccounts, alreadyKnownAccount => {
+            _.forEach(this.selectedAccounts, (alreadyKnownAccount) => {
                 if (!alreadyKnownAccounts.includes(alreadyKnownAccount.primaryEmailDisplayName)) {
                     alreadyKnownAccounts.push(alreadyKnownAccount.primaryEmailDisplayName);
                     accountsToSave.push(alreadyKnownAccount);

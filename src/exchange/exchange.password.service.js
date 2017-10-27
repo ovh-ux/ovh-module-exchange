@@ -195,17 +195,19 @@
                 const lowerCaseDisplayName = displayNameStr.toLowerCase();
                 const splittedDisplayName = lowerCaseDisplayName.split(/[,.\-_Â£\s\t]/);
 
+                let rtn = false;
+
                 if (splittedDisplayName != null) {
                     const splittedNameWithoutShortWords = splittedDisplayName.filter((word) => word.length >= 3);
 
-                    _.forEach(splittedNameWithoutShortWords, word => {
+                    _.forEach(splittedNameWithoutShortWords, (word) => {
                         if (_.includes(lowerCasePassword, word)) {
-                            return true;
+                            rtn = true;
                         }
                     });
                 }
 
-                return false;
+                return rtn;
             }
         });
 }
