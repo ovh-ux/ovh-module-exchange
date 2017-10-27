@@ -41,9 +41,9 @@ angular
             };
 
             if (_.has(this.delegationList, "list.results")) {
-                for (const account of this.delegationList.list.results) {
+                _.forEach(this.delegationList.list.results, account => {
                     this.recordChangeOperations(account, changesList);
-                }
+                });
             }
 
             return changesList;
@@ -94,10 +94,10 @@ angular
 
                     if (_.has(this.delegationList, "list.results")) {
                         // keep the original value to have a reference to compare changes
-                        for (const account of this.delegationList.list.results) {
+                        _.forEach(this.delegationList.list.results, account => {
                             account.newSendAsValue = account.sendAs;
                             account.newSendOnBehalfToValue = account.sendOnBehalfTo;
-                        }
+                        });
                     }
                 })
                 .catch((failure) => {

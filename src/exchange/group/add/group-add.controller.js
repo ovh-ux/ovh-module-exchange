@@ -65,10 +65,10 @@ angular
 
         saveSelected () {
             if (_.has(this.accountsList, "list.results")) {
-                for (const account of this.accountsList.list.results) {
+                _.forEach(this.accountsList.list.results, account => {
                     this.saveManagers(account);
                     this.saveMembers(account);
-                }
+                });
             }
         }
 
@@ -102,25 +102,25 @@ angular
 
         loadManagers () {
             if (this.model.managersList != null) {
-                for (const account of this.model.managersList) {
+                _.forEach(this.model.managersList, account => {
                     const toLoad = _.find(this.accountsList.list.results, (manager) => manager.id === account.id);
 
                     if (toLoad != null) {
                         toLoad.manager = true;
                     }
-                }
+                });
             }
         }
 
         loadMembers () {
             if (this.model.membersList != null) {
-                for (const account of this.model.membersList) {
+                _.forEach(this.model.membersList, account => {
                     const toLoad = _.find(this.accountsList.list.results, (member) => member.id === account.id);
 
                     if (toLoad != null) {
                         toLoad.member = true;
                     }
-                }
+                });
             }
         }
 

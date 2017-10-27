@@ -198,11 +198,11 @@
                 if (splittedDisplayName != null) {
                     const splittedNameWithoutShortWords = splittedDisplayName.filter((word) => word.length >= 3);
 
-                    for (const word of splittedNameWithoutShortWords) {
+                    _.forEach(splittedNameWithoutShortWords, word => {
                         if (_.includes(lowerCasePassword, word)) {
                             return true;
                         }
-                    }
+                    });
                 }
 
                 return false;

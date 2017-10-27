@@ -83,7 +83,7 @@ angular
             let state = "OK";
             let numberOfErrors = 0;
 
-            for (const datum of data) {
+            _.forEach(data, datum => {
                 if (_(datum).isString()) {
                     this.services.messaging.setMessage(mainMessage, {
                         message: datum,
@@ -97,7 +97,7 @@ angular
                     state = "PARTIAL";
                     numberOfErrors++;
                 }
-            }
+            });
 
             if (numberOfErrors === data.length) {
                 state = "ERROR";
