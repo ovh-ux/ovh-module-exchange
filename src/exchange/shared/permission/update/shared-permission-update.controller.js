@@ -91,7 +91,7 @@ angular
         // STATE 2 : "Partial" -> "ALL"
         /* eslint-disable no-fallthrough */
         onCheckboxStateClick (state, permission) {
-            _.forEach(this.permissions.current.list.results, account => {
+            _.forEach(this.permissions.current.list.results, (account) => {
                 switch (state) {
 
                 // "All" -> "None"
@@ -199,7 +199,7 @@ angular
 
             const model = [];
 
-            _.forEach(Object.keys(this.permissions.changes), accountName => {
+            _.forEach(Object.keys(this.permissions.changes), (accountName) => {
                 const newPermission = this.permissions.changes[accountName];
                 const former = this.permissions.former.list.results.find((formerPermission) => formerPermission.primaryAddressDisplayName === accountName);
 

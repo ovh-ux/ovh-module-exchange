@@ -56,7 +56,7 @@ angular
                 .then((domains) => {
                     this.paginated = domains;
 
-                    _.forEach(this.paginated.domains, domain => {
+                    _.forEach(this.paginated.domains, (domain) => {
                         domain.domainTypes = domains.domainTypes;
                     });
 
@@ -67,7 +67,7 @@ angular
 
         setTooltips () {
             if (_.has(this.paginated, "domains") && !_.isEmpty(this.paginated.domains)) {
-                _.forEach(this.paginated.domains, domain => {
+                _.forEach(this.paginated.domains, (domain) => {
                     if (this.exchange != null) {
                         this.setMxTooltip(domain);
                         this.setSrvTooltip(domain);
