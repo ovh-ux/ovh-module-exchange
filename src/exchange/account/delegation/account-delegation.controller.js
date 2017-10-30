@@ -82,21 +82,37 @@ angular
             let state = "OK";
             let numberOfErrors = 0;
 
-            _.forEach(data, (datum) => {
+            let dataAsArray = data;
+            if (!_(dataAsArray).isArray()) {
+                dataAsArray = [data];
+            }
+
+            let shouldContinue = true;
+
+            _(dataAsArray).forEach((datum) => {
                 if (_(datum).isString()) {
                     this.services.messaging.setMessage(mainMessage, {
                         message: datum,
                         type: "PARTIAL"
                     });
+
+                    shouldContinue = false;
+                    return false;
                 } else if (datum.status === "ERROR") {
                     datum.message = this.services.translator.tr(`exchange_tab_TASKS_${datum.function}`);
                     datum.type = "ERROR";
                     state = "PARTIAL";
                     numberOfErrors++;
                 }
+
+                return true;
             });
 
-            if (numberOfErrors === data.length) {
+            if (!shouldContinue) {
+                return;
+            }
+
+            if (numberOfErrors === dataAsArray.length) {
                 state = "ERROR";
             }
 
