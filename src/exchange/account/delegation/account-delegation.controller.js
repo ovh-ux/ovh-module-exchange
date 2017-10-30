@@ -89,16 +89,12 @@ angular
                         message: datum,
                         type: "PARTIAL"
                     });
-
-                    return false;
                 } else if (datum.status === "ERROR") {
                     datum.message = this.services.translator.tr(`exchange_tab_TASKS_${datum.function}`);
                     datum.type = "ERROR";
                     state = "PARTIAL";
                     numberOfErrors++;
                 }
-
-                return true;
             });
 
             if (numberOfErrors === data.length) {
