@@ -70,8 +70,8 @@
    <translation id="exchange_ACTION_export_confirm" qtlid="217080">Czy chcesz wyeksportować swoje konta?</translation>
 
 <!-- OFFICE ATTACHED -->
-   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Promocja:</strong> Włącz za darmo* usługę Office 365 dla swoich adresów Exchange!</translation>
-   <translation id="exchange_office_attached_alert_details" qtlid="404213">*Oferta dotyczy produktu Office 365 Business. Można skorzystać z maksymalnej liczby {0} adresów Exchange. Darmowy jest tylko pierwszy miesiąc. Następnie oferta jest odnawiana automatycznie w cenie wskazanej w dniu odnawiania na stronie <a target="_blank" href="https://www.ovh.com">https://www.ovh.pl</a></translation>
+   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Promocja:</strong> Włącz za darmo usługę Office 365 dla swoich adresów Exchange!</translation>
+   <translation id="exchange_office_attached_alert_details" qtlid="404213">Oferta dotyczy produktu Office 365 Business. Można skorzystać z maksymalnej liczby {0} adresów Exchange. Darmowy jest tylko pierwszy miesiąc. Następnie oferta jest odnawiana automatycznie w cenie wskazanej w dniu odnawiania na stronie <a target="_blank" href="https://www.ovh.com:51043">https://www.ovh.pl:51043</a></translation>
    <translation id="exchange_office_attached_alert_button" qtlid="404226">Skorzystaj z tej oferty</translation>
    <translation id="exchange_office_attached_alert_modale_title" qtlid="404239">Skorzystaj z oferty promocyjnej Office 365</translation>
    <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Skorzystaj za darmo przez miesiąc z oferty Office 365 dla maksymalnej liczby {0} wybranych kont Exchange.</translation>
@@ -127,7 +127,7 @@
    <translation id="exchange_tab_ACCOUNTS_table_alias" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ACCOUNTS_table_group" qtlid="59507">Grupa</translation>
    <translation id="exchange_tab_ACCOUNTS_table_outlook" qtlid="24427">Outlook</translation>
-   <translation id="exchange_tab_ACCOUNTS_table_status" qtlid="8230">Status</translation>
+   <translation id="exchange_tab_ACCOUNTS_table_status" qtlid="8230">Państwo</translation>
    <translation id="exchange_tab_ACCOUNTS_table_settings" qtlid="4406">Konfiguracja</translation>
    <translation id="exchange_tab_ACCOUNTS_type_ALL" qtlid="69173">Wszystkie</translation>
    <translation id="exchange_tab_ACCOUNTS_type_BASIC" qtlid="48986">Basic</translation>
@@ -188,8 +188,8 @@
    <translation id="exchange_tab_ALIAS_back_button" qtlid="4118">Powrót</translation>
    <translation id="exchange_tab_ALIAS_header" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_delete_tooltip" qtlid="178848">Usuń ten alias</translation>
-   <translation id="exchange_tab_ALIAS_intro" qtlid="434512">Liste des alias créés pour le compte <strong>{0}</strong></translation>
-   <translation id="exchange_tab_ALIAS_GROUP_intro" qtlid="434525">Liste des alias créés pour le groupe <strong>{0}</strong></translation>
+   <translation id="exchange_tab_ALIAS_intro" qtlid="434512">Lista aliasów utworzonych dla konta <strong>{0}</strong></translation>
+   <translation id="exchange_tab_ALIAS_GROUP_intro" qtlid="434525">Lista aliasów utworzonych dla grupy <strong>{0}</strong></translation>
    <translation id="exchange_tab_ALIAS_table_empty" qtlid="143954">Nie posiadasz aliasu dla tego konta.</translation>
    <translation id="exchange_tab_ALIAS_GROUP_table_empty" qtlid="178874">Nie posiadasz aliasów dla tej grupy</translation>
    <translation id="exchange_tab_ALIAS_state_TASK_ON_DOING" qtlid="26383">W trakcie</translation>
@@ -207,7 +207,7 @@
    <translation id="exchange_tab_ALIAS_remove_alias_label" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_remove_account_label" qtlid="143603">Przypisane konto</translation>
    <translation id="exchange_tab_ALIAS_add_alias_title" qtlid="143616">Utwórz alias</translation>
-   <translation id="exchange_tab_ALIAS_add_alias_intro" qtlid="155782">Załóż alias dla konta</translation>
+   <translation id="exchange_tab_ALIAS_add_alias_intro" qtlid="416579">Utwórz alias dla konta <span class="bold">{0}</span></translation>
    <translation id="exchange_tab_ALIAS_add_alias_placeholder" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_add_alias_step2_intro" qtlid="144006">Czy na pewno chcesz dodać alias?</translation>
    <translation id="exchange_tab_ALIAS_add_alias_step2_alias_label" qtlid="9466">Alias</translation>
@@ -309,7 +309,7 @@
 
    <translation id="exchange_resilitation_action_title" qtlid="190888">Rezygnacja z usługi Exchange</translation>
    <translation id="exchange_resilitation_action_intro" qtlid="190901">Czy chcesz zrezygnować z usługi Exchange "{0}"? <br />Operacja ta anuluje automatyczne odnowienie pod koniec abonamentu powodując zawieszenie usługi.<br /><br /> Do tej daty będziesz mógł korzystać z usługi.</translation>
-   <translation id="exchange_resilitation_action_expiration" qtlid="33010">Data wygasania usługi</translation>
+   <translation id="exchange_resilitation_action_expiration" qtlid="33010">Data wygasania</translation>
    <translation id="exchange_resilitation_action_hosted_warning" qtlid="209073">Twoje konta zostaną zawieszone z dniem wygasania usługi.</translation>
    <translation id="exchange_resilitation_action_button" qtlid="48646">Rezygnacja</translation>
    <translation id="exchange_resilitation_action_button_cancel" qtlid="211567">Anuluj rezygnację</translation>
@@ -382,7 +382,7 @@
    <translation id="exchange_tab_domain_diagnostic_srv_toolbox_ok" qtlid="137491">Automatyczna konfiguracja została wykonana.</translation>
    <translation id="exchange_tab_domain_error_message" qtlid="144045">Wystąpił błąd podczas wyświetlania domen.</translation>
    <translation id="exchange_tab_domain_diagnostic_cname" qtlid="129847">CNAME</translation>
-   <translation id="exchange_tab_domain_status" qtlid="8230">Status</translation>
+   <translation id="exchange_tab_domain_status" qtlid="8230">Państwo</translation>
    <translation id="exchange_tab_domain_task_in_progress" qtlid="2690">Zadania w trakcie</translation>
    <translation id="exchange_tab_domain_validation" qtlid="33802">Zatwierdź</translation>
    <translation id="exchange_tab_domain_validation_doing" qtlid="136646">Trwa potwierdzanie domeny</translation>
@@ -547,7 +547,7 @@
    <translation id="exchange_tab_domain_add_step1_user_owned_option" qtlid="397533">Wpisz domenę, która nie jest zarządzana na Twoim koncie OVH</translation>
    <translation id="exchange_tab_domain_add_step1_user_owned_info" qtlid="397546">Uwaga: Upewnij się, że strefa DNS wybranej domeny będzie mogła zostać zmodyfikowana przez jej administratora.</translation>
    <translation id="exchange_tab_domain_add_step1_order_domain_option" qtlid="136997">Zamów domenę</translation>
-   <translation id="exchange_tab_domain_add_step1_domain_none" qtlid="434538">Aucun résultat trouvé</translation>
+   <translation id="exchange_tab_domain_add_step1_domain_none" qtlid="434538">Brak wyników</translation>
 
    <translation id="exchange_tab_domain_add_step3_cover_guide" qtlid="139572">Prezentacja przewodnika wideo</translation>
 
@@ -617,7 +617,7 @@ Ochrona antyspamowa Vade Secure jest kompatybilna z trybem nieautorytatywnym (wy
 <!-- ########################################## -->
 <!-- DELEGATION -->
    <translation id="exchange_ACTION_delegation_title" qtlid="143733">Konfiguracja delegacji</translation>
-   <translation id="exchange_ACTION_delegation_step1_intro" qtlid="434551">Une délégation permet à d'autres comptes Exchange d'avoir certains droits sur le compte <strong>{0}</strong></translation>
+   <translation id="exchange_ACTION_delegation_step1_intro" qtlid="434551">Delegacja pozwala innym kontom Exchange na posiadanie pewnych uprawnień do konta <strong>{0}</strong></translation>
    <translation id="exchange_ACTION_delegation_table_empty" qtlid="150047">Nie posiadasz dostępnych kont</translation>
    <translation id="exchange_ACTION_delegation_table_empty_search" qtlid="150060">Nie posiadasz kont odpowiadających kryteriom wyszukiwania</translation>
    <translation id="exchange_ACTION_delegation_step1_email_header" qtlid="137244">Konto e-mail</translation>
@@ -625,7 +625,7 @@ Ochrona antyspamowa Vade Secure jest kompatybilna z trybem nieautorytatywnym (wy
    <translation id="exchange_ACTION_delegation_step1_sendOnBehalfTo_header" qtlid="181487">Uprawnienia do wysyłki jako (Send as)</translation>
    <translation id="exchange_ACTION_delegation_step1_full_header" qtlid="181500">Pełne prawa dostępu</translation>
    <translation id="exchange_ACTION_delegation_step1_task_on_doing" qtlid="201458">Zadanie w trakcie</translation>
-   <translation id="exchange_ACTION_delegation_step2_intro" qtlid="434564">Les droits de délégation afférents au compte <strong>{0}</strong> :</translation>
+   <translation id="exchange_ACTION_delegation_step2_intro" qtlid="434564">Uprawnienia delegacji przypisane do konta <strong>{0}</strong>:</translation>
    <translation id="exchange_ACTION_delegation_step2_email_header" qtlid="137244">Konto e-mail</translation>
    <translation id="exchange_ACTION_delegation_step2_send_header" qtlid="143798">Uprawnienia do wysyłki</translation>
    <translation id="exchange_ACTION_delegation_step2_sendOnBehalfTo_header" qtlid="181487">Uprawnienia do wysyłki jako (Send as)</translation>
@@ -646,7 +646,7 @@ Ochrona antyspamowa Vade Secure jest kompatybilna z trybem nieautorytatywnym (wy
    <translation id="exchange_tab_DISCLAIMER_table_empty" qtlid="152258">Nie posiadasz podpisu.</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_content" qtlid="152271">Treść</translation>
    <translation id="exchange_tab_DISCLAIMER_associated_domains" qtlid="133110">Dotyczy domeny</translation>
-   <translation id="exchange_tab_DISCLAIMER_state_header" qtlid="8230">Status</translation>
+   <translation id="exchange_tab_DISCLAIMER_state_header" qtlid="8230">Państwo</translation>
    <translation id="exchange_tab_DISCLAIMER_state_doing_tooltip" qtlid="143863">Zadanie jest zaplanowane lub wykonywane.</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_outside_only" qtlid="152284">Tylko zewnętrzne</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_outside_only_tooltip" qtlid="152297">Podpis używany tylko w przypadku wysyłki na zewnątrz,</translation>
@@ -686,7 +686,7 @@ Ochrona antyspamowa Vade Secure jest kompatybilna z trybem nieautorytatywnym (wy
    <translation id="exchange_ACTION_add_disclaimer_option_OtherPhoneNumber" qtlid="152479">Telefon 2</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_PagerNumber" qtlid="152492">Numer pagera</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_PhoneNumber" qtlid="152505">Numer telefonu</translation>
-   <translation id="exchange_ACTION_add_disclaimer_option_State" qtlid="8230">Status</translation>
+   <translation id="exchange_ACTION_add_disclaimer_option_State" qtlid="8230">Państwo</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Street" qtlid="152518">Ulica</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Title" qtlid="16469">Tytuł</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_UserLogonName" qtlid="46792">Identyfikator</translation>
@@ -741,7 +741,7 @@ Ochrona antyspamowa Vade Secure jest kompatybilna z trybem nieautorytatywnym (wy
    <translation id="exchange_tab_RESOURCES_table_capacity" qtlid="4334">Wielkość</translation>
    <translation id="exchange_tab_RESOURCES_table_allow_conflicts" qtlid="156407">Konflikt dozwolony.</translation>
    <translation id="exchange_tab_RESOURCES_table_email" qtlid="69509">E-mail</translation>
-   <translation id="exchange_tab_RESOURCES_table_state" qtlid="8230">Status</translation>
+   <translation id="exchange_tab_RESOURCES_table_state" qtlid="8230">Państwo</translation>
    <translation id="exchange_tab_RESOURCES_table_state_task" qtlid="156420">Zadanie w trakcie</translation>
    <translation id="exchange_tab_RESOURCES_action_add_resource_account" qtlid="63710">Dodaj konto zasobów</translation>
    <translation id="exchange_tab_RESOURCES_type_EQUIPMENT" qtlid="82063">Parametry</translation>
@@ -826,6 +826,7 @@ Ochrona antyspamowa Vade Secure jest kompatybilna z trybem nieautorytatywnym (wy
    <translation id="exchange_DIAGNOSTICS_status_canSendEmail_help_li4" qtlid="319817">Awaria w infrastrukturze Exchange</translation>
    <translation id="exchange_DIAGNOSTICS_status_support_ticket_subject" qtlid="291643">Diagnostyka Exchange</translation>
    <translation id="exchange_DIAGNOSTICS_status_support_ticket_body" qtlid="291656">Prosimy o zachowanie poniższych informacji. Będą one użyteczne w trakcie wykonywania diagnostyki.</translation>
+   <translation id="exchange_DIAGNOSTICS_create_ticket" qtlid="260801">Otwórz zgłoszenie</translation>
 
 <!-- ########################################## -->
 <!-- TAB MAILING LISTS -->
@@ -870,7 +871,7 @@ Ochrona antyspamowa Vade Secure jest kompatybilna z trybem nieautorytatywnym (wy
    <translation id="exchange_tab_GROUPS_all_table_address" qtlid="11315">Adres email</translation>
    <translation id="exchange_tab_GROUPS_all_table_manager" qtlid="81487">Administratorzy</translation>
    <translation id="exchange_tab_GROUPS_all_table_user" qtlid="32206">Kontakt</translation>
-   <translation id="exchange_tab_GROUPS_all_table_status" qtlid="8230">Status</translation>
+   <translation id="exchange_tab_GROUPS_all_table_status" qtlid="8230">Państwo</translation>
    <translation id="exchange_tab_GROUPS_all_table_empty" qtlid="150346">Nie posiadasz grup</translation>
    <translation id="exchange_tab_GROUPS_all_error_message" qtlid="150359">Wystąpił błąd podczas pobierania listy grup.</translation>
    <translation id="exchange_tab_GROUPS_all_add_ml_button" qtlid="150372">Załóż grupę kontaktów</translation>
@@ -889,7 +890,7 @@ Ochrona antyspamowa Vade Secure jest kompatybilna z trybem nieautorytatywnym (wy
    <translation id="exchange_tab_GROUPS_delete_group_success" qtlid="150151">Grupa zostanie usunięta.</translation>
    <translation id="exchange_tab_GROUPS_delete_group_error" qtlid="150164">Wystąpił błąd podczas usuwania grupy.</translation>
    <translation id="exchange_GROUPS_delegation_title" qtlid="150398">Konfiguracja delegacji</translation>
-   <translation id="exchange_GROUPS_delegation_step1_intro" qtlid="434577">Une délégation permet à d'autres comptes Exchange d'avoir certains droits sur le groupe <strong>{0}</strong></translation>
+   <translation id="exchange_GROUPS_delegation_step1_intro" qtlid="434577">Delegacja pozwala innym kontom Exchange na posiadanie pewnych uprawnień do grupy <strong>{0}</strong></translation>
    <translation id="exchange_GROUPS_delegation_step1_email_header" qtlid="137244">Konto e-mail</translation>
    <translation id="exchange_GROUPS_delegation_step1_send_header" qtlid="143759">Przyznanie uprawnień do wysyłki</translation>
    <translation id="exchange_GROUPS_delegation_step1_full_header" qtlid="144240">Przyznaj uprawnienia dostępowe</translation>
@@ -936,7 +937,7 @@ Zamknięta: administrator zapisuje członków grupy.</translation>
    <translation id="exchange_GROUPS_add_group_help_directory_text" qtlid="184880">Maskowanie w programie Outlook pozwala na ukrycie adresu grupy na liście adresów usługi Exchange.</translation>
    <translation id="exchange_GROUPS_add_group_help_security_header" qtlid="150528">Konieczne uwierzytelnianie</translation>
    <translation id="exchange_GROUPS_add_group_help_security_text" qtlid="150671">Jeśli zaznaczone, tylko członkowie grupy mogą wysłać wiadomość na adres grupy.</translation>
-   <translation id="exchange_GROUPS_manager_intro" qtlid="434590">Liste des comptes administrateur du groupe <strong>{0}</strong></translation>
+   <translation id="exchange_GROUPS_manager_intro" qtlid="434590">Lista kont administracyjnych grupy <strong>{0}</strong></translation>
    <translation id="exchange_GROUPS_manager_back_button" qtlid="4118">Powrót</translation>
    <translation id="exchange_GROUPS_manager_delete_tooltip" qtlid="150697">Usuń to konto z listy managerów</translation>
    <translation id="exchange_GROUPS_manager_table_empty" qtlid="150710">Nie masz administratorów dla tej grupy</translation>
@@ -945,9 +946,9 @@ Zamknięta: administrator zapisuje członków grupy.</translation>
    <translation id="exchange_GROUPS_remove_manager_question" qtlid="150749">Czy chcesz usunąć to konto z listy administratorów grupy?</translation>
    <translation id="exchange_GROUPS_remove_manager_group_label" qtlid="59507">Grupa</translation>
    <translation id="exchange_GROUPS_remove_manager_manager_label" qtlid="43948">Administrator</translation>
-   <translation id="exchange_GROUPS_remove_manager_success_message" qtlid="434603">Le compte <strong>{0}</strong> va être supprimé de la liste d'administrateurs du groupe <span class="bold">{1}</span>.</translation>
+   <translation id="exchange_GROUPS_remove_manager_success_message" qtlid="434603">Konto <strong>{0}</strong> zostanie usunięte z listy administratorów grupy <span class="bold">{1}</span>.</translation>
    <translation id="exchange_GROUPS_remove_manager_error_message" qtlid="155912">Wystąpił błąd podczas usuwania konta <span class="bold">{0}</span> z listy administratorów grupy <span class="bold">{1}</span>.</translation>
-   <translation id="exchange_GROUPS_member_intro" qtlid="434616">Liste des comptes contacts du groupe <strong>{0}</strong></translation>
+   <translation id="exchange_GROUPS_member_intro" qtlid="434616">Lista kont kontaktów grupy <strong>{0}</strong></translation>
    <translation id="exchange_GROUPS_member_back_button" qtlid="4118">Powrót</translation>
    <translation id="exchange_GROUPS_member_delete_tooltip" qtlid="150801">Usuń to konto z listy kontaktów</translation>
    <translation id="exchange_GROUPS_member_table_empty" qtlid="150814">Nie masz kontaktów dla tej grupy</translation>
@@ -1071,7 +1072,7 @@ Zamknięta: administrator zapisuje członków grupy.</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_externalEmailAddress" qtlid="30430">Adres</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_displayName" qtlid="80922">Nazwa wyświetlana</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_creationDate" qtlid="4358">Stwórz</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state" qtlid="8230">Status</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state" qtlid="8230">Państwo</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_CREATING" qtlid="26227">W trakcie tworzenia</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_DELETING" qtlid="133929">W trakcie usuwania</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_REOPENING" qtlid="171279">Ponowne otwieranie</translation>
@@ -1177,9 +1178,9 @@ Zamknięta: administrator zapisuje członków grupy.</translation>
    <translation id="minPasswordLength_mustBeInteger_error" qtlid="178055">Minimalna długość hasła musi być liczbą całkowitą</translation>
    <translation id="minPasswordLength_number_error" qtlid="178055">Minimalna długość hasła musi być liczbą całkowitą</translation>
    <translation id="minPasswordLength_pattern_error" qtlid="178055">Minimalna długość hasła musi być liczbą całkowitą</translation>
-   <translation id="minPasswordAge_min_error" qtlid="434629">L'âge minimal du mot de passe ne peut pas être inférieur à 0 jour</translation>
-   <translation id="minPasswordAge_max_error" qtlid="434642">L'âge minimal du mot de passe ne peut pas être supérieur à 90 jours</translation>
-   <translation id="minPasswordAge_mustBeInteger_error" qtlid="434655">L'âge minimal du mot de passe doit être un nombre entier</translation>
+   <translation id="minPasswordAge_min_error" qtlid="434629">Minimalny okres ważności hasła nie może być mniejszy niż 0 dni.</translation>
+   <translation id="minPasswordAge_max_error" qtlid="434642">Minimalny okres ważności hasła nie może być dłuższy niż 90 dni.</translation>
+   <translation id="minPasswordAge_mustBeInteger_error" qtlid="434655">Minimalny okres ważności hasła musi być liczbą całkowitą.</translation>
    <translation id="minPasswordAge_minToBigForMax_error" qtlid="178094">Minimalny okres ważności hasła musi być krótszy niż maksymalna ważność</translation>
    <translation id="minPasswordAge_pattern_error" qtlid="434018">Minimalna ważność hasła musi być liczbą całkowitą.</translation>
    <translation id="minPasswordAge_number_error" qtlid="434018">Minimalna ważność hasła musi być liczbą całkowitą.</translation>
@@ -1216,7 +1217,7 @@ Zamknięta: administrator zapisuje członków grupy.</translation>
    <translation id="lockoutDuration_pattern_error" qtlid="178042">Czas blokady musi być liczbą całkowitą.</translation>
    <translation id="exchange_ACTION_configure_success" qtlid="178263">Zmiany zostaną zarejestrowane</translation>
    <translation id="exchange_ACTION_configure_error" qtlid="178276">Błąd podczas zapytania. Zmiany nie zostaną zastosowane.</translation>
-   <translation id="exchange_ACTION_configure_step2_intro" qtlid="434668">Récapitulatif de configuration pour votre service Exchange <strong>{0}</strong></translation>
+   <translation id="exchange_ACTION_configure_step2_intro" qtlid="434668">Podsumowanie konfiguracji Twojej usługi Exchange <strong>{0}</strong></translation>
    <translation id="exchange_ACTION_configure_step2_label_lockoutDuration" qtlid="178302">Czas blokady konta:</translation>
    <translation id="exchange_ACTION_configure_step2_label_lockoutObservationWindow" qtlid="178315">Okno obserwacyjne dla blokady:</translation>
    <translation id="exchange_ACTION_configure_step2_label_lockoutThreshold" qtlid="178328">Próg blokowania konta:</translation>
@@ -1354,7 +1355,7 @@ Zamknięta: administrator zapisuje członków grupy.</translation>
    <translation id="exchange_tab_SHARED_header_path" qtlid="6838">Ścieżka</translation>
    <translation id="exchange_tab_SHARED_header_type" qtlid="2642">Typ</translation>
    <translation id="exchange_tab_SHARED_header_access" qtlid="201510">Uprawnienia dostępu</translation>
-   <translation id="exchange_tab_SHARED_header_status" qtlid="8230">Status</translation>
+   <translation id="exchange_tab_SHARED_header_status" qtlid="8230">Państwo</translation>
    <translation id="exchange_tab_SHARED_header_access_PLAIN" qtlid="61656">Katalog</translation>
    <translation id="exchange_tab_SHARED_header_access_CALENDAR" qtlid="201523">Kalendarz</translation>
    <translation id="exchange_tab_SHARED_header_access_CONTACTS" qtlid="32206">Kontakt</translation>
@@ -1419,14 +1420,15 @@ Zamknięta: administrator zapisuje członków grupy.</translation>
    <translation id="exchange_action_SHARED_delete_error" qtlid="202056">Wystąpił błąd podczas usuwania konta zasobów współdzielonych.</translation>
 
    <translation id="exchange_action_SHARED_permissions_delete_title" qtlid="202069">Usuń uprawnienia</translation>
-   <translation id="exchange_action_SHARED_permissions_delete_question" qtlid="202082">Czy chcesz usunąć uprawnienia dostępu do konta zasobów współdzielonych {0} ?</translation>
+   <translation id="exchange_action_SHARED_permissions_delete_question" qtlid="202082">Czy chcesz usunąć uprawnienia dostępu do konta zasobów współdzielonych {0}?</translation>
    <translation id="exchange_action_SHARED_permissions_delete_success" qtlid="202095">Uprawnienie dostępu zostanie usunięte.</translation>
    <translation id="exchange_action_SHARED_permissions_delete_error" qtlid="202056">Wystąpił błąd podczas usuwania konta zasobów współdzielonych.</translation>
 
    <translation id="exchange_action_SHARED_permissions_update_title" qtlid="202108">Konfiguracja uprawnień dostępu</translation>
-   <translation id="exchange_action_SHARED_permissions_update_intro" qtlid="209190">Udostępnienie kont Exchange pozwala <sup>1</sup> na współdzielenie ich niektórych uprawnień {0}</translation>
+   <translation id="exchange_action_SHARED_permissions_update_intro" qtlid="209190">Uprawnienie dostępu pozwala innym kontom Exchange &#13;
+<sup>1</sup> na posiadanie niektórych uprawnień do zasobów współdzielonych  <strong>{0}</strong></translation>
    <translation id="exchange_action_SHARED_permissions_update_legend" qtlid="209203">Opcja udostępniania uprawnień jest niedostępna dla kont Exchange typu "Basic".</translation>
-   <translation id="exchange_action_SHARED_permissions_update_resume_intro" qtlid="202147">Podsumowanie zmian dotyczących uprawnień dostępu do konta zasobów współdzielonych {0} :</translation>
+   <translation id="exchange_action_SHARED_permissions_update_resume_intro" qtlid="202147">Podsumowanie zmian dotyczących uprawnień dostępu do zasobów współdzielonych {0}:</translation>
    <translation id="exchange_action_SHARED_permissions_update_success_message" qtlid="202160">Uprawnienia dostępu dla konta zasobów współdzielonych <span class="bold">{0}</span> zostaną zmienione.</translation>
    <translation id="exchange_action_SHARED_permissions_update_partial_message" qtlid="202173">Zlecenie aktualizacji uprawnień dostępu do konta zasobów współdzielonych <span class="bold">{0}</span> zostało częściowo zarejestrowane. Wystąpiły błędy.</translation>
    <translation id="exchange_action_SHARED_permissions_update_error_message" qtlid="202186">Wystąpiły błędy podczas aktualizowania uprawnień dostępu do konta zasobów współdzielonych <span class="bold">{0}</span>.</translation>

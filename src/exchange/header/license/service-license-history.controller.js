@@ -50,9 +50,9 @@ angular
                 .getExchangeLicenseHistory(this.$routerParams.organization, this.$routerParams.productId, period)
                 .then((data) => {
                     if (_.has(data, "series") && data.series != null) {
-                        for (const datum of data.series) {
+                        _.forEach(data.series, (datum) => {
                             this.parseSerie(datum);
-                        }
+                        });
                     }
 
                     this.licenseHistory = data;

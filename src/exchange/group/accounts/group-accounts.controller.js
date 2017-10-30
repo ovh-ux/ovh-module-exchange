@@ -49,7 +49,8 @@ angular.module("Module.exchange.controllers")
 
             if (_.has(this.accountsList, "list.results")) {
                 const accounts = this.accountsList.list.results;
-                for (const account of accounts) {
+
+                _.forEach(accounts, (account) => {
                     const bufferedAccount = _.find(this.accountsListBuffer.list.results, (bufferedAcc) => bufferedAcc.id === account.id);
                     let bufferedAccountUserType = _.get(bufferedAccount, "manager");
 
@@ -70,7 +71,7 @@ angular.module("Module.exchange.controllers")
                             itemType: account.type
                         });
                     }
-                }
+                });
             }
         }
 

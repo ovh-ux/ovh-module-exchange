@@ -70,8 +70,8 @@
    <translation id="exchange_ACTION_export_confirm" qtlid="217080">Opravdu chcete exportovat své účty?</translation>
 
 <!-- OFFICE ATTACHED -->
-   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Promo akce:</strong> bezplatná aktivace služby Office 365 na Vašich adresách Exchange!*</translation>
-   <translation id="exchange_office_attached_alert_details" qtlid="404213">*Nabídka se vztahuje na službu Office 365 Business a platí pouze v rámci prvního měsíce užívání služby. Maximální počet adres Exchange, na nichž lze službu aktivovat: {0}. Služba je automaticky prolongována. Prolongace služby po uplynutí jednoho měsíce zdarma podléhá standardním fakturačním sazbám uvedeným na webových stránkách <a target="_blank" href="https://www.ovh.cz>https://www.ovh.cz</a></translation>
+   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Promo akce:</strong> bezplatná aktivace služby Office 365 na Vašich adresách Exchange!</translation>
+   <translation id="exchange_office_attached_alert_details" qtlid="404213">Nabídka se vztahuje na službu Office 365 Business a platí pouze v rámci prvního měsíce užívání služby. Maximální počet adres Exchange, na nichž lze službu aktivovat: {0}. Služba je automaticky prolongována. Prolongace služby po uplynutí jednoho měsíce zdarma podléhá standardním fakturačním sazbám uvedeným na webových stránkách <a target="_blank" href="https://www.ovh.cz">https://www.ovh.cz:51043</a></translation>
    <translation id="exchange_office_attached_alert_button" qtlid="404226">Využijte naši jedinečnou nabídku</translation>
    <translation id="exchange_office_attached_alert_modale_title" qtlid="404239">Aktivovat akční nabídku Office 365</translation>
    <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Využijte službu Office 365 na jeden měsíc zcela zdarma (až pro {0} Exchange účtů dle Vaší volby).</translation>
@@ -188,8 +188,8 @@
    <translation id="exchange_tab_ALIAS_back_button" qtlid="4118">Zpět</translation>
    <translation id="exchange_tab_ALIAS_header" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_delete_tooltip" qtlid="178848">Vymazat tento alias</translation>
-   <translation id="exchange_tab_ALIAS_intro" qtlid="434512">Liste des alias créés pour le compte <strong>{0}</strong></translation>
-   <translation id="exchange_tab_ALIAS_GROUP_intro" qtlid="434525">Liste des alias créés pour le groupe <strong>{0}</strong></translation>
+   <translation id="exchange_tab_ALIAS_intro" qtlid="434512">Seznam aliasů vytvořených pro účet <strong>{0}</strong></translation>
+   <translation id="exchange_tab_ALIAS_GROUP_intro" qtlid="434525">Seznam aliasů vytvořených pro skupinu <strong>{0}</strong></translation>
    <translation id="exchange_tab_ALIAS_table_empty" qtlid="143954">Pro tento účet nemáte žádný alias</translation>
    <translation id="exchange_tab_ALIAS_GROUP_table_empty" qtlid="178874">Pro tuto skupinu nemáte žádný alias</translation>
    <translation id="exchange_tab_ALIAS_state_TASK_ON_DOING" qtlid="26383">Probíhá</translation>
@@ -207,7 +207,7 @@
    <translation id="exchange_tab_ALIAS_remove_alias_label" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_remove_account_label" qtlid="143603">Přiřazený účet</translation>
    <translation id="exchange_tab_ALIAS_add_alias_title" qtlid="143616">Vytvořit alias</translation>
-   <translation id="exchange_tab_ALIAS_add_alias_intro" qtlid="155782">Vytvořit alias pro účet</translation>
+   <translation id="exchange_tab_ALIAS_add_alias_intro" qtlid="416579">Vytvořit alias pro účet <span class="bold">{0}</span></translation>
    <translation id="exchange_tab_ALIAS_add_alias_placeholder" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_add_alias_step2_intro" qtlid="144006">Opravdu si přejete přidat níže uvedený alias?</translation>
    <translation id="exchange_tab_ALIAS_add_alias_step2_alias_label" qtlid="9466">Alias</translation>
@@ -429,12 +429,12 @@
    <translation id="exchange_ACTION_order_accounts_step3_continue" qtlid="169537">K potvrzení objednávky prosím klikněte na tlačítko "Zaplatit".</translation>
    <translation id="exchange_ACTION_order_accounts_step3_explication" qtlid="139481">Po uhrazení a přijetí platby je třeba počítat s cca 10 minutovou prodlevou, nutnou k vytvoření účtů.</translation>
    <translation id="exchange_ACTION_order_accounts_step3_explication2" qtlid="144175">Otevře se Vám nová záložka a budete automaticky přesměrováni do platebního rozhraní OVH.</translation>
-   <translation id="exchange_ACTION_add_account_legal_warning" qtlid="209099">Souhlasím, že OVH OVH nastaví službu okamžitě po schválení objednávky a vzdávám se proto práva na zrušení služby podle Článku L.121-21-8.</translation>
+   <translation id="exchange_ACTION_add_account_legal_warning" qtlid="209099">Souhlasím, že OVH nastaví službu okamžitě po schválení objednávky a vzdávám se proto práva na zrušení služby podle Článku L.121-21-8.</translation>
    <translation id="exchange_ACTION_add_account_button" qtlid="21487">Přidat účet</translation>
    <translation id="exchange_ACTION_add_account_title" qtlid="143225">Přidat účet Exchange</translation>
    <translation id="exchange_ACTION_add_account_step1_email_label" qtlid="137244">E-mailový účet</translation>
    <translation id="exchange_ACTION_add_account_step1_first_name_label" qtlid="23323">Jméno</translation>
-   <translation id="exchange_ACTION_add_account_step1_last_name_label" qtlid="3818">Jméno</translation>
+   <translation id="exchange_ACTION_add_account_step1_last_name_label" qtlid="3818">Příjmení</translation>
    <translation id="exchange_ACTION_add_account_step1_display_name_label" qtlid="23515">Zobrazit název</translation>
    <translation id="exchange_ACTION_add_account_step1_password_label" qtlid="2270">Heslo</translation>
    <translation id="exchange_ACTION_add_account_step1_password_confirmation_label" qtlid="9983">Potvrzení hesla</translation>
@@ -447,7 +447,7 @@
    <translation id="exchange_ACTION_add_account_step2_confirmation_intro" qtlid="136841">Váš účet:</translation>
    <translation id="exchange_ACTION_add_account_step2_email_label" qtlid="137244">E-mailový účet</translation>
    <translation id="exchange_ACTION_add_account_step2_first_name_label" qtlid="23323">Jméno</translation>
-   <translation id="exchange_ACTION_add_account_step2_last_name_label" qtlid="3818">Jméno</translation>
+   <translation id="exchange_ACTION_add_account_step2_last_name_label" qtlid="3818">Příjmení</translation>
    <translation id="exchange_ACTION_add_account_step2_display_name_label" qtlid="23515">Zobrazit název</translation>
    <translation id="exchange_ACTION_add_account_step2_password_label" qtlid="2270">Heslo</translation>
    <translation id="exchange_ACTION_add_account_step2_password_confirmation_label" qtlid="9983">Potvrzení hesla</translation>
@@ -475,7 +475,7 @@
    <translation id="exchange_ACTION_update_account_step1_type_BASIC" qtlid="48986">Basic</translation>
    <translation id="exchange_ACTION_update_account_step1_type_ENTERPRISE" qtlid="49022">Společnost / OSVČ</translation>
    <translation id="exchange_ACTION_update_account_step1_first_name_label" qtlid="23323">Jméno</translation>
-   <translation id="exchange_ACTION_update_account_step1_last_name_label" qtlid="3818">Jméno</translation>
+   <translation id="exchange_ACTION_update_account_step1_last_name_label" qtlid="3818">Příjmení</translation>
    <translation id="exchange_ACTION_update_account_step1_display_name_label" qtlid="23515">Zobrazit název</translation>
    <translation id="exchange_ACTION_update_account_step1_password_label" qtlid="2270">Heslo</translation>
    <translation id="exchange_ACTION_update_account_step1_password_confirmation_label" qtlid="9983">Potvrzení hesla</translation>
@@ -498,7 +498,7 @@
    <translation id="exchange_ACTION_update_account_step2_confirmation_intro" qtlid="136841">Váš účet:</translation>
    <translation id="exchange_ACTION_update_account_step2_email_label" qtlid="137244">E-mailový účet</translation>
    <translation id="exchange_ACTION_update_account_step2_first_name_label" qtlid="23323">Jméno</translation>
-   <translation id="exchange_ACTION_update_account_step2_last_name_label" qtlid="3818">Jméno</translation>
+   <translation id="exchange_ACTION_update_account_step2_last_name_label" qtlid="3818">Příjmení</translation>
    <translation id="exchange_ACTION_update_account_step2_display_name_label" qtlid="23515">Zobrazit název</translation>
    <translation id="exchange_ACTION_update_account_step2_password_label" qtlid="139650">Heslo</translation>
    <translation id="exchange_ACTION_update_account_step2_outlook_label" qtlid="136724">Licence Outlook</translation>
@@ -547,7 +547,7 @@
    <translation id="exchange_tab_domain_add_step1_user_owned_option" qtlid="397533">Přidat externí doménu</translation>
    <translation id="exchange_tab_domain_add_step1_user_owned_info" qtlid="397546">Upozornění: ujistěte se prosím, že DNS zóna Vámi zadané domény může být upravena administrátorem domény.</translation>
    <translation id="exchange_tab_domain_add_step1_order_domain_option" qtlid="136997">Objednat doménu</translation>
-   <translation id="exchange_tab_domain_add_step1_domain_none" qtlid="434538">Aucun résultat trouvé</translation>
+   <translation id="exchange_tab_domain_add_step1_domain_none" qtlid="434538">Nebyl nalezen žádný výsledek</translation>
 
    <translation id="exchange_tab_domain_add_step3_cover_guide" qtlid="139572">Náhled video příručky</translation>
 
@@ -617,7 +617,7 @@ Anti-spam Vade Secure je kompatibilní s autoritativním režimem (pouze pokud j
 <!-- ########################################## -->
 <!-- DELEGATION -->
    <translation id="exchange_ACTION_delegation_title" qtlid="143733">Nastavení delegace</translation>
-   <translation id="exchange_ACTION_delegation_step1_intro" qtlid="434551">Une délégation permet à d'autres comptes Exchange d'avoir certains droits sur le compte <strong>{0}</strong></translation>
+   <translation id="exchange_ACTION_delegation_step1_intro" qtlid="434551">Delegace zprostředkovává ostatním účtům Exchange určitá oprávnění na účtu <strong>{0}</strong></translation>
    <translation id="exchange_ACTION_delegation_table_empty" qtlid="150047">Nemáte žádné dostupné účty</translation>
    <translation id="exchange_ACTION_delegation_table_empty_search" qtlid="150060">Nemáte žádné účty, které by odpovídaly vyhledávaným kritériím</translation>
    <translation id="exchange_ACTION_delegation_step1_email_header" qtlid="137244">E-mailový účet</translation>
@@ -625,7 +625,8 @@ Anti-spam Vade Secure je kompatibilní s autoritativním režimem (pouze pokud j
    <translation id="exchange_ACTION_delegation_step1_sendOnBehalfTo_header" qtlid="181487">Práva posílat jako</translation>
    <translation id="exchange_ACTION_delegation_step1_full_header" qtlid="181500">Přístupová práva</translation>
    <translation id="exchange_ACTION_delegation_step1_task_on_doing" qtlid="201458">Probíhající operace</translation>
-   <translation id="exchange_ACTION_delegation_step2_intro" qtlid="434564">Les droits de délégation afférents au compte <strong>{0}</strong> :</translation>
+   <translation id="exchange_ACTION_delegation_step2_intro" qtlid="434564">Delegační práva účtu <strong>{0}</strong>:&#13;
+</translation>
    <translation id="exchange_ACTION_delegation_step2_email_header" qtlid="137244">E-mailový účet</translation>
    <translation id="exchange_ACTION_delegation_step2_send_header" qtlid="143798">Práva na odesílání</translation>
    <translation id="exchange_ACTION_delegation_step2_sendOnBehalfTo_header" qtlid="181487">Práva posílat jako</translation>
@@ -657,7 +658,7 @@ Anti-spam Vade Secure je kompatibilní s autoritativním režimem (pouze pokud j
    <translation id="exchange_tab_DISCLAIMER_menu_delete" qtlid="2414">Odstranit</translation>
    <translation id="exchange_ACTION_add_disclaimer_button" qtlid="152206">Přidat podpis</translation>
    <translation id="exchange_ACTION_add_disclaimer_title" qtlid="152206">Přidat podpis</translation>
-   <translation id="exchange_ACTION_disclaimer_name" qtlid="3818">Jméno</translation>
+   <translation id="exchange_ACTION_disclaimer_name" qtlid="3818">Příjmení</translation>
    <translation id="exchange_ACTION_disclaimer_associated_domains" qtlid="133110">Přiřazené domény</translation>
    <translation id="exchange_ACTION_disclaimer_variables" qtlid="152323">Proměnná</translation>
    <translation id="exchange_ACTION_disclaimer_insert" qtlid="152336">Vložit proměnnou</translation>
@@ -675,7 +676,7 @@ Anti-spam Vade Secure je kompatibilní s autoritativním režimem (pouze pokud j
    <translation id="exchange_ACTION_add_disclaimer_option_FirstName" qtlid="23323">Jméno</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_HomePhoneNumber" qtlid="152401">Pevná linka</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Initials" qtlid="152414">Iniciály</translation>
-   <translation id="exchange_ACTION_add_disclaimer_option_LastName" qtlid="3818">Jméno</translation>
+   <translation id="exchange_ACTION_add_disclaimer_option_LastName" qtlid="3818">Příjmení</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Manager" qtlid="152427">Zodpovědná osoba</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_MobileNumber" qtlid="152440">Mobilní číslo</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Name" qtlid="109614">Celé jméno</translation>
@@ -736,7 +737,7 @@ Anti-spam Vade Secure je kompatibilní s autoritativním režimem (pouze pokud j
    <translation id="exchange_tab_RESOURCES_remove_resource_failure" qtlid="156368">Při mazání zdrojového účtu došlo k chybě.</translation>
    <translation id="exchange_tab_RESOURCES_table_empty" qtlid="156381">Nemáte žádné zdrojové účty.</translation>
    <translation id="exchange_tab_RESOURCES_error_message" qtlid="156394">Při načítání zdrojů došlo k chybě.</translation>
-   <translation id="exchange_tab_RESOURCES_table_account" qtlid="3818">Jméno</translation>
+   <translation id="exchange_tab_RESOURCES_table_account" qtlid="3818">Příjmení</translation>
    <translation id="exchange_tab_RESOURCES_table_type" qtlid="2642">Typ</translation>
    <translation id="exchange_tab_RESOURCES_table_capacity" qtlid="4334">Kapacita</translation>
    <translation id="exchange_tab_RESOURCES_table_allow_conflicts" qtlid="156407">Povolení konfliktu</translation>
@@ -829,6 +830,7 @@ Klikněte na štítek a budete přesměrováni na e-mail, který přišel po zab
    <translation id="exchange_DIAGNOSTICS_status_canSendEmail_help_li4" qtlid="319817">Incident na infrastruktuře Exchange</translation>
    <translation id="exchange_DIAGNOSTICS_status_support_ticket_subject" qtlid="291643">Diagnostika Exchange</translation>
    <translation id="exchange_DIAGNOSTICS_status_support_ticket_body" qtlid="291656">Níže uvedená data prosím uložte, pomohou s diagnostikou Vašeho problému.</translation>
+   <translation id="exchange_DIAGNOSTICS_create_ticket" qtlid="260801">Vytvořit ticket</translation>
 
 <!-- ########################################## -->
 <!-- TAB MAILING LISTS -->
@@ -892,7 +894,8 @@ Klikněte na štítek a budete přesměrováni na e-mail, který přišel po zab
    <translation id="exchange_tab_GROUPS_delete_group_success" qtlid="150151">Vaše skupina bude vymazána.</translation>
    <translation id="exchange_tab_GROUPS_delete_group_error" qtlid="150164">Při mazání skupiny došlo k chybě.</translation>
    <translation id="exchange_GROUPS_delegation_title" qtlid="150398">Nastavit delegování</translation>
-   <translation id="exchange_GROUPS_delegation_step1_intro" qtlid="434577">Une délégation permet à d'autres comptes Exchange d'avoir certains droits sur le groupe <strong>{0}</strong></translation>
+   <translation id="exchange_GROUPS_delegation_step1_intro" qtlid="434577">Delegace zprostředkovává ostatním účtům Exchange určitá oprávnění ve skupině <strong>{0}</strong>&#13;
+</translation>
    <translation id="exchange_GROUPS_delegation_step1_email_header" qtlid="137244">E-mailový účet</translation>
    <translation id="exchange_GROUPS_delegation_step1_send_header" qtlid="143759">Dát práva na odesílání</translation>
    <translation id="exchange_GROUPS_delegation_step1_full_header" qtlid="144240">Dát přístupová práva</translation>
@@ -940,7 +943,7 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
    <translation id="exchange_GROUPS_add_group_help_directory_text" qtlid="184880">Skrytí skupiny adres v Outlook znamená, že již nebude dostupný v adresáři služeb Exchange.</translation>
    <translation id="exchange_GROUPS_add_group_help_security_header" qtlid="150528">Vyžadována autentifikace</translation>
    <translation id="exchange_GROUPS_add_group_help_security_text" qtlid="150671">Zaškrtnuté znamená, že pouze členi skupiny budou moci posílat zprávy na adresu skupiny.</translation>
-   <translation id="exchange_GROUPS_manager_intro" qtlid="434590">Liste des comptes administrateur du groupe <strong>{0}</strong></translation>
+   <translation id="exchange_GROUPS_manager_intro" qtlid="434590">Seznam administrátorských účtů skupiny <strong>{0}</strong></translation>
    <translation id="exchange_GROUPS_manager_back_button" qtlid="4118">Zpět</translation>
    <translation id="exchange_GROUPS_manager_delete_tooltip" qtlid="150697">Odebrat tento účet ze seznamu</translation>
    <translation id="exchange_GROUPS_manager_table_empty" qtlid="150710">Nemáte pro tuto skupinu administrátory</translation>
@@ -949,9 +952,10 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
    <translation id="exchange_GROUPS_remove_manager_question" qtlid="150749">Opravdu chcete vymazat tento účet ze seznamu sdministrátorů skupiny?</translation>
    <translation id="exchange_GROUPS_remove_manager_group_label" qtlid="59507">Skupina</translation>
    <translation id="exchange_GROUPS_remove_manager_manager_label" qtlid="43948">Administrátor</translation>
-   <translation id="exchange_GROUPS_remove_manager_success_message" qtlid="434603">Le compte <strong>{0}</strong> va être supprimé de la liste d'administrateurs du groupe <span class="bold">{1}</span>.</translation>
+   <translation id="exchange_GROUPS_remove_manager_success_message" qtlid="434603">Účet <strong>{0}</strong> bude odstraněn ze seznamu administrátorských účtů skupiny <span class="bold">{1}</span>.</translation>
    <translation id="exchange_GROUPS_remove_manager_error_message" qtlid="155912">Při mazání účtu <span class="bold">{0}</span> ze seznamu administrátorů skupiny <span class="bold">{1}</span> došlo k chybě.</translation>
-   <translation id="exchange_GROUPS_member_intro" qtlid="434616">Liste des comptes contacts du groupe <strong>{0}</strong></translation>
+   <translation id="exchange_GROUPS_member_intro" qtlid="434616">Seznam kontaktních účtů skupiny <strong>{0}</strong>&#13;
+</translation>
    <translation id="exchange_GROUPS_member_back_button" qtlid="4118">Zpět</translation>
    <translation id="exchange_GROUPS_member_delete_tooltip" qtlid="150801">Odebrat tento účet ze seznamu kontaktů</translation>
    <translation id="exchange_GROUPS_member_table_empty" qtlid="150814">Nemáte žádné kontakty pro tuto skupinu.</translation>
@@ -1097,7 +1101,7 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_email_invalid" qtlid="171370">E-mailová adresa není platná</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_organization2010_label" qtlid="32278">Organizace</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_first_name_label" qtlid="23323">Jméno</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_last_name_label" qtlid="3818">Jméno</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_last_name_label" qtlid="3818">Příjmení</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_display_name_label" qtlid="23515">Zobrazit název</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_GAL_label" qtlid="184932">Skrýt v Outlooku</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_option_fail" qtlid="137621">Při načítání možností účtu Exchange došlo k chybě.</translation>
@@ -1107,7 +1111,7 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_question" qtlid="171435">Opravdu chcete přidat následující externí kontakt?</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_email_label" qtlid="137244">E-mailový účet</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_first_name_label" qtlid="23323">Jméno</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_last_name_label" qtlid="3818">Jméno</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_last_name_label" qtlid="3818">Příjmení</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_display_name_label" qtlid="23515">Zobrazit název</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_GAL_label" qtlid="191954">Skrýt adresu v Outlook</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_GAL_true" qtlid="34776">Ano</translation>
@@ -1120,7 +1124,7 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_email_label" qtlid="137244">E-mailový účet</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_email_invalid" qtlid="171370">E-mailová adresa není platná</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_first_name_label" qtlid="23323">Jméno</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_last_name_label" qtlid="3818">Jméno</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_last_name_label" qtlid="3818">Příjmení</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_display_name_label" qtlid="23515">Zobrazit název</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_GAL_label" qtlid="191954">Skrýt adresu v Outlook</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_mandatory_fields" qtlid="137634">Povinná pole</translation>
@@ -1129,7 +1133,7 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_question" qtlid="171500">Opravdu si přejete změnit následující externí kontakt?</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_email_label" qtlid="137244">E-mailový účet</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_first_name_label" qtlid="23323">Jméno</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_last_name_label" qtlid="3818">Jméno</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_last_name_label" qtlid="3818">Příjmení</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_display_name_label" qtlid="23515">Zobrazit název</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_GAL_label" qtlid="191954">Skrýt adresu v Outlook</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_GAL_true" qtlid="34776">Ano</translation>
@@ -1181,9 +1185,9 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
    <translation id="minPasswordLength_mustBeInteger_error" qtlid="178055">Minimální délka musí být celé číslo.</translation>
    <translation id="minPasswordLength_number_error" qtlid="178055">Minimální délka musí být celé číslo.</translation>
    <translation id="minPasswordLength_pattern_error" qtlid="178055">Minimální délka musí být celé číslo.</translation>
-   <translation id="minPasswordAge_min_error" qtlid="434629">L'âge minimal du mot de passe ne peut pas être inférieur à 0 jour</translation>
-   <translation id="minPasswordAge_max_error" qtlid="434642">L'âge minimal du mot de passe ne peut pas être supérieur à 90 jours</translation>
-   <translation id="minPasswordAge_mustBeInteger_error" qtlid="434655">L'âge minimal du mot de passe doit être un nombre entier</translation>
+   <translation id="minPasswordAge_min_error" qtlid="434629">Minimální doba platnosti hesla nesmí být menší než jeden den</translation>
+   <translation id="minPasswordAge_max_error" qtlid="434642">Minimální doba platnosti hesla nesmí být větší než 90 dní</translation>
+   <translation id="minPasswordAge_mustBeInteger_error" qtlid="434655">Minimální doba platnosti hesla musí být celé číslo</translation>
    <translation id="minPasswordAge_minToBigForMax_error" qtlid="178094">Minimální stáří hesla musí být menší jak maximální stáří.</translation>
    <translation id="minPasswordAge_pattern_error" qtlid="434018">Minimální doba platnosti hesla musí být celé číslo</translation>
    <translation id="minPasswordAge_number_error" qtlid="434018">Minimální doba platnosti hesla musí být celé číslo</translation>
@@ -1220,7 +1224,8 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
    <translation id="lockoutDuration_pattern_error" qtlid="178042">Doba uzamčení účtu musí být celé číslo.</translation>
    <translation id="exchange_ACTION_configure_success" qtlid="178263">Změny budou provedeny.</translation>
    <translation id="exchange_ACTION_configure_error" qtlid="178276">Během požadavku došlo k chybě. Změny nebudou provedeny.</translation>
-   <translation id="exchange_ACTION_configure_step2_intro" qtlid="434668">Récapitulatif de configuration pour votre service Exchange <strong>{0}</strong></translation>
+   <translation id="exchange_ACTION_configure_step2_intro" qtlid="434668">Rekapitulace nastavení Vaší služby Exchange <strong>{0}</strong>&#13;
+</translation>
    <translation id="exchange_ACTION_configure_step2_label_lockoutDuration" qtlid="178302">Doba uzamčení účtu:</translation>
    <translation id="exchange_ACTION_configure_step2_label_lockoutObservationWindow" qtlid="178315">Okno pro zobrazení uzavření:</translation>
    <translation id="exchange_ACTION_configure_step2_label_lockoutThreshold" qtlid="178328">Hranice uzamčení účtu:</translation>

@@ -6,10 +6,10 @@ module.exports = function (grunt) {
         return grunt.option("mode") === "prod" || grunt.option("type") !== undefined;
     }
 
-    var assets = require("./Assets");
-    var mode = grunt.option("mode") || "dev";
-    var basepath = grunt.option("base-path") || (isProd() ? "" : "../");
-    var target = grunt.option("target") || "EU";
+    const assets = require("./Assets");
+    let mode = grunt.option("mode") || "dev";
+    const basepath = grunt.option("base-path") || (isProd() ? "" : "../");
+    const target = grunt.option("target") || "EU";
 
     grunt.loadTasks("tasks");
 
@@ -208,7 +208,7 @@ module.exports = function (grunt) {
      * --type=major
      */
     grunt.registerTask("release", "Release", () => {
-        var type = grunt.option("type");
+        const type = grunt.option("type");
         if (isProd()) {
             mode = "prod";
             grunt.task.run(["bump-only:" + type]);
