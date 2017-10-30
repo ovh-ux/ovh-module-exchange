@@ -195,14 +195,14 @@
                 const lowerCaseDisplayName = displayNameStr.toLowerCase();
                 const splittedDisplayName = lowerCaseDisplayName.split(/[,.\-_Â£\s\t]/);
 
-                let returnValue = false;
+                let includesIncorrectWords = false;
 
                 if (splittedDisplayName != null) {
                     const splittedNameWithoutShortWords = splittedDisplayName.filter((word) => word.length >= 3);
 
                     _.forEach(splittedNameWithoutShortWords, (word) => {
                         if (_(lowerCasePassword).includes(word)) {
-                            returnValue = true;
+                            includesIncorrectWords = true;
                             return false;
                         }
 
@@ -210,7 +210,7 @@
                     });
                 }
 
-                return returnValue;
+                return includesIncorrectWords;
             }
         });
 }
