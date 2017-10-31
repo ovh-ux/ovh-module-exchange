@@ -8,19 +8,22 @@
         <div data-wizard-step
              data-wizard-step-on-load="loadMonitoring">
 
-            <div class="loader text-center" data-ng-if="ctrl.loading"></div>
+            <oui-loader data-ng-if="ctrl.loading"></oui-loader>
 
             <div data-ng-if="!ctrl.loading">
+                <form name="licenceHistoryForm">
+                    <label class="oui-select">
+                        <select class="oui-select__input"
+                                data-ng-change="ctrl.loadMonitoring()"
+                                data-ng-model="ctrl.selectedPeriod.period"
+                                data-ng-options="period as tr('exchange_action_license_history_period_' + period) for period in ctrl.licenseHistory.periods">
+                        </select>
+                        <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
+                    </label>
+                </form>
 
-                <div class="form-group mt-5">
-                    <select class="form-control"
-                            data-ng-change="ctrl.loadMonitoring()"
-                            data-ng-model="ctrl.selectedPeriod.period"
-                            data-ng-options="period as tr('exchange_action_license_history_period_' + period) for period in ctrl.licenseHistory.periods">
-                    </select>
-                </div>
-
-                <p class="font-weight-bold text-center" data-i18n-static="exchange_action_license_history_button"></p>
+                <p class="font-weight-bold text-center"
+                   data-i18n-static="exchange_action_license_history_button"></p>
 
                 <div class="chart-container" style="height: 320px;"
                      data-chartjs="ctrl.chart"></div>

@@ -25,7 +25,7 @@ angular
             $scope.isStep1Valid = () => this.isStep1Valid();
         }
 
-        insertVariable () {
+        insertAttribute () {
             CKEDITOR.instances[this.mceId].insertText(`%%${this.data.selectedAttribute}%%`);
         }
 

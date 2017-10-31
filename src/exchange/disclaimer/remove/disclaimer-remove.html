@@ -7,12 +7,14 @@
         <div data-wizard-step>
             <p data-i18n-static="exchange_ACTION_delete_disclaimer_question"></p>
 
-            <dl class="dl-horizontal">
+            <dl class="dl-horizontal dl-lg">
                 <dt data-i18n-static="exchange_ACTION_disclaimer_associated_domains"></dt>
-                <dd data-ng-bind="ctrl.disclaimer.domain.displayName | sliceContent: 150" class="word-break"></dd>
+                <dd class="word-break"
+                    data-ng-bind="ctrl.disclaimer.domain.displayName | sliceContent: 150"></dd>
 
                 <dt data-i18n-static="exchange_ACTION_add_disclaimer_content"></dt>
-                <dd data-ng-bind-html="ctrl.disclaimer.content | sliceContent: 150" class="word-break"></dd>
+                <dd class="word-break"
+                    data-ng-bind-html="ctrl.disclaimer.content | sliceContent: 150"></dd>
             </dl>
         </div>
     </div>

@@ -3,13 +3,12 @@
          data-wizard-title="i18n.exchange_ACTION_upgrade_title"
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="submitting">
-        
+
         <div data-wizard-step
-             data-wizard-step-on-load="retrievingContracts"
-             data-wizard-step-valid="ctrl.agree.value"> 
+             data-wizard-step-valid="ctrl.agree.value">
             <p data-i18n-static="exchange_ACTION_upgrade_intro"></p>
-             
-            <div class="loader text-center" data-ng-if="!ctrl.model.contracts"></div>
+
+            <oui-loader data-ng-if="!ctrl.model.contracts"></oui-loader>
 
             <div data-contracts="ctrl.model.contracts"
                  data-full-text="false"

@@ -13,7 +13,7 @@ angular
                 throw "accountType.isType(accountType) can't work on an empty string";
             }
 
-            return this.services.Exchange.value.offer.toUpperCase() === accountType.toUpperCase();
+            return _.get(this.services.Exchange, "value.offer", "").toUpperCase() === accountType.toUpperCase();
         }
 
         isDedicated () {
