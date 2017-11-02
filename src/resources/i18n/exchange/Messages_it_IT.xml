@@ -455,7 +455,6 @@
    <translation id="exchange_ACTION_add_account_step2_password_confirmation_label" qtlid="9983">Conferma</translation>
    <translation id="exchange_ACTION_add_account_step2_type_label" qtlid="48938">Tipologia di account</translation>
    <translation id="exchange_ACTION_add_account_step2_outlook_label" qtlid="136724">Licenza Outlook</translation>
-   <translation id="exchange_ACTION_add_account_step2_security_label" qtlid="136750">Opzioni di sicurezza</translation>
    <translation id="exchange_ACTION_add_account_step2_GAL_label" qtlid="191954">Nascondi l'indirizzo in Outlook</translation>
    <translation id="exchange_ACTION_add_account_security_NONE" qtlid="8674">Nessuno</translation>
    <translation id="exchange_ACTION_add_account_security_VADERETRO" qtlid="324821">Protezione Vade Secure</translation>

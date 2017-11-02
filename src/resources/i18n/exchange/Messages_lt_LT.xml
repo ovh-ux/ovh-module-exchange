@@ -453,7 +453,6 @@
    <translation id="exchange_ACTION_add_account_step2_password_confirmation_label" qtlid="9983">Patvirtinimas</translation>
    <translation id="exchange_ACTION_add_account_step2_type_label" qtlid="48938">Paskyros tipas</translation>
    <translation id="exchange_ACTION_add_account_step2_outlook_label" qtlid="136724">Outlook licencija </translation>
-   <translation id="exchange_ACTION_add_account_step2_security_label" qtlid="136750">Saugumo nustatymai </translation>
    <translation id="exchange_ACTION_add_account_step2_GAL_label" qtlid="191954">Maskuoti adresą Outlook</translation>
    <translation id="exchange_ACTION_add_account_security_NONE" qtlid="8674">Tuščia</translation>
    <translation id="exchange_ACTION_add_account_security_VADERETRO" qtlid="324821">Apsauga Vade Secure</translation>
