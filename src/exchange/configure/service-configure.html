@@ -6,47 +6,36 @@
 
         <div data-wizard-step
              data-wizard-step-valid="isFormValid()">
-            <div data-ng-if="ctrl.loaders.details && !ctrl.loaders.put">
+            <div class="text-center" data-ng-if="ctrl.loaders.details && !ctrl.loaders.put">
+                <oui-loader></oui-loader>
                 <span data-i18n-static="exchange_ACTION_loading"></span>
-                <div class="loader text-center"></div>
             </div>
 
-            <div data-ng-if="!ctrl.loaders.details && ctrl.loaders.put">
+            <div class="text-center" data-ng-if="!ctrl.loaders.details && ctrl.loaders.put">
+                <oui-loader></oui-loader>
                 <span data-i18n-static="exchange_ACTION_sending"></span>
-                <div class="loader text-center"></div>
             </div>
 
-            <form name="ctrl.serviceForm"
-                  class="form-horizontal"
-                  novalidate
+            <form name="ctrl.serviceForm" novalidate
                   data-ng-if="!ctrl.loaders.details && !ctrl.loaders.put">
                 <!-- Lockout Threshold -->
                 <div class="form-group"
                      data-ng-class="{ 'has-error': ctrl.serviceForm.lockoutThreshold.$invalid && ctrl.serviceForm.lockoutThreshold.$dirty }">
-                    <label class="col-sm-4"
-                           for="lockoutThreshold"
+                    <label class="control-label required" for="lockoutThreshold"
                            data-i18n-static="exchange_ACTION_configure_services_label_lockoutThreshold"></label>
-                    <div class="col-sm-8">
-                        <input type="number"
-                               id="lockoutThreshold"
-                               name="lockoutThreshold"
-                               class="form-control"
-                               data-ng-change="ctrl.check(ctrl.serviceForm.lockoutThreshold)"
-                               data-ng-model="ctrl.service.lockoutThreshold"
-                               data-ng-pattern="/^\d+$/"
-                               data-ng-min="0"
-                               min="0"
-                               data-ng-max="14"
-                               max="14"
-                               required
-                               aria-describedby="thresholdDescription thresholdErrors">
-
-                        <div class="help-block" id="thresholdDescription" data-i18n-static="exchange_ACTION_configure_services_help_lockoutThreshold"></div>
-                        <div id="thresholdErrors" data-ng-repeat="(type, isError) in ctrl.serviceForm.lockoutThreshold.$error track by $index">
-                            <span class="help-block" data-ng-if="isError">
-                                {{tr('lockoutThreshold_' + type + '_error')}}
-                            </span>
-                        </div>
+                    <input type="number" class="form-control" id="lockoutThreshold" name="lockoutThreshold" aria-describedby="thresholdDescription thresholdErrors" required
+                           data-ng-change="ctrl.check(ctrl.serviceForm.lockoutThreshold)"
+                           data-ng-min="0" min="0"
+                           data-ng-max="14" max="14"
+                           data-ng-model="ctrl.service.lockoutThreshold"
+                           data-ng-pattern="/^\d+$/">
+                    <small class="help-block" id="thresholdDescription"
+                           data-i18n-static="exchange_ACTION_configure_services_help_lockoutThreshold"></small>
+                    <div id="thresholdErrors"
+                         data-ng-repeat="(type, isError) in ctrl.serviceForm.lockoutThreshold.$error track by $index">
+                        <small class="help-block"
+                               data-ng-bind="tr('lockoutThreshold_' + type + '_error')"
+                               data-ng-if="isError"></small>
                     </div>
                 </div>
 
@@ -54,30 +43,23 @@
                 <div class="form-group"
                      data-ng-class="{ 'has-error': ctrl.serviceForm.lockoutObservationWindow.$invalid && (ctrl.serviceForm.lockoutDuration.$dirty || ctrl.serviceForm.lockoutObservationWindow.$dirty) && ctrl.service.lockoutThreshold !== 0 && ctrl.service.lockoutThreshold != null }"
                      data-ng-if="ctrl.service.lockoutThreshold != null && ctrl.service.lockoutThreshold !== 0">
-                    <label class="col-sm-4"
-                           for="lockoutObservationWindow"
+                    <label class="control-label" for="lockoutObservationWindow"
                            data-i18n-static="exchange_ACTION_configure_services_label_lockoutObservationWindow"></label>
-                    <div class="col-sm-8">
-                        <input type="number"
-                               id="lockoutObservationWindow"
-                               name="lockoutObservationWindow"
-                               class="form-control"
-                               data-ng-change="ctrl.check(ctrl.serviceForm.lockoutObservationWindow)"
-                               data-ng-model="ctrl.service.lockoutObservationWindow"
-                               data-ng-pattern="/^\d+$/"
-                               data-ng-min="1"
-                               min="1"
-                               data-ng-max="ctrl.service.lockoutDuration != null && ctrl.service.lockoutDuration < 90 ? ctrl.service.lockoutDuration : 90"
-                               max="{{ctrl.service.lockoutDuration != null && ctrl.service.lockoutDuration < 90 ? ctrl.service.lockoutDuration : 90}}"
-                               aria-describedby="lockoutObservationWindowDescription lockoutObservationWindowErrors">
-
-                        <div class="help-block" id="lockoutObservationWindowDescription" data-i18n-static="exchange_ACTION_configure_services_tooltip_minutes"></div>
-                        <div id="lockoutObservationWindowErrors" data-ng-repeat="(type, isError) in ctrl.serviceForm.lockoutObservationWindow.$error track by $index"
-                             data-ng-if="ctrl.service.lockoutThreshold !== 0">
-                            <span class="help-block" data-ng-if="isError">
-                                {{tr('lockoutObservationWindow_' + type + '_error')}}
-                            </span>
-                        </div>
+                    <input type="number" class="form-control" id="lockoutObservationWindow" name="lockoutObservationWindow" aria-describedby="lockoutObservationWindowDescription lockoutObservationWindowErrors"
+                           data-ng-change="ctrl.check(ctrl.serviceForm.lockoutObservationWindow)"
+                           data-ng-min="1" min="1"
+                           data-ng-max="ctrl.service.lockoutDuration != null && ctrl.service.lockoutDuration < 90 ? ctrl.service.lockoutDuration : 90"
+                           max="{{ctrl.service.lockoutDuration != null && ctrl.service.lockoutDuration < 90 ? ctrl.service.lockoutDuration : 90}}"
+                           data-ng-model="ctrl.service.lockoutObservationWindow"
+                           data-ng-pattern="/^\d+$/">
+                    <small class="help-block" id="lockoutObservationWindowDescription"
+                           data-i18n-static="exchange_ACTION_configure_services_tooltip_minutes"></small>
+                    <div id="lockoutObservationWindowErrors" data-ng-repeat="(type, isError) in ctrl.serviceForm.lockoutObservationWindow.$error track by $index"
+                         data-ng-if="ctrl.service.lockoutThreshold !== 0">
+                        <small class="help-block"
+                               data-ng-bind="tr('lockoutObservationWindow_' + type + '_error')"
+                               data-ng-if="isError">
+                        </small>
                     </div>
                 </div>
 
@@ -85,255 +67,242 @@
                 <div class="form-group"
                      data-ng-class="{ 'has-error': ctrl.serviceForm.lockoutDuration.$invalid && (ctrl.serviceForm.lockoutDuration.$dirty || ctrl.serviceForm.lockoutObservationWindow.$dirty) && ctrl.service.lockoutThreshold !== 0 && ctrl.service.lockoutThreshold != null }"
                      data-ng-if="ctrl.service.lockoutThreshold != null && ctrl.service.lockoutThreshold !== 0">
-                    <label class="col-sm-4"
-                           for="lockoutDuration"
+                    <label class="control-label" for="lockoutDuration"
                            data-i18n-static="exchange_ACTION_configure_services_label_lockoutDuration"></label>
-                    <div class="col-sm-8">
-                        <input type="number"
-                               id="lockoutDuration"
-                               name="lockoutDuration"
-                               class="form-control"
-                               data-ng-change="ctrl.check(ctrl.serviceForm.lockoutDuration)"
-                               data-ng-model="ctrl.service.lockoutDuration"
-                               data-ng-pattern="/^\d+$/"
-                               data-ng-min="ctrl.service.lockoutObservationWindow != null ? ctrl.service.lockoutObservationWindow : 1"
-                               min="{{ctrl.service.lockoutObservationWindow != null ? ctrl.service.lockoutObservationWindow : 1}}"
-                               data-ng-max="90"
-                               max="90"
-                               aria-describedby="lockoutDurationDescription lockoutDurationErrors">
-
-                        <div class="help-block" id="lockoutDurationDescription" data-i18n-static="exchange_ACTION_configure_services_tooltip_minutes"></div>
-                        <div id="lockoutDurationErrors" data-ng-repeat="(type, isError) in ctrl.serviceForm.lockoutDuration.$error track by $index"
-                             data-ng-if="ctrl.service.lockoutThreshold !== 0">
-                            <span class="help-block" data-ng-if="isError">
-                                {{tr('lockoutDuration_' + type + '_error', [service.lockoutObservationWindow])}}
-                            </span>
-                        </div>
+                    <input type="number" class="form-control" id="lockoutDuration" name="lockoutDuration" aria-describedby="lockoutDurationDescription lockoutDurationErrors"
+                           data-ng-change="ctrl.check(ctrl.serviceForm.lockoutDuration)"
+                           data-ng-min="ctrl.service.lockoutObservationWindow != null ? ctrl.service.lockoutObservationWindow : 1"
+                           min="{{ctrl.service.lockoutObservationWindow != null ? ctrl.service.lockoutObservationWindow : 1}}"
+                           data-ng-max="90" max="90"
+                           data-ng-model="ctrl.service.lockoutDuration"
+                           data-ng-pattern="/^\d+$/">
+                    <small class="help-block" id="lockoutDurationDescription"
+                           data-i18n-static="exchange_ACTION_configure_services_tooltip_minutes"></small>
+                    <div id="lockoutDurationErrors"
+                         data-ng-repeat="(type, isError) in ctrl.serviceForm.lockoutDuration.$error track by $index"
+                         data-ng-if="ctrl.service.lockoutThreshold !== 0">
+                        <small class="help-block"
+                               data-ng-bind="tr('lockoutDuration_' + type + '_error', [service.lockoutObservationWindow])"
+                               data-ng-if="isError">
+                        </small>
                     </div>
                 </div>
 
                 <!-- Complexity Enabled -->
-                <div class="form-group">
-                    <div class="col-sm-offset-4 col-sm-8">
-                        <div class="checkbox pt-0">
-                            <label>
-                                <input type="checkbox" name="complexityEnabled" data-ng-model="ctrl.service.complexityEnabled">
-                                <span data-i18n-static="exchange_ACTION_configure_services_label_complexityEnabled"></span>
-                            </label>
-                        </div>
-                    </div>
+                <div class="oui-checkbox">
+                    <input type="checkbox" class="oui-checkbox__input" id="complexityEnabled" name="complexityEnabled"
+                           data-ng-model="ctrl.service.complexityEnabled">
+                    <label class="oui-checkbox__label-container" for="complexityEnabled">
+                        <span class="oui-checkbox__label"
+                              data-i18n-static="exchange_ACTION_configure_services_label_complexityEnabled"></span>
+                        <span class="oui-checkbox__icon">
+                            <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
+                            <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
+                            <span class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></span>
+                        </span>
+                    </label>
                 </div>
 
                 <!-- Min password Age -->
                 <div class="form-group"
                      data-ng-class="{ 'has-error': ctrl.serviceForm.minPasswordAge.$invalid && ctrl.serviceForm.minPasswordAge.$dirty }">
-                    <label class="col-sm-4" for="minPasswordAge" data-i18n-static="exchange_ACTION_configure_services_label_minPasswordAge"></label>
-                    <div class="col-sm-8">
-                        <input type="number"
-                               id="minPasswordAge"
-                               name="minPasswordAge"
-                               class="form-control"
-                               data-ng-change="ctrl.checkPasswordAge()"
-                               data-ng-pattern="/^\d+$/"
-                               data-ng-min="0"
-                               min="0"
-                               data-ng-max="90"
-                               max="90"
-                               data-ng-model="ctrl.service.minPasswordAge"
-                               required
-                               aria-describedby="minPasswordAgeDescription minPasswordAgeDescriptionDays minPasswordAgeDescription0Days minPasswordAgeErrors">
-                            
-                        <div class="help-block" id="minPasswordAgeDescription" data-i18n-static="exchange_ACTION_configure_services_help_minPasswordAge"></div>
-                        <div class="help-block" id="minPasswordAgeDescriptionDays" data-i18n-static="exchange_ACTION_configure_services_tooltip_days"></div>
-                        <div class="help-block" id="minPasswordAgeDescription0Days" data-ng-if="ctrl.service.minPasswordAge === 0" data-i18n-static="minPasswordAge_unit_value_0"></div>
-                        <div id="minPasswordAgeErrors" data-ng-repeat="(type, isError) in ctrl.serviceForm.minPasswordAge.$error track by $index">
-                            <span class="help-block" data-ng-if="isError">
-                                {{tr('minPasswordAge_' + type + '_error')}}
-                            </span>
-                        </div>
+                    <label class="control-label required" for="minPasswordAge"
+                           data-i18n-static="exchange_ACTION_configure_services_label_minPasswordAge"></label>
+                    <input type="number" class="form-control" id="minPasswordAge" name="minPasswordAge" required
+                           aria-describedby="minPasswordAgeDescription minPasswordAgeDescriptionDays minPasswordAgeDescription0Days minPasswordAgeErrors"
+                           data-ng-change="ctrl.checkPasswordAge()"
+                           data-ng-pattern="/^\d+$/"
+                           data-ng-min="0" min="0"
+                           data-ng-max="90" max="90"
+                           data-ng-model="ctrl.service.minPasswordAge">
+                    <small class="help-block" id="minPasswordAgeDescription"
+                           data-i18n-static="exchange_ACTION_configure_services_help_minPasswordAge"></small>
+                    <small class="help-block" id="minPasswordAgeDescriptionDays"
+                           data-i18n-static="exchange_ACTION_configure_services_tooltip_days"></small>
+                    <small class="help-block" id="minPasswordAgeDescription0Days"
+                           data-ng-if="ctrl.service.minPasswordAge === 0" data-i18n-static="minPasswordAge_unit_value_0"></small>
+                    <div id="minPasswordAgeErrors"
+                         data-ng-repeat="(type, isError) in ctrl.serviceForm.minPasswordAge.$error track by $index">
+                        <small class="help-block"
+                               data-ng-bind="tr('minPasswordAge_' + type + '_error')"
+                               data-ng-if="isError">
+                        </small>
                     </div>
                 </div>
 
                 <!-- Max password Age -->
                 <div class="form-group"
                      data-ng-class="{ 'has-error': ctrl.serviceForm.maxPasswordAge.$invalid && ctrl.serviceForm.maxPasswordAge.$dirty }">
-                    <label class="col-sm-4" for="maxPasswordAge" data-i18n-static="exchange_ACTION_configure_services_label_maxPasswordAge"></label>
-                    <div class="col-sm-8">
-                        <input type="number"
-                               id="maxPasswordAge"
-                               name="maxPasswordAge"
-                               class="form-control"
-                               data-ng-change="ctrl.checkPasswordAge()"
-                               data-ng-model="ctrl.service.maxPasswordAge"
-                               data-ng-pattern="/^\d+$/"
-                               data-ng-min="0"
-                               min="0"
-                               data-ng-max="90"
-                               max="90"
-                               required
-                               aria-describedby="maxPasswordAgeDescription maxPasswordAgeDescription0Days maxPasswordAgeDescriptionDays maxPasswordAgeErrors">
-                               
-                        <div class="help-block" id="maxPasswordAgeDescription" data-i18n-static="exchange_ACTION_configure_services_help_maxPasswordAge"></div>
-                        <div class="help-block" id="maxPasswordAgeDescriptionDays" data-i18n-static="exchange_ACTION_configure_services_tooltip_days"></div>
-                        <div class="help-block"
-                             id="maxPasswordAgeDescription0Days" 
-                             data-ng-if="ctrl.service.maxPasswordAge === 0"
-                             data-i18n-static="maxPasswordAge_unit_value_0"></div>
-                        <div id="maxPasswordAgeErrors" data-ng-repeat="(type, isError) in ctrl.serviceForm.maxPasswordAge.$error track by $index">
-                            <span class="help-block" data-ng-if="isError">
-                                {{tr('maxPasswordAge_' + type + '_error')}}
-                            </span>
-                        </div>
+                    <label class="control-label required" for="maxPasswordAge"
+                           data-i18n-static="exchange_ACTION_configure_services_label_maxPasswordAge"></label>
+                    <input type="number" class="form-control" id="maxPasswordAge" name="maxPasswordAge" required
+                           aria-describedby="maxPasswordAgeDescription maxPasswordAgeDescription0Days maxPasswordAgeDescriptionDays maxPasswordAgeErrors"
+                           data-ng-change="ctrl.checkPasswordAge()"
+                           data-ng-min="0" min="0"
+                           data-ng-max="90" max="90"
+                           data-ng-model="ctrl.service.maxPasswordAge"
+                           data-ng-pattern="/^\d+$/">
+                    <small class="help-block" id="maxPasswordAgeDescription"
+                           data-i18n-static="exchange_ACTION_configure_services_help_maxPasswordAge"></small>
+                    <small class="help-block" id="maxPasswordAgeDescriptionDays"
+                           data-i18n-static="exchange_ACTION_configure_services_tooltip_days"></small>
+                    <small class="help-block" id="maxPasswordAgeDescription0Days"
+                           data-i18n-static="maxPasswordAge_unit_value_0"
+                           data-ng-if="ctrl.service.maxPasswordAge === 0"></small>
+                    <div id="maxPasswordAgeErrors"
+                         data-ng-repeat="(type, isError) in ctrl.serviceForm.maxPasswordAge.$error track by $index">
+                        <small class="help-block"
+                               data-ng-bind="tr('maxPasswordAge_' + type + '_error')"
+                               data-ng-if="isError">
+                        </small>
                     </div>
                 </div>
 
                 <!-- Password History Count -->
                 <div class="form-group"
-                     data-ng-if="ctrl.service.maxPasswordAge > 0"
-                     data-ng-class="{ 'has-error': ctrl.serviceForm.passwordHistoryCount.$invalid && ctrl.serviceForm.passwordHistoryCount.$dirty }">
-                    <label class="col-sm-4" for="passwordHistoryCount" data-i18n-static="exchange_ACTION_configure_services_label_passwordHistoryCount"></label>
-                    <div class="col-sm-8">
-                        <input type="number"
-                               id="passwordHistoryCount"
-                               name="passwordHistoryCount"
-                               class="form-control"
-                               data-ng-change="ctrl.check(ctrl.serviceForm.passwordHistoryCount)"
-                               data-ng-model="ctrl.service.passwordHistoryCount"
-                               data-ng-pattern="/^-?[0-9]+$/"
-                               data-ng-min="0"
-                               min="0"
-                               data-ng-max="100"
-                               max="100"
-                               required
-                               aria-describedby="passwordHistoryCountDescription passwordHistoryCount0Description passwordHistoryCountErrors">
+                     data-ng-class="{ 'has-error': ctrl.serviceForm.passwordHistoryCount.$invalid && ctrl.serviceForm.passwordHistoryCount.$dirty }"
+                     data-ng-if="ctrl.service.maxPasswordAge > 0">
+                    <label class="control-label required" for="passwordHistoryCount"
+                           data-i18n-static="exchange_ACTION_configure_services_label_passwordHistoryCount"></label>
+                    <input type="number" class="form-control" id="passwordHistoryCount" name="passwordHistoryCount" required
+                           aria-describedby="passwordHistoryCountDescription passwordHistoryCount0Description passwordHistoryCountErrors"
+                           data-ng-change="ctrl.check(ctrl.serviceForm.passwordHistoryCount)"
+                           data-ng-min="0" min="0"
+                           data-ng-max="100" max="100"
+                           data-ng-model="ctrl.service.passwordHistoryCount"
+                           data-ng-pattern="/^-?[0-9]+$/">
 
-                        <div class="help-block" id="passwordHistoryCountDescription" data-i18n-static="exchange_ACTION_configure_services_label_passwordHistoryCount"></div>
-                        <div class="help-block"
-                             id="passwordHistoryCount0Description"
-                             data-ng-if="ctrl.service.passwordHistoryCount === 0"
-                             data-i18n-static="passwordHistoryCount_unit_value_0"></div>
-                        <ul id="passwordHistoryCountErrors" class="list-no-style pl-0" data-ng-if="!ctrl.serviceForm.passwordHistoryCount.$valid">
-                            <li class="help-block"
-                                data-ng-if="$index < 1"
-                                data-ng-repeat="(type, isError) in ctrl.serviceForm.passwordHistoryCount.$error track by $index">
-                                <span data-ng-if="type === 'min'" data-ng-bind="tr('passwordHistoryCount_min_error', [0])"></span>
-                                <span data-ng-if="type === 'max'" data-ng-bind="tr('passwordHistoryCount_max_error', [100])"></span>
-                                <span data-ng-if="type !== 'min' && type !== 'max'">{{tr('passwordHistoryCount_' + type + '_error')}}</span>
-                            </li>
-                        </ul>
-                    </div>
+                    <small class="help-block" id="passwordHistoryCountDescription"
+                           data-i18n-static="exchange_ACTION_configure_services_label_passwordHistoryCount"></small>
+                    <small class="help-block" id="passwordHistoryCount0Description"
+                           data-i18n-static="passwordHistoryCount_unit_value_0"
+                           data-ng-if="ctrl.service.passwordHistoryCount === 0"></small>
+                    <ul class="list-no-style pl-0" id="passwordHistoryCountErrors"
+                        data-ng-if="!ctrl.serviceForm.passwordHistoryCount.$valid">
+                        <li class="help-block"
+                            data-ng-repeat="(type, isError) in ctrl.serviceForm.passwordHistoryCount.$error track by $index"
+                            data-ng-if="$index < 1">
+                            <span data-ng-if="type === 'min'" data-ng-bind="tr('passwordHistoryCount_min_error', [0])"></span>
+                            <span data-ng-if="type === 'max'" data-ng-bind="tr('passwordHistoryCount_max_error', [100])"></span>
+                            <span data-ng-if="type !== 'min' && type !== 'max'">{{tr('passwordHistoryCount_' + type + '_error')}}</span>
+                        </li>
+                    </ul>
                 </div>
 
                 <!-- Min password Length -->
                 <div class="form-group"
                      data-ng-class="{ 'has-error': ctrl.serviceForm.minPasswordLength.$invalid && ctrl.serviceForm.minPasswordLength.$dirty }">
-                    <label class="col-sm-4" for="minPasswordLength" data-i18n-static="exchange_ACTION_configure_services_label_minPasswordLength"></label>
-                    <div class="col-sm-8">
-                        <input type="number"
-                               id="minPasswordLength"
-                               name="minPasswordLength"
-                               class="form-control"
-                               data-ng-change="ctrl.check(ctrl.serviceForm.minPasswordLength)"
-                               data-ng-pattern="/^\d+$/"
-                               data-ng-min="0"
-                               min="0"
-                               data-ng-max="14"
-                               max="14"
-                               data-ng-model="ctrl.service.minPasswordLength"
-                               required
-                               aria-describedby="minPasswordLengthDescription minPasswordLength0Description minPasswordLengthErrors">
+                    <label class="control-label required" for="minPasswordLength"
+                           data-i18n-static="exchange_ACTION_configure_services_label_minPasswordLength"></label>
+                    <input type="number" class="form-control" id="minPasswordLength" name="minPasswordLength" required
+                           aria-describedby="minPasswordLengthDescription minPasswordLength0Description minPasswordLengthErrors"
+                           data-ng-change="ctrl.check(ctrl.serviceForm.minPasswordLength)"
+                           data-ng-min="0" min="0"
+                           data-ng-max="14" max="14"
+                           data-ng-model="ctrl.service.minPasswordLength"
+                           data-ng-pattern="/^\d+$/">
+                    <small class="help-block" id="minPasswordLength0Description"
+                           data-i18n-static="minPasswordLength_unit_value_0"
+                           data-ng-if="ctrl.service.minPasswordLength === 0"></small>
+                    <div id="minPasswordLengthErrors"
+                         data-ng-repeat="(type, isError) in ctrl.serviceForm.minPasswordLength.$error track by $index">
+                        <small class="help-block"
+                               data-ng-bind="tr('minPasswordLength_' + type + '_error')"
+                               data-ng-if="isError">
+                        </small>
+                    </div>
+                </div>
 
-                        <div class="help-block" id="minPasswordLengthDescription" data-i18n-static="exchange_ACTION_configure_services_label_minPasswordLength"></div>
-                        <div class="help-block"
-                             id="minPasswordLength0Description"
-                             data-ng-if="ctrl.service.minPasswordLength === 0"
-                             data-i18n-static="minPasswordLength_unit_value_0"></div>
-                        <div id="minPasswordLengthErrors" data-ng-repeat="(type, isError) in ctrl.serviceForm.minPasswordLength.$error track by $index">
-                            <span class="help-block" data-ng-if="isError">
-                                {{tr('minPasswordLength_' + type + '_error')}}
+                <div class="form-group">
+                    <label class="oui-label"
+                           data-i18n-static="exchange_ACTION_configure_services_label_incoming_messages"></label>
+                    <div class="oui-checkbox">
+                        <input type="checkbox" class="oui-checkbox__input" id="checkDKIM"
+                               data-ng-model="ctrl.service.spamAndVirusConfiguration.checkDKIM">
+                        <label class="oui-checkbox__label-container" for="checkDKIM">
+                            <span class="oui-checkbox__label"
+                                  data-i18n-static="exchange_ACTION_configure_services_label_dkim"></span>
+                            <span class="oui-checkbox__icon">
+                                <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
+                                <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
+                                <span class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></span>
                             </span>
-                        </div>
+                        </label>
+                    </div>
+                    <div class="oui-checkbox">
+                        <input type="checkbox" class="oui-checkbox__input" id="checkSPF"
+                               data-ng-model="ctrl.service.spamAndVirusConfiguration.checkSPF">
+                        <label class="oui-checkbox__label-container" for="checkSPF">
+                            <span class="oui-checkbox__label"
+                                  data-i18n-static="exchange_ACTION_configure_services_label_spf"></span>
+                            <span class="oui-checkbox__icon">
+                                <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
+                                <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
+                                <span class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></span>
+                            </span>
+                        </label>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="col-sm-4 control-label" data-i18n-static="exchange_ACTION_configure_services_label_incoming_messages"></label>
-                    <div class="col-sm-8">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" data-ng-model="ctrl.service.spamAndVirusConfiguration.checkDKIM">
-                                <span data-i18n-static="exchange_ACTION_configure_services_label_dkim"></span>
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" data-ng-model="ctrl.service.spamAndVirusConfiguration.checkSPF">
-                                <span data-i18n-static="exchange_ACTION_configure_services_label_spf"></span>
-                            </label>
-                        </div>
+                    <label class="oui-label"
+                           data-i18n-static="exchange_ACTION_configure_services_label_spam"></label>
+                    <div class="oui-checkbox">
+                        <input type="checkbox" class="oui-checkbox__input" id="tagSpam"
+                               data-ng-model="ctrl.service.spamAndVirusConfiguration.tagSpam">
+                        <label class="oui-checkbox__label-container" for="tagSpam">
+                            <span class="oui-checkbox__label"
+                                  data-i18n-static="exchange_ACTION_configure_services_label_tag_spam"></span>
+                            <span class="oui-checkbox__icon">
+                                <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
+                                <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
+                                <span class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="oui-checkbox">
+                        <input type="checkbox" class="oui-checkbox__input" id="putInJunk"
+                               data-ng-model="ctrl.service.spamAndVirusConfiguration.putInJunk">
+                        <label class="oui-checkbox__label-container" for="putInJunk">
+                            <span class="oui-checkbox__label"
+                                  data-i18n-static="exchange_ACTION_configure_services_label_putinjunk"></span>
+                            <span class="oui-checkbox__icon">
+                                <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
+                                <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
+                                <span class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></span>
+                            </span>
+                        </label>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label class="col-sm-4 control-label" data-i18n-static="exchange_ACTION_configure_services_label_spam"></label>
-                    <div class="col-sm-8">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" data-ng-model="ctrl.service.spamAndVirusConfiguration.tagSpam">
-                                <span data-i18n-static="exchange_ACTION_configure_services_label_tag_spam"></span>
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" data-ng-model="ctrl.service.spamAndVirusConfiguration.putInJunk">
-                                <span data-i18n-static="exchange_ACTION_configure_services_label_putinjunk"></span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
             </form>
 
             <div data-wizard-step-help>
-				<span class="title" data-i18n-static="exchange_ACTION_configure_help_title"></span>
-
-				<span data-i18n-static="exchange_ACTION_configure_help_lockoutThreshold_title"></span>
+				<h3 data-i18n-static="exchange_ACTION_configure_help_title"></h3>
+				<h4 data-i18n-static="exchange_ACTION_configure_help_lockoutThreshold_title"></h4>
                 <p data-ng-bind-html="tr('exchange_ACTION_configure_help_lockoutThreshold_text')"></p>
-
-                <span data-i18n-static="exchange_ACTION_configure_help_lockoutObservationWindow_title"></span>
+                <h4 data-i18n-static="exchange_ACTION_configure_help_lockoutObservationWindow_title"></h4>
                 <p data-ng-bind-html="tr('exchange_ACTION_configure_help_lockoutObservationWindow_text')"></p>
-
-                <span data-i18n-static="exchange_ACTION_configure_help_lockoutDuration_title"></span>
+                <h4 data-i18n-static="exchange_ACTION_configure_help_lockoutDuration_title"></h4>
                 <p data-ng-bind-html="tr('exchange_ACTION_configure_help_lockoutDuration_text')"></p>
-
-                <span data-i18n-static="exchange_ACTION_configure_help_complexityEnabled_title"></span>
+                <h4 data-i18n-static="exchange_ACTION_configure_help_complexityEnabled_title"></h4>
                 <p data-ng-bind-html="tr('exchange_ACTION_configure_help_complexityEnabled_text')"></p>
-
-                <span data-i18n-static="exchange_ACTION_configure_help_minPasswordAge_title"></span>
+                <h4 data-i18n-static="exchange_ACTION_configure_help_minPasswordAge_title"></h4>
                 <p data-ng-bind-html="tr('exchange_ACTION_configure_help_minPasswordAge_text')"></p>
-
-                <span data-i18n-static="exchange_ACTION_configure_help_maxPasswordAge_title"></span>
+                <h4 data-i18n-static="exchange_ACTION_configure_help_maxPasswordAge_title"></h4>
                 <p data-ng-bind-html="tr('exchange_ACTION_configure_help_maxPasswordAge_text')"></p>
-
-                <span data-i18n-static="exchange_ACTION_configure_help_minPasswordLength_title"></span>
+                <h4 data-i18n-static="exchange_ACTION_configure_help_minPasswordLength_title"></h4>
                 <p data-ng-bind-html="tr('exchange_ACTION_configure_help_minPasswordLength_text')"></p>
-
-                <span data-i18n-static="exchange_ACTION_configure_help_minPasswordLength_title"></span>
+                <h4 data-i18n-static="exchange_ACTION_configure_help_minPasswordLength_title"></h4>
                 <p data-ng-bind-html="tr('exchange_ACTION_configure_help_minPasswordLength_text')"></p>
-
-                <span data-i18n-static="exchange_ACTION_configure_help_dkim_title"></span>
+                <h4 data-i18n-static="exchange_ACTION_configure_help_dkim_title"></h4>
                 <p data-ng-bind-html="tr('exchange_ACTION_configure_help_dkim_text')"></p>
-
-                <span data-i18n-static="exchange_ACTION_configure_help_spf_title"></span>
+                <h4 data-i18n-static="exchange_ACTION_configure_help_spf_title"></h4>
                 <p data-ng-bind-html="tr('exchange_ACTION_configure_help_spf_text')"></p>
-
-                <span data-i18n-static="exchange_ACTION_configure_help_spam_title"></span>
+                <h4 data-i18n-static="exchange_ACTION_configure_help_spam_title"></h4>
                 <p data-ng-bind-html="tr('exchange_ACTION_configure_help_spam_text')"></p>
-
-                <span data-i18n-static="exchange_ACTION_configure_help_putinjunk_title"></span>
+                <h4 data-i18n-static="exchange_ACTION_configure_help_putinjunk_title"></h4>
                 <p data-ng-bind-html="tr('exchange_ACTION_configure_help_putinjunk_text')"></p>
              </div>
-
         </div>
 
         <div data-wizard-step>
@@ -342,22 +311,32 @@
             <dl>
                 <dt data-i18n-static="exchange_ACTION_configure_step2_label_lockoutThreshold"></dt>
                 <dd>
-                    <span data-ng-if="ctrl.service.lockoutThreshold === 0" data-i18n-static="lockoutThreshold_unit_value_0"></span>
-                    <span data-ng-if="ctrl.service.lockoutThreshold === 1" data-i18n-static="lockoutThreshold_unit_value_1"></span>
-                    <span data-ng-if="ctrl.service.lockoutThreshold > 1" data-ng-bind="tr('lockoutThreshold_unit_value_many', [ctrl.service.lockoutThreshold])"></span>
+                    <span data-ng-if="ctrl.service.lockoutThreshold === 0"
+                          data-i18n-static="lockoutThreshold_unit_value_0"></span>
+                    <span data-ng-if="ctrl.service.lockoutThreshold === 1"
+                          data-i18n-static="lockoutThreshold_unit_value_1"></span>
+                    <span data-ng-if="ctrl.service.lockoutThreshold > 1"
+                          data-ng-bind="tr('lockoutThreshold_unit_value_many', [ctrl.service.lockoutThreshold])"></span>
                 </dd>
 
-                <dt data-ng-if="ctrl.service.lockoutThreshold != null && ctrl.service.lockoutThreshold !== 0 && ctrl.service.lockoutObservationWindow != null && ctrl.service.lockoutObservationWindow !== 0" data-i18n-static="exchange_ACTION_configure_step2_label_lockoutObservationWindow"></dt>
+                <dt data-ng-if="ctrl.service.lockoutThreshold != null && ctrl.service.lockoutThreshold !== 0 && ctrl.service.lockoutObservationWindow != null && ctrl.service.lockoutObservationWindow !== 0"
+                    data-i18n-static="exchange_ACTION_configure_step2_label_lockoutObservationWindow"></dt>
                 <dd data-ng-if="ctrl.service.lockoutThreshold != null && ctrl.service.lockoutThreshold !== 0 && ctrl.service.lockoutObservationWindow != null && ctrl.service.lockoutObservationWindow !== 0">
-                    <span data-ng-if="ctrl.service.lockoutObservationWindow === 1" data-i18n-static="lockoutObservationWindow_unit_value_1"></span>
-                    <span data-ng-if="ctrl.service.lockoutObservationWindow > 1" data-ng-bind="tr('lockoutObservationWindow_unit_value_many', [ctrl.service.lockoutObservationWindow])"></span>
+                    <span data-ng-if="ctrl.service.lockoutObservationWindow === 1"
+                          data-i18n-static="lockoutObservationWindow_unit_value_1"></span>
+                    <span data-ng-if="ctrl.service.lockoutObservationWindow > 1"
+                          data-ng-bind="tr('lockoutObservationWindow_unit_value_many', [ctrl.service.lockoutObservationWindow])"></span>
                 </dd>
 
-                <dt data-ng-if="ctrl.service.lockoutThreshold != null && service.lockoutThreshold !== 0" data-i18n-static="exchange_ACTION_configure_step2_label_lockoutDuration"></dt>
+                <dt data-ng-if="ctrl.service.lockoutThreshold != null && service.lockoutThreshold !== 0"
+                    data-i18n-static="exchange_ACTION_configure_step2_label_lockoutDuration"></dt>
                 <dd data-ng-if="ctrl.service.lockoutThreshold != null && service.lockoutThreshold !== 0">
-                    <span data-ng-if="ctrl.service.lockoutDuration === 0" data-i18n-static="lockoutDuration_unit_value_0"></span>
-                    <span data-ng-if="ctrl.service.lockoutDuration === 1" data-i18n-static="lockoutDuration_unit_value_1"></span>
-                    <span data-ng-if="ctrl.service.lockoutDuration > 1" data-ng-bind="tr('lockoutDuration_unit_value_many', [ctrl.service.lockoutDuration])"></span>
+                    <span data-ng-if="ctrl.service.lockoutDuration === 0"
+                          data-i18n-static="lockoutDuration_unit_value_0"></span>
+                    <span data-ng-if="ctrl.service.lockoutDuration === 1"
+                          data-i18n-static="lockoutDuration_unit_value_1"></span>
+                    <span data-ng-if="ctrl.service.lockoutDuration > 1"
+                          data-ng-bind="tr('lockoutDuration_unit_value_many', [ctrl.service.lockoutDuration])"></span>
                 </dd>
 
                 <dt data-i18n-static="exchange_ACTION_configure_step2_label_complexityEnabled"></dt>
@@ -365,30 +344,43 @@
 
                 <dt data-i18n-static="exchange_ACTION_configure_step2_label_minPasswordAge"></dt>
                 <dd>
-                    <span data-ng-if="ctrl.service.minPasswordAge === 0" data-i18n-static="minPasswordAge_unit_value_0"></span>
-                    <span data-ng-if="ctrl.service.minPasswordAge === 1" data-i18n-static="minPasswordAge_unit_value_1"></span>
-                    <span data-ng-if="ctrl.service.minPasswordAge > 1" data-ng-bind="tr('minPasswordAge_unit_value_many', [ctrl.service.minPasswordAge])"></span>
+                    <span data-ng-if="ctrl.service.minPasswordAge === 0"
+                          data-i18n-static="minPasswordAge_unit_value_0"></span>
+                    <span data-ng-if="ctrl.service.minPasswordAge === 1"
+                          data-i18n-static="minPasswordAge_unit_value_1"></span>
+                    <span data-ng-if="ctrl.service.minPasswordAge > 1"
+                          data-ng-bind="tr('minPasswordAge_unit_value_many', [ctrl.service.minPasswordAge])"></span>
                 </dd>
 
                 <dt data-i18n-static="exchange_ACTION_configure_step2_label_maxPasswordAge"></dt>
                 <dd>
-                    <span data-ng-if="ctrl.service.maxPasswordAge === 0" data-i18n-static="maxPasswordAge_unit_value_0"></span>
-                    <span data-ng-if="ctrl.service.maxPasswordAge === 1" data-i18n-static="maxPasswordAge_unit_value_1"></span>
-                    <span data-ng-if="ctrl.service.maxPasswordAge > 1" data-ng-bind="tr('maxPasswordAge_unit_value_many', [ctrl.service.maxPasswordAge])"></span>
+                    <span data-ng-if="ctrl.service.maxPasswordAge === 0"
+                          data-i18n-static="maxPasswordAge_unit_value_0"></span>
+                    <span data-ng-if="ctrl.service.maxPasswordAge === 1"
+                          data-i18n-static="maxPasswordAge_unit_value_1"></span>
+                    <span data-ng-if="ctrl.service.maxPasswordAge > 1"
+                          data-ng-bind="tr('maxPasswordAge_unit_value_many', [ctrl.service.maxPasswordAge])"></span>
                 </dd>
 
-                <dt data-i18n-static="exchange_ACTION_configure_step2_label_passwordHistoryCount" data-ng-if="ctrl.service.maxPasswordAge > 0"></dt>
+                <dt data-i18n-static="exchange_ACTION_configure_step2_label_passwordHistoryCount"
+                    data-ng-if="ctrl.service.maxPasswordAge > 0"></dt>
                 <dd data-ng-if="ctrl.service.maxPasswordAge > 0">
-                    <span data-ng-if="ctrl.service.passwordHistoryCount === 0" data-i18n-static="passwordHistoryCount_unit_value_0"></span>
-                    <span data-ng-if="ctrl.service.passwordHistoryCount === 1" data-i18n-static="passwordHistoryCount_unit_value_1"></span>
-                    <span data-ng-if="ctrl.service.passwordHistoryCount > 1" data-ng-bind="tr('passwordHistoryCount_unit_value_many', [ctrl.service.passwordHistoryCount])"></span>
+                    <span data-ng-if="ctrl.service.passwordHistoryCount === 0"
+                          data-i18n-static="passwordHistoryCount_unit_value_0"></span>
+                    <span data-ng-if="ctrl.service.passwordHistoryCount === 1"
+                          data-i18n-static="passwordHistoryCount_unit_value_1"></span>
+                    <span data-ng-if="ctrl.service.passwordHistoryCount > 1"
+                          data-ng-bind="tr('passwordHistoryCount_unit_value_many', [ctrl.service.passwordHistoryCount])"></span>
                 </dd>
 
                 <dt data-i18n-static="exchange_ACTION_configure_step2_label_minPasswordLength"></dt>
                 <dd>
-                    <span data-ng-if="ctrl.service.minPasswordLength === 0" data-i18n-static="minPasswordLength_unit_value_0"></span>
-                    <span data-ng-if="ctrl.service.minPasswordLength === 1" data-i18n-static="minPasswordLength_unit_value_1"></span>
-                    <span data-ng-if="ctrl.service.minPasswordLength > 1" data-ng-bind="tr('minPasswordLength_unit_value_many', [ctrl.service.minPasswordLength])"></span>
+                    <span data-ng-if="ctrl.service.minPasswordLength === 0"
+                          data-i18n-static="minPasswordLength_unit_value_0"></span>
+                    <span data-ng-if="ctrl.service.minPasswordLength === 1"
+                          data-i18n-static="minPasswordLength_unit_value_1"></span>
+                    <span data-ng-if="ctrl.service.minPasswordLength > 1"
+                          data-ng-bind="tr('minPasswordLength_unit_value_many', [ctrl.service.minPasswordLength])"></span>
                 </dd>
 
                 <dt data-i18n-static="exchange_ACTION_configure_step2_label_dkim"></dt>

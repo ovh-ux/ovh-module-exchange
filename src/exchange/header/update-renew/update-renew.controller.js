@@ -68,7 +68,7 @@ angular.module("Module.exchange.controllers")
             this.model.displayDeleteWarning = false;
 
             if (_(this.bufferedAccounts).has("list.results") && this.bufferedAccounts.list.results != null) {
-                for (const bufferedAccount of this.bufferedAccounts.list.results) {
+                _.forEach(this.bufferedAccounts.list.results, (bufferedAccount) => {
                     const currentAccount = _(this.accounts.list.results).find({
                         primaryEmailAddress: bufferedAccount.primaryEmailAddress
                     });
@@ -82,7 +82,7 @@ angular.module("Module.exchange.controllers")
                     } else {
                         this.buffer.changes = this.buffer.changes.filter((change) => change.primaryEmailAddress !== currentAccount.primaryEmailAddress);
                     }
-                }
+                });
             }
 
             this.buffer.hasChanged = !_.isEmpty(this.buffer.changes);
@@ -128,7 +128,7 @@ angular.module("Module.exchange.controllers")
 
                         // roll previous buffered changes
                         if (this.buffer.hasChanged) {
-                            for (const currentBufferedAccount of this.bufferedAccounts.list.results) {
+                            _.forEach(this.bufferedAccounts.list.results, (currentBufferedAccount) => {
                                 const buffer = _(this.buffer.changes).find({
                                     primaryEmailAddress: currentBufferedAccount.primaryEmailAddress
                                 });
@@ -136,13 +136,13 @@ angular.module("Module.exchange.controllers")
                                 if (buffer != null) {
                                     currentBufferedAccount.renewPeriod = buffer.renewPeriod;
                                 }
-                            }
+                            });
                         }
 
                         // needed by selectAll checkbox
-                        for (const account of this.bufferedAccounts.list.results) {
+                        _.forEach(this.bufferedAccounts.list.results, (account) => {
                             this.trackSelected(account.primaryEmailAddress, account.renewPeriod);
-                        }
+                        });
                     }
                 })
                 .catch((failure) => {
@@ -160,9 +160,9 @@ angular.module("Module.exchange.controllers")
          */
         checkboxStateChange (value) {
             if (_.has(this.buffer, "ids") && this.buffer.ids != null) {
-                for (const id of this.buffer.ids) {
+                _.forEach(this.buffer.ids, (id) => {
                     this.trackSelected(id, value);
-                }
+                });
             }
         }
 
@@ -182,10 +182,10 @@ angular.module("Module.exchange.controllers")
 
                 const otherPeriods = this.periods.filter((currentPeriod) => currentPeriod !== period);
 
-                for (const otherPeriod of otherPeriods) {
+                _.forEach(otherPeriods, (otherPeriod) => {
                     const matchingOtherProperty = ExchangeUpdateRenewCtrl.GetPropertyNameFromPeriodName(otherPeriod);
                     this.buffer[matchingOtherProperty] = this.buffer[matchingOtherProperty].filter((bufferedAccount) => bufferedAccount !== matchingAccount.primaryEmailAddress);
-                }
+                });
 
                 this.checkForChanges();
             }
@@ -203,9 +203,9 @@ angular.module("Module.exchange.controllers")
             this.services.messaging.writeSuccess(this.services.translator.tr("exchange_dashboard_action_doing"));
 
             if (_.has(this.buffer, "changes") && this.buffer.changes != null) {
-                for (const change of this.buffer.changes) {
+                _.forEach(this.buffer.changes, (change) => {
                     change.is25g = this.services.accountTypes.is25g();
-                }
+                });
             }
 
             this.services

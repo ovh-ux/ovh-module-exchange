@@ -70,8 +70,8 @@
    <translation id="exchange_ACTION_export_confirm" qtlid="217080">Are you sure that you want to export your accounts?</translation>
 
 <!-- OFFICE ATTACHED -->
-   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Special offer:</strong> Get Office 365 for free* on your Exchange! </translation>
-   <translation id="exchange_office_attached_alert_details" qtlid="404213">*Special offer relates to Office 365 Business. You can use up to {0} Exchange addresses. Only the first month is free, after this month you will automatically be charged the rate indicated on the renewal date on the <a target="_blank" href="https://www.ovh.com">https://www.ovh.co.uk</a> website. </translation>
+   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Special offer:</strong> Get Office 365 for free on your Exchange! </translation>
+   <translation id="exchange_office_attached_alert_details" qtlid="404213">Special offer relates to Office 365 Business. You can use up to {0} Exchange addresses. Only the first month is free, after this month you will automatically be charged the rate indicated on the renewal date on the <a target="_blank" href="https://www.ovh.com:51043">https://www.ovh.co.uk:51043</a> website. </translation>
    <translation id="exchange_office_attached_alert_button" qtlid="404226">Get the offer! </translation>
    <translation id="exchange_office_attached_alert_modale_title" qtlid="404239">Activate the Office 365 special offer</translation>
    <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Get one free month of Office 365 on up to {0} Exchange accounts of your choice </translation>
@@ -188,8 +188,8 @@
    <translation id="exchange_tab_ALIAS_back_button" qtlid="4118">Back</translation>
    <translation id="exchange_tab_ALIAS_header" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_delete_tooltip" qtlid="178848">Delete this alias</translation>
-   <translation id="exchange_tab_ALIAS_intro" qtlid="434512">Liste des alias créés pour le compte <strong>{0}</strong></translation>
-   <translation id="exchange_tab_ALIAS_GROUP_intro" qtlid="434525">Liste des alias créés pour le groupe <strong>{0}</strong></translation>
+   <translation id="exchange_tab_ALIAS_intro" qtlid="434512">List of aliases created for the <strong>{0}</strong> account</translation>
+   <translation id="exchange_tab_ALIAS_GROUP_intro" qtlid="434525">List of aliases created for the <strong>{0}</strong> group</translation>
    <translation id="exchange_tab_ALIAS_table_empty" qtlid="143954">You have no alias for this account</translation>
    <translation id="exchange_tab_ALIAS_GROUP_table_empty" qtlid="178874">You don't have any aliases for this group</translation>
    <translation id="exchange_tab_ALIAS_state_TASK_ON_DOING" qtlid="26383">In progress</translation>
@@ -207,7 +207,7 @@
    <translation id="exchange_tab_ALIAS_remove_alias_label" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_remove_account_label" qtlid="143603">Associated account</translation>
    <translation id="exchange_tab_ALIAS_add_alias_title" qtlid="143616">Create an alias</translation>
-   <translation id="exchange_tab_ALIAS_add_alias_intro" qtlid="155782">Create an alias for the account <span class="bold">{0}</span></translation>
+   <translation id="exchange_tab_ALIAS_add_alias_intro" qtlid="416579">Create an alias for the <span class="bold">{0}</span> account</translation>
    <translation id="exchange_tab_ALIAS_add_alias_placeholder" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_add_alias_step2_intro" qtlid="144006">Are you sure you want to add the alias below?</translation>
    <translation id="exchange_tab_ALIAS_add_alias_step2_alias_label" qtlid="9466">Alias</translation>
@@ -547,7 +547,7 @@ I therefore explicitly renounce my right to cancel under the provisions of Artic
    <translation id="exchange_tab_domain_add_step1_user_owned_option" qtlid="397533">Enter a domain name which is not managed by your OVH account </translation>
    <translation id="exchange_tab_domain_add_step1_user_owned_info" qtlid="397546">Please note: you must make sure that your chosen domain's DNS zone can be edited by its administrator</translation>
    <translation id="exchange_tab_domain_add_step1_order_domain_option" qtlid="136997">Order a domain name</translation>
-   <translation id="exchange_tab_domain_add_step1_domain_none" qtlid="434538">Aucun résultat trouvé</translation>
+   <translation id="exchange_tab_domain_add_step1_domain_none" qtlid="434538">No results found</translation>
 
    <translation id="exchange_tab_domain_add_step3_cover_guide" qtlid="139572">No result found</translation>
 
@@ -618,18 +618,18 @@ The Vade Secure anti-spam solution is compatible with non-authoritative mode (on
 <!-- ########################################## -->
 <!-- DELEGATION -->
    <translation id="exchange_ACTION_delegation_title" qtlid="143733">Delegation configuration</translation>
-   <translation id="exchange_ACTION_delegation_step1_intro" qtlid="434551">Une délégation permet à d'autres comptes Exchange d'avoir certains droits sur le compte <strong>{0}</strong></translation>
+   <translation id="exchange_ACTION_delegation_step1_intro" qtlid="434551">A delegation enables other Exchange accounts to have certain permissions on the <strong>{0}</strong> account</translation>
    <translation id="exchange_ACTION_delegation_table_empty" qtlid="150047">You don't have any accounts available</translation>
    <translation id="exchange_ACTION_delegation_table_empty_search" qtlid="150060">You don't have any accounts corresponding to these search terms</translation>
    <translation id="exchange_ACTION_delegation_step1_email_header" qtlid="137244">E-mail account</translation>
    <translation id="exchange_ACTION_delegation_step1_send_header" qtlid="181474">Sending as rights</translation>
-   <translation id="exchange_ACTION_delegation_step1_sendOnBehalfTo_header" qtlid="181487">"Send as" rights</translation>
+   <translation id="exchange_ACTION_delegation_step1_sendOnBehalfTo_header" qtlid="181487">Send On Behalf Of</translation>
    <translation id="exchange_ACTION_delegation_step1_full_header" qtlid="181500">Full access rights</translation>
    <translation id="exchange_ACTION_delegation_step1_task_on_doing" qtlid="201458">Task in progress</translation>
-   <translation id="exchange_ACTION_delegation_step2_intro" qtlid="434564">Les droits de délégation afférents au compte <strong>{0}</strong> :</translation>
+   <translation id="exchange_ACTION_delegation_step2_intro" qtlid="434564">Delegation permissions for the <strong>{0}</strong> account:</translation>
    <translation id="exchange_ACTION_delegation_step2_email_header" qtlid="137244">E-mail account</translation>
    <translation id="exchange_ACTION_delegation_step2_send_header" qtlid="143798">Sending rights</translation>
-   <translation id="exchange_ACTION_delegation_step2_sendOnBehalfTo_header" qtlid="181487">"Send as" rights</translation>
+   <translation id="exchange_ACTION_delegation_step2_sendOnBehalfTo_header" qtlid="181487">Send On Behalf Of</translation>
    <translation id="exchange_ACTION_delegation_step2_full_header" qtlid="144253">Access rights</translation>
    <translation id="exchange_ACTION_delegation_step2_right_true" qtlid="34776">Yes</translation>
    <translation id="exchange_ACTION_delegation_behalf_tooltip" qtlid="181513">Please disable sending rights first.</translation>
@@ -752,7 +752,7 @@ The Vade Secure anti-spam solution is compatible with non-authoritative mode (on
    <translation id="exchange_tab_RESOURCES_popover_delete" qtlid="2414">Delete</translation>
    <translation id="exchange_tab_RESOURCES_tooltip_edit" qtlid="37875">Modify</translation>
    <translation id="exchange_tab_RESOURCES_wizard_intro" qtlid="170863">Accessible via Outlook, the resource account feature enables you to plan for the requirements of your workers. <br /> Naturally, you can create as many resource accounts as you wish.</translation>
-   <translation id="exchange_tab_RESOURCES_wizard_type" qtlid="171266">Two types of resources are available "Room" or "Equipment". <br /> Simply provide the following settings: <ul><li>Name</li> <li> Capacity </li><ul></translation>
+   <translation id="exchange_tab_RESOURCES_wizard_type" qtlid="171266">Two types of resources are available "Room" or "Equipment". <br /> Simply provide the following settings: <ul><li>Name</li> <li> Capacity </li></ul></translation>
    <translation id="exchange_tab_RESOURCES_wizard_example" qtlid="191148"><b>Example</b>: You want to reserve room <b>"X"</b> which can hold <b>"N"</b> people.</translation>
    <translation id="exchange_RESOURCES_delegation_step1_intro" qtlid="209112">A delegation give certain permissions to other Exchange accounts on the resource {0}</translation>
    <translation id="exchange_RESOURCES_delegation_doing_message" qtlid="144266">The rights delegation update will be carried out.</translation>
@@ -827,6 +827,7 @@ The Vade Secure anti-spam solution is compatible with non-authoritative mode (on
    <translation id="exchange_DIAGNOSTICS_status_canSendEmail_help_li4" qtlid="319817">There has been an incident on the Exchange infrastructure </translation>
    <translation id="exchange_DIAGNOSTICS_status_support_ticket_subject" qtlid="291643">Exchange Diagnostic </translation>
    <translation id="exchange_DIAGNOSTICS_status_support_ticket_body" qtlid="291656">Please retain the following information as it will help with the diagnostic of your issue. </translation>
+   <translation id="exchange_DIAGNOSTICS_create_ticket" qtlid="260801">Create a support request</translation>
 
 <!-- ########################################## -->
 <!-- TAB MAILING LISTS -->
@@ -890,7 +891,7 @@ The Vade Secure anti-spam solution is compatible with non-authoritative mode (on
    <translation id="exchange_tab_GROUPS_delete_group_success" qtlid="150151">Your group will be deleted.</translation>
    <translation id="exchange_tab_GROUPS_delete_group_error" qtlid="150164">An error occurred on deleting your group.</translation>
    <translation id="exchange_GROUPS_delegation_title" qtlid="150398">Configuration of the delegation</translation>
-   <translation id="exchange_GROUPS_delegation_step1_intro" qtlid="434577">Une délégation permet à d'autres comptes Exchange d'avoir certains droits sur le groupe <strong>{0}</strong></translation>
+   <translation id="exchange_GROUPS_delegation_step1_intro" qtlid="434577">A delegation enables other Exchange accounts to have certain permissions for the <strong>{0}</strong> group</translation>
    <translation id="exchange_GROUPS_delegation_step1_email_header" qtlid="137244">E-mail account</translation>
    <translation id="exchange_GROUPS_delegation_step1_send_header" qtlid="143759">Give sending rights to</translation>
    <translation id="exchange_GROUPS_delegation_step1_full_header" qtlid="144240">Give access rights</translation>
@@ -935,7 +936,7 @@ The Vade Secure anti-spam solution is compatible with non-authoritative mode (on
    <translation id="exchange_GROUPS_add_group_help_directory_text" qtlid="184880">Hiding the group address in Outlook means that it won't be visible on the Exchange service list of addresses</translation>
    <translation id="exchange_GROUPS_add_group_help_security_header" qtlid="150528">Authentication required</translation>
    <translation id="exchange_GROUPS_add_group_help_security_text" qtlid="150671">If ticked, only group members will be able to send a message on the group address</translation>
-   <translation id="exchange_GROUPS_manager_intro" qtlid="434590">Liste des comptes administrateur du groupe <strong>{0}</strong></translation>
+   <translation id="exchange_GROUPS_manager_intro" qtlid="434590">List of administrator accounts for the <strong>{0}</strong> group</translation>
    <translation id="exchange_GROUPS_manager_back_button" qtlid="4118">Back</translation>
    <translation id="exchange_GROUPS_manager_delete_tooltip" qtlid="150697">Remove this account from the manager list</translation>
    <translation id="exchange_GROUPS_manager_table_empty" qtlid="150710">You don't have any administrators for this group</translation>
@@ -944,9 +945,9 @@ The Vade Secure anti-spam solution is compatible with non-authoritative mode (on
    <translation id="exchange_GROUPS_remove_manager_question" qtlid="150749">Do you really want to delete this account from the list of administrators for your group?</translation>
    <translation id="exchange_GROUPS_remove_manager_group_label" qtlid="59507">Group</translation>
    <translation id="exchange_GROUPS_remove_manager_manager_label" qtlid="43948">Administrator</translation>
-   <translation id="exchange_GROUPS_remove_manager_success_message" qtlid="434603">Le compte <strong>{0}</strong> va être supprimé de la liste d'administrateurs du groupe <span class="bold">{1}</span>.</translation>
+   <translation id="exchange_GROUPS_remove_manager_success_message" qtlid="434603">The <strong>{0}</strong> account will be deleted from the list of administrators for the <span class="bold">{1}</span> group.</translation>
    <translation id="exchange_GROUPS_remove_manager_error_message" qtlid="155912">An error occurred on deleting the account <span class="bold">{0}</span> of the administrator list of the group <span class="bold">{1}</span>.</translation>
-   <translation id="exchange_GROUPS_member_intro" qtlid="434616">Liste des comptes contacts du groupe <strong>{0}</strong></translation>
+   <translation id="exchange_GROUPS_member_intro" qtlid="434616">List of contact accounts in the <strong>{0}</strong> group</translation>
    <translation id="exchange_GROUPS_member_back_button" qtlid="4118">Back</translation>
    <translation id="exchange_GROUPS_member_delete_tooltip" qtlid="150801">Remove this account from the contact list</translation>
    <translation id="exchange_GROUPS_member_table_empty" qtlid="150814">You don't have any contacts for this group.</translation>
@@ -1176,9 +1177,9 @@ The Vade Secure anti-spam solution is compatible with non-authoritative mode (on
    <translation id="minPasswordLength_mustBeInteger_error" qtlid="178055">The minimum length must be an integer.</translation>
    <translation id="minPasswordLength_number_error" qtlid="178055">The minimum length must be an integer.</translation>
    <translation id="minPasswordLength_pattern_error" qtlid="178055">The minimum length must be an integer.</translation>
-   <translation id="minPasswordAge_min_error" qtlid="434629">L'âge minimal du mot de passe ne peut pas être inférieur à 0 jour</translation>
-   <translation id="minPasswordAge_max_error" qtlid="434642">L'âge minimal du mot de passe ne peut pas être supérieur à 90 jours</translation>
-   <translation id="minPasswordAge_mustBeInteger_error" qtlid="434655">L'âge minimal du mot de passe doit être un nombre entier</translation>
+   <translation id="minPasswordAge_min_error" qtlid="434629">Minimum password age cannot be lower than 0 days</translation>
+   <translation id="minPasswordAge_max_error" qtlid="434642">Minimum password age cannot be higher than 90 days</translation>
+   <translation id="minPasswordAge_mustBeInteger_error" qtlid="434655">Minimum password age must be a whole number</translation>
    <translation id="minPasswordAge_minToBigForMax_error" qtlid="178094">The minimum password age must be less than the maximum age.</translation>
    <translation id="minPasswordAge_pattern_error" qtlid="434018">The minimum password age must be a whole number</translation>
    <translation id="minPasswordAge_number_error" qtlid="434018">The minimum password age must be a whole number</translation>
@@ -1215,7 +1216,7 @@ The Vade Secure anti-spam solution is compatible with non-authoritative mode (on
    <translation id="lockoutDuration_pattern_error" qtlid="178042">The account lockout duration must be an integer.</translation>
    <translation id="exchange_ACTION_configure_success" qtlid="178263">The modifications will be applied.</translation>
    <translation id="exchange_ACTION_configure_error" qtlid="178276">An error occurred during the request, the modifications will not be applied.</translation>
-   <translation id="exchange_ACTION_configure_step2_intro" qtlid="434668">Récapitulatif de configuration pour votre service Exchange <strong>{0}</strong></translation>
+   <translation id="exchange_ACTION_configure_step2_intro" qtlid="434668">Configuration summary for your <strong>{0}</strong> Exchange service</translation>
    <translation id="exchange_ACTION_configure_step2_label_lockoutDuration" qtlid="178302">Account lockout duration:</translation>
    <translation id="exchange_ACTION_configure_step2_label_lockoutObservationWindow" qtlid="178315">Lockout observation window:</translation>
    <translation id="exchange_ACTION_configure_step2_label_lockoutThreshold" qtlid="178328">Account lockout threshold:</translation>

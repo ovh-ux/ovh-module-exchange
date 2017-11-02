@@ -10,15 +10,18 @@ angular
                 translator,
                 $window
             };
+        }
 
-            this.curExchange = navigation.currentActionData;
+        $onInit () {
+            this.curExchange = this.services.navigation.currentActionData;
             this.model = {};
             this.agree = {
                 value: false
             };
 
-            $scope.retrievingContracts = () => this.retrievingContracts();
-            $scope.submitting = () => this.submitting();
+            this.services.$scope.submitting = () => this.submitting();
+
+            this.retrievingContracts();
         }
 
         retrievingContracts () {

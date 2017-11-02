@@ -83,21 +83,19 @@ angular
             let state = "OK";
             let numberOfErrors = 0;
 
-            for (const datum of data) {
+            _.forEach(data, (datum) => {
                 if (_(datum).isString()) {
                     this.services.messaging.setMessage(mainMessage, {
                         message: datum,
                         type: "PARTIAL"
                     });
-
-                    return;
                 } else if (datum.status === "ERROR") {
                     datum.message = this.services.translator.tr(`exchange_tab_TASKS_${datum.function}`);
                     datum.type = "ERROR";
                     state = "PARTIAL";
                     numberOfErrors++;
                 }
-            }
+            });
 
             if (numberOfErrors === data.length) {
                 state = "ERROR";

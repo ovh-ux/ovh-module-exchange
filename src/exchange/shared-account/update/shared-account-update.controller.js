@@ -96,11 +96,11 @@ angular
                         this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_add_no_domains"));
                         this.services.navigation.resetAction();
                     } else {
-                        for (const domain of data.availableDomains) {
+                        _.forEach(data.availableDomains, (domain) => {
                             if (this.domain.name === domain.name) {
                                 this.domain = domain;
                             }
-                        }
+                        });
                     }
                 })
                 .catch((failure) => {

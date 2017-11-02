@@ -56,9 +56,9 @@ angular
                 .then((domains) => {
                     this.paginated = domains;
 
-                    for (const domain of this.paginated.domains) {
+                    _.forEach(this.paginated.domains, (domain) => {
                         domain.domainTypes = domains.domainTypes;
-                    }
+                    });
 
                     this.setTooltips();
                 })
@@ -67,12 +67,12 @@ angular
 
         setTooltips () {
             if (_.has(this.paginated, "domains") && !_.isEmpty(this.paginated.domains)) {
-                for (const domain of this.paginated.domains) {
+                _.forEach(this.paginated.domains, (domain) => {
                     if (this.exchange != null) {
                         this.setMxTooltip(domain);
                         this.setSrvTooltip(domain);
                     }
-                }
+                });
             }
         }
 
