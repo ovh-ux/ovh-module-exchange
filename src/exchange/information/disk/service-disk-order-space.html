@@ -1,46 +1,41 @@
 <div data-ng-controller="ExchangeOrderDiskSpaceCtrl as ctrl">
     <div data-wizard
          data-wizard-bread-crumb="true"
-         data-wizard-title="i18n.exchange_action_order_space_disk_title"
+         data-wizard-confirm-button-text="i18n.exchange_action_order_space_disk_button"
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="submitting"
-         data-wizard-confirm-button-text="i18n.exchange_action_order_space_disk_button">
-        <div data-wizard-step
-             data-wizard-step-on-load="retrievingDiskSpaceOptions">
+         data-wizard-title="i18n.exchange_action_order_space_disk_title">
+
+        <div data-wizard-step>
             <p data-ng-bind-html="tr('exchange_action_order_space_disk_intro')"></p>
 
-            <div class="text-center loader" data-ng-if="ctrl.loading"></div>
+            <oui-loader data-ng-if="ctrl.loading"></oui-loader>
 
             <div data-ng-if="!ctrl.loading">
-                <div class="order-resume-list">
-                    <table class="table table-hover">
-                        <tbody>
-                            <tr data-ng-repeat="detail in ctrl.order.details track by $index">
-                                <td data-ng-bind="detail.description"></td>
-                                <td data-ng-bind="ctrl.getResumePrice(detail.totalPrice)"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="order-resume">
-                    <table class="table table-hover">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <span data-i18n-static="exchange_action_order_space_disk_price"></span>
-                                    <span class="price" data-ng-bind="ctrl.order.prices.withoutTax.text"></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span data-i18n-static="exchange_action_order_space_disk_price_iva"></span>
-                                    <span class="price" data-ng-bind="ctrl.order.prices.withTax.text"></span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr data-ng-repeat="detail in ctrl.order.details track by $index">
+                            <th class="font-weight-normal" scope="row"
+                                data-ng-bind="detail.description"></th>
+                            <td class="font-weight-bold text-nowrap text-right"
+                                data-ng-bind="ctrl.getResumePrice(detail.totalPrice)"></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th class="text-right" scope="row"
+                                data-i18n-static="exchange_action_order_space_disk_price"></th>
+                            <td class="font-weight-bold text-right"
+                                data-ng-bind="ctrl.order.prices.withoutTax.text"></td>
+                        </tr>
+                        <tr>
+                            <th class="text-right" scope="row"
+                                data-i18n-static="exchange_action_order_space_disk_price_iva"></th>
+                            <td class="font-weight-bold text-right"
+                                data-ng-bind="ctrl.order.prices.withTax.text"></td>
+                        </tr>
+                    </tfoot>
+                </table>
             </div>
         </div>
 
@@ -59,38 +54,35 @@
              data-wizard-step-on-previous="backToContracts">
             <p data-i18n-static="exchange_action_order_space_disk_summary"></p>
 
-            <div class="order-resume-list">
-                <table class="table table-hover">
-                    <tbody>
-                        <tr data-ng-repeat="detail in ctrl.order.details track by $index">
-                            <td data-ng-bind="detail.description"></td>
-                            <td data-ng-bind="ctrl.getResumePrice(detail.totalPrice)"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="order-resume">
-                <table class="table table-hover">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <span data-i18n-static="exchange_action_order_space_disk_price"></span>
-                                <span data-ng-bind="ctrl.order.prices.withoutTax.text"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span data-i18n-static="exchange_action_order_space_disk_price_iva"></span>
-                                <span data-ng-bind="ctrl.order.prices.withTax.text"></span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <table class="table table-condensed">
+                <tbody>
+                    <tr data-ng-repeat="detail in ctrl.order.details track by $index">
+                        <th class="font-weight-normal" scope="row"
+                            data-ng-bind="detail.description"></th>
+                        <td class="font-weight-bold text-nowrap text-right"
+                            data-ng-bind="ctrl.getResumePrice(detail.totalPrice)"></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th class="text-right" scope="row"
+                            data-i18n-static="exchange_action_order_space_disk_price"></th>
+                        <td class="font-weight-bold text-right"
+                            data-ng-bind="ctrl.order.prices.withoutTax.text"></td>
+                    </tr>
+                    <tr>
+                        <th class="text-right" scope="row"
+                            data-i18n-static="exchange_action_order_space_disk_price_iva"></th>
+                        <td class="font-weight-bold text-right"
+                            data-ng-bind="ctrl.order.prices.withTax.text"></td>
+                    </tr>
+                </tfoot>
+            </table>
 
             <p data-i18n-static="exchange_action_order_space_disk_final_txt"></p>
-            <p class="muted" data-i18n-static="exchange_action_order_space_disk_final_txt2"></p>
+            <div class="alert alert-info" role="alert"
+                 data-i18n-static="exchange_action_order_space_disk_final_txt2">
+            </div>
         </div>
 
     </div>

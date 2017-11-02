@@ -8,161 +8,126 @@
         <div data-wizard-step
              data-wizard-step-valid="accountIsValid()">
 
-            <div class="loader text-center" data-ng-if="ctrl.loaders.accountOptions"></div>
+            <oui-loader data-ng-if="ctrl.loaders.accountOptions"></oui-loader>
 
-            <div data-ng-if="!ctrl.loaders.accountOptions">
-
-                <form class="mt-4" name="accountToAddForm">
-                    <div class="form-group" data-ng-class="{'has-error': ctrl.takenEmailError}">
-                        <label class="control-label required" for="accountToAddLogin"
-                               data-i18n-static="exchange_ACTION_add_account_step1_email_label"></label>
-                        <div class="input-group">
-                            <input type="text"
-                                   class="form-control"
-                                   name="accountToAddLogin"
-                                   id="accountToAddLogin"
-                                   required
-                                   maxlength="256"
-                                   data-ng-change="ctrl.checkTakenEmails()"
-                                   data-ng-model="ctrl.accountToAdd.login"
-                                   data-ng-pattern="/^[-_a-zA-Z0-9]+((\.|\+)[-_a-zA-Z0-9]+)*$/">
-                            <span class="input-group-addon">@</span>
-                            <select class="form-control"
-                                    required
-                                    data-ng-change="ctrl.checkTakenEmails()"
-                                    data-ng-disabled="ctrl.newAccountOptions === null"
-                                    data-ng-model="ctrl.accountToAdd.completeDomain"
-                                    data-ng-options="domain.displayName for domain in ctrl.newAccountOptions.availableDomains | orderBy:'formattedName'">
-                            </select>
-                        </div>
-                        <small class="help-block"
-                               data-i18n-static="exchange_tab_ALIAS_taken_error_message"
-                               data-ng-if="ctrl.takenEmailError"></small>
+            <form name="accountToAddForm"
+                  data-ng-if="!ctrl.loaders.accountOptions">
+                <div class="form-group"
+                     data-ng-class="{'has-error': ctrl.takenEmailError}">
+                    <label class="control-label required" for="accountToAddLogin"
+                           data-i18n-static="exchange_ACTION_add_account_step1_email_label"></label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="accountToAddLogin" maxlength="256" name="accountToAddLogin" required
+                               data-ng-change="ctrl.checkTakenEmails()"
+                               data-ng-model="ctrl.accountToAdd.login"
+                               data-ng-pattern="/^[-_a-zA-Z0-9]+((\.|\+)[-_a-zA-Z0-9]+)*$/">
+                        <span class="input-group-addon">@</span>
+                        <select class="form-control" required
+                                data-ng-change="ctrl.checkTakenEmails()"
+                                data-ng-disabled="ctrl.newAccountOptions === null"
+                                data-ng-model="ctrl.accountToAdd.completeDomain"
+                                data-ng-options="domain.displayName for domain in ctrl.newAccountOptions.availableDomains | orderBy:'formattedName'">
+                        </select>
                     </div>
+                    <small class="help-block"
+                           data-i18n-static="exchange_tab_ALIAS_taken_error_message"
+                           data-ng-if="ctrl.takenEmailError"></small>
+                </div>
 
-                    <div class="form-horizontal">
-                        <div class="form-group" data-ng-if="ctrl.services.exchangeVersion.isVersion(2010) && !ctrl.services.accountTypes.isHosted()">
-                            <label class="control-label col-md-4" for="accountToAddSameAccountName"
-                                   data-i18n-static="exchange_ACTION_update_account_step1_exchange_SAMA_label"></label>
-                            <div class="col-md-6">
-                                <input type="text"
-                                       class="form-control"
-                                       name="accountToAddSameAccountName"
-                                       id="accountToAddSameAccountName"
-                                       maxlength="256"
-                                       data-ng-model="ctrl.accountToAdd.samaccountName">
-                            </div>
-                        </div>
+                <div class="form-group"
+                     data-ng-if="ctrl.services.exchangeVersion.isVersion(2010) && !ctrl.services.accountTypes.isHosted()">
+                    <label class="control-label" for="accountToAddSameAccountName"
+                           data-i18n-static="exchange_ACTION_update_account_step1_exchange_SAMA_label"></label>
+                    <input type="text" class="form-control" id="accountToAddSameAccountName" maxlength="256" name="accountToAddSameAccountName"
+                           data-ng-model="ctrl.accountToAdd.samaccountName">
+                </div>
 
-                        <div class="form-group" data-ng-if="ctrl.newAccountOptions.availableTypes.length > 1">
-                            <label class="control-label col-md-4" for="accountToAddAvailableTypes"
-                                   data-i18n-static="exchange_ACTION_update_account_step1_type_label"></label>
-                            <div class="col-md-6">
-                                <select class="form-control" name="accountToAddAvailableTypes" id="accountToAddAvailableTypes" required
-                                        data-ng-model="ctrl.accountToAdd.accountLicense"
-                                        data-ng-options="tr('exchange_ACTION_update_account_step1_type_' + type) for type in ctrl.newAccountOptions.availableTypes">
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label col-md-4" for="accountToAddFirstName"
-                                   data-i18n-static="exchange_ACTION_add_account_step1_first_name_label"></label>
-                            <div class="col-md-6">
-                                <input type="text"
-                                       class="form-control"
-                                       name="accountToAddFirstName"
-                                       id="accountToAddFirstName"
-                                       data-ng-change="ctrl.makeDisplayName()"
-                                       maxlength="256"
-                                       data-ng-model="ctrl.accountToAdd.firstName">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label col-md-4" for="accountToAddLastName"
-                                   data-i18n-static="exchange_ACTION_add_account_step1_last_name_label"></label>
-                            <div class="col-md-6">
-                                <input type="text"
-                                       class="form-control"
-                                       name="accountToAddLastName"
-                                       id="accountToAddLastName"
-                                       data-ng-change="ctrl.makeDisplayName()"
-                                       maxlength="256"
-                                       data-ng-model="ctrl.accountToAdd.lastName">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label col-md-4" for="accountToAddDisplayName"
-                                   data-i18n-static="exchange_ACTION_add_account_step1_display_name_label"></label>
-                            <div class="col-md-6">
-                                <input type="text"
-                                       class="form-control"
-                                       name="accountToAddDisplayName"
-                                       id="accountToAddDisplayName"
-                                       data-ng-change="ctrl.setPasswordsFlag(ctrl.accountToAdd)"
-                                       maxlength="256"
-                                       data-ng-model="ctrl.accountToAdd.displayName">
-                            </div>
-                        </div>
-
-                        <div class="form-group"
-                             data-ng-class="{'has-error': ctrl.simplePasswordFlag || ctrl.containsNameFlag || ctrl.containsSamAccountNameFlag}">
-                            <label class="control-label col-md-4 required"
-                                   for="accountToAddPassword"
-                                   data-i18n-static="exchange_ACTION_add_account_step1_password_label"></label>
-                            <div class="col-md-6">
-                                <input type="password" class="form-control"
-                                       name="accountToAddPassword"
-                                       id="accountToAddPassword"
-                                       required
-                                       data-ng-change="ctrl.setPasswordsFlag(ctrl.accountToAdd)"
-                                       data-ng-model="ctrl.accountToAdd.password"
-                                       data-uib-tooltip="{{ctrl.passwordTooltip}}">
-                                <small class="help-block"
-                                       data-i18n-static="exchange_ACTION_update_account_step1_password_weak"
-                                       data-ng-if="ctrl.simplePasswordFlag"></small>
-                                <small class="help-block"
-                                       data-i18n-static="exchange_ACTION_update_account_step1_password_contains_name"
-                                       data-ng-if="ctrl.containsNameFlag"></small>
-                                <small class="help-block"
-                                       data-ng-bind="ctrl.containsSamAccountNameLabel"
-                                       data-ng-if="ctrl.containsSamAccountNameFlag"></small>
-                            </div>
-                        </div>
-
-                        <div class="form-group"
-                             data-ng-class="{'has-error': ctrl.differentPasswordFlag || ctrl.showConfirmPwdError}">
-                            <label class="control-label col-md-4 required" for="accountToAddConfirm"
-                                   data-i18n-static="exchange_ACTION_add_account_step1_password_confirmation_label"></label>
-                            <div class="col-md-6">
-                                <input type="password"
-                                       class="form-control"
-                                       name="accountToAddConfirm"
-                                       id="accountToAddConfirm"
-                                       required
-                                       data-ng-change="ctrl.setPasswordsFlag(ctrl.accountToAdd)"
-                                       data-ng-model="ctrl.accountToAdd.passwordConfirmation"
-                                       data-uib-tooltip="{{ctrl.passwordTooltip}}">
-                                <small class="help-block"
-                                       data-i18n-static="exchange_ACTION_update_account_step1_password_different"
-                                       data-ng-if="ctrl.differentPasswordFlag"></small>
-                                <small class="help-block"
-                                       data-i18n-static="exchange_tab_ACCOUNTS_pwderror"
-                                       data-ng-if="ctrl.showConfirmPwdError"></small>
-                            </div>
-                        </div>
-
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" data-ng-model="ctrl.valid.legalWarning">
-                                <span data-ng-bind-html="tr('exchange_ACTION_add_account_legal_warning')"></span>
-                            </label>
-                        </div>
+                <div class="form-group"
+                     data-ng-if="ctrl.newAccountOptions.availableTypes.length > 1">
+                    <label class="control-label required" for="accountToAddAvailableTypes"
+                           data-i18n-static="exchange_ACTION_update_account_step1_type_label"></label>
+                    <div class="oui-select">
+                        <select class="oui-select__input" name="accountToAddAvailableTypes" id="accountToAddAvailableTypes" required
+                                data-ng-model="ctrl.accountToAdd.accountLicense"
+                                data-ng-options="tr('exchange_ACTION_update_account_step1_type_' + type) for type in ctrl.newAccountOptions.availableTypes">
+                        </select>
+                        <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
                     </div>
-                </form>
-            </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="accountToAddFirstName"
+                           data-i18n-static="exchange_ACTION_add_account_step1_first_name_label"></label>
+                    <input type="text" class="form-control" id="accountToAddFirstName" maxlength="256" name="accountToAddFirstName"
+                           data-ng-change="ctrl.makeDisplayName()"
+                           data-ng-model="ctrl.accountToAdd.firstName">
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="accountToAddLastName"
+                           data-i18n-static="exchange_ACTION_add_account_step1_last_name_label"></label>
+                    <input type="text" class="form-control" id="accountToAddLastName" maxlength="256" name="accountToAddLastName"
+                           data-ng-change="ctrl.makeDisplayName()"
+                           data-ng-model="ctrl.accountToAdd.lastName">
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="accountToAddDisplayName"
+                           data-i18n-static="exchange_ACTION_add_account_step1_display_name_label"></label>
+                    <input type="text" class="form-control" id="accountToAddDisplayName" maxlength="256" name="accountToAddDisplayName"
+                           data-ng-change="ctrl.setPasswordsFlag(ctrl.accountToAdd)"
+                           data-ng-model="ctrl.accountToAdd.displayName">
+                </div>
+
+                <div class="form-group"
+                     data-ng-class="{'has-error': ctrl.simplePasswordFlag || ctrl.containsNameFlag || ctrl.containsSamAccountNameFlag}">
+                    <label class="control-label required" for="accountToAddPassword"
+                           data-i18n-static="exchange_ACTION_add_account_step1_password_label"></label>
+                    <input type="password" autocomplete="off" class="form-control" id="accountToAddPassword" name="accountToAddPassword" required
+                           data-ng-change="ctrl.setPasswordsFlag(ctrl.accountToAdd)"
+                           data-ng-model="ctrl.accountToAdd.password"
+                           data-uib-tooltip="{{ctrl.passwordTooltip}}">
+                    <small class="help-block"
+                           data-i18n-static="exchange_ACTION_update_account_step1_password_weak"
+                           data-ng-if="ctrl.simplePasswordFlag"></small>
+                    <small class="help-block"
+                           data-i18n-static="exchange_ACTION_update_account_step1_password_contains_name"
+                           data-ng-if="ctrl.containsNameFlag"></small>
+                    <small class="help-block"
+                           data-ng-bind="ctrl.containsSamAccountNameLabel"
+                           data-ng-if="ctrl.containsSamAccountNameFlag"></small>
+                </div>
+
+                <div class="form-group"
+                     data-ng-class="{'has-error': ctrl.differentPasswordFlag || ctrl.showConfirmPwdError}">
+                    <label class="control-label required" for="accountToAddConfirm"
+                           data-i18n-static="exchange_ACTION_add_account_step1_password_confirmation_label"></label>
+                    <input type="password" autocomplete="off" class="form-control" id="accountToAddConfirm" name="accountToAddConfirm" required
+                           data-ng-change="ctrl.setPasswordsFlag(ctrl.accountToAdd)"
+                           data-ng-model="ctrl.accountToAdd.passwordConfirmation"
+                           data-uib-tooltip="{{ctrl.passwordTooltip}}">
+                    <small class="help-block"
+                           data-i18n-static="exchange_ACTION_update_account_step1_password_different"
+                           data-ng-if="ctrl.differentPasswordFlag"></small>
+                    <small class="help-block"
+                           data-i18n-static="exchange_tab_ACCOUNTS_pwderror"
+                           data-ng-if="ctrl.showConfirmPwdError"></small>
+                </div>
+
+                <div class="oui-checkbox">
+                    <input type="checkbox" class="oui-checkbox__input" id="legalWarning"
+                           data-ng-model="ctrl.valid.legalWarning">
+                    <label class="oui-checkbox__label-container" for="legalWarning">
+                        <span class="oui-checkbox__label"
+                              data-ng-bind-html="tr('exchange_ACTION_add_account_legal_warning')"></span>
+                        <span class="oui-checkbox__icon">
+                            <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
+                            <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
+                            <span class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></span>
+                        </span>
+                    </label>
+                </div>
+            </form>
 
             <div data-wizard-step-help>
                 <h3 data-i18n-static="exchange_ACTION_add_account_helpwizard_title"></h3>

@@ -9,14 +9,17 @@ angular
                 translator,
                 exchangeStates
             };
+        }
 
-            this.$routerParams = Exchange.getParams();
+        $onInit () {
+            this.$routerParams = this.services.Exchange.getParams();
             this.disclaimersList = null;
-            this.tableLoading = true;
+            this.loading = {
+                table: false
+            };
 
-            $scope.$on(Exchange.events.disclaimersChanged, () => $scope.$broadcast("paginationServerSide.reload", "disclaimersTable"));
-            $scope.loadPaginated = () => this.loadPaginated();
-            $scope.getDisclaimersList = () => this.getDisclaimersList();
+            this.services.$scope.$on(this.services.Exchange.events.disclaimersChanged, () => this.services.$scope.$broadcast("paginationServerSide.reload", "disclaimersTable"));
+            this.services.$scope.loadPaginated = (count, offset) => this.loadPaginated(count, offset);
         }
 
         /* eslint-disable class-methods-use-this */
@@ -25,14 +28,6 @@ angular
         }
         /* eslint-enable class-methods-use-this */
 
-        getDisclaimersList () {
-            return this.disclaimersList;
-        }
-
-        getTableLoading () {
-            return this.tableLoading;
-        }
-
         /* eslint-disable class-methods-use-this */
         hasFullSlot (list) {
             return _.some(list, (item) => !item.emptySlotFlag);
@@ -40,7 +35,7 @@ angular
         /* eslint-enable class-methods-use-this */
 
         loadPaginated (count, offset) {
-            this.tableLoading = true;
+            this.loading.table = true;
 
             this.services
                 .Exchange.getDisclaimers(this.$routerParams.organization, this.$routerParams.productId, count, offset)
@@ -52,7 +47,7 @@ angular
                     this.services.messaging.writeError(this.services.translator.tr("exchange_tab_DISCLAIMER_error_message"), err);
                 })
                 .finally(() => {
-                    this.tableLoading = false;
+                    this.loading.table = false;
                 });
         }
 
