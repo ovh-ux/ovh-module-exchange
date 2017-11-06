@@ -171,8 +171,8 @@ angular
         }
 
         requestNewDiagnostic () {
-            this.email = "";
-            this.password = "";
+            this.email = null;
+            this.password = null;
             this.diagnostic = null;
             this.state = this.states.REQUESTING_NEW_DIAGNOSTIC;
             this.services.diagnostic.clearCache();
