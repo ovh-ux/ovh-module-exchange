@@ -364,9 +364,9 @@
    <translation id="exchange_tab_domain_diagnostic_mx_intro_ovh" qtlid="192890">Votre domaine est hébergé chez OVH, vous pouvez configurer le champ MX de votre domaine {0} de la manière suivante</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_label_champ" qtlid="192903">Champ MX</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_label_champs" qtlid="46780">Champs MX</translation>
-   <translation id="exchange_tab_domain_diagnostic_mx_no_antispam" qtlid="319895">Si vous utilisez le mode non autoritatif (Exchange + autre système de messagerie) avec un système de messagerie non hébergé par OVH :</translation>
+   <translation id="exchange_tab_domain_diagnostic_mx_no_antispam" qtlid="319895">Si vous utilisez le mode non-autoritatif (Exchange + autre système de messagerie) avec un système de messagerie non hébergé par OVH :</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_no_antispam_config" qtlid="192929">Priorité : <strong>{0}</strong>; cible : <strong>{1}</strong></translation>
-   <translation id="exchange_tab_domain_diagnostic_mx_antispam" qtlid="319908">Si vous utilisez le mode autoritatif (Exchange uniquement) ou non autoritatif avec un système de messagerie hébergé (e-mail mutualisé) par OVH :</translation>
+   <translation id="exchange_tab_domain_diagnostic_mx_antispam" qtlid="319908">Si vous utilisez le mode autoritatif (Exchange uniquement) ou non-autoritatif avec un système de messagerie hébergé (e-mail mutualisé) par OVH :</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_antispam_config" qtlid="192955">Priorité : <strong>{0}</strong>; cible : <strong>{1}</strong><br /> Priorité : <strong>{2}</strong>; cible : <strong>{3}</strong><br /> Priorité : <strong>{4}</strong>; cible : <strong>{5}</strong><br /> Priorité : <strong>{6}</strong>; cible : <strong>{7}</strong><br /></translation>
    <translation id="exchange_tab_domain_diagnostic_mx_no_ovh" qtlid="349101">Si le domaine n'est pas géré par le même identifiant client que le service Exchange ou si votre domaine n'est pas hébergé chez OVH, la configuration automatique n'est pas possible. Veuillez créer le champ MX sur ce domaine manuellement en donnant les mêmes informations que ci-dessous.</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_recap" qtlid="192981">Un champ MX va être ajouté dans la zone DNS de votre domaine. Attention, les champs MX pre-existants vont être effacés.</translation>
@@ -393,7 +393,7 @@
    <translation id="exchange_tab_domain_add_domain" qtlid="8602">Ajouter un domaine</translation>
    <translation id="exchange_tab_domain_delete_domain" qtlid="137556">Retirer ce domaine des services Exchange</translation>
    <translation id="exchange_tab_domain_delete_domain_accounts_warning" qtlid="148227">Ce domaine ne peut pas être supprimé car il est encore utilisé par un ou plusieurs compte Exchange</translation>
-   <translation id="exchange_tab_domain_NON_AUTHORITATIVE" qtlid="136672">Non Autoritatif</translation>
+   <translation id="exchange_tab_domain_NON_AUTHORITATIVE" qtlid="136672">Non-autoritatif</translation>
    <translation id="exchange_tab_domain_AUTHORITATIVE" qtlid="58807">Autoritatif</translation>
    <translation id="exchange_tab_domain_warning" qtlid="136347">Attention!</translation>
    <translation id="exchange_tab_domain_partial" qtlid="137569">Certains domaines n'ont pu être chargés correctement. Veuillez rafraîchir la page afin de résoudre le problème.</translation>
@@ -571,7 +571,7 @@
    <translation id="exchange_tab_domain_step1_helpwizard_subdomain" qtlid="397559">Pour ajouter un sous-domaine d'un de vos domaines OVH, vous pouvez cocher "Saisir un nom de domaine non géré par votre compte OVH" et le saisir dans le champ correspondant.</translation>
    <translation id="exchange_tab_domain_add_step2_which_domain_type" qtlid="137998">De quel type de domaine <span class="italic">{0}</span> s'agit-il ?</translation>
    <translation id="exchange_tab_domain_add_step2_auth_intro" qtlid="140859">Votre domaine <span class="italic">{0}</span> va être configuré en mode autoritatif.</translation>
-   <translation id="exchange_tab_domain_add_step2_non_auth_intro" qtlid="366372">Votre domaine <span class="italic">{0}</span> va être configuré en mode non autoritatif.</translation>
+   <translation id="exchange_tab_domain_add_step2_non_auth_intro" qtlid="366372">Votre domaine <span class="italic">{0}</span> va être configuré en mode non-autoritatif.</translation>
    <translation id="exchange_tab_domain_add_step2bis_intro" qtlid="316944">Sélectionnez le mode de votre domaine :</translation>
 
    <translation id="exchange_tab_domain_add_step2_srv_checkbox" qtlid="138011">Configurer automatiquement le SRV (autodiscover)</translation>
@@ -590,15 +590,15 @@
    <translation id="exchange_tab_domain_modify_failure" qtlid="137075">Une erreur est survenue lors de la mise à jour du domaine.</translation>
    <translation id="exchange_tab_domain_modify_in_progress" qtlid="137088">Passage vers {0} en cours</translation>
    <translation id="exchange_tab_domain_inverse_NON_AUTHORITATIVE" qtlid="58807">Autoritatif</translation>
-   <translation id="exchange_tab_domain_inverse_AUTHORITATIVE" qtlid="136672">Non Autoritatif</translation>
+   <translation id="exchange_tab_domain_inverse_AUTHORITATIVE" qtlid="136672">Non-autoritatif</translation>
    <translation id="exchange_tab_domain_mode_AUTHORITATIVE" qtlid="316970">Autoritatif (Exchange uniquement)</translation>
-   <translation id="exchange_tab_domain_mode_NON_AUTHORITATIVE" qtlid="316983">Non autoritatif (Exchange + autre service de messagerie)</translation>
+   <translation id="exchange_tab_domain_mode_NON_AUTHORITATIVE" qtlid="316983">Non-autoritatif (Exchange + autre service de messagerie)</translation>
    <translation id="exchange_tab_domain_AUTHORITATIVE_info" qtlid="324847">Le mode autoritatif ne permet pas l'usage d'un autre système de messagerie avec des comptes Exchange. Ce mode permet l'activation de l'antispam Vade Secure.</translation>
-   <translation id="exchange_tab_domain_NON_AUTHORITATIVE_info" qtlid="324860">Le mode non autoritatif permet une cohabitation entre Exchange et un autre service de messagerie. L'antispam Vade Secure est compatible si les comptes pop/imap sont hébergés chez OVH (mxplan ou offre mutualisée), il faut indiquer dans ce cas mx1.mail.ovh.net en serveur e-mail cible.</translation>
+   <translation id="exchange_tab_domain_NON_AUTHORITATIVE_info" qtlid="324860">Le mode non-autoritatif permet une cohabitation entre Exchange et un autre service de messagerie. L'antispam Vade Secure est compatible si les comptes pop/imap sont hébergés chez OVH (mxplan ou offre mutualisée), il faut indiquer dans ce cas mx1.mail.ovh.net en serveur e-mail cible.</translation>
    <translation id="exchange_tab_domain_target_mail_server_label" qtlid="316957">Serveur e-mail cible</translation>
    <translation id="exchange_tab_domain_noovh_mx_info" qtlid="317126">Les modifications MX et SRV seront à réaliser manuellement dans votre zone DNS. Vous pouvez retrouver les informations nécessaires dans la section domaines associés, une fois la validation CNAME effectuée.</translation>
    <translation id="exchange_tab_domain_modify_domain" qtlid="137101">Configuration domaine</translation>
-   <translation id="exchange_tab_domain_modify_domain_tooltip">L'antispam Vade Secure est compatible avec le mode non autoritatif (uniquement si vos comptes pop/imap sont hébergés par OVH). Dans ce cas, il est conseillé d'utiliser : <strong>{0}</strong>, <strong>{1}</strong>, <strong>{2}</strong> et <strong>{3}</strong><br/><br/> Si vous utilisez le mode non autoritatif avec des comptes e-mail non hébergés par OVH, vous devez utiliser : <strong qtlid="416436">{4}</strong> (voir section domaines associés)</translation>
+   <translation id="exchange_tab_domain_modify_domain_tooltip">L'antispam Vade Secure est compatible avec le mode non-autoritatif (uniquement si vos comptes POP/IMAP sont hébergés par OVH). Dans ce cas, il est conseillé d'utiliser : <strong>{0}</strong>, <strong>{1}</strong>, <strong>{2}</strong> et <strong>{3}</strong><br/><br/> Si vous utilisez le mode non-autoritatif avec des comptes e-mail non hébergés par OVH, vous devez utiliser : <strong>{4}</strong> (voir section domaines associés)</translation>
    <translation id="exchange_tab_domain_modify_title" qtlid="137920">Etes-vous sûr de vouloir modifier le domaine suivant de votre service Exchange ?</translation>
    <translation id="exchange_tab_domain_modify_loop_warning" qtlid="210319">Attention, boucle infinie !</translation>
    <translation id="exchange_tab_domain_modify_domain_warning" qtlid="210332">Domaine invalide.</translation>
