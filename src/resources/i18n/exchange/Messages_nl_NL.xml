@@ -148,6 +148,7 @@
    <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="171188">Opening wordt uitgevoerd</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Vervallen</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Schorsing wordt uitgevoerd</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_MIGRATING">Migration en cours</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SPAM" qtlid="70409">Spam</translation>
 
    <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="31522">OK</translation>
@@ -597,7 +598,7 @@
    <translation id="exchange_tab_domain_target_mail_server_label" qtlid="316957">Bestemming e-mail server</translation>
    <translation id="exchange_tab_domain_noovh_mx_info" qtlid="317126">MX en SRV wijzigingen dienen handmatig uitgevoerd te worden in uw DNS-zone. U kunt de benodigde informatie vinden in het bijbehorende domeinonderdeel, zodra de CNAME gevalideerd is. </translation>
    <translation id="exchange_tab_domain_modify_domain" qtlid="137101">Een domein bewerken</translation>
-<translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="416397">
+<translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="416397;416410;416410;169498;416423;416449">
 De Vade Secure anti-spam oplossing is compatibel met de niet-gezaghebbende modus (alleen als uw POP/IMAP accounts door OVH worden gehost). In dit geval raden we u aan om: <strong qtlid="266365">{0}</strong>, <strong qtlid="78906">{1}</strong>, <strong qtlid="183112">{2}</strong> en <strong qtlid="292228">{3}</strong>
 <br/><br/> Als u een niet-gezaghebbende modus gebruikt met uw e-mailaccounts die niet door OVH worden gehost, moet u: <strong qtlid="416436">{4}</strong> (uw bijbehorende domeinen)
 </translation>
