@@ -48,7 +48,7 @@
                                         <button class="btn btn-xs" type="button"
                                                 data-i18n-static="exchange_dashboard_diag_a_label"
                                                 data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isAValid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isAValid}"
-                                                data-ng-if="!ctrl.services.accountTypes.isProvider()"
+                                                data-ng-if="!ctrl.accountTypes.isProvider()"
                                                 data-simplepopover="{{ctrl.exchange.serverDiagnostic.aTooltip}}"
                                                 data-simplepopover-title="{{tr('exchange_dashboard_diag_a_tooltip_title')}}"
                                                 data-simplepopover-placement="bottom"
@@ -57,7 +57,7 @@
                                         <button class="btn btn-xs" type="button"
                                                 data-i18n-static="exchange_dashboard_diag_aaaa_label"
                                                 data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isAaaaValid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isAaaaValid}"
-                                                data-ng-if="ctrl.services.accountTypes.isDedicated()"
+                                                data-ng-if="ctrl.accountTypes.isDedicated()"
                                                 data-simplepopover="{{ctrl.exchange.serverDiagnostic.aaaaTooltip}}"
                                                 data-simplepopover-title="{{tr('exchange_dashboard_diag_aaaa_tooltip_title')}}"
                                                 data-simplepopover-placement="bottom"
@@ -66,7 +66,7 @@
                                         <button class="btn btn-xs" type="button"
                                                 data-i18n-static="exchange_dashboard_diag_ptr_label"
                                                 data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isPtrValid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isPtrValid}"
-                                                data-ng-if="ctrl.services.accountTypes.isDedicated()"
+                                                data-ng-if="ctrl.accountTypes.isDedicated()"
                                                 data-simplepopover="{{ctrl.exchange.serverDiagnostic.ptrTooltip}}"
                                                 data-simplepopover-title="{{tr('exchange_dashboard_diag_ptr_tooltip_title')}}"
                                                 data-simplepopover-placement="bottom"
@@ -75,7 +75,7 @@
                                         <button class="btn btn-xs" type="button"
                                                 data-i18n-static="exchange_dashboard_diag_ptrv6_label"
                                                 data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isPtrV6Valid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isPtrV6Valid}"
-                                                data-ng-if="ctrl.services.accountTypes.isDedicated()"
+                                                data-ng-if="ctrl.accountTypes.isDedicated()"
                                                 data-simplepopover="{{ctrl.exchange.serverDiagnostic.ptrv6Tooltip}}"
                                                 data-simplepopover-title="{{tr('exchange_dashboard_diag_ptrv6_tooltip_title')}}"
                                                 data-simplepopover-placement="bottom"
@@ -99,8 +99,9 @@
                                                     data-ng-if="ctrl.shouldDisplaySSLRenewValue">
                                             </button>
                                         </div>
-                                        <div class="alert alert-info mt-3 mb-0"
-                                             data-ng-bind="ctrl.getSSLRenewTooltipText()" id="sslRenewal"></div>
+                                        <div class="alert alert-info mt-3 mb-0" id="sslRenewal"
+                                             data-ng-bind="ctrl.messageSSL"
+                                             data-ng-if="ctrl.messageSSL"></div>
                                     </div>
                                 </li>
                                 <li class="oui-tile__item"
@@ -171,7 +172,7 @@
                                         <button class="btn btn-block btn-default" type="button"
                                                 data-i18n-static="exchange_action_order_space_disk"
                                                 data-ng-click="ctrl.orderDiskSpace()"
-                                                data-ng-disabled="ctrl.services.accountTypes.is25g()"
+                                                data-ng-disabled="ctrl.accountTypes.is25g()"
                                                 data-ng-if="ctrl.displayOrderDiskSpace()">
                                         </button>
                                     </div>
@@ -213,9 +214,9 @@
                 </div>
             </div>
 
-            <oui-loader data-ng-if="!ctrl.isGetSharepointDone"></oui-loader>
+            <oui-loader data-ng-if="ctrl.loading.sharePoint"></oui-loader>
 
-            <div class="oui-tile mb-5" data-ng-if="ctrl.isGetSharepointDone && ctrl.sharepoint">
+            <div class="oui-tile mb-5" data-ng-if="!ctrl.loading.sharePoint && ctrl.sharepoint">
                 <h3 class="oui-tile__title"
                     data-i18n-static="exchange_tab_INFORMATIONS_sharepoint"></h3>
                 <div class="oui-tile__body">

@@ -59,7 +59,6 @@
    <translation id="exchange_action_renew_ssl" qtlid="136256">Renouveler le certificat SSL</translation>
    <translation id="exchange_action_renew_ssl_info" qtlid="325844">Une opération d'installation de votre certificat SSL est actuellement en cours, il n'est pas possible de renouveler votre certificat pour le moment.</translation>
    <translation id="exchange_action_renew_ssl_info_expired" qtlid="325857">Le certificat SSL est expiré, vous pouvez le renouveler.</translation>
-   <translation id="exchange_action_renew_ssl_info_normal" qtlid="325870">Le certificat SSL de votre serveur est valide jusqu'au {0}, ce bouton sera disponible un mois avant l'expiration de votre certificat.</translation>
    <translation id="exchange_action_renew_ssl_info_next" qtlid="325883">Le certificat SSL de votre serveur est valide jusqu'au {0}, vous pouvez effectuer le renouvellement.</translation>
    <translation id="exchange_ACTION_export_accounts_button" qtlid="217015">Exporter les comptes en CSV</translation>
    <translation id="exchange_ACTION_export_accounts_office_attached_button" qtlid="404187">Essai gratuit Office 365</translation>
