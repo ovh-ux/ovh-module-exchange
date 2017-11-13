@@ -70,13 +70,15 @@
                     <tbody data-ng-if="!ctrl.loading && ctrl.paginated.domains.length > 0">
                         <tr data-ng-repeat="domain in ctrl.paginated.domains | orderBy:'formattedName':false track by $index">
 
-                            <td colspan="6" data-ng-if="domain.partial">
+                            <td colspan="6"
+                                data-ng-if="domain.partial">
                                 <span class="fa fa-warning mr-2" aria-hidden="true"></span>
                                 <span data-ng-bind="domain.displayName"></span>
                             </td>
 
                             <th class="word-break" scope="row"
-                                data-ng-if="!domain.partial" data-ng-bind="domain.displayName | sliceContent: 150"></th>
+                                data-ng-bind="domain.displayName | sliceContent: 150"
+                                data-ng-if="!domain.partial"></th>
 
                             <td data-ng-if="!domain.partial && domain.domainValidated">
                                 <span data-ng-if="domain.taskInProgress && !domain.partial && ctrl.services.exchangeStates.constructor.isOk(domain) && domain.type === domainTypeAuthoritative"
@@ -90,7 +92,8 @@
                             </td>
 
                             <td class="text-center"
-                                data-ng-bind="domain.accountsCount" data-ng-if="!domain.partial && domain.domainValidated"></td>
+                                data-ng-bind="domain.accountsCount"
+                                data-ng-if="!domain.partial && domain.domainValidated"></td>
 
                             <td class="text-center" colspan="2"
                                 data-ng-if="!domain.partial && !domain.domainValidated">
@@ -162,7 +165,8 @@
                                 </div>
                             </td>
 
-                            <td class="text-center" data-ng-if="!domain.partial">
+                            <td class="text-center"
+                                data-ng-if="!domain.partial">
                                 <button class="btn btn-icon" type="button" title="{{domain.displayName}} {{i18n.table_manage_entry}}"
                                         data-ng-disabled="!ctrl.services.exchangeStates.constructor.isOk(domain)"
                                         data-linkedpopover="exchange/domain/popover/domain.popover.html"
@@ -187,7 +191,7 @@
         </div>
 
         <div class="col-md-3 mt-5 mt-lg-0">
-            <button class="btn btn-block btn-default"
+            <button class="btn btn-block btn-default" type="button"
                     data-i18n-static="exchange_tab_domain_add_domain"
                     data-ng-click="setAction('exchange/domain/add/domain-add', {})">
             </button>
