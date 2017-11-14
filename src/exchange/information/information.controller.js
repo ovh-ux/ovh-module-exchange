@@ -22,15 +22,7 @@ angular
                 sslButton: false
             };
 
-            this.User.getUser()
-                .then((data) => {
-                    try {
-                        this.displayGuides = this.EXCHANGE_CONFIG.URLS.GUIDES.DOCS_HOME[data.ovhSubsidiary];
-                    } catch (exception) {
-                        this.displayGuides = null;
-                    }
-                });
-
+            this.getGuides();
             this.getSharePoint();
             this.retrievingDVCEmails();
             this.loadATooltip();
@@ -38,6 +30,20 @@ angular
             this.loadPtrTooltip();
             this.loadPtrv6Tooltip();
             this.loadATooltip();
+        }
+
+        getGuides () {
+            return this.User.getUser()
+                .then((data) => {
+                    try {
+                        this.displayGuides = this.EXCHANGE_CONFIG.URLS.GUIDES.DOCS_HOME[data.ovhSubsidiary];
+                    } catch (exception) {
+                        this.displayGuides = null;
+                    }
+                })
+                .catch(() => {
+                    this.displayGuides = null;
+                });
         }
 
         getSharePoint () {
@@ -55,7 +61,7 @@ angular
             this.loading.sslButton = true;
             return this.exchangeService.retrievingDVCEmails(this.exchange.organization, this.exchange.domain)
                 .catch((err) => {
-                    const message = err.message || err;
+                    const message = _.get(err, "message", err);
                     if (_.isString(message) && /pending task/i.test(message)) {
                         this.hasSSLTask = true;
                     }
@@ -129,23 +135,25 @@ angular
         }
 
         loadATooltip () {
-            if (_.has(this.exchange, "serverDiagnostic.ip") && this.exchange.serverDiagnostic.ip != null && _.has(this.exchange, "serverDiagnostic.isAValid") && this.exchange.serverDiagnostic.isAValid != null) {
+            const ipv4 = _.get(this.exchange, "serverDiagnostic.ip", "");
+            if (!_.isEmpty(ipv4) && _.get(this.exchange, "serverDiagnostic.isAValid", false)) {
                 this.exchange.serverDiagnostic.aTooltip = this.translator.tr("exchange_dashboard_diag_a_tooltip_ok");
             } else {
-                this.exchange.serverDiagnostic.aTooltip = this.translator.tr("exchange_dashboard_diag_a_tooltip_error", [this.exchange.hostname, this.exchange.serverDiagnostic.ip]);
+                this.exchange.serverDiagnostic.aTooltip = this.translator.tr("exchange_dashboard_diag_a_tooltip_error", [this.exchange.hostname, ipv4]);
             }
         }
 
         loadAaaaTooltip () {
-            if (_.has(this.exchange, "serverDiagnostic.ipV6") && this.exchange.serverDiagnostic.ipV6 != null && _.has(this.exchange, "serverDiagnostic.isAaaaValid") && this.exchange.serverDiagnostic.isAaaaValid != null) {
+            const ipv6 = _.get(this.exchange, "serverDiagnostic.ipV6", "");
+            if (!_.isEmpty(ipv6) && _.get(this.exchange, "serverDiagnostic.isAaaaValid", false)) {
                 this.exchange.serverDiagnostic.aaaaTooltip = this.translator.tr("exchange_dashboard_diag_aaaa_tooltip_ok");
             } else {
-                this.exchange.serverDiagnostic.aaaaTooltip = this.translator.tr("exchange_dashboard_diag_aaaa_tooltip_error", [this.exchange.hostname, this.exchange.serverDiagnostic.ipV6]);
+                this.exchange.serverDiagnostic.aaaaTooltip = this.translator.tr("exchange_dashboard_diag_aaaa_tooltip_error", [this.exchange.hostname, ipv6]);
             }
         }
 
         loadPtrTooltip () {
-            if (_.has(this.exchange, "serverDiagnostic.isPtrValid") && this.exchange.serverDiagnostic.isPtrValid != null) {
+            if (_.get(this.exchange, "serverDiagnostic.isPtrValid", false)) {
                 this.exchange.serverDiagnostic.ptrTooltip = this.translator.tr("exchange_dashboard_diag_ptr_tooltip_ok");
             } else {
                 this.exchange.serverDiagnostic.ptrTooltip = this.translator.tr("exchange_dashboard_diag_ptr_tooltip_error");
@@ -153,7 +161,7 @@ angular
         }
 
         loadPtrv6Tooltip () {
-            if (_.has(this.exchange, "serverDiagnostic.isPtrV6Valid") && this.exchange.serverDiagnostic.isPtrV6Valid != null) {
+            if (_.get(this.exchange, "serverDiagnostic.isPtrV6Valid", false)) {
                 this.exchange.serverDiagnostic.ptrv6Tooltip = this.translator.tr("exchange_dashboard_diag_ptrv6_tooltip_ok");
             } else {
                 this.exchange.serverDiagnostic.ptrv6Tooltip = this.translator.tr("exchange_dashboard_diag_ptrv6_tooltip_error");

@@ -99,9 +99,10 @@
                                                     data-ng-if="ctrl.shouldDisplaySSLRenewValue">
                                             </button>
                                         </div>
-                                        <div class="alert alert-info mt-3 mb-0" id="sslRenewal"
+                                        <div class="alert alert-info mt-3 mb-0" id="sslRenewal" role="alert"
                                              data-ng-bind="ctrl.messageSSL"
-                                             data-ng-if="ctrl.messageSSL"></div>
+                                             data-ng-if="ctrl.messageSSL">
+                                        </div>
                                     </div>
                                 </li>
                                 <li class="oui-tile__item"
