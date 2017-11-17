@@ -10,18 +10,18 @@ angular
                 messaging,
                 translator
             };
+        }
 
-            this.$routerParams = Exchange.getParams();
-            this.currentAccount = navigation.currentActionData.primaryEmailAddress;
+        $onInit () {
+            this.$routerParams = this.services.Exchange.getParams();
+            this.currentAccount = this.services.navigation.currentActionData.primaryEmailAddress;
             this.searchValue = null;
 
             this.services.$scope.updateDelegationRight = () => this.updateDelegationRight();
             this.services.$scope.hasChanged = () => this.hasChanged();
             this.services.$scope.retrievingAccounts = (count, offset) => this.retrievingAccounts(count, offset);
-            this.services.$scope.getIsLoading = () => this.isLoading;
-            this.services.$scope.getAccounts = () => this.accounts;
 
-            this.services.$scope.$on(Exchange.events.accountsChanged, () => this.services.$scope.retrievingAccounts());
+            this.services.$scope.$on(this.services.Exchange.events.accountsChanged, () => this.services.$scope.retrievingAccounts());
 
             this.debouncedRetrievingAccounts = _.debounce(this.retrievingAccounts, 300);
             this.bufferAccounts = [];
@@ -143,7 +143,7 @@ angular
             this.services.messaging.resetMessages();
             this.isLoading = true;
 
-            this.services
+            return this.services
                 .Exchange
                 .retrieveAccountDelegationRight(this.$routerParams.organization, this.$routerParams.productId, this.currentAccount, count, offset, this.searchValue)
                 .then((accounts) => {
