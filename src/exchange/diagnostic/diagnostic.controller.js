@@ -37,7 +37,9 @@ angular
 
             this.state = this.states.REQUESTING_NEW_DIAGNOSTIC;
 
+            this.accountIds = [];
             this.loaders = {
+                accounts: false,
                 diagnosticInProgress: false
             };
 
@@ -56,6 +58,19 @@ angular
             }
 
             this.fetchDiagnosticGuideUrl();
+            this.getDiagnosticAccounts();
+        }
+
+        getDiagnosticAccounts () {
+            this.loaders.accounts = true;
+
+            return this.services.Exchange.getAccountIds({ organizationName: this.exchange.organization, exchangeService: this.exchange.domain })
+                .then((ids) => {
+                    this.accountIds = ids;
+                })
+                .finally(() => {
+                    this.loaders.accounts = false;
+                });
         }
 
         writeDoneMessage () {
@@ -156,8 +171,8 @@ angular
         }
 
         requestNewDiagnostic () {
-            this.email = "";
-            this.password = "";
+            this.email = null;
+            this.password = null;
             this.diagnostic = null;
             this.state = this.states.REQUESTING_NEW_DIAGNOSTIC;
             this.services.diagnostic.clearCache();
