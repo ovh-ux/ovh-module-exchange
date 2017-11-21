@@ -24,6 +24,7 @@ angular
 
             this.$scope.$on(this.exchangeService.events.sslRenewAsked, () => {
                 this.hasSSLTask = true;
+                this.setMessageSSL();
             });
 
             this.getGuides();
