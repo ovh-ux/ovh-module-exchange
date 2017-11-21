@@ -22,6 +22,10 @@ angular
                 sslButton: false
             };
 
+            this.$scope.$on(this.exchangeService.events.sslRenewAsked, () => {
+                this.hasSSLTask = true;
+            });
+
             this.getGuides();
             this.getSharePoint();
             this.retrievingDVCEmails();

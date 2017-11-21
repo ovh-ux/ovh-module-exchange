@@ -53,7 +53,8 @@ angular
                 groupsChanged: "exchange.groups.changed",
                 disclaimersChanged: "exchange.disclaimers.changed",
                 externalcontactsChanged: "exchange.tabs.externalcontacts.changed",
-                publicFoldersChanged: "exchange.tabs.publicFolders.changed"
+                publicFoldersChanged: "exchange.tabs.publicFolders.changed",
+                sslRenewAsked: "exchange.sslRenew.asked"
             };
 
             this.updateValue();
@@ -250,7 +251,8 @@ angular
                 },
                 data: {
                     dcv: dcvEmail
-                }
+                },
+                broadcast: this.events.sslRenewAsked
             });
         }
 
