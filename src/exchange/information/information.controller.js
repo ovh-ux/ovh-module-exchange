@@ -1,55 +1,35 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeTabInformationCtrl", class ExchangeTabInformationCtrl {
-        constructor ($scope, Exchange, navigation, messaging, translator, exchangeVersion, accountTypes, User, EXCHANGE_CONFIG) {
-            this.services = {
-                $scope,
-                Exchange,
-                navigation,
-                messaging,
-                translator,
-                exchangeVersion,
-                accountTypes,
-                User,
-                EXCHANGE_CONFIG
-            };
+        constructor ($scope, accountTypes, Exchange, EXCHANGE_CONFIG, exchangeVersion, messaging, navigation, translator, User) {
+            this.$scope = $scope;
+            this.accountTypes = accountTypes;
+            this.exchangeService = Exchange;
+            this.EXCHANGE_CONFIG = EXCHANGE_CONFIG;
+            this.exchangeVersion = exchangeVersion;
+            this.messaging = messaging;
+            this.navigation = navigation;
+            this.translator = translator;
+            this.User = User;
+        }
 
-            this.exchange = Exchange.value;
-            this.isGetSharepointDone = false;
-            this.$routerParams = Exchange.getParams();
+        $onInit () {
+            this.exchange = this.exchangeService.value;
             this.shouldDisplaySSLRenewValue = false;
             this.hasSSLTask = false;
+            this.loading = {
+                sharePoint: false,
+                sslButton: false
+            };
 
-            Exchange.getSharepointService()
-                .then((sharepoint) => {
-                    this.sharepoint = sharepoint;
-                })
-                .finally(() => {
-                    this.isGetSharepointDone = true;
-                });
+            this.$scope.$on(this.exchangeService.events.sslRenewAsked, () => {
+                this.hasSSLTask = true;
+                this.setMessageSSL();
+            });
 
-            Exchange.retrievingDVCEmails(this.$routerParams.organization, this.$routerParams.productId)
-                .catch((err) => {
-                    const message = err.message || err;
-
-                    if (message === "You can't get dcv email if there is a pending task for installSSL") {
-                        this.hasSSLTask = true;
-                    }
-                })
-                .finally(() => {
-                    this.shouldDisplaySSLRenew();
-                    this.loadingEnableSSLButton = false;
-                });
-
-            User.getUser()
-                .then((data) => {
-                    try {
-                        this.displayGuides = this.services.EXCHANGE_CONFIG.URLS.GUIDES.DOCS_HOME[data.ovhSubsidiary];
-                    } catch (exception) {
-                        this.displayGuides = null;
-                    }
-                });
-
+            this.getGuides();
+            this.getSharePoint();
+            this.retrievingDVCEmails();
             this.loadATooltip();
             this.loadAaaaTooltip();
             this.loadPtrTooltip();
@@ -57,105 +37,139 @@ angular
             this.loadATooltip();
         }
 
+        getGuides () {
+            return this.User.getUser()
+                .then((data) => {
+                    try {
+                        this.displayGuides = this.EXCHANGE_CONFIG.URLS.GUIDES.DOCS_HOME[data.ovhSubsidiary];
+                    } catch (exception) {
+                        this.displayGuides = null;
+                    }
+                })
+                .catch(() => {
+                    this.displayGuides = null;
+                });
+        }
+
+        getSharePoint () {
+            this.loading.sharePoint = true;
+            return this.exchangeService.getSharepointService()
+                .then((sharePoint) => {
+                    this.sharepoint = sharePoint;
+                })
+                .finally(() => {
+                    this.loading.sharePoint = false;
+                });
+        }
+
+        retrievingDVCEmails () {
+            this.loading.sslButton = true;
+            return this.exchangeService.retrievingDVCEmails(this.exchange.organization, this.exchange.domain)
+                .catch((err) => {
+                    const message = _.get(err, "message", err);
+                    if (_.isString(message) && /pending task/i.test(message)) {
+                        this.hasSSLTask = true;
+                    }
+                })
+                .finally(() => {
+                    this.shouldDisplaySSLRenew();
+                    this.setMessageSSL();
+                    this.loading.sslButton = false;
+                });
+        }
+
         sslRenew () {
             if (this.exchange.sslRenewAvailable) {
-                this.services.navigation.setAction("exchange/information/ssl/service-ssl-renew");
+                this.navigation.setAction("exchange/information/ssl/service-ssl-renew");
             }
         }
 
         displayRenewDate () {
-            return this.exchange.expiration && this.services.exchangeVersion.isAfter(2010) && this.services.accountTypes.isDedicated();
+            return this.exchange.expiration && this.exchangeVersion.isAfter(2010) && this.accountTypes.isDedicated();
         }
 
         shouldDisplayMigration2016 () {
-            const isHostedAccount = this.services.accountTypes.isHosted();
+            const isHostedAccount = this.accountTypes.isHosted();
             const isNicAdmin = _.includes(this.exchange.nicType, "ADMIN");
             const isNicBilling = _.includes(this.exchange.nicType, "BILLING");
 
-            return this.services.exchangeVersion.isVersion(2013) && isHostedAccount && (isNicAdmin || isNicBilling);
+            return this.exchangeVersion.isVersion(2013) && isHostedAccount && (isNicAdmin || isNicBilling);
         }
 
         shouldDisplayDiagnostic () {
-            return this.services.exchangeVersion.isAfter(2010);
+            return this.exchangeVersion.isAfter(2010);
         }
 
         shouldDisplaySSLRenew () {
             const now = moment();
             const sslExpirationDate = moment(this.exchange.sslExpirationDate);
-            const aMonthBeforeSSLExpirationDate = sslExpirationDate.subtract(1, "months");
+            const aMonthBeforeSSLExpirationDate = moment(this.exchange.sslExpirationDate).subtract(1, "months");
             const isAlreadyExpired = now.isAfter(sslExpirationDate);
             const canRenewBeforeExpiration = now.isAfter(aMonthBeforeSSLExpirationDate);
 
-            const isDedicatedAccount = this.services.accountTypes.isDedicated();
-            const is2010DedicatedOrProvider = this.services.exchangeVersion.isVersion(2010) && !this.services.accountTypes.isHosted();
+            const isDedicatedAccount = this.accountTypes.isDedicated();
+            const is2010DedicatedOrProvider = this.exchangeVersion.isVersion(2010) && !this.accountTypes.isHosted();
 
             this.shouldDisplaySSLRenewValue = (isDedicatedAccount || is2010DedicatedOrProvider) && (canRenewBeforeExpiration || isAlreadyExpired);
         }
 
-        getSSLRenewTooltipText () {
+        setMessageSSL () {
             const now = moment();
             const sslExpirationDate = moment(this.exchange.sslExpirationDate);
-            const aMonthBeforeSSLExpirationDate = sslExpirationDate.subtract(1, "months");
+            const aMonthBeforeSSLExpirationDate = moment(this.exchange.sslExpirationDate).subtract(1, "months");
 
             if (this.hasSSLTask) {
-                return this.services.translator.tr("exchange_action_renew_ssl_info");
+                this.messageSSL = this.translator.tr("exchange_action_renew_ssl_info");
+            } else if (now.isAfter(sslExpirationDate)) {
+                this.messageSSL = this.translator.tr("exchange_action_renew_ssl_info_expired");
+            } else if (now.isAfter(aMonthBeforeSSLExpirationDate)) {
+                this.messageSSL = this.translator.tr("exchange_action_renew_ssl_info_next", [sslExpirationDate.format("L")]);
+            } else {
+                this.messageSSL = null;
             }
-
-            if (now.isAfter(sslExpirationDate)) {
-                return this.services.translator.tr("exchange_action_renew_ssl_info_expired");
-            }
-
-            if (now.isAfter(aMonthBeforeSSLExpirationDate)) {
-                return this.services.translator.tr("exchange_action_renew_ssl_info_next", [sslExpirationDate.format("L")]);
-            }
-
-            if (now.isBefore(aMonthBeforeSSLExpirationDate)) {
-                return this.services.translator.tr("exchange_action_renew_ssl_info_normal", [sslExpirationDate.format("L")]);
-            }
-
-            return null;
         }
 
-
         displayOrderDiskSpace () {
-            return this.services.exchangeVersion.isVersion(2010) && this.services.accountTypes.isProvider();
+            return this.exchangeVersion.isVersion(2010) && this.accountTypes.isProvider();
         }
 
         orderDiskSpace () {
             if (this.displayOrderDiskSpace()) {
-                this.services.navigation.setAction("exchange/information/disk/service-disk-order-space");
+                this.navigation.setAction("exchange/information/disk/service-disk-order-space");
             }
         }
 
         loadATooltip () {
-            if (_.has(this.exchange, "serverDiagnostic.ip") && this.exchange.serverDiagnostic.ip != null && _.has(this.exchange, "serverDiagnostic.isAValid") && this.exchange.serverDiagnostic.isAValid != null) {
-                this.exchange.serverDiagnostic.aTooltip = this.services.translator.tr("exchange_dashboard_diag_a_tooltip_ok");
+            const ipv4 = _.get(this.exchange, "serverDiagnostic.ip", "");
+            if (!_.isEmpty(ipv4) && _.get(this.exchange, "serverDiagnostic.isAValid", false)) {
+                this.exchange.serverDiagnostic.aTooltip = this.translator.tr("exchange_dashboard_diag_a_tooltip_ok");
             } else {
-                this.exchange.serverDiagnostic.aTooltip = this.services.translator.tr("exchange_dashboard_diag_a_tooltip_error", [this.exchange.hostname, this.exchange.serverDiagnostic.ip]);
+                this.exchange.serverDiagnostic.aTooltip = this.translator.tr("exchange_dashboard_diag_a_tooltip_error", [this.exchange.hostname, ipv4]);
             }
         }
 
         loadAaaaTooltip () {
-            if (_.has(this.exchange, "serverDiagnostic.ipV6") && this.exchange.serverDiagnostic.ipV6 != null && _.has(this.exchange, "serverDiagnostic.isAaaaValid") && this.exchange.serverDiagnostic.isAaaaValid != null) {
-                this.exchange.serverDiagnostic.aaaaTooltip = this.services.translator.tr("exchange_dashboard_diag_aaaa_tooltip_ok");
+            const ipv6 = _.get(this.exchange, "serverDiagnostic.ipV6", "");
+            if (!_.isEmpty(ipv6) && _.get(this.exchange, "serverDiagnostic.isAaaaValid", false)) {
+                this.exchange.serverDiagnostic.aaaaTooltip = this.translator.tr("exchange_dashboard_diag_aaaa_tooltip_ok");
             } else {
-                this.exchange.serverDiagnostic.aaaaTooltip = this.services.translator.tr("exchange_dashboard_diag_aaaa_tooltip_error", [this.exchange.hostname, this.exchange.serverDiagnostic.ipV6]);
+                this.exchange.serverDiagnostic.aaaaTooltip = this.translator.tr("exchange_dashboard_diag_aaaa_tooltip_error", [this.exchange.hostname, ipv6]);
             }
         }
 
         loadPtrTooltip () {
-            if (_.has(this.exchange, "serverDiagnostic.isPtrValid") && this.exchange.serverDiagnostic.isPtrValid != null) {
-                this.exchange.serverDiagnostic.ptrTooltip = this.services.translator.tr("exchange_dashboard_diag_ptr_tooltip_ok");
+            if (_.get(this.exchange, "serverDiagnostic.isPtrValid", false)) {
+                this.exchange.serverDiagnostic.ptrTooltip = this.translator.tr("exchange_dashboard_diag_ptr_tooltip_ok");
             } else {
-                this.exchange.serverDiagnostic.ptrTooltip = this.services.translator.tr("exchange_dashboard_diag_ptr_tooltip_error");
+                this.exchange.serverDiagnostic.ptrTooltip = this.translator.tr("exchange_dashboard_diag_ptr_tooltip_error");
             }
         }
 
         loadPtrv6Tooltip () {
-            if (_.has(this.exchange, "serverDiagnostic.isPtrV6Valid") && this.exchange.serverDiagnostic.isPtrV6Valid != null) {
-                this.exchange.serverDiagnostic.ptrv6Tooltip = this.services.translator.tr("exchange_dashboard_diag_ptrv6_tooltip_ok");
+            if (_.get(this.exchange, "serverDiagnostic.isPtrV6Valid", false)) {
+                this.exchange.serverDiagnostic.ptrv6Tooltip = this.translator.tr("exchange_dashboard_diag_ptrv6_tooltip_ok");
             } else {
-                this.exchange.serverDiagnostic.ptrv6Tooltip = this.services.translator.tr("exchange_dashboard_diag_ptrv6_tooltip_error");
+                this.exchange.serverDiagnostic.ptrv6Tooltip = this.translator.tr("exchange_dashboard_diag_ptrv6_tooltip_error");
             }
         }
     });
