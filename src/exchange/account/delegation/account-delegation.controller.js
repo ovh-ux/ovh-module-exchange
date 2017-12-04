@@ -19,11 +19,10 @@ angular
 
             this.services.$scope.updateDelegationRight = () => this.updateDelegationRight();
             this.services.$scope.hasChanged = () => this.hasChanged();
-            this.services.$scope.retrievingAccounts = (count, offset) => this.retrievingAccounts(count, offset);
+            this.services.$scope.getAccounts = (count, offset) => this.getAccounts(count, offset);
 
-            this.services.$scope.$on(this.services.Exchange.events.accountsChanged, () => this.services.$scope.retrievingAccounts());
+            this.services.$scope.$on(this.services.Exchange.events.accountsChanged, () => this.services.$scope.getAccounts());
 
-            this.debouncedRetrievingAccounts = _.debounce(this.retrievingAccounts, 300);
             this.bufferAccounts = [];
         }
 
@@ -65,12 +64,12 @@ angular
         }
 
         onSearchValueChange () {
-            this.debouncedRetrievingAccounts();
+            this.services.$scope.$broadcast("paginationServerSide.loadPage", 1, "delegationsStep1Table");
         }
 
         resetSearch () {
             this.searchValue = null;
-            this.debouncedRetrievingAccounts();
+            this.services.$scope.$broadcast("paginationServerSide.loadPage", 1, "delegationsStep1Table");
         }
 
         constructResult (data) {
@@ -139,9 +138,9 @@ angular
             return !_.isEmpty(listOfChanges.sendRights) || !_.isEmpty(listOfChanges.fullAccessRights) || !_.isEmpty(listOfChanges.sendOnBehalfToRights);
         }
 
-        retrievingAccounts (count, offset) {
+        getAccounts (count, offset) {
             this.services.messaging.resetMessages();
-            this.isLoading = true;
+            this.loading = true;
 
             return this.services
                 .Exchange
@@ -165,7 +164,7 @@ angular
                     this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ACCOUNTS_error_message"), failure);
                 })
                 .finally(() => {
-                    this.isLoading = false;
+                    this.loading = false;
                 });
         }
 
