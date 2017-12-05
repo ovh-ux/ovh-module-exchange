@@ -166,7 +166,7 @@
                                       data-i18n-static="exchange_tab_ACCOUNTS_state_CREATING"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isCreating(account)"></span>
                                 <span class="label label-danger"
-                                      data-i18n-static="exchange_tab_ACCOUNTS_state_DELETING"
+                                      data-ng-bind="ctrl.removeAccountInsteadOfReset ? i18n.exchange_tab_ACCOUNTS_state_DELETING : i18n.exchange_tab_ACCOUNTS_state_RESETTING"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isDeleting(account)"></span>
                                 <span class="label label-warning"
                                       data-i18n-static="exchange_tab_ACCOUNTS_state_SUSPENDED"
