@@ -12,7 +12,7 @@
             <p data-ng-bind-html="tr('exchange_ACTION_delegation_step1_intro', [ctrl.currentAccount])"></p>
 
             <div class="alert alert-warning" role="alert"
-                 data-ng-if="!ctrl.isLoading && ctrl.accounts.list.messages.length > 0">
+                 data-ng-if="!ctrl.loading && ctrl.accounts.list.messages.length > 0">
                 <div>
                     <strong data-i18n-static="exchange_tab_ACCOUNTS_warning"></strong>
                     <span data-i18n-static="exchange_tab_ACCOUNTS_partial"></span>
@@ -26,12 +26,13 @@
                     <div class="input-group">
                         <input type="text" class="form-control" id="delegationSearch" name="delegationSearch" placeholder="{{i18n.exchange_tab_ACCOUNTS_table_email}}"
                                data-ng-change="ctrl.onSearchValueChange()"
-                               data-ng-disabled="ctrl.isLoading"
-                               data-ng-model="ctrl.searchValue">
+                               data-ng-disabled="ctrl.loading"
+                               data-ng-model="ctrl.searchValue"
+                               data-ng-model-options="{ debounce: 800 }">
                         <div class="input-group-btn" data-ng-if="ctrl.searchValue">
                             <button class="btn btn-default" type="button" aria-label="{{i18n.common_cancel}}"
                                     data-ng-click="ctrl.resetSearch()"
-                                    data-ng-disabled="ctrl.isLoading">
+                                    data-ng-disabled="ctrl.loading">
                                 <span class="fa fa-times" aria-hidden="true"></span>
                             </button>
                         </div>
@@ -53,20 +54,20 @@
                         </tr>
                     </thead>
 
-                    <tbody data-ng-if="ctrl.isLoading">
+                    <tbody data-ng-if="ctrl.loading">
                         <tr>
                             <td class="loader text-center" colspan="4"></td>
                         </tr>
                     </tbody>
 
-                    <tbody data-ng-if="!ctrl.isLoading && ctrl.accounts.list.results.length === 0 && ctrl.accounts.list.messages.length === 0">
+                    <tbody data-ng-if="!ctrl.loading && ctrl.accounts.list.results.length === 0 && ctrl.accounts.list.messages.length === 0">
                         <tr>
                             <td class="text-center" colspan="4"
                                 data-i18n-static="exchange_tab_ACCOUNTS_table_empty"></td>
                         </tr>
                     </tbody>
 
-                    <tbody data-ng-show="!ctrl.isLoading">
+                    <tbody data-ng-show="!ctrl.loading">
                         <tr data-ng-repeat="account in (ctrl.accounts.list.results | orderBy: 'primaryEmailDisplayName':false) track by $index">
                             <td class="word-break"
                                 data-ng-bind="account.primaryEmailDisplayName"></td>
@@ -156,10 +157,10 @@
             </div>
 
             <div class="clearfix"
-                 data-pagination-server-side
-                 data-pagination-server-side-function="retrievingAccounts"
+                 data-pagination-server-side="delegationsStep1Table"
+                 data-pagination-server-side-function="getAccounts"
                  data-pagination-server-side-paginated-stuff="ctrl.accounts"
-                 data-pagination-server-side-table-loading="ctrl.isLoading">
+                 data-pagination-server-side-table-loading="ctrl.loading">
             </div>
         </div>
 
@@ -196,10 +197,10 @@
             </table>
 
             <div class="clearfix"
-                 data-pagination-server-side
+                 data-pagination-server-side="delegationsStep2Table"
                  data-pagination-server-side-function="retrievingAccounts"
                  data-pagination-server-side-paginated-stuff="ctrl.accounts"
-                 data-pagination-server-side-table-loading="ctrl.isLoading">
+                 data-pagination-server-side-table-loading="ctrl.loading">
             </div>
         </div>
     </div>
