@@ -193,6 +193,13 @@
                         <li class="oui-tile__item">
                             <div class="oui-tile__definition">
                                 <strong class="d-block"
+                                        data-i18n-static="exchange_tab_INFORMATIONS_server"></strong>
+                                    <span data-ng-bind="ctrl.exchange.hostname"></span>
+                            </div>
+                        </li>
+                        <li class="oui-tile__item">
+                            <div class="oui-tile__definition">
+                                <strong class="d-block"
                                         data-i18n-static="exchange_tab_INFORMATIONS_webmail"></strong>
                                 <a class="word-break" target="_blank" title="{{i18n.exchange_tab_INFORMATIONS_webmail}} ({{i18n.common_newtab}})"
                                    data-ng-href="https://{{ctrl.exchange.hostname}}">
