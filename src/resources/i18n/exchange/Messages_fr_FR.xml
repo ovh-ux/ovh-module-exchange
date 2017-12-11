@@ -144,6 +144,7 @@
    <translation id="exchange_tab_ACCOUNTS_state_OK" qtlid="447638">Ok</translation>
    <translation id="exchange_tab_ACCOUNTS_state_CREATING" qtlid="168185">Création</translation>
    <translation id="exchange_tab_ACCOUNTS_state_DELETING" qtlid="59699">Suppression</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_RESETTING">Réinitialisation</translation>
    <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="171188">Ouverture en cours</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Suspendu</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Suspension en cours</translation>
