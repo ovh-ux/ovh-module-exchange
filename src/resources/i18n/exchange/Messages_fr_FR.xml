@@ -59,7 +59,7 @@
    <translation id="exchange_action_renew_ssl" qtlid="136256">Renouveler le certificat SSL</translation>
    <translation id="exchange_action_renew_ssl_info" qtlid="325844">Une opération d'installation de votre certificat SSL est actuellement en cours, il n'est pas possible de renouveler votre certificat pour le moment.</translation>
    <translation id="exchange_action_renew_ssl_info_expired" qtlid="325857">Le certificat SSL est expiré, vous pouvez le renouveler.</translation>
-   <translation id="exchange_action_renew_ssl_info_next">Le certificat SSL expire le {0}, vous pouvez le renouveler dés à présent.</translation>
+   <translation id="exchange_action_renew_ssl_info_next" qtlid="447612">Le certificat SSL expire le {0}, vous pouvez le renouveler dés à présent.</translation>
    <translation id="exchange_ACTION_export_accounts_button" qtlid="217015">Exporter les comptes en CSV</translation>
    <translation id="exchange_ACTION_export_accounts_office_attached_button" qtlid="404187">Essai gratuit Office 365</translation>
    <translation id="exchange_ACTION_export_accounts_doing_button" qtlid="217028">Export en cours...</translation>
@@ -126,7 +126,7 @@
    <translation id="exchange_tab_ACCOUNTS_table_alias" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ACCOUNTS_table_group" qtlid="59507">Groupe</translation>
    <translation id="exchange_tab_ACCOUNTS_table_outlook" qtlid="24427">Outlook</translation>
-   <translation id="exchange_tab_ACCOUNTS_table_status" qtlid="8230">Etat</translation>
+   <translation id="exchange_tab_ACCOUNTS_table_status" qtlid="447625">Etat</translation>
    <translation id="exchange_tab_ACCOUNTS_table_settings" qtlid="4406">Configuration</translation>
    <translation id="exchange_tab_ACCOUNTS_type_ALL" qtlid="69173">Tous</translation>
    <translation id="exchange_tab_ACCOUNTS_type_BASIC" qtlid="48986">Basic</translation>
@@ -141,7 +141,7 @@
    <translation id="exchange_tab_ACCOUNTS_outlook_false" qtlid="136308">Sans</translation>
    <translation id="exchange_tab_ACCOUNTS_action_add_exchange" qtlid="139169">Commander des comptes</translation>
    <translation id="exchange_tab_ACCOUNTS_action_add_extern" qtlid="136334">Ajouter un contact externe</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_OK" qtlid="31522">Ok</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_OK" qtlid="447638">Ok</translation>
    <translation id="exchange_tab_ACCOUNTS_state_CREATING" qtlid="168185">Création</translation>
    <translation id="exchange_tab_ACCOUNTS_state_DELETING" qtlid="59699">Suppression</translation>
    <translation id="exchange_tab_ACCOUNTS_state_RESETTING">Réinitialisation</translation>
@@ -151,7 +151,7 @@
    <translation id="exchange_tab_ACCOUNTS_state_MIGRATING" qtlid="186713">Migration en cours</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SPAM" qtlid="70409">Spam</translation>
 
-   <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="31522">Ok</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="447651">Ok</translation>
    <translation id="exchange_tab_ACCOUNTS_state_creating" qtlid="168185">Création</translation>
    <translation id="exchange_tab_ACCOUNTS_state_deleting" qtlid="59699">Suppression</translation>
    <translation id="exchange_tab_ACCOUNTS_state_reopening" qtlid="171188">Ouverture en cours</translation>
@@ -364,9 +364,9 @@
    <translation id="exchange_tab_domain_diagnostic_mx_intro_ovh" qtlid="192890">Votre domaine est hébergé chez OVH, vous pouvez configurer le champ MX de votre domaine {0} de la manière suivante</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_label_champ" qtlid="192903">Champ MX</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_label_champs" qtlid="46780">Champs MX</translation>
-   <translation id="exchange_tab_domain_diagnostic_mx_no_antispam" qtlid="319895">Si vous utilisez le mode non-autoritatif (Exchange + autre système de messagerie) avec un système de messagerie non hébergé par OVH :</translation>
+   <translation id="exchange_tab_domain_diagnostic_mx_no_antispam" qtlid="447664">Si vous utilisez le mode non-autoritatif (Exchange + autre système de messagerie) avec un système de messagerie non hébergé par OVH :</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_no_antispam_config" qtlid="192929">Priorité : <strong>{0}</strong>; cible : <strong>{1}</strong></translation>
-   <translation id="exchange_tab_domain_diagnostic_mx_antispam" qtlid="319908">Si vous utilisez le mode autoritatif (Exchange uniquement) ou non-autoritatif avec un système de messagerie hébergé (e-mail mutualisé) par OVH :</translation>
+   <translation id="exchange_tab_domain_diagnostic_mx_antispam" qtlid="447677">Si vous utilisez le mode autoritatif (Exchange uniquement) ou non-autoritatif avec un système de messagerie hébergé (e-mail mutualisé) par OVH :</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_antispam_config" qtlid="192955">Priorité : <strong>{0}</strong>; cible : <strong>{1}</strong><br /> Priorité : <strong>{2}</strong>; cible : <strong>{3}</strong><br /> Priorité : <strong>{4}</strong>; cible : <strong>{5}</strong><br /> Priorité : <strong>{6}</strong>; cible : <strong>{7}</strong><br /></translation>
    <translation id="exchange_tab_domain_diagnostic_mx_no_ovh" qtlid="349101">Si le domaine n'est pas géré par le même identifiant client que le service Exchange ou si votre domaine n'est pas hébergé chez OVH, la configuration automatique n'est pas possible. Veuillez créer le champ MX sur ce domaine manuellement en donnant les mêmes informations que ci-dessous.</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_recap" qtlid="192981">Un champ MX va être ajouté dans la zone DNS de votre domaine. Attention, les champs MX pre-existants vont être effacés.</translation>
@@ -383,7 +383,7 @@
    <translation id="exchange_tab_domain_diagnostic_srv_toolbox_ok" qtlid="137491">Configuration automatique effectuée</translation>
    <translation id="exchange_tab_domain_error_message" qtlid="144045">Une erreur est survenue lors du chargement de vos domaines.</translation>
    <translation id="exchange_tab_domain_diagnostic_cname" qtlid="129847">CNAME</translation>
-   <translation id="exchange_tab_domain_status" qtlid="8230">Etat</translation>
+   <translation id="exchange_tab_domain_status" qtlid="447690">Etat</translation>
    <translation id="exchange_tab_domain_task_in_progress" qtlid="2690">Tâche en cours</translation>
    <translation id="exchange_tab_domain_validation" qtlid="33802">Validation</translation>
    <translation id="exchange_tab_domain_validation_doing" qtlid="136646">Validation de domaine en cours</translation>
@@ -393,7 +393,7 @@
    <translation id="exchange_tab_domain_add_domain" qtlid="8602">Ajouter un domaine</translation>
    <translation id="exchange_tab_domain_delete_domain" qtlid="137556">Retirer ce domaine des services Exchange</translation>
    <translation id="exchange_tab_domain_delete_domain_accounts_warning" qtlid="148227">Ce domaine ne peut pas être supprimé car il est encore utilisé par un ou plusieurs compte Exchange</translation>
-   <translation id="exchange_tab_domain_NON_AUTHORITATIVE" qtlid="136672">Non-autoritatif</translation>
+   <translation id="exchange_tab_domain_NON_AUTHORITATIVE" qtlid="447703">Non-autoritatif</translation>
    <translation id="exchange_tab_domain_AUTHORITATIVE" qtlid="58807">Autoritatif</translation>
    <translation id="exchange_tab_domain_warning" qtlid="136347">Attention!</translation>
    <translation id="exchange_tab_domain_partial" qtlid="137569">Certains domaines n'ont pu être chargés correctement. Veuillez rafraîchir la page afin de résoudre le problème.</translation>
@@ -553,7 +553,7 @@
 
    <translation id="exchange_tab_domain_add_step1_main_domain" qtlid="191070">Domaine principal d'une organisation</translation>
    <translation id="exchange_tab_domain_add_step1_main_domain_tooltip" qtlid="191083">Domaine principal de l'organisation</translation>
-   <translation id="exchange_tab_domain_add_step1_new_organization_intro" qtlid="191096">Le domaine de votre organisation va être <strong>{0}</strong></translation>
+   <translation id="exchange_tab_domain_add_step1_new_organization_intro" qtlid="447716">Le domaine de votre organisation va être <strong>{0}</strong></translation>
    <translation id="exchange_tab_domain_add_step1_new_organization_placeholder" qtlid="191109">Nom de l'organisation</translation>
    <translation id="exchange_tab_domain_add_step2_main_domain" qtlid="191122">Domaine principal</translation>
    <translation id="exchange_tab_domain_add_step2_organization" qtlid="32278">Organisation</translation>
@@ -571,13 +571,13 @@
    <translation id="exchange_tab_domain_step1_helpwizard_subdomain" qtlid="397559">Pour ajouter un sous-domaine d'un de vos domaines OVH, vous pouvez cocher "Saisir un nom de domaine non géré par votre compte OVH" et le saisir dans le champ correspondant.</translation>
    <translation id="exchange_tab_domain_add_step2_which_domain_type" qtlid="137998">De quel type de domaine <span class="italic">{0}</span> s'agit-il ?</translation>
    <translation id="exchange_tab_domain_add_step2_auth_intro" qtlid="140859">Votre domaine <span class="italic">{0}</span> va être configuré en mode autoritatif.</translation>
-   <translation id="exchange_tab_domain_add_step2_non_auth_intro" qtlid="366372">Votre domaine <span class="italic">{0}</span> va être configuré en mode non-autoritatif.</translation>
+   <translation id="exchange_tab_domain_add_step2_non_auth_intro" qtlid="447729">Votre domaine <span class="italic">{0}</span> va être configuré en mode non-autoritatif.</translation>
    <translation id="exchange_tab_domain_add_step2bis_intro" qtlid="316944">Sélectionnez le mode de votre domaine :</translation>
 
    <translation id="exchange_tab_domain_add_step2_srv_checkbox" qtlid="138011">Configurer automatiquement le SRV (autodiscover)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_checkbox" qtlid="139585">Configurer automatiquement le MX (réception des e-mails)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_tooltip" qtlid="140209">Attention, configurer automatiquement le MX peut impacter la réception des e-mails préalablement configurés sur ce nom de domaine.</translation>
-   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="273909">Cette option permettra à votre client de messagerie, comme par exemple Outlook ou Mail, de découvrir automatiquement vos paramètres de connexion.</translation>
+   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="447742">Cette option permettra à votre client de messagerie, comme par exemple Outlook ou Mail, de découvrir automatiquement vos paramètres de connexion.</translation>
    <translation id="exchange_tab_domain_add_step3_srv_confirmation" qtlid="137816">Configuration SRV</translation>
    <translation id="exchange_tab_domain_add_step3_mx_confirmation" qtlid="137829">Configuration MX</translation>
    <translation id="exchange_tab_domain_add_step3_mx_replay" qtlid="316957">Serveur e-mail cible</translation>
@@ -590,15 +590,15 @@
    <translation id="exchange_tab_domain_modify_failure" qtlid="137075">Une erreur est survenue lors de la mise à jour du domaine.</translation>
    <translation id="exchange_tab_domain_modify_in_progress" qtlid="137088">Passage vers {0} en cours</translation>
    <translation id="exchange_tab_domain_inverse_NON_AUTHORITATIVE" qtlid="58807">Autoritatif</translation>
-   <translation id="exchange_tab_domain_inverse_AUTHORITATIVE" qtlid="136672">Non-autoritatif</translation>
+   <translation id="exchange_tab_domain_inverse_AUTHORITATIVE" qtlid="447755">Non-autoritatif</translation>
    <translation id="exchange_tab_domain_mode_AUTHORITATIVE" qtlid="316970">Autoritatif (Exchange uniquement)</translation>
-   <translation id="exchange_tab_domain_mode_NON_AUTHORITATIVE" qtlid="316983">Non-autoritatif (Exchange + autre service de messagerie)</translation>
+   <translation id="exchange_tab_domain_mode_NON_AUTHORITATIVE" qtlid="447768">Non-autoritatif (Exchange + autre service de messagerie)</translation>
    <translation id="exchange_tab_domain_AUTHORITATIVE_info" qtlid="324847">Le mode autoritatif ne permet pas l'usage d'un autre système de messagerie avec des comptes Exchange. Ce mode permet l'activation de l'antispam Vade Secure.</translation>
-   <translation id="exchange_tab_domain_NON_AUTHORITATIVE_info" qtlid="324860">Le mode non-autoritatif permet une cohabitation entre Exchange et un autre service de messagerie. L'antispam Vade Secure est compatible si les comptes pop/imap sont hébergés chez OVH (mxplan ou offre mutualisée), il faut indiquer dans ce cas mx1.mail.ovh.net en serveur e-mail cible.</translation>
+   <translation id="exchange_tab_domain_NON_AUTHORITATIVE_info" qtlid="447781">Le mode non-autoritatif permet une cohabitation entre Exchange et un autre service de messagerie. L'antispam Vade Secure est compatible si les comptes pop/imap sont hébergés chez OVH (mxplan ou offre mutualisée), il faut indiquer dans ce cas mx1.mail.ovh.net en serveur e-mail cible.</translation>
    <translation id="exchange_tab_domain_target_mail_server_label" qtlid="316957">Serveur e-mail cible</translation>
    <translation id="exchange_tab_domain_noovh_mx_info" qtlid="317126">Les modifications MX et SRV seront à réaliser manuellement dans votre zone DNS. Vous pouvez retrouver les informations nécessaires dans la section domaines associés, une fois la validation CNAME effectuée.</translation>
    <translation id="exchange_tab_domain_modify_domain" qtlid="137101">Configuration domaine</translation>
-   <translation id="exchange_tab_domain_modify_domain_tooltip">L'antispam Vade Secure est compatible avec le mode non-autoritatif (uniquement si vos comptes POP/IMAP sont hébergés par OVH). Dans ce cas, il est conseillé d'utiliser : <strong>{0}</strong>, <strong>{1}</strong>, <strong>{2}</strong> et <strong>{3}</strong><br/><br/> Si vous utilisez le mode non-autoritatif avec des comptes e-mail non hébergés par OVH, vous devez utiliser : <strong>{4}</strong> (voir section domaines associés)</translation>
+   <translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="444667">L'antispam Vade Secure est compatible avec le mode non-autoritatif (uniquement si vos comptes POP/IMAP sont hébergés par OVH). Dans ce cas, il est conseillé d'utiliser : <strong>{0}</strong>, <strong>{1}</strong>, <strong>{2}</strong> et <strong>{3}</strong><br/><br/> Si vous utilisez le mode non-autoritatif avec des comptes e-mail non hébergés par OVH, vous devez utiliser : <strong>{4}</strong> (voir section domaines associés)</translation>
    <translation id="exchange_tab_domain_modify_title" qtlid="137920">Etes-vous sûr de vouloir modifier le domaine suivant de votre service Exchange ?</translation>
    <translation id="exchange_tab_domain_modify_loop_warning" qtlid="210319">Attention, boucle infinie !</translation>
    <translation id="exchange_tab_domain_modify_domain_warning" qtlid="210332">Domaine invalide.</translation>
@@ -643,7 +643,7 @@
    <translation id="exchange_tab_DISCLAIMER_table_empty" qtlid="152258">Vous n'avez pas de signature.</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_content" qtlid="152271">Contenu</translation>
    <translation id="exchange_tab_DISCLAIMER_associated_domains" qtlid="133110">Domaine associé</translation>
-   <translation id="exchange_tab_DISCLAIMER_state_header" qtlid="8230">Etat</translation>
+   <translation id="exchange_tab_DISCLAIMER_state_header" qtlid="447794">Etat</translation>
    <translation id="exchange_tab_DISCLAIMER_state_doing_tooltip" qtlid="143863">Une tâche est planifiée ou en cours d'exécution</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_outside_only" qtlid="152284">Externe uniquement</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_outside_only_tooltip" qtlid="152297">Signature utilisée uniquement pour les envois vers l'extérieur</translation>
@@ -683,7 +683,7 @@
    <translation id="exchange_ACTION_add_disclaimer_option_OtherPhoneNumber" qtlid="152479">Téléphone 2</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_PagerNumber" qtlid="152492">Numéro de pager</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_PhoneNumber" qtlid="152505">Numéro de téléphone</translation>
-   <translation id="exchange_ACTION_add_disclaimer_option_State" qtlid="8230">Etat</translation>
+   <translation id="exchange_ACTION_add_disclaimer_option_State" qtlid="447807">Etat</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Street" qtlid="152518">Rue</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Title" qtlid="16469">Titre</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_UserLogonName" qtlid="46792">Identifiant</translation>
@@ -738,7 +738,7 @@
    <translation id="exchange_tab_RESOURCES_table_capacity" qtlid="4334">Capacité</translation>
    <translation id="exchange_tab_RESOURCES_table_allow_conflicts" qtlid="156407">Conflit autorisé</translation>
    <translation id="exchange_tab_RESOURCES_table_email" qtlid="69509">E-mail</translation>
-   <translation id="exchange_tab_RESOURCES_table_state" qtlid="8230">Etat</translation>
+   <translation id="exchange_tab_RESOURCES_table_state" qtlid="447820">Etat</translation>
    <translation id="exchange_tab_RESOURCES_table_state_task" qtlid="156420">Tâche en cours</translation>
    <translation id="exchange_tab_RESOURCES_action_add_resource_account" qtlid="63710">Ajouter un compte de ressource</translation>
    <translation id="exchange_tab_RESOURCES_type_EQUIPMENT" qtlid="82063">Équipement</translation>
@@ -868,7 +868,7 @@
    <translation id="exchange_tab_GROUPS_all_table_address" qtlid="11315">Adresse e-mail</translation>
    <translation id="exchange_tab_GROUPS_all_table_manager" qtlid="81487">Administrateurs</translation>
    <translation id="exchange_tab_GROUPS_all_table_user" qtlid="32206">Contacts</translation>
-   <translation id="exchange_tab_GROUPS_all_table_status" qtlid="8230">Etat</translation>
+   <translation id="exchange_tab_GROUPS_all_table_status" qtlid="447833">Etat</translation>
    <translation id="exchange_tab_GROUPS_all_table_empty" qtlid="150346">Vous n'avez pas de groupe</translation>
    <translation id="exchange_tab_GROUPS_all_error_message" qtlid="150359">Une erreur est survenue lors du chargement de votre liste de groupes.</translation>
    <translation id="exchange_tab_GROUPS_all_add_ml_button" qtlid="150372">Créer un groupe de contact</translation>
@@ -1067,7 +1067,7 @@
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_externalEmailAddress" qtlid="30430">Adresse</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_displayName" qtlid="80922">Nom affiché</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_creationDate" qtlid="4358">Créé le</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state" qtlid="8230">Etat</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state" qtlid="447846">Etat</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_CREATING" qtlid="26227">En création</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_DELETING" qtlid="133929">En suppression</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_REOPENING" qtlid="171279">En réouverture</translation>
@@ -1350,7 +1350,7 @@
    <translation id="exchange_tab_SHARED_header_path" qtlid="6838">Chemin</translation>
    <translation id="exchange_tab_SHARED_header_type" qtlid="2642">Type</translation>
    <translation id="exchange_tab_SHARED_header_access" qtlid="201510">Permissions d'accès</translation>
-   <translation id="exchange_tab_SHARED_header_status" qtlid="8230">Etat</translation>
+   <translation id="exchange_tab_SHARED_header_status" qtlid="447859">Etat</translation>
    <translation id="exchange_tab_SHARED_header_access_PLAIN" qtlid="61656">Répertoire</translation>
    <translation id="exchange_tab_SHARED_header_access_CALENDAR" qtlid="201523">Calendrier</translation>
    <translation id="exchange_tab_SHARED_header_access_CONTACTS" qtlid="32206">Contacts</translation>

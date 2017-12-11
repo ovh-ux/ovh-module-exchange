@@ -246,7 +246,7 @@
                       data-ng-if="ctrl.canAddAccount()"></span>
             </button>
             <button class="btn btn-block btn-default" type="button"
-                    data-ng-click="setAction('exchange/account/export-as-csv/account-export-as-csv', { filterType : filterType, search : search.value, total : accounts.count, exchange : exchange })"
+                    data-ng-click="setAction('exchange/account/export-as-csv/account-export-as-csv', { filterType : ctrl.filterType, search : ctrl.search.value, total : ctrl.accounts.count, exchange : ctrl.exchange })"
                     data-ng-disabled="(ctrl.accounts && ctrl.accounts.list.messages.length) || ctrl.loading">
                 <span data-ng-bind="tr('exchange_ACTION_export_accounts_doing_button')"
                       data-ng-if="ctrl.loadingAction.exportCsv"></span>
