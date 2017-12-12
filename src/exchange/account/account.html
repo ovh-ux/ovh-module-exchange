@@ -190,8 +190,6 @@
                                       data-ng-if="!account.readyToUse">
                                 </button>      
 
-                                      {{ctrl.services.exchangeStates.constructor.isReadyToUse(account)}} / {{account.readyToUse}}
-
                                 <button class="btn btn-danger btn-xs" type="button"
                                         data-i18n-static="exchange_tab_ACCOUNTS_state_SPAM"
                                         data-ng-if="account.spamDetected && ctrl.services.exchangeStates.constructor.isOk(account)"
