@@ -152,6 +152,13 @@
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Suspension en cours</translation>
    <translation id="exchange_tab_ACCOUNTS_state_MIGRATING" qtlid="186713">Migration en cours</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SPAM" qtlid="70409">Spam</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_NOT_ACTIVE">Inactif</translation>
+   <translation id="exchange_tab_ACCOUNTS_action_ACTIVATE_tooltip">Cliquez pour activer votre compte</translation>
+
+   <translation id="exchange_tab_ACCOUNTS_activate_account_title">Activation compte Exchange</translation>   
+   <translation id="exchange_tab_ACCOUNTS_activate_account_intro">Le compte <span class="bold">{0}</span> n’est pas encore activé. Une fois cette opération effectuée, il bénéficiera d’une configuration par défaut.</translation>
+   <translation id="exchange_tab_ACCOUNTS_activate_account_success_message">L’activation de votre compte s’est déroulée avec succès.</translation>
+   <translation id="exchange_tab_ACCOUNTS_activate_account_error_message">Une erreur est survenue lors de l’activation de votre compte.</translation>
 
    <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="447651">Ok</translation>
    <translation id="exchange_tab_ACCOUNTS_state_creating" qtlid="168185">Création</translation>

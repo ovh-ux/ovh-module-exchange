@@ -490,6 +490,23 @@ angular
         }
 
         /**
+         * Activate Exchange account
+         */
+        activateExchangeOnAccount (serviceName, account) {
+            return this.services
+                .OvhHttp
+                .post(`/msServices/${serviceName}/account/${account}/exchange/configure`, {
+                    rootPath: "2api",
+                    data: { }
+                }).then((receivedData) => {
+                    this.resetAccounts();
+                    this.resetTasks();
+
+                    return receivedData;
+                });
+        }
+
+        /**
          * Get order list
          */
         getOrderList (organization, serviceName) {

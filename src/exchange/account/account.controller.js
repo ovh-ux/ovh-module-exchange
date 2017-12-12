@@ -179,6 +179,12 @@ angular
             }
         }
 
+        activateAcount (account) {
+            if (!account.readyToUse) {
+                this.services.navigation.setAction("exchange/account/activate/activate-account", angular.copy(account));
+            }
+        }
+
         shouldDisplayAccounts () {
             return this.services.ExchangeAccountService.shouldDisplayAccounts;
         }
