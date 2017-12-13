@@ -124,6 +124,29 @@ angular
         WE: "https://www.ovh.co.uk/emails/hosted-exchange-2013/guides/",
         WS: "https://www.ovh.co.uk/emails/hosted-exchange-2013/guides/"
     })
+    .constant("OFFICE_365_URL", {
+        CA: "https://www.ovh.co.uk/office-365/",
+        CZ: "https://www.ovh.cz/office-365/",
+        DE: "https://www.ovh.de/office-365/",
+        EN: "https://www.ovh.co.uk/office-365/",
+        ES: "https://www.ovh.es/office-365/",
+        EU: "https://www.ovh.co.uk/office-365/",
+        FI: "https://www.ovh-hosting.fi/office-365/",
+        FR: "https://www.ovh.com/fr/office-365/",
+        GB: "https://www.ovh.co.uk/office-365/",
+        IE: "https://www.ovh.ie/office-365/",
+        IT: "https://www.ovh.it/office-365/",
+        LT: "https://www.ovh.lt/office-365/",
+        MA: "https://www.ovh.com/fr/office-365/",
+        NL: "https://www.ovh.nl/office-365/",
+        PL: "https://www.ovh.pl/office-365/",
+        PT: "https://www.ovh.pt/office-365/",
+        QC: "https://www.ovh.com/fr/office-365/",
+        SN: "https://www.ovh.sn/office-365/",
+        TN: "https://www.ovh.com/tn/office-365/",
+        WE: "https://www.ovh.co.uk/office-365/",
+        WS: "https://www.ovh.co.uk/office-365/"
+    })
     .constant("EXCHANGE_CONFIG", {
         URLS: {
             GUIDES: {

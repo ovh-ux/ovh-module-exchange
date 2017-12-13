@@ -1,11 +1,11 @@
 angular
     .module("Module.exchange.services")
-    .service("officeAttached", class OfficeAttached {
+    .service("officeOffer", class OfficeOffer {
         constructor (Exchange, OvhHttp) {
             this.services = { Exchange, OvhHttp };
         }
 
-        getOfficeAttachSubscription () {
+        getOfficeOfferSubscription () {
             const serviceName = this.services.Exchange.getValue().domain;
 
             return this.services
@@ -17,7 +17,6 @@ angular
                 })
                 .then((data) => {
                     this.canSubscribe = data.officeTenantServiceName == null;
-
                     return this.canSubscribe;
                 });
         }

@@ -1,0 +1,162 @@
+<div class="row" data-ng-controller="ExchangeOfficeOfferCtrl as ctrl">
+
+    <div class="col-md-12" data-ng-show="ctrl.displayStep('step1')">
+        <oui-loader data-ng-if="ctrl.loading.step1.general"></oui-loader>
+
+        <div data-ng-show="!ctrl.loading.step1.general">
+
+            <button class="oui-button oui-button_link oui-button_icon-left" type="button" data-ng-click="ctrl.displayDashboard()">
+                <span class="oui-icon oui-icon-chevron-left" aria-hidden="true"></span>
+                <span data-i18n-static="common_back"></span>
+            </button>
+            <h4 class="border px-4 py-4">
+                <span class="top float-right ovh-font ovh-font-0x4" data-i18n-static="exchange_office_1M_promotion_button_title_extra"></span>
+                <span data-i18n-static="exchange_office_1M_promotion_main_title"></span>
+            </h4>
+
+            <p data-ng-bind-html="tr('exchange_office_1M_promotion_intro', [ctrl.office_365_website_url, ctrl.maxNumberOfAccounts])"></p>
+            <h6 data-i18n-static="exchange_office_1M_promotion_intro_table"></h6>
+
+            <form class="form-inline d-md-flex justify-content-md-end mb-3">
+                <div class="form-group mr-md-2" data-ng-if="ctrl.services.exchangeVersion.isVersion(2010)">
+                    <label class="sr-only" for="officeAttachedTypeFormInput" data-i18n-static="exchange_office_1M_promotion_account_types"></label>
+                    <div class="oui-select d-md-inline-block align-middle m-0">
+                        <select class="oui-select__input" id="officeAttachedTypeFormInput" data-ng-change="ctrl.setFilter()" data-ng-model="ctrl.filterType" data-ng-options="tr('exchange_tab_ACCOUNTS_type_' + type) for type in ctrl.accountTypes">
+                                        </select>
+                        <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="sr-only" for="officeAttachedSearchFormInput" data-i18n-static="exchange_office_1M_promotion_search_form"></label>
+
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="officeAttachedSearchFormInput" maxlength="256" placeholder="{{i18n.exchange_tab_ACCOUNTS_table_email}}" data-ng-change="ctrl.onSearchValueChange()" data-ng-model="ctrl.searchValue">
+                        <div class="input-group-btn" data-ng-if="ctrl.searchValue">
+                            <button class="btn btn-default" type="button" aria-label="{{i18n.common_cancel}}" data-ng-click="ctrl.resetSearch()">
+                                <span class="fa fa-times" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                        <span class="input-group-addon" data-ng-if="!ctrl.searchValue">
+                            <span class="fa fa-search" aria-hidden="true"></span>
+                        </span>
+                    </div>
+                </div>
+            </form>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th class="min-width" scope="col">
+                                <input type="checkbox" id="checkbox_select_all"
+                                    data-ng-change="ctrl.selectAll()"
+                                    data-ng-model="ctrl.allSelected">
+                        </th>
+                        <th scope="col" data-i18n-static="exchange_tab_ACCOUNT"></th>
+                    </tr>
+                </thead>
+
+                <tbody data-ng-if="ctrl.loading.step1.table">
+                    <tr>                       
+                        <td class="loader text-center" colspan="2"></td>
+                    </tr>
+                </tbody>
+
+                <tbody data-ng-if="!ctrl.loading.step1.table && ctrl.accounts.list.results.length === 0 && ctrl.accounts.list.messages.length === 0">
+                    <tr>
+                        <td class="text-center" colspan="2">
+                            <span data-i18n-static="exchange_tab_ACCOUNTS_table_empty" data-ng-if="!ctrl.searchValue && (!ctrl.filterType || ctrl.filterType === 'ALL')"></span>
+                            <span data-ng-bind="tr('exchange_tab_ACCOUNTS_table_empty_type_' + ctrl.filterType)" data-ng-if="!ctrl.searchValue && ctrl.filterType && ctrl.filterType !== 'ALL'"></span>
+                            <span data-i18n-static="exchange_tab_ACCOUNTS_table_empty_search" data-ng-if="ctrl.searchValue"></span>
+                        </td>
+                    </tr>
+                </tbody>
+
+                <tbody data-ng-if="!ctrl.loading.step1.table && (ctrl.accounts.list.results.length > 0 || ctrl.accounts.list.messages.length > 0)">
+                    <tr data-ng-repeat="account in (ctrl.accounts.list.results | orderBy:'primaryEmailAddress':false) track by $index">
+                        <td>
+                            <input type="checkbox" id="checkbox_{{account.primaryEmailAddress}}" 
+                                   data-ng-change="ctrl.countNumberOfCheckedAccounts(account)" 
+                                   data-ng-model="ctrl.selectedCheckboxes[account.primaryEmailDisplayName]">
+                        </td>
+                        <td>
+                            <label class="oui-label m-0" for="checkbox_{{account.primaryEmailAddress}}" data-ng-bind="account.primaryEmailDisplayName"></label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="clearfix" data-pagination-server-side="officeAttachedTable" data-pagination-server-side-function="retrieveAccounts" data-pagination-server-side-paginated-stuff="accounts" data-pagination-server-side-table-loading="loading.step1.table">
+            </div>
+
+            </br>
+            <div class="oui-navbar">
+                <p class="px-5 py-4 white left" data-ng-bind-html="tr('exchange_office_1M_promotion_selected_accounts', [ctrl.numberOfSelectedCheckboxes, ctrl.maxNumberOfAccounts])" data-ng-if="!ctrl.loading.step1.table && (ctrl.accounts.list.results.length > 0 || ctrl.accounts.list.messages.length > 0)">
+                </p>
+                <button class="btn btn-primary text-wrap float-right" type="button" data-ng-disabled="!ctrl.services.$scope.isStep1Valid" data-ng-click="ctrl.goToStep2()">
+                    <strong class="d-block" data-i18n-static="exchange_office_1M_promotion_selection_button_caption"></strong>                
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12" data-ng-show="ctrl.displayStep('step2')">
+        <button class="oui-button oui-button_link oui-button_icon-left" type="button" data-ng-click="ctrl.goToStep1()">
+            <span class="oui-icon oui-icon-chevron-left" aria-hidden="true"></span>
+            <span data-i18n-static="common_back"></span>
+        </button>
+        <h4 class="border px-4 py-4">
+            <span class="top float-right ovh-font ovh-font-0x4" data-i18n-static="exchange_office_1M_promotion_button_title_extra"></span>
+            <span data-i18n-static="exchange_office_1M_promotion_main_title"></span>
+        </h4>
+
+        <p data-ng-bind-html="tr('exchange_office_1M_promotion_intro', [ctrl.office_365_website_url, ctrl.maxNumberOfAccounts])"></p>
+
+        <oui-loader data-ng-if="ctrl.loading.step2.general"></oui-loader>
+
+        <div data-ng-if="!ctrl.loading.step2.general">
+            <h6 data-i18n-static="exchange_office_1M_promotion_confirmation_table"></h6>
+            <p class="block col-md-12 oui-loader_inline">
+                <span class="py-3" data-ng-bind-html="tr('exchange_office_1M_promotion_confirmation_header', [ctrl.numberOfSelectedCheckboxes, ctrl.accountsTotalNumber])"></span>
+                <button class="oui-button oui-button_link align-right my-0 align-middle" type="button" data-ng-click="ctrl.goToStep1()">                   
+                    <span data-i18n-static="exchange_office_1M_promotion_selection_change_link"></span>
+                </button>
+            </p>
+
+            <table class="table">
+                <tbody>
+                    <tr data-ng-repeat="account in ctrl.loadSelectedAccounts() track by $index">
+                        <td class="min-width" scope="col">
+                            <input type="checkbox" checked=checked disabled>
+                        </td>
+                        <td>
+                            <label class="oui-label m-0" data-ng-bind="account"></label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            </br>
+            <div class="oui-checkbox">
+                <input type="checkbox" class="oui-checkbox__input" id="confirmationCheckbox" data-ng-model="ctrl.confirmationCheckbox">
+                <label class="oui-checkbox__label-container" for="confirmationCheckbox">
+                    <span class="oui-checkbox__label"
+                            data-i18n-static="exchange_office_1M_promotion_legal_conditions_caption"></span>
+                    <span class="oui-checkbox__icon">
+                        <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
+                        <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
+                        <span class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></span>
+                    </span>
+                </label>
+            </div>
+
+            <div>
+                <button class="btn btn-primary text-wrap" type="button" data-ng-disabled="!ctrl.confirmationCheckbox" data-ng-click="ctrl.onWizardFinish()">
+                    <strong class="d-block" data-i18n-static="exchange_office_1M_promotion_order_button_caption"></strong>                
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+</div>

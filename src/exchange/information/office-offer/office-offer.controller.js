@@ -1,8 +1,8 @@
 angular
     .module("Module.exchange.controllers")
-    .controller("OfficeAttachedDialogCtrl", class OfficeAttachedDialogCtrl {
-        constructor ($scope, Exchange, $window, ovhUserPref, messaging, translator, navigation, exchangeVersion, User) {
-            this.services = { $scope, Exchange, $window, ovhUserPref, messaging, translator, navigation, exchangeVersion, User };
+    .controller("ExchangeOfficeOfferCtrl", class ExchangeOfficeOfferCtrl {
+        constructor ($scope, Exchange, ExchangeInformationService, $window, ovhUserPref, messaging, translator, navigation, exchangeVersion, User, OFFICE_365_URL) {
+            this.services = { $scope, Exchange, ExchangeInformationService, $window, ovhUserPref, messaging, translator, navigation, exchangeVersion, User, OFFICE_365_URL };
 
             this.loading = {
                 step1: {
@@ -19,6 +19,9 @@ angular
             this.maxNumberOfAccounts = 25;
             this.selectedCheckboxes = {};
             this.selectedAccounts = [];
+            this.numberOfSelectedCheckboxes = 0;
+            this.allSelected = false;
+            this.isInitialLoad = true;
             this.exchange = Exchange.value;
 
             this.searchValue = null;
@@ -27,29 +30,23 @@ angular
             this.accountTypes = ["ALL", "BASIC", "STANDARD", "ENTERPRISE"];
             this.filterType = "ALL";
             this.tr = $scope.tr;
+            this.OFFICE_365_URL = OFFICE_365_URL;
 
-            $scope.onWizardCancel = () => this.onWizardCancel();
-            $scope.onWizardFinish = () => this.onWizardFinish();
-            $scope.onWizardLoad = () => this.onWizardLoad();
             $scope.loadSelectedAccounts = () => this.loadSelectedAccounts();
 
             $scope.loading = this.loading;
             $scope.retrieveAccounts = (count, offset) => this.retrieveAccounts(count, offset);
-            $scope.isStep1Valid = this.isStep1Valid;
-            $scope.isStep2Valid = () => this.isStep2Valid();
         }
 
         $onInit () {
+            this.currentStep = "step1";
             this.services
                 .User
                 .getUser()
                 .then((user) => {
                     this.ovhSubsidiary = user.ovhSubsidiary;
+                    this.office_365_website_url = this.getOfficeLink(user.ovhSubsidiary);
                 });
-        }
-
-        onWizardCancel () {
-            this.services.navigation.resetAction();
         }
 
         resetSearch () {
@@ -58,24 +55,10 @@ angular
         }
 
         onWizardFinish () {
-            this.services.navigation.resetAction();
-
             let displayName = `${this.exchange.displayName} Office`;
             if (this.exchange.displayName.match(/.*hosted.*/i) || this.exchange.displayName.match(/.*exchange.*/i) || this.exchange.displayName.match(/.*private.*/i)) {
                 displayName = this.exchange.displayName.replace(/hosted/i, "Office").replace(/exchange/i, "Office").replace(/private/i, "Office");
             }
-
-            const alreadyKnownAccounts = [];
-            const accountsToSave = [];
-
-            _.forEach(this.selectedAccounts, (alreadyKnownAccount) => {
-                if (!alreadyKnownAccounts.includes(alreadyKnownAccount.primaryEmailDisplayName)) {
-                    alreadyKnownAccounts.push(alreadyKnownAccount.primaryEmailDisplayName);
-                    accountsToSave.push(alreadyKnownAccount);
-                }
-            });
-
-            this.selectedAccounts = accountsToSave;
 
             const answer = [
                 {
@@ -126,6 +109,7 @@ angular
 
             this.services.User.getUrlOfEndsWithSubsidiary("express_order").then((expressOrderUrl) => {
                 this.services.$window.open(`${expressOrderUrl}#/new/express/resume?products=${JSURL.stringify(answer)}`, "_blank");
+                this.displayDashboard();
             });
         }
 
@@ -141,83 +125,48 @@ angular
             this.services.$scope.isStep1Valid = this.numberOfSelectedCheckboxes <= this.maxNumberOfAccounts && this.numberOfSelectedCheckboxes > 0;
         }
 
-        onWizardLoad () {
-            this.services
-                .Exchange
-                .getAccounts(this.maxNumberOfAccounts, 0, this.searchValue, false, null)
-                .then((accounts) => {
-                    let i = 0;
-
-                    _.each(accounts.list.results, (account) => {
-                        const id = account.primaryEmailDisplayName;
-
-                        if (_.isEmpty(this.selectedCheckboxes[id])) {
-                            if (i < this.maxNumberOfAccounts) {
-                                this.selectedCheckboxes[id] = true;
-                                this.selectedAccounts.push(account);
-                            } else {
-                                this.selectedCheckboxes[id] = false;
-                            }
-                        }
-
-                        i++;
-                    });
-                })
-                .finally(() => {
-                    this.countNumberOfCheckedAccounts();
-                });
-        }
-
         retrieveAccounts (count, offset) {
             this.services.messaging.resetMessages();
             this.offset = offset;
             this.loading.step1.table = true;
             const filterType = this.filterType === "ALL" ? null : this.filterType;
 
-            this.updateAccounts(null);
-
             this.services
                 .Exchange
                 .getAccounts(count, offset, this.searchValue, false, filterType)
                 .then((accounts) => {
-                    this.updateAccounts(accounts);
+                    this.accounts = accounts;
+                    this.services.$scope.accounts = accounts;
+
+                    this.accountsTotalNumber = accounts.ids.length;
                 })
                 .catch((failure) => {
+                    this.accounts = null;
+                    this.services.$scope.accounts = null;
                     this.services.messaging.writeError(this.tr("exchange_tab_ACCOUNTS_error_message"), failure);
                 })
                 .finally(() => {
+                    this.preSelectFirtsAccount();
                     this.loading.step1.table = false;
-                    this.countNumberOfCheckedAccounts();
                 });
         }
 
-        updateAccounts (accounts) {
-            this.accounts = accounts;
-
-            if (!_.isEmpty(accounts)) {
-                const alreadyPresentAccounts = this.selectedAccounts.map((account) => account.primaryEmailDisplayName);
-                this.selectedAccounts = this.selectedAccounts.concat(accounts.list.results.filter((account) => !alreadyPresentAccounts.includes(account.primaryEmailDisplayName)));
-            }
-
-            this.services.$scope.accounts = accounts;
+        getOfficeLink (ovhSubsidiary) {
+            return _.get(this.OFFICE_365_URL, ovhSubsidiary, "FR");  // "FR" as default value
         }
 
-        countNumberOfCheckedAccounts () {
-            if (!_.isEmpty(this.accounts)) {
-                const currentDisplayedAccountEmailAddresses = this.accounts.list.results.map((account) => account.primaryEmailDisplayName);
-                const selectedAccountsCurrentBeingDisplayed = this.selectedAccounts.filter((currentSelectedAccount) => currentDisplayedAccountEmailAddresses.includes(currentSelectedAccount.primaryEmailDisplayName));
+        countNumberOfCheckedAccounts (item) {
+            if (_.isObject(this.accounts) && !_.isEmpty(this.accounts)) {
+                const selectedAccountsEmails = this.loadSelectedAccounts();
+                if (_(item).isObject()) {
+                    if (selectedAccountsEmails.includes(item.primaryEmailDisplayName)) {
+                        this.selectedAccounts.push(item);
+                    } else {
+                        this.selectedAccounts = this.selectedAccounts.filter((currentAccount) => currentAccount.primaryEmailDisplayName !== item.primaryEmailDisplayName);
+                    }
+                }
 
-                const currentlySelectedAccountsEmailAddresses = Object.keys(this.selectedCheckboxes).filter((key) => this.selectedCheckboxes[key]);
-                const currentlyDislayedAccountsThatAreSelected = this.accounts.list.results.filter((account) => currentlySelectedAccountsEmailAddresses.includes(account.primaryEmailDisplayName));
-
-                const alreadyPresentAccounts = currentlyDislayedAccountsThatAreSelected.map((account) => account.primaryEmailDisplayName);
-                this.selectedAccounts = currentlyDislayedAccountsThatAreSelected.concat(selectedAccountsCurrentBeingDisplayed.filter((account) => !alreadyPresentAccounts.includes(account.primaryEmailDisplayName)));
-
-                const currentlyNotSelectedAccountsEmailAddresses = Object.keys(this.selectedCheckboxes).filter((key) => !this.selectedCheckboxes[key]);
-
-                this.selectedAccounts = this.selectedAccounts.filter((account) => !currentlyNotSelectedAccountsEmailAddresses.includes(account.primaryEmailDisplayName));
-
-                this.numberOfSelectedCheckboxes = currentlySelectedAccountsEmailAddresses.length;
+                this.numberOfSelectedCheckboxes = selectedAccountsEmails.length;
                 this.step1IsValid();
             }
         }
@@ -225,11 +174,52 @@ angular
         loadSelectedAccounts () {
             const keys = Object.keys(this.selectedCheckboxes);
             const accounts = _.filter(keys, (key) => this.selectedCheckboxes[key]);
-
             return accounts;
+        }
+
+        preSelectFirtsAccount () {
+            if (this.isInitialLoad && this.accountsTotalNumber > 0) {
+                this.selectedCheckboxes[this.services.$scope.accounts.list.results[0].primaryEmailDisplayName] = true;
+                this.countNumberOfCheckedAccounts(this.services.$scope.accounts.list.results[0]);
+                this.isInitialLoad = false;
+            }
+        }
+
+        selectAll () {
+            const i = 0;
+            if (this.allSelected) {
+                this.selectedCheckboxes = {};
+                this.selectedAccounts = [];
+                this.numberOfSelectedCheckboxes = 0;
+                for (const email of this.services.$scope.accounts.ids) {
+                    this.selectedCheckboxes[email] = true;
+                    this.selectedAccounts.push({ primaryEmailDisplayName: email });
+                }
+                this.numberOfSelectedCheckboxes = this.selectedAccounts.length;
+            } else {
+                this.selectedCheckboxes = {};
+                this.selectedAccounts = [];
+                this.numberOfSelectedCheckboxes = 0;
+            }
         }
 
         isStep2Valid () {
             return this.confirmationCheckbox;
+        }
+
+        displayDashboard () {
+            this.services.ExchangeInformationService.displayDashboard();
+        }
+
+        goToStep1 () {
+            this.currentStep = "step1";
+        }
+
+        goToStep2 () {
+            this.currentStep = "step2";
+        }
+
+        displayStep (step) {
+            return this.currentStep === step;
         }
     });

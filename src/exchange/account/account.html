@@ -166,7 +166,7 @@
                                       data-i18n-static="exchange_tab_ACCOUNTS_state_CREATING"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isCreating(account)"></span>
                                 <span class="label label-danger"
-                                      data-ng-bind="ctrl.removeAccountInsteadOfReset ? i18n.exchange_tab_ACCOUNTS_state_DELETING : i18n.exchange_tab_ACCOUNTS_state_RESETTING"
+                                      data-i18n-static="exchange_tab_ACCOUNTS_state_DELETING"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isDeleting(account)"></span>
                                 <span class="label label-warning"
                                       data-i18n-static="exchange_tab_ACCOUNTS_state_SUSPENDED"
@@ -233,11 +233,6 @@
         </div>
 
         <div class="col-md-3 mt-5 mt-lg-0">
-            <button class="btn btn-block btn-default" type="button"
-                    data-ng-bind="tr('exchange_ACTION_export_accounts_office_attached_button')"
-                    data-ng-click="ctrl.subscribeToOfficeAttached()"
-                    data-ng-if="ctrl.canSubscribeToOfficeAttached">
-            </button>
             <button class="btn btn-block btn-default" type="button"
                     data-ng-click="ctrl.newAccount()">
                 <span data-i18n-static="exchange_ACTION_order_accounts_button"
