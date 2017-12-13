@@ -81,6 +81,10 @@
    <translation id="exchange_office_attached_alert_modale_confirmation_header" qtlid="404304">Vous allez activer l'offre Office 365 sur les {0} comptes suivants :</translation>
    <translation id="exchange_office_attached_alert_modale_confirmation_checkbox" qtlid="404317">En cochant cette case, je confirme vouloir souscrire à l'offre pour les comptes ci-dessus et je confirme avoir compris que l'offre sera reconduite automatiquement si je ne l'annule pas.</translation>
 
+<!-- OFFICE - One month free promotion -->
+   <translation id="exchange_office_1M_promotion_button_title">Essai gratuit d'un mois Office 365</translation>
+   <translation id="exchange_office_1M_promotion_button_title_extra">Offre promotionnelle</translation>
+
 <!-- ########################################## -->
 <!-- TABS -->
    <translation id="exchange_tab_INFORMATION" qtlid="27115">Informations générales</translation>
