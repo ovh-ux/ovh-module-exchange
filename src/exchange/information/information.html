@@ -1,7 +1,7 @@
 <div class="container-fluid px-0" data-ng-controller="ExchangeTabInformationCtrl as ctrl">
     <office-attached></office-attached>
 
-    <div class="row">
+    <div class="row" data-ng-if="ctrl.shouldDisplayDashboard()">
         <div class="col-md-9">
             <div class="row d-md-flex">
                 <div class="col-sm-6 mb-5">
@@ -64,25 +64,16 @@
                                         </div>
                                     </div>
                                 </li>
-
-
-
-
                                 <li class="oui-tile__item">
                                     <div class="oui-tile__definition">
                                         <div class="d-flew w-100">
-                                            <button class="btn btn-default ml-auto my-auto text-wrap right" type="button" data-ng-click="setAction('exchange/information/migration-2016/service-migration-2016', ctrl.exchange)" data-ng-if="ctrl.shouldDisplayMigration2016()">
+                                            <button class="btn btn-default ml-auto my-auto text-wrap right" type="button" data-ng-click="ctrl.displayOfficeOffer()">
                                                 <strong class="d-block" data-i18n-static="exchange_office_1M_promotion_button_title"></strong>
                                                 <span class="text-right ovh-font ovh-font-0x8" data-i18n-static="exchange_office_1M_promotion_button_title_extra"></span>
                                             </button>
                                         </div>
                                     </div>
                                 </li>
-
-
-
-
-
                                 <li class="oui-tile__item" data-ng-if="ctrl.displayRenewDate()">
                                     <div class="oui-tile__definition">
                                         <strong class="d-block" data-i18n-static="exchange_dashboard_expiration"></strong>
@@ -202,5 +193,8 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="row" data-ng-if="ctrl.shouldDisplayOfficeOffer()" data-ng-include="'exchange/information/office-offer/office-offer.html'">
     </div>
 </div>

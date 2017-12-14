@@ -1,12 +1,12 @@
 angular
     .module("Module.exchange.services")
     .service("ExchangeAccountService", class ExchangeAccountService {
-        displayAccounts () {
+        displayAccounts() {
             this.shouldDisplayAccounts = true;
             this.shouldDisplayAliases = false;
         }
 
-        displayAliases (selectedAccount) {
+        displayAliases(selectedAccount) {
             this.selectedAccount = selectedAccount;
             this.shouldDisplayAccounts = false;
             this.shouldDisplayAliases = true;
