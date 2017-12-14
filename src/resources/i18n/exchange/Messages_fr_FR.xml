@@ -85,8 +85,14 @@
    <translation id="exchange_office_1M_promotion_button_title">Essai gratuit d'un mois Office 365</translation>
    <translation id="exchange_office_1M_promotion_button_title_extra">Offre promotionnelle</translation>
    <translation id="exchange_office_1M_promotion_main_title">Activer l'offre promotionnelle Office 365</translation>
-   <translation id="exchange_office_1M_promotion_intro">Obtenez un mois gratuit d'Office 365 sur un maximumde 25 comptes Exchange.</translation>
+   <translation id="exchange_office_1M_promotion_intro">Obtenez un mois gratuit d'Office 365  sur un maximum de {0} comptes Exchange.</translation>
    <translation id="exchange_office_1M_promotion_intro_table">Sélectionnez les comptes emails de votre choix</translation>
+   <translation id="exchange_office_1M_promotion_confirmation_table">Confirmez les comptes e-mail</translation>
+   <translation id="exchange_office_1M_promotion_confirmation_header"> {0} sur {1} comptes e-mail sélectionnés</translation>
+   <translation id="exchange_office_1M_promotion_selection_button_caption">Sélectionner</translation>
+   <translation id="exchange_office_1M_promotion_selection_change_link">Modifier mes choix</translation>
+   <translation id="exchange_office_1M_promotion_legal_conditions_caption">En cochant cette case, je confirme vouloir souscrire à l'offre pour les comptes ci-dessus et je confirme avoir compris que l'offre sera reconduite automatiquement si je ne l'annule pas. (Vous aurez un rappel X jours avant la fin de l'offre promotionnelle.)</translation> 
+   <translation id="exchange_office_1M_promotion_order_button_caption">Profiter de l'offre</translation>
 
 <!-- ########################################## -->
 <!-- TABS -->
