@@ -93,7 +93,7 @@ angular
                 },
                 {
                     label: "login",
-                    values: [account.primaryEmailDisplayName.split(/@/)[0]]
+                    values: [account.primaryEmailDisplayName ? account.primaryEmailDisplayName.split(/@/)[0] : ""]
                 }
                 ],
                 option: [],
@@ -102,6 +102,7 @@ angular
 
             this.services.User.getUrlOfEndsWithSubsidiary("express_order").then((expressOrderUrl) => {
                 this.services.$window.open(`${expressOrderUrl}#/new/express/resume?products=${JSURL.stringify(answer)}`, "_blank");
+                this.displayDashboard();
             });
         }
 
@@ -164,7 +165,6 @@ angular
                 this.selectedAccounts = currentlyDislayedAccountsThatAreSelected.concat(selectedAccountsCurrentBeingDisplayed.filter((account) => !alreadyPresentAccounts.includes(account.primaryEmailDisplayName)));
 
                 const currentlyNotSelectedAccountsEmailAddresses = Object.keys(this.selectedCheckboxes).filter((key) => !this.selectedCheckboxes[key]);
-
                 this.selectedAccounts = this.selectedAccounts.filter((account) => !currentlyNotSelectedAccountsEmailAddresses.includes(account.primaryEmailDisplayName));
 
                 this.numberOfSelectedCheckboxes = currentlySelectedAccountsEmailAddresses.length;

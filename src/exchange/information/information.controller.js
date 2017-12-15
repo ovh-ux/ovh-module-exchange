@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeTabInformationCtrl", class ExchangeTabInformationCtrl {
-        constructor ($scope, accountTypes, Exchange, ExchangeInformationService, EXCHANGE_CONFIG, exchangeVersion, messaging, navigation, translator, User) {
+        constructor ($scope, accountTypes, Exchange, ExchangeInformationService, EXCHANGE_CONFIG, exchangeVersion, messaging, navigation, translator, User, officeAttached) {
             this.$scope = $scope;
             this.accountTypes = accountTypes;
             this.exchangeService = Exchange;
@@ -12,6 +12,7 @@ angular
             this.navigation = navigation;
             this.translator = translator;
             this.User = User;
+            this.officeAttachedService = officeAttached;
         }
 
         $onInit () {
@@ -37,6 +38,11 @@ angular
             this.loadPtrTooltip();
             this.loadPtrv6Tooltip();
             this.loadATooltip();
+
+            this.officeAttachedService.getOfficeAttachSubscription()
+                .then((officeTenantServiceName) => {
+                    this.shouldDisplayOfficeAttached = !!officeTenantServiceName;
+                });
         }
 
         getGuides () {

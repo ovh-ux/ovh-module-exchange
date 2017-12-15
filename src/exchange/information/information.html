@@ -64,11 +64,13 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="oui-tile__item">
-                                    <div class="oui-tile__definition">
-                                        <button class="btn btn-block btn-default ml-auto my-auto text-wrap" type="button" data-ng-click="ctrl.displayOfficeOffer()">
+                                <li class="oui-tile__item" data-ng-if="ctrl.shouldDisplayOfficeAttached">
+                                    <div class="oui-tile__definition panel-body">
+                                        <button class="btn btn-block btn-default ml-auto my-auto" type="button" data-ng-click="ctrl.displayOfficeOffer()">
                                             <strong class="d-block" data-i18n-static="exchange_office_1M_promotion_button_title"></strong>
-                                            <span class="text-right right bottom ovh-font ovh-font-0x8" data-i18n-static="exchange_office_1M_promotion_button_title_extra"></span>
+                                            <div class="text-right ml-auto my-auto">
+                                                <span class="bottom ovh-font ovh-font-0x8" data-i18n-static="exchange_office_1M_promotion_button_title_extra"></span>
+                                            </div>
                                         </button>
                                     </div>
                                 </li>

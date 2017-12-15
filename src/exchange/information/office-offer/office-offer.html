@@ -9,10 +9,13 @@
                 <span class="oui-icon oui-icon-chevron-left" aria-hidden="true"></span>
                 <span data-i18n-static="common_back"></span>
             </button>
-            <h2 data-ng-bind-html="tr('exchange_office_1M_promotion_main_title')"></h2>
+            <h4 class="border px-4 py-4">
+                <span class="top float-right ovh-font ovh-font-0x4" data-i18n-static="exchange_office_1M_promotion_button_title_extra"></span>
+                <span data-i18n-static="exchange_office_1M_promotion_main_title"></span>
+            </h4>
 
             <p data-ng-bind-html="tr('exchange_office_1M_promotion_intro', [ctrl.maxNumberOfAccounts])"></p>
-            <strong data-i18n-static="exchange_office_1M_promotion_intro_table"></strong>
+            <h6 data-i18n-static="exchange_office_1M_promotion_intro_table"></h6>
 
             <form class="form-inline d-md-flex justify-content-md-end mb-3">
                 <div class="form-group mr-md-2" data-ng-if="ctrl.services.exchangeVersion.isVersion(2010)">
@@ -79,10 +82,11 @@
             <div class="clearfix" data-pagination-server-side="officeAttachedTable" data-pagination-server-side-function="retrieveAccounts" data-pagination-server-side-paginated-stuff="accounts" data-pagination-server-side-table-loading="loading.step1.table">
             </div>
 
-            <div>
-                <p data-ng-bind-html="tr('exchange_office_attached_alert_modale_selected_accounts', [ctrl.numberOfSelectedCheckboxes, ctrl.maxNumberOfAccounts])" data-ng-if="!ctrl.loading.step1.table && (ctrl.accounts.list.results.length > 0 || ctrl.accounts.list.messages.length > 0)">
+            </br>
+            <div class="oui-navbar">
+                <p class="px-5 py-4 white left" data-ng-bind-html="tr('exchange_office_attached_alert_modale_selected_accounts', [ctrl.numberOfSelectedCheckboxes, ctrl.maxNumberOfAccounts])" data-ng-if="!ctrl.loading.step1.table && (ctrl.accounts.list.results.length > 0 || ctrl.accounts.list.messages.length > 0)">
                 </p>
-                <button class="btn btn-primary text-wrap" type="button" data-ng-disabled="!ctrl.services.$scope.isStep1Valid" data-ng-click="ctrl.goToStep2()">
+                <button class="btn btn-primary text-wrap float-right" type="button" data-ng-disabled="!ctrl.services.$scope.isStep1Valid" data-ng-click="ctrl.goToStep2()">
                     <strong class="d-block" data-i18n-static="exchange_office_1M_promotion_selection_button_caption"></strong>                
                 </button>
             </div>
@@ -94,18 +98,20 @@
             <span class="oui-icon oui-icon-chevron-left" aria-hidden="true"></span>
             <span data-i18n-static="common_back"></span>
         </button>
-        <h2 data-ng-bind-html="tr('exchange_office_1M_promotion_main_title')"></h2>
+        <h4 class="border px-4 py-4">
+            <span class="top float-right ovh-font ovh-font-0x4" data-i18n-static="exchange_office_1M_promotion_button_title_extra"></span>
+            <span data-i18n-static="exchange_office_1M_promotion_main_title"></span>
+        </h4>
 
         <p data-ng-bind-html="tr('exchange_office_1M_promotion_intro', [ctrl.maxNumberOfAccounts])"></p>
-
 
         <oui-loader data-ng-if="ctrl.loading.step2.general"></oui-loader>
 
         <div data-ng-if="!ctrl.loading.step2.general">
-            <p data-i18n-static="exchange_office_1M_promotion_confirmation_table"></p>
-            <p class="block col-md-12">
-                <span data-ng-bind-html="tr('exchange_office_1M_promotion_confirmation_header', [ctrl.numberOfSelectedCheckboxes, ctrl.accountsTotalNumber])"></span>
-                <button class="oui-button oui-button_link oui-button_icon-left align-right right" type="button" data-ng-click="ctrl.goToStep1()">                   
+            <h6 data-i18n-static="exchange_office_1M_promotion_confirmation_table"></h6>
+            <p class="block col-md-12 oui-loader_inline">
+                <span class="py-3" data-ng-bind-html="tr('exchange_office_1M_promotion_confirmation_header', [ctrl.numberOfSelectedCheckboxes, ctrl.accountsTotalNumber])"></span>
+                <button class="oui-button oui-button_link align-right my-0 align-middle" type="button" data-ng-click="ctrl.goToStep1()">                   
                     <span data-i18n-static="exchange_office_1M_promotion_selection_change_link"></span>
                 </button>
             </p>
