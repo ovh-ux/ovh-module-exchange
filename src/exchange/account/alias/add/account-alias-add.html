@@ -8,20 +8,14 @@
         <div data-wizard-step
              data-wizard-step-valid="aliasIsValid()">
 
-            <div class="loader text-center" data-ng-if="!ctrl.availableDomains"></div>
+            <oui-loader data-ng-if="!ctrl.availableDomains"></oui-loader>
 
             <div data-ng-if="ctrl.availableDomains">
-                <p>
-                    <span data-i18n-static="exchange_tab_ALIAS_add_alias_intro"></span>
-                    <strong data-ng-bind="::ctrl.selectedAccount.primaryEmailDisplayName"></strong>
-                </p>
-                <div class="form-group" data-ng-class="{'has-error': ctrl.takenEmailError}">
+                <p data-ng-bind-html="tr('exchange_tab_ALIAS_add_alias_intro', [ctrl.selectedAccount.primaryEmailDisplayName])"></p>
+                <div class="form-group"
+                     data-ng-class="{'has-error': ctrl.takenEmailError}">
                     <div class="input-group">
-                        <input type="text"
-                               class="form-control"
-                               name="aliasInput"
-                               maxlength="256"
-                               placeholder="{{i18n.exchange_tab_ALIAS_add_alias_placeholder}}"
+                        <input type="text" class="form-control" maxlength="256" name="aliasInput" placeholder="{{i18n.exchange_tab_ALIAS_add_alias_placeholder}}"
                                data-ng-change="ctrl.checkTakenEmails()"
                                data-ng-model="ctrl.model.alias"
                                data-ng-pattern="/^[-\w]+((\.|\+)[-\w]+)*$/">
@@ -29,7 +23,8 @@
                         <select class="form-control"
                                 data-ng-change="ctrl.checkTakenEmails()"
                                 data-ng-model="ctrl.model.domain"
-                                data-ng-options="domain.displayName for domain in ctrl.availableDomains | orderBy:'formattedName'"></select>
+                                data-ng-options="domain.displayName for domain in ctrl.availableDomains | orderBy:'formattedName'">
+                        </select>
                     </div>
                     <small class="help-block"
                            data-i18n-static="exchange_tab_ALIAS_taken_error_message"
@@ -44,10 +39,12 @@
 
             <dl class="dl-horizontal">
                 <dt data-i18n-static="exchange_tab_ALIAS_add_alias_step2_alias_label"></dt>
-                <dd data-ng-bind="ctrl.model.alias + '@' + ctrl.model.domain.displayName | sliceContent: 150" class="word-break"></dd>
-                
+                <dd class="word-break"
+                    data-ng-bind="ctrl.model.alias + '@' + ctrl.model.domain.displayName | sliceContent: 150"></dd>
+
                 <dt data-i18n-static="exchange_tab_ALIAS_add_alias_step2_account_label"></dt>
-                <dd data-ng-bind="ctrl.selectedAccount.primaryEmailAddress | sliceContent: 150" class="word-break"></dd>
+                <dd class="word-break"
+                    data-ng-bind="ctrl.selectedAccount.primaryEmailAddress | sliceContent: 150"></dd>
             </dl>
         </div>
     </div>

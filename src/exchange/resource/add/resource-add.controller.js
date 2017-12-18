@@ -84,12 +84,12 @@ angular
             this.takenEmailError = false;
 
             if (!_.isEmpty(this.takenEmails) && !_.isEmpty(this.model.resourceEmailAddress)) {
-                for (const email of this.takenEmails) {
+                _.forEach(this.takenEmails, (email) => {
                     if (this.buildEmailAddress() === email.toLowerCase()) {
                         this.takenEmailError = true;
-                        return;
+
                     }
-                }
+                });
             }
         }
 

@@ -14,10 +14,14 @@ angular
 
             this.$routerParams = Exchange.getParams();
             this.primaryEmailAddress = navigation.currentActionData.primaryEmailAddress;
+            this.isLoading = false;
+            this.searchValue = null;
 
             $scope.$on(Exchange.events.accountsChanged, () => {
                 $scope.retrievingAccounts();
             });
+
+            this.debouncedRetrievingAccounts = _.debounce(this.retrievingAccounts, 300);
 
             $scope.updatingDelegationRight = () => this.updatingDelegationRight();
             $scope.hasChanged = () => this.hasChanged();
@@ -26,11 +30,20 @@ angular
             $scope.getIsLoading = () => this.isLoading;
         }
 
+        onSearchValueChange () {
+            this.debouncedRetrievingAccounts();
+        }
+
+        onResetSearchValue () {
+            this.searchValue = null;
+            this.retrievingAccounts();
+        }
+
         hasChanged () {
             let hasChanged = false;
 
             if (_.has(this.accounts, "list.results") && this.accounts.list.results != null && _.has(this.bufferedAccounts, "list.results") && this.bufferedAccounts.list.results != null) {
-                for (const account of this.accounts.list.results) {
+                _.forEach(this.accounts.list.results, (account) => {
                     const matchingBufferedAccount = this.bufferedAccounts.list.results.find((bufferedAccount) => bufferedAccount.id === account.id);
                     matchingBufferedAccount.newSendAs = account.newSendAs;
                     matchingBufferedAccount.newSendOnBehalfTo = account.newSendOnBehalfTo;
@@ -43,7 +56,7 @@ angular
                     if (differentSendAs || differentSendOnBehalfTo || differentFullAccess) {
                         hasChanged = true;
                     }
-                }
+                });
             }
 
             return hasChanged;
@@ -55,17 +68,17 @@ angular
 
             return this.services
                 .ExchangeSharedAccounts
-                .retrievingSharedAccountDelegations(this.$routerParams.organization, this.$routerParams.productId, this.primaryEmailAddress, count, offset)
+                .retrievingSharedAccountDelegations(this.$routerParams.organization, this.$routerParams.productId, this.primaryEmailAddress, count, offset, this.searchValue)
                 .then((accounts) => {
                     this.accounts = angular.copy(accounts); // make a deep copy of accounts list to use it as model
                     this.bufferedAccounts = angular.copy(accounts);
 
                     if (_.has(this.accounts, "list.results") && this.accounts.list.results != null) {
-                        for (const account of this.accounts.list.results) {
+                        _.forEach(this.accounts.list.results, (account) => {
                             account.newSendAs = account.sendAs;
                             account.newSendOnBehalfTo = account.sendOnBehalfTo;
                             account.newFullAccess = account.fullAccess;
-                        }
+                        });
                     }
                 })
                 .catch((failure) => {

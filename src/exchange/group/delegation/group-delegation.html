@@ -11,8 +11,7 @@
 
             <p data-ng-bind-html="tr('exchange_GROUPS_delegation_step1_intro', [ctrl.selectedGroup.mailingListDisplayName])"></p>
 
-            <div class="alert alert-warning"
-                 role="alert"
+            <div class="alert alert-warning" role="alert"
                  data-ng-if="!ctrl.loading && ctrl.delegationList && ctrl.delegationList.list.messages.length > 0">
                 <div>
                     <strong data-i18n-static="exchange_tab_ACCOUNTS_warning"></strong>
@@ -20,40 +19,31 @@
                 </div>
             </div>
 
-            <form class="mb-3 mt-4">
+            <form class="form-inline d-md-flex justify-content-md-end mb-3">
                 <div class="form-group">
-                    <label class="sr-only"
-                           for="delegationSearch"
-                           data-ng-bind="::i18n.common_search"></label>
+                    <label class="sr-only" for="delegationSearch"
+                           data-i18n-static="common_search"></label>
                     <div class="input-group">
-                        <input type="text"
-                               class="form-control"
-                               id="delegationSearch"
-                               name="delegationSearch"
-                               placeholder="{{i18n.exchange_tab_ACCOUNTS_table_email}}"
-                               maxlength="256"
+                        <input type="text" class="form-control" id="delegationSearch" maxlength="256" name="delegationSearch" placeholder="{{i18n.exchange_tab_ACCOUNTS_table_email}}"
                                data-ng-change="ctrl.onSearchValueChange()"
                                data-ng-disabled="ctrl.loading"
                                data-ng-model="ctrl.form.search"
                                data-ng-model-options="{ debounce: 800 }">
                         <div class="input-group-btn" data-ng-if="ctrl.form.search">
-                            <button class="btn btn-default"
-                                    type="button"
-                                    aria-label="{{i18n.common_cancel}}"
+                            <button class="btn btn-default" type="button" aria-label="{{i18n.common_cancel}}"
                                     data-ng-click="ctrl.resetSearch()"
                                     data-ng-disabled="ctrl.loading">
                                 <span class="fa fa-times" aria-hidden="true"></span>
                             </button>
                         </div>
-                        <span class="input-group-addon disabled" data-ng-if="!ctrl.form.search">
+                        <span class="input-group-addon" data-ng-if="!ctrl.form.search">
                             <span class="fa fa-search" aria-hidden="true"></span>
                         </span>
                     </div>
                 </div>
             </form>
 
-            <table class="table"
-                   data-ng-class="{'table-hover table-striped': !ctrl.loading}">
+            <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col" data-i18n-static="exchange_GROUPS_delegation_step1_email_header"></th>
@@ -83,7 +73,8 @@
 
                 <tbody data-ng-if="!ctrl.loading">
                     <tr data-ng-repeat="account in (ctrl.delegationList.list.results | orderBy:'primaryEmailDisplayName':false) track by $index">
-                        <th class="word-break" scope="row" data-ng-bind="account.primaryEmailDisplayName"></th>
+                        <th class="word-break" scope="row"
+                            data-ng-bind="account.primaryEmailDisplayName"></th>
                         <td class="text-center">
                             <!-- A task is on doing (activation or deactivation, sendAs or sendOnBehalf)-->
                             <div data-ng-if="account.sendAsOnDoing || account.sendOnBehalfToOnDoing">
@@ -173,7 +164,7 @@
         <div data-wizard-step>
             <p data-ng-bind-html="tr('exchange_GROUPS_delegation_step2_intro', [ctrl.selectedGroup.mailingListDisplayName])"></p>
 
-            <table class="table table-hover table-striped">
+            <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col" data-i18n-static="exchange_GROUPS_delegation_step2_email_header"></th>

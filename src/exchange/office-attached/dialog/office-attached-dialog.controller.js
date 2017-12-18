@@ -19,7 +19,6 @@ angular
             this.maxNumberOfAccounts = 25;
             this.selectedCheckboxes = {};
             this.selectedAccounts = [];
-            this.isInitialLoad = true;
             this.exchange = Exchange.value;
 
             this.searchValue = null;
@@ -40,6 +39,15 @@ angular
             $scope.isStep2Valid = () => this.isStep2Valid();
         }
 
+        $onInit () {
+            this.services
+                .User
+                .getUser()
+                .then((user) => {
+                    this.ovhSubsidiary = user.ovhSubsidiary;
+                });
+        }
+
         onWizardCancel () {
             this.services.navigation.resetAction();
         }
@@ -56,6 +64,18 @@ angular
             if (this.exchange.displayName.match(/.*hosted.*/i) || this.exchange.displayName.match(/.*exchange.*/i) || this.exchange.displayName.match(/.*private.*/i)) {
                 displayName = this.exchange.displayName.replace(/hosted/i, "Office").replace(/exchange/i, "Office").replace(/private/i, "Office");
             }
+
+            const alreadyKnownAccounts = [];
+            const accountsToSave = [];
+
+            _.forEach(this.selectedAccounts, (alreadyKnownAccount) => {
+                if (!alreadyKnownAccounts.includes(alreadyKnownAccount.primaryEmailDisplayName)) {
+                    alreadyKnownAccounts.push(alreadyKnownAccount.primaryEmailDisplayName);
+                    accountsToSave.push(alreadyKnownAccount);
+                }
+            });
+
+            this.selectedAccounts = accountsToSave;
 
             const answer = [
                 {
@@ -75,7 +95,7 @@ angular
                         },
                         {
                             label: "country",
-                            values: ["FR"]
+                            values: [this.ovhSubsidiary || "FR"]
                         }
                     ],
                     option: [],
@@ -143,7 +163,9 @@ angular
                         i++;
                     });
                 })
-                .finally(() => this.countNumberOfCheckedAccounts());
+                .finally(() => {
+                    this.countNumberOfCheckedAccounts();
+                });
         }
 
         retrieveAccounts (count, offset) {
@@ -173,30 +195,31 @@ angular
             this.accounts = accounts;
 
             if (!_.isEmpty(accounts)) {
-                this.selectedAccounts = this.selectedAccounts.concat(accounts.list.results);
+                const alreadyPresentAccounts = this.selectedAccounts.map((account) => account.primaryEmailDisplayName);
+                this.selectedAccounts = this.selectedAccounts.concat(accounts.list.results.filter((account) => !alreadyPresentAccounts.includes(account.primaryEmailDisplayName)));
             }
 
             this.services.$scope.accounts = accounts;
         }
 
         countNumberOfCheckedAccounts () {
-            const keys = Object.keys(this.selectedCheckboxes);
-            const selectedAccounts = _.filter(keys, (key) => this.selectedCheckboxes[key]);
-
-            let valuesToKeep = [];
-
             if (!_.isEmpty(this.accounts)) {
-                valuesToKeep = _.filter(this.selectedAccounts, (currentSelectedAccount) => _.find(this.accounts.list.results, (currentAccount) =>
-                    currentAccount.primaryEmailDisplayName === currentSelectedAccount.primaryEmailDisplayName) != null
-                );
+                const currentDisplayedAccountEmailAddresses = this.accounts.list.results.map((account) => account.primaryEmailDisplayName);
+                const selectedAccountsCurrentBeingDisplayed = this.selectedAccounts.filter((currentSelectedAccount) => currentDisplayedAccountEmailAddresses.includes(currentSelectedAccount.primaryEmailDisplayName));
+
+                const currentlySelectedAccountsEmailAddresses = Object.keys(this.selectedCheckboxes).filter((key) => this.selectedCheckboxes[key]);
+                const currentlyDislayedAccountsThatAreSelected = this.accounts.list.results.filter((account) => currentlySelectedAccountsEmailAddresses.includes(account.primaryEmailDisplayName));
+
+                const alreadyPresentAccounts = currentlyDislayedAccountsThatAreSelected.map((account) => account.primaryEmailDisplayName);
+                this.selectedAccounts = currentlyDislayedAccountsThatAreSelected.concat(selectedAccountsCurrentBeingDisplayed.filter((account) => !alreadyPresentAccounts.includes(account.primaryEmailDisplayName)));
+
+                const currentlyNotSelectedAccountsEmailAddresses = Object.keys(this.selectedCheckboxes).filter((key) => !this.selectedCheckboxes[key]);
+
+                this.selectedAccounts = this.selectedAccounts.filter((account) => !currentlyNotSelectedAccountsEmailAddresses.includes(account.primaryEmailDisplayName));
+
+                this.numberOfSelectedCheckboxes = currentlySelectedAccountsEmailAddresses.length;
+                this.step1IsValid();
             }
-
-            this.selectedAccounts = _.filter(this.accounts.list.results, (account) => _.find(selectedAccounts, (primaryEmailDisplayName) => account.primaryEmailDisplayName === primaryEmailDisplayName));
-
-            this.selectedAccounts = this.selectedAccounts.concat(valuesToKeep);
-
-            this.numberOfSelectedCheckboxes = selectedAccounts.length;
-            this.step1IsValid();
         }
 
         loadSelectedAccounts () {

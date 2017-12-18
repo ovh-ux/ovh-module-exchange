@@ -17,10 +17,10 @@ angular
                     failure.data
                 ];
 
-                for (const currentValue of value) {
+                _.forEach(value, (currentValue) => {
                     /* eslint-disable no-continue */
                     if (_.isEmpty(currentValue)) {
-                        continue;
+                        return;
                     }
                     /* eslint-enable no-continue */
 
@@ -32,7 +32,7 @@ angular
                         this.messageDetails = currentValue.messages.map((currentMessage) => ({ id: currentMessage.code, message: currentMessage.message }));
                         this.messageDetails = _.uniq(this.messageDetails, (currentMessage) => `${currentMessage.id}${currentMessage.message}`);
                     }
-                }
+                });
             }
         }
 
@@ -92,7 +92,7 @@ angular
                     }
                 } else if (failure.messages != null) {
                     if (!_.isEmpty(failure.messages)) {
-                        alertType = "alert alert-warning";
+                        alertType = "alert";
 
                         switch (failure.state.toUpperCase()) {
                         case "ERROR":
@@ -100,7 +100,7 @@ angular
                             messageToSend = message.ERROR || message;
                             break;
                         case "PARTIAL":
-                            alertType += " alert-danger";
+                            alertType += " alert-warning";
                             messageToSend = message.PARTIAL || message;
                             break;
                         case "OK":
@@ -108,6 +108,7 @@ angular
                             messageToSend = message.OK || message;
                             break;
                         default:
+                            alertType += " alert-warning";
                             messageToSend = message;
                             break;
                         }

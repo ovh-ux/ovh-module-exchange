@@ -1,104 +1,105 @@
 <div data-ng-controller="ExchangeSharedAccountDelegationCtrl as ctrl">
     <div data-wizard
          data-wizard-bread-crumb
-         data-wizard-title="i18n.exchange_ACTION_delegation_title"
          data-wizard-on-cancel="resetAction"
-         data-wizard-on-finish="updatingDelegationRight">
+         data-wizard-on-finish="updatingDelegationRight"
+         data-wizard-title="i18n.exchange_ACTION_delegation_title">
 
         <div data-wizard-step
-             data-wizard-step-valid="hasChanged()"
-             data-wizard-step-on-load="retrievingAccounts">
+             data-wizard-step-valid="hasChanged()">
 
-             <p data-ng-bind-html="tr('exchange_ACTION_delegation_step1_intro', [ctrl.primaryEmailAddress])"></p>
+            <p data-ng-bind-html="tr('exchange_ACTION_delegation_step1_intro', [ctrl.primaryEmailAddress])"></p>
 
-            <!-- TODO: 2API NOT WORKING
-            <form class="mb-3 form-inline d-md-flex justify-content-md-end">
+            <form class="form-inline d-md-flex justify-content-md-end mb-3">
                 <div class="form-group">
                     <label class="sr-only" for="groupSearch"
-                        data-ng-bind="::i18n.common_search"></label>
+                           data-ng-bind="::i18n.common_search"></label>
                     <div class="input-group">
-                        <input type="text" class="form-control"
-                            id="groupSearch"
-                            placeholder="{{::i18n.exchange_tab_ACCOUNTS_table_email}}"
-                            data-ng-disabled="loading"
-                            data-ng-model="form.search"
-                            data-ng-change="onSearchValueChange()">
-                        <div class="input-group-btn" data-ng-if="form.search">
-                            <button class="btn btn-default"
-                                type="button"
-                                aria-label="{{i18n.exchange_reset_search_value}}"
-                                data-ng-click="form.search = null"
-                                data-ng-disabled="loading">
+                        <input type="text" class="form-control" id="groupSearch" placeholder="{{::i18n.exchange_tab_ACCOUNTS_table_email}}"
+                               data-ng-change="ctrl.onSearchValueChange()"
+                               data-ng-disabled="ctrl.isLoading"
+                               data-ng-model="ctrl.searchValue">
+                        <div class="input-group-btn" data-ng-if="ctrl.searchValue">
+                            <button class="btn btn-default" type="button" aria-label="{{i18n.exchange_reset_search_value}}"
+                                    data-ng-click="ctrl.onResetSearchValue()"
+                                    data-ng-disabled="ctl.isLoading">
                                 <span class="fa fa-times" aria-hidden="true"></span>
                             </button>
                         </div>
-                        <span class="input-group-addon disabled"
-                            data-ng-if="form.search == null">
+                        <span class="input-group-addon"
+                              data-ng-if="ctrl.searchValue == null">
                             <span class="fa fa-search" aria-hidden="true"></span>
                         </span>
                     </div>
                 </div>
-            </form>-->
+            </form>
 
-            <div data-ng-if="ctrl.accounts.list.messages.length > 0 && !ctrl.loading">
+            <div data-ng-if="!ctrl.loading && ctrl.accounts.list.messages.length > 0">
                 <div class="alert alert-info" role="alert">
-                    <strong data-i18n-static="exchange_tab_ACCOUNTS_warning"></strong>
-                    <span data-i18n-static="exchange_tab_ACCOUNTS_partial"></span>
+                    <div>
+                        <strong data-i18n-static="exchange_tab_ACCOUNTS_warning"></strong>
+                        <span data-i18n-static="exchange_tab_ACCOUNTS_partial"></span>
+                    </div>
                 </div>
             </div>
 
-            <table class="table"
-                   data-ng-class="{'table-hover table-striped': !ctrl.loading}">
+            <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col" data-i18n-static="exchange_ACTION_delegation_step1_email_header"></th>
-                        <th scope="col" class="text-center text-wrap" data-i18n-static="exchange_ACTION_delegation_step1_send_header"></th>
-                        <th scope="col" class="text-center text-wrap" data-i18n-static="exchange_ACTION_delegation_step1_sendOnBehalfTo_header"></th>
-                        <th scope="col" class="text-center text-wrap" data-i18n-static="exchange_ACTION_delegation_step1_full_header"></th>
+                        <th class="text-center text-wrap" scope="col" data-i18n-static="exchange_ACTION_delegation_step1_send_header"></th>
+                        <th class="text-center text-wrap" scope="col" data-i18n-static="exchange_ACTION_delegation_step1_sendOnBehalfTo_header"></th>
+                        <th class="text-center text-wrap" scope="col" data-i18n-static="exchange_ACTION_delegation_step1_full_header"></th>
                     </tr>
                 </thead>
 
                 <tbody data-ng-if="ctrl.loading">
                     <tr>
-                        <td class="loader text-center" colspan="4"></td>
+                        <td colspan="4" class="loader text-center"></td>
                     </tr>
                 </tbody>
 
                 <tbody data-ng-if="ctrl.accounts.list.results.length === 0 && ctrl.accounts.list.messages.length === 0 && !ctrl.loading">
                     <tr>
-                        <td colspan="4" class="text-center" data-i18n-static="exchange_tab_ACCOUNTS_table_empty"></td>
+                        <td colspan="4" class="text-center"
+                            data-i18n-static="exchange_tab_ACCOUNTS_table_empty"></td>
                     </tr>
                 </tbody>
 
                 <tbody data-ng-show="!ctrl.loading">
                     <tr data-ng-repeat="account in ctrl.accounts.list.results | orderBy:'primaryEmailDisplayName':false track by $index">
                         <td class="word-break"
-                            data-ng-bind="account.primaryEmailDisplayName">
-                        </td>
+                            data-ng-bind="account.primaryEmailDisplayName"></td>
                         <td class="text-center">
                             <!-- A task is on doing (activation or deactivation, sendAs or sendOnBehalf)-->
-                            <div data-ng-if="account.sendAsOnDoing || account.sendOnBehalfToOnDoing" data-uib-tooltip="{{i18n.exchange_ACTION_delegation_step1_task_on_doing}}">
+                            <div data-ng-if="account.sendAsOnDoing || account.sendOnBehalfToOnDoing"
+                                 data-uib-tooltip="{{i18n.exchange_ACTION_delegation_step1_task_on_doing}}">
                                 <input type="checkbox" disabled>
                             </div>
                             <!-- No task on doing-->
                             <div data-ng-if="!account.sendAsOnDoing && !account.sendOnBehalfToOnDoing">
                                 <!-- Mutual exclusive option (sendOnBehalf) is activated-->
-                                <div data-ng-if="account.sendOnBehalfTo && account.newSendOnBehalfTo" data-uib-tooltip="{{i18n.exchange_ACTION_delegation_sendas_tooltip}}">
+                                <div data-ng-if="account.sendOnBehalfTo && account.newSendOnBehalfTo"
+                                     data-uib-tooltip="{{i18n.exchange_ACTION_delegation_sendas_tooltip}}">
                                     <input type="checkbox" disabled>
                                 </div>
 
                                 <!-- Mutual exclusive option (sendOnBehalf) will be activated-->
-                                <div data-ng-if="!account.sendOnBehalfTo && account.newSendOnBehalfTo" data-uib-tooltip="{{i18n.exchange_ACTION_delegation_sendas_tooltip}}">
+                                <div data-ng-if="!account.sendOnBehalfTo && account.newSendOnBehalfTo"
+                                     data-uib-tooltip="{{i18n.exchange_ACTION_delegation_sendas_tooltip}}">
                                     <input type="checkbox" disabled>
                                 </div>
 
                                 <!-- Wait until mutual exclusive option (sendOnBehalf) will be deactivated-->
-                                <div data-ng-if="account.sendOnBehalfTo && !account.newSendOnBehalfTo" data-uib-tooltip="{{i18n.exchange_ACTION_delegation_wait_sendas_tooltip}}">
+                                <div data-ng-if="account.sendOnBehalfTo && !account.newSendOnBehalfTo"
+                                     data-uib-tooltip="{{i18n.exchange_ACTION_delegation_wait_sendas_tooltip}}">
                                     <input type="checkbox" disabled>
                                 </div>
 
                                 <!-- Mutual exclusive option (sendOnBehalf) is deactivated-->
-                                <input type="checkbox" data-ng-if="!account.sendOnBehalfTo && !account.newSendOnBehalfTo" data-ng-model="account.newSendAs">
+                                <input type="checkbox"
+                                       data-ng-if="!account.sendOnBehalfTo && !account.newSendOnBehalfTo"
+                                       data-ng-model="account.newSendAs">
                             </div>
                         </td>
                         <td class="text-center">
@@ -124,16 +125,17 @@
                                 </div>
 
                                 <!-- Mutual exclusive option (sendAs) is deactivated-->
-                                <input type="checkbox" data-ng-if="!account.sendAs && !account.newSendAs" data-ng-model="account.newSendOnBehalfTo">
+                                <input type="checkbox"
+                                       data-ng-if="!account.sendAs && !account.newSendAs"
+                                       data-ng-model="account.newSendOnBehalfTo">
                             </div>
                         </td>
                         <td class="text-center">
                             <div data-ng-if="account.fullAccessOnDoing" data-uib-tooltip="{{i18n.exchange_ACTION_delegation_step1_task_on_doing}}">
-                                <input type="checkbox"
-                                       data-ng-model="account.newFullAccess"
-                                       disabled>
+                                <input type="checkbox" disabled
+                                       data-ng-model="account.newFullAccess">
                             </div>
-                            <input type="checkbox" 
+                            <input type="checkbox"
                                    data-ng-if="!account.fullAccessOnDoing"
                                    data-ng-model="account.newFullAccess">
                         </td>
@@ -147,17 +149,19 @@
                     </tr>
                 </tbody>
             </table>
-            
+
             <div class="clearfix"
-                 data-pagination-server-side
+                 data-pagination-server-side="delegationTable"
                  data-pagination-server-side-function="retrievingAccounts"
                  data-pagination-server-side-paginated-stuff="getAccounts()"
-                 data-pagination-server-side-table-loading="getIsLoading()"></div>
+                 data-pagination-server-side-table-loading="getIsLoading()">
+            </div>
         </div>
+
         <div data-wizard-step>
             <p data-ng-bind-html="tr('exchange_ACTION_delegation_step2_intro', [ctrl.primaryEmailDisplayName])"></p>
 
-            <table class="table table-hover table-striped">
+            <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col" class="text-center" data-i18n-static="exchange_ACTION_delegation_step2_email_header"></th>
@@ -169,7 +173,8 @@
 
                 <tbody>
                     <tr data-ng-repeat="account in ctrl.accounts.list.results | orderBy:'primaryEmailDisplayName':false track by $index">
-                        <td class="word-break" data-ng-bind="account.primaryEmailDisplayName"></td>
+                        <td class="word-break"
+                            data-ng-bind="account.primaryEmailDisplayName"></td>
                         <td class="text-center">
                             <span data-i18n-static="exchange_ACTION_delegation_step2_right_true"
                                   data-ng-if="account.newSendAs"></span>
@@ -190,7 +195,8 @@
                  data-pagination-server-side
                  data-pagination-server-side-function="retrievingAccounts"
                  data-pagination-server-side-paginated-stuff="getAccounts()"
-                 data-pagination-server-side-table-loading="getLoading()"></div>
+                 data-pagination-server-side-table-loading="getIsLoading()">
+            </div>
         </div>
     </div>
 </div>

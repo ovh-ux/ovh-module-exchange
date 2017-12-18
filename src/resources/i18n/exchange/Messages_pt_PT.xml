@@ -12,7 +12,7 @@
    <translation id="exchange_offer_type_HOSTED" qtlid="137231">Hosted Exchange</translation>
    <translation id="exchange_offer_type_PROVIDER" qtlid="136152">Exchange revendedor</translation>
    <translation id="exchange_offer_type_25g" qtlid="264042">Exchange individual</translation>
-   <translation id="exchange_dashboard_loading_error" qtlid="168120">Ocorreu um erro durante o carregamento das informações.</translation>
+   <translation id="exchange_dashboard_loading_error" qtlid="168120">Ocorreu um erro durante acesso às informações</translation>
    <translation id="exchange_dashboard_action_doing" qtlid="149787">Operação em curso...</translation>
    <translation id="exchange_dashboard_display_name_edit" qtlid="37875">Modificar</translation>
    <translation id="exchange_dashboard_display_name_save" qtlid="177912">Mínimo de 4 caracteres</translation>
@@ -64,14 +64,14 @@
    <translation id="exchange_ACTION_export_accounts_button" qtlid="217015">Exportar as contas em CSV</translation>
    <translation id="exchange_ACTION_export_accounts_office_attached_button" qtlid="404187">Teste gratuito ao Office 365</translation>
    <translation id="exchange_ACTION_export_accounts_doing_button" qtlid="217028">Exportação em curso...</translation>
-   <translation id="exchange_ACTION_export_error" qtlid="217041">Ocorreu um erro aquando da exportação das suas contas Exchange.</translation>
-   <translation id="exchange_ACTION_export_success" qtlid="217054">A exportação das suas contas Exchange terminou.</translation>
+   <translation id="exchange_ACTION_export_error" qtlid="217041">Ocorreu um erro durante a exportação das suas contas Exchange.</translation>
+   <translation id="exchange_ACTION_export_success" qtlid="217054">A exportação das suas contas Exchange está concluída.</translation>
    <translation id="exchange_ACTION_export_explain" qtlid="217067">A exportação das suas contas Exchange pode durar alguns minutos (em função do número de contas que possui).</translation>
    <translation id="exchange_ACTION_export_confirm" qtlid="217080">Têm a certeza que pretende exportar as suas contas?</translation>
 
 <!-- OFFICE ATTACHED -->
-   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Promoção:</strong> ative gratuitamente* o Office 365 nos seus endereços Exchange!</translation>
-   <translation id="exchange_office_attached_alert_details" qtlid="404213">*A oferta diz respeito ao produto Office 365 Business. Um máximo de {0} endereços Exchange podem ser utilizados. Apenas o primeiro mês é gratuito, a oferta será depois renovada automaticamente ao preço indicado no website na data de renovação <a target="_blank" href="https://www.ovh.pt:51043">https://www.ovh.pt:51043</a></translation>
+   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Promoção:</strong> ative gratuitamente o Office 365 nos seus endereços Exchange!</translation>
+   <translation id="exchange_office_attached_alert_details" qtlid="404213">A oferta diz respeito ao produto Office 365 Business. Um máximo de {0} endereços Exchange podem ser utilizados. Apenas o primeiro mês é gratuito, a oferta será depois renovada automaticamente ao preço indicado no website na data de renovação <a target="_blank" href="https://www.ovh.pt:51043">https://www.ovh.pt:51043</a></translation>
    <translation id="exchange_office_attached_alert_button" qtlid="404226">Beneficiar desta oferta</translation>
    <translation id="exchange_office_attached_alert_modale_title" qtlid="404239">Ativar a oferta promocional Office 365</translation>
    <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Obtenha um mês gratuito do Officer 365 para um máximo de {0} contas Exchange à sua escolha</translation>
@@ -148,6 +148,7 @@
    <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="171188">Abertura em curso</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Suspenso</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Suspensão em curso</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_MIGRATING">Migration en cours</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SPAM" qtlid="70409">Spam</translation>
 
    <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="31522">OK</translation>
@@ -166,7 +167,7 @@
    <translation id="exchange_tab_ACCOUNTS_warning" qtlid="108456">Atenção!</translation>
    <translation id="exchange_tab_ACCOUNTS_partial" qtlid="143889">Algumas contas não foram carregadas com sucesso. Queira atualizar a página para resolver o problema.</translation>
    <translation id="exchange_tab_ACCOUNTS_partial_account" qtlid="139208">A conta não foi carregada corretamente.</translation>
-   <translation id="exchange_tab_ACCOUNTS_billing_nic_info_err" qtlid="181357">Deve ser o administrador ou o contacto técnico para poder adicionar uma conta.</translation>
+   <translation id="exchange_tab_ACCOUNTS_billing_nic_info_err" qtlid="181357">Necessita de permissões de administrador ou de contacto técnico para poder adicionar uma conta.</translation>
    <translation id="exchange_tab_ACCOUNTS_billing_nic_info" qtlid="267396">Queira contactar o suporte ao cliente por e-mail ou por telefone através do número 213 155 642 para encomendar contas de e-mail hosted-ovh-tel.</translation>
    <translation id="exchange_tab_ACCOUNTS_pwderror" qtlid="137296">Confirmação incorreta</translation>
    <translation id="exchange_tab_ACCOUNTS_popover_alias" qtlid="21499">Gerir os alias</translation>
@@ -185,17 +186,17 @@
 
 <!-- ########################################## -->
 <!-- ALIAS -->
-   <translation id="exchange_tab_ALIAS_back_button" qtlid="4118">Regresso</translation>
+   <translation id="exchange_tab_ALIAS_back_button" qtlid="4118">Voltar atrás</translation>
    <translation id="exchange_tab_ALIAS_header" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_delete_tooltip" qtlid="178848">Eliminar este alias</translation>
-   <translation id="exchange_tab_ALIAS_intro" qtlid="434512">Liste des alias créés pour le compte <strong>{0}</strong></translation>
-   <translation id="exchange_tab_ALIAS_GROUP_intro" qtlid="434525">Liste des alias créés pour le groupe <strong>{0}</strong></translation>
+   <translation id="exchange_tab_ALIAS_intro" qtlid="434512">Lista de alias criados para a conta <strong>{0}</strong></translation>
+   <translation id="exchange_tab_ALIAS_GROUP_intro" qtlid="434525">Lista alias criados para o grupo <strong>{0}</strong></translation>
    <translation id="exchange_tab_ALIAS_table_empty" qtlid="143954">Não possui qualquer alias para essa conta</translation>
    <translation id="exchange_tab_ALIAS_GROUP_table_empty" qtlid="178874">Não tem alias criados para este grupo</translation>
    <translation id="exchange_tab_ALIAS_state_TASK_ON_DOING" qtlid="26383">Em curso</translation>
    <translation id="exchange_tab_ALIAS_state_TASK_ON_DOING_tooltip" qtlid="143967">Um trabalho relativo a este alias já se encontra planificado ou em curso de execução</translation>
    <translation id="exchange_tab_ALIAS_add_button" qtlid="143538">Adicionar um alias</translation>
-   <translation id="exchange_tab_ALIAS_creation_quota_description" qtlid="433784">Le quota doit être compris entre <strong>{0} {1}</strong> et <strong>{2} {1}</strong>.</translation>
+   <translation id="exchange_tab_ALIAS_creation_quota_description" qtlid="433784">Os limites de quota devem estar compreendidos entre <strong>{0} {1}</strong> e <strong>{2} {1}</strong>.</translation>
    <translation id="exchange_tab_ALIAS_creation_error_no_local_part" qtlid="433797">Por favor indique o local-part do endereço de email (parte do endereço antes da arroba @)</translation>
    <translation id="exchange_tab_ALIAS_creation_error_regex" qtlid="433810">A local-part (parte do endereço de e-mail antes da arroba @) deve conter caracteres alfanuméricos ou os caracteres <strong>.-_+</strong> (exemplo: e_mail-3.endereço+abc).</translation>
    <translation id="exchange_tab_ALIAS_taken_error_message" qtlid="190849">Endereço de e-mail já existente.</translation>
@@ -207,7 +208,7 @@
    <translation id="exchange_tab_ALIAS_remove_alias_label" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_remove_account_label" qtlid="143603">Conta anexada</translation>
    <translation id="exchange_tab_ALIAS_add_alias_title" qtlid="143616">Criar um alias</translation>
-   <translation id="exchange_tab_ALIAS_add_alias_intro" qtlid="155782">Criar um alias para a conta</translation>
+   <translation id="exchange_tab_ALIAS_add_alias_intro" qtlid="416579">Criar um alias para a conta <span class="bold">{0}</span></translation>
    <translation id="exchange_tab_ALIAS_add_alias_placeholder" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_add_alias_step2_intro" qtlid="144006">Têm a certeza de que deseja adicionar o alias em baixo?</translation>
    <translation id="exchange_tab_ALIAS_add_alias_step2_alias_label" qtlid="9466">Alias</translation>
@@ -245,7 +246,7 @@
    <translation id="exchange_tab_TASKS_DELETE_EXTERNAL_CONTACT" qtlid="137387">Eliminar contacto externo</translation>
    <translation id="exchange_tab_TASKS_DELETE_FULL_ACCESS" qtlid="137400">Eliminar direitos de acesso</translation>
    <translation id="exchange_tab_TASKS_deleteFullAccess" qtlid="137400">Eliminar direitos de acesso</translation>
-   <translation id="exchange_tab_TASKS_DELETE_SEND_AS" qtlid="181383">Eliminação de direitos de envio para contas</translation>
+   <translation id="exchange_tab_TASKS_DELETE_SEND_AS" qtlid="181383">Eliminação de permissões de envio para contas</translation>
    <translation id="exchange_tab_TASKS_UPDATE_ACCOUNT" qtlid="136594">Modificação de conta</translation>
    <translation id="exchange_tab_TASKS_SET_ACCOUNT" qtlid="136594">Modificação de conta</translation>
    <translation id="exchange_tab_TASKS_SET_DNS" qtlid="149826">Modificação do DNS</translation>
@@ -277,12 +278,12 @@
    <translation id="exchange_tab_TASKS_DELETE_RESOURCE_DELEGATE" qtlid="209086">Eliminação de permissões por recurso</translation>
    <translation id="exchange_tab_TASKS_DELETE_RESOURCE_ACCOUNT" qtlid="156160">Eliminação de uma conta de recurso</translation>
    <translation id="exchange_tab_TASKS_SET_EXTERNAL_CONTACT" qtlid="177938">Modificação de contacto externo</translation>
-   <translation id="exchange_tab_TASKS_ADD_SEND_ON_BEHALF_TO" qtlid="181396">Adição de direitos de "enviar como" para contas</translation>
-   <translation id="exchange_tab_TASKS_DELETE_SEND_ON_BEHALF_TO" qtlid="181409">Eliminação de permissões de "enviar como" para contas</translation>
-   <translation id="exchange_tab_TASKS_ADD_DISTRIBUTION_GROUP_SEND_ON_BEHALF_TO" qtlid="181422">Adição de direitos de "enviar como" para grupos</translation>
-   <translation id="exchange_tab_TASKS_DELETE_DISTRIBUTION_GROUP_SEND_ON_BEHALF_TO" qtlid="181435">Eliminação dos direitos de "enviar como" para grupos</translation>
-   <translation id="exchange_tab_TASKS_ADD_DISTRIBUTION_GROUP_SEND_AS" qtlid="181448">Adição de direitos de envio para grupos</translation>
-   <translation id="exchange_tab_TASKS_DELETE_DISTRIBUTION_GROUP_SEND_AS" qtlid="181461">Eliminação do direito de envio para grupos</translation>
+   <translation id="exchange_tab_TASKS_ADD_SEND_ON_BEHALF_TO" qtlid="181396">Adicionar permissões "enviar como" para contas</translation>
+   <translation id="exchange_tab_TASKS_DELETE_SEND_ON_BEHALF_TO" qtlid="181409">Eliminação de permissões "enviar como" para contas</translation>
+   <translation id="exchange_tab_TASKS_ADD_DISTRIBUTION_GROUP_SEND_ON_BEHALF_TO" qtlid="181422">Adicionar permissões "enviar como" para grupos</translation>
+   <translation id="exchange_tab_TASKS_DELETE_DISTRIBUTION_GROUP_SEND_ON_BEHALF_TO" qtlid="181435">Eliminação das permissões "enviar como" para grupos</translation>
+   <translation id="exchange_tab_TASKS_ADD_DISTRIBUTION_GROUP_SEND_AS" qtlid="181448">Adicionar permissões de envio para grupos</translation>
+   <translation id="exchange_tab_TASKS_DELETE_DISTRIBUTION_GROUP_SEND_AS" qtlid="181461">Eliminação da permissão de envio para grupos</translation>
    <translation id="exchange_tab_TASKS_ADD_EXPORT_PST_REQUEST" qtlid="190862">Verificação do ficheiro .pst</translation>
    <translation id="exchange_tab_TASKS_GENERATE_PST_URL" qtlid="190875">Gerar o ficheiro .pst</translation>
    <translation id="exchange_tab_TASKS_SET_PUBLIC_FOLDER_PERMISSION" qtlid="201250">Modificação dos direitos de partilha</translation>
@@ -436,7 +437,7 @@
    <translation id="exchange_ACTION_add_account_step1_first_name_label" qtlid="23323">Nome</translation>
    <translation id="exchange_ACTION_add_account_step1_last_name_label" qtlid="3818">Nome</translation>
    <translation id="exchange_ACTION_add_account_step1_display_name_label" qtlid="23515">Nome a mostrar</translation>
-   <translation id="exchange_ACTION_add_account_step1_password_label" qtlid="2270">Password</translation>
+   <translation id="exchange_ACTION_add_account_step1_password_label" qtlid="2270">Palavra-passe</translation>
    <translation id="exchange_ACTION_add_account_step1_password_confirmation_label" qtlid="9983">Confirmação</translation>
    <translation id="exchange_ACTION_add_account_step1_password_tooltip" qtlid="178809">Mínimo de 8 caracteres alfanuméricos, números e caracteres especiais.</translation>
    <translation id="exchange_ACTION_add_account_step1_outlook_label" qtlid="136724">Licença Outlook</translation>
@@ -449,11 +450,10 @@
    <translation id="exchange_ACTION_add_account_step2_first_name_label" qtlid="23323">Nome</translation>
    <translation id="exchange_ACTION_add_account_step2_last_name_label" qtlid="3818">Nome</translation>
    <translation id="exchange_ACTION_add_account_step2_display_name_label" qtlid="23515">Nome a mostrar</translation>
-   <translation id="exchange_ACTION_add_account_step2_password_label" qtlid="2270">Password</translation>
+   <translation id="exchange_ACTION_add_account_step2_password_label" qtlid="2270">Palavra-passe</translation>
    <translation id="exchange_ACTION_add_account_step2_password_confirmation_label" qtlid="9983">Confirmação</translation>
    <translation id="exchange_ACTION_add_account_step2_type_label" qtlid="48938">Tipo de conta</translation>
    <translation id="exchange_ACTION_add_account_step2_outlook_label" qtlid="136724">Licença Outlook</translation>
-   <translation id="exchange_ACTION_add_account_step2_security_label" qtlid="136750">Opções de segurança</translation>
    <translation id="exchange_ACTION_add_account_step2_GAL_label" qtlid="191954">Ocultar o endereço no Outlook</translation>
    <translation id="exchange_ACTION_add_account_security_NONE" qtlid="8674">Nenhuma</translation>
    <translation id="exchange_ACTION_add_account_security_VADERETRO" qtlid="324821">Proteção Vade Secure</translation>
@@ -462,7 +462,7 @@
    <translation id="exchange_ACTION_add_account_outlook_true" qtlid="34776">Sim</translation>
    <translation id="exchange_ACTION_add_account_outlook_false" qtlid="136308">Sem</translation>
    <translation id="exchange_ACTION_add_account_helpwizard_title" qtlid="136854">Criação da conta Exchange</translation>
-   <translation id="exchange_ACTION_add_account_helpwizard_password_title" qtlid="2270">Password</translation>
+   <translation id="exchange_ACTION_add_account_helpwizard_password_title" qtlid="2270">Palavra-passe</translation>
    <translation id="exchange_ACTION_add_account_helpwizard_password" qtlid="171227">As palavras-passe devem respeitar as exigências mínimas seguintes :<br/><br/>- Não conter todo ou parte do nome do utilizador<br/>- Ter no mínimo 8 caracteres<br/>- Conter caracteres de 3 das 4 seguintes categorias :<br/><ul><li>Caracteres maiúsculos do alfabeto ('A' a 'Z')<br/></li><li>Caracteres minúsculos do alfabeto ('a' a 'z')<br/></li><li>Número da base 10 (0 a 9)<br/></li><li>Caracteres não alfabéticos (por exemplo: !, $, #, %)<br/></li></ul></translation>
    <translation id="exchange_ACTION_add_account_helpwizard_password_simple" qtlid="195139">As passwords devem conter um tamanho mínimo de {0} caracteres</translation>
    <translation id="exchange_ACTION_add_no_domains" qtlid="170798">Ainda não adicionou um domínio ou o mesmo ainda não foi validado <br/>\ Deverá adicionar um domínio e aguardar pela sua validação para criar um alias para a sua conta Exchange. </translation>
@@ -477,7 +477,7 @@
    <translation id="exchange_ACTION_update_account_step1_first_name_label" qtlid="23323">Nome</translation>
    <translation id="exchange_ACTION_update_account_step1_last_name_label" qtlid="3818">Nome</translation>
    <translation id="exchange_ACTION_update_account_step1_display_name_label" qtlid="23515">Nome a mostrar</translation>
-   <translation id="exchange_ACTION_update_account_step1_password_label" qtlid="2270">Password</translation>
+   <translation id="exchange_ACTION_update_account_step1_password_label" qtlid="2270">Palavra-passe</translation>
    <translation id="exchange_ACTION_update_account_step1_password_confirmation_label" qtlid="9983">Confirmação</translation>
    <translation id="exchange_ACTION_update_account_step1_complex_password_tooltip" qtlid="178822">Mínimo {0} caracteres alfanuméricos, números e caracteres especiais.</translation>
    <translation id="exchange_ACTION_update_account_step1_simple_password_tooltip" qtlid="137595">Mínimo {0} 8 caracteres.</translation>
@@ -512,7 +512,7 @@
    <translation id="exchange_ACTION_update_account_outlook_false" qtlid="136308">Sem</translation>
    <translation id="exchange_ACTION_update_account_helpwizard_title" qtlid="137712">Modificar a conta Exchange</translation>
    <translation id="exchange_ACTION_update_account_helpwizard_intro" qtlid="178887">Pode alterar a política de segurança das contas Exchange impondo, por exemplo, um nível de complexidade mínimo para as palavras-passe.<br/>Para o fazer, clique no botão <strong>"Gerir a política de segurança"</strong> no painel de controlo do seu serviço.</translation>
-   <translation id="exchange_ACTION_update_account_helpwizard_password_title" qtlid="2270">Password</translation>
+   <translation id="exchange_ACTION_update_account_helpwizard_password_title" qtlid="2270">Palavra-passe</translation>
    <translation id="exchange_ACTION_update_account_helpwizard_password" qtlid="171240">As palavras-passe devem respeitar as exigências mínimas seguintes :<br/><br/>- Não conter todo ou parte do nome do utilizador<br/>- Ter no mínimo 8 caracteres<br/>- Conter caracteres de 3 das 4 seguintes categorias :<br/><ul><li>Caracteres maiúsculos do alfabeto ('A' a 'Z')<br/></li><li>Caracteres minúsculos do alfabeto ('a' a 'z')<br/></li><li>Número da base 10 (0 a 9)<br/></li><li>Caracteres não alfabéticos (por exemplo: !, $, #, %)<br/></li></ul></translation>
    <translation id="exchange_ACTION_update_account_helpwizard_password_simple" qtlid="195139">As passwords devem conter um tamanho mínimo de {0} caracteres</translation>
    <translation id="exchange_ACTION_update_account_helpwizard_hide_directory_title" qtlid="191980">Ocultar o endereço na lista de endereços</translation>
@@ -547,7 +547,7 @@
    <translation id="exchange_tab_domain_add_step1_user_owned_option" qtlid="397533">Introduzir um nome de domínio não gerido pela sua conta OVH</translation>
    <translation id="exchange_tab_domain_add_step1_user_owned_info" qtlid="397546">Atenção: deve assegurar-se que a zona DNS do oímnio pode ser modificada pelo seu administrador</translation>
    <translation id="exchange_tab_domain_add_step1_order_domain_option" qtlid="136997">Encomendar um nome de domínio</translation>
-   <translation id="exchange_tab_domain_add_step1_domain_none" qtlid="434538">Aucun résultat trouvé</translation>
+   <translation id="exchange_tab_domain_add_step1_domain_none" qtlid="434538">Não foram encontrados resultados para os termos pesquisados</translation>
 
    <translation id="exchange_tab_domain_add_step3_cover_guide" qtlid="139572">Imagem de apresentação do vídeo de instruções</translation>
 
@@ -617,24 +617,24 @@ O anti-spam Vade Secure é compatível com o modo não autoritário (unicamente 
 <!-- ########################################## -->
 <!-- DELEGATION -->
    <translation id="exchange_ACTION_delegation_title" qtlid="143733">Configuração da delegação</translation>
-   <translation id="exchange_ACTION_delegation_step1_intro" qtlid="434551">Une délégation permet à d'autres comptes Exchange d'avoir certains droits sur le compte <strong>{0}</strong></translation>
+   <translation id="exchange_ACTION_delegation_step1_intro" qtlid="434551">Uma delegação atribui permissões de acesso de outras contas Exchange à conta <strong>{0}</strong>  </translation>
    <translation id="exchange_ACTION_delegation_table_empty" qtlid="150047">Não possui contas disponíveis</translation>
    <translation id="exchange_ACTION_delegation_table_empty_search" qtlid="150060">Não possui contas que correspondam ao termo procurado</translation>
    <translation id="exchange_ACTION_delegation_step1_email_header" qtlid="137244">Conta de e-mail</translation>
-   <translation id="exchange_ACTION_delegation_step1_send_header" qtlid="181474">Direito de envio</translation>
-   <translation id="exchange_ACTION_delegation_step1_sendOnBehalfTo_header" qtlid="181487">Direito de "enviar como"</translation>
-   <translation id="exchange_ACTION_delegation_step1_full_header" qtlid="181500">Direitos de acesso</translation>
+   <translation id="exchange_ACTION_delegation_step1_send_header" qtlid="181474">Permissão de envio</translation>
+   <translation id="exchange_ACTION_delegation_step1_sendOnBehalfTo_header" qtlid="181487">Permissão para "enviar como"</translation>
+   <translation id="exchange_ACTION_delegation_step1_full_header" qtlid="181500">Permissões de acesso</translation>
    <translation id="exchange_ACTION_delegation_step1_task_on_doing" qtlid="201458">Trabalho em curso</translation>
-   <translation id="exchange_ACTION_delegation_step2_intro" qtlid="434564">Les droits de délégation afférents au compte <strong>{0}</strong> :</translation>
+   <translation id="exchange_ACTION_delegation_step2_intro" qtlid="434564">Permissões de delegação relativas à conta <strong>{0}</strong> :</translation>
    <translation id="exchange_ACTION_delegation_step2_email_header" qtlid="137244">Conta de e-mail</translation>
    <translation id="exchange_ACTION_delegation_step2_send_header" qtlid="143798">Direito de envio</translation>
-   <translation id="exchange_ACTION_delegation_step2_sendOnBehalfTo_header" qtlid="181487">Direito de "enviar como"</translation>
+   <translation id="exchange_ACTION_delegation_step2_sendOnBehalfTo_header" qtlid="181487">Permissão para "enviar como"</translation>
    <translation id="exchange_ACTION_delegation_step2_full_header" qtlid="144253">Direitos de acesso</translation>
    <translation id="exchange_ACTION_delegation_step2_right_true" qtlid="34776">Sim</translation>
-   <translation id="exchange_ACTION_delegation_behalf_tooltip" qtlid="181513">Desative primeiro o direito de envio.</translation>
-   <translation id="exchange_ACTION_delegation_wait_behalf_tooltip" qtlid="181526">Queira aguardar que a desativação dos direitos de envio seja efetiva.</translation>
-   <translation id="exchange_ACTION_delegation_sendas_tooltip" qtlid="181539">Queira desativar primeiro a permissão de "enviar como".</translation>
-   <translation id="exchange_ACTION_delegation_wait_sendas_tooltip" qtlid="181552">Queira aguardar que a desativação dos direitos de "enviar como" seja efetiva.</translation>
+   <translation id="exchange_ACTION_delegation_behalf_tooltip" qtlid="181513">Tem que desativar primeiro a permissão de envio</translation>
+   <translation id="exchange_ACTION_delegation_wait_behalf_tooltip" qtlid="181526">Por favor, aguarde pela confirmação da ativação da permissão "enviar como".</translation>
+   <translation id="exchange_ACTION_delegation_sendas_tooltip" qtlid="181539">Por favor, desativar a permissão "enviar como".</translation>
+   <translation id="exchange_ACTION_delegation_wait_sendas_tooltip" qtlid="181552">Por favor, aguarde pela confirmação de desativação das permissões "enviar como".</translation>
    <translation id="exchange_ACTION_delegation_doing_message" qtlid="144266">A atualização dos direitos de delegação vai ser efetuada.</translation>
    <translation id="exchange_ACTION_delegation_success_message" qtlid="144266">A atualização dos direitos de delegação vai ser efetuada.</translation>
    <translation id="exchange_ACTION_delegation_partial_message" qtlid="156758">Ocorram erros aquando da atualização dos direitos de delegação.</translation>
@@ -767,7 +767,7 @@ O anti-spam Vade Secure é compatível com o modo não autoritário (unicamente 
    <translation id="exchange_DIAGNOSTICS_description" qtlid="297982">O diagnóstico de uma conta de e-mail permite validar vários elementos, nomeadamente se a conta está bloqueada, a validade do registo MX e SRV, a autenticação ao webmail bem como o envio e receção para esta conta. Há que ter em conta que o diagnóstico pode levar entre 3 a 10 minutos.</translation>
    <translation id="exchange_DIAGNOSTICS_stay_on_page_while_diagnostic_is_running" qtlid="324899">Se deixar a secção web do Espaço Cliente o resultado do diagnostico não será conservado.</translation>
    <translation id="exchange_DIAGNOSTICS_input_email" qtlid="291344">Conta de e-mail a diagnosticar</translation>
-   <translation id="exchange_DIAGNOSTICS_input_password" qtlid="2270">Password</translation>
+   <translation id="exchange_DIAGNOSTICS_input_password" qtlid="2270">Palavra-passe</translation>
    <translation id="exchange_DIAGNOSTICS_button_launch_diagnostic" qtlid="291357">Iniciar o diagnóstico</translation>
    <translation id="exchange_DIAGNOSTICS_button_diagnostic_in_progress" qtlid="291370">Diagnóstico</translation>
    <translation id="exchange_DIAGNOSTICS_button_new_diagnostic" qtlid="291383">Novo diagnóstico</translation>
@@ -826,10 +826,11 @@ O anti-spam Vade Secure é compatível com o modo não autoritário (unicamente 
    <translation id="exchange_DIAGNOSTICS_status_canSendEmail_help_li4" qtlid="319817">Um incidente na infraestrutura Exchange</translation>
    <translation id="exchange_DIAGNOSTICS_status_support_ticket_subject" qtlid="291643">Diagnóstico Exchange</translation>
    <translation id="exchange_DIAGNOSTICS_status_support_ticket_body" qtlid="291656">Queira conservar as seguintes informações, elas serão úteis para que diagnostique a situação em que se encontra.</translation>
+   <translation id="exchange_DIAGNOSTICS_create_ticket" qtlid="260801">Criar um ticket</translation>
 
 <!-- ########################################## -->
 <!-- TAB MAILING LISTS -->
-   <translation id="exchange_tab_GROUPS_back_button" qtlid="4118">Regresso</translation>
+   <translation id="exchange_tab_GROUPS_back_button" qtlid="4118">Voltar atrás</translation>
    <translation id="exchange_tab_GROUPS_header" qtlid="32962">Grupos</translation>
    <translation id="exchange_tab_GROUPS_remove_account_tooltip" qtlid="150073">Retirar a conta deste grupo</translation>
    <translation id="exchange_tab_GROUPS_intro" qtlid="155873">Lista dos grupos da conta <span class="bold">{0}</span></translation>
@@ -889,7 +890,7 @@ O anti-spam Vade Secure é compatível com o modo não autoritário (unicamente 
    <translation id="exchange_tab_GROUPS_delete_group_success" qtlid="150151">O seu grupo vai ser eliminado.</translation>
    <translation id="exchange_tab_GROUPS_delete_group_error" qtlid="150164">Ocorreu um erro aquando da eliminação do seu grupo.</translation>
    <translation id="exchange_GROUPS_delegation_title" qtlid="150398">Configuração da delegação</translation>
-   <translation id="exchange_GROUPS_delegation_step1_intro" qtlid="434577">Une délégation permet à d'autres comptes Exchange d'avoir certains droits sur le groupe <strong>{0}</strong></translation>
+   <translation id="exchange_GROUPS_delegation_step1_intro" qtlid="434577">Uma delegação atribui permissões de acesso de outras contas Exchange ao grupo <strong>{0}</strong></translation>
    <translation id="exchange_GROUPS_delegation_step1_email_header" qtlid="137244">Conta de e-mail</translation>
    <translation id="exchange_GROUPS_delegation_step1_send_header" qtlid="143759">Dar o direito de envio</translation>
    <translation id="exchange_GROUPS_delegation_step1_full_header" qtlid="144240">Dar os direitos de acesso</translation>
@@ -935,8 +936,8 @@ O anti-spam Vade Secure é compatível com o modo não autoritário (unicamente 
    <translation id="exchange_GROUPS_add_group_help_directory_text" qtlid="184880">Ocultar no Outlook permite que o endereço do grupo não seja visível na lista de endereços do serviço Exchange.</translation>
    <translation id="exchange_GROUPS_add_group_help_security_header" qtlid="150528">É necessário autenticação</translation>
    <translation id="exchange_GROUPS_add_group_help_security_text" qtlid="150671">Se marcar, apenas os números do grupo podem enviar mensagens ao endereço do grupo.</translation>
-   <translation id="exchange_GROUPS_manager_intro" qtlid="434590">Liste des comptes administrateur du groupe <strong>{0}</strong></translation>
-   <translation id="exchange_GROUPS_manager_back_button" qtlid="4118">Regresso</translation>
+   <translation id="exchange_GROUPS_manager_intro" qtlid="434590">Lista de contas dos admministradores do grupo <strong>{0}</strong></translation>
+   <translation id="exchange_GROUPS_manager_back_button" qtlid="4118">Voltar atrás</translation>
    <translation id="exchange_GROUPS_manager_delete_tooltip" qtlid="150697">Remover esta conta da lista dos managers</translation>
    <translation id="exchange_GROUPS_manager_table_empty" qtlid="150710">Não possui contas de administrador para este grupo</translation>
    <translation id="exchange_GROUPS_manager_table_empty_search" qtlid="150723">Não possui administradores que correspondam ao termo procurado</translation>
@@ -944,10 +945,10 @@ O anti-spam Vade Secure é compatível com o modo não autoritário (unicamente 
    <translation id="exchange_GROUPS_remove_manager_question" qtlid="150749">Deseja realmente eliminar a seguinte conta da lista dos administradores do seu grupo?</translation>
    <translation id="exchange_GROUPS_remove_manager_group_label" qtlid="59507">Grupo</translation>
    <translation id="exchange_GROUPS_remove_manager_manager_label" qtlid="43948">Administrador</translation>
-   <translation id="exchange_GROUPS_remove_manager_success_message" qtlid="434603">Le compte <strong>{0}</strong> va être supprimé de la liste d'administrateurs du groupe <span class="bold">{1}</span>.</translation>
+   <translation id="exchange_GROUPS_remove_manager_success_message" qtlid="434603">A conta <strong>{0}</strong> será eliminada da lista de administradores do grupo <span class="bold">{1}</span>.</translation>
    <translation id="exchange_GROUPS_remove_manager_error_message" qtlid="155912">Ocorreu um erro durante a eliminação da conta de email <span class="bold">{0}</span> da lista de administradores de grupo<span class="bold">{1}</span>.</translation>
-   <translation id="exchange_GROUPS_member_intro" qtlid="434616">Liste des comptes contacts du groupe <strong>{0}</strong></translation>
-   <translation id="exchange_GROUPS_member_back_button" qtlid="4118">Regresso</translation>
+   <translation id="exchange_GROUPS_member_intro" qtlid="434616">Lista de contas de contactos do grupo <strong>{0}</strong></translation>
+   <translation id="exchange_GROUPS_member_back_button" qtlid="4118">Voltar atrás</translation>
    <translation id="exchange_GROUPS_member_delete_tooltip" qtlid="150801">Remover esta conta da lista dos contactos</translation>
    <translation id="exchange_GROUPS_member_table_empty" qtlid="150814">Não possui contactos para este grupo</translation>
    <translation id="exchange_GROUPS_member_table_empty_search" qtlid="150827">Não possui contactos que correspondem à pesquisa</translation>
@@ -1076,7 +1077,7 @@ O anti-spam Vade Secure é compatível com o modo não autoritário (unicamente 
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_REOPENING" qtlid="171279">Reabertura em progresso</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_SUSPENDED" qtlid="136100">Suspenso</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_SUSPENDING" qtlid="171292">Suspensão em progresso</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_MODIFYING" qtlid="174646">Em modificação</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_MODIFYING" qtlid="174646">Alteração em curso</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_OK" qtlid="433745">Ok</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_actions_menu_modify" qtlid="37875">Modificar</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_actions_menu_delete" qtlid="2414">Eliminar</translation>
@@ -1098,7 +1099,7 @@ O anti-spam Vade Secure é compatível com o modo não autoritário (unicamente 
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_option_fail" qtlid="137621">Ocorreu um erro aquando do carregamento das opções da conta Exchange.</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_mandatory_fields" qtlid="137634">Campos obrigatórios</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_wizardhelp_requirements_title" qtlid="171383">Condições para os contactos externos</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_wizardhelp_requirements_content" qtlid="174659">Os contactos externos devem respeitar as seguintes exigências:<br/><br/>- O Nome e Apelido devem comportar no máximo 64 caracteres.<br/>- O nome a aparece deve ter no máximo 255 caracteres.</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_wizardhelp_requirements_content" qtlid="174659">Os contactos externos devem respeitar as seguintes exigências:<br/><br/>- O Nome e Apelido devem ter no máximo 64 caracteres.<br/>- O nome a visualizar deve ter no máximo 255 caracteres.</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_question" qtlid="171435">Deseja realmente adicionar o seguinte contacto externo?</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_email_label" qtlid="137244">Conta de e-mail</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_first_name_label" qtlid="23323">Nome</translation>
@@ -1120,7 +1121,7 @@ O anti-spam Vade Secure é compatível com o modo não autoritário (unicamente 
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_GAL_label" qtlid="191954">Ocultar o endereço no Outlook</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_mandatory_fields" qtlid="137634">Campos obrigatórios</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_wizardhelp_requirements_title" qtlid="171383">Condições para os contactos externos</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_wizardhelp_requirements_content" qtlid="174659">Os contactos externos devem respeitar as seguintes exigências:<br/><br/>- O Nome e Apelido devem comportar no máximo 64 caracteres.<br/>- O nome a aparece deve ter no máximo 255 caracteres.</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_wizardhelp_requirements_content" qtlid="174659">Os contactos externos devem respeitar as seguintes exigências:<br/><br/>- O Nome e Apelido devem ter no máximo 64 caracteres.<br/>- O nome a visualizar deve ter no máximo 255 caracteres.</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_question" qtlid="171500">Deseja realmente modificar o seguinte contacto externo?</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_email_label" qtlid="137244">Conta de e-mail</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_first_name_label" qtlid="23323">Nome</translation>
@@ -1147,7 +1148,7 @@ O anti-spam Vade Secure é compatível com o modo não autoritário (unicamente 
    <translation id="exchange_ACTION_renew_ssl_intro" qtlid="174698">Escolha o endereço de e-mail no qual deve ser enviado o e-mail de confirmação de renovação do certificado SSL.</translation>
    <translation id="exchange_ACTION_renew_ssl_resume" qtlid="174711">Queira verificar as seguintes informações antes de prosseguir com a renovação do certificado SSl.</translation>
    <translation id="exchange_ACTION_renew_ssl_dcv_label" qtlid="174724">E-mail de confirmação</translation>
-   <translation id="exchange_ACTION_renew_ssl_success" qtlid="174737">A renovação do seu certificado SSL foi corretamente tomada em conta. Um e-mail descrito das próximas etapas foi-lhe ser enviado ao endereço {0}.</translation>
+   <translation id="exchange_ACTION_renew_ssl_success" qtlid="174737">A renovação do seu certificado SSL foi está ser processada. Será um enviado um e-mail com informação sobre os próximos passos do processo {0}.</translation>
    <translation id="exchange_ACTION_renew_ssl_failure" qtlid="174685">Ocorreu um erro aquando da renovação do seu certificado SSL</translation>
 
 
@@ -1156,10 +1157,10 @@ O anti-spam Vade Secure é compatível com o modo não autoritário (unicamente 
    <translation id="exchange_ACTION_configure_services_label_lockoutDuration" qtlid="179706">Duração do bloqueio</translation>
    <translation id="exchange_ACTION_configure_services_label_lockoutObservationWindow" qtlid="179719">Atraso de reinicialização</translation>
    <translation id="exchange_ACTION_configure_services_label_lockoutThreshold" qtlid="179732">Código de bloqueio</translation>
-   <translation id="exchange_ACTION_configure_services_label_maxPasswordAge" qtlid="179745">Duração máxima de vida da password</translation>
+   <translation id="exchange_ACTION_configure_services_label_maxPasswordAge" qtlid="179745">Período de validade da palavra-passe</translation>
    <translation id="exchange_ACTION_configure_services_label_minPasswordAge" qtlid="376089">Impedir a alteração da password</translation>
    <translation id="exchange_ACTION_configure_services_label_passwordHistoryCount" qtlid="376102">Conservar o histórico da password</translation>
-   <translation id="exchange_ACTION_configure_services_label_minPasswordLength" qtlid="174828">Comprimento mínimo da password</translation>
+   <translation id="exchange_ACTION_configure_services_label_minPasswordLength" qtlid="174828">Dimensão mínima da password</translation>
    <translation id="exchange_ACTION_configure_services_label_complexityEnabled" qtlid="178003">Exigência de complexidade</translation>
    <translation id="exchange_ACTION_configure_services_label_incoming_messages" qtlid="81871">Mensagens entrando</translation>
    <translation id="exchange_ACTION_configure_services_label_spf" qtlid="402399">Ativar a proteção SPF</translation>
@@ -1176,9 +1177,9 @@ O anti-spam Vade Secure é compatível com o modo não autoritário (unicamente 
    <translation id="minPasswordLength_mustBeInteger_error" qtlid="178055">O comprimento mínimo da password deve ser um número inteiro</translation>
    <translation id="minPasswordLength_number_error" qtlid="178055">O comprimento mínimo da password deve ser um número inteiro</translation>
    <translation id="minPasswordLength_pattern_error" qtlid="178055">O comprimento mínimo da password deve ser um número inteiro</translation>
-   <translation id="minPasswordAge_min_error" qtlid="434629">L'âge minimal du mot de passe ne peut pas être inférieur à 0 jour</translation>
-   <translation id="minPasswordAge_max_error" qtlid="434642">L'âge minimal du mot de passe ne peut pas être supérieur à 90 jours</translation>
-   <translation id="minPasswordAge_mustBeInteger_error" qtlid="434655">L'âge minimal du mot de passe doit être un nombre entier</translation>
+   <translation id="minPasswordAge_min_error" qtlid="434629">O período mínimo de validade da palavra-passe não pode ser inferior a 0 dias</translation>
+   <translation id="minPasswordAge_max_error" qtlid="434642">O período máximo de validade da palavra-passe não pode ser superior a 90 dias</translation>
+   <translation id="minPasswordAge_mustBeInteger_error" qtlid="434655">O período de validade da palavra-passe tem que ser um número inteiro</translation>
    <translation id="minPasswordAge_minToBigForMax_error" qtlid="178094">A antiguidade mínima da palavra-passe deve ser inferior à sua validade máxima</translation>
    <translation id="minPasswordAge_pattern_error" qtlid="434018">O valor do período de validade da palavra-passe tem que ser um número inteiro</translation>
    <translation id="minPasswordAge_number_error" qtlid="434018">O valor do período de validade da palavra-passe tem que ser um número inteiro</translation>
@@ -1215,7 +1216,7 @@ O anti-spam Vade Secure é compatível com o modo não autoritário (unicamente 
    <translation id="lockoutDuration_pattern_error" qtlid="178042">A duração do bloqueio deve ser um número inteiro</translation>
    <translation id="exchange_ACTION_configure_success" qtlid="178263">As modificações vão ser tomadas em conta</translation>
    <translation id="exchange_ACTION_configure_error" qtlid="178276">Erro aquando do pedido, as modificações não serão aplicadas</translation>
-   <translation id="exchange_ACTION_configure_step2_intro" qtlid="434668">Récapitulatif de configuration pour votre service Exchange <strong>{0}</strong></translation>
+   <translation id="exchange_ACTION_configure_step2_intro" qtlid="434668">Resumo da configuração do serviço Exchange Exchange <strong>{0}</strong></translation>
    <translation id="exchange_ACTION_configure_step2_label_lockoutDuration" qtlid="178302">Duração do bloqueio da conta:</translation>
    <translation id="exchange_ACTION_configure_step2_label_lockoutObservationWindow" qtlid="178315">Janela de observação para o bloqueio:</translation>
    <translation id="exchange_ACTION_configure_step2_label_lockoutThreshold" qtlid="178328">Limite do bloqueio da conta:</translation>
@@ -1285,8 +1286,8 @@ O anti-spam Vade Secure é compatível com o modo não autoritário (unicamente 
    <translation id="exchange_ACTION_configure_help_minPasswordAge_title" qtlid="178705">Duração mínima das palavras-passe</translation>
    <translation id="exchange_ACTION_configure_help_minPasswordAge_text" qtlid="178718">Este parâmetro determina o período de tempo (em dias) durante o qual uma palavra-passe deve ser utilizado antes de que o utilizador a possa modificar. Poderá definir um valor compreendido entre 1 e 90 dias ou autorizar a troca imediata definindo esse valor como 0.</translation>
    <translation id="exchange_ACTION_configure_help_maxPasswordAge_title" qtlid="178731">Duração máxima das palavras-passe</translation>
-   <translation id="exchange_ACTION_configure_help_maxPasswordAge_text" qtlid="181578">Este parâmetro de segurança determina o período de tempo (em dias) durante o qual uma password pode ser utilizada antes que o sistema peça ao utilizador que a modifique. Pode definir esse parâmetro para que as passwords expirem entre um número de dias compreendido entre 1 e 90 dias onde poderá especificar que as passwords não devem nunca expirar definindo como valor 0 no número de dias. Se a duração máxima de vida da password é compreendida entre 1 e 90 dias, a duração de vide mínima das passwords deve ser inferior à duração máxima das mesmas. Se a duração máxima de vida da password está definida com o valor 0, a duração mínima de vida da password deve ser definida com qualquer valor compreendido entre 0 e 90 dias.</translation>
-   <translation id="exchange_ACTION_configure_help_minPasswordLength_title" qtlid="174828">Comprimento mínimo da password</translation>
+   <translation id="exchange_ACTION_configure_help_maxPasswordAge_text" qtlid="181578">Esta configuração de segurança determina o período (dias) de validade para a palavra-passe. Terminada a validade, o sistema  irá pedir ao utilizador a alteração da mesma. Pode definir um período de validade da palavra-passe compreendido entre 1 e 90 dias. Também é possível optar por um período de validade ilimitado, definindo o valor para zero. Se o período máximo for definido entre 1 e 90 dias, o período mínimo tem que ser inferior. Se o valor máximo definido for igual a 0, o período mínimo pode ser igual a qualquer número entre 0 e 90 dias.</translation>
+   <translation id="exchange_ACTION_configure_help_minPasswordLength_title" qtlid="174828">Dimensão mínima da password</translation>
    <translation id="exchange_ACTION_configure_help_minPasswordLength_text" qtlid="178757">Este parâmetro de segurança determina o número máximo de caracteres que a palavra-passe de um utilizador pode conter. Pode definir um valor compreendido entre 3 e 14 caracteres ou indicar que não há requisitos mínimos para a palavra-passe definindo este parâmetro a 0.</translation>
    <translation id="exchange_ACTION_configure_help_spf_title" qtlid="402516">SPF:</translation>
    <translation id="exchange_ACTION_configure_help_spf_text" qtlid="402529">O SPF visa reduzir as possibilidades de usurpação ao publicar na zona DNS um registo que indica quais os endereços IP que estão, ou não, autorizados a enviar e-mails. Ao ativar esta opção, uma tag SPAM será colocada nos e-mails provenientes de um domínio com um SPF incorreto.</translation>
@@ -1418,14 +1419,14 @@ O anti-spam Vade Secure é compatível com o modo não autoritário (unicamente 
    <translation id="exchange_action_SHARED_delete_error" qtlid="202056">Ocorreu um erro aquando da eliminação da sua partilha</translation>
 
    <translation id="exchange_action_SHARED_permissions_delete_title" qtlid="202069">Eliminar uma permissão</translation>
-   <translation id="exchange_action_SHARED_permissions_delete_question" qtlid="202082">Deseja realmente eliminar a permissão de acesso à partilha {0}?</translation>
+   <translation id="exchange_action_SHARED_permissions_delete_question" qtlid="202082">Quer mesmo eliminar as permissões de acesso à partilha {0}?</translation>
    <translation id="exchange_action_SHARED_permissions_delete_success" qtlid="202095">A sua permissão de acesso vai ser eliminada.</translation>
    <translation id="exchange_action_SHARED_permissions_delete_error" qtlid="202056">Ocorreu um erro aquando da eliminação da sua partilha</translation>
 
    <translation id="exchange_action_SHARED_permissions_update_title" qtlid="202108">Configuração das permissões de acesso</translation>
-   <translation id="exchange_action_SHARED_permissions_update_intro" qtlid="209190">Uma permissão de acesso permite a outras contas Exchange<sup>1</sup> obter certos direitos sobre uma partilha {0}</translation>
+   <translation id="exchange_action_SHARED_permissions_update_intro" qtlid="209190">Uma permissão permite o acesso de outras contas Exchange<sup>1</sup> à partilha {0}</translation>
    <translation id="exchange_action_SHARED_permissions_update_legend" qtlid="209203">As contas Exchange de tipo "Basic" não são apresentadas pois não são elegíveis para utilização das permissões de acesso às partilhas.</translation>
-   <translation id="exchange_action_SHARED_permissions_update_resume_intro" qtlid="202147">Resumo das alterações nos direitos de acesso de partilha {0}:</translation>
+   <translation id="exchange_action_SHARED_permissions_update_resume_intro" qtlid="202147">Resumo das alterações efetuadas às permissões de acesso à partilha {0}:</translation>
    <translation id="exchange_action_SHARED_permissions_update_success_message" qtlid="202160">As permissões de acesso para a partilha <span class="bold">{0}</span> vão ser modificadas.</translation>
    <translation id="exchange_action_SHARED_permissions_update_partial_message" qtlid="202173">O seu pedido de atualizção das permissões de acesso para a partilha <span class="bold">{0}</span> foi parcialmente tomado em conta, uma vez que ocorreram alguns erros.</translation>
    <translation id="exchange_action_SHARED_permissions_update_error_message" qtlid="202186">Ocorreram alguns erros aquando da atualização das permissões de acesso para a partilha <span class="bold">{0}</span>.</translation>
@@ -1442,8 +1443,8 @@ O anti-spam Vade Secure é compatível com o modo não autoritário (unicamente 
    <translation id="exchange_SHARED_ACCOUNTS_update_action_title" qtlid="215234">Modificação de uma conta partilhada</translation>
    <translation id="exchange_SHARED_ACCOUNTS_delete_title" qtlid="215364">Eliminar uma conta partilhada</translation>
    <translation id="exchange_SHARED_ACCOUNTS_recap_title" qtlid="82725">Resumo</translation>
-   <translation id="exchange_SHARED_ACCOUNTS_quota_max_error_message" qtlid="215377">Quota inválida ( máximo {0} {1})</translation>
-   <translation id="exchange_SHARED_ACCOUNTS_quota_min_error_message" qtlid="215390">Quota inválida  ( mínimum {0} {1})</translation>
+   <translation id="exchange_SHARED_ACCOUNTS_quota_max_error_message" qtlid="215377">Limite inválido ( máximo {0} {1})</translation>
+   <translation id="exchange_SHARED_ACCOUNTS_quota_min_error_message" qtlid="215390">Limite inválido  ( mínimo {0} {1})</translation>
    <translation id="exchange_SHARED_ACCOUNTS_total_quota_error_message" qtlid="215403">A quota total das cortas partilhadas ultrapassa o limite autorizado. Elimine ou reduza a quota de uma ou várias das contas já existentes.</translation>
    <translation id="exchange_SHARED_ACCOUNTS_login_error_message" qtlid="215416">Apenas os caracteres alfanuméricos são autorizados.</translation>
    <translation id="exchange_SHARED_ACCOUNTS_quota_recap" qtlid="402620">Quota total : <strong>{0}</strong> Mib / Quota restante: <strong>{1}</strong> Mib (<strong>{2}</strong>%)</translation>
@@ -1466,7 +1467,7 @@ O anti-spam Vade Secure é compatível com o modo não autoritário (unicamente 
    <translation id="exchange_ACTION_upgrade_title" qtlid="271699">Atualizar o Exchange</translation>
    <translation id="exchange_ACTION_upgrade_intro" qtlid="271712">Poderá solicitar a atualização do seu serviço para o Exchange 2016. Esta operação pode levar algumas horas após a validação da nota de encomenda. Para gerar a sua nota de encomenda aceite o contrato e valide-o. Não será necessário efetuar nenhuma configuração (parâmetros idênticos).</translation>
    <translation id="exchange_ACTION_upgrade_get_contracts_error" qtlid="271725">Ocorreu um erro aquando do carregamento das informações:</translation>
-   <translation id="exchange_ACTION_order_upgrade_success" qtlid="181266">A encomenda número <a href='{0}' target='_blank'>{1}</a> foi tomada em conta.</translation>
+   <translation id="exchange_ACTION_order_upgrade_success" qtlid="181266">A encomenda número <a href='{0}' target='_blank'>{1}</a> foi registada.</translation>
    <translation id="exchange_ACTION_order_upgrade_error" qtlid="271738">Ocorreu um erro aquando da atualização da sua oferta Exchange.</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_menu_item" qtlid="368089">Aumentar a capacidade para 300GB</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_title_label" qtlid="368102">Aumentar a capacidade</translation>

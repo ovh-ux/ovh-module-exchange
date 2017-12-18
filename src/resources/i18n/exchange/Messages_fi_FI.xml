@@ -72,8 +72,8 @@ Valitse: <br /> Tyyppi: <span class="bold">A</span> <br /> Aliverkkotunnus: <spa
    <translation id="exchange_ACTION_export_confirm" qtlid="217080">Haluatko varmasti viedä tilisi?</translation>
 
 <!-- OFFICE ATTACHED -->
-   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Tarjous:</strong> aktivoi Office 365 maksutta* Exchange-osoitteillesi!</translation>
-   <translation id="exchange_office_attached_alert_details" qtlid="404213">*Tarjous koskee Office 365 Business -tuotetta. Käytettävissä enintään {0} Exchange-osoitteelle. Ainoastaan ensimmäinen kuukausi on maksuton, tämän jälkeen tuotteen tilaus jatkuu automaattisesti uusintapäivänä ilmoitettuun hintaan. Hintatiedot löytyvät sivulta <a target="_blank" href="https://www.ovh.hosting.fi">https://www.ovh-hosting.fi</a></translation>
+   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Tarjous:</strong> aktivoi Office 365 maksutta Exchange-osoitteillesi!</translation>
+   <translation id="exchange_office_attached_alert_details" qtlid="404213">Tarjous koskee Office 365 Business -tuotetta. Käytettävissä enintään {0} Exchange-osoitteelle. Ainoastaan ensimmäinen kuukausi on maksuton, tämän jälkeen tuotteen tilaus jatkuu automaattisesti uusintapäivänä ilmoitettuun hintaan. Hintatiedot löytyvät sivulta <a target="_blank" href="https://www.ovh.hosting.fi">https://www.ovh-hosting.fi</a></translation>
    <translation id="exchange_office_attached_alert_button" qtlid="404226">Hyödynnä tarjous</translation>
    <translation id="exchange_office_attached_alert_modale_title" qtlid="404239">Aktivoi Office 365 -tarjoustuote</translation>
    <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Käytä Office 365 -tuotetta 1 kuukausi maksutta {0} valitsemallasi Exchange-tilillä</translation>
@@ -150,6 +150,7 @@ Valitse: <br /> Tyyppi: <span class="bold">A</span> <br /> Aliverkkotunnus: <spa
    <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="171188">Avataan</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Vanhentunut</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Keskeytetään</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_MIGRATING">Migration en cours</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SPAM" qtlid="70409">Roskaposti</translation>
 
    <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="31522">OK</translation>
@@ -190,8 +191,8 @@ Valitse: <br /> Tyyppi: <span class="bold">A</span> <br /> Aliverkkotunnus: <spa
    <translation id="exchange_tab_ALIAS_back_button" qtlid="4118">Takaisin</translation>
    <translation id="exchange_tab_ALIAS_header" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_delete_tooltip" qtlid="178848">Poista alias</translation>
-   <translation id="exchange_tab_ALIAS_intro" qtlid="434512">Liste des alias créés pour le compte <strong>{0}</strong></translation>
-   <translation id="exchange_tab_ALIAS_GROUP_intro" qtlid="434525">Liste des alias créés pour le groupe <strong>{0}</strong></translation>
+   <translation id="exchange_tab_ALIAS_intro" qtlid="434512">Tilille <strong>{0}</strong> luotujen aliasten lista</translation>
+   <translation id="exchange_tab_ALIAS_GROUP_intro" qtlid="434525">Ryhmälle <strong>{0}</strong> luotujen aliasten lista</translation>
    <translation id="exchange_tab_ALIAS_table_empty" qtlid="143954">Ei aliasta tälle tilille</translation>
    <translation id="exchange_tab_ALIAS_GROUP_table_empty" qtlid="178874">Tälle ryhmälle ei ole aliasta</translation>
    <translation id="exchange_tab_ALIAS_state_TASK_ON_DOING" qtlid="26383">Käynnissä</translation>
@@ -209,7 +210,7 @@ Valitse: <br /> Tyyppi: <span class="bold">A</span> <br /> Aliverkkotunnus: <spa
    <translation id="exchange_tab_ALIAS_remove_alias_label" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_remove_account_label" qtlid="143603">Kyseessä oleva tili</translation>
    <translation id="exchange_tab_ALIAS_add_alias_title" qtlid="143616">Luo alias</translation>
-   <translation id="exchange_tab_ALIAS_add_alias_intro" qtlid="155782">Luo alias tilille</translation>
+   <translation id="exchange_tab_ALIAS_add_alias_intro" qtlid="416579">Tee alias tilille <span class="bold">{0}</span></translation>
    <translation id="exchange_tab_ALIAS_add_alias_placeholder" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_add_alias_step2_intro" qtlid="144006">Haluatko varmasti lisätä alla olevan aliaksen?</translation>
    <translation id="exchange_tab_ALIAS_add_alias_step2_alias_label" qtlid="9466">Alias</translation>
@@ -303,7 +304,7 @@ Valitse: <br /> Tyyppi: <span class="bold">A</span> <br /> Aliverkkotunnus: <spa
    <translation id="exchange_tab_TASKS_DELETE_SHARED_ACCOUNT_FULL_ACCESS" qtlid="215286">Poista täydet oikeudet jaetulta tililtä</translation>
    <translation id="exchange_tab_TASKS_DELETE_SHARED_ACCOUNT_SEND_AS" qtlid="215299">Poista ”send as”-oikeudet jaetulta tililtä</translation>
    <translation id="exchange_tab_TASKS_DELETE_SHARED_ACCOUNT_SEND_ON_BEHALF_TO" qtlid="215312">Poista ”Send on behalf”-oikeudet jaetulta tililtä</translation>
-   <translation id="exchange_tab_TASKS_table_start_date" qtlid="201328">Alkaa</translation>
+   <translation id="exchange_tab_TASKS_table_start_date" qtlid="201328">Alku</translation>
    <translation id="exchange_tab_TASKS_table_finish_date" qtlid="201341">Päättyy</translation>
    <translation id="exchange_tab_TASKS_warning" qtlid="136347">Huomio!</translation>
    <translation id="exchange_tab_TASKS_partial" qtlid="137426">Näytetty lista ei ole kokonainen, eräitä tehtäviä ei ladattu oikein.</translation>
@@ -456,7 +457,6 @@ Valitse: <br /> Tyyppi: <span class="bold">A</span> <br /> Aliverkkotunnus: <spa
    <translation id="exchange_ACTION_add_account_step2_password_confirmation_label" qtlid="9983">Vahvista</translation>
    <translation id="exchange_ACTION_add_account_step2_type_label" qtlid="48938">Tilin tyyppi</translation>
    <translation id="exchange_ACTION_add_account_step2_outlook_label" qtlid="136724">Outlook-lisenssi</translation>
-   <translation id="exchange_ACTION_add_account_step2_security_label" qtlid="136750">Tietoturvaoptiot</translation>
    <translation id="exchange_ACTION_add_account_step2_GAL_label" qtlid="191954">Osoitteen piilotus Outlookissa</translation>
    <translation id="exchange_ACTION_add_account_security_NONE" qtlid="8674">Ei mitään</translation>
    <translation id="exchange_ACTION_add_account_security_VADERETRO" qtlid="324821">Vade Secure -suojaus</translation>
@@ -550,7 +550,7 @@ Valitse: <br /> Tyyppi: <span class="bold">A</span> <br /> Aliverkkotunnus: <spa
    <translation id="exchange_tab_domain_add_step1_user_owned_option" qtlid="397533">Syötä verkkotunnus, joka ei ole OVH:n hallinnoima</translation>
    <translation id="exchange_tab_domain_add_step1_user_owned_info" qtlid="397546">Huom: varmista, että valitun verkkotunnuksen administraattori voi muokata sen DNS-aluetta</translation>
    <translation id="exchange_tab_domain_add_step1_order_domain_option" qtlid="136997">Tilaa verkkotunnus</translation>
-   <translation id="exchange_tab_domain_add_step1_domain_none" qtlid="434538">Aucun résultat trouvé</translation>
+   <translation id="exchange_tab_domain_add_step1_domain_none" qtlid="434538">Yhtään tulosta ei löytynyt</translation>
 
    <translation id="exchange_tab_domain_add_step3_cover_guide" qtlid="139572">Opasvideon esikatselukuva</translation>
 
@@ -620,7 +620,7 @@ Vade Secure -roskapostisuodatin on yhteensopiva ei-autoritatiivisen tilan kanssa
 <!-- ########################################## -->
 <!-- DELEGATION -->
    <translation id="exchange_ACTION_delegation_title" qtlid="143733">Delegointikonfigurointi</translation>
-   <translation id="exchange_ACTION_delegation_step1_intro" qtlid="434551">Une délégation permet à d'autres comptes Exchange d'avoir certains droits sur le compte <strong>{0}</strong></translation>
+   <translation id="exchange_ACTION_delegation_step1_intro" qtlid="434551">Valtuutuksen avulla toiset Exchange-tilit voivat saada tiettyjä oikeuksia tilille <strong>{0}</strong></translation>
    <translation id="exchange_ACTION_delegation_table_empty" qtlid="150047">Ei tilejä käytettävissä</translation>
    <translation id="exchange_ACTION_delegation_table_empty_search" qtlid="150060">Ei hakuehtoja vastaavia tilejä</translation>
    <translation id="exchange_ACTION_delegation_step1_email_header" qtlid="137244">Sähköpostitili</translation>
@@ -628,7 +628,7 @@ Vade Secure -roskapostisuodatin on yhteensopiva ei-autoritatiivisen tilan kanssa
    <translation id="exchange_ACTION_delegation_step1_sendOnBehalfTo_header" qtlid="181487">Send as -oikeudet</translation>
    <translation id="exchange_ACTION_delegation_step1_full_header" qtlid="181500">Pääsyoikeudet</translation>
    <translation id="exchange_ACTION_delegation_step1_task_on_doing" qtlid="201458">Työtehtävä käynnissä</translation>
-   <translation id="exchange_ACTION_delegation_step2_intro" qtlid="434564">Les droits de délégation afférents au compte <strong>{0}</strong> :</translation>
+   <translation id="exchange_ACTION_delegation_step2_intro" qtlid="434564">Valtuutusoikeudet koskevat tiliä <strong>{0}</strong> :</translation>
    <translation id="exchange_ACTION_delegation_step2_email_header" qtlid="137244">Sähköpostitili</translation>
    <translation id="exchange_ACTION_delegation_step2_send_header" qtlid="143798">Lähetysoikus</translation>
    <translation id="exchange_ACTION_delegation_step2_sendOnBehalfTo_header" qtlid="181487">Send as -oikeudet</translation>
@@ -829,6 +829,7 @@ Vade Secure -roskapostisuodatin on yhteensopiva ei-autoritatiivisen tilan kanssa
    <translation id="exchange_DIAGNOSTICS_status_canSendEmail_help_li4" qtlid="319817">Exchange-infrastruktuurissa tapahtunut ongelma</translation>
    <translation id="exchange_DIAGNOSTICS_status_support_ticket_subject" qtlid="291643">Exchange-diagonistiikka</translation>
    <translation id="exchange_DIAGNOSTICS_status_support_ticket_body" qtlid="291656">Säilytä oheiset tiedot, niitä tarvitaan tilanteen tutkimisessa.</translation>
+   <translation id="exchange_DIAGNOSTICS_create_ticket" qtlid="260801">Luo tukipyyntö</translation>
 
 <!-- ########################################## -->
 <!-- TAB MAILING LISTS -->
@@ -892,7 +893,7 @@ Vade Secure -roskapostisuodatin on yhteensopiva ei-autoritatiivisen tilan kanssa
    <translation id="exchange_tab_GROUPS_delete_group_success" qtlid="150151">Ryhmä poistetaan</translation>
    <translation id="exchange_tab_GROUPS_delete_group_error" qtlid="150164">Tapahtui virhe poistettaessa ryhmiä</translation>
    <translation id="exchange_GROUPS_delegation_title" qtlid="150398">Delegaation konfigurointi</translation>
-   <translation id="exchange_GROUPS_delegation_step1_intro" qtlid="434577">Une délégation permet à d'autres comptes Exchange d'avoir certains droits sur le groupe <strong>{0}</strong></translation>
+   <translation id="exchange_GROUPS_delegation_step1_intro" qtlid="434577">Valtuutuksen avulla toiset Exchange-tilit voivat saada tiettyjä oikeuksia ryhmään <strong>{0}</strong></translation>
    <translation id="exchange_GROUPS_delegation_step1_email_header" qtlid="137244">Sähköpostitili</translation>
    <translation id="exchange_GROUPS_delegation_step1_send_header" qtlid="143759">Anna lähetysoikeudet kohteelle</translation>
    <translation id="exchange_GROUPS_delegation_step1_full_header" qtlid="144240">Myönnä käyttöoikeudet</translation>
@@ -937,7 +938,7 @@ Vade Secure -roskapostisuodatin on yhteensopiva ei-autoritatiivisen tilan kanssa
    <translation id="exchange_GROUPS_add_group_help_directory_text" qtlid="184880">Piilota osoite Outlookissa tarkoittaa, että ryhmän osoite ei ole näkyvillä Exchange-palvelun osoitelistassa.</translation>
    <translation id="exchange_GROUPS_add_group_help_security_header" qtlid="150528">Tunnistus on pakollinen</translation>
    <translation id="exchange_GROUPS_add_group_help_security_text" qtlid="150671">Mikäli valittu, vain ryhmän jäsenet voivat lähettää viestin ryhmäosoitteeseen.</translation>
-   <translation id="exchange_GROUPS_manager_intro" qtlid="434590">Liste des comptes administrateur du groupe <strong>{0}</strong></translation>
+   <translation id="exchange_GROUPS_manager_intro" qtlid="434590">Lista ryhmän <strong>{0}</strong> administraattoritileistä </translation>
    <translation id="exchange_GROUPS_manager_back_button" qtlid="4118">Takaisin</translation>
    <translation id="exchange_GROUPS_manager_delete_tooltip" qtlid="150697">Poista tämä tili ylläpitäjien listasta</translation>
    <translation id="exchange_GROUPS_manager_table_empty" qtlid="150710">Ei ylläpitäjää tälle ryhmälle</translation>
@@ -946,9 +947,9 @@ Vade Secure -roskapostisuodatin on yhteensopiva ei-autoritatiivisen tilan kanssa
    <translation id="exchange_GROUPS_remove_manager_question" qtlid="150749">Haluatko varmasti poistaa tämän tilin ryhmäsi ylläpitäjien listasta?</translation>
    <translation id="exchange_GROUPS_remove_manager_group_label" qtlid="59507">Ryhmä</translation>
    <translation id="exchange_GROUPS_remove_manager_manager_label" qtlid="43948">Admin</translation>
-   <translation id="exchange_GROUPS_remove_manager_success_message" qtlid="434603">Le compte <strong>{0}</strong> va être supprimé de la liste d'administrateurs du groupe <span class="bold">{1}</span>.</translation>
+   <translation id="exchange_GROUPS_remove_manager_success_message" qtlid="434603">Tili <strong>{0}</strong> poistetaan ryhmän <span class="bold">{1}</span> administraattoritilien listasta.</translation>
    <translation id="exchange_GROUPS_remove_manager_error_message" qtlid="155912">Tapahtui virhe poistettaessa ylläpitolistan tiliä <span class="bold">{0}</span> ryhmästä <span class="bold">{1}</span>.</translation>
-   <translation id="exchange_GROUPS_member_intro" qtlid="434616">Liste des comptes contacts du groupe <strong>{0}</strong></translation>
+   <translation id="exchange_GROUPS_member_intro" qtlid="434616">Lista ryhmän <strong>{0}</strong> yhteyshenkilötileistä</translation>
    <translation id="exchange_GROUPS_member_back_button" qtlid="4118">Takaisin</translation>
    <translation id="exchange_GROUPS_member_delete_tooltip" qtlid="150801">Poista tämä tili kontaktilistalta</translation>
    <translation id="exchange_GROUPS_member_table_empty" qtlid="150814">Ei kontakteja tälle ryhmälle</translation>
@@ -1178,9 +1179,9 @@ Vade Secure -roskapostisuodatin on yhteensopiva ei-autoritatiivisen tilan kanssa
    <translation id="minPasswordLength_mustBeInteger_error" qtlid="178055">Salasanan vähimmäispituuden on oltava kokonainen luku</translation>
    <translation id="minPasswordLength_number_error" qtlid="178055">Salasanan vähimmäispituuden on oltava kokonainen luku</translation>
    <translation id="minPasswordLength_pattern_error" qtlid="178055">Salasanan vähimmäispituuden on oltava kokonainen luku</translation>
-   <translation id="minPasswordAge_min_error" qtlid="434629">L'âge minimal du mot de passe ne peut pas être inférieur à 0 jour</translation>
-   <translation id="minPasswordAge_max_error" qtlid="434642">L'âge minimal du mot de passe ne peut pas être supérieur à 90 jours</translation>
-   <translation id="minPasswordAge_mustBeInteger_error" qtlid="434655">L'âge minimal du mot de passe doit être un nombre entier</translation>
+   <translation id="minPasswordAge_min_error" qtlid="434629">Salasanan vähimmäisikä ei voi olla alle 0 päivää</translation>
+   <translation id="minPasswordAge_max_error" qtlid="434642">Salasanan vähimmäisikä ei voi olla yli 90 päivää</translation>
+   <translation id="minPasswordAge_mustBeInteger_error" qtlid="434655">Salasanan vähimmäisiän täytyy olla kokonaisluku</translation>
    <translation id="minPasswordAge_minToBigForMax_error" qtlid="178094">Salasanan vähimmäiseliniän on oltava pienempi kuin sen enimmäiselinikä</translation>
    <translation id="minPasswordAge_pattern_error" qtlid="434018">L'âge minimal du mot de passe doit être un nombre entier</translation>
    <translation id="minPasswordAge_number_error" qtlid="434018">L'âge minimal du mot de passe doit être un nombre entier</translation>
@@ -1217,7 +1218,7 @@ Vade Secure -roskapostisuodatin on yhteensopiva ei-autoritatiivisen tilan kanssa
    <translation id="lockoutDuration_pattern_error" qtlid="178042">Pakollinen kenttä</translation>
    <translation id="exchange_ACTION_configure_success" qtlid="178263">Muutokset tullaan rekisteröimään</translation>
    <translation id="exchange_ACTION_configure_error" qtlid="178276">Virhe kyselyn aikana, muutoksia ei tehdä</translation>
-   <translation id="exchange_ACTION_configure_step2_intro" qtlid="434668">Récapitulatif de configuration pour votre service Exchange <strong>{0}</strong></translation>
+   <translation id="exchange_ACTION_configure_step2_intro" qtlid="434668">Yhteenveto Exchange-palvelusi <strong>{0}</strong> konfiguraatiosta</translation>
    <translation id="exchange_ACTION_configure_step2_label_lockoutDuration" qtlid="178302">Tilin lukituksen kesto:</translation>
    <translation id="exchange_ACTION_configure_step2_label_lockoutObservationWindow" qtlid="178315">Lukituksen tarkkailuikkuna:</translation>
    <translation id="exchange_ACTION_configure_step2_label_lockoutThreshold" qtlid="178328">Tilin lukituskynnys:</translation>
@@ -1421,12 +1422,12 @@ Vade Secure -roskapostisuodatin on yhteensopiva ei-autoritatiivisen tilan kanssa
    <translation id="exchange_action_SHARED_delete_error" qtlid="202056">Virhe esiintyi poistettaessa jakoa.</translation>
 
    <translation id="exchange_action_SHARED_permissions_delete_title" qtlid="202069">Poista käyttöoikeus</translation>
-   <translation id="exchange_action_SHARED_permissions_delete_question" qtlid="202082">Oletko varma, että haluat poistaa pääsyoikeuden jakoon {0}?</translation>
+   <translation id="exchange_action_SHARED_permissions_delete_question" qtlid="202082">Oletko varma, että haluat poistaa käyttöoikeuden jakoon <strong>{0}</strong>?</translation>
    <translation id="exchange_action_SHARED_permissions_delete_success" qtlid="202095">Pääsyoikeutesi poistetaan.</translation>
    <translation id="exchange_action_SHARED_permissions_delete_error" qtlid="202056">Virhe esiintyi poistettaessa jakoa.</translation>
 
    <translation id="exchange_action_SHARED_permissions_update_title" qtlid="202108">Pääsyoikeuksien konfigurointi</translation>
-   <translation id="exchange_action_SHARED_permissions_update_intro" qtlid="209190">Käyttövaltuudet (access permission) mahdollistaa Exchangen <sup>1</sup> tilien saada tietyt oikeudet jakoon {0}</translation>
+   <translation id="exchange_action_SHARED_permissions_update_intro" qtlid="209190">Käyttöoikeuksien avulla(access permission) toiset Exchange<sup>1</sup>-tilit voivat saada tiettyjä jakoa <strong>{0}</strong> koskevia oikeuksia</translation>
    <translation id="exchange_action_SHARED_permissions_update_legend" qtlid="209203">Basic-tyypisiä tilejä ei näytetä, sillä niillä ei ole oikeutta jakoihin.</translation>
    <translation id="exchange_action_SHARED_permissions_update_resume_intro" qtlid="202147">Yhteenveto muutoksista jaon {0} pääsyoikeuksiin:</translation>
    <translation id="exchange_action_SHARED_permissions_update_success_message" qtlid="202160">Pääsyoikeuksia jakoon <span class="bold">{0}</span> muutetaan.</translation>

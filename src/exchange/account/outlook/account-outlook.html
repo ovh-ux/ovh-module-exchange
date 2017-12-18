@@ -11,8 +11,7 @@
              data-wizard-step-valid="isStep1Valid()">
 
             <div data-ng-if="ctrl.displayWaitMessage">
-                <div class="alert alert-info mt-4"
-                     role="alert"
+                <div class="alert alert-info" role="alert"
                      data-i18n-static="exchange_ACTION_display_outlook_step1_wait_label">
                 </div>
                 <div data-ng-if="ctrl.outlook">
@@ -20,13 +19,12 @@
                     <dl class="dl-horizontal">
                         <dt data-i18n-static="exchange_ACTION_display_outlook_serial_label"></dt>
                         <dd data-ng-bind="ctrl.outlook.serial"></dd>
-                        
+
                         <dt data-i18n-static="exchange_ACTION_display_outlook_url_label"></dt>
                         <dd>
-                            <a data-ng-href="{{ctrl.outlook.url}}"
-                               class="word-break"
-                               target="_blank"
-                               data-ng-bind="ctrl.outlook.url"></a>
+                            <a class="word-break" target="_blank"
+                               data-ng-bind="ctrl.outlook.url"
+                               data-ng-href="{{ctrl.outlook.url}}"></a>
                         </dd>
                     </dl>
                 </div>
@@ -35,38 +33,36 @@
             <div data-ng-if="!ctrl.displayWaitMessage">
                 <p data-i18n-static="exchange_ACTION_display_outlook_step1_intro_label"></p>
 
-                <div class="form-horizontal">
-                    <div class="form-group">
-                        <label class="control-label col-md-4 required"
-                               for="addOutlookType"
-                               data-i18n-static="exchange_ACTION_add_outlook_type_label"></label>
-                        <div class="col-md-6">
-                            <select class="form-control"
-                                    id="addOutlookType" required
-                                    data-ng-disabled="ctrl.versionsList === null"
-                                    data-ng-model="ctrl.model.licenceVersion"
-                                    data-ng-options="version as tr('exchange_ACTION_add_outlook_type_' + (version | uppercase)) for version in ctrl.versionsList track by version"></select>
-                        </div>
+                <div class="mb-4">
+                    <label class="oui-label required" for="addOutlookType"
+                           data-i18n-static="exchange_ACTION_add_outlook_type_label"></label>
+                    <div class="oui-select">
+                        <select class="oui-select__input" id="addOutlookType" required
+                                data-ng-disabled="ctrl.versionsList === null"
+                                data-ng-model="ctrl.model.licenceVersion"
+                                data-ng-options="version as tr('exchange_ACTION_add_outlook_type_' + (version | uppercase)) for version in ctrl.versionsList track by version">
+                        </select>
+                        <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
                     </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-4 required"
-                               for="addOutlookLanguage"
-                               data-i18n-static="exchange_ACTION_display_outlook_step1_language_label"></label>
-                        <div class="col-md-6">
-                            <select class="form-control"
-                                    id="addOutlookLanguage"
-                                    required
-                                    data-ng-disabled="ctrl.languageList === null"
-                                    data-ng-model="ctrl.model.languageIndex"
-                                    data-ng-options="lang as tr('exchange_ACTION_display_outlook_language_' + (lang | uppercase)) disable when ctrl.isLanguageDisabled(lang) for lang in ctrl.languageList track by lang"></select>
-                        </div>
+                </div>
+                <div class="mb-4">
+                    <label class="control-label required" for="addOutlookLanguage"
+                           data-i18n-static="exchange_ACTION_display_outlook_step1_language_label"></label>
+                    <div class="oui-select">
+                        <select class="oui-select__input" id="addOutlookLanguage" required
+                                data-ng-disabled="ctrl.languageList === null"
+                                data-ng-model="ctrl.model.languageIndex"
+                                data-ng-options="lang as tr('exchange_ACTION_display_outlook_language_' + (lang | uppercase)) disable when ctrl.isLanguageDisabled(lang) for lang in ctrl.languageList track by lang">
+                            <option value="" disabled
+                                    data-i18n-static="select_placeholder"></option>
+                        </select>
+                        <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
                     </div>
                 </div>
 
-                <div class="loader text-center" data-ng-if="!ctrl.versionsList"></div>
+                <oui-loader data-ng-if="!ctrl.versionsList"></oui-loader>
 
-                <div class="alert alert-warning mt-5"
-                     role="alert"
+                <div class="alert alert-warning mt-5" role="alert"
                      data-ng-bind-html="i18n.exchange_ACTION_display_outlook_step1_extra_label"
                      data-ng-if="ctrl.versionsList">
                 </div>
@@ -78,7 +74,7 @@
              data-wizard-step-on-load="generateOutlookLicence">
 
             <div class="text-center" data-ng-if="!ctrl.outlook">
-                <div class="loader" aria-hidden="true"></div>
+                <oui-loader></oui-loader>
                 <span data-i18n-static="exchange_ACTION_display_outlook_step2_loading_label"></span>
             </div>
 
@@ -91,10 +87,9 @@
 
                     <dt data-i18n-static="exchange_ACTION_display_outlook_url_label"></dt>
                     <dd>
-                        <a data-ng-href="{{ctrl.outlook.url}}"
-                           class="word-break"
-                           target="_blank"
-                           data-ng-bind="ctrl.outlook.url"></a>
+                        <a class="word-break" target="_blank"
+                           data-ng-bind="ctrl.outlook.url"
+                           data-ng-href="{{ctrl.outlook.url}}"></a>
                     </dd>
                 </dl>
                 <p data-i18n-static="exchange_ACTION_display_outlook_step2_extra_label"></p>

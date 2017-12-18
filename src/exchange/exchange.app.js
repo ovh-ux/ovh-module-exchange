@@ -1,5 +1,5 @@
 angular
-    .module("Module.exchange", ["ovh-utils-angular", "ngRoute", "ui.bootstrap", "ngSanitize", "Module.exchange.controllers", "Module.exchange.services", "Module.exchange.filters"])
+    .module("Module.exchange", ["ovh-utils-angular", "ngRoute", "ui.bootstrap", "ngSanitize", "Module.exchange.controllers", "Module.exchange.services", "Module.exchange.filters", "Module.exchange.directives", "Module.exchange.components"])
     .config(($injector) => {
         "use strict";
 
@@ -29,7 +29,6 @@ angular
             params: {
                 tab: null
             },
-            piwikActionName: "Exchange dedicated configuration",
             resolve: {
                 navigationInformations: getNavigationInformations("exchange_dedicated"),
                 translator
@@ -44,7 +43,6 @@ angular
             params: {
                 tab: null
             },
-            piwikActionName: "Exchange hosted configuration",
             resolve: {
                 navigationInformations: getNavigationInformations("exchange_hosted"),
                 translator
@@ -60,7 +58,6 @@ angular
             params: {
                 tab: null
             },
-            piwikActionName: "Exchange provider configuration",
             resolve: {
                 navigationInformations: getNavigationInformations("exchange_provider"),
                 translator
@@ -73,7 +70,6 @@ angular
             controller: "ExchangeOrderCtrl",
             controllerAs: "ctrl",
             reloadOnSearch: false,
-            piwikActionName: "Exchange order",
             resolve: {
                 navigationInformations: getNavigationInformations("exchange_order"),
                 translator

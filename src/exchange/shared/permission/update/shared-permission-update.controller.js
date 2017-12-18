@@ -91,7 +91,7 @@ angular
         // STATE 2 : "Partial" -> "ALL"
         /* eslint-disable no-fallthrough */
         onCheckboxStateClick (state, permission) {
-            for (const account of this.permissions.current.list.results) {
+            _.forEach(this.permissions.current.list.results, (account) => {
                 switch (state) {
 
                 // "All" -> "None"
@@ -110,7 +110,7 @@ angular
                 default:
                     throw `Unknown case ${state}`;
                 }
-            }
+            });
         }
         /* eslint-enable no-fallthrough */
 
@@ -161,7 +161,7 @@ angular
             const formerPermission = this.permissions.former.list.results.find((formerPerm) => formerPerm.primaryAddressDisplayName === accountName);
             const formerPermissionName = this.getPermissionName(formerPermission);
 
-            if (this.permissions.selectedPermissions[formerPermissionName].includes(accountName)) {
+            if (_(this.permissions.selectedPermissions[formerPermissionName]).includes(accountName)) {
                 this.permissions.selectedPermissions[formerPermissionName] = this.permissions.selectedPermissions[formerPermissionName].filter((currentAccountName) => currentAccountName !== accountName);
             }
         }
@@ -194,11 +194,12 @@ angular
         }
 
         updatingPermissions () {
+            this.services.navigation.resetAction();
             this.services.messaging.writeSuccess(this.services.translator.tr("exchange_dashboard_action_doing"));
 
             const model = [];
 
-            for (const accountName of Object.keys(this.permissions.changes)) {
+            _.forEach(Object.keys(this.permissions.changes), (accountName) => {
                 const newPermission = this.permissions.changes[accountName];
                 const former = this.permissions.former.list.results.find((formerPermission) => formerPermission.primaryAddressDisplayName === accountName);
 
@@ -208,7 +209,7 @@ angular
                     accessRights: newPermission,
                     operation: this.getOperationType(accountName)
                 });
-            }
+            });
 
             return this.services
                 .ExchangePublicFolders
@@ -224,9 +225,6 @@ angular
                 })
                 .catch((failure) => {
                     this.services.messaging.writeError(this.services.translator.tr("exchange_action_SHARED_permissions_update_error_message", this.folder.path), failure);
-                })
-                .finally(() => {
-                    this.services.navigation.resetAction();
                 });
         }
     });

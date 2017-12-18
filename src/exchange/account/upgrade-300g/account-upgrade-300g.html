@@ -11,31 +11,31 @@
 
             <p data-i18n-static="exchange_ACTION_order_upgrade_300G_question_intro"></p>
 
-            <div class="loader text-center" data-ng-if="!ctrl.price1M || !ctrl.price12M"></div>
+            <oui-loader data-ng-if="!ctrl.price1M || !ctrl.price12M"></oui-loader>
 
-            <form class="form-horizontal" data-ng-if="ctrl.price1M && ctrl.price12M">
-                <div class="form-group">
-                    <label class="control-label col-md-4"
-                           data-i18n-static="exchange_ACTION_order_upgrade_300G_price_label"></label>
-                    <div class="col-md-8">
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="durationRadioGroup" value="01"
-                                       data-ng-model="ctrl.duration.value">
-                                <span data-i18n-static="exchange_ACTION_order_upgrade_300G_price_monthly_label"></span>
-                                (<strong class="text-danger" data-ng-bind="ctrl.price1M.withTax.text"></strong>)
-                            </label>
-                        </div>
+            <form name="upgrate300gForm" data-ng-if="ctrl.price1M && ctrl.price12M">
+                <label class="oui-label"
+                       data-i18n-static="exchange_ACTION_order_upgrade_300G_price_label"></label>
+                <div class="oui-radio">
+                    <input type="radio" class="oui-radio__input" id="duration-02" name="durationRadioGroup" value="01"
+                           data-ng-model="ctrl.duration.value">
+                    <label class="oui-radio__label-container" for="duration-02">
+                        <span class="oui-radio__label">
+                            <span data-i18n-static="exchange_ACTION_order_upgrade_300G_price_monthly_label"></span>
+                            (<strong class="text-danger" data-ng-bind="ctrl.price1M.withTax.text"></strong>)
+                        </span>
+                    </label>
+                </div>
 
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="durationRadioGroup" value="12"
-                                       data-ng-model="ctrl.duration.value">
-                                <span data-i18n-static="exchange_ACTION_order_upgrade_300G_price_yearly_label"></span>
-                                (<strong class="text-danger" data-ng-bind="ctrl.price12M.withTax.text"></strong>)
-                            </label>
-                        </div>
-                    </div>
+                <div class="oui-radio">
+                    <input type="radio" class="oui-radio__input" id="duration-12" name="durationRadioGroup" value="12"
+                           data-ng-model="ctrl.duration.value">
+                    <label class="oui-radio__label-container" for="duration-12">
+                        <span class="oui-radio__label">
+                            <span data-i18n-static="exchange_ACTION_order_upgrade_300G_price_yearly_label"></span>
+                            (<strong class="text-danger" data-ng-bind="ctrl.price12M.withTax.text"></strong>)
+                        </span>
+                    </label>
                 </div>
             </form>
         </div>

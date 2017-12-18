@@ -1,10 +1,11 @@
 angular
     .module("Module.exchange.services")
     .service("Exchange", class Exchange {
-        constructor ($cacheFactory, $rootScope, Products, $http, $q, OvhHttp, $injector) {
+        constructor ($cacheFactory, $rootScope, ovhUserPref, Products, $http, $q, OvhHttp, $injector) {
             this.services = {
                 $cacheFactory,
                 $rootScope,
+                ovhUserPref,
                 Products,
                 $http,
                 $q,
@@ -16,16 +17,16 @@ angular
                 exchangeDetails: null
             };
 
-            this.tasksCache = $cacheFactory("UNIVERS_WEB_EXCHANGE_TASKS");
-            this.delegationRightsCache = $cacheFactory("UNIVERS_WEB_EXCHANGE_DELEGATION_RIGHTS");
-            this.disclaimersCache = $cacheFactory("UNIVERS_WEB_EXCHANGE_DISCLAIMERS");
-            this.exchangeCache = $cacheFactory("UNIVERS_WEB_EXCHANGE");
-            this.domainsCache = $cacheFactory("UNIVERS_WEB_EXCHANGE_DOMAINS");
-            this.accountsCache = $cacheFactory("UNIVERS_WEB_EXCHANGE_ACCOUNTS");
-            this.sharedAccountsCache = $cacheFactory("UNIVERS_WEB_EXCHANGE_SHARED_ACCOUNTS");
-            this.resourcesCache = $cacheFactory("UNIVERS_WEB_EXCHANGE_RESOURCES");
-            this.groupsCache = $cacheFactory("UNIVERS_WEB_EXCHANGE_GROUPS");
-            this.publicFolderCache = $cacheFactory("UNIVERS_WEB_EXCHANGE_PUBLIC_FOLDERS");
+            this.tasksCache = $cacheFactory.get("UNIVERS_WEB_EXCHANGE_TASKS") || $cacheFactory("UNIVERS_WEB_EXCHANGE_TASKS");
+            this.delegationRightsCache = $cacheFactory.get("UNIVERS_WEB_EXCHANGE_DELEGATION_RIGHTS") || $cacheFactory("UNIVERS_WEB_EXCHANGE_DELEGATION_RIGHTS");
+            this.disclaimersCache = $cacheFactory.get("UNIVERS_WEB_EXCHANGE_DISCLAIMERS") || $cacheFactory("UNIVERS_WEB_EXCHANGE_DISCLAIMERS");
+            this.exchangeCache = $cacheFactory.get("UNIVERS_WEB_EXCHANGE") || $cacheFactory("UNIVERS_WEB_EXCHANGE");
+            this.domainsCache = $cacheFactory.get("UNIVERS_WEB_EXCHANGE_DOMAINS") || $cacheFactory("UNIVERS_WEB_EXCHANGE_DOMAINS");
+            this.accountsCache = $cacheFactory.get("UNIVERS_WEB_EXCHANGE_ACCOUNTS") || $cacheFactory("UNIVERS_WEB_EXCHANGE_ACCOUNTS");
+            this.sharedAccountsCache = $cacheFactory.get("UNIVERS_WEB_EXCHANGE_SHARED_ACCOUNTS") || $cacheFactory("UNIVERS_WEB_EXCHANGE_SHARED_ACCOUNTS");
+            this.resourcesCache = $cacheFactory.get("UNIVERS_WEB_EXCHANGE_RESOURCES") || $cacheFactory("UNIVERS_WEB_EXCHANGE_RESOURCES");
+            this.groupsCache = $cacheFactory.get("UNIVERS_WEB_EXCHANGE_GROUPS") || $cacheFactory("UNIVERS_WEB_EXCHANGE_GROUPS");
+            this.publicFolderCache = $cacheFactory.get("UNIVERS_WEB_EXCHANGE_PUBLIC_FOLDERS") || $cacheFactory("UNIVERS_WEB_EXCHANGE_PUBLIC_FOLDERS");
 
             this.updateAccountAction = "UPDATE_ACCOUNT";
             this.changePasswordAction = "CHANGE_PASSWORD";
@@ -53,7 +54,8 @@ angular
                 groupsChanged: "exchange.groups.changed",
                 disclaimersChanged: "exchange.disclaimers.changed",
                 externalcontactsChanged: "exchange.tabs.externalcontacts.changed",
-                publicFoldersChanged: "exchange.tabs.publicFolders.changed"
+                publicFoldersChanged: "exchange.tabs.publicFolders.changed",
+                sslRenewAsked: "exchange.sslRenew.asked"
             };
 
             this.updateValue();
@@ -81,9 +83,9 @@ angular
                 this.publicFolderCache.removeAll();
                 this.disclaimersCache.removeAll();
 
-                for (const request of Object.keys(this.requests)) {
+                _.forEach(Object.keys(this.requests), (request) => {
                     this.requests[request] = null;
-                }
+                });
             }
         }
 
@@ -152,6 +154,12 @@ angular
             return email && email.match(/^[\w!#$%&'*+\/=?^`{|}~-]+(?:\.[\w!#$%&'*+\/=?^`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9]{2}(?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/);
         }
 
+        retrievingWizardPreference () {
+            return this.services
+                .ovhUserPref
+                .getValue("WIZARD_HOSTED_CREATION_OPENING_PREFERENCE");
+        }
+
         /**
          * Get Selected Exchange
          */
@@ -199,7 +207,7 @@ angular
         /**
          * Return the last 2 days task list for the selected exchange
          */
-        getTasks (organization, serviceName, pageSize = 5, offset = 0) {
+        getTasks (organization, serviceName, count = 10, offset = 0) {
             return this.services.OvhHttp.get("/sws/exchange/{organization}/{exchange}/tasks", {
                 rootPath: "2api",
                 urlParams: {
@@ -207,7 +215,7 @@ angular
                     exchange: serviceName
                 },
                 params: {
-                    count: pageSize,
+                    count,
                     offset
                 }
             });
@@ -216,19 +224,26 @@ angular
         /**
          * Return the list of e-mails available to be used for SSL renew operation
          */
-        getDcvEmails (organization, serviceName) {
-            return this.services.OvhHttp.get("/email/exchange/{organizationName}/service/{exchangeService}/dcvEmails", {
-                rootPath: "apiv6",
-                urlParams: {
-                    organizationName: organization,
-                    exchangeService: serviceName
-                },
-                returnKey: ""
-            }).then((dcvs) => dcvs.data.map((dcv) => ({
-                name: dcv,
-                displayName: punycode.toUnicode(dcv),
-                formattedName: punycode.toUnicode(dcv)
-            })));
+        retrievingDVCEmails (organization, serviceName) {
+            return this.services
+                .OvhHttp
+                .get("/email/exchange/{organizationName}/service/{exchangeService}/dcvEmails", {
+                    rootPath: "apiv6",
+                    urlParams: {
+                        organizationName: organization,
+                        exchangeService: serviceName
+                    },
+                    returnKey: ""
+                })
+                .then((dcvs) => {
+                    const data = dcvs || dcvs.data;
+
+                    return data.map((dcv) => ({
+                        name: dcv,
+                        displayName: punycode.toUnicode(dcv),
+                        formattedName: punycode.toUnicode(dcv)
+                    }));
+                });
         }
 
         /**
@@ -243,7 +258,8 @@ angular
                 },
                 data: {
                     dcv: dcvEmail
-                }
+                },
+                broadcast: this.events.sslRenewAsked
             });
         }
 
@@ -268,7 +284,7 @@ angular
          * @param search - filter over primaryEmail value
          * @param configurableOnly - Integer value: "0" to get all, "1" to filter out dummy accounts and creating/deleting ones
          */
-        getAccountsForExchange (exchange, cache, pageSize = 5, offset = 0, search = "", configurableOnly = 0, type = "", timeout = null) {
+        getAccountsForExchange (exchange, cache, count = 10, offset = 0, search = "", configurableOnly = 0, type = "", timeout = null) {
             return this.services.OvhHttp.get("/sws/exchange/{organization}/{exchange}/accounts", {
                 rootPath: "2api",
                 urlParams: {
@@ -276,7 +292,7 @@ angular
                     exchange: exchange.domain
                 },
                 params: {
-                    count: pageSize,
+                    count,
                     offset,
                     search,
                     configurableOnly,
@@ -293,7 +309,7 @@ angular
          * @param search - filter over primaryEmail value
          * @param configurableOnly - Integer value: "0" to get all, "1" to filter out dummy accounts and creating/deleting ones
          */
-        getAccountsAndContacts (organization, serviceName, pageSize = 5, offset = 0, search = "", configurableOnly = 0) {
+        getAccountsAndContacts (organization, serviceName, count = 10, offset = 0, search = "", configurableOnly = 0) {
             return this.services
                 .OvhHttp
                 .get("/sws/exchange/{organization}/{exchange}/accounts/contacts", {
@@ -303,7 +319,7 @@ angular
                         exchange: serviceName
                     },
                     params: {
-                        count: pageSize,
+                        count,
                         offset,
                         search,
                         configurableOnly
@@ -506,7 +522,7 @@ angular
         /**
          * Delete account
          */
-        removeAccount (organization, serviceName, account) {
+        removingAccount (organization, serviceName, account) {
             return this.services
                 .OvhHttp
                 .delete("/email/exchange/{organization}/service/{exchange}/account/{account}", {
@@ -533,7 +549,7 @@ angular
             return isDedicated || (isProvider && _(this.value.serverDiagnostic.commercialVersion).includes(2010));
         }
 
-        retrieveAccountDelegationRight (organization, exchange, account, count = 5, offset = 0, search = "") {
+        retrieveAccountDelegationRight (organization, exchange, account, count = 10, offset = 0, search = "") {
             return this.services
                 .OvhHttp
                 .get("/sws/exchange/{organization}/{exchange}/accounts/{account}/rights", {
@@ -580,7 +596,7 @@ angular
         /**
          * Get Exchange accounts aliases
          */
-        getAliases (organization, serviceName, account, pageSize = 5, offset = 0) {
+        getAliases (organization, serviceName, account, count = 10, offset = 0) {
             return this.services
                 .OvhHttp
                 .get("/sws/exchange/{organization}/{exchange}/accounts/{account}/alias", {
@@ -591,7 +607,7 @@ angular
                         account
                     },
                     params: {
-                        count: pageSize,
+                        count,
                         offset
                     }
                 });
@@ -669,7 +685,7 @@ angular
         /**
          * Get groups this Exchange account belongs to
          */
-        getGroups (organization, serviceName, pageSize = 5, offset = 0, search = "") {
+        getGroups (organization, serviceName, count = 10, offset = 0, search = "") {
             return this.services
                 .OvhHttp
                 .get("/sws/exchange/{organization}/{exchange}/groups", {
@@ -680,7 +696,7 @@ angular
                         exchange: serviceName
                     },
                     params: {
-                        count: pageSize,
+                        count,
                         offset,
                         search
                     }
@@ -690,7 +706,7 @@ angular
         /**
          * Get Exchange mailing list delegation rights
          */
-        getMailingListDelegationRights (organization, productId, mailinglist, pageSize = 5, offset = 0, search = "") {
+        getMailingListDelegationRights (organization, productId, mailinglist, count = 10, offset = 0, search = "") {
             return this.services
                 .OvhHttp
                 .get("/sws/exchange/{organization}/{exchange}/groups/{mailinglist}/rights", {
@@ -702,7 +718,7 @@ angular
                         mailinglist
                     },
                     params: {
-                        count: pageSize,
+                        count,
                         offset,
                         search
                     }
@@ -759,7 +775,7 @@ angular
         /**
          * Get accounts by group
          */
-        getAccountsByGroup (organization, serviceName, groupName, pageSize = 5, offset = 0, search = "") {
+        getAccountsByGroup (organization, serviceName, groupName, count = 10, offset = 0, search = "") {
             return this.services
                 .OvhHttp
                 .get("/sws/exchange/{organization}/{exchange}/groups/{mailinglist}/accounts", {
@@ -771,7 +787,7 @@ angular
                         mailinglist: groupName
                     },
                     params: {
-                        count: pageSize,
+                        count,
                         offset,
                         search
                     }
@@ -895,7 +911,7 @@ angular
         /**
          * Get group aliases
          */
-        getGroupAliasList (organization, serviceName, groupName, pageSize = 5, offset = 0) {
+        getGroupAliasList (organization, serviceName, groupName, count = 10, offset = 0) {
             return this.services
                 .OvhHttp
                 .get("/sws/exchange/{organization}/{exchange}/group/{group}/alias", {
@@ -907,7 +923,7 @@ angular
                         group: groupName
                     },
                     params: {
-                        count: pageSize,
+                        count,
                         offset
                     }
                 });
@@ -963,7 +979,7 @@ angular
         /**
          * Return disclaimers list for a given Exchange service
          */
-        getDisclaimers (organization, serviceName, pageSize = 5, offset = 0) {
+        getDisclaimers (organization, serviceName, count = 10, offset = 0) {
             return this.services
                 .OvhHttp
                 .get("/sws/exchange/{organization}/{exchange}/disclaimers", {
@@ -973,7 +989,7 @@ angular
                         exchange: serviceName
                     },
                     params: {
-                        count: pageSize,
+                        count,
                         offset
                     }
                 });

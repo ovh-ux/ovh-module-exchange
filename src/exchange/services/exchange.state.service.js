@@ -2,7 +2,7 @@ angular
     .module("Module.exchange.services")
     .service("exchangeStates", class ExchangeStates {
         constructor () {
-            this.states = ["CREATING", "DELETING", "REOPENING", "SUSPENDED", "SUSPENDING", "OK", "TASK_ON_DOING", "TASK_ON_ERROR"];
+            this.states = ["CREATING", "DELETING", "REOPENING", "SUSPENDED", "SUSPENDING", "OK", "TASK_ON_DOING", "TASK_ON_ERROR", "INTERNAL_MIGRATION"];
         }
 
         isValidState (value) {
@@ -43,6 +43,10 @@ angular
 
         static isSuspending (account) {
             return ExchangeStates.isState(account, "SUSPENDING");
+        }
+
+        static isMigrating (account) {
+            return ExchangeStates.isState(account, "INTERNAL_MIGRATION");
         }
 
         static isDoing (account) {

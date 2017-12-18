@@ -1,8 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeAddDomainController", class ExchangeAddDomainController {
-        constructor ($rootScope, $scope, Exchange, ExchangeDomains, messaging, navigation, ovhUserPref, translator, Validator, exchangeVersion, accountTypes) {
-
+        constructor ($rootScope, $scope, Exchange, ExchangeDomains, messaging, navigation, ovhUserPref, translator, Validator, exchangeVersion, accountTypes, User) {
             this.services = {
                 $rootScope,
                 $scope,
@@ -24,7 +23,7 @@ angular
             this.debouncedResetName = _.debounce(this.search, 300);
 
             this.$routerParams = Exchange.getParams();
-            this.noDomainAttached = navigation.currentActionData ? navigation.currentActionData.noDomainAttached : false;
+            this.noDomainAttached = _(navigation.currentActionData).get("noDomainAttached", true);
             this.loading = false;
             this.model = {
                 name: "",
@@ -42,13 +41,6 @@ angular
             this.ovhDomain = this.OVH_DOMAIN;
             this.nonOvhDomain = this.NON_OVH_DOMAIN;
 
-            this.services
-                .ovhUserPref
-                .getValue("EXCHANGE_DOMAIN_ADD_AUTO_DISPLAY")
-                .then((res) => {
-                    this.autoDisplay = res.autoDisplay;
-                });
-
             $scope.loadDomainData = () => this.loadDomainData();
             $scope.addDomain = () => this.addDomain();
             $scope.isNonOvhDomainValid = () => this.isNonOvhDomainValid();
@@ -56,6 +48,11 @@ angular
             $scope.isStep2Valid = () => this.isStep2Valid();
             $scope.checkDomainType = () => this.checkDomainType();
             $scope.isStep3Valid = () => this.isStep3Valid();
+
+            User.getUser()
+                .then((currentUser) => {
+                    this.canOpenWizard = currentUser.ovhSubsidiary !== "CA";
+                });
         }
 
         isStep3Valid () {
@@ -101,6 +98,18 @@ angular
             }
         }
 
+        openingWizard () {
+            return this.services
+                .ovhUserPref
+                .assign("WIZARD_HOSTED_CREATION_OPENING_PREFERENCE", {
+                    shouldOpenWizard: true
+                })
+                .finally(() => {
+                    this.services.$rootScope.$broadcast("exchange.wizard_hosted_creation.display");
+                    this.services.navigation.resetAction();
+                });
+        }
+
         prepareModel () {
             if (this.setOrganization2010) {
                 if (this.model.main) {
@@ -124,6 +133,7 @@ angular
             if (localStorage["univers-selected-language"]) {
                 defaultLanguage = localStorage["univers-selected-language"];
             }
+
             return defaultLanguage;
         }
         /* eslint-enable class-methods-use-this */
@@ -133,18 +143,12 @@ angular
             return language && (/fr_[A-Z]{2}/).test(language);
         }
 
-        toggleAutoDisplay () {
-            this.services.ovhUserPref.assign("EXCHANGE_DOMAIN_ADD_AUTO_DISPLAY", {
-                autoDisplay: this.autoDisplay
-            });
-        }
-
         loadDomainData () {
             this.loading = true;
 
             this.services
                 .ExchangeDomains
-                .gettingAddDomainData(this.$routerParams.organization, this.$routerParams.productId)
+                .retrievingDataToCreateDomains(this.$routerParams.organization, this.$routerParams.productId)
                 .then((data) => {
                     this.loading = false;
                     this.prepareData(data);

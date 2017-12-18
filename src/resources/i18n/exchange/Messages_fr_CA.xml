@@ -70,11 +70,11 @@
    <translation id="exchange_ACTION_export_confirm" qtlid="217080">Etes-vous certain de vouloir exporter vos comptes ?</translation>
 
 <!-- OFFICE ATTACHED -->
-   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Promotion :</strong> activez gratuitement* Office 365 sur vos adresses Exchange !</translation>
-   <translation id="exchange_office_attached_alert_details" qtlid="404213">*L'offre concerne le produit Office 365 Business. Un maximum de {0} adresses Exchange peuvent être utilisées. Seul le premier mois est offert, l'offre est ensuite reconduite automatiquement au prix indiqué à la date de renouvellement sur le site <a target="_blank" href="https://www.ovh.com">https://www.ovh.com</a></translation>
+   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Promotion :</strong> activez gratuitement Office 365 sur vos adresses Exchange !</translation>
+   <translation id="exchange_office_attached_alert_details" qtlid="404213">L'offre concerne le produit Office 365 Business. Un maximum de {0} adresses Exchange peuvent être utilisées. Seul le premier mois est offert, l'offre est ensuite reconduite automatiquement au prix indiqué à la date de renouvellement sur le site <a target="_blank" href="https://www.ovh.com">https://www.ovh.com</a></translation>
    <translation id="exchange_office_attached_alert_button" qtlid="404226">Profitez de cette offre</translation>
    <translation id="exchange_office_attached_alert_modale_title" qtlid="404239">Activer l'offre promotionnelle Office 365</translation>
-   <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Obtenez un mois gratuit d'Office 365 sur un maximum de {0} comptes Exchange de votre choix</translation>
+   <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Obtenez un mois gratuit d'Office 365 Business sur un maximum de {0} comptes Exchange de votre choix</translation>
    <translation id="exchange_office_attached_alert_modale_selected_accounts" qtlid="404265">{0} comptes sélectionnés pour un maximum de {1}</translation>
    <translation id="exchange_office_attached_alert_modale_account_types" qtlid="404278">Types de comptes à utiliser dans les recherches</translation>
    <translation id="exchange_office_attached_alert_modale_search_form" qtlid="404291">Rechercher des comptes emails à utiliser</translation>
@@ -142,15 +142,16 @@
    <translation id="exchange_tab_ACCOUNTS_outlook_false" qtlid="136308">Sans</translation>
    <translation id="exchange_tab_ACCOUNTS_action_add_exchange" qtlid="139169">Commander des comptes</translation>
    <translation id="exchange_tab_ACCOUNTS_action_add_extern" qtlid="136334">Ajouter un contact externe</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_OK" qtlid="31522">OK</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_OK" qtlid="31522">Ok</translation>
    <translation id="exchange_tab_ACCOUNTS_state_CREATING" qtlid="168185">Création</translation>
    <translation id="exchange_tab_ACCOUNTS_state_DELETING" qtlid="59699">Suppression</translation>
    <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="171188">Ouverture en cours</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Suspendu</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Suspension en cours</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_MIGRATING">Migration en cours</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SPAM" qtlid="70409">Pourriels</translation>
 
-   <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="31522">OK</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="31522">Ok</translation>
    <translation id="exchange_tab_ACCOUNTS_state_creating" qtlid="168185">Création</translation>
    <translation id="exchange_tab_ACCOUNTS_state_deleting" qtlid="59699">Suppression</translation>
    <translation id="exchange_tab_ACCOUNTS_state_reopening" qtlid="171188">Ouverture en cours</translation>
@@ -207,7 +208,7 @@
    <translation id="exchange_tab_ALIAS_remove_alias_label" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_remove_account_label" qtlid="143603">Compte attaché</translation>
    <translation id="exchange_tab_ALIAS_add_alias_title" qtlid="143616">Créer un alias</translation>
-   <translation id="exchange_tab_ALIAS_add_alias_intro" qtlid="155782">Créer un alias pour le compte</translation>
+   <translation id="exchange_tab_ALIAS_add_alias_intro" qtlid="416579">Créer un alias pour le compte <span class="bold">{0}</span></translation>
    <translation id="exchange_tab_ALIAS_add_alias_placeholder" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_add_alias_step2_intro" qtlid="144006">Etes-vous sûr de vouloir ajouter l’alias ci-dessous?</translation>
    <translation id="exchange_tab_ALIAS_add_alias_step2_alias_label" qtlid="9466">Alias</translation>
@@ -453,7 +454,6 @@
    <translation id="exchange_ACTION_add_account_step2_password_confirmation_label" qtlid="9983">Confirmation</translation>
    <translation id="exchange_ACTION_add_account_step2_type_label" qtlid="48938">Type de compte</translation>
    <translation id="exchange_ACTION_add_account_step2_outlook_label" qtlid="136724">Licence Outlook</translation>
-   <translation id="exchange_ACTION_add_account_step2_security_label" qtlid="136750">Options de sécurité</translation>
    <translation id="exchange_ACTION_add_account_step2_GAL_label" qtlid="191954">Masquer l'adresse dans Outlook</translation>
    <translation id="exchange_ACTION_add_account_security_NONE" qtlid="8674">Aucune</translation>
    <translation id="exchange_ACTION_add_account_security_VADERETRO" qtlid="324821">Protection Vade Secure</translation>
@@ -553,7 +553,7 @@
 
    <translation id="exchange_tab_domain_add_step1_main_domain" qtlid="191070">Domaine principal d'une organisation</translation>
    <translation id="exchange_tab_domain_add_step1_main_domain_tooltip" qtlid="191083">Domaine principal de l'organisation</translation>
-   <translation id="exchange_tab_domain_add_step1_new_organization_intro" qtlid="191096">Le domaine de votre organisation va être "{0}"</translation>
+   <translation id="exchange_tab_domain_add_step1_new_organization_intro" qtlid="191096">Le domaine de votre organisation va être <strong>{0}</strong></translation>
    <translation id="exchange_tab_domain_add_step1_new_organization_placeholder" qtlid="191109">Nom de l'organisation</translation>
    <translation id="exchange_tab_domain_add_step2_main_domain" qtlid="191122">Domaine principal</translation>
    <translation id="exchange_tab_domain_add_step2_organization" qtlid="32278">Organisation</translation>
@@ -826,6 +826,7 @@ L'antispam Vade Secure est compatible avec le mode non autoritatif (uniquement s
    <translation id="exchange_DIAGNOSTICS_status_canSendEmail_help_li4" qtlid="319817">Un incident sur l'infrastructure Exchange</translation>
    <translation id="exchange_DIAGNOSTICS_status_support_ticket_subject" qtlid="291643">Diagnostic Exchange</translation>
    <translation id="exchange_DIAGNOSTICS_status_support_ticket_body" qtlid="291656">Veillez à conserver les informations suivantes, elles seront utiles au diagnostic de votre situation.</translation>
+   <translation id="exchange_DIAGNOSTICS_create_ticket" qtlid="260801">Créer une demande d'assistance</translation>
 
 <!-- ########################################## -->
 <!-- TAB MAILING LISTS -->
@@ -833,7 +834,7 @@ L'antispam Vade Secure est compatible avec le mode non autoritatif (uniquement s
    <translation id="exchange_tab_GROUPS_header" qtlid="32962">Groupes</translation>
    <translation id="exchange_tab_GROUPS_remove_account_tooltip" qtlid="150073">Enlever le compte de ce groupe</translation>
    <translation id="exchange_tab_GROUPS_intro" qtlid="155873">Liste des groupes du compte <span class="bold">{0}</span></translation>
-   <translation id="exchange_tab_GROUPS_table_empty" qtlid="150099">Vous n'avez pas de groupes pour ce compte</translation>
+   <translation id="exchange_tab_GROUPS_table_empty" qtlid="150099">Vous n'avez pas de groupe pour ce compte</translation>
    <translation id="exchange_tab_GROUPS_table_empty_search" qtlid="150112">Vous n'avez pas de groupe correspondant au terme recherché</translation>
    <translation id="exchange_tab_GROUPS_state_TASK_ON_DOING" qtlid="26383">En cours</translation>
    <translation id="exchange_tab_GROUPS_state_TASK_ON_DOING_tooltip" qtlid="150125">Une tâche concernant ce groupe est planifiée ou en cours d'exécution</translation>
@@ -871,7 +872,7 @@ L'antispam Vade Secure est compatible avec le mode non autoritatif (uniquement s
    <translation id="exchange_tab_GROUPS_all_table_manager" qtlid="81487">Administrateurs</translation>
    <translation id="exchange_tab_GROUPS_all_table_user" qtlid="32206">Contacts</translation>
    <translation id="exchange_tab_GROUPS_all_table_status" qtlid="8230">État</translation>
-   <translation id="exchange_tab_GROUPS_all_table_empty" qtlid="150346">Vous n'avez pas de groupes</translation>
+   <translation id="exchange_tab_GROUPS_all_table_empty" qtlid="150346">Vous n'avez pas de groupe</translation>
    <translation id="exchange_tab_GROUPS_all_error_message" qtlid="150359">Une erreur est survenue lors du chargement de votre liste de groupes.</translation>
    <translation id="exchange_tab_GROUPS_all_add_ml_button" qtlid="150372">Créer un groupe de contact</translation>
    <translation id="exchange_tab_GROUPS_menu_settings" qtlid="150385">Configurer le groupe</translation>
@@ -1481,7 +1482,7 @@ L'antispam Vade Secure est compatible avec le mode non autoritatif (uniquement s
    <translation id="exchange_ACTION_order_upgrade_300G_error_options_message" qtlid="368180">Une erreur est survenue lors de lors de la récupération des tarifs.</translation>
 <!-- Order Exchange -->
    <translation id="exchange_order_view_intro_title" qtlid="368193">Commander un Exchange</translation>
-   <translation id="exchange_order_view_intro_question" qtlid="368206">Souahitez vous créer un nouveau service Exchange ou ajouter un compte à un service existant ?</translation>
+   <translation id="exchange_order_view_intro_question" qtlid="368206">Souhaitez-vous créer un nouveau service Exchange ou ajouter un compte à un service existant ?</translation>
    <translation id="exchange_order_view_stand_alone_option" qtlid="368219">Créer un nouveau service</translation>
    <translation id="exchange_order_view_attached_option" qtlid="368232">Ajouter un compte à un service existant</translation>
    <translation id="exchange_order_view_button_label" qtlid="368245">Commander votre Exchange</translation>
