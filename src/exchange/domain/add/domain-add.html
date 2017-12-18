@@ -119,21 +119,12 @@
                     </a>
                 </div>
 
-                <div class="oui-checkbox" data-ng-if="ctrl.noDomainAttached">
-                    <input type="checkbox" class="oui-checkbox__input" id="setAutoDisplay"
-                           data-ng-change="ctrl.toggleAutoDisplay()"
-                           data-ng-model="ctrl.autoDisplay"
-                           data-ng-true-value="false"
-                           data-ng-false-value="true">
-                    <label class="oui-checkbox__label-container" for="setAutoDisplay">
-                        <span class="oui-checkbox__label"
-                              data-i18n-static="exchange_tab_domain_add_set_auto_display"></span>
-                        <span class="oui-checkbox__icon">
-                            <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
-                            <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
-                            <span class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></span>
-                        </span>
-                    </label>
+                <div class="text-center mt-5" data-ng-if="ctrl.noDomainAttached && ctrl.services.accountTypes.isHosted() && ctrl.canOpenWizard">
+                    <button class="btn btn-primary"
+                            type="button"
+                            data-ng-click="ctrl.openingWizard()"
+                            data-ng-bind-html="tr('exchange_tab_domain_add_goToWizardButton')">
+                    </button>
                 </div>
             </div>
 

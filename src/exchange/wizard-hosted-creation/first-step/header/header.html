@@ -1,0 +1,24 @@
+<div class="text-center">
+    <span class="ms-Icon ms-Icon--ExchangeLogo pt-5 pb-0 exchange-icon big-icon" aria-hidden="true"></span>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h1 class="oui-header_3" data-ng-bind-html="$ctrl.translator.tr('exchange_wizardHostedCreation_welcome_header')"></h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <p data-ng-bind-html="$ctrl.translator.tr('exchange_wizardHostedCreation_welcome_subtext')"></p>
+        </div>
+    </div>
+
+    <hr class="my-5">
+
+    <div class="text-center">
+        <button class="oui-button oui-button_primary"
+                type="button"
+                data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_welcome_startButton')"
+                data-ng-click="$ctrl.hideSelfAndDisplayDomainConfiguration()">
+        </button>
+    </div>
+</div>

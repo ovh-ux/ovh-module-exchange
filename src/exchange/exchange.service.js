@@ -1,10 +1,11 @@
 angular
     .module("Module.exchange.services")
     .service("Exchange", class Exchange {
-        constructor ($cacheFactory, $rootScope, Products, $http, $q, OvhHttp, $injector) {
+        constructor ($cacheFactory, $rootScope, ovhUserPref, Products, $http, $q, OvhHttp, $injector) {
             this.services = {
                 $cacheFactory,
                 $rootScope,
+                ovhUserPref,
                 Products,
                 $http,
                 $q,
@@ -151,6 +152,12 @@ angular
 
         static isEmailValid (email) {
             return email && email.match(/^[\w!#$%&'*+\/=?^`{|}~-]+(?:\.[\w!#$%&'*+\/=?^`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9]{2}(?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/);
+        }
+
+        retrievingWizardPreference () {
+            return this.services
+                .ovhUserPref
+                .getValue("WIZARD_HOSTED_CREATION_OPENING_PREFERENCE");
         }
 
         /**
@@ -515,7 +522,7 @@ angular
         /**
          * Delete account
          */
-        removeAccount (organization, serviceName, account) {
+        removingAccount (organization, serviceName, account) {
             return this.services
                 .OvhHttp
                 .delete("/email/exchange/{organization}/service/{exchange}/account/{account}", {

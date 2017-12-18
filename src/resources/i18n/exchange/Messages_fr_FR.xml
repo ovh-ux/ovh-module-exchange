@@ -2,6 +2,7 @@
 <translations>
 
 <!-- GENERIC -->
+    <translation id="optional_form_field"> (facultatif)</translation>
    <translation id="exchange_reset_search_value" qtlid="433719">Réinitialiser la recherche</translation>
    <translation id="exchange_search_value" qtlid="55493">Recherche</translation>
 
@@ -146,6 +147,7 @@
    <translation id="exchange_tab_ACCOUNTS_state_DELETING" qtlid="59699">Suppression</translation>
    <translation id="exchange_tab_ACCOUNTS_state_RESETTING">Réinitialisation</translation>
    <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="171188">Ouverture en cours</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_REOPENING">Migration interne</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Suspendu</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Suspension en cours</translation>
    <translation id="exchange_tab_ACCOUNTS_state_MIGRATING" qtlid="186713">Migration en cours</translation>
@@ -392,6 +394,7 @@
    <translation id="exchange_tab_domain_validation_cname_details" qtlid="363401">Afin de valider votre propriété sur ce domaine, merci de créer un enregistrement CNAME : <br /><br /><span class="bold">{0}.{1}</span> vers <span class="bold">{2}</span>.<br /><br /> Vous avez 48h pour effectuer cette opération.</translation>
    <translation id="exchange_tab_domain_add_domain" qtlid="8602">Ajouter un domaine</translation>
    <translation id="exchange_tab_domain_delete_domain" qtlid="137556">Retirer ce domaine des services Exchange</translation>
+   <translation id="exchange_tab_domain_creating">Création</translation>
    <translation id="exchange_tab_domain_delete_domain_accounts_warning" qtlid="148227">Ce domaine ne peut pas être supprimé car il est encore utilisé par un ou plusieurs compte Exchange</translation>
    <translation id="exchange_tab_domain_NON_AUTHORITATIVE" qtlid="447703">Non-autoritatif</translation>
    <translation id="exchange_tab_domain_AUTHORITATIVE" qtlid="58807">Autoritatif</translation>
@@ -564,6 +567,7 @@
    <translation id="exchange_tab_domain_add_step1_attach_organization_intro" qtlid="191135">Le domaine va être inclus dans l'organisation suivante :</translation>
 
    <translation id="exchange_tab_domain_add_set_auto_display" qtlid="416488">Cochez cette case pour empêcher cette fenêtre de se rouvrir.</translation>
+   <translation id="exchange_tab_domain_add_goToWizardButton">Je préfère utiliser <br />l'assistant de configuration</translation>
 
    <translation id="exchange_tab_domain_add_step1_order_domain_desc1" qtlid="167873">Afin de confirmer votre demande, veuillez procéder au règlement en cliquant sur le bouton "Commander" ci-dessous.</translation>
    <translation id="exchange_tab_domain_add_step1_order_domain_desc2" qtlid="144175">Un nouvel onglet s'ouvrira et vous serez automatiquement redirigé vers l'interface de paiement OVH.</translation>
@@ -1485,4 +1489,143 @@
    <translation id="exchange_order_view_button_label" qtlid="368245">Commander votre Exchange</translation>
    <translation id="exchange_order_view_button_attached_title" qtlid="368258">Commander votre compte attaché à {0}</translation>
    <translation id="exchange_order_view_button_stand_alone_title" qtlid="368271">Commander votre nouveau service Exchange</translation>
+
+    <!-- Wizard -->
+    <translation id="exchange_wizardHostedCreation_welcome_progressBar_addDomainName">Configuration du domaine</translation>
+    <translation id="exchange_wizardHostedCreation_welcome_progressBar_createEmailAddresses">Personnalisation d'adresses e-mails</translation>
+    <translation id="exchange_wizardHostedCreation_welcome_progressBar_summary">Récapitulatif</translation>
+    <translation id="exchange_wizardHostedCreation_welcome_header">Votre service Microsoft Exchange<br/> n'est pas encore configuré</translation>
+    <translation id="exchange_wizardHostedCreation_welcome_subtext">Configurez votre service en quelques minutes pour recevoir vos e-mails.</translation>
+    <translation id="exchange_wizardHostedCreation_welcome_startButton">Commencer</translation>
+    <translation id="exchange_wizardHostedCreation_welcome_standardConfiguratorButton">Je préfère utiliser le configurateur standard</translation>
+    <translation id="exchange_wizardHostedCreation_welcome_closeButton">Fermer</translation>
+    <translation id="exchange_wizardHostedCreation_welcome_closeAndSaveButton">Fermer et ne plus montrer l'assistant de configuration</translation>
+
+    <translation id="exchange_wizardHostedCreation_addDomainName_subtext">Configuration de votre service Microsoft Exchange</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_header">Ajout de votre nom de domaine au service Exchange</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_ifNoDomain">Si vous n'avez pas encore de nom de domaine,</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_goToOffers">consultez les offres sur notre site.</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_creationError">Ce domaine ne peut pas être créé. Veuillez en choisir un autre.</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_buttonContinueText">Ajouter et poursuivre</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_buttonDontContinueText">Ajouter et configurer plus tard</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameValidationDelay">La validation du domaine associé au serveur Exchange est en cours.</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameValidation_explanation">Cette opération peut prendre quelques minutes.</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_header">Choisir un nom de domaine</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_placeholder">Choisir</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_domainNotInList">Mon nom de domaine ne figure pas dans la liste ci-dessous</translation>
+
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_header">Configuration</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isDomainOnlyExchange">Allez-vous utiliser uniquement l'offre Exchange OVH avec ce domaine ?</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isDomainEmail">S'agit-il d'un service e-mail mutualisé OVH (hébergement web ou MX Plan) ou d'un service E-mail Pro OVH ?</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_domainConfigurationAlert">Votre domaine utilise actuellement comme serveur de réception <strong>{0}</strong>.<br />Les e-mails à destination d'adresses non-OVH lui seront renvoyés.</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isExchangeOnly">Oui</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isNotExchangeOnly">Non</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isUsedByMails">Oui</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isNotUsedByMails">Non, définissez un serveur relais de messagerie (SMTP)</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isEmailService">Votre domaine utilisera comme serveur de réception <strong>mx1.mail.ovh.net</strong>.</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_header">Serveur relais (SMTP)</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_title">Configuration de votre zone DNS</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_tooltip">La zone DNS permet de gérer différents services liés au nom de domaine.<br /><br />Exemple : un enregistrement MX permet d'indiquer quel serveur e-mail est attaché au nom de domaine.</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip">Le serveur relais intervient en cas de réception d’e-mails adressés à des comptes non hébergés sur votre service Exchange OVH.
+    <br /><br />Ceux-ci seront automatiquement transmis au serveur relais.</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_header">Comment souhaitez-vous configurer votre zone DNS ?</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_auto">Configuration automatique</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_manual">Configuration manuelle</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_manual_explanation1">Je souhaite configurer moi-même les champs MX et SRV</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_manual_explanation2"> et la réception des e-mails commencera quand je le souhaite.</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_nonAuthoritative">Veuillez saisir le service relais, les e-mails à destination des services non-OVH lui seront renvoyés.</translation>
+
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_header">Configuration de la zone DNS</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_explanation">Votre nom de domaine étant géré par un autre identifiant client ou un autre prestataire, la mise à jour du champ CNAME dans votre zone DNS est à effectuer manuellement. Vous aurez besoin pour cela des informations ci-dessous pour procéder à l'ajout de ce champ.<br /><br />L'enregistrement CNAME rend possible la validation de votre nom de domaine externe dans la plateforme OVH. Cet enregistrement n'aura aucun impact sur la configuration actuelle de votre domaine.</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_dnsZone_explanation">La zone DNS permet de gérer différents services liés à un nom de domaine. Il est par exemple possible de le lier à un hébergement web via l'enregistrement de type Aet le service e-mail via l'enregistrement MX.</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_inputHeader">Saisir le nom de domaine</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_example">Exemple : nomdedomaine1.com</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_placeholder">Nom de domaine</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_cnameToCopy_header">Champ CNAME à copier</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_targetToCopy_header">Cible à copier</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_cnameToCopy_explanation">Ce champ CNAME doit être ajouté chez le prestataire de votre nom de domaine sous 48 heures. Passé ce délai, vous devrez en générer un nouveau.<br />Une fois la configuration effectuée, il sera possible de reprendre votre installation Exchange à partir de ce point.</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_input_patternError">Ce champ doit prendre la forme d'un nom de domaine et ne peut contenir que des lettres, des chiffres, des points (.), des plus (+), ou des tirets (- ou _).</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_input_alreadyExists">Ce pouvez sélectionner ce domaine directement depuis la liste de domaines ci-dessus.</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_waitingForActivation">Le bouton s'activera une fois la vérification effectuée.</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_confirmButton">Confirmer</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_retrieval_error">Un erreur est survenue pendant la récupération de la liste de vos domaines.</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_error">Un erreur est survenue pendant la création de votre serveur.</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyNonAuthoritativeEmailPro">Votre domaine étant déjà associé à un service E-mail Pro OVH, nous avons sélectionné la meilleure option de configuration pour votre service.</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAssociated_error">Le domaine <strong>{0}</strong> est déjà associé à un service Exchange ou à un service Sharepoint. Pour pouvoir l'associer à ce service, veuillez le dissocier du service auquel il est déjà associé au préalable.</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_cancelOperation_button">Quitter le processus d’installation</translation>
+    <translation id="exchange_wizardHostedCreation_addDomainName_cancelOperation_details">Vous pourrez reprendre la configuration de votre service en cliquant sur l’onglet « Domaines associés » puis sur le bouton « Ajouter un domaine ».</translation>
+
+    <translation id="exchange_wizardHostedCreation_emailCreation_header">Personnalisez vos comptes e-mail Exchange</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_introduction_1">Vous pouvez ajouter jusqu'à {0} comptes e-mail grâce à votre offre Exchange.</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_introduction_2">Si vous avez besoin de plus de comptes, vous pourrez en commander ultérieurement depuis la rubrique <strong>Comptes e-mail</strong> de votre service Hosted Exchange.</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_header_email">Adresse e-mail</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_header_displayName">Nom à afficher</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_header_state">État</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_operationInProgress">Vous pourrez à nouveau personnaliser des comptes e-mails une fois les opérations en cours terminées.</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_personnalizeButton">Personnaliser un compte</translation>
+
+    <translation id="exchange_wizardHostedCreation_emailCreation_add_login_header">Adresse e-mail</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_add_login_required">Champ obligatoire.</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_add_login_pattern">La partie locale (avant le @) ne peut contenir que des lettres, des chiffres, des points (.) ou des tirets (- ou _).</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_add_firstName_title">Personnaliser un compte e-mail</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_add_firstName_header">Prénom</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_add_name_header">Nom</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_add_displayName_header">Nom à afficher</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_add_password_header">Mot de passe</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_add_password_error_confirmation">Le mot de passe et sa confirmation doivent être identiques.</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_add_password_error_short">Vos préférences en matière de sécurité stipulent qu'un mot de passe doit faire plus de {0} caractères.</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_add_password_error_exchangePreferences">Vos préférences en matière de sécurité stipulent qu'un mot de passe doit contenir des caractères minuscules, majuscules, nombres et/ou caractères spéciaux.</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_add_passwordConfirmation_header">Confirmation</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_emailAlreadyUsed">Cette adresse e-mail est déjà utilisée par une adresse e-mail domaine. Vous pouvez la migrer vers votre compte Exchange Hosted.</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_emailAlreadyUsed_ifWontChange">Si vous ne souhaitez pas migrer l'adresse e-mail, merci de changer l'adresse e-mail dans l'étape précédente.</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_add_migrationPassword_error">Le mot de passe est incorrect. Veuillez réessayer.</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_add_nextStepButton">Finaliser la configuration</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_add_serviceParametersRetrieval_error">Une erreur est survenue au moment de la récupération de votre paramètres de configuration du service Exchange.</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_add_accountCreation_error">Une erreur est survenue au moment de la création de votre compte e-mail.</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_add_accountCreation_alreadyExist_error">L'adresse e-mail {0} que vous souhaitez configurer existe déjà.</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_add_migrationChecking_error">Ce compte e-mail ne peut pas être migré vers votre service Exchange.</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_add_migrationChecking_mxPlanTechContact">Ce compte e-mail ne peut pas être migré automatiquement vers votre service Exchange. Vous devez être contact administrateur et technique des deux services.</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_error">Une erreur est survenue au moment de la migration de votre compte e-mail.</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_question">Ce compte e-mail existe déjà, voulez-vous le migrer vers l'adresse Exchange ?<br />
+    Tous vos e-mails existants sur ce compte vont être désormais disponible via l'adresse Exchange.</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_warning">Attention, les éléments suivants ne seront pas pris en charge par la présente migration&#160;: <br />- vos filtres&#160;; <br />- vos répondeurs&#160;; <br />- vos mailing lists&#160;; <br />- vos contacts Roundcube.</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_wrongPassword_error">Le mot de passe est incorrect.</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_addButton_title">Ajouter</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_nextButton_title">Ajouter</translation>
+
+    <translation id="exchange_wizardHostedCreation_emailCreation_update_firstName_title">Modifier un compte e-mail</translation>
+    <translation id="exchange_wizardHostedCreation_emailCreation_updateButton_title">Modifier</translation>
+
+    <translation id="exchange_wizardHostedCreation_emailCreation_update_changePassword_checkbox">Changer le mot de passe</translation>
+
+    <translation id="exchange_wizardHostedCreation_configureDNSZone_header">Finalisation de votre configuration</translation>
+    <translation id="exchange_wizardHostedCreation_configureDNSZone_summary">Résumé</translation>
+    <translation id="exchange_wizardHostedCreation_configureDNSZone_domainName">Nom de domaine</translation>
+    <translation id="exchange_wizardHostedCreation_configureDNSZone_authoritative">Utilise uniquement le service Exchange</translation>
+    <translation id="exchange_wizardHostedCreation_configureDNSZone_authoritative_yes">Oui</translation>
+    <translation id="exchange_wizardHostedCreation_configureDNSZone_authoritative_no">Non</translation>
+    <translation id="exchange_wizardHostedCreation_configureDNSZone_emailAdresses">Compte(s) e-mail ajouté(s)</translation>
+    <translation id="exchange_wizardHostedCreation_configureDNSZone_emailAdresses_non">Aucun</translation>
+    <translation id="exchange_wizardHostedCreation_configureDNSZone_auto_header">La configuration de votre zone DNS s'effectuera en mode <strong>automatique</strong>.</translation>
+    <translation id="exchange_wizardHostedCreation_configureDNSZone_auto_explanation1">Votre service Hosted Exchange pour le domaine <strong>{0}</strong> est maintenant configuré. Une fois le diagnostic MX validé et passé à la couleur verte, la réception de vos e-mails commencera. L’activation de votre service peut nécessiter un délai de 4 à 24 heures pour être opérationnelle. Retrouvez vos emails en cliquant sur ce lien </translation>
+    <translation id="exchange_wizardHostedCreation_configureDNSZone_auto_explanation2"> ou dans votre onglet <strong>Informations générales</strong> dans la section <strong>Connexion → Webmail</strong>.</translation>
+    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_header">La configuration de votre zone DNS s'effectuera en mode <strong>manuel</strong>.</translation>
+    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_part_1">En configurant les champs MX et SRV</translation>
+    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip">Le champ MX OVH associe un nom de domaine à un serveur de messagerie.<br /><br />
+    Le champ SRV vous permettra de configurer automatiquement votre adresse e-mail dans votre logiciel de messagerie (par exemple : Outlook).</translation>
+    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_part_2">, vous paramétrerez votre nom de domaine pour pouvoir recevoir vos e-mails. Leur réception effective tient compte de la propagation DNS et peut prendre entre 4 à 24 heures.</translation>
+    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_table_headers_fieldType">Type de champ</translation>
+    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_table_headers_data">Informations</translation>
+    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_table_mx">MX</translation>
+    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_table_srv">SRV</translation>
+    <translation id="exchange_wizardHostedCreation_configureDNSZone_returnButton">Retour</translation>
+    <translation id="exchange_wizardHostedCreation_configureDNSZone_closeButton">Continuer</translation>
+    <translation id="exchange_wizardHostedCreation_configureDNSZone_availableAccountsRetrieval_error">Une erreur est survenue au moment de la récupération des comptes e-mails associés à votre domaine.</translation>
+    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_dialog_explanation1">Il vous suffit maintenant de configurer vos champs MX et SRV dans votre zone DNS pour ce domaine.</translation>
+    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_dialog_explanation2">Si votre nom de domaine est enregistré chez OVH, rendez-vous dans votre espace client : Web → Domaines → Zone DNS.<br /><br />Dans le cas contraire, référez-vous à la documentation du fournisseur de votre nom de domaine.</translation>
+    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_dialog_explanation3">Si vous avez déjà effectué cette action, patientez ou rafraîchissez votre page. Une fois le diagnostic MX validé et passé à la couleur verte, la réception de vos e-mails commencera. L’activation de votre service peut nécessiter un délai de 4 à 24 heures pour être opérationnelle.</translation>
+
+    <translation id="exchange_wizardHostedCreation_ending_dialog">Dernière étape</translation>
+    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_dialog_warning">Attention</translation>
+    <translation id="exchange_wizardHostedCreation_lastDialog_closeButton">Finaliser</translation>
 </translations>

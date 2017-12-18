@@ -85,7 +85,9 @@
                                       data-ng-bind="tr('exchange_tab_domain_modify_in_progress', tr('exchange_tab_domain_inverse_NON_AUTHORITATIVE'))"></span>
                                 <span data-ng-if="domain.taskInProgress && !domain.partial && ctrl.services.exchangeStates.constructor.isOk(domain) && domain.type === domainTypeNonAuthoritative"
                                       data-ng-bind="tr('exchange_tab_domain_modify_in_progress', tr('exchange_tab_domain_inverse_AUTHORITATIVE'))"></span>
-                                <span data-ng-if="!domain.partial && domain.state === 'DELETING'"
+                                <span data-ng-if="!domain.partial && ctrl.services.exchangeStates.constructor.isDeleting(domain)"
+                                      data-ng-bind="tr('exchange_tab_domain_' + domain.type)"></span>
+                                <span data-ng-if="!domain.partial && ctrl.services.exchangeStates.constructor.isCreating(domain)"
                                       data-ng-bind="tr('exchange_tab_domain_' + domain.type)"></span>
                                 <span data-ng-hide="domain.taskInProgress || domain.partial || !ctrl.services.exchangeStates.constructor.isOk(domain)"
                                       data-ng-bind="tr('exchange_tab_domain_' + domain.type)"></span>
@@ -191,9 +193,12 @@
         </div>
 
         <div class="col-md-3 mt-5 mt-lg-0">
-            <button class="btn btn-block btn-default" type="button"
-                    data-i18n-static="exchange_tab_domain_add_domain"
-                    data-ng-click="setAction('exchange/domain/add/domain-add', {})">
+            <button class="btn btn-block btn-default"
+                    type="button"
+                    data-ng-click="setAction('exchange/domain/add/domain-add', {
+                      noDomainAttached: ctrl.paginated.domains.length === 0
+                    })">
+                <span data-i18n-static="exchange_tab_domain_add_domain"></span>
             </button>
         </div>
     </div>
