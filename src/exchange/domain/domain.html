@@ -8,12 +8,13 @@
 
             <div class="alert alert-info" role="alert"
                  data-ng-if="!ctrl.loading && ctrl.search.value == null && ctrl.paginated.domains.length === 0">
-                <span data-i18n-static="exchange_tab_domain_no_domains_1"></span>
-                <button class="btn btn-link p-0"
-                        type="button"
-                        data-i18n-static="exchange_tab_domain_no_domains_2"
-                        data-ng-click="ctrl.setAction('exchange/domain/add/domain-add')"></button>
-                <span data-i18n-static="exchange_tab_domain_no_domains_3"></span>
+                <div>
+                    <span data-i18n-static="exchange_tab_domain_no_domains_1"></span>
+                    <button class="btn btn-link p-0" type="button"
+                            data-i18n-static="exchange_tab_domain_no_domains_2"
+                            data-ng-click="ctrl.setAction('exchange/domain/add/domain-add')"></button>
+                    <span data-i18n-static="exchange_tab_domain_no_domains_3"></span>
+                </div>
             </div>
 
             <form class="form-inline d-md-flex justify-content-md-end mb-3" name="searchDomainForm">

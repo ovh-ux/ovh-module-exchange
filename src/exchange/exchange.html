@@ -81,15 +81,13 @@
                             </a>
                         </li>
                         <li data-ng-if="ctrl.canSubscribeToOfficeAttach">
-                            <button class="btn btn-link"
-                                    type="button"
+                            <button class="btn btn-link" type="button"
                                     data-i18n-static="exchange_ACTION_export_accounts_office_attached_button"
                                     data-ng-click="ctrl.services.navigation.setAction('exchange/office-attached/dialog/office-attached-dialog', ctrl.exchange)">
                             </button>
                         </li>
                         <li class="dropdown-divider">
-                            <button class="btn btn-link"
-                                    type="button"
+                            <button class="btn btn-link" type="button"
                                     data-i18n-static="exchange_action_license_history_button"
                                     data-ng-click="ctrl.services.navigation.setAction('exchange/header/license/service-license-history', ctrl.exchange)">
                             </button>
@@ -103,8 +101,7 @@
                         </li>
                         <li class="dropdown-divider" data-ng-if="ctrl.exchange.deleteOptionAvailable">
                             <i class="oui-icon oui-icon-error_circle" aria-hidden="true"></i>
-                            <button class="btn btn-link"
-                                    type="button"
+                            <button class="btn btn-link" type="button"
                                     data-ng-click="ctrl.services.navigation.setAction('exchange/header/remove/exchange-remove', ctrl.exchange)">
                                 <span data-i18n-static="exchange_resilitation_action_button"
                                       data-ng-if="!ctrl.exchange.renewType.deleteAtExpiration">
