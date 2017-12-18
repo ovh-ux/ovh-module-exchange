@@ -57,44 +57,47 @@ angular
             }
             this.selectedAccounts = this.loadSelectedAccounts();
 
-            const answer = [{
-                planCode: "office-tenant",
-                configuration: [{
-                    label: "zip_code",
-                    values: ["00000"]
-                },
+            const answer = [
                 {
-                    label: "display_name",
-                    values: [displayName]
-                },
-                {
-                    label: "exchange_service_name",
-                    values: [this.exchange.domain]
-                },
-                {
-                    label: "country",
-                    values: [this.ovhSubsidiary || "FR"]
+                    planCode: "office-tenant",
+                    configuration: [{
+                        label: "zip_code",
+                        values: ["00000"]
+                    },
+                    {
+                        label: "display_name",
+                        values: [displayName]
+                    },
+                    {
+                        label: "exchange_service_name",
+                        values: [this.exchange.domain]
+                    },
+                    {
+                        label: "country",
+                        values: [this.ovhSubsidiary || "FR"]
+                    }
+                    ],
+                    option: [],
+                    quantity: 1,
+                    productId: "office365Prepaid"
                 }
-                ],
-                option: [],
-                quantity: 1,
-                productId: "office365Prepaid"
-            }];
+            ];
 
             answer[0].option = _.map(this.selectedAccounts, (account) => ({
                 planCode: "office-business-pp",
-                configuration: [{
-                    label: "lastName",
-                    values: [account.lastName ? account.lastName : ""]
-                },
-                {
-                    label: "firstName",
-                    values: [account.firstName ? account.firstName : ""]
-                },
-                {
-                    label: "login",
-                    values: [account.primaryEmailDisplayName ? account.primaryEmailDisplayName.split(/@/)[0] : ""]
-                }
+                configuration: [
+                    {
+                        label: "lastName",
+                        values: [account.lastName ? account.lastName : ""]
+                    },
+                    {
+                        label: "firstName",
+                        values: [account.firstName ? account.firstName : ""]
+                    },
+                    {
+                        label: "login",
+                        values: [account.primaryEmailDisplayName ? account.primaryEmailDisplayName.split(/@/)[0] : ""]
+                    }
                 ],
                 option: [],
                 quantity: 1

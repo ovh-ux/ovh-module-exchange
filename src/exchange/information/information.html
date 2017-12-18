@@ -5,12 +5,14 @@
             <div class="row d-md-flex">
                 <div class="col-sm-6 mb-5">
                     <div class="oui-tile h-100">
-                        <h3 class="oui-tile__title" data-i18n-static="exchange_tab_INFORMATIONS_summary"></h3>
+                        <h3 class="oui-tile__title"
+                            data-i18n-static="exchange_tab_INFORMATIONS_summary"></h3>
                         <div class="oui-tile__body">
                             <ul class="list-unstyled">
                                 <li class="oui-tile__item">
                                     <div class="oui-tile__definition">
-                                        <strong class="d-block" data-i18n-static="exchange_tab_INFORMATIONS_infrastructure"></strong>
+                                        <strong class="d-block"
+                                                data-i18n-static="exchange_tab_INFORMATIONS_infrastructure"></strong>
                                         <span data-ng-bind="tr('exchange_offer_type_' + ctrl.exchange.offer) || ctrl.exchange.offer"></span>
                                     </div>
                                 </li>
@@ -18,54 +20,94 @@
                                     <div class="oui-tile__definition">
                                         <div class="d-flex w-100">
                                             <div>
-                                                <strong class="d-block" data-i18n-static="exchange_tab_INFORMATIONS_version"></strong>
+                                                <strong class="d-block"
+                                                        data-i18n-static="exchange_tab_INFORMATIONS_version"></strong>
                                                 <span data-ng-bind="tr('exchange_server_commercial_version' + ctrl.exchange.serverDiagnostic.commercialVersion) || ctrl.exchange.serverDiagnostic.commercialVersion"></span>
                                             </div>
-                                            <button class="btn btn-default ml-auto my-auto text-wrap" type="button" data-i18n-static="exchange_upgrade_button_title" data-ng-click="setAction('exchange/information/migration-2016/service-migration-2016', ctrl.exchange)" data-ng-if="ctrl.shouldDisplayMigration2016()">
+                                            <button class="btn btn-default ml-auto my-auto text-wrap" type="button"
+                                                    data-i18n-static="exchange_upgrade_button_title"
+                                                    data-ng-click="setAction('exchange/information/migration-2016/service-migration-2016', ctrl.exchange)"
+                                                    data-ng-if="ctrl.shouldDisplayMigration2016()">
                                             </button>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="oui-tile__item">
                                     <div class="oui-tile__definition">
-                                        <strong class="d-block" data-i18n-static="exchange_dashboard_name"></strong>
+                                        <strong class="d-block"
+                                                data-i18n-static="exchange_dashboard_name"></strong>
                                         <span data-ng-bind="ctrl.exchange.domain"></span>
                                     </div>
                                 </li>
                                 <li class="oui-tile__item" data-ng-if="ctrl.shouldDisplayDiagnostic()">
                                     <div class="oui-tile__definition">
-                                        <strong class="d-block" data-i18n-static="exchange_dashboard_diag"></strong>
-                                        <button class="btn btn-xs" type="button" data-i18n-static="exchange_dashboard_diag_a_label" data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isAValid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isAValid}" data-ng-if="!ctrl.accountTypes.isProvider()"
-                                            data-simplepopover="{{ctrl.exchange.serverDiagnostic.aTooltip}}" data-simplepopover-title="{{tr('exchange_dashboard_diag_a_tooltip_title')}}" data-simplepopover-placement="bottom" data-simplepopover-single="true">
+                                        <strong class="d-block"
+                                                data-i18n-static="exchange_dashboard_diag"></strong>
+                                        <button class="btn btn-xs" type="button"
+                                                data-i18n-static="exchange_dashboard_diag_a_label"
+                                                data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isAValid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isAValid}"
+                                                data-ng-if="!ctrl.accountTypes.isProvider()"
+                                                data-simplepopover="{{ctrl.exchange.serverDiagnostic.aTooltip}}"
+                                                data-simplepopover-title="{{tr('exchange_dashboard_diag_a_tooltip_title')}}"
+                                                data-simplepopover-placement="bottom"
+                                                data-simplepopover-single="true">
                                         </button>
-                                        <button class="btn btn-xs" type="button" data-i18n-static="exchange_dashboard_diag_aaaa_label" data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isAaaaValid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isAaaaValid}" data-ng-if="ctrl.accountTypes.isDedicated()"
-                                            data-simplepopover="{{ctrl.exchange.serverDiagnostic.aaaaTooltip}}" data-simplepopover-title="{{tr('exchange_dashboard_diag_aaaa_tooltip_title')}}" data-simplepopover-placement="bottom" data-simplepopover-single="true">
+                                        <button class="btn btn-xs" type="button"
+                                                data-i18n-static="exchange_dashboard_diag_aaaa_label"
+                                                data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isAaaaValid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isAaaaValid}"
+                                                data-ng-if="ctrl.accountTypes.isDedicated()"
+                                                data-simplepopover="{{ctrl.exchange.serverDiagnostic.aaaaTooltip}}"
+                                                data-simplepopover-title="{{tr('exchange_dashboard_diag_aaaa_tooltip_title')}}"
+                                                data-simplepopover-placement="bottom"
+                                                data-simplepopover-single="true">
                                         </button>
-                                        <button class="btn btn-xs" type="button" data-i18n-static="exchange_dashboard_diag_ptr_label" data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isPtrValid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isPtrValid}" data-ng-if="ctrl.accountTypes.isDedicated()"
-                                            data-simplepopover="{{ctrl.exchange.serverDiagnostic.ptrTooltip}}" data-simplepopover-title="{{tr('exchange_dashboard_diag_ptr_tooltip_title')}}" data-simplepopover-placement="bottom" data-simplepopover-single="true">
+                                        <button class="btn btn-xs" type="button"
+                                                data-i18n-static="exchange_dashboard_diag_ptr_label"
+                                                data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isPtrValid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isPtrValid}"
+                                                data-ng-if="ctrl.accountTypes.isDedicated()"
+                                                data-simplepopover="{{ctrl.exchange.serverDiagnostic.ptrTooltip}}"
+                                                data-simplepopover-title="{{tr('exchange_dashboard_diag_ptr_tooltip_title')}}"
+                                                data-simplepopover-placement="bottom"
+                                                data-simplepopover-single="true">
                                         </button>
-                                        <button class="btn btn-xs" type="button" data-i18n-static="exchange_dashboard_diag_ptrv6_label" data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isPtrV6Valid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isPtrV6Valid}" data-ng-if="ctrl.accountTypes.isDedicated()"
-                                            data-simplepopover="{{ctrl.exchange.serverDiagnostic.ptrv6Tooltip}}" data-simplepopover-title="{{tr('exchange_dashboard_diag_ptrv6_tooltip_title')}}" data-simplepopover-placement="bottom" data-simplepopover-single="true">
+                                        <button class="btn btn-xs" type="button"
+                                                data-i18n-static="exchange_dashboard_diag_ptrv6_label"
+                                                data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isPtrV6Valid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isPtrV6Valid}"
+                                                data-ng-if="ctrl.accountTypes.isDedicated()"
+                                                data-simplepopover="{{ctrl.exchange.serverDiagnostic.ptrv6Tooltip}}"
+                                                data-simplepopover-title="{{tr('exchange_dashboard_diag_ptrv6_tooltip_title')}}"
+                                                data-simplepopover-placement="bottom"
+                                                data-simplepopover-single="true">
                                         </button>
                                     </div>
                                 </li>
-                                <li class="oui-tile__item" data-ng-if="ctrl.exchange.sslExpirationDate">
+                                <li class="oui-tile__item"
+                                    data-ng-if="ctrl.exchange.sslExpirationDate">
                                     <div class="oui-tile__definition">
                                         <div class="d-flex w-100">
                                             <div>
-                                                <strong class="d-block" data-i18n-static="exchange_dashboard_ssl_expiration"></strong>
+                                                <strong class="d-block"
+                                                        data-i18n-static="exchange_dashboard_ssl_expiration"></strong>
                                                 <span data-ng-bind="ctrl.exchange.sslExpirationDate | date:'mediumDate'"></span>
                                             </div>
-                                            <button class="btn btn-default ml-auto my-auto" type="button" aria-describedby="sslRenewal" data-i18n-static="exchange_action_renew_ssl" data-ng-click="ctrl.sslRenew()" data-ng-disabled="ctrl.hasSSLTask" data-ng-if="ctrl.shouldDisplaySSLRenewValue">
+                                            <button class="btn btn-default ml-auto my-auto" type="button" aria-describedby="sslRenewal" 
+                                                    data-i18n-static="exchange_action_renew_ssl"
+                                                    data-ng-click="ctrl.sslRenew()"
+                                                    data-ng-disabled="ctrl.hasSSLTask"
+                                                    data-ng-if="ctrl.shouldDisplaySSLRenewValue">
                                             </button>
                                         </div>
-                                        <div class="alert alert-info mt-3 mb-0" id="sslRenewal" role="alert" data-ng-bind="ctrl.messageSSL" data-ng-if="ctrl.messageSSL">
+                                        <div class="alert alert-info mt-3 mb-0" id="sslRenewal" role="alert"
+                                             data-ng-bind="ctrl.messageSSL"
+                                             data-ng-if="ctrl.messageSSL">
                                         </div>
                                     </div>
                                 </li>
-                                <li class="oui-tile__item" data-ng-if="ctrl.shouldDisplayOfficeAttached">
+                                <li class="oui-tile__item"
+                                    data-ng-if="ctrl.shouldDisplayOfficeAttached">
                                     <div class="oui-tile__definition panel-body">
-                                        <button class="btn btn-block btn-default ml-auto my-auto" type="button" data-ng-click="ctrl.displayOfficeOffer()">
+                                        <button class="btn btn-block btn-default ml-auto my-auto" type="button"
+                                                data-ng-click="ctrl.displayOfficeOffer()">
                                             <strong class="d-block" data-i18n-static="exchange_office_1M_promotion_button_title"></strong>
                                             <div class="text-right ml-auto my-auto">
                                                 <span class="bottom ovh-font ovh-font-0x8" data-i18n-static="exchange_office_1M_promotion_button_title_extra"></span>
@@ -73,9 +115,11 @@
                                         </button>
                                     </div>
                                 </li>
-                                <li class="oui-tile__item" data-ng-if="ctrl.displayRenewDate()">
+                                <li class="oui-tile__item"
+                                    data-ng-if="ctrl.displayRenewDate()">
                                     <div class="oui-tile__definition">
-                                        <strong class="d-block" data-i18n-static="exchange_dashboard_expiration"></strong>
+                                        <strong class="d-block"
+                                                data-i18n-static="exchange_dashboard_expiration"></strong>
                                         <span data-ng-bind="ctrl.exchange.expiration | date:'mediumDate'"></span>
                                     </div>
                                 </li>
@@ -85,47 +129,62 @@
                 </div>
                 <div class="col-sm-6 mb-5">
                     <div class="oui-tile h-100">
-                        <h3 class="oui-tile__title" data-i18n-static="exchange_tab_INFORMATIONS_stats"></h3>
+                        <h3 class="oui-tile__title"
+                            data-i18n-static="exchange_tab_INFORMATIONS_stats"></h3>
                         <div class="oui-tile__body">
                             <ul class="list-unstyled">
                                 <li class="oui-tile__item">
                                     <div class="oui-tile__definition">
-                                        <strong class="d-block" data-i18n-static="exchange_dashboard_domains"></strong>
+                                        <strong class="d-block"
+                                                data-i18n-static="exchange_dashboard_domains"></strong>
                                         <span data-ng-bind="ctrl.exchange.domainsNumber"></span>
                                     </div>
                                 </li>
                                 <li class="oui-tile__item">
                                     <div class="oui-tile__definition">
-                                        <strong class="d-block" data-i18n-static="exchange_dashboard_accounts"></strong>
+                                        <strong class="d-block"
+                                                data-i18n-static="exchange_dashboard_accounts"></strong>
                                         <span data-ng-bind="ctrl.exchange.accountsNumber"></span>
                                     </div>
                                 </li>
                                 <li class="oui-tile__item">
                                     <div class="oui-tile__definition">
-                                        <strong class="d-block" data-i18n-static="exchange_dashboard_tasks"></strong>
+                                        <strong class="d-block"
+                                                data-i18n-static="exchange_dashboard_tasks"></strong>
                                         <span data-ng-bind="ctrl.exchange.tasksNumber"></span>
                                     </div>
                                 </li>
-                                <li class="oui-tile__item" data-ng-if="ctrl.exchange.diskPercent">
+                                <li class="oui-tile__item"
+                                    data-ng-if="ctrl.exchange.diskPercent">
                                     <div class="oui-tile__definition">
                                         <div>
                                             <strong class="d-inline-block mr-2" data-i18n-static="exchange_dashboard_disk_usage"></strong>
-                                            <span class="fa fa-question-circle" aria-hidden="true" data-uib-tooltip="{{tr('exchange_action_order_space_disk_tooltip')}}" data-tooltip-append-to-body="true"></span>
+                                            <span class="fa fa-question-circle" aria-hidden="true"
+                                                  data-uib-tooltip="{{tr('exchange_action_order_space_disk_tooltip')}}"
+                                                  data-tooltip-append-to-body="true"></span>
                                         </div>
-                                        <div class="oui-progress" data-ng-class="{
+                                        <div class="oui-progress" 
+                                             data-ng-class="{
                                                 'oui-progress_success': ctrl.exchange.diskPercent < 51,
                                                 'oui-progress_warning': ctrl.exchange.diskPercent > 50 && ctrl.exchange.diskPercent < 81,
                                                 'oui-progress_error': ctrl.exchange.diskPercent > 80
                                             }">
-                                            <div class="oui-progress__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ctrl.exchange.diskPercent}}" data-ng-class="{
+                                            <div class="oui-progress__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ctrl.exchange.diskPercent}}"
+                                                 data-ng-class="{
                                                     'oui-progress__bar_success': ctrl.exchange.diskPercent < 51,
                                                     'oui-progress__bar_warning': ctrl.exchange.diskPercent > 50 && ctrl.exchange.diskPercent < 81,
                                                     'oui-progress__bar_error': ctrl.exchange.diskPercent > 80
-                                                }" data-ng-style="{'width': ctrl.exchange.diskPercent + '%'}">
-                                                <span class="oui-progress__label" data-ng-bind="ctrl.exchange.currentDiskUsage.value + ' ' + tr('unit_size_'+ ctrl.exchange.currentDiskUsage.unit) + ' / ' + ctrl.exchange.totalDiskSize.value + ' ' + tr('unit_size_'+ ctrl.exchange.totalDiskSize.unit)"></span>
+                                                }"
+                                                 data-ng-style="{'width': ctrl.exchange.diskPercent + '%'}">
+                                                <span class="oui-progress__label"
+                                                      data-ng-bind="ctrl.exchange.currentDiskUsage.value + ' ' + tr('unit_size_'+ ctrl.exchange.currentDiskUsage.unit) + ' / ' + ctrl.exchange.totalDiskSize.value + ' ' + tr('unit_size_'+ ctrl.exchange.totalDiskSize.unit)"></span>
                                             </div>
                                         </div>
-                                        <button class="btn btn-block btn-default" type="button" data-i18n-static="exchange_action_order_space_disk" data-ng-click="ctrl.orderDiskSpace()" data-ng-disabled="ctrl.accountTypes.is25g()" data-ng-if="ctrl.displayOrderDiskSpace()">
+                                        <button class="btn btn-block btn-default" type="button"
+                                                data-i18n-static="exchange_action_order_space_disk"
+                                                data-ng-click="ctrl.orderDiskSpace()"
+                                                data-ng-disabled="ctrl.accountTypes.is25g()"
+                                                data-ng-if="ctrl.displayOrderDiskSpace()">
                                         </button>
                                     </div>
                                 </li>
@@ -137,7 +196,8 @@
         </div>
         <div class="col-md-3">
             <div class="oui-tile mb-5">
-                <h3 class="oui-tile__title" data-i18n-static="exchange_tab_INFORMATIONS_connexion"></h3>
+                <h3 class="oui-tile__title"
+                    data-i18n-static="exchange_tab_INFORMATIONS_connexion"></h3>
                 <div class="oui-tile__body">
                     <ul class="list-unstyled">
                         <li class="oui-tile__item" data-ng-if="ctrl.accountTypes.isHosted()">
@@ -149,8 +209,10 @@
                         </li>
                         <li class="oui-tile__item">
                             <div class="oui-tile__definition">
-                                <strong class="d-block" data-i18n-static="exchange_tab_INFORMATIONS_webmail"></strong>
-                                <a class="word-break" target="_blank" title="{{i18n.exchange_tab_INFORMATIONS_webmail}} ({{i18n.common_newtab}})" data-ng-href="https://{{ctrl.exchange.hostname}}">
+                                <strong class="d-block"
+                                        data-i18n-static="exchange_tab_INFORMATIONS_webmail"></strong>
+                                <a class="word-break" target="_blank" title="{{i18n.exchange_tab_INFORMATIONS_webmail}} ({{i18n.common_newtab}})"
+                                   data-ng-href="https://{{ctrl.exchange.hostname}}">
                                     <span data-ng-bind="'https://' + ctrl.exchange.hostname"></span>
                                     <span class="fa fa-external-link" aria-hidden="true"></span>
                                 </a>
@@ -158,7 +220,8 @@
                         </li>
                         <li class="oui-tile__item">
                             <div class="oui-tile__definition">
-                                <strong class="d-block" data-i18n-static="exchange_tab_INFORMATIONS_messaging"></strong>
+                                <strong class="d-block"
+                                        data-i18n-static="exchange_tab_INFORMATIONS_messaging"></strong>
                                 <a data-ng-href="{{ctrl.displayGuides}}" target="_blank" title="{{i18n.exchange_dashboard_guides_url}} ({{i18n.common_newtab}})">
                                     <span data-i18n-static="exchange_dashboard_guides_url"></span>
                                     <span class="fa fa-external-link" aria-hidden="true"></span>
@@ -172,19 +235,24 @@
             <oui-loader data-ng-if="ctrl.loading.sharePoint"></oui-loader>
 
             <div class="oui-tile mb-5" data-ng-if="!ctrl.loading.sharePoint && ctrl.sharepoint">
-                <h3 class="oui-tile__title" data-i18n-static="exchange_tab_INFORMATIONS_sharepoint"></h3>
+                <h3 class="oui-tile__title"
+                    data-i18n-static="exchange_tab_INFORMATIONS_sharepoint"></h3>
                 <div class="oui-tile__body">
                     <ul class="list-unstyled">
                         <li class="oui-tile__item">
                             <div class="oui-tile__definition">
-                                <strong class="d-block" data-i18n-static="exchange_tab_INFORMATIONS_sharepoint_url"></strong>
-                                <a class="word-break" target="_blank" data-ng-href="https://{{ctrl.sharepoint.url}}" data-ng-if="ctrl.sharepoint.state !== 'creating'">
+                                <strong class="d-block"
+                                        data-i18n-static="exchange_tab_INFORMATIONS_sharepoint_url"></strong>
+                                <a class="word-break" target="_blank" data-ng-href="https://{{ctrl.sharepoint.url}}"
+                                   data-ng-if="ctrl.sharepoint.state !== 'creating'">
                                     <span data-ng-bind="'https://' + ctrl.sharepoint.url"></span>
                                     <span class="fa fa-external-link" aria-hidden="true"></span>
                                 </a>
-                                <span data-i18n-static="exchange_tab_INFORMATIONS_wait_activation" data-ng-if="ctrl.sharepoint.state === 'creating'"></span>
+                                <span data-i18n-static="exchange_tab_INFORMATIONS_wait_activation"
+                                      data-ng-if="ctrl.sharepoint.state === 'creating'"></span>
                                 <div class="mt-3">
-                                    <a data-ng-href="#/configuration/sharepoint/{{ctrl.exchange.domain}}/{{ctrl.sharepoint.domain}}" data-i18n-static="exchange_tab_INFORMATIONS_service_url"></a>
+                                    <a data-ng-href="#/configuration/sharepoint/{{ctrl.exchange.domain}}/{{ctrl.sharepoint.domain}}"
+                                       data-i18n-static="exchange_tab_INFORMATIONS_service_url"></a>
                                 </div>
                             </div>
                         </li>
@@ -194,6 +262,8 @@
         </div>
     </div>
 
-    <div class="row" data-ng-if="ctrl.shouldDisplayOfficeOffer()" data-ng-include="'exchange/information/office-offer/office-offer.html'">
+    <div class="row" 
+         data-ng-if="ctrl.shouldDisplayOfficeOffer()" 
+         data-ng-include="'exchange/information/office-offer/office-offer.html'">
     </div>
 </div>
