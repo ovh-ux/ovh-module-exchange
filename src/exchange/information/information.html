@@ -39,7 +39,8 @@
                                         <span data-ng-bind="ctrl.exchange.domain"></span>
                                     </div>
                                 </li>
-                                <li class="oui-tile__item" data-ng-if="ctrl.shouldDisplayDiagnostic()">
+                                <li class="oui-tile__item"
+                                    data-ng-if="ctrl.shouldDisplayDiagnostic()">
                                     <div class="oui-tile__definition">
                                         <strong class="d-block"
                                                 data-i18n-static="exchange_dashboard_diag"></strong>
@@ -90,7 +91,7 @@
                                                         data-i18n-static="exchange_dashboard_ssl_expiration"></strong>
                                                 <span data-ng-bind="ctrl.exchange.sslExpirationDate | date:'mediumDate'"></span>
                                             </div>
-                                            <button class="btn btn-default ml-auto my-auto" type="button" aria-describedby="sslRenewal" 
+                                            <button class="btn btn-default ml-auto my-auto" type="button" aria-describedby="sslRenewal"
                                                     data-i18n-static="exchange_action_renew_ssl"
                                                     data-ng-click="ctrl.sslRenew()"
                                                     data-ng-disabled="ctrl.hasSSLTask"
@@ -163,7 +164,7 @@
                                                   data-uib-tooltip="{{tr('exchange_action_order_space_disk_tooltip')}}"
                                                   data-tooltip-append-to-body="true"></span>
                                         </div>
-                                        <div class="oui-progress" 
+                                        <div class="oui-progress"
                                              data-ng-class="{
                                                 'oui-progress_success': ctrl.exchange.diskPercent < 51,
                                                 'oui-progress_warning': ctrl.exchange.diskPercent > 50 && ctrl.exchange.diskPercent < 81,
@@ -243,7 +244,8 @@
                             <div class="oui-tile__definition">
                                 <strong class="d-block"
                                         data-i18n-static="exchange_tab_INFORMATIONS_sharepoint_url"></strong>
-                                <a class="word-break" target="_blank" data-ng-href="https://{{ctrl.sharepoint.url}}"
+                                <a class="word-break" target="_blank"
+                                   data-ng-href="https://{{ctrl.sharepoint.url}}"
                                    data-ng-if="ctrl.sharepoint.state !== 'creating'">
                                     <span data-ng-bind="'https://' + ctrl.sharepoint.url"></span>
                                     <span class="fa fa-external-link" aria-hidden="true"></span>

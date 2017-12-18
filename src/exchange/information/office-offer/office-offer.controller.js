@@ -60,22 +60,23 @@ angular
             const answer = [
                 {
                     planCode: "office-tenant",
-                    configuration: [{
-                        label: "zip_code",
-                        values: ["00000"]
-                    },
-                    {
-                        label: "display_name",
-                        values: [displayName]
-                    },
-                    {
-                        label: "exchange_service_name",
-                        values: [this.exchange.domain]
-                    },
-                    {
-                        label: "country",
-                        values: [this.ovhSubsidiary || "FR"]
-                    }
+                    configuration: [
+                        {
+                            label: "zip_code",
+                            values: ["00000"]
+                        },
+                        {
+                            label: "display_name",
+                            values: [displayName]
+                        },
+                        {
+                            label: "exchange_service_name",
+                            values: [this.exchange.domain]
+                        },
+                        {
+                            label: "country",
+                            values: [this.ovhSubsidiary || "FR"]
+                        }
                     ],
                     option: [],
                     quantity: 1,

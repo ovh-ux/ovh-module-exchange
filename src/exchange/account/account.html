@@ -87,9 +87,12 @@
                     <tbody data-ng-if="!ctrl.loading && ctrl.accounts.list.results.length === 0 && ctrl.accounts.list.messages.length === 0">
                         <tr>
                             <td class="text-center" colspan="7">
-                                <span data-ng-if="!ctrl.search.value && (!ctrl.filterType || ctrl.filterType === 'ALL')" data-i18n-static="exchange_tab_ACCOUNTS_table_empty"></span>
-                                <span data-ng-if="!ctrl.search.value && (ctrl.filterType && ctrl.filterType !== 'ALL')" data-ng-bind="tr('exchange_tab_ACCOUNTS_table_empty_type_' + ctrl.filterType)"></span>
-                                <span data-ng-if="ctrl.search.value" data-i18n-static="exchange_tab_ACCOUNTS_table_empty_search"></span>
+                                <span data-ng-if="!ctrl.search.value && (!ctrl.filterType || ctrl.filterType === 'ALL')"
+                                      data-i18n-static="exchange_tab_ACCOUNTS_table_empty"></span>
+                                <span data-ng-if="!ctrl.search.value && (ctrl.filterType && ctrl.filterType !== 'ALL')"
+                                      data-ng-bind="tr('exchange_tab_ACCOUNTS_table_empty_type_' + ctrl.filterType)"></span>
+                                <span data-ng-if="ctrl.search.value"
+                                      data-i18n-static="exchange_tab_ACCOUNTS_table_empty_search"></span>
                             </td>
                         </tr>
                     </tbody>
@@ -111,12 +114,12 @@
                                             'oui-progress_error': account.percentUse > 80
                                         }">
                                     <div class="oui-progress__bar oui-progress__bar_text-left" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{exchange.diskPercent}}"
-                                        data-ng-class="{
+                                         data-ng-class="{
                                             'oui-progress__bar_success': account.percentUse < 51,
                                             'oui-progress__bar_warning': account.percentUse > 50 && account.percentUse < 81,
                                             'oui-progress__bar_error': account.percentUse > 80
-                                        }" 
-                                        data-ng-style="{'width': account.percentUse + '%'}">
+                                        }"
+                                         data-ng-style="{'width': account.percentUse + '%'}">
                                         <span class="oui-progress__label"
                                               data-ng-bind="::account.usedQuota.value + ' ' + tr('unit_size_' + account.usedQuota.unit) + ' / ' + account.totalQuota.value + ' ' + tr('unit_size_' + account.totalQuota.unit)"></span>
                                     </div>
