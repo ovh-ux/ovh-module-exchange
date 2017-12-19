@@ -55,7 +55,6 @@ angular
             if (this.exchange.displayName.match(/.*hosted.*/i) || this.exchange.displayName.match(/.*exchange.*/i) || this.exchange.displayName.match(/.*private.*/i)) {
                 displayName = this.exchange.displayName.replace(/hosted/i, "Office").replace(/exchange/i, "Office").replace(/private/i, "Office");
             }
-            this.selectedAccounts = this.loadSelectedAccounts();
 
             const answer = [
                 {
@@ -97,7 +96,7 @@ angular
                     },
                     {
                         label: "login",
-                        values: [account.primaryEmailDisplayName ? account.primaryEmailDisplayName.split(/@/)[0] : ""]
+                        values: [account.primaryEmailDisplayName.split(/@/)[0]]
                     }
                 ],
                 option: [],
@@ -128,16 +127,19 @@ angular
             this.loading.step1.table = true;
             const filterType = this.filterType === "ALL" ? null : this.filterType;
 
-            this.updateAccounts(null);
-
             this.services
                 .Exchange
                 .getAccounts(count, offset, this.searchValue, false, filterType)
                 .then((accounts) => {
-                    this.updateAccounts(accounts);
+                    this.accounts = accounts;
+                    this.services.$scope.accounts = accounts;
+
+
                     this.accountsTotalNumber = accounts.ids.length;
                 })
                 .catch((failure) => {
+                    this.accounts = null;
+                    this.services.$scope.accounts = null;
                     this.services.messaging.writeError(this.tr("exchange_tab_ACCOUNTS_error_message"), failure);
                 })
                 .finally(() => {
@@ -146,32 +148,18 @@ angular
                 });
         }
 
-        updateAccounts (accounts) {
-            this.accounts = accounts;
-
-            if (!_.isEmpty(accounts)) {
-                const alreadyPresentAccounts = this.selectedAccounts.map((account) => account);
-                this.selectedAccounts = this.selectedAccounts.concat(accounts.list.results.filter((account) => !alreadyPresentAccounts.includes(account)));
-            }
-
-            this.services.$scope.accounts = accounts;
-        }
-
-        countNumberOfCheckedAccounts () {
+        countNumberOfCheckedAccounts (item) {
             if (!_.isEmpty(this.accounts)) {
-                const currentDisplayedAccountEmailAddresses = this.accounts.list.results.map((account) => account.primaryEmailDisplayName);
-                const selectedAccountsCurrentBeingDisplayed = this.selectedAccounts.filter((currentSelectedAccount) => currentDisplayedAccountEmailAddresses.includes(currentSelectedAccount));
+                const selectedAccountsEmails = this.loadSelectedAccounts();
+                if (item) {
+                    if (selectedAccountsEmails.includes(item.primaryEmailDisplayName)) {
+                        this.selectedAccounts.push(item);
+                    } else {
+                        this.selectedAccounts = this.selectedAccounts.filter((currentAccount) => currentAccount.primaryEmailDisplayName !== item.primaryEmailDisplayName);
+                    }
+                }
 
-                const currentlySelectedAccountsEmailAddresses = Object.keys(this.selectedCheckboxes).filter((key) => this.selectedCheckboxes[key]);
-                const currentlyDislayedAccountsThatAreSelected = this.accounts.list.results.filter((account) => currentlySelectedAccountsEmailAddresses.includes(account.primaryEmailDisplayName));
-
-                const alreadyPresentAccounts = currentlyDislayedAccountsThatAreSelected.map((account) => account.primaryEmailDisplayName);
-                this.selectedAccounts = currentlyDislayedAccountsThatAreSelected.concat(selectedAccountsCurrentBeingDisplayed.filter((account) => !alreadyPresentAccounts.includes(account.primaryEmailDisplayName)));
-
-                const currentlyNotSelectedAccountsEmailAddresses = Object.keys(this.selectedCheckboxes).filter((key) => !this.selectedCheckboxes[key]);
-                this.selectedAccounts = this.selectedAccounts.filter((account) => !currentlyNotSelectedAccountsEmailAddresses.includes(account.primaryEmailDisplayName));
-
-                this.numberOfSelectedCheckboxes = currentlySelectedAccountsEmailAddresses.length;
+                this.numberOfSelectedCheckboxes = selectedAccountsEmails.length;
                 this.step1IsValid();
             }
         }
