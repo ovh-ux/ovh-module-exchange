@@ -134,7 +134,6 @@ angular
                     this.accounts = accounts;
                     this.services.$scope.accounts = accounts;
 
-
                     this.accountsTotalNumber = accounts.ids.length;
                 })
                 .catch((failure) => {
@@ -149,9 +148,9 @@ angular
         }
 
         countNumberOfCheckedAccounts (item) {
-            if (!_.isEmpty(this.accounts)) {
+            if (_.isObject(this.accounts) && !_.isEmpty(this.accounts)) {
                 const selectedAccountsEmails = this.loadSelectedAccounts();
-                if (item) {
+                if (_(item).isObject()) {
                     if (selectedAccountsEmails.includes(item.primaryEmailDisplayName)) {
                         this.selectedAccounts.push(item);
                     } else {

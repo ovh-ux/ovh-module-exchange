@@ -17,7 +17,6 @@ angular
                 })
                 .then((data) => {
                     this.canSubscribe = data.officeTenantServiceName == null;
-
                     return this.canSubscribe;
                 });
         }
