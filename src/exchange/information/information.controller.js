@@ -40,10 +40,8 @@ angular
             this.loadATooltip();
 
             this.officeOfferService.getOfficeOfferSubscription()
-                .then((officeTenantServiceName) => {
-                    // this.shouldDisplayOfficeAttached = _(officeTenantServiceName).isString() && !_(officeTenantServiceName).isEmpty();
-                    // this.shouldDisplayOfficeAttached = officeTenantServiceName;
-                    this.shouldDisplayOfficeAttached = !!officeTenantServiceName;
+                .then((displayOfficeOffer) => {
+                    this.shouldDisplayOfficeAttached = displayOfficeOffer;
                 });
         }
 
