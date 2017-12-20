@@ -226,7 +226,7 @@
 <!-- TASKS -->
    <translation id="exchange_tab_TASKS_table_empty" qtlid="144058">Vous n'avez pas de tâches</translation>
    <translation id="exchange_tab_TASKS_table_function" qtlid="61872">Tâche</translation>
-   <translation id="exchange_tab_TASKS_table_state" qtlid="167912">Etat</translation>
+   <translation id="exchange_tab_TASKS_table_state" qtlid="167912">Statut</translation>
    <translation id="exchange_tabled" qtlid="27631">Annulé</translation>
    <translation id="exchange_tab_TASKS_DOING" qtlid="26383">En cours</translation>
    <translation id="exchange_tab_TASKS_CANCELLED" qtlid="27631">Annulé</translation>
