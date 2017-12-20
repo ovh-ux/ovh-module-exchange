@@ -598,10 +598,7 @@
    <translation id="exchange_tab_domain_target_mail_server_label" qtlid="316957">Servidor de correo de destino</translation>
    <translation id="exchange_tab_domain_noovh_mx_info" qtlid="317126">Deberá realizar los cambios en los registros MX y SRV manualmente en la zona DNS. Una vez realizada la validación CNAME, podrá encontrar la información necesaria en la pestaña «Dominios asociados».</translation>
    <translation id="exchange_tab_domain_modify_domain" qtlid="137101">Configurar un dominio</translation>
-<translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="416397;416410;416410;169498;416423;416449">
-El antispam Vade Secure es compatible con el modo no autoritario (solo si sus cuentas POP/IMAP están alojadas en OVH). En ese caso, le aconsejamos que utilice: <strong qtlid="266365">{0}</strong>, <strong qtlid="78906">{1}</strong>, <strong qtlid="183112">{2}</strong> y <strong qtlid="292228">{3}</strong>
-<br/><br/> Si utiliza el modo no autoritario con cuentas de correo no alojadas en OVH, deberá utilizar: <strong qtlid="416436">{4}</strong> (ver la sección de dominios asociados)
-</translation>
+   <translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="444667">El antispam Vade Secure es compatible con el modo no autoritario (solo si sus cuentas POP/IMAP están alojadas en OVH). En ese caso, le aconsejamos que utilice: <strong>{0}</strong>, <strong>{1}</strong>, <strong>{2}</strong> y <strong>{3}</strong><br/><br/> Si utiliza el modo no autoritario con cuentas de correo no alojadas en OVH, deberá utilizar: <strong>{4}</strong> (ver la sección de dominios asociados)</translation>
    <translation id="exchange_tab_domain_modify_title" qtlid="137920">¿Seguro que quiere modificar el siguiente dominio de su servicio Exchange?</translation>
    <translation id="exchange_tab_domain_modify_loop_warning" qtlid="210319">¡Atención: bucle infinito!</translation>
    <translation id="exchange_tab_domain_modify_domain_warning" qtlid="210332">Dominio no válido.</translation>

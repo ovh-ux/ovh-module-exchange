@@ -599,10 +599,7 @@
    <translation id="exchange_tab_domain_target_mail_server_label" qtlid="316957">Paskirties el. pašto serveris</translation>
    <translation id="exchange_tab_domain_noovh_mx_info" qtlid="317126">MX ir SRV įrašai bus keičiami rankiniu būdu jūsų DNS zonoje. Visa būtina informacija bus matoma susijusių domenų skiltyje, iš karto po CNAME patvirtinimo.</translation>
    <translation id="exchange_tab_domain_modify_domain" qtlid="137101">Domeno konfigūravimas</translation>
-<translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="416397;416410;416410;169498;416423;416449">
-Anti-spam Vade Secure paslauga yra suderinama su Non-authorative režimu (tik jeigu jūsų pop/imap el. paštas yra talpinamas OVH). Tokiu atveju rekomenduojama naudoti: <strong qtlid="266365">{0}</strong>, <strong qtlid="78906">{1}</strong>, <strong qtlid="183112">{2}</strong> ir <strong qtlid="292228">{3}</strong>
-<br/><br/> Jeigu naudosite Non-authoritative režimą el. pašto dėžutėms, talpinamoms OVH, tuomet jūs turėtumėte naudoti: <strong qtlid="416436">{4}</strong> (peržiūrėti susijusių domenų skiltį)
-</translation>
+   <translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="444667">Anti-spam Vade Secure paslauga yra suderinama su Non-authorative režimu (tik jeigu jūsų pop/imap el. paštas yra talpinamas OVH). Tokiu atveju rekomenduojama naudoti: <strong>{0}</strong>, <strong>{1}</strong>, <strong>{2}</strong> ir <strong>{3}</strong><br/><br/> Jeigu naudosite Non-authoritative režimą el. pašto dėžutėms, talpinamoms OVH, tuomet jūs turėtumėte naudoti: <strong>{4}</strong> (peržiūrėti susijusių domenų skiltį)</translation>
    <translation id="exchange_tab_domain_modify_title" qtlid="137920">Ar tikrai pageidaujate pakeisti šį jūsų Exchange paskyros domeną?</translation>
    <translation id="exchange_tab_domain_modify_loop_warning" qtlid="210319">Dėmesio: begalinis ciklas!</translation>
    <translation id="exchange_tab_domain_modify_domain_warning" qtlid="210332">Negaliojantis domenas.</translation>

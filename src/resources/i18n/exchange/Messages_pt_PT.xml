@@ -598,10 +598,7 @@
    <translation id="exchange_tab_domain_target_mail_server_label" qtlid="316957">Servidor de e-mail alvo</translation>
    <translation id="exchange_tab_domain_noovh_mx_info" qtlid="317126">As alterações dos registos do tipo MX e SRV devem ser realizadas de forma manual na sua secção DNS. Pode encontrar as informações necessárias na secção "Domínios associados", depois de ter efetuado a validação do CNAME.</translation>
    <translation id="exchange_tab_domain_modify_domain" qtlid="137101">Modificar um domínio</translation>
-<translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="416397;416410;416410;169498;416423;416449">
-O anti-spam Vade Secure é compatível com o modo não autoritário (unicamente se as suas contas pop/imap são alojadas na OVH). Neste caso, é aconselhado que utilize: <strong qtlid="266365">{0}</strong>, <strong qtlid="78906">{1}</strong>, <strong qtlid="183112">{2}</strong> e <strong qtlid="292228">{3}</strong>
-<br/><br/> Se utiliza o modo não autoritário com contas de e-mail não alojadas pela OVH, deve utilizar: <strong qtlid="416436">{4}</strong> (ver a secção de domínios associados)
-</translation>
+   <translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="444667">O anti-spam Vade Secure é compatível com o modo não autoritário (unicamente se as suas contas pop/imap são alojadas na OVH). Neste caso, é aconselhado que utilize: <strong>{0}</strong>, <strong>{1}</strong>, <strong>{2}</strong> e <strong>{3}</strong><br/><br/> Se utiliza o modo não autoritário com contas de e-mail não alojadas pela OVH, deve utilizar: <strong>{4}</strong> (ver a secção de domínios associados)</translation>
    <translation id="exchange_tab_domain_modify_title" qtlid="137920">Têm a certeza de que deseja modificar o seguinte domínio do seu serviço Exchange?</translation>
    <translation id="exchange_tab_domain_modify_loop_warning" qtlid="210319">Atenção, ciclo infinito!</translation>
    <translation id="exchange_tab_domain_modify_domain_warning" qtlid="210332">Domínio inválido</translation>

@@ -598,10 +598,7 @@
    <translation id="exchange_tab_domain_target_mail_server_label" qtlid="316957">Cílový mailserver</translation>
    <translation id="exchange_tab_domain_noovh_mx_info" qtlid="317126">Změny záznamů MX a SRV musí být provedeny ručně, ve Vaší DNS zóně. Jakmile bude potvrzen záznam CNAME, najdete všechny potřebné informace v sekci asociovaných domén.</translation>
    <translation id="exchange_tab_domain_modify_domain" qtlid="137101">Úprava domény</translation>
-<translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="416397;416410;416410;169498;416423;416449">
-Anti-spam Vade Secure je kompatibilní s autoritativním režimem (pouze pokud jsou Vaše účty pop/imap hostovány u OVH). V takovém případě je vhodné použít: <strong qtlid="266365">{0}</strong>, <strong qtlid="78906">{1}</strong>, <strong qtlid="183112">{2}</strong> a <strong qtlid="292228">{3}</strong>
-<br/><br/> Pokud používáte neautoritativní režim s e-mailovými účty, které nejsou hostovány u OVH, je potřeba použít: <strong qtlid="416436">{4}</strong> (viz sekce asociované domény)
-</translation>
+   <translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="444667">Anti-spam Vade Secure je kompatibilní s autoritativním režimem (pouze pokud jsou Vaše účty pop/imap hostovány u OVH). V takovém případě je vhodné použít: <strong>{0}</strong>, <strong>{1}</strong>, <strong>{2}</strong> a <strong>{3}</strong><br/><br/> Pokud používáte neautoritativní režim s e-mailovými účty, které nejsou hostovány u OVH, je potřeba použít: <strong>{4}</strong> (viz sekce asociované domény)</translation>
    <translation id="exchange_tab_domain_modify_title" qtlid="137920">Opravdu si přejete změnit následující doménu ze svých služeb Exchange?</translation>
    <translation id="exchange_tab_domain_modify_loop_warning" qtlid="210319">Pozor: nekonečná smyčka!</translation>
    <translation id="exchange_tab_domain_modify_domain_warning" qtlid="210332">Neplatná doména.</translation>
