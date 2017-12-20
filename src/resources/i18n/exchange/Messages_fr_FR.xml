@@ -127,7 +127,7 @@
    <translation id="exchange_tab_ACCOUNTS_table_alias" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ACCOUNTS_table_group" qtlid="59507">Groupe</translation>
    <translation id="exchange_tab_ACCOUNTS_table_outlook" qtlid="24427">Outlook</translation>
-   <translation id="exchange_tab_ACCOUNTS_table_status" qtlid="447625">Etat</translation>
+   <translation id="exchange_tab_ACCOUNTS_table_status" qtlid="447625">Statut</translation>
    <translation id="exchange_tab_ACCOUNTS_table_settings" qtlid="4406">Configuration</translation>
    <translation id="exchange_tab_ACCOUNTS_type_ALL" qtlid="69173">Tous</translation>
    <translation id="exchange_tab_ACCOUNTS_type_BASIC" qtlid="48986">Basic</translation>
@@ -385,7 +385,7 @@
    <translation id="exchange_tab_domain_diagnostic_srv_toolbox_ok" qtlid="137491">Configuration automatique effectuée</translation>
    <translation id="exchange_tab_domain_error_message" qtlid="144045">Une erreur est survenue lors du chargement de vos domaines.</translation>
    <translation id="exchange_tab_domain_diagnostic_cname" qtlid="129847">CNAME</translation>
-   <translation id="exchange_tab_domain_status" qtlid="447690">Etat</translation>
+   <translation id="exchange_tab_domain_status" qtlid="447690">Statut</translation>
    <translation id="exchange_tab_domain_task_in_progress" qtlid="2690">Tâche en cours</translation>
    <translation id="exchange_tab_domain_validation" qtlid="33802">Validation</translation>
    <translation id="exchange_tab_domain_validation_doing" qtlid="136646">Validation de domaine en cours</translation>
@@ -647,7 +647,7 @@
    <translation id="exchange_tab_DISCLAIMER_table_empty" qtlid="152258">Vous n'avez pas de signature.</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_content" qtlid="152271">Contenu</translation>
    <translation id="exchange_tab_DISCLAIMER_associated_domains" qtlid="133110">Domaine associé</translation>
-   <translation id="exchange_tab_DISCLAIMER_state_header" qtlid="447794">Etat</translation>
+   <translation id="exchange_tab_DISCLAIMER_state_header" qtlid="447794">Statut</translation>
    <translation id="exchange_tab_DISCLAIMER_state_doing_tooltip" qtlid="143863">Une tâche est planifiée ou en cours d'exécution</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_outside_only" qtlid="152284">Externe uniquement</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_outside_only_tooltip" qtlid="152297">Signature utilisée uniquement pour les envois vers l'extérieur</translation>
@@ -742,7 +742,7 @@
    <translation id="exchange_tab_RESOURCES_table_capacity" qtlid="4334">Capacité</translation>
    <translation id="exchange_tab_RESOURCES_table_allow_conflicts" qtlid="156407">Conflit autorisé</translation>
    <translation id="exchange_tab_RESOURCES_table_email" qtlid="69509">E-mail</translation>
-   <translation id="exchange_tab_RESOURCES_table_state" qtlid="447820">Etat</translation>
+   <translation id="exchange_tab_RESOURCES_table_state" qtlid="447820">Statut</translation>
    <translation id="exchange_tab_RESOURCES_table_state_task" qtlid="156420">Tâche en cours</translation>
    <translation id="exchange_tab_RESOURCES_action_add_resource_account" qtlid="63710">Ajouter un compte de ressource</translation>
    <translation id="exchange_tab_RESOURCES_type_EQUIPMENT" qtlid="82063">Équipement</translation>
@@ -872,7 +872,7 @@
    <translation id="exchange_tab_GROUPS_all_table_address" qtlid="11315">Adresse e-mail</translation>
    <translation id="exchange_tab_GROUPS_all_table_manager" qtlid="81487">Administrateurs</translation>
    <translation id="exchange_tab_GROUPS_all_table_user" qtlid="32206">Contacts</translation>
-   <translation id="exchange_tab_GROUPS_all_table_status" qtlid="447833">Etat</translation>
+   <translation id="exchange_tab_GROUPS_all_table_status" qtlid="447833">Statut</translation>
    <translation id="exchange_tab_GROUPS_all_table_empty" qtlid="150346">Vous n'avez pas de groupe</translation>
    <translation id="exchange_tab_GROUPS_all_error_message" qtlid="150359">Une erreur est survenue lors du chargement de votre liste de groupes.</translation>
    <translation id="exchange_tab_GROUPS_all_add_ml_button" qtlid="150372">Créer un groupe de contact</translation>
@@ -1071,7 +1071,7 @@
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_externalEmailAddress" qtlid="30430">Adresse</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_displayName" qtlid="80922">Nom affiché</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_creationDate" qtlid="4358">Créé le</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state" qtlid="447846">Etat</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state" qtlid="447846">Statut</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_CREATING" qtlid="26227">En création</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_DELETING" qtlid="133929">En suppression</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_REOPENING" qtlid="171279">En réouverture</translation>
@@ -1354,7 +1354,7 @@
    <translation id="exchange_tab_SHARED_header_path" qtlid="6838">Chemin</translation>
    <translation id="exchange_tab_SHARED_header_type" qtlid="2642">Type</translation>
    <translation id="exchange_tab_SHARED_header_access" qtlid="201510">Permissions d'accès</translation>
-   <translation id="exchange_tab_SHARED_header_status" qtlid="447859">Etat</translation>
+   <translation id="exchange_tab_SHARED_header_status" qtlid="447859">Statut</translation>
    <translation id="exchange_tab_SHARED_header_access_PLAIN" qtlid="61656">Répertoire</translation>
    <translation id="exchange_tab_SHARED_header_access_CALENDAR" qtlid="201523">Calendrier</translation>
    <translation id="exchange_tab_SHARED_header_access_CONTACTS" qtlid="32206">Contacts</translation>
@@ -1526,8 +1526,8 @@
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_header" qtlid="449687">Serveur relais (SMTP)</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_title" qtlid="449700">Configuration de votre zone DNS</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_tooltip" qtlid="449713">La zone DNS permet de gérer différents services liés au nom de domaine.<br /><br />Exemple : un enregistrement MX permet d'indiquer quel serveur e-mail est attaché au nom de domaine.</translation>
-<translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip" qtlid="449726;449739">Le serveur relais intervient en cas de réception d’e-mails adressés à des comptes non hébergés sur votre service Exchange OVH.
-<br/><br/>Ceux-ci seront automatiquement transmis au serveur relais.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip_1">Le serveur relais intervient en cas de réception d’e-mails adressés à des comptes non hébergés sur votre service Exchange OVH.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip_2">Ceux-ci seront automatiquement transmis au serveur relais.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_header" qtlid="449752">Comment souhaitez-vous configurer votre zone DNS ?</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_auto" qtlid="273319">Configuration automatique</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_manual" qtlid="273332">Configuration manuelle</translation>
@@ -1586,8 +1586,8 @@
    <translation id="exchange_wizardHostedCreation_emailCreation_add_migrationChecking_error" qtlid="450259">Ce compte e-mail ne peut pas être migré vers votre service Exchange.</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_add_migrationChecking_mxPlanTechContact" qtlid="450272">Ce compte e-mail ne peut pas être migré automatiquement vers votre service Exchange. Vous devez être contact administrateur et technique des deux services.</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_error" qtlid="450285">Une erreur est survenue au moment de la migration de votre compte e-mail.</translation>
-<translation id="exchange_wizardHostedCreation_emailCreation_add_migration_question" qtlid="450298;450311">Ce compte e-mail existe déjà, voulez-vous le migrer vers l'adresse Exchange ?<br/>
-Tous vos e-mails existants sur ce compte vont être désormais disponible via l'adresse Exchange.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_question_1">Ce compte e-mail existe déjà, voulez-vous le migrer vers l'adresse Exchange ?</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_question_2">Tous vos e-mails existants sur ce compte vont être désormais disponible via l'adresse Exchange.</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_warning" qtlid="436892">Attention, les éléments suivants ne seront pas pris en charge par la présente migration&#160;: <br />- vos filtres&#160;; <br />- vos répondeurs&#160;; <br />- vos mailing lists&#160;; <br />- vos contacts Roundcube.</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_wrongPassword_error" qtlid="450324">Le mot de passe est incorrect.</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_addButton_title" qtlid="37923">Ajouter</translation>
