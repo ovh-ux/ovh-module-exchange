@@ -27,7 +27,9 @@
             const firstSentenceTooltip = this.translator.tr("exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip_1");
             const secondSentenceTooltip = this.translator.tr("exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip_2");
             this.mxRelayTooltip = `${firstSentenceTooltip}<br /><br />${secondSentenceTooltip}`;
-            this.mxAndSRVTooltipText = this.translator.tr("exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip");
+            const mxAndSRVTooltipFirstSentence = this.translator.tr("exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_1");
+            const mxAndSRVTooltipSecondSentence = this.translator.tr("exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_2");
+            this.mxAndSRVTooltipText = `${mxAndSRVTooltipFirstSentence}<br /><br />${mxAndSRVTooltipSecondSentence}`;
 
             return this.retrieveURLToOrderDomains()
                 .then(() => this.retrievingDomainNames())
