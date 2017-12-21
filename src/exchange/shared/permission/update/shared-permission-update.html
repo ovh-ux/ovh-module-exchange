@@ -1,5 +1,6 @@
 <div data-ng-controller="ExchangeUpdatePublicFolderPermissionCtrl as ctrl">
-    <div data-wizard data-wizard-bread-crumb
+    <div data-wizard
+         data-wizard-bread-crumb
          data-wizard-title="i18n.exchange_action_SHARED_permissions_update_title"
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="updatingPermissions">
@@ -43,9 +44,7 @@
 
                 <tbody data-ng-if="ctrl.isLoading">
                     <tr>
-                        <td class="text-center" colspan="5">
-                            <div class="loader" aria-hidden="true"></div>
-                        </td>
+                        <td class="loader text-center" colspan="5"></td>
                     </tr>
                 </tbody>
 
@@ -106,7 +105,8 @@
                     </tr>
 
                     <tr data-ng-repeat="message in originalList.list.messages track by $index">
-                        <td colspan="4" data-uib-tooltip="{{tr('exchange_GROUPS_partial_account', [message.message])}}">
+                        <td colspan="5"
+                            data-uib-tooltip="{{tr('exchange_GROUPS_partial_account', [message.message])}}">
                             <span class="fa fa-exclamation-triangle mr-2" aria-hidden="true"></span>
                             <span data-ng-bind="message.id"></span>
                         </td>
@@ -118,7 +118,8 @@
                  data-pagination-server-side="updatingPermissionTable"
                  data-pagination-server-side-function="retrievingPermissions"
                  data-pagination-server-side-paginated-stuff="getCurrentPermissions()"
-                 data-pagination-server-side-table-loading="getIsLoading()"></div>
+                 data-pagination-server-side-table-loading="getIsLoading()">
+            </div>
         </div>
 
         <div data-wizard-step>
@@ -132,12 +133,8 @@
                 </thead>
                 <tbody>
                     <tr	data-ng-repeat="accountName in ctrl.constructor.getKeys(ctrl.permissions.changes) track by $index">
-                        <td>
-                            <span data-ng-bind="accountName"></span>
-                        </td>
-                        <td>
-                            <span data-ng-bind="tr('exchange_tab_SHARED_permissions_type_' + ctrl.permissions.changes[accountName])"></span>
-                        </td>
+                        <td data-ng-bind="accountName"></td>
+                        <td data-ng-bind="tr('exchange_tab_SHARED_permissions_type_' + ctrl.permissions.changes[accountName])"></td>
                     </tr>
                 </tbody>
             </table>
