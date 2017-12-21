@@ -14,7 +14,7 @@
    <translation id="exchange_offer_type_25g" qtlid="264042">Individual Exchange</translation>
    <translation id="exchange_dashboard_loading_error" qtlid="168120">An error occurred while the information was loading. </translation>
    <translation id="exchange_dashboard_action_doing" qtlid="149787">Ongoing operation...</translation>
-   <translation id="exchange_dashboard_display_name_edit" qtlid="37875">Change</translation>
+   <translation id="exchange_dashboard_display_name_edit" qtlid="37875">Edit</translation>
    <translation id="exchange_dashboard_display_name_save" qtlid="177912">Minimum 4 characters</translation>
    <translation id="exchange_dashboard_display_name_min" qtlid="177925">Operation cancelled. Minimum 5 characters required.</translation>
    <translation id="exchange_dashboard_display_name_reset" qtlid="37935">Operation cancelled</translation>
@@ -70,11 +70,11 @@
    <translation id="exchange_ACTION_export_confirm" qtlid="217080">Are you sure that you want to export your accounts?</translation>
 
 <!-- OFFICE ATTACHED -->
-   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Special offer:</strong> Get Office 365 for free on your Exchange! </translation>
-   <translation id="exchange_office_attached_alert_details" qtlid="404213">Special offer relates to Office 365 Business. You can use up to {0} Exchange addresses. Only the first month is free, after this month you will automatically be charged the rate indicated on the renewal date on the <a target="_blank" href="https://www.ovh.com:51043">https://www.ovh.co.uk:51043</a> website. </translation>
+   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Special offer:</strong> Get Office 365 for free on your Exchange accounts! </translation>
+   <translation id="exchange_office_attached_alert_details" qtlid="404213">Special offer applies to Office 365 Business. You can use up to {0} Exchange addresses. Only the first month is free, after this month you will automatically be charged at the price indicated on the renewal date on the <a target="_blank" href="https://www.ovh.com:51043">https://www.ovh.co.uk:51043</a> website. </translation>
    <translation id="exchange_office_attached_alert_button" qtlid="404226">Get the offer! </translation>
    <translation id="exchange_office_attached_alert_modale_title" qtlid="404239">Activate the Office 365 special offer</translation>
-   <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Get one free month of Office 365 on up to {0} Exchange accounts of your choice </translation>
+   <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Get one free month of Office 365 Business on up to {0} Exchange accounts of your choice </translation>
    <translation id="exchange_office_attached_alert_modale_selected_accounts" qtlid="404265">{0} accounts selected, from a maximum of {1}</translation>
    <translation id="exchange_office_attached_alert_modale_account_types" qtlid="404278">Type of accounts to search for</translation>
    <translation id="exchange_office_attached_alert_modale_search_form" qtlid="404291">Search for email accounts to be used </translation>
@@ -148,7 +148,7 @@
    <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="171188">Opening...</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Suspended</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Suspending...</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_MIGRATING">Migration en cours</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_MIGRATING" qtlid="186713">Migrating...</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SPAM" qtlid="70409">Spam</translation>
 
    <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="31522">OK</translation>
@@ -364,9 +364,9 @@
    <translation id="exchange_tab_domain_diagnostic_mx_intro_ovh" qtlid="192890">Your domain is hosted at OVH, you can configure the MX record of your domain {0} as follows</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_label_champ" qtlid="192903">MX record</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_label_champs" qtlid="46780">MX fields</translation>
-   <translation id="exchange_tab_domain_diagnostic_mx_no_antispam" qtlid="319895">If you use non authoritative mode (Exchange + other mail service) with an email service not hosted at OVH:</translation>
+   <translation id="exchange_tab_domain_diagnostic_mx_no_antispam" qtlid="319895">If you use nonauthoritative mode (Exchange + other email service) with an email service that is not hosted by OVH:</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_no_antispam_config" qtlid="192929">Priority: <strong>{0}</strong>; target: <strong>{1}</strong></translation>
-   <translation id="exchange_tab_domain_diagnostic_mx_antispam" qtlid="319908">If you use authoritative (only Exchange) or non-authoritative mode with an email service hosted by OVH: </translation>
+   <translation id="exchange_tab_domain_diagnostic_mx_antispam" qtlid="319908">If you use authoritative (Exchange only) or nonauthoritative mode with an email service hosted by OVH: </translation>
    <translation id="exchange_tab_domain_diagnostic_mx_antispam_config" qtlid="192955">Priority: <strong>{0}</strong>; target: <strong>{1}</strong><br /> Priority: <strong>{2}</strong>; target: <strong>{3}</strong><br /> Priority: <strong>{4}</strong>; target: <strong>{5}</strong><br /> Priority: <strong>{6}</strong>; target: <strong>{7}</strong><br /></translation>
    <translation id="exchange_tab_domain_diagnostic_mx_no_ovh" qtlid="349101">If the domain is not managed under the same customer ID as the Exchange solution, or if your domain is registered elsewhere, automatic configuration is not possible. Please manually create an MX record on this domain using the same information that you gave above. </translation>
    <translation id="exchange_tab_domain_diagnostic_mx_recap" qtlid="192981">An MX record will be added to your domain's DNS zone. Warning, existing MX records will be deleted.</translation>
@@ -393,7 +393,7 @@
    <translation id="exchange_tab_domain_add_domain" qtlid="8602">Add a domain</translation>
    <translation id="exchange_tab_domain_delete_domain" qtlid="137556">Withdraw this domain from the Exchange services</translation>
    <translation id="exchange_tab_domain_delete_domain_accounts_warning" qtlid="148227">This domain cannot be deleted as it is still being used by one or more Exchange accounts</translation>
-   <translation id="exchange_tab_domain_NON_AUTHORITATIVE" qtlid="136672">Non-authoritative</translation>
+   <translation id="exchange_tab_domain_NON_AUTHORITATIVE" qtlid="136672">Nonauthoritative</translation>
    <translation id="exchange_tab_domain_AUTHORITATIVE" qtlid="58807">Authoritative</translation>
    <translation id="exchange_tab_domain_warning" qtlid="136347">Attention!</translation>
    <translation id="exchange_tab_domain_partial" qtlid="137569">Some domains did not load correctly. Please refresh the page to resolve the issue.</translation>
@@ -528,7 +528,7 @@ I therefore explicitly renounce my right to cancel under the provisions of Artic
    <translation id="exchange_ACTION_change_password_account_error_message" qtlid="157447">An error occurred on changing the password.</translation>
    <translation id="exchange_ACTION_change_password_account_error_message_linked" qtlid="148279">However, an error occurred on changing the password.</translation>
    <translation id="exchange_ACTION_update_account_title" qtlid="137712">Modify the Exchange account</translation>
-   <translation id="exchange_ACTION_update_account_tooltip" qtlid="37875">Change</translation>
+   <translation id="exchange_ACTION_update_account_tooltip" qtlid="37875">Edit</translation>
    <translation id="exchange_ACTION_update_account_shared_password_warning" qtlid="316918">The password for the associated SharePoint service will also be modified.</translation>
    <translation id="exchange_tab_account_reset_account" qtlid="376024">Reset an account </translation>
    <translation id="exchange_tab_account_reset_email_info" qtlid="376037">Resetting an account deletes the data and associated name but you will continue to be charged for this account. If you no longer want to be billed, click "billing mode", then click "none" for the account in question and confirm. </translation>
@@ -573,13 +573,13 @@ I therefore explicitly renounce my right to cancel under the provisions of Artic
 "Enter a domain name which is not managed by your OVH account" and enter it in the corresponding field. </translation>
    <translation id="exchange_tab_domain_add_step2_which_domain_type" qtlid="137998">What type of domain <span class="italic">{0}</span> is concerned?</translation>
    <translation id="exchange_tab_domain_add_step2_auth_intro" qtlid="140859">Your domain <span class="italic">{0}</span> will be configured autoritatively.</translation>
-   <translation id="exchange_tab_domain_add_step2_non_auth_intro" qtlid="366372">Your <span class="italic">{0}</span> domain will be configured in non-authoritative mode.</translation>
+   <translation id="exchange_tab_domain_add_step2_non_auth_intro" qtlid="366372">Your <span class="italic">{0}</span> domain will be configured in nonauthoritative mode.</translation>
    <translation id="exchange_tab_domain_add_step2bis_intro" qtlid="316944">Select your domain form:</translation>
 
    <translation id="exchange_tab_domain_add_step2_srv_checkbox" qtlid="138011">Configure the SRV automatically (autodiscover)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_checkbox" qtlid="139585">Configure MX automatically (receipt of emails)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_tooltip" qtlid="140209">Attention, configuring the MX automatically can affect the receipt of emails previously configured on this domain name.</translation>
-   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="273909">This option enables your email client, such as Outlook or Mail, to automatically find your connection settings (subject to compatibility with the MAPI protocol).</translation>
+   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="273909">This option enables your email client, such as Outlook or Mail, to find your connection settings automatically (subject to compatibility with the MAPI protocol).</translation>
    <translation id="exchange_tab_domain_add_step3_srv_confirmation" qtlid="137816">SRV Configuration </translation>
    <translation id="exchange_tab_domain_add_step3_mx_confirmation" qtlid="137829">MX Configuration </translation>
    <translation id="exchange_tab_domain_add_step3_mx_replay" qtlid="316957">Target email server </translation>
@@ -592,11 +592,11 @@ I therefore explicitly renounce my right to cancel under the provisions of Artic
    <translation id="exchange_tab_domain_modify_failure" qtlid="137075">An error occurred on updating the domain.</translation>
    <translation id="exchange_tab_domain_modify_in_progress" qtlid="137088">Moving to {0}</translation>
    <translation id="exchange_tab_domain_inverse_NON_AUTHORITATIVE" qtlid="58807">Authoritative</translation>
-   <translation id="exchange_tab_domain_inverse_AUTHORITATIVE" qtlid="136672">Non-authoritative</translation>
+   <translation id="exchange_tab_domain_inverse_AUTHORITATIVE" qtlid="136672">Nonauthoritative</translation>
    <translation id="exchange_tab_domain_mode_AUTHORITATIVE" qtlid="316970">Authoritative (Only Exchange)</translation>
-   <translation id="exchange_tab_domain_mode_NON_AUTHORITATIVE" qtlid="316983">Non authoritative (Exchange + other mail service)</translation>
+   <translation id="exchange_tab_domain_mode_NON_AUTHORITATIVE" qtlid="316983">Nonauthoritative (Exchange + other email service)</translation>
    <translation id="exchange_tab_domain_AUTHORITATIVE_info" qtlid="324847">Authoritative mode does not let you use another messaging system with Exchange accounts. This mode lets you activate Vade Secure antispam.</translation>
-   <translation id="exchange_tab_domain_NON_AUTHORITATIVE_info" qtlid="324860">Authoritative mode lets you use Exchange and another email service. Vade Secure antispam is only compatible if the pop/imap are hosted at OVH (mxplan or shared service), in this instance you must enter mx1.mail.ovh.net as the target email server.</translation>
+   <translation id="exchange_tab_domain_NON_AUTHORITATIVE_info" qtlid="324860">Nonauthoritative mode lets you use Exchange and another email service. Vade Secure anti-spam is only compatible if the POP/IMAP are hosted at OVH (MX Plan or shared service), in this instance you must enter mx1.mail.ovh.net as the target email server.</translation>
    <translation id="exchange_tab_domain_target_mail_server_label" qtlid="316957">Target email server </translation>
    <translation id="exchange_tab_domain_noovh_mx_info" qtlid="317126">MX and SRV changes must be carried out manually in your DNS zone. You can find the necessary information in the associated domains section, once the CNAME has been validated.</translation>
    <translation id="exchange_tab_domain_modify_domain" qtlid="137101">Domain configuration</translation>
@@ -655,7 +655,7 @@ The Vade Secure anti-spam solution is compatible with non-authoritative mode (on
    <translation id="exchange_tab_DISCLAIMER_disclaimer_outside_only_true" qtlid="34776">Yes</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_outside_only_false" qtlid="34788">No</translation>
    <translation id="exchange_tab_DISCLAIMER_table_no_domain" qtlid="152310">Add a domain and wait for validation to create a signature.</translation>
-   <translation id="exchange_tab_DISCLAIMER_menu_settings" qtlid="37875">Change</translation>
+   <translation id="exchange_tab_DISCLAIMER_menu_settings" qtlid="37875">Edit</translation>
    <translation id="exchange_tab_DISCLAIMER_menu_delete" qtlid="2414">Delete</translation>
    <translation id="exchange_ACTION_add_disclaimer_button" qtlid="152206">Add a signature</translation>
    <translation id="exchange_ACTION_add_disclaimer_title" qtlid="152206">Add a signature</translation>
@@ -726,7 +726,7 @@ The Vade Secure anti-spam solution is compatible with non-authoritative mode (on
    <translation id="exchange_tab_RESOURCES_add_resource_step2_title" qtlid="156264">Are you sure you want to add the resource account below to the Exchange server?</translation>
    <translation id="exchange_tab_RESOURCES_add_resource_success" qtlid="156277">The resource account will be added.</translation>
    <translation id="exchange_tab_RESOURCES_edit_resource_step2_title" qtlid="156290">Are you sure you want to modify the resource {0}?</translation>
-   <translation id="exchange_tab_RESOURCES_edit_resource_confirm" qtlid="37875">Change</translation>
+   <translation id="exchange_tab_RESOURCES_edit_resource_confirm" qtlid="37875">Edit</translation>
    <translation id="exchange_tab_RESOURCES_edit_resource_success" qtlid="156303">The resource account will be modified.</translation>
    <translation id="exchange_tab_RESOURCES_edit_resource_error" qtlid="155574">An error occurred on modifying the resource account.</translation>
    <translation id="exchange_tab_RESOURCES_no_domain_warning" qtlid="171253">You haven't added a domain or it is yet to be validated. <br/>You must first add a domain and wait for validation to create an Exchange account.</translation>
@@ -751,7 +751,7 @@ The Vade Secure anti-spam solution is compatible with non-authoritative mode (on
    <translation id="exchange_tab_RESOURCES_allow_conflicts_true" qtlid="34776">Yes</translation>
    <translation id="exchange_tab_RESOURCES_allow_conflicts_false" qtlid="34788">No</translation>
    <translation id="exchange_tab_RESOURCES_popover_delete" qtlid="2414">Delete</translation>
-   <translation id="exchange_tab_RESOURCES_tooltip_edit" qtlid="37875">Change</translation>
+   <translation id="exchange_tab_RESOURCES_tooltip_edit" qtlid="37875">Edit</translation>
    <translation id="exchange_tab_RESOURCES_wizard_intro" qtlid="170863">Accessible via Outlook, the resource account feature enables you to plan for the requirements of your workers. <br /> Naturally, you can create as many resource accounts as you wish.</translation>
    <translation id="exchange_tab_RESOURCES_wizard_type" qtlid="171266">Two types of resources are available "Room" or "Equipment". <br /> Simply provide the following settings: <ul><li>Name</li> <li> Capacity </li></ul></translation>
    <translation id="exchange_tab_RESOURCES_wizard_example" qtlid="191148"><b>Example</b>: You want to reserve room <b>"X"</b> which can hold <b>"N"</b> people.</translation>
@@ -1080,7 +1080,7 @@ The Vade Secure anti-spam solution is compatible with non-authoritative mode (on
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_SUSPENDING" qtlid="171292">Suspended</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_MODIFYING" qtlid="174646">In modification</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_OK" qtlid="433745">OK</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_actions_menu_modify" qtlid="37875">Change</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_actions_menu_modify" qtlid="37875">Edit</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_actions_menu_delete" qtlid="2414">Delete</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_tooltip_GAL_false" qtlid="184906">The address appears in Outlook</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_tooltip_GAL_true" qtlid="184919">The address doesn't appear in Outlook</translation>
@@ -1485,7 +1485,7 @@ The Vade Secure anti-spam solution is compatible with non-authoritative mode (on
    <translation id="exchange_ACTION_order_upgrade_300G_error_options_message" qtlid="368180">There was an error when retrieving prices. </translation>
 <!-- Order Exchange -->
    <translation id="exchange_order_view_intro_title" qtlid="368193">Order Exchange </translation>
-   <translation id="exchange_order_view_intro_question" qtlid="368206">Do you want to create a new Exchange service or add an account to an existing service? </translation>
+   <translation id="exchange_order_view_intro_question" qtlid="368206">Do you want to create a new Exchange service, or add an account to an existing service? </translation>
    <translation id="exchange_order_view_stand_alone_option" qtlid="368219">Create a new service </translation>
    <translation id="exchange_order_view_attached_option" qtlid="368232">Add an account to an existing service </translation>
    <translation id="exchange_order_view_button_label" qtlid="368245">Order Exchange </translation>

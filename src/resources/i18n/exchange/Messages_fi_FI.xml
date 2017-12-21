@@ -35,13 +35,13 @@
    <translation id="exchange_dashboard_diag_a_label" qtlid="23803">A</translation>
    <translation id="exchange_dashboard_diag_a_tooltip_title" qtlid="143251">A-tietue (IPv4)</translation>
    <translation id="exchange_dashboard_diag_a_tooltip_ok" qtlid="137491">Automaattinen konfiguraatio suoritettu</translation>
-   <translation id="exchange_dashboard_diag_a_tooltip_error" qtlid="209151">Jos domainisi on hostattuna OVH:lla ole hyvä ja luo A-tietue valitsemalla verkkotunnus ja "advanced mode" -> "DNS-alue" -> "Lisää kenttä".&#13;
+   <translation id="exchange_dashboard_diag_a_tooltip_error" qtlid="209151">Jos berkkotunnuksesi on OVH:n ylläpitämä, ole hyvä ja luo A-tietue valitsemalla verkkotunnus ja "advanced mode" -> "DNS-alue" -> "Lisää kenttä".&#13;
 &#13;
-Valitse: <br /> Tyyppi: <span class="bold">A</span> <br /> Aliverkkotunnus: <span class="bold">{0}</span> <br /> Kohde: <span class="bold">{1}</span> <br /><br /> Jos verkkotunnus on muualla hostattuna, luo sinne A-kenttä samaan tapaan.</translation>
+Valitse: <br /> Tyyppi: <span class="bold">A</span> <br /> Aliverkkotunnus: <span class="bold">{0}</span> <br /> Kohde: <span class="bold">{1}</span> <br /><br /> Jos verkkotunnusta ylläpidetään muualla, luo sinne A-kenttä samaan tapaan.</translation>
    <translation id="exchange_dashboard_diag_aaaa_label" qtlid="129823">AAAA</translation>
    <translation id="exchange_dashboard_diag_aaaa_tooltip_title" qtlid="143277">AAAA-tietue (IPv6)</translation>
    <translation id="exchange_dashboard_diag_aaaa_tooltip_ok" qtlid="137491">Automaattinen konfiguraatio suoritettu</translation>
-   <translation id="exchange_dashboard_diag_aaaa_tooltip_error" qtlid="209164">Jos verkkotunnuksesi on OVH:lla hostattuna, ole hyvä ja luo AAAA-kenttä valitsemalla verkkotunnuksesi, "advanced mode" -> "DNS-alue" -> "Lisää kenttä". Laita <br /> Tyyppi: <span class="bold">AAAA</span> <br /> Aliverkkotunnus: <span class="bold">{0}</span> <br /> Kohde: <span class="bold">{1}</span> <br /><br />. Jos verkkotunnus on muualla hostattuna, luo sinne AAAA-kenttä samaan tapaan.</translation>
+   <translation id="exchange_dashboard_diag_aaaa_tooltip_error" qtlid="209164">Jos verkkotunnuksesi on OVH:n ylläpitämä, ole hyvä ja luo AAAA-kenttä valitsemalla verkkotunnuksesi, "advanced mode" -> "DNS-alue" -> "Lisää kenttä". Laita <br /> Tyyppi: <span class="bold">AAAA</span> <br /> Aliverkkotunnus: <span class="bold">{0}</span> <br /> Kohde: <span class="bold">{1}</span> <br /><br />. Jos verkkotunnusta ylläpidetään muualla, luo sinne AAAA-kenttä samaan tapaan.</translation>
    <translation id="exchange_dashboard_diag_ptr_label" qtlid="143303">PTR v4</translation>
    <translation id="exchange_dashboard_diag_ptr_tooltip_title" qtlid="143303">PTR v4</translation>
    <translation id="exchange_dashboard_diag_ptr_tooltip_ok" qtlid="137491">Automaattinen konfiguraatio suoritettu</translation>
@@ -76,7 +76,7 @@ Valitse: <br /> Tyyppi: <span class="bold">A</span> <br /> Aliverkkotunnus: <spa
    <translation id="exchange_office_attached_alert_details" qtlid="404213">Tarjous koskee Office 365 Business -tuotetta. Käytettävissä enintään {0} Exchange-osoitteelle. Ainoastaan ensimmäinen kuukausi on maksuton, tämän jälkeen tuotteen tilaus jatkuu automaattisesti uusintapäivänä ilmoitettuun hintaan. Hintatiedot löytyvät sivulta <a target="_blank" href="https://www.ovh.hosting.fi">https://www.ovh-hosting.fi</a></translation>
    <translation id="exchange_office_attached_alert_button" qtlid="404226">Hyödynnä tarjous</translation>
    <translation id="exchange_office_attached_alert_modale_title" qtlid="404239">Aktivoi Office 365 -tarjoustuote</translation>
-   <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Käytä Office 365 -tuotetta 1 kuukausi maksutta {0} valitsemallasi Exchange-tilillä</translation>
+   <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Käytä Office 365 -tuotetta 1 kuukausi maksutta enintään {0} valitsemallasi Exchange-tilillä</translation>
    <translation id="exchange_office_attached_alert_modale_selected_accounts" qtlid="404265">Valittuna {0} tiliä, enintään {1} tiliä</translation>
    <translation id="exchange_office_attached_alert_modale_account_types" qtlid="404278">Haussa käytettävät tilityypit</translation>
    <translation id="exchange_office_attached_alert_modale_search_form" qtlid="404291">Hae käytettäviä sähköpostiosoitteita</translation>
@@ -150,7 +150,7 @@ Valitse: <br /> Tyyppi: <span class="bold">A</span> <br /> Aliverkkotunnus: <spa
    <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="171188">Avataan</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Vanhentunut</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Keskeytetään</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_MIGRATING">Migration en cours</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_MIGRATING" qtlid="186713">Siirto käynnissä</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SPAM" qtlid="70409">Roskaposti</translation>
 
    <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="31522">OK</translation>
@@ -198,9 +198,9 @@ Valitse: <br /> Tyyppi: <span class="bold">A</span> <br /> Aliverkkotunnus: <spa
    <translation id="exchange_tab_ALIAS_state_TASK_ON_DOING" qtlid="26383">Käynnissä</translation>
    <translation id="exchange_tab_ALIAS_state_TASK_ON_DOING_tooltip" qtlid="143967">Tälle aliakselle liittyvä tehtävä on meneillään tai ajastettu</translation>
    <translation id="exchange_tab_ALIAS_add_button" qtlid="143538">Lisää alias</translation>
-   <translation id="exchange_tab_ALIAS_creation_quota_description" qtlid="433784">Le quota doit être compris entre <strong>{0} {1}</strong> et <strong>{2} {1}</strong>.</translation>
-   <translation id="exchange_tab_ALIAS_creation_error_no_local_part" qtlid="433797">Veuillez indiquer une partie locale à l'adresse email (avant l'arobase).</translation>
-   <translation id="exchange_tab_ALIAS_creation_error_regex" qtlid="433810">La partie locale (avant l'arobase) doit contenir des caractères alphanumériques ou les caractères <strong>.-_+</strong> (exemple: e_mail-3.addresse+abc).</translation>
+   <translation id="exchange_tab_ALIAS_creation_quota_description" qtlid="433784">Kiintiön on oltava välillä <strong>{0} {1}</strong> ja <strong>{2} {1}</strong>.</translation>
+   <translation id="exchange_tab_ALIAS_creation_error_no_local_part" qtlid="433797">Ole hyvä ja anna henkilökohtianen osa sähköpostiosoitteeseen (ennen merkkiä @).</translation>
+   <translation id="exchange_tab_ALIAS_creation_error_regex" qtlid="433810">Henkilökohtaisen osan (ennen @ merkkiä) täytyy sisältää alfanumeerisia merkkejä tai merkkejä <strong>.-_+</strong> (exemple: e_mail-3.osoite+abc).</translation>
    <translation id="exchange_tab_ALIAS_taken_error_message" qtlid="190849">Adresse email déjà existante.</translation>
    <translation id="exchange_tab_ALIAS_error_message" qtlid="143980">Tapahtui virhe ladattaessa aliastasi</translation>
    <translation id="exchange_tab_ALIAS_delete_success_message" qtlid="143564">Aliaksesi poistetaan</translation>
@@ -580,7 +580,7 @@ Valitse: <br /> Tyyppi: <span class="bold">A</span> <br /> Aliverkkotunnus: <spa
    <translation id="exchange_tab_domain_add_step2_srv_checkbox" qtlid="138011">Konfiguroi SRV automaattisesti (autodiscover)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_checkbox" qtlid="139585">MX-asetukset määritetään automaattisesti (sähköpostien vastaanotto)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_tooltip" qtlid="140209">Huomioi että MX:n automaattinen konfigurointi voi vaikuttaa sähköpostien vastaanottoon sillä se tekee muutoksen tämän verkkotunnuksen aiempaan konfiguraatioon.</translation>
-   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="273909">Tämän vaihtoehdon avulla sähköpostiohjelmasi kuten Outlook tai Mail löytää automaattisesti yhteysasetuksesi.</translation>
+   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="273909">Tämän vaihtoehdon avulla sähköpostiohjelmasi kuten Outlook tai Mail löytää automaattisesti yhteysasetuksesi (edellyttäen yhteensopivuutta Mapi-protokollan kanssa).</translation>
    <translation id="exchange_tab_domain_add_step3_srv_confirmation" qtlid="137816">SRV-konfiguraatio</translation>
    <translation id="exchange_tab_domain_add_step3_mx_confirmation" qtlid="137829">MX-konfiguraatio</translation>
    <translation id="exchange_tab_domain_add_step3_mx_replay" qtlid="316957">Kohde sähköpostipalvelin</translation>
@@ -837,7 +837,7 @@ Vade Secure -roskapostisuodatin on yhteensopiva ei-autoritatiivisen tilan kanssa
    <translation id="exchange_tab_GROUPS_header" qtlid="32962">Ryhmät</translation>
    <translation id="exchange_tab_GROUPS_remove_account_tooltip" qtlid="150073">Poista tili tästä ryhmästä</translation>
    <translation id="exchange_tab_GROUPS_intro" qtlid="155873">Ryhmälistaus tilille <span class="bold">{0}</span></translation>
-   <translation id="exchange_tab_GROUPS_table_empty" qtlid="150099">Ei ryhmiä tälle tilille</translation>
+   <translation id="exchange_tab_GROUPS_table_empty" qtlid="150099">Ei ryhmiä tällä tilillä</translation>
    <translation id="exchange_tab_GROUPS_table_empty_search" qtlid="150112">Ei hakuehtoja vastaavaa ryhmää</translation>
    <translation id="exchange_tab_GROUPS_state_TASK_ON_DOING" qtlid="26383">Käynnissä</translation>
    <translation id="exchange_tab_GROUPS_state_TASK_ON_DOING_tooltip" qtlid="150125">Tätä ryhmää koskettava työtehtävä on ajoitettu tai sitä suoritetaan parhaillaan</translation>
@@ -1183,9 +1183,9 @@ Vade Secure -roskapostisuodatin on yhteensopiva ei-autoritatiivisen tilan kanssa
    <translation id="minPasswordAge_max_error" qtlid="434642">Salasanan vähimmäisikä ei voi olla yli 90 päivää</translation>
    <translation id="minPasswordAge_mustBeInteger_error" qtlid="434655">Salasanan vähimmäisiän täytyy olla kokonaisluku</translation>
    <translation id="minPasswordAge_minToBigForMax_error" qtlid="178094">Salasanan vähimmäiseliniän on oltava pienempi kuin sen enimmäiselinikä</translation>
-   <translation id="minPasswordAge_pattern_error" qtlid="434018">L'âge minimal du mot de passe doit être un nombre entier</translation>
-   <translation id="minPasswordAge_number_error" qtlid="434018">L'âge minimal du mot de passe doit être un nombre entier</translation>
-   <translation id="minPasswordAge_required_error" qtlid="434018">L'âge minimal du mot de passe doit être un nombre entier</translation>
+   <translation id="minPasswordAge_pattern_error" qtlid="434018">Salasanan vähimmäisiän on oltava kokonaisluku</translation>
+   <translation id="minPasswordAge_number_error" qtlid="434018">Salasanan vähimmäisiän on oltava kokonaisluku</translation>
+   <translation id="minPasswordAge_required_error" qtlid="434018">Salasanan vähimmäisiän on oltava kokonaisluku</translation>
    <translation id="maxPasswordAge_min_error" qtlid="178107">Salasanan enimmäiselinikä ei voi olla pienempi kuin 0 päivää</translation>
    <translation id="maxPasswordAge_max_error" qtlid="176596">Salasanan enimmäisikä ei voi olla yli 90 päivää</translation>
    <translation id="maxPasswordAge_mustBeInteger_error" qtlid="178120">Salasanan enimmäiseliniän on oltava kokonainen luku</translation>
@@ -1436,9 +1436,9 @@ Vade Secure -roskapostisuodatin on yhteensopiva ei-autoritatiivisen tilan kanssa
 
 <!-- ########################################## -->
 <!-- SHARED ACCOUNTS -->
-   <translation id="exchange_SHARED_ACCOUNTS_search" qtlid="434096">Rechercher un compte partagé</translation>
-   <translation id="exchange_SHARED_ACCOUNTS_search_empty" qtlid="434109">Vous n'avez pas de compte partagé correspondant aux termes recherchés</translation>
-   <translation id="exchange_SHARED_ACCOUNTS_empty" qtlid="434122">Vous n'avez pas de compte partagé</translation>
+   <translation id="exchange_SHARED_ACCOUNTS_search" qtlid="434096">Etsi jaettu tili</translation>
+   <translation id="exchange_SHARED_ACCOUNTS_search_empty" qtlid="434109">Sinulla ei ole hakukriteerejä vastaavaa jaettua tiliä</translation>
+   <translation id="exchange_SHARED_ACCOUNTS_empty" qtlid="434122">Sinulla ei ole jaettua tiliä</translation>
    <translation id="exchange_SHARED_ACCOUNTS_add_button_label" qtlid="215325">Lisää jaettu tili</translation>
    <translation id="exchange_SHARED_ACCOUNTS_add_action_title" qtlid="215208">Lisää jaettu tili</translation>
    <translation id="exchange_SHARED_ACCOUNTS_add_success_message" qtlid="215338">Jaettu tili luodaan.</translation>
