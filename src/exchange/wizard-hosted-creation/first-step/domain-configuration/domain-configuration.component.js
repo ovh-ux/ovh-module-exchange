@@ -24,8 +24,12 @@
             this.userHasTriedToAssociatedNonAutoritativeDomain = false;
 
             this.tooltipText = this.translator.tr("exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_tooltip");
-            this.mxRelayTooltip = this.translator.tr("exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip");
-            this.mxAndSRVTooltipText = this.translator.tr("exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip");
+            const firstSentenceTooltip = this.translator.tr("exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip_1");
+            const secondSentenceTooltip = this.translator.tr("exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip_2");
+            this.mxRelayTooltip = `${firstSentenceTooltip}<br /><br />${secondSentenceTooltip}`;
+            const mxAndSRVTooltipFirstSentence = this.translator.tr("exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_1");
+            const mxAndSRVTooltipSecondSentence = this.translator.tr("exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_2");
+            this.mxAndSRVTooltipText = `${mxAndSRVTooltipFirstSentence}<br /><br />${mxAndSRVTooltipSecondSentence}`;
 
             return this.retrieveURLToOrderDomains()
                 .then(() => this.retrievingDomainNames())
@@ -299,6 +303,8 @@
         }
 
         addingDomainAndClosing () {
+            const formattedDomainName = this.homepage.domainName.replace(/^www\./, "");
+
             return this.addingDomain()
                 .then(() => {
                     this.closeWizard();
