@@ -122,7 +122,14 @@ angular
         }
 
         isEditable (account) {
-            return (this.services.exchangeStates.constructor.isOk(account) || this.services.exchangeStates.constructor.isDoing(account) || this.services.exchangeStates.constructor.isInError(account)) && !this.noDomainFlag;
+            return (this.services.exchangeStates.constructor.isOk(account) ||
+                    this.services.exchangeStates.constructor.isDoing(account) ||
+                    this.services.exchangeStates.constructor.isInError(account) ||
+                    _.includes(this.services.Exchange.dummy_domains, account.domain)) && !this.noDomainFlag;
+        }
+
+        hasDummyDomain (account) {
+            return _.includes(this.services.Exchange.dummy_domains, account.domain);
         }
 
         isConfigurable (account) {
@@ -132,7 +139,6 @@ angular
         editAccount (account) {
             const populateAccount = angular.copy(account);
             populateAccount.is25g = this.services.accountTypes.is25g();
-
             if (this.isEditable(account)) {
                 this.services.navigation.setAction("exchange/account/update/account-update", populateAccount);
             }
@@ -180,7 +186,7 @@ angular
         }
 
         activateAcount (account) {
-            if (!account.readyToUse) {
+            if (!account.readyToUse && account.domain !== "configureme.me") {
                 this.services.navigation.setAction("exchange/account/activate/activate-account", angular.copy(account));
             }
         }

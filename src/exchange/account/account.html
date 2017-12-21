@@ -183,12 +183,14 @@
                                 <span class="label label-success"
                                       data-i18n-static="exchange_tab_ACCOUNTS_state_OK"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isOk(account) && account.taskPendingId === 0"></span>
-
-                                <button class="btn btn-xs btn-danger" type="button" title="{{i18n.exchange_tab_ACCOUNTS_action_ACTIVATE_tooltip}}"
+                                <span class="label label-warning"
+                                      data-i18n-static="exchange_tab_ACCOUNTS_state_NOT_ACTIVE"
+                                      data-ng-if="ctrl.services.exchangeStates.constructor.isInactive(account) && ctrl.hasDummyDomain(account)"></span>
+                                <button class="btn btn-xs btn-warning" type="button" title="{{i18n.exchange_tab_ACCOUNTS_action_ACTIVATE_tooltip}}"
                                       data-ng-bind-html="tr('exchange_tab_ACCOUNTS_state_NOT_ACTIVE')"                                            
                                       data-ng-click="ctrl.activateAcount(account)"
-                                      data-ng-if="!account.readyToUse">
-                                </button>      
+                                      data-ng-if="ctrl.services.exchangeStates.constructor.isInactive(account) && !ctrl.hasDummyDomain(account)">
+                                </button>
 
                                 <button class="btn btn-danger btn-xs" type="button"
                                         data-i18n-static="exchange_tab_ACCOUNTS_state_SPAM"

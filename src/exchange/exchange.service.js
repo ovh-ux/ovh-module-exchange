@@ -42,6 +42,10 @@ angular
             this.stateOk = "OK";
             this.stateTaskDoing = "TASK_ON_DOING";
 
+
+            // Domains used for inactivated accounts
+            this.dummy_domains = ["configureme.me"];
+
             this.aliasMaxLimit = 1000;
 
             this.events = {
@@ -496,8 +500,7 @@ angular
             return this.services
                 .OvhHttp
                 .post(`/msServices/${serviceName}/account/${account}/exchange/configure`, {
-                    rootPath: "2api",
-                    data: { }
+                    rootPath: "apiv6"
                 }).then((receivedData) => {
                     this.resetAccounts();
                     this.resetTasks();
