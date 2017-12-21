@@ -14,7 +14,7 @@
    <translation id="exchange_offer_type_25g" qtlid="264042">Exchange Individual</translation>
    <translation id="exchange_dashboard_loading_error" qtlid="168120">Během načítání informací nastala chyba.</translation>
    <translation id="exchange_dashboard_action_doing" qtlid="149787">Probíhající operace...</translation>
-   <translation id="exchange_dashboard_display_name_edit" qtlid="37875">Změnit</translation>
+   <translation id="exchange_dashboard_display_name_edit" qtlid="37875">Upravit</translation>
    <translation id="exchange_dashboard_display_name_save" qtlid="177912">Minimálně 4 znaky</translation>
    <translation id="exchange_dashboard_display_name_min" qtlid="177925">Operace zrušena. Je požadováno minimálně 5 znaků.</translation>
    <translation id="exchange_dashboard_display_name_reset" qtlid="37935">Operace zrušena</translation>
@@ -48,7 +48,7 @@
    <translation id="exchange_dashboard_diag_ptrv6_tooltip_title" qtlid="143329">PTR v6</translation>
    <translation id="exchange_dashboard_diag_ptrv6_tooltip_ok" qtlid="137491">Automatické nastavení dokončeno</translation>
    <translation id="exchange_dashboard_diag_ptrv6_tooltip_error" qtlid="143342">Je zde problém s reverzí Vaší IP adresy. Kontaktujte prosím podporu.</translation>
-   <translation id="exchange_dashboard_billing" qtlid="32950">Fakturace</translation>
+   <translation id="exchange_dashboard_billing" qtlid="32950">Fakturační kontakt</translation>
    <translation id="exchange_dashboard_expiration" qtlid="168172">Obnovení</translation>
    <translation id="exchange_dashboard_ssl_expiration" qtlid="190797">Expirace SSL</translation>
    <translation id="exchange_dashboard_stats" qtlid="26671">Statistiky</translation>
@@ -71,7 +71,7 @@
 
 <!-- OFFICE ATTACHED -->
    <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Promo akce:</strong> bezplatná aktivace služby Office 365 na Vašich adresách Exchange!</translation>
-   <translation id="exchange_office_attached_alert_details" qtlid="404213">Nabídka se vztahuje na službu Office 365 Business a platí pouze v rámci prvního měsíce užívání služby. Maximální počet adres Exchange, na nichž lze službu aktivovat: {0}. Služba je automaticky prolongována. Prolongace služby po uplynutí jednoho měsíce zdarma podléhá standardním fakturačním sazbám uvedeným na webových stránkách <a target="_blank" href="https://www.ovh.cz">https://www.ovh.cz:51043</a></translation>
+   <translation id="exchange_office_attached_alert_details" qtlid="404213">Nabídka se vztahuje na službu Office 365 Business a platí pouze v rámci prvního měsíce užívání služby. Maximální počet adres Exchange, na nichž lze službu aktivovat: {0}. Služba je automaticky prolongována. Prolongace služby po uplynutí jednoho měsíce zdarma podléhá standardním fakturačním sazbám uvedeným na webových stránkách <a target="_blank" href="https://www.ovh.cz:51043">https://www.ovh.cz:51043</a></translation>
    <translation id="exchange_office_attached_alert_button" qtlid="404226">Využijte naši jedinečnou nabídku</translation>
    <translation id="exchange_office_attached_alert_modale_title" qtlid="404239">Aktivovat akční nabídku Office 365</translation>
    <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Využijte službu Office 365 na jeden měsíc zcela zdarma (až pro {0} Exchange účtů dle Vaší volby).</translation>
@@ -148,7 +148,7 @@
    <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="171188">Otevírání...</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Zrušený</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Ukončení...</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_MIGRATING">Migration en cours</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_MIGRATING" qtlid="186713">Migrování...</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SPAM" qtlid="70409">Spam</translation>
 
    <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="31522">OK</translation>
@@ -527,7 +527,7 @@
    <translation id="exchange_ACTION_change_password_account_error_message" qtlid="157447">Při změně hesla došlo k chybě.</translation>
    <translation id="exchange_ACTION_change_password_account_error_message_linked" qtlid="148279">Během změny hesla došlo k chybě.</translation>
    <translation id="exchange_ACTION_update_account_title" qtlid="137712">Změnit účet Exchange</translation>
-   <translation id="exchange_ACTION_update_account_tooltip" qtlid="37875">Změnit</translation>
+   <translation id="exchange_ACTION_update_account_tooltip" qtlid="37875">Upravit</translation>
    <translation id="exchange_ACTION_update_account_shared_password_warning" qtlid="316918">Heslo pro službu SharePoint bude také změněno.</translation>
    <translation id="exchange_tab_account_reset_account" qtlid="376024">Resetovat účet</translation>
    <translation id="exchange_tab_account_reset_email_info" qtlid="376037">Resetování účtu spočívá ve vymazání dat a přiřazeného názvu. Po resetování účtu Vám budou i nadále účtovány poplatky. Pokud si přejete zrušit fakturaci za tento účet, přejděte prosím do sekce "fakturační režim" a poté u příslušného účtu vyberte možnost "žádný". Nezapomeňte změnu nastavení potvrdit.</translation>
@@ -654,7 +654,7 @@ Anti-spam Vade Secure je kompatibilní s autoritativním režimem (pouze pokud j
    <translation id="exchange_tab_DISCLAIMER_disclaimer_outside_only_true" qtlid="34776">Ano</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_outside_only_false" qtlid="34788">Ne</translation>
    <translation id="exchange_tab_DISCLAIMER_table_no_domain" qtlid="152310">Přidat doménu a vyčkat na potvrzení pro vytvoření podpisu.</translation>
-   <translation id="exchange_tab_DISCLAIMER_menu_settings" qtlid="37875">Změnit</translation>
+   <translation id="exchange_tab_DISCLAIMER_menu_settings" qtlid="37875">Upravit</translation>
    <translation id="exchange_tab_DISCLAIMER_menu_delete" qtlid="2414">Odstranit</translation>
    <translation id="exchange_ACTION_add_disclaimer_button" qtlid="152206">Přidat podpis</translation>
    <translation id="exchange_ACTION_add_disclaimer_title" qtlid="152206">Přidat podpis</translation>
@@ -725,7 +725,7 @@ Anti-spam Vade Secure je kompatibilní s autoritativním režimem (pouze pokud j
    <translation id="exchange_tab_RESOURCES_add_resource_step2_title" qtlid="156264">Opravdu chcete přidat níže uvedený zdrojový účet na Váš server Exchange?</translation>
    <translation id="exchange_tab_RESOURCES_add_resource_success" qtlid="156277">Zdrojový účet bude přidán.</translation>
    <translation id="exchange_tab_RESOURCES_edit_resource_step2_title" qtlid="156290">Opravdu chcete změnit zdroj {0}?</translation>
-   <translation id="exchange_tab_RESOURCES_edit_resource_confirm" qtlid="37875">Změnit</translation>
+   <translation id="exchange_tab_RESOURCES_edit_resource_confirm" qtlid="37875">Upravit</translation>
    <translation id="exchange_tab_RESOURCES_edit_resource_success" qtlid="156303">Zdrojový účet bude změněn.</translation>
    <translation id="exchange_tab_RESOURCES_edit_resource_error" qtlid="155574">Při změně zdrojového účtu došlo k chybě.</translation>
    <translation id="exchange_tab_RESOURCES_no_domain_warning" qtlid="171253">Zatím jste nepřidali doménu, nebo ještě nebyla schválena. <br/>Nejdříve musíte přidat doménu a vyčkat na její schválení.</translation>
@@ -750,7 +750,7 @@ Anti-spam Vade Secure je kompatibilní s autoritativním režimem (pouze pokud j
    <translation id="exchange_tab_RESOURCES_allow_conflicts_true" qtlid="34776">Ano</translation>
    <translation id="exchange_tab_RESOURCES_allow_conflicts_false" qtlid="34788">Ne</translation>
    <translation id="exchange_tab_RESOURCES_popover_delete" qtlid="2414">Odstranit</translation>
-   <translation id="exchange_tab_RESOURCES_tooltip_edit" qtlid="37875">Změnit</translation>
+   <translation id="exchange_tab_RESOURCES_tooltip_edit" qtlid="37875">Upravit</translation>
    <translation id="exchange_tab_RESOURCES_wizard_intro" qtlid="170863">Funkce Účty zdrojů, dostupná z Outlooku, dovoluje plánovat potřeby Vašich spolupracovníků.<br />Samozřejmě si můžete vytvořit tolik účtů zdrojů, kolik budete potřebovat.</translation>
    <translation id="exchange_tab_RESOURCES_wizard_type" qtlid="171266">Jsou dostupné dva typy zdrojů: "Místnost" a "Vybavení".<br /> Jednoduše zadejte následující nastavení: <ul><li>Název</li> <li>Kapacita </li></ul></translation>
    <translation id="exchange_tab_RESOURCES_wizard_example" qtlid="191148"><b>Příklad</b>: Chcete si rezervovat místnost <b>"X"</b>, do které se vejde <b>"N"</b> lidí.</translation>
@@ -951,7 +951,7 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
    <translation id="exchange_GROUPS_remove_manager_title" qtlid="150736">Vymazat administrátora</translation>
    <translation id="exchange_GROUPS_remove_manager_question" qtlid="150749">Opravdu chcete vymazat tento účet ze seznamu sdministrátorů skupiny?</translation>
    <translation id="exchange_GROUPS_remove_manager_group_label" qtlid="59507">Skupina</translation>
-   <translation id="exchange_GROUPS_remove_manager_manager_label" qtlid="43948">Administrátor</translation>
+   <translation id="exchange_GROUPS_remove_manager_manager_label" qtlid="43948">Administrativní kontakt</translation>
    <translation id="exchange_GROUPS_remove_manager_success_message" qtlid="434603">Účet <strong>{0}</strong> bude odstraněn ze seznamu administrátorských účtů skupiny <span class="bold">{1}</span>.</translation>
    <translation id="exchange_GROUPS_remove_manager_error_message" qtlid="155912">Při mazání účtu <span class="bold">{0}</span> ze seznamu administrátorů skupiny <span class="bold">{1}</span> došlo k chybě.</translation>
    <translation id="exchange_GROUPS_member_intro" qtlid="434616">Seznam kontaktních účtů skupiny <strong>{0}</strong>&#13;
@@ -1087,7 +1087,7 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_SUSPENDING" qtlid="171292">Ukončeno</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_MODIFYING" qtlid="174646">Probíhá změna</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_OK" qtlid="433745">OK</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_actions_menu_modify" qtlid="37875">Změnit</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_actions_menu_modify" qtlid="37875">Upravit</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_actions_menu_delete" qtlid="2414">Odstranit</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_tooltip_GAL_false" qtlid="184906">Adresa se zobrazí v Outlook</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_tooltip_GAL_true" qtlid="184919">Adresa se nezobrazí v Outlook</translation>

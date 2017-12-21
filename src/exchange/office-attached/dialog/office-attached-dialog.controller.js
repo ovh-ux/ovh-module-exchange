@@ -19,7 +19,6 @@ angular
             this.maxNumberOfAccounts = 25;
             this.selectedCheckboxes = {};
             this.selectedAccounts = [];
-            this.isInitialLoad = true;
             this.exchange = Exchange.value;
 
             this.searchValue = null;

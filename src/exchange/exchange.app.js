@@ -1,5 +1,5 @@
 angular
-    .module("Module.exchange", ["ovh-utils-angular", "ngRoute", "ui.bootstrap", "ngSanitize", "Module.exchange.controllers", "Module.exchange.services", "Module.exchange.filters"])
+    .module("Module.exchange", ["ovh-utils-angular", "ngRoute", "ui.bootstrap", "ngSanitize", "Module.exchange.controllers", "Module.exchange.services", "Module.exchange.filters", "Module.exchange.directives", "Module.exchange.components"])
     .config(($injector) => {
         "use strict";
 

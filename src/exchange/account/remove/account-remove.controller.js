@@ -26,7 +26,7 @@ angular
         submit () {
             this.services
                 .Exchange
-                .removeAccount(this.$routerParams.organization, this.$routerParams.productId, this.account.primaryEmailAddress)
+                .removingAccount(this.$routerParams.organization, this.$routerParams.productId, this.account.primaryEmailAddress)
                 .then((success) => {
                     this.services.messaging.writeSuccess(this.removeAccountInsteadOfReset ? this.services.translator.tr("exchange_tab_account_remove_success") : this.services.translator.tr("exchange_tab_account_reset_success"), success);
                 })

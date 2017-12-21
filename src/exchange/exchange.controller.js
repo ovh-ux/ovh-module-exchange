@@ -23,9 +23,6 @@ angular
 
             this.$routerParams = Exchange.getParams();
 
-            this.initialLoad = true;
-            this.autoDisplay = null;
-
             navigation.$exchangeRootScope = $scope;
             messaging.$exchangeRootScope = $scope;
 
@@ -35,6 +32,7 @@ angular
             $scope.setMessage = messaging.setMessage.bind(messaging);
 
             this.isLoading = true;
+            this.hasNoDomain = false;
             this.loadingExchangeError = false;
 
             this.currentAction = null;
@@ -50,7 +48,15 @@ angular
                 this.services.navigation.resetAction();
             });
 
-            this.canActivateSharepoint();
+            $scope.$on("exchange.wizard_hosted_creation.display", () => {
+                this.shouldOpenWizard = this.services.accountTypes.isHosted();
+                this.hasNoDomain = true;
+            });
+
+            $scope.$on("exchange.wizard_hosted_creation.hide", () => {
+                this.shouldOpenWizard = false;
+                this.hasNoDomain = false;
+            });
 
             if ($location.search().action === "billing") {
                 $timeout(() => {
@@ -61,8 +67,10 @@ angular
             } else {
                 this.retrievingExchange();
             }
+        }
 
-            Exchange.updateValue();
+        $onInit () {
+            this.services.$scope.resetMessages();
         }
 
         submittingDisplayName () {
@@ -90,7 +98,56 @@ angular
                 });
         }
 
+        retrievingWizardPreference () {
+            this.isLoading = true;
+            this.shouldOpenWizard = this.services.accountTypes.isHosted();
+
+            if (!this.shouldOpenWizard) {
+                return false;
+            }
+
+            return this.services
+                .Exchange
+                .retrievingWizardPreference()
+                .then((preference) => {
+                    this.shouldOpenWizard = _.get(preference, "shouldOpenWizard", false);
+                })
+                .catch(() => {
+                    this.shouldOpenWizard = true;
+                })
+                .then(() => this.services.User.getUser()
+                    .then((currentUser) => {
+                        const ovhSubsidiary = currentUser.ovhSubsidiary;
+
+                        this.shouldOpenWizard = this.shouldOpenWizard && ovhSubsidiary !== "CA";
+                    })
+                )
+                .then(() => {
+                    if (this.shouldOpenWizard) {
+                        return this.services
+                            .ovhUserPref
+                            .getValue("WIZARD_HOSTED_CREATION_CHECKPOINT")
+                            .catch(() => null)
+                            .then((preferences) => {
+                                const preferenceToSave = !_(preferences).isObject() || _(preferences).isEmpty() ? {} : preferences;
+
+                                const hasNoDomain = this.exchange.domainsNumber === 0;
+                                const isReturningToWizard = !_(preferenceToSave[this.$routerParams.organization]).isEmpty();
+
+                                this.hasNoDomain = hasNoDomain || (!hasNoDomain && isReturningToWizard);
+                            });
+                    }
+
+                    return null;
+                })
+                .finally(() => {
+                    this.isLoading = false;
+                });
+        }
+
         retrievingExchange () {
+            this.isLoading = true;
+
             return this.services
                 .Exchange
                 .getSelected(true)
@@ -98,33 +155,17 @@ angular
                     this.services.Exchange.value = exchange;
                     this.exchange = exchange;
                     this.displayName = exchange.displayName;
-
-                    this.services
-                        .officeAttached
-                        .getOfficeAttachSubscription()
-                        .then((data) => {
-                            this.canSubscribeToOfficeAttach = data;
-                        });
-
-                    if (!_.isEmpty(exchange.messages)) {
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_dashboard_loading_error"), exchange);
-                    }
-
-                    if (this.exchange.domainsNumber === 0 && this.initialLoad) {
-                        return this.retrieveDomainAddingDialogPreference();
-                    }
-
-                    return false;
                 })
-                .then((shouldDisplayDialog) => {
-                    if (shouldDisplayDialog) {
-                        this.services.$timeout(() => {
-                            this.services.navigation.setAction("exchange/domain/add/domain-add", {
-                                noDomainAttached: true
-                            });
-                        });
+                .then(() => this.canActivateSharepoint())
+                .then(() => this.services.officeAttached.getOfficeAttachSubscription())
+                .then((data) => {
+                    this.canSubscribeToOfficeAttach = data;
+                    if (!_.isEmpty(this.exchange.messages)) {
+                        this.services.messaging.writeError(this.services.translator.tr("exchange_dashboard_loading_error"), this.exchange);
                     }
                 })
+                .then(() => this.services.Exchange.updateValue())
+                .then(() => this.retrievingWizardPreference())
                 .catch((failure) => {
                     if (failure) {
                         const response = failure.data || failure;
@@ -147,24 +188,7 @@ angular
                     }
                 })
                 .finally(() => {
-                    this.initialLoad = false;
                     this.isLoading = false;
-                });
-        }
-
-        retrieveDomainAddingDialogPreference () {
-            return this.services
-                .ovhUserPref
-                .getValue("EXCHANGE_DOMAIN_ADD_AUTO_DISPLAY")
-                .then((res) => res.autoDisplay)
-                .catch(() => {
-                    this.services
-                        .ovhUserPref
-                        .create("EXCHANGE_DOMAIN_ADD_AUTO_DISPLAY", {
-                            autoDisplay: true
-                        });
-
-                    return true;
                 });
         }
 
