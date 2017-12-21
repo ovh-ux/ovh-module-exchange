@@ -70,11 +70,11 @@
    <translation id="exchange_ACTION_export_confirm" qtlid="217080">Are you sure that you want to export your accounts?</translation>
 
 <!-- OFFICE ATTACHED -->
-   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Special offer:</strong> Get Office 365 for free on your Exchange! </translation>
-   <translation id="exchange_office_attached_alert_details" qtlid="404213">Special offer relates to Office 365 Business. You can use up to {0} Exchange addresses. Only the first month is free, after this month you will automatically be charged the rate indicated on the renewal date on the <a target="_blank" href="https://www.ovh.com:51043">https://www.ovh.co.uk:51043</a> website. </translation>
+   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Special offer:</strong> Get Office 365 for free on your Exchange accounts! </translation>
+   <translation id="exchange_office_attached_alert_details" qtlid="404213">Special offer applies to Office 365 Business. You can use up to {0} Exchange addresses. Only the first month is free, after this month you will automatically be charged at the price indicated on the renewal date on the <a target="_blank" href="https://www.ovh.com:51043">https://www.ovh.co.uk:51043</a> website. </translation>
    <translation id="exchange_office_attached_alert_button" qtlid="404226">Get the offer! </translation>
    <translation id="exchange_office_attached_alert_modale_title" qtlid="404239">Activate the Office 365 special offer</translation>
-   <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Get one free month of Office 365 on up to {0} Exchange accounts of your choice </translation>
+   <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Get one free month of Office 365 Business on up to {0} Exchange accounts of your choice </translation>
    <translation id="exchange_office_attached_alert_modale_selected_accounts" qtlid="404265">{0} accounts selected, from a maximum of {1}</translation>
    <translation id="exchange_office_attached_alert_modale_account_types" qtlid="404278">Type of accounts to search for</translation>
    <translation id="exchange_office_attached_alert_modale_search_form" qtlid="404291">Search for email accounts to be used </translation>
@@ -148,7 +148,7 @@
    <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="171188">Opening...</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Suspended</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Suspending...</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_MIGRATING">Migration en cours</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_MIGRATING" qtlid="186713">Migrating...</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SPAM" qtlid="70409">Spam</translation>
 
    <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="31522">OK</translation>
@@ -364,9 +364,9 @@
    <translation id="exchange_tab_domain_diagnostic_mx_intro_ovh" qtlid="192890">Your domain is hosted at OVH, you can configure the MX record of your domain {0} as follows</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_label_champ" qtlid="192903">MX record</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_label_champs" qtlid="46780">MX fields</translation>
-   <translation id="exchange_tab_domain_diagnostic_mx_no_antispam" qtlid="319895">If you use non authoritative mode (Exchange + other mail service) with an email service not hosted at OVH:</translation>
+   <translation id="exchange_tab_domain_diagnostic_mx_no_antispam" qtlid="319895">If you use nonauthoritative mode (Exchange + other email service) with an email service that is not hosted by OVH:</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_no_antispam_config" qtlid="192929">Priority: <strong>{0}</strong>; target: <strong>{1}</strong></translation>
-   <translation id="exchange_tab_domain_diagnostic_mx_antispam" qtlid="319908">If you use authoritative (only Exchange) or non-authoritative mode with an email service hosted by OVH: </translation>
+   <translation id="exchange_tab_domain_diagnostic_mx_antispam" qtlid="319908">If you use authoritative (Exchange only) or nonauthoritative mode with an email service hosted by OVH: </translation>
    <translation id="exchange_tab_domain_diagnostic_mx_antispam_config" qtlid="192955">Priority: <strong>{0}</strong>; target: <strong>{1}</strong><br /> Priority: <strong>{2}</strong>; target: <strong>{3}</strong><br /> Priority: <strong>{4}</strong>; target: <strong>{5}</strong><br /> Priority: <strong>{6}</strong>; target: <strong>{7}</strong><br /></translation>
    <translation id="exchange_tab_domain_diagnostic_mx_no_ovh" qtlid="349101">If the domain is not managed under the same customer ID as the Exchange solution, or if your domain is registered elsewhere, automatic configuration is not possible. Please manually create an MX record on this domain using the same information that you gave above. </translation>
    <translation id="exchange_tab_domain_diagnostic_mx_recap" qtlid="192981">An MX record will be added to your domain's DNS zone. Warning, existing MX records will be deleted. </translation>
@@ -573,7 +573,7 @@ I therefore explicitly renounce my right to cancel under the provisions of Artic
 "Enter a domain name which is not managed by your OVH account" and enter it in the corresponding field. </translation>
    <translation id="exchange_tab_domain_add_step2_which_domain_type" qtlid="137998">What type of domain <span class="italic">{0}</span> is concerned?</translation>
    <translation id="exchange_tab_domain_add_step2_auth_intro" qtlid="140859">Your domain <span class="italic">{0}</span> will be configured authoritatively.</translation>
-   <translation id="exchange_tab_domain_add_step2_non_auth_intro" qtlid="366372">Your <span class="italic">{0}</span> domain will be configured in non-authoritative mode.</translation>
+   <translation id="exchange_tab_domain_add_step2_non_auth_intro" qtlid="366372">Your <span class="italic">{0}</span> domain will be configured in nonauthoritative mode.</translation>
    <translation id="exchange_tab_domain_add_step2bis_intro" qtlid="316944">Select your domain form:</translation>
 
    <translation id="exchange_tab_domain_add_step2_srv_checkbox" qtlid="138011">Configure the SRV automatically (autodiscover)</translation>
@@ -594,9 +594,9 @@ I therefore explicitly renounce my right to cancel under the provisions of Artic
    <translation id="exchange_tab_domain_inverse_NON_AUTHORITATIVE" qtlid="58807">Authoritative</translation>
    <translation id="exchange_tab_domain_inverse_AUTHORITATIVE" qtlid="136672">Non-authoritative</translation>
    <translation id="exchange_tab_domain_mode_AUTHORITATIVE" qtlid="316970">Authoritative (Only Exchange)</translation>
-   <translation id="exchange_tab_domain_mode_NON_AUTHORITATIVE" qtlid="316983">Non authoritative (Exchange + other mail service)</translation>
+   <translation id="exchange_tab_domain_mode_NON_AUTHORITATIVE" qtlid="316983">Nonauthoritative (Exchange + other email service)</translation>
    <translation id="exchange_tab_domain_AUTHORITATIVE_info" qtlid="324847">Authoritative mode does not let you use another messaging system with Exchange accounts. This mode lets you activate Vade Secure antispam.</translation>
-   <translation id="exchange_tab_domain_NON_AUTHORITATIVE_info" qtlid="324860">Authoritative mode lets you use Exchange and another email service. Vade Secure antispam is only compatible if the pop/imap are hosted at OVH (mxplan or shared service), in this instance you must enter mx1.mail.ovh.net as the target email server.</translation>
+   <translation id="exchange_tab_domain_NON_AUTHORITATIVE_info" qtlid="324860">Nonauthoritative mode lets you use Exchange and another email service. Vade Secure anti-spam is only compatible if the POP/IMAP are hosted at OVH (MX Plan or shared service), in this instance you must enter mx1.mail.ovh.net as the target email server.</translation>
    <translation id="exchange_tab_domain_target_mail_server_label" qtlid="316957">Target email server </translation>
    <translation id="exchange_tab_domain_noovh_mx_info" qtlid="317126">MX and SRV changes must be carried out manually in your DNS zone. You can find the necessary information in the associated domains section, once the CNAME has been validated.</translation>
    <translation id="exchange_tab_domain_modify_domain" qtlid="137101">Modify a domain</translation>
@@ -1482,7 +1482,7 @@ I therefore explicitly renounce my right to cancel under the provisions of Artic
    <translation id="exchange_ACTION_order_upgrade_300G_error_options_message" qtlid="368180">There was an error when retrieving prices. </translation>
 <!-- Order Exchange -->
    <translation id="exchange_order_view_intro_title" qtlid="368193">Order Exchange </translation>
-   <translation id="exchange_order_view_intro_question" qtlid="368206">Do you want to create a new Exchange service or add an account to an existing service? </translation>
+   <translation id="exchange_order_view_intro_question" qtlid="368206">Do you want to create a new Exchange service, or add an account to an existing service? </translation>
    <translation id="exchange_order_view_stand_alone_option" qtlid="368219">Create a new service </translation>
    <translation id="exchange_order_view_attached_option" qtlid="368232">Add an account to an existing service </translation>
    <translation id="exchange_order_view_button_label" qtlid="368245">Order Exchange </translation>

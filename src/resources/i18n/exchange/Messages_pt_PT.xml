@@ -18,13 +18,13 @@
    <translation id="exchange_dashboard_display_name_save" qtlid="177912">Mínimo de 4 caracteres</translation>
    <translation id="exchange_dashboard_display_name_min" qtlid="177925">Operação anulada. É requerido um mínimo de 5 caracteres</translation>
    <translation id="exchange_dashboard_display_name_reset" qtlid="37935">Operação anulada</translation>
-   <translation id="exchange_dashboard_message_see_more" qtlid="91645">Ver os detalhes</translation>
+   <translation id="exchange_dashboard_message_see_more" qtlid="91645">Ver detalhes</translation>
    <translation id="exchange_dashboard_name" qtlid="136165">Referência do servidor</translation>
    <translation id="exchange_dashboard_hostname" qtlid="136178">Endereço do servidor</translation>
    <translation id="exchange_dashboard_renew" qtlid="136191">Renovação do serviço</translation>
    <translation id="exchange_dashboard_domains" qtlid="276298">Domínios associados</translation>
    <translation id="exchange_dashboard_accounts" qtlid="136204">Contas Exchange</translation>
-   <translation id="exchange_dashboard_tasks" qtlid="136217">Trabalhos recentes</translation>
+   <translation id="exchange_dashboard_tasks" qtlid="136217">Tarefas recentes</translation>
    <translation id="exchange_dashboard_diag" qtlid="136230">Diagnóstico do servidor </translation>
    <translation id="exchange_dashboard_guides" qtlid="366359">Necessita de ajuda na configuração do seu serviço Exchange?</translation>
    <translation id="exchange_dashboard_guides_url" qtlid="156732">Consulte os nossos guias.</translation>
@@ -43,11 +43,11 @@
    <translation id="exchange_dashboard_diag_ptr_label" qtlid="143303">PTR</translation>
    <translation id="exchange_dashboard_diag_ptr_tooltip_title" qtlid="143303">PTR</translation>
    <translation id="exchange_dashboard_diag_ptr_tooltip_ok" qtlid="137491">Configuração automática efetuada</translation>
-   <translation id="exchange_dashboard_diag_ptr_tooltip_error" qtlid="143316">A resolução inversa do seu endereço IP apresenta um problema. Queira contactar o suporte.</translation>
+   <translation id="exchange_dashboard_diag_ptr_tooltip_error" qtlid="143316">A resolução inversa do seu endereço IP apresenta um problema. Por favor, contacte o nosso serviço.</translation>
    <translation id="exchange_dashboard_diag_ptrv6_label" qtlid="143329">PTR v6</translation>
    <translation id="exchange_dashboard_diag_ptrv6_tooltip_title" qtlid="143329">PTR v6</translation>
    <translation id="exchange_dashboard_diag_ptrv6_tooltip_ok" qtlid="137491">Configuração automática efetuada</translation>
-   <translation id="exchange_dashboard_diag_ptrv6_tooltip_error" qtlid="143342">A resolução inversa do seu endereço IPv6 apresenta um problema. Queira contactar o suporte.</translation>
+   <translation id="exchange_dashboard_diag_ptrv6_tooltip_error" qtlid="143342">A resolução inversa do seu endereço IPv6 apresenta um problema. Por favor contacte o nosso serviço.</translation>
    <translation id="exchange_dashboard_billing" qtlid="32950">Faturação</translation>
    <translation id="exchange_dashboard_expiration" qtlid="168172">Renovação</translation>
    <translation id="exchange_dashboard_ssl_expiration" qtlid="190797">Expiração SSL</translation>
@@ -70,11 +70,11 @@
    <translation id="exchange_ACTION_export_confirm" qtlid="217080">Têm a certeza que pretende exportar as suas contas?</translation>
 
 <!-- OFFICE ATTACHED -->
-   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Promoção:</strong> ative gratuitamente o Office 365 nos seus endereços Exchange!</translation>
-   <translation id="exchange_office_attached_alert_details" qtlid="404213">A oferta diz respeito ao produto Office 365 Business. Um máximo de {0} endereços Exchange podem ser utilizados. Apenas o primeiro mês é gratuito, a oferta será depois renovada automaticamente ao preço indicado no website na data de renovação <a target="_blank" href="https://www.ovh.pt:51043">https://www.ovh.pt:51043</a></translation>
+   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Promoção:</strong> ativação grátis do Office 365 para os seus endereços Exchange!</translation>
+   <translation id="exchange_office_attached_alert_details" qtlid="404213">Promoção exclusiva para Office 365 Business.  Pode usar até {0} endereços Exchange. O primeiro mês é grátis. No final deste período, o serviço será renovado automaticamente ao preço indicado no site à data de renovação <a target="_blank" href="https://www.ovh.pt">https://www.ovh.pt</a></translation>
    <translation id="exchange_office_attached_alert_button" qtlid="404226">Beneficiar desta oferta</translation>
    <translation id="exchange_office_attached_alert_modale_title" qtlid="404239">Ativar a oferta promocional Office 365</translation>
-   <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Obtenha um mês gratuito do Officer 365 para um máximo de {0} contas Exchange à sua escolha</translation>
+   <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Obtenha um mês grátis Office 365 para um máximo de {0} contas Exchange à sua escolha</translation>
    <translation id="exchange_office_attached_alert_modale_selected_accounts" qtlid="404265">{0} contas selecionadas para um máximo de {1}</translation>
    <translation id="exchange_office_attached_alert_modale_account_types" qtlid="404278">Tipos de conta a utilizar nas pesquisas</translation>
    <translation id="exchange_office_attached_alert_modale_search_form" qtlid="404291">Pesquisar as contas de e-mail a utilizar</translation>
@@ -91,7 +91,7 @@
    <translation id="exchange_tab_RESOURCES" qtlid="201237">Recursos</translation>
    <translation id="exchange_tab_SHARED" qtlid="136269">Partilhas</translation>
    <translation id="exchange_tab_DISCLAIMER" qtlid="276324">Rodapé</translation>
-   <translation id="exchange_tab_TASKS" qtlid="136217">Trabalhos recentes</translation>
+   <translation id="exchange_tab_TASKS" qtlid="136217">Tarefas recentes</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACT" qtlid="82015">Contactos externos</translation>
    <translation id="exchange_tab_DIAGNOSTIC" qtlid="136282">Diagnósticos</translation>
 
@@ -148,7 +148,7 @@
    <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="171188">Abertura em curso</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Suspenso</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Suspensão em curso</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_MIGRATING">Migration en cours</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_MIGRATING" qtlid="186713">Migração em curso</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SPAM" qtlid="70409">Spam</translation>
 
    <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="31522">OK</translation>
@@ -182,7 +182,7 @@
    <translation id="exchange_tab_ACCOUNTS_popover_reset" qtlid="376011">Reinicializar esta conta</translation>
    <translation id="exchange_tab_ACCOUNTS_error_message" qtlid="143915">Ocorreu um erro aquando do carregamento das suas contas.</translation>
    <translation id="exchange_tab_ACCOUNTS_popover_span_title" qtlid="277676">Conta bloqueada por SPAM</translation>
-   <translation id="exchange_tab_ACCOUNTS_popover_span_text" qtlid="277689">O envio de e-mails a partir deste conta foi bloqueada devido a envio de SPAM. <br />Para desbloquear esta conta é necessário responder ao ticket.<br /><br /><a href="{0}" class="link pull-right">Responder ao ticket</a><br /></translation>
+   <translation id="exchange_tab_ACCOUNTS_popover_span_text" qtlid="277689">O envio de e-mail a partir deste conta foi bloqueado devido a SPAM. <br />Para desbloquear esta conta é necessário responder ao ticket.<br /><br /><a href="{0}" class="link pull-right">Responder ao ticket</a><br /></translation>
 
 <!-- ########################################## -->
 <!-- ALIAS -->
@@ -277,7 +277,7 @@
    <translation id="exchange_tab_TASKS_SET_RESOURCE_ACCOUNT" qtlid="156147">Modificação de uma conta de recurso</translation>
    <translation id="exchange_tab_TASKS_DELETE_RESOURCE_DELEGATE" qtlid="209086">Eliminação de permissões por recurso</translation>
    <translation id="exchange_tab_TASKS_DELETE_RESOURCE_ACCOUNT" qtlid="156160">Eliminação de uma conta de recurso</translation>
-   <translation id="exchange_tab_TASKS_SET_EXTERNAL_CONTACT" qtlid="177938">Modificação de contacto externo</translation>
+   <translation id="exchange_tab_TASKS_SET_EXTERNAL_CONTACT" qtlid="177938">Alteração de contacto externo</translation>
    <translation id="exchange_tab_TASKS_ADD_SEND_ON_BEHALF_TO" qtlid="181396">Adicionar permissões "enviar como" para contas</translation>
    <translation id="exchange_tab_TASKS_DELETE_SEND_ON_BEHALF_TO" qtlid="181409">Eliminação de permissões "enviar como" para contas</translation>
    <translation id="exchange_tab_TASKS_ADD_DISTRIBUTION_GROUP_SEND_ON_BEHALF_TO" qtlid="181422">Adicionar permissões "enviar como" para grupos</translation>
@@ -364,15 +364,15 @@
    <translation id="exchange_tab_domain_diagnostic_mx_intro_ovh" qtlid="192890">O seu domínio está alojado na OVH e poderá configurar o campo MX do seu domínio {0} da seguinte maneira</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_label_champ" qtlid="192903">Campo MX</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_label_champs" qtlid="46780">Campos MX</translation>
-   <translation id="exchange_tab_domain_diagnostic_mx_no_antispam" qtlid="319895">Se utiliza o modo não autoritário (Exchange + outro sistema de e-mails) com um sistema de e-mails não alojado na OVH:</translation>
+   <translation id="exchange_tab_domain_diagnostic_mx_no_antispam" qtlid="319895">Se utilizar o modo «não-autoritário» / nonauthoritative(Exchange + outro sistema de e-mail) com um sistema de e-mail não alojado na OVH:</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_no_antispam_config" qtlid="192929">Prioridade: <strong>{0}</strong>; alvo: <strong>{1}</strong></translation>
-   <translation id="exchange_tab_domain_diagnostic_mx_antispam" qtlid="319908">Se utiliza o modo autoritário (apenas Exchange) ou não autoritário com um sistema de e-mails alojado (e-mails das ofertas partilhadas) pela OVH:</translation>
+   <translation id="exchange_tab_domain_diagnostic_mx_antispam" qtlid="319908">Se utilizar o modo «autoritário» / authoritative (só com Exchange) ou  «não-autoritário» (nonauthoritative) com um sistema de e-mail alojado no serviço de hosting partilhado da OVH:</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_antispam_config" qtlid="192955">Prioridade: <strong>{0}</strong>; alvo: <strong>{1}</strong><br /> Prioridade: <strong>{2}</strong>; alvo: <strong>{3}</strong><br /> Prioridade: <strong>{4}</strong>; alvo: <strong>{5}</strong><br /> Prioridade: <strong>{6}</strong>; alvo: <strong>{7}</strong><br /></translation>
    <translation id="exchange_tab_domain_diagnostic_mx_no_ovh" qtlid="349101">Se o domínio não é gerido pelo mesmo identificador de cliente que o seu serviço Exchange, ou o seu domínio não está alojado na OVH, não é possível utilizar a configuração automática. Queira criar o campo MX nesse domínio manualmente ao fornecer as mesmas informações apresentadas em baixo.</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_recap" qtlid="192981">Um campo MX vai ser adicionado na zona DNS do seu domínio. Atenção, os campos MX já existentes serão eliminados.</translation>
    <translation id="exchange_tab_domain_diagnostic_add_field_success" qtlid="316905">A modificação da zona DNS foi efetuada. A propagação da informação e a atualização do diagnóstico poderá levar algumas horas.</translation>
-   <translation id="exchange_tab_domain_diagnostic_add_field_failure" qtlid="193007">Ocorreu um erro aquando da modificação da sua zona DNS.</translation>
-   <translation id="exchange_tab_domain_diagnostic_srv_intro_ovh" qtlid="193020">O seu domínio está alojado na OVH e poderá configurar o campo SRV do seu domínio {0} da seguinte maneira</translation>
+   <translation id="exchange_tab_domain_diagnostic_add_field_failure" qtlid="193007">Ocorreu um erro durante a alteração da sua zona DNS.</translation>
+   <translation id="exchange_tab_domain_diagnostic_srv_intro_ovh" qtlid="193020">O seu domínio está alojado na OVH. Pode configurar o campo SRV do seu domínio {0} da seguinte maneira</translation>
    <translation id="exchange_tab_domain_diagnostic_srv_label_champ" qtlid="193033">Campo SRV</translation>
    <translation id="exchange_tab_domain_diagnostic_srv_config" qtlid="193046">Subdomínio: <strong>{0}</strong><br /> Prioridade: <strong>{1}</strong><br /> Peso: <strong>{2}</strong><br /> Porta: <strong>{3}</strong><br /> Alvo: <strong>{4}</strong></translation>
    <translation id="exchange_tab_domain_diagnostic_srv_no_ovh" qtlid="349114">Se o domínio não é gerido pelo mesmo identificador de cliente que o seu serviço Exchange, ou o seu domínio não está alojado na OVH, não é possível utilizar a configuração automática. Queira criar o campo SRV nesse domínio manualmente ao fornecer as mesmas informações apresentadas em baixo.</translation>
@@ -393,16 +393,16 @@
    <translation id="exchange_tab_domain_add_domain" qtlid="8602">Adicionar um domínio </translation>
    <translation id="exchange_tab_domain_delete_domain" qtlid="137556">Retirar este domínio dos serviços Exchange</translation>
    <translation id="exchange_tab_domain_delete_domain_accounts_warning" qtlid="148227">O domínio não pode ser eliminado uma vez que ainda está a ser utilizado por uma ou várias contas Exchange</translation>
-   <translation id="exchange_tab_domain_NON_AUTHORITATIVE" qtlid="136672">Não autoritário</translation>
-   <translation id="exchange_tab_domain_AUTHORITATIVE" qtlid="58807">Autoritário</translation>
+   <translation id="exchange_tab_domain_NON_AUTHORITATIVE" qtlid="136672">Não-autoritário (nonauthoritative)</translation>
+   <translation id="exchange_tab_domain_AUTHORITATIVE" qtlid="58807">Autoritário (authoritative)</translation>
    <translation id="exchange_tab_domain_warning" qtlid="136347">Atenção!</translation>
-   <translation id="exchange_tab_domain_partial" qtlid="137569">Alguns domínios não foram carregados corretamente. Queira atualizar a página para que o problema seja resolvido.</translation>
+   <translation id="exchange_tab_domain_partial" qtlid="137569">Alguns domínios não foram carregados corretamente. Por favor, atualize a página para que o problema seja resolvido.</translation>
 
 <!-- ########################################## -->
 <!-- ACCOUNTS -->
    <translation id="exchange_ACTION_order_accounts_button" qtlid="139169">Encomendar contas</translation>
    <translation id="exchange_ACTION_order_accounts_title" qtlid="139299">Encomendar contas Exchange</translation>
-   <translation id="exchange_ACTION_order_accounts_step1_intro" qtlid="139312">Queira escolher o tipo de pagamento e depois o número de contas Exchange a encomendar.</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_intro" qtlid="139312">Por favor, escolha o tipo de pagamento e depois o número de contas Exchange a encomendar.</translation>
    <translation id="exchange_ACTION_order_accounts_step1_account_type" qtlid="368050">Tipo de conta:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_account_type_50G" qtlid="368063">50GB</translation>
    <translation id="exchange_ACTION_order_accounts_step1_account_type_300G" qtlid="368076">300GB</translation>
@@ -553,7 +553,7 @@
 
    <translation id="exchange_tab_domain_add_step1_main_domain" qtlid="191070">Domínio principal de uma organização</translation>
    <translation id="exchange_tab_domain_add_step1_main_domain_tooltip" qtlid="191083">Domínio principal da organização</translation>
-   <translation id="exchange_tab_domain_add_step1_new_organization_intro" qtlid="191096">O domínio da sua organização vai ser "{0}"</translation>
+   <translation id="exchange_tab_domain_add_step1_new_organization_intro" qtlid="191096">O domínio da sua organização será "{0}"</translation>
    <translation id="exchange_tab_domain_add_step1_new_organization_placeholder" qtlid="191109">Nome da organização</translation>
    <translation id="exchange_tab_domain_add_step2_main_domain" qtlid="191122">Domínio principal</translation>
    <translation id="exchange_tab_domain_add_step2_organization" qtlid="32278">Organização</translation>
@@ -571,13 +571,13 @@
    <translation id="exchange_tab_domain_step1_helpwizard_subdomain" qtlid="397559">Para adicionar um subdomínio de um dos seus domínios OVH deve optar pela opção "Utilizar um nome de domínio não gerido pela sua conta OVH" e deve introduzi-lo no campo correspondente.</translation>
    <translation id="exchange_tab_domain_add_step2_which_domain_type" qtlid="137998">De que tipo de domínio <span class="italic">{0}</span> se trata?</translation>
    <translation id="exchange_tab_domain_add_step2_auth_intro" qtlid="140859">O seu domínio <span class="italic">{0}</span> vai ser configurado em modo autoritário.</translation>
-   <translation id="exchange_tab_domain_add_step2_non_auth_intro" qtlid="366372">O seu domínio <span class="italic">{0}</span> vai ser configurado em modo não autoritário.</translation>
+   <translation id="exchange_tab_domain_add_step2_non_auth_intro" qtlid="366372">O seu domínio <span class="italic">{0}</span> vai ser configurado em modo «não-autoritário» (nonauthoritative).</translation>
    <translation id="exchange_tab_domain_add_step2bis_intro" qtlid="316944">Selecione o modo do seu domínio:</translation>
 
    <translation id="exchange_tab_domain_add_step2_srv_checkbox" qtlid="138011">Configurar automaticamente o registo SRV (autodiscover)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_checkbox" qtlid="139585">Configurar automaticamente os campos MX (receção dos e-mails)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_tooltip" qtlid="140209">Atenção, configurar automaticamente os campos MX pode causar impacto na receção dos e-mails previamente configurados nesse nome de domínio.</translation>
-   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="273909">Esta opção permite permite ao seu cliente de e-mails, como Outlook ou Mail, descobrir automaticamente os seus parâmetros de ligação.</translation>
+   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="273909">Com esta opção, o cliente de e-mail, como o Outlook ou o Mail, conseguem identificar automaticamente os parâmetros de ligação (se forem compatíveis com o protocolo MAPI).</translation>
    <translation id="exchange_tab_domain_add_step3_srv_confirmation" qtlid="137816">Configuração SRV</translation>
    <translation id="exchange_tab_domain_add_step3_mx_confirmation" qtlid="137829">Configuração MX</translation>
    <translation id="exchange_tab_domain_add_step3_mx_replay" qtlid="316957">Servidor de e-mail alvo</translation>
@@ -589,12 +589,12 @@
    <translation id="exchange_tab_domain_modify_success" qtlid="137907">A atualização do domínio vai ser efetuada.</translation>
    <translation id="exchange_tab_domain_modify_failure" qtlid="137075">Ocorreu um erro aquando da atualização do domínio.</translation>
    <translation id="exchange_tab_domain_modify_in_progress" qtlid="137088">Passagem para {0} em curso</translation>
-   <translation id="exchange_tab_domain_inverse_NON_AUTHORITATIVE" qtlid="58807">Autoritário</translation>
-   <translation id="exchange_tab_domain_inverse_AUTHORITATIVE" qtlid="136672">Não autoritário</translation>
+   <translation id="exchange_tab_domain_inverse_NON_AUTHORITATIVE" qtlid="58807">Autoritário (authoritative)</translation>
+   <translation id="exchange_tab_domain_inverse_AUTHORITATIVE" qtlid="136672">Não-autoritário (nonauthoritative)</translation>
    <translation id="exchange_tab_domain_mode_AUTHORITATIVE" qtlid="316970">Autoritativo (apenas Exchange)</translation>
-   <translation id="exchange_tab_domain_mode_NON_AUTHORITATIVE" qtlid="316983">Não autoritativo (Exchange + outro serviço de e-mails)</translation>
+   <translation id="exchange_tab_domain_mode_NON_AUTHORITATIVE" qtlid="316983">«Não-autoritário» (nonauthoritative) (Exchange + outro serviço de e-mail)</translation>
    <translation id="exchange_tab_domain_AUTHORITATIVE_info" qtlid="324847">O modo autoritário não permite a utilização de um outro sistema de e-mails com as contas Exchange. Este modo permite a ativação do anti-spam Vade Secure.</translation>
-   <translation id="exchange_tab_domain_NON_AUTHORITATIVE_info" qtlid="324860">O modo não autoritário permite a coabitação entre o Exchange e um outro serviço de e-mails. O antispam Vade Secure é compatível se as contas pop/imap estão alojadas na OVH (mxplan ou oferta partilhada), e é nesse caso necessário indicar o mx1.mail.ovh.net como servidor de e-mail alvo.</translation>
+   <translation id="exchange_tab_domain_NON_AUTHORITATIVE_info" qtlid="324860">O modo  «não-autoritário» (nonauthoritative) permite o uso simultâneo do Exchange e de outro serviço de e-mail. O sistema antispam Vade Secure é compatível com contas pop/imap alojadas na OVH (mxplan ou solução partilhada). Neste caso, é necessário indicar o mx1.mail.ovh.net como servidor de e-mail de destino.</translation>
    <translation id="exchange_tab_domain_target_mail_server_label" qtlid="316957">Servidor de e-mail alvo</translation>
    <translation id="exchange_tab_domain_noovh_mx_info" qtlid="317126">As alterações dos registos do tipo MX e SRV devem ser realizadas de forma manual na sua secção DNS. Pode encontrar as informações necessárias na secção "Domínios associados", depois de ter efetuado a validação do CNAME.</translation>
    <translation id="exchange_tab_domain_modify_domain" qtlid="137101">Modificar um domínio</translation>
@@ -759,7 +759,7 @@
    <translation id="exchange_RESOURCES_delegation_step2_delegation_header" qtlid="65852">Delegação </translation>
    <translation id="exchange_RESOURCES_delegation_step2_delegation_no_value" qtlid="34788">Não</translation>
    <translation id="exchange_RESOURCES_delegation_wizard_text" qtlid="209138">Definir um endereço "delegado" para uma das caixas de correio permite controlar as opções de planificação desta caixa de correio e transferir todos os pedidos ao(s) delegado(s) para que os pedidos possam ser validados. <br /><br /> A opção permite também visualizar todos os detalhes no calendário dos recursos.</translation>
-   <translation id="exchange_RESOURCES_description" qtlid="283825">Poderá criar, gerir, eliminar os seus recursos (equipamento(s)/sala(s))</translation>
+   <translation id="exchange_RESOURCES_description" qtlid="283825">Poderá criar, gerir ou eliminar os seus recursos (equipamento(s)/sala(s))</translation>
    <translation id="exchange_RESOURCES_guide" qtlid="283838">Para mais informações consulte o nosso guia</translation>
    <translation id="exchange_DIAGNOSTICS_description" qtlid="297982">O diagnóstico de uma conta de e-mail permite validar vários elementos, nomeadamente se a conta está bloqueada, a validade do registo MX e SRV, a autenticação ao webmail bem como o envio e receção para esta conta. Há que ter em conta que o diagnóstico pode levar entre 3 a 10 minutos.</translation>
    <translation id="exchange_DIAGNOSTICS_stay_on_page_while_diagnostic_is_running" qtlid="324899">Se deixar a secção web do Espaço Cliente o resultado do diagnostico não será conservado.</translation>
@@ -831,7 +831,7 @@
    <translation id="exchange_tab_GROUPS_header" qtlid="32962">Grupos</translation>
    <translation id="exchange_tab_GROUPS_remove_account_tooltip" qtlid="150073">Retirar a conta deste grupo</translation>
    <translation id="exchange_tab_GROUPS_intro" qtlid="155873">Lista dos grupos da conta <span class="bold">{0}</span></translation>
-   <translation id="exchange_tab_GROUPS_table_empty" qtlid="150099">Não possui grupos para esta conta</translation>
+   <translation id="exchange_tab_GROUPS_table_empty" qtlid="150099">Não existem grupos para esta conta</translation>
    <translation id="exchange_tab_GROUPS_table_empty_search" qtlid="150112">Não possui grupos que correspondam ao termo procurado</translation>
    <translation id="exchange_tab_GROUPS_state_TASK_ON_DOING" qtlid="26383">Em curso</translation>
    <translation id="exchange_tab_GROUPS_state_TASK_ON_DOING_tooltip" qtlid="150125">Um trabalho relacionado com este grupo já se encontra planificado ou está em curso de execução</translation>
@@ -869,7 +869,7 @@
    <translation id="exchange_tab_GROUPS_all_table_manager" qtlid="81487">Administradores</translation>
    <translation id="exchange_tab_GROUPS_all_table_user" qtlid="32206">Contactos</translation>
    <translation id="exchange_tab_GROUPS_all_table_status" qtlid="8230">Estado</translation>
-   <translation id="exchange_tab_GROUPS_all_table_empty" qtlid="150346">Não possui grupos</translation>
+   <translation id="exchange_tab_GROUPS_all_table_empty" qtlid="150346">Não existem grupos</translation>
    <translation id="exchange_tab_GROUPS_all_error_message" qtlid="150359">Ocorreu um erro aquando do carregamento da sua lista de grupos.</translation>
    <translation id="exchange_tab_GROUPS_all_add_ml_button" qtlid="150372">Criar um grupo de contactos</translation>
    <translation id="exchange_tab_GROUPS_menu_settings" qtlid="150385">Configurar o grupo</translation>
@@ -1480,7 +1480,7 @@
    <translation id="exchange_ACTION_order_upgrade_300G_error_options_message" qtlid="368180">Ocorreu um erro aquando da recuperação dos preços.</translation>
 <!-- Order Exchange -->
    <translation id="exchange_order_view_intro_title" qtlid="368193">Encomendar um serviço Exchange</translation>
-   <translation id="exchange_order_view_intro_question" qtlid="368206">Deseja criar um novo serviço Exchange ou adicionar uma conta a um serviço existente?</translation>
+   <translation id="exchange_order_view_intro_question" qtlid="368206">Deseja criar um novo serviço Exchange ou adicionar uma conta a um serviço já existente?</translation>
    <translation id="exchange_order_view_stand_alone_option" qtlid="368219">Criar um novo serviço</translation>
    <translation id="exchange_order_view_attached_option" qtlid="368232">Adicionar uma conta a um serviço existente</translation>
    <translation id="exchange_order_view_button_label" qtlid="368245">Encomendar o seu serviço Exchange</translation>

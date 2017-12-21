@@ -71,10 +71,10 @@
 
 <!-- OFFICE ATTACHED -->
    <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Promoción:</strong> ¡Active gratis Office 365 en sus cuentas Exchange!</translation>
-   <translation id="exchange_office_attached_alert_details" qtlid="404213">Esta promoción solo se aplica a la solución Office 365 Business. Puede utilizar un máximo de {0} direcciones Exchange. Primer mes gratis. A continuación, la renovación se realizará automáticamente al precio vigente indicado en la fecha de renovación en <a target="_blank" href="https://www.ovh.es">https://www.ovh.es</a>.</translation>
+   <translation id="exchange_office_attached_alert_details" qtlid="404213">Esta promoción solo se aplica a la solución Office 365 Business. Puede utilizar un máximo de {0} direcciones Exchange. Primer mes gratis. A continuación, la renovación se realizará automáticamente al precio vigente indicado en la fecha de renovación en <a target="_blank" href="https://www.ovh.es:51043">https://www.ovh.es:51043</a>.</translation>
    <translation id="exchange_office_attached_alert_button" qtlid="404226">Aprovechar la promoción</translation>
    <translation id="exchange_office_attached_alert_modale_title" qtlid="404239">Activar la promoción Office 365</translation>
-   <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Disfrute de un mes gratis de Office 365 en un máximo de {0} cuentas Exchange elegidas por usted.</translation>
+   <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Disfrute de un mes gratis de Office 365 Business en un máximo de {0} cuentas Exchange elegidas por usted.</translation>
    <translation id="exchange_office_attached_alert_modale_selected_accounts" qtlid="404265">{0} cuentas seleccionadas para un máximo de {1}</translation>
    <translation id="exchange_office_attached_alert_modale_account_types" qtlid="404278">Tipos de cuenta que se utilizan en la búsqueda</translation>
    <translation id="exchange_office_attached_alert_modale_search_form" qtlid="404291">Buscar las cuenta de correo que se utilizan</translation>
@@ -148,7 +148,7 @@
    <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="171188">Abriendo...</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Suspendido</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Suspendiendo...</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_MIGRATING">Migration en cours</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_MIGRATING" qtlid="186713">Migrando...</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SPAM" qtlid="70409">Spam</translation>
 
    <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="31522">OK</translation>
@@ -438,7 +438,7 @@
    <translation id="exchange_ACTION_add_account_step1_last_name_label" qtlid="3818">Nombre</translation>
    <translation id="exchange_ACTION_add_account_step1_display_name_label" qtlid="23515">Nombre mostrado</translation>
    <translation id="exchange_ACTION_add_account_step1_password_label" qtlid="2270">Contraseña</translation>
-   <translation id="exchange_ACTION_add_account_step1_password_confirmation_label" qtlid="9983">Repetir contraseña</translation>
+   <translation id="exchange_ACTION_add_account_step1_password_confirmation_label" qtlid="9983">Confirmar</translation>
    <translation id="exchange_ACTION_add_account_step1_password_tooltip" qtlid="178809">Mínimo 8 caracteres alfanuméricos o especiales.</translation>
    <translation id="exchange_ACTION_add_account_step1_outlook_label" qtlid="136724">Licencia Outlook</translation>
    <translation id="exchange_ACTION_add_account_step1_security_label" qtlid="136750">Opc. de seguridad</translation>
@@ -451,7 +451,7 @@
    <translation id="exchange_ACTION_add_account_step2_last_name_label" qtlid="3818">Nombre</translation>
    <translation id="exchange_ACTION_add_account_step2_display_name_label" qtlid="23515">Nombre mostrado</translation>
    <translation id="exchange_ACTION_add_account_step2_password_label" qtlid="2270">Contraseña</translation>
-   <translation id="exchange_ACTION_add_account_step2_password_confirmation_label" qtlid="9983">Repetir contraseña</translation>
+   <translation id="exchange_ACTION_add_account_step2_password_confirmation_label" qtlid="9983">Confirmar</translation>
    <translation id="exchange_ACTION_add_account_step2_type_label" qtlid="48938">Tipo de cuenta</translation>
    <translation id="exchange_ACTION_add_account_step2_outlook_label" qtlid="136724">Licencia Outlook</translation>
    <translation id="exchange_ACTION_add_account_step2_GAL_label" qtlid="191954">Ocultar la dirección en Outlook</translation>
@@ -478,7 +478,7 @@
    <translation id="exchange_ACTION_update_account_step1_last_name_label" qtlid="3818">Nombre</translation>
    <translation id="exchange_ACTION_update_account_step1_display_name_label" qtlid="23515">Nombre mostrado</translation>
    <translation id="exchange_ACTION_update_account_step1_password_label" qtlid="2270">Contraseña</translation>
-   <translation id="exchange_ACTION_update_account_step1_password_confirmation_label" qtlid="9983">Repetir contraseña</translation>
+   <translation id="exchange_ACTION_update_account_step1_password_confirmation_label" qtlid="9983">Confirmar</translation>
    <translation id="exchange_ACTION_update_account_step1_complex_password_tooltip" qtlid="178822">Mínimo {0} caracteres alfanuméricos o especiales.</translation>
    <translation id="exchange_ACTION_update_account_step1_simple_password_tooltip" qtlid="137595">Mínimo {0} caracteres.</translation>
    <translation id="exchange_ACTION_update_account_step1_outlook_label" qtlid="136724">Licencia Outlook</translation>
@@ -577,7 +577,7 @@
    <translation id="exchange_tab_domain_add_step2_srv_checkbox" qtlid="138011">Configurar automáticamente el SRV (autodiscover)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_checkbox" qtlid="139585">Configurar automáticamente el MX (recepción del correo)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_tooltip" qtlid="140209">Atención, configurar automáticamente el MX puede afectar a la recepción del correo previamente configurado en ese dominio.</translation>
-   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="273909">Esta opción permitirá a sus clientes de correo, como Outlook o Mail, conocer automáticamente sus parámetros de conexión.</translation>
+   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="273909">Esta opción permitirá a sus clientes de correo, como Outlook o Mail, conocer automáticamente sus parámetros de conexión (siempre que sean compatibles con el protocolo MAPI).</translation>
    <translation id="exchange_tab_domain_add_step3_srv_confirmation" qtlid="137816">Configuración SRV</translation>
    <translation id="exchange_tab_domain_add_step3_mx_confirmation" qtlid="137829">Configuración MX</translation>
    <translation id="exchange_tab_domain_add_step3_mx_replay" qtlid="316957">Servidor de correo de destino</translation>
@@ -831,7 +831,7 @@
    <translation id="exchange_tab_GROUPS_header" qtlid="32962">Grupos</translation>
    <translation id="exchange_tab_GROUPS_remove_account_tooltip" qtlid="150073">Quitar la cuenta de este grupo</translation>
    <translation id="exchange_tab_GROUPS_intro" qtlid="155873">Lista de grupos de la cuenta <span class="bold">{0}</span></translation>
-   <translation id="exchange_tab_GROUPS_table_empty" qtlid="150099">No hay grupos en esta cuenta</translation>
+   <translation id="exchange_tab_GROUPS_table_empty" qtlid="150099">No hay grupos en esta cuenta.</translation>
    <translation id="exchange_tab_GROUPS_table_empty_search" qtlid="150112">No hay grupos que se ajusten a la búsqueda</translation>
    <translation id="exchange_tab_GROUPS_state_TASK_ON_DOING" qtlid="26383">En proceso</translation>
    <translation id="exchange_tab_GROUPS_state_TASK_ON_DOING_tooltip" qtlid="150125">Hay una tarea relativa a este grupo planificada un realizándose</translation>

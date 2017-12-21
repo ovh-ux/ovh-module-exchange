@@ -70,7 +70,7 @@
    <translation id="exchange_ACTION_export_confirm" qtlid="217080">Vuoi davvero esportare i tuoi account?</translation>
 
 <!-- OFFICE ATTACHED -->
-   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Promozione:</strong> attiva gratis Office 365 sui tupi account Exchange!</translation>
+   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Promozione:</strong> attiva gratis Office 365 sui tuoi account Exchange!</translation>
    <translation id="exchange_office_attached_alert_details" qtlid="404213">L'offerta è relativa al prodotto Office 365 Business e potrà essere utilizzata su un massimo di {0} account Exchange. Solo il primo mese è incluso: in seguito, il servizio si rinnova automaticamente al prezzo indicato alla data di scadenza sul sito <a target="_blank" href="https://www.ovh.it:51043">https://www.ovh.it:51043</a></translation>
    <translation id="exchange_office_attached_alert_button" qtlid="404226">Approfitta dell'offerta</translation>
    <translation id="exchange_office_attached_alert_modale_title" qtlid="404239">Attiva la promozione Office 365</translation>
@@ -148,7 +148,7 @@
    <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="171188">Apertura in corso</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Sospeso</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Sospensione in corso</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_MIGRATING">Migration en cours</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_MIGRATING" qtlid="186713">Trasferimento in corso</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SPAM" qtlid="70409">Spam</translation>
 
    <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="31522">OK</translation>
@@ -579,7 +579,7 @@
    <translation id="exchange_tab_domain_add_step2_srv_checkbox" qtlid="138011">Configura automaticamente l'SRV (autodiscover)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_checkbox" qtlid="139585">Configura automaticamente l'MX (ricezione delle email)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_tooltip" qtlid="140209">Attenzione, la configurazione automatica dell'MX può compromettere la ricezione delle email configurate in precedenza su questo dominio.</translation>
-   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="273909">Questa opzione permette al tuo client di posta, ad esempio Outlook o Mail, di scoprire automaticamente le tue impostazioni di connessione.</translation>
+   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="273909">Questa opzione permette al tuo client di posta, ad esempio Outlook o Mail, di scoprire automaticamente le tue impostazioni di connessione (con riserva di compatibilità con il protocollo MAPI).</translation>
    <translation id="exchange_tab_domain_add_step3_srv_confirmation" qtlid="137816">Configurazione SRV</translation>
    <translation id="exchange_tab_domain_add_step3_mx_confirmation" qtlid="137829">Configurazione MX</translation>
    <translation id="exchange_tab_domain_add_step3_mx_replay" qtlid="316957">Server di posta di destinazione</translation>
@@ -594,7 +594,7 @@
    <translation id="exchange_tab_domain_inverse_NON_AUTHORITATIVE" qtlid="58807">Autoritativo</translation>
    <translation id="exchange_tab_domain_inverse_AUTHORITATIVE" qtlid="136672">Non autoritativo</translation>
    <translation id="exchange_tab_domain_mode_AUTHORITATIVE" qtlid="316970">Autoritativa (solo Exchange)</translation>
-   <translation id="exchange_tab_domain_mode_NON_AUTHORITATIVE" qtlid="316983">Non autoritativa (Exchange + altro servizio di messaggistica)</translation>
+   <translation id="exchange_tab_domain_mode_NON_AUTHORITATIVE" qtlid="316983">Non autoritativa (Exchange + altro servizio di posta)</translation>
    <translation id="exchange_tab_domain_AUTHORITATIVE_info" qtlid="324847">Con la modalità autoritativa non è possibile utilizzare contemporaneamente un account Exchange e un altro servizio di posta. Questa modalità consente l'attivazione dell'Antispam Vade Secure.</translation>
    <translation id="exchange_tab_domain_NON_AUTHORITATIVE_info" qtlid="324860">La modalità non autoritativa ti permette di utilizzare contemporaneamente la tua soluzione Exchange e un altro servizio di posta. L'Antispam Vade Secure è compatibile se i tuoi account POP/IMAP sono ospitati in OVH (MX Plan o offerta condivisa). In questo caso, indica "mx1.mail.ovh.net" come server di destinazione.</translation>
    <translation id="exchange_tab_domain_target_mail_server_label" qtlid="316957">Server di posta di destinazione</translation>
@@ -834,7 +834,7 @@
    <translation id="exchange_tab_GROUPS_header" qtlid="32962">Gruppi</translation>
    <translation id="exchange_tab_GROUPS_remove_account_tooltip" qtlid="150073">Elimina l'account da questo gruppo</translation>
    <translation id="exchange_tab_GROUPS_intro" qtlid="155873">Lista dei gruppi dell'account <span class="bold">{0}</span></translation>
-   <translation id="exchange_tab_GROUPS_table_empty" qtlid="150099">Non hai gruppi su questo account</translation>
+   <translation id="exchange_tab_GROUPS_table_empty" qtlid="150099">Non sono presenti gruppi per questo account</translation>
    <translation id="exchange_tab_GROUPS_table_empty_search" qtlid="150112">Non ci sono gruppi corrispondenti alla ricerca</translation>
    <translation id="exchange_tab_GROUPS_state_TASK_ON_DOING" qtlid="26383">In corso</translation>
    <translation id="exchange_tab_GROUPS_state_TASK_ON_DOING_tooltip" qtlid="150125">Un task su questo gruppo è in corso di esecuzione o è stato programmato</translation>
@@ -872,7 +872,7 @@
    <translation id="exchange_tab_GROUPS_all_table_manager" qtlid="81487">Amministratori</translation>
    <translation id="exchange_tab_GROUPS_all_table_user" qtlid="32206">Contatti</translation>
    <translation id="exchange_tab_GROUPS_all_table_status" qtlid="8230">Stato</translation>
-   <translation id="exchange_tab_GROUPS_all_table_empty" qtlid="150346">Non hai gruppi</translation>
+   <translation id="exchange_tab_GROUPS_all_table_empty" qtlid="150346">Non sono presenti gruppi</translation>
    <translation id="exchange_tab_GROUPS_all_error_message" qtlid="150359">Si è verificato un errore nel caricamento della lista dei tuoi gruppi.</translation>
    <translation id="exchange_tab_GROUPS_all_add_ml_button" qtlid="150372">Crea un gruppo di contatto</translation>
    <translation id="exchange_tab_GROUPS_menu_settings" qtlid="150385">Configura il gruppo</translation>

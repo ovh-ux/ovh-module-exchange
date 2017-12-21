@@ -23,7 +23,7 @@
    <translation id="exchange_dashboard_hostname" qtlid="136178">Server adres</translation>
    <translation id="exchange_dashboard_renew" qtlid="136191">Verlenging van de dienst</translation>
    <translation id="exchange_dashboard_domains" qtlid="276298">Geassocieerde domeinen</translation>
-   <translation id="exchange_dashboard_accounts" qtlid="136204">Exchange accounts</translation>
+   <translation id="exchange_dashboard_accounts" qtlid="136204">Exchange-accounts</translation>
    <translation id="exchange_dashboard_tasks" qtlid="136217">Recente taken</translation>
    <translation id="exchange_dashboard_diag" qtlid="136230">Diagnose server </translation>
    <translation id="exchange_dashboard_guides" qtlid="366359">Heeft u hulp nodig bij de configuratie van uw Exchange oplossing? </translation>
@@ -64,17 +64,17 @@
    <translation id="exchange_ACTION_export_accounts_button" qtlid="217015">De accounts naar CSV exporteren</translation>
    <translation id="exchange_ACTION_export_accounts_office_attached_button" qtlid="404187">Probeer Office 365 gratis uit</translation>
    <translation id="exchange_ACTION_export_accounts_doing_button" qtlid="217028">Export wordt uitgevoerd...</translation>
-   <translation id="exchange_ACTION_export_error" qtlid="217041">Er is een fout opgetreden bij het exporteren van uw Exchange accounts.</translation>
-   <translation id="exchange_ACTION_export_success" qtlid="217054">De export van uw Exchange accounts is voltooid.</translation>
+   <translation id="exchange_ACTION_export_error" qtlid="217041">Er is een fout opgetreden bij het exporteren van uw Exchange-accounts.</translation>
+   <translation id="exchange_ACTION_export_success" qtlid="217054">De export van uw Exchange-accounts is voltooid.</translation>
    <translation id="exchange_ACTION_export_explain" qtlid="217067">Het exporteren van uw Exchange accounts kan enkele minuten duren (afhankelijk van het aantal accounts waarvan u eigenaar bent).</translation>
    <translation id="exchange_ACTION_export_confirm" qtlid="217080">Weet u zeker dat u uw accounts wilt exporteren?</translation>
 
 <!-- OFFICE ATTACHED -->
-   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Actie:</strong> activeer Office 365 gratis op uw Exchange adressen!</translation>
+   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Actie:</strong> activeer Office 365 gratis op uw Exchange-adressen!</translation>
    <translation id="exchange_office_attached_alert_details" qtlid="404213">Actie biedt Office 365 Business. Maximaal {0} Exchange adressen kunnen worden gebruikt. Geldt enkel voor de eerste maand, daarna wordt het aanbod automatisch verlengd op de verlengdatum tegen het aangegeven op <a target="_blank" href="https://www.ovh.nl:51043">https://www.ovh.nl:51043</a></translation>
    <translation id="exchange_office_attached_alert_button" qtlid="404226">Profiteer van deze aanbieding</translation>
    <translation id="exchange_office_attached_alert_modale_title" qtlid="404239">Activeer de Office 365 aanbieding</translation>
-   <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Verkrijg gratis Office 365 op maximaal {0} Exchange accounts naar keuze</translation>
+   <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Verkrijg gratis Office 365 op maximaal {0} Exchange-accounts naar keuze</translation>
    <translation id="exchange_office_attached_alert_modale_selected_accounts" qtlid="404265">{0} geselecteerde accounts voor een maximum van {1}</translation>
    <translation id="exchange_office_attached_alert_modale_account_types" qtlid="404278">Soorten accounts te gebruiken in de zoekopdrachten</translation>
    <translation id="exchange_office_attached_alert_modale_search_form" qtlid="404291">Zoek te gebruiken e-mailaccounts </translation>
@@ -148,7 +148,7 @@
    <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="171188">Opening wordt uitgevoerd</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Vervallen</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Schorsing wordt uitgevoerd</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_MIGRATING">Migration en cours</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_MIGRATING" qtlid="186713">Migratie wordt uitgevoerd</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SPAM" qtlid="70409">Spam</translation>
 
    <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="31522">OK</translation>
@@ -366,7 +366,7 @@
    <translation id="exchange_tab_domain_diagnostic_mx_label_champs" qtlid="46780">MX velden</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_no_antispam" qtlid="319895">Als u gebruik maakt van de non-authoritative modus (Exchange + andere e-mail service) met een niet door OVH gehoste e-mail service: </translation>
    <translation id="exchange_tab_domain_diagnostic_mx_no_antispam_config" qtlid="192929">Prioriteit: <strong>{0}</strong>; target: <strong>{1}</strong></translation>
-   <translation id="exchange_tab_domain_diagnostic_mx_antispam" qtlid="319908">Als u gebruik maakt van de authoritative of non-authoritative modus met een door OVH gehoste e-mail service: </translation>
+   <translation id="exchange_tab_domain_diagnostic_mx_antispam" qtlid="319908">Als u gebruik maakt van de authoritative of non-authoritative modus met een door OVH gehoste e-maildienst: </translation>
    <translation id="exchange_tab_domain_diagnostic_mx_antispam_config" qtlid="192955">Prioriteit: <strong>{0}</strong>; target: <strong>{1}</strong><br /> Prioriteit: <strong>{2}</strong>; target: <strong>{3}</strong><br /> Prioriteit: <strong>{4}</strong>; target: <strong>{5}</strong><br /> Prioriteit: <strong>{6}</strong>; target: <strong>{7}</strong><br /></translation>
    <translation id="exchange_tab_domain_diagnostic_mx_no_ovh" qtlid="349101">Als het domein niet onder hetzelfde klant ID als de Exchange oplossing wordt beheerd, of als uw domein elders is geregistreerd, is automatische configuratie niet mogelijk. Maak aub handmatig een MX-record aan op dit domein met dezelfde informatie die u hierboven heeft ingevoerd. </translation>
    <translation id="exchange_tab_domain_diagnostic_mx_recap" qtlid="192981">Een MX-record zal worden toegevoegd aan de DNS-zone van uw domein. Let op, de reeds bestaande MX-records zullen worden verwijderd.</translation>
@@ -393,7 +393,7 @@
    <translation id="exchange_tab_domain_add_domain" qtlid="8602">Een domein toevoegen</translation>
    <translation id="exchange_tab_domain_delete_domain" qtlid="137556">Verwijder dit domein van de Exchange diensten</translation>
    <translation id="exchange_tab_domain_delete_domain_accounts_warning" qtlid="148227">Dit domein kan niet worden verwijderd, omdat deze  nog steeds wordt gebruikt door een of meer Exchange accounts</translation>
-   <translation id="exchange_tab_domain_NON_AUTHORITATIVE" qtlid="136672">Niet-autoritatief</translation>
+   <translation id="exchange_tab_domain_NON_AUTHORITATIVE" qtlid="136672">Non-authoritative</translation>
    <translation id="exchange_tab_domain_AUTHORITATIVE" qtlid="58807">autoritatief</translation>
    <translation id="exchange_tab_domain_warning" qtlid="136347">Let op!</translation>
    <translation id="exchange_tab_domain_partial" qtlid="137569">Sommige domeinen konden niet juist worden geladen. Vernieuw svp de pagina om het probleem op te lossen.</translation>
@@ -571,13 +571,13 @@
    <translation id="exchange_tab_domain_step1_helpwizard_subdomain" qtlid="397559">Om een van de subdomeinen van uw OVH domein toe te voegen, vinkt u 'Voeg een domeinnaam toe die niet beheerd is door uw OVH account' aan en voer het in in het bijbehorende veld. </translation>
    <translation id="exchange_tab_domain_add_step2_which_domain_type" qtlid="137998">Wat voor type domein <span class="italic">{0}</span> is het?</translation>
    <translation id="exchange_tab_domain_add_step2_auth_intro" qtlid="140859">Uw domein <span class="italic"> {0} </span> zal worden geconfigureerd in autoritatieve modus.</translation>
-   <translation id="exchange_tab_domain_add_step2_non_auth_intro" qtlid="366372">Uw <span class="italic">{0}</span> domein zal in in non-authorative modus worden geconfigureerd.</translation>
+   <translation id="exchange_tab_domain_add_step2_non_auth_intro" qtlid="366372">Uw <span class="italic">{0}</span> domein zal in in non-authoritative modus worden geconfigureerd.</translation>
    <translation id="exchange_tab_domain_add_step2bis_intro" qtlid="316944">Selecteer uw domeinformulier: </translation>
 
    <translation id="exchange_tab_domain_add_step2_srv_checkbox" qtlid="138011">Automatisch configureren van de SRV (autodiscover)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_checkbox" qtlid="139585">De MX automatisch configureren (ontvangst van de e-mails)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_tooltip" qtlid="140209">Let op: het automatisch configureren van de MX kan invloed hebben op de ontvangst van e-mails die vooraf zijn geconfigureerd op deze domeinnaam.</translation>
-   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="273909">Deze optie maakt het mogelijk uw e-mailprogramma - bijvoorbeeld Outlook of Mail - de verbindingsinstellingen automatisch te bepalen (zolang het verenigbaar is met het MAPI-protocol).</translation>
+   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="273909">Met deze optie kan uw e-mailclient, zoals Outlook of Mail, automatisch uw verbindingsinstellingen vinden (afhankelijk van compatibiliteit met het MAPI-protocol).</translation>
    <translation id="exchange_tab_domain_add_step3_srv_confirmation" qtlid="137816">SRV-configuratie</translation>
    <translation id="exchange_tab_domain_add_step3_mx_confirmation" qtlid="137829">MX-configuratie</translation>
    <translation id="exchange_tab_domain_add_step3_mx_replay" qtlid="316957">Bestemming e-mail server</translation>
@@ -590,11 +590,11 @@
    <translation id="exchange_tab_domain_modify_failure" qtlid="137075">Er is een fout opgetreden tijdens het bijwerken van het domein.</translation>
    <translation id="exchange_tab_domain_modify_in_progress" qtlid="137088">Conversie naar {0} wordt uitgevoerd</translation>
    <translation id="exchange_tab_domain_inverse_NON_AUTHORITATIVE" qtlid="58807">autoritatief</translation>
-   <translation id="exchange_tab_domain_inverse_AUTHORITATIVE" qtlid="136672">Niet-autoritatief</translation>
+   <translation id="exchange_tab_domain_inverse_AUTHORITATIVE" qtlid="136672">Non-authoritative</translation>
    <translation id="exchange_tab_domain_mode_AUTHORITATIVE" qtlid="316970">Authoritative (enkel Exchange)</translation>
-   <translation id="exchange_tab_domain_mode_NON_AUTHORITATIVE" qtlid="316983">Non authoritative (Exchange + andere e-mail service)</translation>
+   <translation id="exchange_tab_domain_mode_NON_AUTHORITATIVE" qtlid="316983">Non-authoritative (Exchange + andere e-maildienst)</translation>
    <translation id="exchange_tab_domain_AUTHORITATIVE_info" qtlid="324847">De authoritative modus staat het gebruik van een ander e-mailsysteem met Exchange accounts niet toe. Met deze modus kunt u Vade Secure anti-spam activeren. </translation>
-   <translation id="exchange_tab_domain_NON_AUTHORITATIVE_info" qtlid="324860">De non authoritative modus laat u Exchange en een andere e-mailservice gebruiken. Vade Secure anti-spam is alleen compatibel als de pop/imap gehost zijn bij OVH (mxplan of gedeelde service), in dit geval moet u mxl.mail.ovh.net invoeren als de bestemming e-mail server. </translation>
+   <translation id="exchange_tab_domain_NON_AUTHORITATIVE_info" qtlid="324860">De non-authoritative modus laat u Exchange en een andere e-maildienst gebruiken. Vade Secure anti-spam is alleen compatibel als de pop/imap gehost zijn bij OVH (mxplan of gedeelde service), in dit geval moet u mxl.mail.ovh.net invoeren als de  e-mailserver van bestemming. </translation>
    <translation id="exchange_tab_domain_target_mail_server_label" qtlid="316957">Bestemming e-mail server</translation>
    <translation id="exchange_tab_domain_noovh_mx_info" qtlid="317126">MX en SRV wijzigingen dienen handmatig uitgevoerd te worden in uw DNS-zone. U kunt de benodigde informatie vinden in het bijbehorende domeinonderdeel, zodra de CNAME gevalideerd is. </translation>
    <translation id="exchange_tab_domain_modify_domain" qtlid="137101">Een domein bewerken</translation>

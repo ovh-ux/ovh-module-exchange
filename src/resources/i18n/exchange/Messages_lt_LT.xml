@@ -148,7 +148,7 @@
    <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="171188">Atidaroma</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Pristabdytas</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Pristabdoma</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_MIGRATING">Migration en cours</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_MIGRATING" qtlid="186713">Vyksta migravimas</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SPAM" qtlid="70409">Spam</translation>
 
    <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="31522">OK</translation>
@@ -554,7 +554,7 @@
 
    <translation id="exchange_tab_domain_add_step1_main_domain" qtlid="191070">Pagrindinis organizacijos domenas</translation>
    <translation id="exchange_tab_domain_add_step1_main_domain_tooltip" qtlid="191083">Pagrindinis organizacijos domenas</translation>
-   <translation id="exchange_tab_domain_add_step1_new_organization_intro" qtlid="191096">Jūsų organizacijos pavadinimas bus "{0}"</translation>
+   <translation id="exchange_tab_domain_add_step1_new_organization_intro" qtlid="191096">Jūsų organizacijos pavadinimas bus {0}</translation>
    <translation id="exchange_tab_domain_add_step1_new_organization_placeholder" qtlid="191109">Organizacijos pavadinimas</translation>
    <translation id="exchange_tab_domain_add_step2_main_domain" qtlid="191122">Pagrindinis domenas</translation>
    <translation id="exchange_tab_domain_add_step2_organization" qtlid="32278">Organizacija</translation>
@@ -572,7 +572,7 @@
    <translation id="exchange_tab_domain_step1_helpwizard_subdomain" qtlid="397559">Norėdami pridėti subdomeną vienam iš OVH domenų, pažymėkite varnele „Įvesti domeną, nevaldomą OVH kliento paskyroje“ ir įveskite jį atitinkamame lauke.</translation>
    <translation id="exchange_tab_domain_add_step2_which_domain_type" qtlid="137998">Koks tai domenas <span class="italic">{0}</span>?</translation>
    <translation id="exchange_tab_domain_add_step2_auth_intro" qtlid="140859">Jūsų domenas <span class="italic">{0}</span> bus sukonfigūruotas privaloma tvarka.</translation>
-   <translation id="exchange_tab_domain_add_step2_non_auth_intro" qtlid="366372">Jūsų domenas <span class="italic">{0}</span> bus sukonfigūruotas non-authoritative būdu.</translation>
+   <translation id="exchange_tab_domain_add_step2_non_auth_intro" qtlid="366372">Jūsų domenas <span class="italic">{0}</span> bus sukonfigūruotas non-authoritative režimu.</translation>
    <translation id="exchange_tab_domain_add_step2bis_intro" qtlid="316944">Pasirinkite domeno režimą:</translation>
 
    <translation id="exchange_tab_domain_add_step2_srv_checkbox" qtlid="138011">Automatiškai konfigūruoti SRV (autodiscover)</translation>
@@ -832,7 +832,7 @@
    <translation id="exchange_tab_GROUPS_header" qtlid="32962">Grupės</translation>
    <translation id="exchange_tab_GROUPS_remove_account_tooltip" qtlid="150073">Pašalinti paskyrą iš šios grupės</translation>
    <translation id="exchange_tab_GROUPS_intro" qtlid="155873">Paskyros <span class="bold">{0}</span> grupių sąrašas</translation>
-   <translation id="exchange_tab_GROUPS_table_empty" qtlid="150099">Ši paskyrą neturi grupių</translation>
+   <translation id="exchange_tab_GROUPS_table_empty" qtlid="150099">Ši paskyra neturi grupių</translation>
    <translation id="exchange_tab_GROUPS_table_empty_search" qtlid="150112">Neturite grupių, atitinkančių paieškos kriterijų</translation>
    <translation id="exchange_tab_GROUPS_state_TASK_ON_DOING" qtlid="26383">Vykdoma</translation>
    <translation id="exchange_tab_GROUPS_state_TASK_ON_DOING_tooltip" qtlid="150125">Grupės užduotis jau suplanuota arba vykdoma</translation>

@@ -11,7 +11,9 @@
                 this.retrievingEmailAccounts();
             });
 
-            this.tooltipText = this.translator.tr("exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip");
+            const mxAndSRVTooltipFirstSentence = this.translator.tr("exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_1");
+            const mxAndSRVTooltipSecondSentence = this.translator.tr("exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_2");
+            this.tooltipText = `${mxAndSRVTooltipFirstSentence}<br /><br />${mxAndSRVTooltipSecondSentence}`;
 
             this.isLoading = true;
             this.homepage.savingCheckpoint()
