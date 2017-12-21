@@ -687,7 +687,7 @@
    <translation id="exchange_ACTION_add_disclaimer_option_OtherPhoneNumber" qtlid="152479">Téléphone 2</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_PagerNumber" qtlid="152492">Numéro de pager</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_PhoneNumber" qtlid="152505">Numéro de téléphone</translation>
-   <translation id="exchange_ACTION_add_disclaimer_option_State" qtlid="447807">État</translation>
+   <translation id="exchange_ACTION_add_disclaimer_option_State">Région</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Street" qtlid="152518">Rue</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Title" qtlid="16469">Titre</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_UserLogonName" qtlid="46792">Identifiant</translation>
