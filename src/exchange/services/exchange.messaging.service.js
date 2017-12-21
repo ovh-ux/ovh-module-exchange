@@ -18,19 +18,15 @@ angular
                 ];
 
                 _.forEach(value, (currentValue) => {
-                    /* eslint-disable no-continue */
-                    if (_.isEmpty(currentValue)) {
-                        return;
-                    }
-                    /* eslint-enable no-continue */
-
-                    if (_.isString(currentValue)) {
-                        this.messageDetails.push({ id: null, message: currentValue });
-                    } else if (_.isString(currentValue.message)) {
-                        this.messageDetails.push({ id: currentValue.id, message: currentValue.message });
-                    } else if (currentValue.messages != null) {
-                        this.messageDetails = currentValue.messages.map((currentMessage) => ({ id: currentMessage.code, message: currentMessage.message }));
-                        this.messageDetails = _.uniq(this.messageDetails, (currentMessage) => `${currentMessage.id}${currentMessage.message}`);
+                    if (!_.isEmpty(currentValue)) {
+                        if (_.isString(currentValue)) {
+                            this.messageDetails.push({ id: null, message: currentValue });
+                        } else if (_.isString(currentValue.message)) {
+                            this.messageDetails.push({ id: currentValue.id, message: currentValue.message });
+                        } else if (currentValue.messages != null) {
+                            this.messageDetails = currentValue.messages.map((currentMessage) => ({ id: currentMessage.code, message: currentMessage.message }));
+                            this.messageDetails = _.uniq(this.messageDetails, (currentMessage) => `${currentMessage.id}${currentMessage.message}`);
+                        }
                     }
                 });
             }
