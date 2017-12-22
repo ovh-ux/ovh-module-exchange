@@ -71,12 +71,12 @@
                 <tbody data-ng-if="!ctrl.loading.step1.table && (ctrl.accounts.list.results.length > 0 || ctrl.accounts.list.messages.length > 0)">
                     <tr data-ng-repeat="account in (ctrl.accounts.list.results | orderBy:'primaryEmailAddress':false) track by $index">
                         <td>
-                            <input type="checkbox" id="checkbox_{{account.exchangeGuid}}" 
+                            <input type="checkbox" id="checkbox_{{account.primaryEmailAddress}}" 
                                    data-ng-change="ctrl.countNumberOfCheckedAccounts(account)" 
                                    data-ng-model="ctrl.selectedCheckboxes[account.primaryEmailDisplayName]">
                         </td>
                         <td>
-                            <label class="oui-label m-0" for="checkbox_{{account.exchangeGuid}}" data-ng-bind="account.primaryEmailDisplayName"></label>
+                            <label class="oui-label m-0" for="checkbox_{{account.primaryEmailAddress}}" data-ng-bind="account.primaryEmailDisplayName"></label>
                         </td>
                     </tr>
                 </tbody>
