@@ -105,6 +105,14 @@
                                     </div>
                                 </li>
                                 <li class="oui-tile__item"
+                                    data-ng-if="ctrl.displayRenewDate()">
+                                    <div class="oui-tile__definition">
+                                        <strong class="d-block"
+                                                data-i18n-static="exchange_dashboard_expiration"></strong>
+                                        <span data-ng-bind="ctrl.exchange.expiration | date:'mediumDate'"></span>
+                                    </div>
+                                </li>
+                                <li class="oui-tile__item"
                                     data-ng-if="ctrl.shouldDisplayOfficeAttached">
                                     <div class="oui-tile__definition panel-body">
                                         <button class="btn btn-block btn-default ml-auto my-auto" type="button"
@@ -114,14 +122,6 @@
                                                 <span class="bottom ovh-font ovh-font-0x8" data-i18n-static="exchange_office_1M_promotion_button_title_extra"></span>
                                             </div>
                                         </button>
-                                    </div>
-                                </li>
-                                <li class="oui-tile__item"
-                                    data-ng-if="ctrl.displayRenewDate()">
-                                    <div class="oui-tile__definition">
-                                        <strong class="d-block"
-                                                data-i18n-static="exchange_dashboard_expiration"></strong>
-                                        <span data-ng-bind="ctrl.exchange.expiration | date:'mediumDate'"></span>
                                     </div>
                                 </li>
                             </ul>
