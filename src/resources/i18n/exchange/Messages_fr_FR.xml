@@ -81,7 +81,7 @@
    <translation id="exchange_office_1M_promotion_confirmation_header"> {0} sur {1} comptes e-mails sélectionnés</translation>
    <translation id="exchange_office_1M_promotion_selection_button_caption">Sélectionner</translation>
    <translation id="exchange_office_1M_promotion_selection_change_link">Modifier mes choix</translation>
-   <translation id="exchange_office_1M_promotion_legal_conditions_caption">En cochant cette case, je confirme vouloir souscrire à l'offre pour les comptes ci-dessus et je confirme avoir compris que l'offre sera reconduite automatiquement si je ne l'annule pas. (Vous aurez un rappel X jours avant la fin de l'offre promotionnelle.)</translation> 
+   <translation id="exchange_office_1M_promotion_legal_conditions_caption">En cochant cette case, je confirme vouloir souscrire à l'offre pour les comptes ci-dessus et je confirme avoir compris que l'offre sera reconduite automatiquement si je ne l'annule pas.</translation> 
    <translation id="exchange_office_1M_promotion_order_button_caption">Profiter de l'offre</translation>
 
 <!-- ########################################## -->
