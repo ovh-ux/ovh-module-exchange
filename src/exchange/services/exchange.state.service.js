@@ -22,7 +22,7 @@ angular
         }
 
         static isOk (account) {
-            return ExchangeStates.isState(account, "OK") && account.readyToUse;
+            return ExchangeStates.isState(account, "OK");
         }
 
         static isCreating (account) {

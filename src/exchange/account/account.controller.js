@@ -122,7 +122,7 @@ angular
         }
 
         isEditable (account) {
-            return (this.services.exchangeStates.constructor.isOk(account) ||
+            return (account.canBeConfigured ||
                     this.services.exchangeStates.constructor.isDoing(account) ||
                     this.services.exchangeStates.constructor.isInError(account) ||
                     _.includes(this.services.Exchange.dummy_domains, account.domain)) && !this.noDomainFlag;
@@ -130,10 +130,6 @@ angular
 
         hasDummyDomain (account) {
             return _.includes(this.services.Exchange.dummy_domains, account.domain);
-        }
-
-        isConfigurable (account) {
-            return this.services.exchangeStates.constructor.isOk(account);
         }
 
         editAccount (account) {

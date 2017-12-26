@@ -210,7 +210,7 @@
                                 </button>
 
                                 <button class="btn btn-icon" type="button" title="{{i18n.exchange_tab_ACCOUNTS_menu_account_tooltip}}"
-                                        data-ng-if="ctrl.isConfigurable(account) && account.readyToUse"
+                                        data-ng-if="account.canBeConfigured"
                                         data-linkedpopover="exchange/account/popover/account.popover.html"
                                         data-linkedpopover-placement="left"
                                         data-linkedpopover-single="true"
