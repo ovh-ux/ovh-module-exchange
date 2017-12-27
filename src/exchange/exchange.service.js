@@ -596,7 +596,7 @@ angular
         /**
          * Get Exchange accounts aliases
          */
-        getAliases (organization, serviceName, account, count = 10, offset = 0) {
+        getAliases (organization, serviceName, account, count = 10, offset = 0, search = "") {
             return this.services
                 .OvhHttp
                 .get("/sws/exchange/{organization}/{exchange}/accounts/{account}/alias", {
@@ -608,7 +608,8 @@ angular
                     },
                     params: {
                         count,
-                        offset
+                        offset,
+                        search
                     }
                 });
         }

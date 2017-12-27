@@ -15,31 +15,58 @@
         </div>
 
         <div data-ng-show="!ctrl.aliasLoading && ctrl.aliases.list.results.length > 0">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col" data-i18n-static="exchange_tab_ALIAS_header"></th>
-                        <th class="min-width" scope="col"></th>
-                    </tr>
-                </thead>
 
-                <tbody>
-                    <tr data-ng-repeat="alias in ctrl.aliases.list.results track by $index">
-                        <th scope="row"
-                            data-ng-bind="alias.displayName"></th>
-                        <td class="text-center">
-                            <span class="label label-info" title="{{i18n.exchange_tab_ALIAS_state_TASK_ON_DOING_tooltip}}"
-                                  data-i18n-static="exchange_tab_ALIAS_state_TASK_ON_DOING"
-                                  data-ng-if="alias.taskPendingId"></span>
-                            <button class="btn btn-icon" type="button" title="{{i18n.exchange_tab_ALIAS_delete_tooltip}}"
-                                    data-ng-click="ctrl.deleteAlias(alias)"
-                                    data-ng-if="!alias.taskPendingId">
-                                <span class="oui-icon oui-icon-trash_line oui-icon_small" aria-hidden="true"></span>
+            <form class="form-inline d-md-flex justify-content-md-end mb-3" name="searchAccountForm">
+                <div class="form-group">
+                    <label class="sr-only" for="accountSearch" data-i18n-static="common_search"></label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="accountSearch" maxlength="256" name="accountSearch" placeholder="{{::i18n.exchange_tab_ACCOUNTS_table_email}}"
+                                data-ng-change="ctrl.onSearch()"
+                                data-ng-disabled="ctrl.aliasLoading"
+                                data-ng-model="ctrl.search.value"
+                                data-ng-model-options="{ debounce: 800 }">
+                        <div class="input-group-btn" data-ng-if="ctrl.search.value">
+                            <button class="btn btn-default" type="button" aria-label="{{i18n.common_cancel}}"
+                                    data-ng-click="ctrl.resetSearch()"
+                                    data-ng-disabled="ctrl.aliasLoading">
+                                <span class="fa fa-times" aria-hidden="true"></span>
                             </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                        </div>
+                        <span class="input-group-addon" data-ng-if="!ctrl.search.value">
+                            <span class="fa fa-search" aria-hidden="true"></span>
+                        </span>
+                    </div>
+                </div>
+            </form>
+            
+
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col" data-i18n-static="exchange_tab_ALIAS_header"></th>
+                            <th class="min-width" scope="col"></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr data-ng-repeat="alias in ctrl.aliases.list.results track by $index">
+                            <th scope="row"
+                                data-ng-bind="alias.displayName"></th>
+                            <td class="text-center">
+                                <span class="label label-info" title="{{i18n.exchange_tab_ALIAS_state_TASK_ON_DOING_tooltip}}"
+                                    data-i18n-static="exchange_tab_ALIAS_state_TASK_ON_DOING"
+                                    data-ng-if="alias.taskPendingId"></span>
+                                <button class="btn btn-icon" type="button" title="{{i18n.exchange_tab_ALIAS_delete_tooltip}}"
+                                        data-ng-click="ctrl.deleteAlias(alias)"
+                                        data-ng-if="!alias.taskPendingId">
+                                    <span class="oui-icon oui-icon-trash_line oui-icon_small" aria-hidden="true"></span>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
             <div class="clearfix"
                  data-pagination-server-side="aliasTable"

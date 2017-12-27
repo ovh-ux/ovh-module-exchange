@@ -23,6 +23,21 @@ angular
             $scope.getAliases = (count, offset) => this.getAliases(count, offset);
             $scope.getAliasesValue = () => this.aliases;
             $scope.getAliasLoading = () => this.aliasLoading;
+
+            this.search = {
+                value: null
+            };
+
+            $scope.$on(Exchange.events.accountsChanged, () => $scope.$broadcast("paginationServerSide.reload", "aliasTable"));
+        }
+
+        onSearch () {
+            this.services.$scope.$broadcast("paginationServerSide.loadPage", 1, "aliasTable");
+        }
+
+        resetSearch () {
+            this.search.value = null;
+            this.services.$scope.$broadcast("paginationServerSide.loadPage", 1, "aliasTable");
         }
 
         getAliases (count, offset) {
@@ -30,7 +45,7 @@ angular
                 this.aliasLoading = true;
                 this.services
                     .Exchange
-                    .getAliases(this.$routerParams.organization, this.$routerParams.productId, this.services.ExchangeAccountService.selectedAccount.primaryEmailAddress, count, offset)
+                    .getAliases(this.$routerParams.organization, this.$routerParams.productId, this.services.ExchangeAccountService.selectedAccount.primaryEmailAddress, count, offset, this.search.value)
                     .then((data) => {
                         this.aliases = data;
                     })
@@ -44,7 +59,10 @@ angular
         }
 
         displayAccounts () {
+            this.search.value = null;
+            this.services.ExchangeAccountService.selectedAccount = null;
             this.services.ExchangeAccountService.displayAccounts();
+            this.services.$scope.$broadcast("paginationServerSide.loadPage", 1, "aliasTable");
         }
 
         deleteAlias (alias) {
