@@ -10,7 +10,7 @@
              data-wizard-step-on-load="loadResourceData"
              data-wizard-step-valid="isValid()">
 
-            <oui-loader data-ng-if="!ctrl.availableTypes"></oui-loader>
+            <oui-spinner data-ng-if="!ctrl.availableTypes"></oui-spinner>
 
             <form name="ctrl.addResourceForm"
                   data-ng-if="ctrl.availableTypes">

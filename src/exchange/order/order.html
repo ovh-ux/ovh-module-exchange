@@ -45,7 +45,7 @@
                     <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
                 </div>
             </div>
-            <oui-loader data-ng-if="ctrl.exchanges == null"></oui-loader>
+            <oui-spinner data-ng-if="ctrl.exchanges == null"></oui-spinner>
         </div>
 
         <a class="oui-button oui-button_primary oui-button_large-height" target="{{ ctrl.alreadyHasAnExchange ? '_self' : '_blank'}}"

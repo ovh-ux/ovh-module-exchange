@@ -8,7 +8,7 @@
              data-wizard-step-on-load="onWizardLoad"
              data-wizard-step-valid="isStep1Valid">
 
-            <oui-loader data-ng-if="ctrl.loading.step1.general"></oui-loader>
+            <oui-spinner data-ng-if="ctrl.loading.step1.general"></oui-spinner>
 
             <div data-ng-show="!ctrl.loading.step1.general">
                 <p data-ng-bind-html="tr('exchange_office_attached_alert_modale_header', [ctrl.maxNumberOfAccounts])"></p>
@@ -107,7 +107,7 @@
              data-wizard-step-on-load="loadSelectedAccounts"
              data-wizard-step-valid="isStep2Valid()">
 
-            <oui-loader data-ng-if="ctrl.loading.step2.general"></oui-loader>
+            <oui-spinner data-ng-if="ctrl.loading.step2.general"></oui-spinner>
 
             <div data-ng-if="!ctrl.loading.step2.general">
                 <p data-ng-bind-html="tr('exchange_office_attached_alert_modale_confirmation_header', ['<strong>' + ctrl.numberOfSelectedCheckboxes + '</strong>'])"></p>

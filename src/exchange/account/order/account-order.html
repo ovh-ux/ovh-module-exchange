@@ -9,7 +9,7 @@
         <div data-wizard-step
              data-wizard-step-valid="isValid()">
 
-            <oui-loader data-ng-if="!ctrl.ordersList"></oui-loader>
+            <oui-spinner data-ng-if="!ctrl.ordersList"></oui-spinner>
 
             <div data-ng-if="ctrl.ordersList">
                 <p data-i18n-static="exchange_ACTION_order_accounts_step1_intro"></p>
@@ -32,7 +32,7 @@
 
                     <div class="form-group">
                         <label data-i18n-static="exchange_ACTION_order_accounts_step1_pay_type"></label>
-                        <oui-loader inline="true" data-ng-if="!ctrl.ordersList.length"></oui-loader>
+                        <oui-spinner class="d-inline-block" data-ng-if="!ctrl.ordersList.length"></oui-spinner>
                         <div class="oui-radio"
                              data-ng-repeat="orderAvailable in (ctrl.ordersList | orderBy:'duration') track by $index">
                             <input type="radio" class="oui-radio__input" id="payTypeGroup-{{$index}}" name="payTypeGroup[{{$index}}]"
@@ -85,7 +85,7 @@
              data-wizard-step-valid="getPreviewOrder()">
 
             <div class="text-center" data-ng-if="!ctrl.previewOrder">
-                <oui-loader></oui-loader>
+                <oui-spinner></oui-spinner>
                 <span data-i18n-static="exchange_ACTION_order_accounts_step2_loader"></span>
             </div>
 
@@ -109,7 +109,7 @@
              data-wizard-step-valid="getURL()">
 
             <div class="text-center" data-ng-if="!ctrl.url">
-                <oui-loader></oui-loader>
+                <oui-spinner></oui-spinner>
                 <span data-i18n-static="exchange_ACTION_order_accounts_step3_generation_bc"></span>
             </div>
 

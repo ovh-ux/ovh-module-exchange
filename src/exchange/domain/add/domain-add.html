@@ -10,7 +10,7 @@
              data-wizard-step-on-next="checkDomain"
              data-wizard-step-valid="isNonOvhDomainValid()">
 
-            <oui-loader data-ng-if="ctrl.loading"></oui-loader>
+            <oui-spinner data-ng-if="ctrl.loading"></oui-spinner>
 
             <div data-ng-if="!ctrl.loading">
                 <div class="alert alert-info" role="alert"

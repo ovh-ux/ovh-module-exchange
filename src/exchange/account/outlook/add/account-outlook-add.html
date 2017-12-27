@@ -11,7 +11,7 @@
 
             <p data-ng-bind="tr('exchange_ACTION_add_outlook_into_label', [ctrl.selectedAccount.primaryEmailDisplayName])"></p>
 
-            <oui-loader data-ng-if="!ctrl.optionsList"></oui-loader>
+            <oui-spinner data-ng-if="!ctrl.optionsList"></oui-spinner>
 
             <div data-ng-show="ctrl.optionsList">
                 <form name="orderAccountForm">
@@ -115,7 +115,7 @@
              data-wizard-step-valid="isStep2Valid()">
 
             <div class="text-center" data-ng-if="!ctrl.previewOrder.url">
-                <oui-loader></oui-loader>
+                <oui-spinner></oui-spinner>
                 <span data-i18n-static="exchange_ACTION_add_outlook_order_step2_generation_bc"></span>
             </div>
 

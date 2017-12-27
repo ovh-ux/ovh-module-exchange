@@ -9,7 +9,7 @@
 
 <h1 class="oui-header_3 oui-header_underline title-underlined mt-5" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_header')"></h1>
 
-<oui-loader data-ng-show="$ctrl.loaders.isInitialRetrievalRunning"></oui-loader>
+<oui-spinner data-ng-show="$ctrl.loaders.isInitialRetrievalRunning"></oui-spinner>
 
 <div class="my-5 pb-5" data-ng-show="!$ctrl.loaders.isInitialRetrievalRunning" id="domain-configuration-container">
     <span data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_ifNoDomain')"></span>
@@ -237,7 +237,7 @@
             </button>
 
             <div class="text-center mt-5 pt-5" data-ng-show="$ctrl.loaders.IsWaitingForDomainAssociation">
-                <oui-loader></oui-loader>
+                <oui-spinner></oui-spinner>
                 <strong data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameValidationDelay')"></strong>
                 <p data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameValidation_explanation')"></p>
             </div>
@@ -256,7 +256,7 @@
 
             <p data-ng-bind-html="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_explanation')"></p>
 
-            <oui-loader data-ng-show="$ctrl.homepage.cnameToCheck == null || $ctrl.homepage.cnameToCheck === ''"></oui-loader>
+            <oui-spinner data-ng-show="$ctrl.homepage.cnameToCheck == null || $ctrl.homepage.cnameToCheck === ''"></oui-spinner>
 
             <div data-ng-show="$ctrl.homepage.cnameToCheck != null && $ctrl.homepage.cnameToCheck !== ''">
                 <div class="row">
@@ -290,7 +290,7 @@
                 <div data-ng-show="$ctrl.loaders.IsWaitingForCNAME">
                     <p class="mt-3" data-ng-bind-html="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_cnameToCopy_explanation')"></p>
                     <div class="text-center">
-                        <oui-loader></oui-loader>
+                        <oui-spinner></oui-spinner>
                         <button class="oui-button oui-button_secondary my-3"
                                 type="button"
                                 data-ng-click="$ctrl.closeWizard()">

@@ -11,7 +11,7 @@
 
             <p data-i18n-static="exchange_ACTION_order_upgrade_300G_question_intro"></p>
 
-            <oui-loader data-ng-if="!ctrl.price1M || !ctrl.price12M"></oui-loader>
+            <oui-spinner data-ng-if="!ctrl.price1M || !ctrl.price12M"></oui-spinner>
 
             <form name="upgrate300gForm" data-ng-if="ctrl.price1M && ctrl.price12M">
                 <label class="oui-label"

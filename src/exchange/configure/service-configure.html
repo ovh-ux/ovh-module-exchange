@@ -7,12 +7,12 @@
         <div data-wizard-step
              data-wizard-step-valid="isFormValid()">
             <div class="text-center" data-ng-if="ctrl.loaders.details && !ctrl.loaders.put">
-                <oui-loader></oui-loader>
+                <oui-spinner></oui-spinner>
                 <span data-i18n-static="exchange_ACTION_loading"></span>
             </div>
 
             <div class="text-center" data-ng-if="!ctrl.loaders.details && ctrl.loaders.put">
-                <oui-loader></oui-loader>
+                <oui-spinner></oui-spinner>
                 <span data-i18n-static="exchange_ACTION_sending"></span>
             </div>
 
