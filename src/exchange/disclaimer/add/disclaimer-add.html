@@ -43,19 +43,10 @@
                               data-ng-value="ctrl.data.content">
                     </textarea>
 
-                    <div class="oui-checkbox mt-4">
-                        <input type="checkbox" class="oui-checkbox__input" id="outsideOnly"
-                               data-ng-model="ctrl.data.outsideOnly">
-                        <label class="oui-checkbox__label-container" for="outsideOnly">
-                            <span class="oui-checkbox__label"
-                                  data-i18n-static="exchange_ACTION_add_disclaimer_outside"></span>
-                            <span class="oui-checkbox__icon">
-                                <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
-                                <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
-                                <span class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></span>
-                            </span>
-                        </label>
-                    </div>
+                    <oui-checkbox class="mt-4" id="outsideOnly"
+                        model="ctrl.data.outsideOnly"
+                        text="{{::i18n.exchange_ACTION_add_disclaimer_outside}}">
+                    </oui-checkbox>
                 </form>
 
                 <div class="alert alert-warning" role="alert"

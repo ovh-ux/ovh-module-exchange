@@ -79,19 +79,10 @@
                            data-ng-model="ctrl.accountBeingUpdated.displayName">
                 </div>
 
-                <div class="oui-checkbox">
-                    <input type="checkbox" class="oui-checkbox__input" id="hiddenFromGAL"
-                           data-ng-model="ctrl.accountBeingUpdated.hiddenFromGAL">
-                    <label class="oui-checkbox__label-container" for="hiddenFromGAL">
-                        <span class="oui-checkbox__label"
-                              data-i18n-static="exchange_ACTION_update_account_step1_GAL_label"></span>
-                        <span class="oui-checkbox__icon">
-                            <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
-                            <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
-                            <span class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></span>
-                        </span>
-                    </label>
-                </div>
+                <oui-checkbox id="hiddenFromGAL"
+                    model="ctrl.accountBeingUpdated.hiddenFromGAL"
+                    text="{{::i18n.exchange_ACTION_update_account_step1_GAL_label}}">
+                </oui-checkbox>
             </form>
         </div>
 

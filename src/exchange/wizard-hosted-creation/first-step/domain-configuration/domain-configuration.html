@@ -25,50 +25,40 @@
             <legend class="styleless mb-0" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_header')"></legend>
             <div class="row m-0 mt-4 p-0">
                 <div class="checkbox">
-                    <div class="oui-checkbox">
-                        <input type="checkbox"
-                               id="domainFromAnother"
-                               class="oui-checkbox__input d-none"
-                               data-ng-model="$ctrl.homepage.domainIsNotManagedByCurrentNIC"
-                               data-ng-change="$ctrl.onAnotherDomainCheckboxClick()">
-                        <label class="oui-checkbox__label-container" for="domainFromAnother">
-                            <span class="oui-checkbox__label" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_domainNotInList')"></span>
-                            <span class="oui-checkbox__icon">
-                                <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
-                                <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
-                                <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
-                            </span>
-                        </label>
-                        <form name="$ctrl.domainNameForm" data-ng-show="$ctrl.homepage.domainIsNotManagedByCurrentNIC">
-                            <div class="oui-field"
-                                data-ng-class="{ 'oui-field_error': $ctrl.domainNameForm.$dirty && $ctrl.domainNameForm.$invalid }">
-                                <label class="oui-field__label oui-label p-0 m-0 mt-4"
-                                    for="foreignDomainName"
-                                    data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_inputHeader')"></label>
-                                <div class="oui-field__content">
-                                    <div class="oui-field-control oui-field-control_3">
-                                        <input type="text"
-                                                class="oui-input"
-                                                id="foreignDomainName"
-                                                name="foreignDomainName"
-                                                placeholder="{{:: $ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_placeholder') }}"
-                                                data-ng-required="$ctrl.homepage.domainIsNotManagedByCurrentNIC"
-                                                data-ng-model="$ctrl.homepage.domainName"
-                                                data-ng-class="{ 'oui-input_error': $ctrl.domainNameForm.$dirty && $ctrl.domainNameForm.$invalid }"
-                                                data-ng-change="$ctrl.reinitializeCNAMEToCheck(); $ctrl.checkIfDomainIsManagedByThisNIC(); $ctrl.checkIfExternalDomainIsValid(); $ctrl.scrollToBottom();">
-                                    </div>
+                    <oui-checkbox id="domainFromAnother"
+                        model="$ctrl.homepage.domainIsNotManagedByCurrentNIC"
+                        on-change="$ctrl.onAnotherDomainCheckboxClick()"
+                        text="{{::$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_domainNotInList')}}">
+                    </oui-checkbox>
+                    <form name="$ctrl.domainNameForm" data-ng-show="$ctrl.homepage.domainIsNotManagedByCurrentNIC">
+                        <div class="oui-field"
+                            data-ng-class="{ 'oui-field_error': $ctrl.domainNameForm.$dirty && $ctrl.domainNameForm.$invalid }">
+                            <label class="oui-field__label oui-label p-0 m-0 mt-4"
+                                for="foreignDomainName"
+                                data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_inputHeader')"></label>
+                            <div class="oui-field__content">
+                                <div class="oui-field-control oui-field-control_3">
+                                    <input type="text"
+                                            class="oui-input"
+                                            id="foreignDomainName"
+                                            name="foreignDomainName"
+                                            placeholder="{{:: $ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_placeholder') }}"
+                                            data-ng-required="$ctrl.homepage.domainIsNotManagedByCurrentNIC"
+                                            data-ng-model="$ctrl.homepage.domainName"
+                                            data-ng-class="{ 'oui-input_error': $ctrl.domainNameForm.$dirty && $ctrl.domainNameForm.$invalid }"
+                                            data-ng-change="$ctrl.reinitializeCNAMEToCheck(); $ctrl.checkIfDomainIsManagedByThisNIC(); $ctrl.checkIfExternalDomainIsValid(); $ctrl.scrollToBottom();">
                                 </div>
-
-                                <p class="oui-field-helper ml-0 mb-0 mt-2" role="alert" data-ng-messages="$ctrl.domainNameForm.foreignDomainName.$error" data-ng-show="$ctrl.domainNameForm.$dirty && $ctrl.domainNameForm.foreignDomainName.$invalid">
-                                    <span data-ng-message="required" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_add_login_required')"></span>
-                                    <span data-ng-message="pattern" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_input_patternError')"></span>
-                                    <span data-ng-message="isOVHDomain" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_input_alreadyExists')"></span>
-                                </p>
                             </div>
 
-                            <p data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_example')"></p>
-                        </form>
-                    </div>
+                            <p class="oui-field-helper ml-0 mb-0 mt-2" role="alert" data-ng-messages="$ctrl.domainNameForm.foreignDomainName.$error" data-ng-show="$ctrl.domainNameForm.$dirty && $ctrl.domainNameForm.foreignDomainName.$invalid">
+                                <span data-ng-message="required" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_add_login_required')"></span>
+                                <span data-ng-message="pattern" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_input_patternError')"></span>
+                                <span data-ng-message="isOVHDomain" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_input_alreadyExists')"></span>
+                            </p>
+                        </div>
+
+                        <p data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_example')"></p>
+                    </form>
                 </div>
             </div>
             <div class="row m-0 mt-4 p-0" data-ng-if="!$ctrl.homepage.domainIsNotManagedByCurrentNIC">

@@ -63,19 +63,11 @@
                                data-ng-if="ctrl.orderAccountForm.accountNumber.$invalid"></small>
                     </div>
 
-                    <div class="oui-checkbox" data-ng-if="ctrl.worldPart === 'EU'">
-                        <input type="checkbox" class="oui-checkbox__input" id="worldPart-eu"
-                               data-ng-model="ctrl.valid.legalWarning">
-                        <label class="oui-checkbox__label-container" for="worldPart-eu">
-                            <span class="oui-checkbox__label"
-                                  data-ng-bind-html="tr('exchange_ACTION_add_account_legal_warning')"></span>
-                            <span class="oui-checkbox__icon">
-                                <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
-                                <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
-                                <span class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></span>
-                            </span>
-                        </label>
-                    </div>
+                    <oui-checkbox id="worldPart-eu"
+                        ng-if="ctrl.worldPart === 'EU'"
+                        model="ctrl.valid.legalWarning"
+                        text="{{::tr('exchange_ACTION_add_account_legal_warning')}}">
+                    </oui-checkbox>
                 </form>
             </div>
         </div>
