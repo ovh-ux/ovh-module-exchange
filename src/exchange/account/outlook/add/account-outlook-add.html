@@ -11,7 +11,7 @@
 
             <p data-ng-bind="tr('exchange_ACTION_add_outlook_into_label', [ctrl.selectedAccount.primaryEmailDisplayName])"></p>
 
-            <oui-loader data-ng-if="!ctrl.optionsList"></oui-loader>
+            <oui-spinner data-ng-if="!ctrl.optionsList"></oui-spinner>
 
             <div data-ng-show="ctrl.optionsList">
                 <form name="orderAccountForm">
@@ -58,19 +58,10 @@
                     <div class="mb-4" data-ng-show="ctrl.selectedOption.order.contracts.length > 0">
                         <label class="oui-label"
                                data-i18n-static="exchange_ACTION_add_outlook_contracts_label"></label>
-                        <div class="oui-checkbox">
-                            <input type="checkbox" class="oui-checkbox__input" id="contractsValidated"
-                                   data-ng-model="ctrl.selectedOption.contractsValidated">
-                            <label class="oui-checkbox__label-container" for="contractsValidated">
-                                <span class="oui-checkbox__label"
-                                      data-i18n-static="exchange_ACTION_add_outlook_contracts__checkbox"></span>
-                                <span class="oui-checkbox__icon">
-                                    <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
-                                    <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
-                                    <span class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></span>
-                                </span>
-                            </label>
-                        </div>
+                        <oui-checkbox id="contractsValidated"
+                            model="ctrl.selectedOption.contractsValidated"
+                            text="{{::i18n.exchange_ACTION_add_outlook_contracts__checkbox}}">
+                        </oui-checkbox>
 
                         <ul>
                             <li data-ng-repeat="contract in ctrl.selectedOption.order.contracts track by $index">
@@ -115,7 +106,7 @@
              data-wizard-step-valid="isStep2Valid()">
 
             <div class="text-center" data-ng-if="!ctrl.previewOrder.url">
-                <oui-loader></oui-loader>
+                <oui-spinner></oui-spinner>
                 <span data-i18n-static="exchange_ACTION_add_outlook_order_step2_generation_bc"></span>
             </div>
 

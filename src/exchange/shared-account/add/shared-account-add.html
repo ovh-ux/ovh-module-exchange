@@ -8,7 +8,7 @@
              data-wizard-step-on-load="loadingCreationOptions"
              data-wizard-step-valid="isAccountValid()">
 
-            <oui-loader data-ng-if="ctrl.optionsToCreateNewAccounts == null"></oui-loader>
+            <oui-spinner data-ng-if="ctrl.optionsToCreateNewAccounts == null"></oui-spinner>
 
             <form name="ctrl.sharedAccountForm" data-ng-if="ctrl.optionsToCreateNewAccounts != null">
                 <p>
@@ -82,19 +82,10 @@
                            data-ng-model="ctrl.accountBeingCreated.displayName">
                 </div>
 
-                <div class="oui-checkbox">
-                    <input type="checkbox" class="oui-checkbox__input" id="hiddenFromGAL"
-                           data-ng-model="ctrl.accountBeingCreated.hiddenFromGAL">
-                    <label class="oui-checkbox__label-container" for="hiddenFromGAL">
-                        <span class="oui-checkbox__label"
-                              data-i18n-static="exchange_ACTION_update_account_step1_GAL_label"></span>
-                        <span class="oui-checkbox__icon">
-                            <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
-                            <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
-                            <span class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></span>
-                        </span>
-                    </label>
-                </div>
+                <oui-checkbox id="hiddenFromGAL"
+                    model="ctrl.accountBeingCreated.hiddenFromGAL"
+                    text="{{::i18n.exchange_ACTION_update_account_step1_GAL_label}}">
+                </oui-checkbox>
             </form>
         </div>
 

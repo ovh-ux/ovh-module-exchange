@@ -7,7 +7,7 @@
         <div data-wizard-step
              data-wizard-step-valid="isStep1Valid()">
 
-            <oui-loader data-ng-if="ctrl.loadingData"></oui-loader>
+            <oui-spinner data-ng-if="ctrl.loadingData"></oui-spinner>
 
             <div data-ng-if="!ctrl.loadingData">
                 <p data-ng-bind-html="tr('exchange_ACTION_update_disclaimer_info', [ctrl.data.domain.displayName])"></p>
@@ -34,19 +34,10 @@
                               data-ng-value="ctrl.data.content">
                     </textarea>
 
-                    <div class="oui-checkbox mt-4">
-                        <input type="checkbox" class="oui-checkbox__input" id="outsideOnly"
-                               data-ng-model="ctrl.data.outsideOnly">
-                        <label class="oui-checkbox__label-container" for="outsideOnly">
-                            <span class="oui-checkbox__label"
-                                  data-i18n-static="exchange_ACTION_add_disclaimer_outside"></span>
-                            <span class="oui-checkbox__icon">
-                                <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
-                                <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
-                                <span class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></span>
-                            </span>
-                        </label>
-                    </div>
+                    <oui-checkbox class="mt-4" id="outsideOnly"
+                        model="ctrl.data.outsideOnly"
+                        text="{{::i18n.exchange_ACTION_add_disclaimer_outside}}">
+                    </oui-checkbox>
                 </form>
 
                 <div class="alert alert-warning mt-4" role="alert"

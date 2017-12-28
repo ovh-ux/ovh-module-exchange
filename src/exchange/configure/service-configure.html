@@ -7,12 +7,12 @@
         <div data-wizard-step
              data-wizard-step-valid="isFormValid()">
             <div class="text-center" data-ng-if="ctrl.loaders.details && !ctrl.loaders.put">
-                <oui-loader></oui-loader>
+                <oui-spinner></oui-spinner>
                 <span data-i18n-static="exchange_ACTION_loading"></span>
             </div>
 
             <div class="text-center" data-ng-if="!ctrl.loaders.details && ctrl.loaders.put">
-                <oui-loader></oui-loader>
+                <oui-spinner></oui-spinner>
                 <span data-i18n-static="exchange_ACTION_sending"></span>
             </div>
 
@@ -89,19 +89,10 @@
                 </div>
 
                 <!-- Complexity Enabled -->
-                <div class="oui-checkbox">
-                    <input type="checkbox" class="oui-checkbox__input" id="complexityEnabled" name="complexityEnabled"
-                           data-ng-model="ctrl.service.complexityEnabled">
-                    <label class="oui-checkbox__label-container" for="complexityEnabled">
-                        <span class="oui-checkbox__label"
-                              data-i18n-static="exchange_ACTION_configure_services_label_complexityEnabled"></span>
-                        <span class="oui-checkbox__icon">
-                            <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
-                            <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
-                            <span class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></span>
-                        </span>
-                    </label>
-                </div>
+                <oui-checkbox id="complexityEnabled" name="complexityEnabled"
+                    model="ctrl.service.complexityEnabled"
+                    text="{{::i18n.exchange_ACTION_configure_services_label_complexityEnabled}}">
+                </oui-checkbox>
 
                 <!-- Min password Age -->
                 <div class="form-group"
@@ -216,63 +207,27 @@
                 <div class="form-group">
                     <label class="oui-label"
                            data-i18n-static="exchange_ACTION_configure_services_label_incoming_messages"></label>
-                    <div class="oui-checkbox">
-                        <input type="checkbox" class="oui-checkbox__input" id="checkDKIM"
-                               data-ng-model="ctrl.service.spamAndVirusConfiguration.checkDKIM">
-                        <label class="oui-checkbox__label-container" for="checkDKIM">
-                            <span class="oui-checkbox__label"
-                                  data-i18n-static="exchange_ACTION_configure_services_label_dkim"></span>
-                            <span class="oui-checkbox__icon">
-                                <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
-                                <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
-                                <span class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></span>
-                            </span>
-                        </label>
-                    </div>
-                    <div class="oui-checkbox">
-                        <input type="checkbox" class="oui-checkbox__input" id="checkSPF"
-                               data-ng-model="ctrl.service.spamAndVirusConfiguration.checkSPF">
-                        <label class="oui-checkbox__label-container" for="checkSPF">
-                            <span class="oui-checkbox__label"
-                                  data-i18n-static="exchange_ACTION_configure_services_label_spf"></span>
-                            <span class="oui-checkbox__icon">
-                                <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
-                                <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
-                                <span class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></span>
-                            </span>
-                        </label>
-                    </div>
+                    <oui-checkbox id="checkDKIM"
+                        model="ctrl.service.spamAndVirusConfiguration.checkDKIM"
+                        text="{{::i18n.exchange_ACTION_configure_services_label_dkim}}">
+                    </oui-checkbox>
+                    <oui-checkbox id="checkSPF"
+                        model="ctrl.service.spamAndVirusConfiguration.checkSPF"
+                        text="{{::i18n.exchange_ACTION_configure_services_label_spf}}">
+                    </oui-checkbox>
                 </div>
 
                 <div class="form-group">
                     <label class="oui-label"
                            data-i18n-static="exchange_ACTION_configure_services_label_spam"></label>
-                    <div class="oui-checkbox">
-                        <input type="checkbox" class="oui-checkbox__input" id="tagSpam"
-                               data-ng-model="ctrl.service.spamAndVirusConfiguration.tagSpam">
-                        <label class="oui-checkbox__label-container" for="tagSpam">
-                            <span class="oui-checkbox__label"
-                                  data-i18n-static="exchange_ACTION_configure_services_label_tag_spam"></span>
-                            <span class="oui-checkbox__icon">
-                                <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
-                                <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
-                                <span class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></span>
-                            </span>
-                        </label>
-                    </div>
-                    <div class="oui-checkbox">
-                        <input type="checkbox" class="oui-checkbox__input" id="putInJunk"
-                               data-ng-model="ctrl.service.spamAndVirusConfiguration.putInJunk">
-                        <label class="oui-checkbox__label-container" for="putInJunk">
-                            <span class="oui-checkbox__label"
-                                  data-i18n-static="exchange_ACTION_configure_services_label_putinjunk"></span>
-                            <span class="oui-checkbox__icon">
-                                <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
-                                <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
-                                <span class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></span>
-                            </span>
-                        </label>
-                    </div>
+                    <oui-checkbox id="tagSpam"
+                        model="ctrl.service.spamAndVirusConfiguration.tagSpam"
+                        text="{{::i18n.exchange_ACTION_configure_services_label_tag_spam}}">
+                    </oui-checkbox>
+                    <oui-checkbox id="putInJunk"
+                        model="ctrl.service.spamAndVirusConfiguration.putInJunk"
+                        text="{{::i18n.exchange_ACTION_configure_services_label_putinjunk}}">
+                    </oui-checkbox>
                 </div>
             </form>
 

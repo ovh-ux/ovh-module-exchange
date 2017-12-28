@@ -8,7 +8,7 @@
              data-wizard-step-on-load="retrievingOptionsToCreateNewGroup"
              data-wizard-step-valid="groupIsValid()">
 
-            <oui-loader data-ng-if="!ctrl.optionsToCreateANewGroup"></oui-loader>
+            <oui-spinner data-ng-if="!ctrl.optionsToCreateANewGroup"></oui-spinner>
 
             <form name="ctrl.addGroupForm" data-ng-if="ctrl.optionsToCreateANewGroup">
                 <p>
@@ -64,20 +64,11 @@
                         <span class="input-group-addon" data-i18n-static="unit_size_MB"></span>
                     </div>
 
-                    <div class="oui-checkbox">
-                        <input type="checkbox" class="oui-checkbox__input" id="receiveSizeUnlimited"
-                               data-ng-change="ctrl.onReceiveSizeChange()"
-                               data-ng-model="ctrl.groupToAdd.receiveSizeUnlimited">
-                        <label class="oui-checkbox__label-container" for="receiveSizeUnlimited">
-                            <span class="oui-checkbox__label"
-                                  data-i18n-static="exchange_GROUPS_add_group_size_unlimited"></span>
-                            <span class="oui-checkbox__icon">
-                                <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
-                                <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
-                                <span class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></span>
-                            </span>
-                        </label>
-                    </div>
+                    <oui-checkbox id="receiveSizeUnlimited"
+                        model="ctrl.groupToAdd.receiveSizeUnlimited"
+                        on-change="ctrl.onReceiveSizeChange()"
+                        text="{{::i18n.exchange_GROUPS_add_group_size_unlimited}}">
+                    </oui-checkbox>
                 </div>
 
                 <div class="form-group">
@@ -93,20 +84,11 @@
                         <span class="input-group-addon" data-i18n-static="unit_size_MB"></span>
                     </div>
 
-                    <div class="oui-checkbox">
-                        <input type="checkbox" class="oui-checkbox__input" id="sentSizeUnlimited"
-                               data-ng-change="ctrl.onSentSizeChange()"
-                               data-ng-model="ctrl.groupToAdd.sentSizeUnlimited">
-                        <label class="oui-checkbox__label-container" for="sentSizeUnlimited">
-                            <span class="oui-checkbox__label"
-                                  data-i18n-static="exchange_GROUPS_add_group_size_unlimited"></span>
-                            <span class="oui-checkbox__icon">
-                                <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
-                                <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
-                                <span class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></span>
-                            </span>
-                        </label>
-                    </div>
+                    <oui-checkbox id="sentSizeUnlimited"
+                        model="ctrl.groupToAdd.sentSizeUnlimited"
+                        on-change="ctrl.onSentSizeChange()"
+                        text="{{::i18n.exchange_GROUPS_add_group_size_unlimited}}">
+                    </oui-checkbox>
                 </div>
 
                 <div class="form-group">
@@ -137,33 +119,15 @@
                     </div>
                 </div>
 
-                <div class="oui-checkbox">
-                    <input type="checkbox" class="oui-checkbox__input" id="hiddenFromGAL"
-                           data-ng-model="ctrl.groupToAdd.hiddenFromGAL">
-                    <label class="oui-checkbox__label-container" for="hiddenFromGAL">
-                        <span class="oui-checkbox__label"
-                              data-i18n-static="exchange_GROUPS_add_group_hide_label"></span>
-                        <span class="oui-checkbox__icon">
-                            <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
-                            <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
-                            <span class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></span>
-                        </span>
-                    </label>
-                </div>
+                <oui-checkbox id="hiddenFromGAL"
+                    model="ctrl.groupToAdd.hiddenFromGAL"
+                    text="{{::i18n.exchange_GROUPS_add_group_hide_label}}">
+                </oui-checkbox>
 
-                <div class="oui-checkbox">
-                    <input type="checkbox" class="oui-checkbox__input" id="senderAuthentification"
-                           data-ng-model="ctrl.groupToAdd.auth">
-                    <label class="oui-checkbox__label-container" for="senderAuthentification">
-                        <span class="oui-checkbox__label"
-                              data-i18n-static="exchange_GROUPS_add_group_auth_label"></span>
-                        <span class="oui-checkbox__icon">
-                            <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
-                            <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
-                            <span class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></span>
-                        </span>
-                    </label>
-                </div>
+                <oui-checkbox id="senderAuthentification"
+                    model="ctrl.groupToAdd.auth"
+                    text="{{::i18n.exchange_GROUPS_add_group_auth_label}}">
+                </oui-checkbox>
             </form>
 
             <div data-wizard-step-help>
