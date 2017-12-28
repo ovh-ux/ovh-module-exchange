@@ -47,13 +47,17 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th class="min-width" scope="col"></th>
+                        <th class="min-width" scope="col">
+                                <input type="checkbox" id="checkbox_select_all"
+                                    data-ng-change="ctrl.selectAll()"
+                                    data-ng-model="ctrl.allSelected">
+                        </th>
                         <th scope="col" data-i18n-static="exchange_tab_ACCOUNT"></th>
                     </tr>
                 </thead>
 
                 <tbody data-ng-if="ctrl.loading.step1.table">
-                    <tr>
+                    <tr>                       
                         <td class="loader text-center" colspan="2"></td>
                     </tr>
                 </tbody>
@@ -73,7 +77,7 @@
                         <td>
                             <input type="checkbox" id="checkbox_{{account.primaryEmailAddress}}" 
                                    data-ng-change="ctrl.countNumberOfCheckedAccounts(account)" 
-                                   data-ng-model="ctrl.selectedCheckboxes[account.primaryEmailDisplayName]">                                   
+                                   data-ng-model="ctrl.selectedCheckboxes[account.primaryEmailDisplayName]">
                         </td>
                         <td>
                             <label class="oui-label m-0" for="checkbox_{{account.primaryEmailAddress}}" data-ng-bind="account.primaryEmailDisplayName"></label>

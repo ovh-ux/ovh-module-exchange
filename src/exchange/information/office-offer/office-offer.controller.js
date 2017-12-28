@@ -19,6 +19,8 @@ angular
             this.maxNumberOfAccounts = 25;
             this.selectedCheckboxes = {};
             this.selectedAccounts = [];
+            this.numberOfSelectedCheckboxes = 0;
+            this.allSelected = false;
             this.isInitialLoad = true;
             this.exchange = Exchange.value;
 
@@ -170,9 +172,28 @@ angular
         }
 
         preSelectFirtsAccount () {
-            if (this.accountsTotalNumber > 0) {
+            if (this.isInitialLoad && this.accountsTotalNumber > 0) {
                 this.selectedCheckboxes[this.services.$scope.accounts.list.results[0].primaryEmailDisplayName] = true;
                 this.countNumberOfCheckedAccounts(this.services.$scope.accounts.list.results[0]);
+                this.isInitialLoad = false;
+            }
+        }
+
+        selectAll () {
+            let i = 0;
+            if (this.allSelected) {
+                while (i < this.maxNumberOfAccounts) {
+                    this.selectedCheckboxes[this.services.$scope.accounts.list.results[i].primaryEmailDisplayName] = true;
+                    this.countNumberOfCheckedAccounts(this.services.$scope.accounts.list.results[i]);
+                    i++;
+                }
+            } else {
+                while (i <= this.accountsTotalNumber) {
+                    this.selectedCheckboxes[this.services.$scope.accounts.list.results[i].primaryEmailDisplayName] = false;
+                    this.selectedAccounts = [];
+                    this.numberOfSelectedCheckboxes = 0;
+                    i++;
+                }
             }
         }
 
