@@ -14,7 +14,7 @@
                 <span data-i18n-static="exchange_office_1M_promotion_main_title"></span>
             </h4>
 
-            <p data-ng-bind-html="tr('exchange_office_1M_promotion_intro', [ctrl.maxNumberOfAccounts])"></p>
+            <p data-ng-bind-html="tr('exchange_office_1M_promotion_intro', [ctrl.office_365_website_url, ctrl.maxNumberOfAccounts])"></p>
             <h6 data-i18n-static="exchange_office_1M_promotion_intro_table"></h6>
 
             <form class="form-inline d-md-flex justify-content-md-end mb-3">
@@ -110,7 +110,7 @@
             <span data-i18n-static="exchange_office_1M_promotion_main_title"></span>
         </h4>
 
-        <p data-ng-bind-html="tr('exchange_office_1M_promotion_intro', [ctrl.maxNumberOfAccounts])"></p>
+        <p data-ng-bind-html="tr('exchange_office_1M_promotion_intro', [ctrl.office_365_website_url, ctrl.maxNumberOfAccounts])"></p>
 
         <oui-loader data-ng-if="ctrl.loading.step2.general"></oui-loader>
 

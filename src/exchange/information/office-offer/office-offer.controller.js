@@ -1,8 +1,8 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeOfficeOfferCtrl", class ExchangeOfficeOfferCtrl {
-        constructor ($scope, Exchange, ExchangeInformationService, $window, ovhUserPref, messaging, translator, navigation, exchangeVersion, User) {
-            this.services = { $scope, Exchange, ExchangeInformationService, $window, ovhUserPref, messaging, translator, navigation, exchangeVersion, User };
+        constructor ($scope, Exchange, ExchangeInformationService, $window, ovhUserPref, messaging, translator, navigation, exchangeVersion, User, OFFICE_365_URL) {
+            this.services = { $scope, Exchange, ExchangeInformationService, $window, ovhUserPref, messaging, translator, navigation, exchangeVersion, User, OFFICE_365_URL };
 
             this.loading = {
                 step1: {
@@ -30,6 +30,7 @@ angular
             this.accountTypes = ["ALL", "BASIC", "STANDARD", "ENTERPRISE"];
             this.filterType = "ALL";
             this.tr = $scope.tr;
+            this.OFFICE_365_URL = OFFICE_365_URL;
 
             $scope.loadSelectedAccounts = () => this.loadSelectedAccounts();
 
@@ -44,6 +45,7 @@ angular
                 .getUser()
                 .then((user) => {
                     this.ovhSubsidiary = user.ovhSubsidiary;
+                    this.office_365_website_url = this.getOfficeLink(user.ovhSubsidiary);
                 });
         }
 
@@ -147,6 +149,10 @@ angular
                     this.preSelectFirtsAccount();
                     this.loading.step1.table = false;
                 });
+        }
+
+        getOfficeLink (ovhSubsidiary) {
+            return _.get(this.OFFICE_365_URL, ovhSubsidiary, "FR");  // "FR" as default value
         }
 
         countNumberOfCheckedAccounts (item) {
