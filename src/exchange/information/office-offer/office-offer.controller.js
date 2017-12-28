@@ -142,8 +142,8 @@ angular
                     this.services.messaging.writeError(this.tr("exchange_tab_ACCOUNTS_error_message"), failure);
                 })
                 .finally(() => {
+                    this.preSelectFirtsAccount();
                     this.loading.step1.table = false;
-                    this.countNumberOfCheckedAccounts();
                 });
         }
 
@@ -167,6 +167,13 @@ angular
             const keys = Object.keys(this.selectedCheckboxes);
             const accounts = _.filter(keys, (key) => this.selectedCheckboxes[key]);
             return accounts;
+        }
+
+        preSelectFirtsAccount () {
+            if (this.accountsTotalNumber > 0) {
+                this.selectedCheckboxes[this.services.$scope.accounts.list.results[0].primaryEmailDisplayName] = true;
+                this.countNumberOfCheckedAccounts(this.services.$scope.accounts.list.results[0]);
+            }
         }
 
         isStep2Valid () {
