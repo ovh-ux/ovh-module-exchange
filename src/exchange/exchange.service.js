@@ -42,6 +42,10 @@ angular
             this.stateOk = "OK";
             this.stateTaskDoing = "TASK_ON_DOING";
 
+
+            // Domains used for inactivated accounts
+            this.dummy_domains = ["configureme.me"];
+
             this.aliasMaxLimit = 1000;
 
             this.events = {
@@ -486,6 +490,22 @@ angular
                         messages: data,
                         state: data.filter((message) => message.type === "ERROR").length > 0 ? "ERROR" : "OK"
                     };
+                });
+        }
+
+        /**
+         * Activate Exchange account
+         */
+        activateExchangeOnAccount (serviceName, account) {
+            return this.services
+                .OvhHttp
+                .post(`/msServices/${serviceName}/account/${account}/exchange/configure`, {
+                    rootPath: "apiv6"
+                }).then((receivedData) => {
+                    this.resetAccounts();
+                    this.resetTasks();
+
+                    return receivedData;
                 });
         }
 

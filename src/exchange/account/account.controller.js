@@ -122,17 +122,19 @@ angular
         }
 
         isEditable (account) {
-            return (this.services.exchangeStates.constructor.isOk(account) || this.services.exchangeStates.constructor.isDoing(account) || this.services.exchangeStates.constructor.isInError(account)) && !this.noDomainFlag;
+            return (account.canBeConfigured ||
+                    this.services.exchangeStates.constructor.isDoing(account) ||
+                    this.services.exchangeStates.constructor.isInError(account) ||
+                    _.includes(this.services.Exchange.dummy_domains, account.domain)) && !this.noDomainFlag;
         }
 
-        isConfigurable (account) {
-            return this.services.exchangeStates.constructor.isOk(account);
+        hasDummyDomain (account) {
+            return _.includes(this.services.Exchange.dummy_domains, account.domain);
         }
 
         editAccount (account) {
             const populateAccount = angular.copy(account);
             populateAccount.is25g = this.services.accountTypes.is25g();
-
             if (this.isEditable(account)) {
                 this.services.navigation.setAction("exchange/account/update/account-update", populateAccount);
             }
@@ -176,6 +178,12 @@ angular
         activateOutlook (account) {
             if (account.canBeConfigured) {
                 this.services.navigation.setAction("exchange/account/outlook/activate/account-outlook-activate", angular.copy(account));
+            }
+        }
+
+        activateAcount (account) {
+            if (!account.readyToUse && account.domain !== "configureme.me") {
+                this.services.navigation.setAction("exchange/account/activate/activate-account", angular.copy(account));
             }
         }
 

@@ -1,0 +1,11 @@
+<div data-ng-controller="ExchangeActivateAccountCtrl as activateAccountCtrl">
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="submit"
+         data-wizard-title="i18n.exchange_tab_ACCOUNTS_activate_account_title">
+
+        <div data-wizard-step>
+            <p data-ng-bind-html="tr('exchange_tab_ACCOUNTS_activate_account_intro', [activateAccountCtrl.account.primaryEmailDisplayName])"></p>         
+        </div>
+    </div>
+</div>

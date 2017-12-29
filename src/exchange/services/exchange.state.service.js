@@ -56,4 +56,8 @@ angular
         static isInError (account) {
             return ExchangeStates.isState(account, "TASK_ON_ERROR") || ExchangeStates.isState(account, "ERROR");
         }
+
+        static isInactive (account) {
+            return !account.readyToUse && ExchangeStates.isState(account, "OK");
+        }
     });
