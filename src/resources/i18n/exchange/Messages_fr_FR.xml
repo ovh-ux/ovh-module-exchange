@@ -424,6 +424,7 @@
    <translation id="exchange_ACTION_order_accounts_step2_pay_type_yearly" qtlid="79542">annuel</translation>
    <translation id="exchange_ACTION_order_accounts_step2_number" qtlid="139338">Nombre de comptes :</translation>
    <translation id="exchange_ACTION_order_accounts_step2_price" qtlid="139416">{0} HT ({1} TTC)</translation>
+   <translation id="exchange_ACTION_order_accounts_step2_price_without_tax">{0} HT</translation>
    <translation id="exchange_ACTION_order_accounts_step2_total" qtlid="139429">Total facturé :</translation>
    <translation id="exchange_ACTION_order_accounts_step2_doing_message" qtlid="144149">Commande de comptes Exchange en cours...</translation>
    <translation id="exchange_ACTION_order_accounts_step2_success_message" qtlid="171214">Les comptes vont être créés dès le règlement du bon de commande : <br /><a href="{0}">{0}</a></translation>

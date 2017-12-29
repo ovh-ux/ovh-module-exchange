@@ -100,7 +100,11 @@
 
                     <dt data-i18n-static="exchange_ACTION_order_accounts_step2_total"></dt>
                     <dd class="text-danger"
+                        data-ng-if="ctrl.ovhSubsidiary !== 'CA'"
                         data-ng-bind="tr('exchange_ACTION_order_accounts_step2_price', [ctrl.previewOrder.prices.withoutTax.text, ctrl.previewOrder.prices.withTax.text])"></dd>
+                    <dd class="text-danger"
+                        data-ng-if="ctrl.ovhSubsidiary === 'CA'"
+                        data-ng-bind="tr('exchange_ACTION_order_accounts_step2_price_without_tax', [ctrl.previewOrder.prices.withoutTax.text])"></dd>
                 </dl>
             </div>
         </div>

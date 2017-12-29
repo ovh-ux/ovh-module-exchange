@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeOrderAccountCtrl", class ExchangeOrderAccountCtrl {
-        constructor ($scope, Exchange, $window, messaging, translator, navigation, accountTypes) {
+        constructor ($scope, Exchange, $window, messaging, translator, navigation, accountTypes, User) {
             this.services = {
                 $scope,
                 Exchange,
@@ -9,7 +9,8 @@ angular
                 messaging,
                 translator,
                 navigation,
-                accountTypes
+                accountTypes,
+                User
             };
 
             this.$routerParams = Exchange.getParams();
@@ -57,6 +58,16 @@ angular
             $scope.getPreviewOrder = () => this.previewOrder;
             $scope.getURL = () => this.url;
         }
+
+        $onInit () {
+            this.services
+                .User
+                .getUser()
+                .then((user) => {
+                    this.ovhSubsidiary = user.ovhSubsidiary;
+                });
+        }
+
 
         getPreviewOrder () {
             return this.previewOrder;
