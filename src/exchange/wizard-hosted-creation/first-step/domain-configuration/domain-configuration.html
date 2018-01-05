@@ -26,9 +26,9 @@
             <div class="row m-0 mt-4 p-0">
                 <div class="checkbox">
                     <oui-checkbox id="domainFromAnother"
-                        model="$ctrl.homepage.domainIsNotManagedByCurrentNIC"
-                        on-change="$ctrl.onAnotherDomainCheckboxClick()"
-                        text="{{::$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_domainNotInList')}}">
+                        data-model="$ctrl.homepage.domainIsNotManagedByCurrentNIC"
+                        data-on-change="$ctrl.onAnotherDomainCheckboxClick()"
+                        data-text="{{::$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_domainNotInList')}}">
                     </oui-checkbox>
                     <form name="$ctrl.domainNameForm" data-ng-show="$ctrl.homepage.domainIsNotManagedByCurrentNIC">
                         <div class="oui-field"

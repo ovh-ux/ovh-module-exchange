@@ -184,12 +184,12 @@
             <form name="exchangeAddDomainStep3Form">
                 <div data-ng-if="ctrl.model.domainType !== ctrl.nonOvhDomain">
                     <oui-checkbox id="srvParam" name="srvParam"
-                        model="ctrl.model.srvParam"
-                        text="{{::i18n.exchange_tab_domain_add_step2_srv_checkbox}}">
+                        data-model="ctrl.model.srvParam"
+                        data-text="{{::i18n.exchange_tab_domain_add_step2_srv_checkbox}}">
                     </oui-checkbox>
                     <oui-checkbox id="mxParam" name="mxParam"
-                        model="ctrl.model.mxParam"
-                        text="{{::i18n.exchange_tab_domain_add_step2_mx_checkbox}}">
+                        data-model="ctrl.model.mxParam"
+                        data-text="{{::i18n.exchange_tab_domain_add_step2_mx_checkbox}}">
                     </oui-checkbox>
                 </div>
 

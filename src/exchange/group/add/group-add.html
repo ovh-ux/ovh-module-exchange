@@ -65,9 +65,9 @@
                     </div>
 
                     <oui-checkbox id="receiveSizeUnlimited"
-                        model="ctrl.groupToAdd.receiveSizeUnlimited"
-                        on-change="ctrl.onReceiveSizeChange()"
-                        text="{{::i18n.exchange_GROUPS_add_group_size_unlimited}}">
+                        data-model="ctrl.groupToAdd.receiveSizeUnlimited"
+                        data-on-change="ctrl.onReceiveSizeChange()"
+                        data-text="{{::i18n.exchange_GROUPS_add_group_size_unlimited}}">
                     </oui-checkbox>
                 </div>
 
@@ -85,9 +85,9 @@
                     </div>
 
                     <oui-checkbox id="sentSizeUnlimited"
-                        model="ctrl.groupToAdd.sentSizeUnlimited"
-                        on-change="ctrl.onSentSizeChange()"
-                        text="{{::i18n.exchange_GROUPS_add_group_size_unlimited}}">
+                        data-model="ctrl.groupToAdd.sentSizeUnlimited"
+                        data-on-change="ctrl.onSentSizeChange()"
+                        data-text="{{::i18n.exchange_GROUPS_add_group_size_unlimited}}">
                     </oui-checkbox>
                 </div>
 
@@ -120,13 +120,13 @@
                 </div>
 
                 <oui-checkbox id="hiddenFromGAL"
-                    model="ctrl.groupToAdd.hiddenFromGAL"
-                    text="{{::i18n.exchange_GROUPS_add_group_hide_label}}">
+                    data-model="ctrl.groupToAdd.hiddenFromGAL"
+                    data-text="{{::i18n.exchange_GROUPS_add_group_hide_label}}">
                 </oui-checkbox>
 
                 <oui-checkbox id="senderAuthentification"
-                    model="ctrl.groupToAdd.auth"
-                    text="{{::i18n.exchange_GROUPS_add_group_auth_label}}">
+                    data-model="ctrl.groupToAdd.auth"
+                    data-text="{{::i18n.exchange_GROUPS_add_group_auth_label}}">
                 </oui-checkbox>
             </form>
 

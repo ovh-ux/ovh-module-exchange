@@ -1,6 +1,6 @@
 <div class="container-fluid px-0" data-ng-controller="ExchangeTabDiagnosticsCtrl as ctrl">
     <div class="text-center" data-ng-if="ctrl.loaders.accounts">
-        <oui-spinner class="d-inline-block" size="l"></oui-spinner>
+        <oui-spinner data-size="l"></oui-spinner>
     </div>
 
     <div class="row" data-ng-if="!ctrl.loaders.accounts">
@@ -50,7 +50,7 @@
                             <span data-i18n-static="exchange_DIAGNOSTICS_button_launch_diagnostic"
                                   data-ng-if="!ctrl.loaders.diagnosticInProgress"></span>
                             <span data-ng-if="ctrl.loaders.diagnosticInProgress">
-                                <oui-spinner class="d-inline-block" size="s"></oui-spinner>
+                                <oui-spinner data-size="s"></oui-spinner>
                                 <span data-i18n-static="exchange_DIAGNOSTICS_button_diagnostic_in_progress"></span>
                             </span>
                         </button>

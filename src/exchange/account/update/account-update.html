@@ -172,9 +172,9 @@
                 </div>
 
                 <oui-checkbox class="mb-4"  id="hiddenFromGAL" name="selectedAccountHiddenFromGAL"
-                    ng-if="!ctrl.selectedAccount.is25g && ctrl.selectedAccount.canBeConfigured"
-                    model="ctrl.selectedAccount.hiddenFromGAL"
-                    text="{{::i18n.exchange_ACTION_update_account_step1_GAL_label}}">
+                    data-ng-if="!ctrl.selectedAccount.is25g && ctrl.selectedAccount.canBeConfigured"
+                    data-model="ctrl.selectedAccount.hiddenFromGAL"
+                    data-text="{{::i18n.exchange_ACTION_update_account_step1_GAL_label}}">
                 </oui-checkbox>
 
                 <div class="mb-4"

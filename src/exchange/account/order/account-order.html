@@ -32,7 +32,7 @@
 
                     <div class="form-group">
                         <label data-i18n-static="exchange_ACTION_order_accounts_step1_pay_type"></label>
-                        <oui-spinner class="d-inline-block" data-ng-if="!ctrl.ordersList.length"></oui-spinner>
+                        <oui-spinner data-ng-if="!ctrl.ordersList.length"></oui-spinner>
                         <div class="oui-radio"
                              data-ng-repeat="orderAvailable in (ctrl.ordersList | orderBy:'duration') track by $index">
                             <input type="radio" class="oui-radio__input" id="payTypeGroup-{{$index}}" name="payTypeGroup[{{$index}}]"
@@ -64,9 +64,9 @@
                     </div>
 
                     <oui-checkbox id="worldPart-eu"
-                        ng-if="ctrl.worldPart === 'EU'"
-                        model="ctrl.valid.legalWarning"
-                        text="{{::tr('exchange_ACTION_add_account_legal_warning')}}">
+                        data-ng-if="ctrl.worldPart === 'EU'"
+                        data-model="ctrl.valid.legalWarning"
+                        data-text="{{::tr('exchange_ACTION_add_account_legal_warning')}}">
                     </oui-checkbox>
                 </form>
             </div>

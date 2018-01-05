@@ -57,9 +57,9 @@
                     </div>
 
                     <oui-checkbox id="receiveSizeUnlimited"
-                        model="ctrl.selectedGroup.receiveSizeUnlimited"
-                        on-change="ctrl.onReceiveSizeChange()"
-                        text="{{::i18n.exchange_GROUPS_add_group_size_unlimited}}">
+                        data-model="ctrl.selectedGroup.receiveSizeUnlimited"
+                        data-on-change="ctrl.onReceiveSizeChange()"
+                        data-text="{{::i18n.exchange_GROUPS_add_group_size_unlimited}}">
                     </oui-checkbox>
                 </div>
 
@@ -77,9 +77,9 @@
                     </div>
 
                     <oui-checkbox id="sentSizeUnlimited"
-                        model="ctrl.selectedGroup.sentSizeUnlimited"
-                        on-change="ctrl.onSentSizeChange()"
-                        text="{{::i18n.exchange_GROUPS_add_group_size_unlimited}}">
+                        data-model="ctrl.selectedGroup.sentSizeUnlimited"
+                        data-on-change="ctrl.onSentSizeChange()"
+                        data-text="{{::i18n.exchange_GROUPS_add_group_size_unlimited}}">
                     </oui-checkbox>
                 </div>
 
@@ -110,13 +110,13 @@
                 </div>
 
                 <oui-checkbox id="hiddenFromGAL"
-                    model="ctrl.selectedGroup.hiddenFromGAL"
-                    text="{{::i18n.exchange_GROUPS_add_group_hide_label}}">
+                    data-model="ctrl.selectedGroup.hiddenFromGAL"
+                    data-text="{{::i18n.exchange_GROUPS_add_group_hide_label}}">
                 </oui-checkbox>
 
                 <oui-checkbox id="senderAuthentification"
-                    model="ctrl.selectedGroup.senderAuthentification"
-                    text="{{::i18n.exchange_GROUPS_add_group_auth_label}}">
+                    data-model="ctrl.selectedGroup.senderAuthentification"
+                    data-text="{{::i18n.exchange_GROUPS_add_group_auth_label}}">
                 </oui-checkbox>
             </form>
 
