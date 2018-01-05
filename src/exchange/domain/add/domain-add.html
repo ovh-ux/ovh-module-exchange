@@ -20,16 +20,13 @@
 
                 <form name="ctrl.exchangeAddDomainStep1Form">
                     <div data-ng-if="ctrl.availableDomainsBuffer && ctrl.availableDomainsBuffer.length > 0">
-                        <div class="oui-radio">
-                            <input type="radio" class="oui-radio__input" id="domainType-ovh" name="addOption"
-                                   data-ng-change="ctrl.resetName()"
-                                   data-ng-model="ctrl.model.domainType"
-                                   data-ng-value="ctrl.ovhDomain">
-                            <label class="oui-radio__label-container" for="domainType-ovh">
-                                <span class="oui-radio__label"
-                                      data-i18n-static="exchange_tab_domain_add_step1_select_domain_option"></span>
-                            </label>
-                        </div>
+
+                        <oui-radio text="{{tr('exchange_tab_domain_add_step1_select_domain_option')}}"
+                                on-change="ctrl.resetName()"                    
+                                model="ctrl.model.domainType"
+                                name="exchange-domain"
+                                value="ctrl.ovhDomain" checked>
+                        </oui-radio>
 
                         <div data-ng-if="ctrl.model.domainType === ctrl.ovhDomain">
                             <div class="form-group">
@@ -69,16 +66,13 @@
                             </ul>
                         </div>
 
-                        <div class="oui-radio">
-                            <input type="radio" class="oui-radio__input" id="domainType-nonovh" name="addOption"
-                                   data-ng-change="ctrl.resetName()"
-                                   data-ng-model="ctrl.model.domainType"
-                                   data-ng-value="ctrl.nonOvhDomain">
-                            <label class="oui-radio__label-container" for="domainType-nonovh">
-                                <span class="oui-radio__label" id="nonOvhDomain"
-                                      data-i18n-static="exchange_tab_domain_add_step1_user_owned_option"></span>
-                            </label>
-                        </div>
+                        <oui-radio text="{{tr('exchange_tab_domain_add_step1_user_owned_option')}}"
+                                on-change="ctrl.resetName()"                    
+                                model="ctrl.model.domainType"
+                                name="exchange-domain"
+                                value="ctrl.nonOvhDomain">
+                        </oui-radio>
+
 
                         <div class="form-group"
                              data-ng-class="{'has-error': ctrl.exchangeAddDomainStep1Form.nonOvhDomain.$dirty && !ctrl.isNonOvhDomainValid()}"
@@ -141,34 +135,28 @@
             <p data-i18n-static="exchange_tab_domain_add_step2bis_intro"></p>
 
             <form name="exchangeAddDomainStep2Form">
-                <div class="oui-radio mb-4">
-                    <input type="radio" class="oui-radio__input" id="domainType-autoritative" name="domainType" value="AUTHORITATIVE" aria-describedby="domainAuthoritativeHelp"
-                           data-ng-model="ctrl.model.type">
-                    <label class="oui-radio__label-container" for="domainType-autoritative">
-                        <span class="oui-radio__label"
-                              data-i18n-static="exchange_tab_domain_mode_AUTHORITATIVE"></span>
-                        <span class="oui-radio__description" id="domainAuthoritativeHelp"
-                              data-i18n-static="exchange_tab_domain_AUTHORITATIVE_info"></span>
-                    </label>
-                </div>
+                
+                <oui-radio text="{{tr('exchange_tab_domain_mode_AUTHORITATIVE')}}"
+                        description="{{tr('exchange_tab_domain_AUTHORITATIVE_info')}}"
+                        model="ctrl.model.type"
+                        name="exchange-type"
+                        value="'AUTHORITATIVE'">
+                </oui-radio>
+                
+                <oui-radio text="{{tr('exchange_tab_domain_mode_NON_AUTHORITATIVE')}}"
+                        description="{{tr('exchange_tab_domain_NON_AUTHORITATIVE_info')}}"
+                        model="ctrl.model.type"
+                        name="exchange-type"
+                        value="'NON_AUTHORITATIVE'">
+                </oui-radio>
 
-                <div class="oui-radio">
-                    <input type="radio" class="oui-radio__input" id="domainType-nonautoritative" name="domainType" value="NON_AUTHORITATIVE" aria-describedby="domainNonAuthoritativeHelp"
-                           data-ng-model="ctrl.model.type">
-                    <label class="oui-radio__label-container" for="domainType-nonautoritative">
-                        <span class="oui-radio__label"
-                              data-i18n-static="exchange_tab_domain_mode_NON_AUTHORITATIVE"></span>
-                        <span class="oui-radio__description" id="domainNonAuthoritativeHelp"
-                              data-i18n-static="exchange_tab_domain_NON_AUTHORITATIVE_info"></span>
-                    </label>
-                    <div class="oui-radio__description"
-                         data-ng-if="ctrl.model.type !== 'AUTHORITATIVE'">
-                        <label class="oui-label required" for="targetMailServer"
-                               data-i18n-static="exchange_tab_domain_target_mail_server_label"></label>
-                        <input type="text" class="oui-input" id="targetMailServer" maxlength="256" name="targetMailServer"
-                               data-ng-model="ctrl.model.mxRelay">
-                    </div>
-                </div>
+                <div class="oui-radio__description"
+                     data-ng-if="ctrl.model.type !== 'AUTHORITATIVE'">
+                    <label class="oui-label required" for="targetMailServer"
+                           data-i18n-static="exchange_tab_domain_target_mail_server_label"></label>
+                    <input type="text" class="oui-input" id="targetMailServer" maxlength="256" name="targetMailServer"
+                           data-ng-model="ctrl.model.mxRelay">
+                </div>                
             </form>
         </div>
 
