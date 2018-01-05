@@ -34,27 +34,22 @@
 
                 <div data-ng-if="ctrl.service.accountTypes.isHosted()">
                     <p data-ng-bind-html="tr('exchange_update_billing_periode_intro')"></p>
+
                     <form>
                         <label class="oui-label"
                                data-i18n-static="exchange_update_billing_periode_label"></label>
-                        <div class="oui-radio oui-radio_inline">
-                            <input type="radio" class="oui-radio__input" id="renewGroup-monthly" name="renewGroup"
-                                   data-ng-model="ctrl.exchange.renewPeriod"
-                                   data-ng-value="'MONTHLY'">
-                            <label class="oui-radio__label-container" for="renewGroup-monthly">
-                                <span class="oui-radio__label"
-                                      data-ng-bind="tr('exchange_ACTION_order_accounts_step2_pay_type_monthly')"></span>
-                            </label>
-                        </div>
-                        <div class="oui-radio oui-radio_inline">
-                            <input type="radio" class="oui-radio__input" id="renewGroup-yearly" name="renewGroup"
-                                   data-ng-model="ctrl.exchange.renewPeriod"
-                                   data-ng-value="'YEARLY'">
-                            <label class="oui-radio__label-container" for="renewGroup-yearly">
-                                <span class="oui-radio__label"
-                                      data-ng-bind="tr('exchange_ACTION_order_accounts_step2_pay_type_yearly')"></span>
-                            </label>
-                        </div>
+
+                        <oui-radio text="{{tr('exchange_ACTION_order_accounts_step2_pay_type_monthly')}}"
+                               model="ctrl.exchange.renewPeriod"
+                               name="exchange-remove"
+                               value="'MONTHLY'">
+                        </oui-radio>
+
+                        <oui-radio text="{{tr('exchange_ACTION_order_accounts_step2_pay_type_yearly')}}"
+                                model="ctrl.exchange.renewPeriod"
+                                name="exchange-remove"
+                                value="'YEARLY'">
+                        </oui-radio>
                     </form>
                 </div>
             </div>

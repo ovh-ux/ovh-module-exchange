@@ -16,15 +16,13 @@
                 <p data-ng-bind="tr('exchange_tab_domain_diagnostic_mx_no_ovh')"
                    data-ng-if="!ctrl.domainDiag.isOvhDomain"></p>
 
-                <div class="oui-radio" data-ng-if="ctrl.domainDiag.isOvhDomain">
-                    <input type="radio" class="oui-radio__input" id="antiSpam-no" name="addOption" checked
-                           data-ng-model="ctrl.model.antiSpam"
-                           data-ng-value="false">
-                    <label class="oui-radio__label-container" for="antiSpam-no">
-                        <span class="oui-radio__label"
-                              data-i18n-static="exchange_tab_domain_diagnostic_mx_no_antispam"></span>
-                    </label>
-                </div>
+                <oui-radio text="{{tr('exchange_tab_domain_diagnostic_mx_no_antispam')}}"
+                        data-ng-if="ctrl.domainDiag.isOvhDomain"
+                        model="ctrl.model.antiSpam"
+                        name="exchange-mx"
+                        value="false" checked>
+                </oui-radio>
+
 
                 <p data-i18n-static="exchange_tab_domain_diagnostic_mx_no_antispam"
                    data-ng-if="ctrl.domainDiag.isOvhDomain === false"></p>
@@ -34,15 +32,12 @@
                     <dd data-ng-bind-html="tr('exchange_tab_domain_diagnostic_mx_no_antispam_config', [ctrl.domainDiag.mx.noSpam[0].priority, ctrl.domainDiag.mx.noSpam[0].target])"></dd>
                 </dl>
 
-                <div class="oui-radio" data-ng-if="ctrl.domainDiag.isOvhDomain">
-                    <input type="radio" class="oui-radio__input" id="antiSpam-yes" name="addOption"
-                           data-ng-model="ctrl.model.antiSpam"
-                           data-ng-value="true">
-                    <label class="oui-radio__label-container" for="antiSpam-yes">
-                        <span class="oui-radio__label"
-                              data-i18n-static="exchange_tab_domain_diagnostic_mx_antispam"></span>
-                    </label>
-                </div>
+                <oui-radio text="{{tr('exchange_tab_domain_diagnostic_mx_antispam')}}"
+                        data-ng-if="ctrl.domainDiag.isOvhDomain"
+                        model="ctrl.model.antiSpam"
+                        name="exchange-mx"
+                        value="true" checked>
+                </oui-radio>
 
                 <p data-i18n-static="exchange_tab_domain_diagnostic_mx_antispam"
                    data-ng-if="ctrl.domainDiag.isOvhDomain === false"></p>
