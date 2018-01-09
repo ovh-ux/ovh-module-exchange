@@ -2,12 +2,13 @@
 <translations>
 
 <!-- GENERIC -->
+   <translation id="optional_form_field" qtlid="356264">(optional)</translation>
    <translation id="exchange_reset_search_value" qtlid="433719">Search again</translation>
    <translation id="exchange_search_value" qtlid="55493">Search</translation>
 
 <!-- ########################################## -->
 <!-- DASHBOARD -->
-   <translation id="exchange_common_error" qtlid="299384">There was an error:</translation>
+   <translation id="exchange_common_error" qtlid="299384">An error has occurred:</translation>
    <translation id="exchange_offer_type_DEDICATED" qtlid="137218">Private Exchange</translation>
    <translation id="exchange_offer_type_HOSTED" qtlid="137231">Hosted Exchange</translation>
    <translation id="exchange_offer_type_PROVIDER" qtlid="136152">Exchange for resellers </translation>
@@ -25,14 +26,14 @@
    <translation id="exchange_dashboard_domains" qtlid="276298">Associated domains </translation>
    <translation id="exchange_dashboard_accounts" qtlid="136204">Exchange accounts</translation>
    <translation id="exchange_dashboard_tasks" qtlid="136217">Recent tasks</translation>
-   <translation id="exchange_dashboard_diag" qtlid="136230">Server diagnosis</translation>
+   <translation id="exchange_dashboard_diag" qtlid="136230">Server diagnostic</translation>
    <translation id="exchange_dashboard_guides" qtlid="366359">Do you need help configuring your Exchange solution? </translation>
    <translation id="exchange_dashboard_guides_url" qtlid="156732">Read our online guides.</translation>
    <translation id="exchange_diagnostic_guide" qtlid="297891">The diagnostic detected some errors. For more information on each error</translation>
    <translation id="exchange_diagnostic_guides_url" qtlid="297904">refer to our online guide. </translation>
    <translation id="exchange_dashboard_2016_migration" qtlid="287072">View the roadmap for migrations to Exchange 2016. </translation>
    <translation id="exchange_dashboard_new_window" qtlid="222176">New window</translation>
-   <translation id="exchange_dashboard_diag_a_label" qtlid="23803">A</translation>
+   <translation id="exchange_dashboard_diag_a_label" qtlid="23803">To</translation>
    <translation id="exchange_dashboard_diag_a_tooltip_title" qtlid="143251">A record</translation>
    <translation id="exchange_dashboard_diag_a_tooltip_ok" qtlid="137491">Automatic configuration complete</translation>
    <translation id="exchange_dashboard_diag_a_tooltip_error" qtlid="209151">If your domain is hosted at OVH, please create the A record by selecting the relevant domain name, the "Advanced mode" -> "DNS zone" -> "Add an entry". Enter: <br /> Type of record: <span class="bold">A</span> <br /> Sub-domain: <span class="bold">{0}</span> <br /> Target: <span class="bold">{1}</span> <br /><br /> If your domain is hosted elsewhere, create the A record on this domain via the manager of your provider, using the above information.</translation>
@@ -59,12 +60,11 @@
    <translation id="exchange_action_renew_ssl" qtlid="136256">Renew the SSL certificate</translation>
    <translation id="exchange_action_renew_ssl_info" qtlid="325844">Your SSL certificate is currently being installed, your certificate cannot be renewed at the moment. </translation>
    <translation id="exchange_action_renew_ssl_info_expired" qtlid="325857">The SSL certificate has expired, you can renew it. </translation>
-   <translation id="exchange_action_renew_ssl_info_normal" qtlid="325870">The SSL certificate for your server is valid until {0}, this button will be available one month before your certificate expires. </translation>
-   <translation id="exchange_action_renew_ssl_info_next" qtlid="325883">The SSL certificate for your server is valid until {0}, you may renew it. </translation>
+   <translation id="exchange_action_renew_ssl_info_next" qtlid="447612">The SSL certificate expires on {0} - you can renew it now.</translation>
    <translation id="exchange_ACTION_export_accounts_button" qtlid="217015">Exporting accounts in CSV</translation>
    <translation id="exchange_ACTION_export_accounts_office_attached_button" qtlid="404187">Office 365 free trial </translation>
    <translation id="exchange_ACTION_export_accounts_doing_button" qtlid="217028">Exporting...</translation>
-   <translation id="exchange_ACTION_export_error" qtlid="217041">An error occurred when exporting your Exchange accounts.</translation>
+   <translation id="exchange_ACTION_export_error" qtlid="217041">An error has occurred exporting your Exchange accounts.</translation>
    <translation id="exchange_ACTION_export_success" qtlid="217054">Your Exchange accounts have been exported. </translation>
    <translation id="exchange_ACTION_export_explain" qtlid="217067">The export of your Exchange accounts can take a few minutes (depending on the number of accounts you have).</translation>
    <translation id="exchange_ACTION_export_confirm" qtlid="217080">Are you sure that you want to export your accounts?</translation>
@@ -127,7 +127,7 @@
    <translation id="exchange_tab_ACCOUNTS_table_alias" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ACCOUNTS_table_group" qtlid="59507">Group</translation>
    <translation id="exchange_tab_ACCOUNTS_table_outlook" qtlid="24427">Outlook</translation>
-   <translation id="exchange_tab_ACCOUNTS_table_status" qtlid="8230">Status</translation>
+   <translation id="exchange_tab_ACCOUNTS_table_status" qtlid="447625">Status</translation>
    <translation id="exchange_tab_ACCOUNTS_table_settings" qtlid="4406">Configuration</translation>
    <translation id="exchange_tab_ACCOUNTS_type_ALL" qtlid="69173">All</translation>
    <translation id="exchange_tab_ACCOUNTS_type_BASIC" qtlid="48986">Basic</translation>
@@ -142,16 +142,18 @@
    <translation id="exchange_tab_ACCOUNTS_outlook_false" qtlid="136308">Without</translation>
    <translation id="exchange_tab_ACCOUNTS_action_add_exchange" qtlid="139169">Order accounts</translation>
    <translation id="exchange_tab_ACCOUNTS_action_add_extern" qtlid="136334">Add an external contact</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_OK" qtlid="31522">OK</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_OK" qtlid="447638">Ok</translation>
    <translation id="exchange_tab_ACCOUNTS_state_CREATING" qtlid="168185">Creation</translation>
    <translation id="exchange_tab_ACCOUNTS_state_DELETING" qtlid="59699">Delete</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_RESETTING" qtlid="447898">Reset</translation>
    <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="171188">Opening...</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="449375">Internal migration</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Suspended</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Suspending...</translation>
    <translation id="exchange_tab_ACCOUNTS_state_MIGRATING" qtlid="186713">Migrating...</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SPAM" qtlid="70409">Spam</translation>
 
-   <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="31522">OK</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="447651">Ok</translation>
    <translation id="exchange_tab_ACCOUNTS_state_creating" qtlid="168185">Creation</translation>
    <translation id="exchange_tab_ACCOUNTS_state_deleting" qtlid="59699">Delete</translation>
    <translation id="exchange_tab_ACCOUNTS_state_reopening" qtlid="171188">Opening...</translation>
@@ -364,9 +366,9 @@
    <translation id="exchange_tab_domain_diagnostic_mx_intro_ovh" qtlid="192890">Your domain is hosted at OVH, you can configure the MX record of your domain {0} as follows</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_label_champ" qtlid="192903">MX record</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_label_champs" qtlid="46780">MX fields</translation>
-   <translation id="exchange_tab_domain_diagnostic_mx_no_antispam" qtlid="319895">If you use nonauthoritative mode (Exchange + other email service) with an email service that is not hosted by OVH:</translation>
+   <translation id="exchange_tab_domain_diagnostic_mx_no_antispam" qtlid="447664">If you are using nonauthoritative mode (Exchange + another messaging system) with a messaging system that is not hosted by OVH:</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_no_antispam_config" qtlid="192929">Priority: <strong>{0}</strong>; target: <strong>{1}</strong></translation>
-   <translation id="exchange_tab_domain_diagnostic_mx_antispam" qtlid="319908">If you use authoritative (Exchange only) or nonauthoritative mode with an email service hosted by OVH: </translation>
+   <translation id="exchange_tab_domain_diagnostic_mx_antispam" qtlid="447677">If you are using authoritative mode (Exchange only) or nonauthoritative mode with a messaging system (shared email service) hosted by OVH:</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_antispam_config" qtlid="192955">Priority: <strong>{0}</strong>; target: <strong>{1}</strong><br /> Priority: <strong>{2}</strong>; target: <strong>{3}</strong><br /> Priority: <strong>{4}</strong>; target: <strong>{5}</strong><br /> Priority: <strong>{6}</strong>; target: <strong>{7}</strong><br /></translation>
    <translation id="exchange_tab_domain_diagnostic_mx_no_ovh" qtlid="349101">If the domain is not managed under the same customer ID as the Exchange solution, or if your domain is registered elsewhere, automatic configuration is not possible. Please manually create an MX record on this domain using the same information that you gave above. </translation>
    <translation id="exchange_tab_domain_diagnostic_mx_recap" qtlid="192981">An MX record will be added to your domain's DNS zone. Warning, existing MX records will be deleted.</translation>
@@ -383,7 +385,7 @@
    <translation id="exchange_tab_domain_diagnostic_srv_toolbox_ok" qtlid="137491">Automatic configuration complete</translation>
    <translation id="exchange_tab_domain_error_message" qtlid="144045">An error occurred when loading your domains</translation>
    <translation id="exchange_tab_domain_diagnostic_cname" qtlid="129847">CNAME</translation>
-   <translation id="exchange_tab_domain_status" qtlid="8230">Status</translation>
+   <translation id="exchange_tab_domain_status" qtlid="447690">Status</translation>
    <translation id="exchange_tab_domain_task_in_progress" qtlid="2690">Ongoing task </translation>
    <translation id="exchange_tab_domain_validation" qtlid="33802">Validation</translation>
    <translation id="exchange_tab_domain_validation_doing" qtlid="136646">Domain validation in progress</translation>
@@ -392,8 +394,9 @@
    <translation id="exchange_tab_domain_validation_cname_details" qtlid="363401">In order to confirm that you own this domain, please create a CNAME record: <br /><br /><span class="bold">{0}.{1}</span> to <span class="bold">{2}</span>.<br /><br /> You have 48hrs to do this. </translation>
    <translation id="exchange_tab_domain_add_domain" qtlid="8602">Add a domain</translation>
    <translation id="exchange_tab_domain_delete_domain" qtlid="137556">Withdraw this domain from the Exchange services</translation>
+   <translation id="exchange_tab_domain_creating" qtlid="26791">Creation</translation>
    <translation id="exchange_tab_domain_delete_domain_accounts_warning" qtlid="148227">This domain cannot be deleted as it is still being used by one or more Exchange accounts</translation>
-   <translation id="exchange_tab_domain_NON_AUTHORITATIVE" qtlid="136672">Nonauthoritative</translation>
+   <translation id="exchange_tab_domain_NON_AUTHORITATIVE" qtlid="447703">Nonauthoritative</translation>
    <translation id="exchange_tab_domain_AUTHORITATIVE" qtlid="58807">Authoritative</translation>
    <translation id="exchange_tab_domain_warning" qtlid="136347">Attention!</translation>
    <translation id="exchange_tab_domain_partial" qtlid="137569">Some domains did not load correctly. Please refresh the page to resolve the issue.</translation>
@@ -550,11 +553,11 @@ I therefore explicitly renounce my right to cancel under the provisions of Artic
    <translation id="exchange_tab_domain_add_step1_order_domain_option" qtlid="136997">Order a domain name</translation>
    <translation id="exchange_tab_domain_add_step1_domain_none" qtlid="434538">No results found</translation>
 
-   <translation id="exchange_tab_domain_add_step3_cover_guide" qtlid="139572">Video guide preview image</translation>
+   <translation id="exchange_tab_domain_add_step3_cover_guide" qtlid="139572">No results found</translation>
 
    <translation id="exchange_tab_domain_add_step1_main_domain" qtlid="191070">Main domain of an organisation</translation>
    <translation id="exchange_tab_domain_add_step1_main_domain_tooltip" qtlid="191083">Main domain of the organisation</translation>
-   <translation id="exchange_tab_domain_add_step1_new_organization_intro" qtlid="191096">The domain of your organisation will be "{0}"</translation>
+   <translation id="exchange_tab_domain_add_step1_new_organization_intro" qtlid="447716">Your organisation's domain will be <strong>{0}</strong></translation>
    <translation id="exchange_tab_domain_add_step1_new_organization_placeholder" qtlid="191109">Name of organisation</translation>
    <translation id="exchange_tab_domain_add_step2_main_domain" qtlid="191122">Primary domain </translation>
    <translation id="exchange_tab_domain_add_step2_organization" qtlid="32278">Organisation</translation>
@@ -565,6 +568,7 @@ I therefore explicitly renounce my right to cancel under the provisions of Artic
    <translation id="exchange_tab_domain_add_step1_attach_organization_intro" qtlid="191135">The domain will be included in the following organisation:</translation>
 
    <translation id="exchange_tab_domain_add_set_auto_display" qtlid="416488">Tick this box if you do not want this window to re-open.</translation>
+   <translation id="exchange_tab_domain_add_goToWizardButton" qtlid="449388">I prefer to use the <br />configuration assistant</translation>
 
    <translation id="exchange_tab_domain_add_step1_order_domain_desc1" qtlid="167873">To confirm your order, please proceed to payment by clicking the "Order" button below.</translation>
    <translation id="exchange_tab_domain_add_step1_order_domain_desc2" qtlid="144175">A new tab will open and you will automatically be redirected to the OVH payment interface.</translation>
@@ -572,14 +576,14 @@ I therefore explicitly renounce my right to cancel under the provisions of Artic
    <translation id="exchange_tab_domain_step1_helpwizard_subdomain" qtlid="397559">To add one of your OVH domain's sub-domains, tick &#13;
 "Enter a domain name which is not managed by your OVH account" and enter it in the corresponding field. </translation>
    <translation id="exchange_tab_domain_add_step2_which_domain_type" qtlid="137998">What type of domain <span class="italic">{0}</span> is concerned?</translation>
-   <translation id="exchange_tab_domain_add_step2_auth_intro" qtlid="140859">Your domain <span class="italic">{0}</span> will be configured autoritatively.</translation>
-   <translation id="exchange_tab_domain_add_step2_non_auth_intro" qtlid="366372">Your <span class="italic">{0}</span> domain will be configured in nonauthoritative mode.</translation>
+   <translation id="exchange_tab_domain_add_step2_auth_intro" qtlid="140859">Your <span class="italic">{0}</span> domain will be configured in authoritative mode.</translation>
+   <translation id="exchange_tab_domain_add_step2_non_auth_intro" qtlid="447729">Your <span class="italic">{0}</span> domain will be configured in nonauthoritative mode.</translation>
    <translation id="exchange_tab_domain_add_step2bis_intro" qtlid="316944">Select your domain form:</translation>
 
    <translation id="exchange_tab_domain_add_step2_srv_checkbox" qtlid="138011">Configure the SRV automatically (autodiscover)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_checkbox" qtlid="139585">Configure MX automatically (receipt of emails)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_tooltip" qtlid="140209">Attention, configuring the MX automatically can affect the receipt of emails previously configured on this domain name.</translation>
-   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="273909">This option enables your email client, such as Outlook or Mail, to find your connection settings automatically (subject to compatibility with the MAPI protocol).</translation>
+   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="447742">With this option, your email client (e.g. Outlook or Mail) can automatically detect your login settings.</translation>
    <translation id="exchange_tab_domain_add_step3_srv_confirmation" qtlid="137816">SRV Configuration </translation>
    <translation id="exchange_tab_domain_add_step3_mx_confirmation" qtlid="137829">MX Configuration </translation>
    <translation id="exchange_tab_domain_add_step3_mx_replay" qtlid="316957">Target email server </translation>
@@ -587,29 +591,26 @@ I therefore explicitly renounce my right to cancel under the provisions of Artic
    <translation id="exchange_tab_domain_add_step3_configuration_false" qtlid="34788">No</translation>
    <translation id="exchange_tab_domain_add_step3_confirmation" qtlid="137855">Are you sure you want to add the domain below to the exchange server?</translation>
    <translation id="exchange_tab_domain_add_success" qtlid="137868">The domain will be added to your exchange server.</translation>
-   <translation id="exchange_tab_domain_add_failure" qtlid="137049">An error occurred on adding the domain to your exchange server.</translation>
+   <translation id="exchange_tab_domain_add_failure" qtlid="137049">An error has occurred adding the domain to your exchange server.</translation>
    <translation id="exchange_tab_domain_modify_success" qtlid="137907">The domain will be updated.</translation>
    <translation id="exchange_tab_domain_modify_failure" qtlid="137075">An error occurred on updating the domain.</translation>
    <translation id="exchange_tab_domain_modify_in_progress" qtlid="137088">Moving to {0}</translation>
    <translation id="exchange_tab_domain_inverse_NON_AUTHORITATIVE" qtlid="58807">Authoritative</translation>
-   <translation id="exchange_tab_domain_inverse_AUTHORITATIVE" qtlid="136672">Nonauthoritative</translation>
+   <translation id="exchange_tab_domain_inverse_AUTHORITATIVE" qtlid="447755">Nonauthoritative</translation>
    <translation id="exchange_tab_domain_mode_AUTHORITATIVE" qtlid="316970">Authoritative (Only Exchange)</translation>
-   <translation id="exchange_tab_domain_mode_NON_AUTHORITATIVE" qtlid="316983">Nonauthoritative (Exchange + other email service)</translation>
+   <translation id="exchange_tab_domain_mode_NON_AUTHORITATIVE" qtlid="447768">Nonauthoritative (Exchange + another email service)</translation>
    <translation id="exchange_tab_domain_AUTHORITATIVE_info" qtlid="324847">Authoritative mode does not let you use another messaging system with Exchange accounts. This mode lets you activate Vade Secure antispam.</translation>
-   <translation id="exchange_tab_domain_NON_AUTHORITATIVE_info" qtlid="324860">Nonauthoritative mode lets you use Exchange and another email service. Vade Secure anti-spam is only compatible if the POP/IMAP are hosted at OVH (MX Plan or shared service), in this instance you must enter mx1.mail.ovh.net as the target email server.</translation>
+   <translation id="exchange_tab_domain_NON_AUTHORITATIVE_info" qtlid="447781">In nonauthoritative mode, your Exchange service can function alongside another email service. The Vade Secure anti-spam system is compatible if the POP/IMAP accounts are hosted with OVH (MX plan or hosted package). If this is the case, you will need to specify mx1.mail.ovh.net as a target email server.</translation>
    <translation id="exchange_tab_domain_target_mail_server_label" qtlid="316957">Target email server </translation>
    <translation id="exchange_tab_domain_noovh_mx_info" qtlid="317126">MX and SRV changes must be carried out manually in your DNS zone. You can find the necessary information in the associated domains section, once the CNAME has been validated.</translation>
    <translation id="exchange_tab_domain_modify_domain" qtlid="137101">Domain configuration</translation>
-<translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="416397;416410;416410;169498;416423;416449">
-The Vade Secure anti-spam solution is compatible with non-authoritative mode (only if your POP/IMAP accounts are hosted by OVH). In this case, we recommend that you use: <strong qtlid="266365">{0}</strong>, <strong qtlid="78906">{1}</strong>, <strong qtlid="183112">{2}</strong> and <strong qtlid="292228">{3}</strong>
-<br/><br/> If you use non-authoritative mode with your email accounts that are not hosted by OVH, you must use: <strong qtlid="416436">{4}</strong> (see associated domains section)
-</translation>
+   <translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="444667">Vade Secure anti-spam is compatible with nonauthoritative mode (only if your POP/IMAP accounts are hosted by OVH). If this is the case, we recommend that you use: <strong>{0}</strong>, <strong>{1}</strong>, <strong>{2}</strong> and <strong>{3}</strong><br/><br/> If you use nonauthoritative mode with email accounts that are not hosted by OVH, you must use: <strong>{4}</strong> (see the "Associated domains" section)</translation>
    <translation id="exchange_tab_domain_modify_title" qtlid="137920">Are you sure you want to modify the following domain of your Exchange service?</translation>
    <translation id="exchange_tab_domain_modify_loop_warning" qtlid="210319">Warning, infinite loop!</translation>
    <translation id="exchange_tab_domain_modify_domain_warning" qtlid="210332">Invalid domain.</translation>
    <translation id="exchange_tab_domain_modify_length_warning" qtlid="210345">Warning, 255 characters maximum!</translation>
-   <translation id="exchange_tab_domain_modify_wizard_subtitle" qtlid="210358">Authoritative / Non-authoritative: What should I choose?</translation>
-   <translation id="exchange_tab_domain_modify_wizard_text" qtlid="370018">By default, when you add your domain to the Exchange server, it will be in authoritative mode. This means that when you send an email to the address of the doain managed by the server, the server will only check to see if the address is on the Exchange server. <br /><br /> However if you switch the domain to non-authoritative mode, when you send an email we will first check if the address is on the Exchange server, and if it isn't, the Exchange server will relay your message to the specified MX server. <br /><br />You can use your domain in non-authoritative mode if for example you want to manage some of your emails on Exchange and some of them on an External server. <br /><br />Please note, if you want to use Exchange and OVH email, you have to enter the following value into the "Traget email server" in the form on the left of the page : <strong>mx1.mail.ovh.net.</strong></translation>
+   <translation id="exchange_tab_domain_modify_wizard_subtitle" qtlid="210358">Authoritative/Nonauthoritative: What should I choose?</translation>
+   <translation id="exchange_tab_domain_modify_wizard_text" qtlid="370018">By default, when you add your domain to the Exchange server, it will be in authoritative mode. This means that when you send an email to the address of the doain managed by the server, the server will only check to see if the address is on the Exchange server. <br /><br /> However if you switch the domain to nonauthoritative mode, when you send an email we will first check if the address is on the Exchange server, and if it isn't, the Exchange server will relay your message to the specified MX server. <br /><br />You can use your domain in nonauthoritative mode if, for example, you want to manage some of your emails on Exchange and some of them on an External server. <br /><br />Please note, if you want to use Exchange and OVH email, you have to enter the following value into the "Target email server" in the form on the left of the page : <strong>mx1.mail.ovh.net.</strong></translation>
 
    <translation id="exchange_tab_domain_remove_domain" qtlid="137933">Delete a domain</translation>
    <translation id="exchange_tab_domain_remove_title" qtlid="137946">Are you sure you really want to delete the following domain from your Exchange service?</translation>
@@ -648,7 +649,7 @@ The Vade Secure anti-spam solution is compatible with non-authoritative mode (on
    <translation id="exchange_tab_DISCLAIMER_table_empty" qtlid="152258">You don't have any signatures.</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_content" qtlid="152271">Content</translation>
    <translation id="exchange_tab_DISCLAIMER_associated_domains" qtlid="133110">Associated domain</translation>
-   <translation id="exchange_tab_DISCLAIMER_state_header" qtlid="8230">Status</translation>
+   <translation id="exchange_tab_DISCLAIMER_state_header" qtlid="447794">Status</translation>
    <translation id="exchange_tab_DISCLAIMER_state_doing_tooltip" qtlid="143863">A task is scheduled or is currently in progress</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_outside_only" qtlid="152284">External only</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_outside_only_tooltip" qtlid="152297">Signature used only for outgoing mail</translation>
@@ -688,7 +689,7 @@ The Vade Secure anti-spam solution is compatible with non-authoritative mode (on
    <translation id="exchange_ACTION_add_disclaimer_option_OtherPhoneNumber" qtlid="152479">Telephone 2</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_PagerNumber" qtlid="152492">Pager number</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_PhoneNumber" qtlid="152505">Telephone number</translation>
-   <translation id="exchange_ACTION_add_disclaimer_option_State" qtlid="8230">Status</translation>
+   <translation id="exchange_ACTION_add_disclaimer_option_State" qtlid="447807">Status</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Street" qtlid="152518">Street</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Title" qtlid="16469">Title</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_UserLogonName" qtlid="46792">ID</translation>
@@ -743,7 +744,7 @@ The Vade Secure anti-spam solution is compatible with non-authoritative mode (on
    <translation id="exchange_tab_RESOURCES_table_capacity" qtlid="4334">Capacity</translation>
    <translation id="exchange_tab_RESOURCES_table_allow_conflicts" qtlid="156407">Conflict authorised</translation>
    <translation id="exchange_tab_RESOURCES_table_email" qtlid="69509">E-mail</translation>
-   <translation id="exchange_tab_RESOURCES_table_state" qtlid="8230">Status</translation>
+   <translation id="exchange_tab_RESOURCES_table_state" qtlid="447820">Status</translation>
    <translation id="exchange_tab_RESOURCES_table_state_task" qtlid="156420">Task in progress</translation>
    <translation id="exchange_tab_RESOURCES_action_add_resource_account" qtlid="63710">Add a resource account</translation>
    <translation id="exchange_tab_RESOURCES_type_EQUIPMENT" qtlid="82063">Equipment</translation>
@@ -873,7 +874,7 @@ The Vade Secure anti-spam solution is compatible with non-authoritative mode (on
    <translation id="exchange_tab_GROUPS_all_table_address" qtlid="11315">Email address</translation>
    <translation id="exchange_tab_GROUPS_all_table_manager" qtlid="81487">Administrators</translation>
    <translation id="exchange_tab_GROUPS_all_table_user" qtlid="32206">Contacts</translation>
-   <translation id="exchange_tab_GROUPS_all_table_status" qtlid="8230">Status</translation>
+   <translation id="exchange_tab_GROUPS_all_table_status" qtlid="447833">Status</translation>
    <translation id="exchange_tab_GROUPS_all_table_empty" qtlid="150346">You don't have any groups</translation>
    <translation id="exchange_tab_GROUPS_all_error_message" qtlid="150359">An error occurred on loading your group list.</translation>
    <translation id="exchange_tab_GROUPS_all_add_ml_button" qtlid="150372">Create a contact group</translation>
@@ -1072,7 +1073,7 @@ The Vade Secure anti-spam solution is compatible with non-authoritative mode (on
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_externalEmailAddress" qtlid="30430">Address</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_displayName" qtlid="80922">Display name</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_creationDate" qtlid="4358">Created</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state" qtlid="8230">Status</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state" qtlid="447846">Status</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_CREATING" qtlid="26227">Creating</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_DELETING" qtlid="133929">Deleting</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_REOPENING" qtlid="171279">Reopening...</translation>
@@ -1356,7 +1357,7 @@ The Vade Secure anti-spam solution is compatible with non-authoritative mode (on
    <translation id="exchange_tab_SHARED_header_path" qtlid="6838">Path</translation>
    <translation id="exchange_tab_SHARED_header_type" qtlid="2642">Type</translation>
    <translation id="exchange_tab_SHARED_header_access" qtlid="201510">Access permissions</translation>
-   <translation id="exchange_tab_SHARED_header_status" qtlid="8230">Status</translation>
+   <translation id="exchange_tab_SHARED_header_status" qtlid="447859">Status</translation>
    <translation id="exchange_tab_SHARED_header_access_PLAIN" qtlid="61656">Directory</translation>
    <translation id="exchange_tab_SHARED_header_access_CALENDAR" qtlid="201523">Calendar</translation>
    <translation id="exchange_tab_SHARED_header_access_CONTACTS" qtlid="32206">Contacts</translation>
@@ -1421,14 +1422,14 @@ The Vade Secure anti-spam solution is compatible with non-authoritative mode (on
    <translation id="exchange_action_SHARED_delete_error" qtlid="202056">An error occurred on deleting your share.</translation>
 
    <translation id="exchange_action_SHARED_permissions_delete_title" qtlid="202069">Delete a permission</translation>
-   <translation id="exchange_action_SHARED_permissions_delete_question" qtlid="202082">Do you really want to delete the access permission for the <strong>{0}</strong> share?</translation>
+   <translation id="exchange_action_SHARED_permissions_delete_question" qtlid="202082">Are you sure you want to delete the access permission to the <strong>{0}</strong> share?</translation>
    <translation id="exchange_action_SHARED_permissions_delete_success" qtlid="202095">Your access permission will be deleted.</translation>
    <translation id="exchange_action_SHARED_permissions_delete_error" qtlid="202056">An error occurred on deleting your share.</translation>
 
    <translation id="exchange_action_SHARED_permissions_update_title" qtlid="202108">Configuration of access permissions</translation>
-   <translation id="exchange_action_SHARED_permissions_update_intro" qtlid="209190">Access permission enables other Exchange<sup>1</sup> accounts to have certain permissions on the <strong>{0}</strong> share</translation>
+   <translation id="exchange_action_SHARED_permissions_update_intro" qtlid="209190">Access permission enables other Exchange<sup>1</sup> accounts to have certain permissions on the  <strong>{0}</strong> share</translation>
    <translation id="exchange_action_SHARED_permissions_update_legend" qtlid="209203">Basic Exchange accounts will not be displayed as they are not eligible for sharing permissions.</translation>
-   <translation id="exchange_action_SHARED_permissions_update_resume_intro" qtlid="202147">Summary of access permissions for the <strong>{0}</strong> share:</translation>
+   <translation id="exchange_action_SHARED_permissions_update_resume_intro" qtlid="202147">Summary of access permissions for the <strong>{0}</strong> share: </translation>
    <translation id="exchange_action_SHARED_permissions_update_success_message" qtlid="202160">The access permissions for the share  <span class="bold">{0}</span> will be modified.</translation>
    <translation id="exchange_action_SHARED_permissions_update_partial_message" qtlid="202173">Your request to update the access permissions for the share <span class="bold">{0}</span> were partly registered, but some errors occurred.</translation>
    <translation id="exchange_action_SHARED_permissions_update_error_message" qtlid="202186">Errors occurred on updating the access permissions for the share <span class="bold">{0}</span>.</translation>
@@ -1448,7 +1449,7 @@ The Vade Secure anti-spam solution is compatible with non-authoritative mode (on
    <translation id="exchange_SHARED_ACCOUNTS_quota_max_error_message" qtlid="215377">Invalid quota (maximum {0} {1})</translation>
    <translation id="exchange_SHARED_ACCOUNTS_quota_min_error_message" qtlid="215390">Invalid quota (minimum {0} {1})</translation>
    <translation id="exchange_SHARED_ACCOUNTS_total_quota_error_message" qtlid="215403">The total quota of shared accounts has exceeded the allowed threshold. Delete or reduce the quota of one or more existing accounts.</translation>
-   <translation id="exchange_SHARED_ACCOUNTS_login_error_message" qtlid="215416">Only alpha-numeric characters are allowed.</translation>
+   <translation id="exchange_SHARED_ACCOUNTS_login_error_message" qtlid="215416">Only letters and numbers are allowed.</translation>
    <translation id="exchange_SHARED_ACCOUNTS_quota_recap" qtlid="402620">Total quota: <strong>{0}</strong> Mib/Remaining quota: <strong>{1}</strong> Mib (<strong>{2}</strong>%)</translation>
 
    <translation id="exchange_ACTION_betaSharepoint_label_primaryEmailAddress" qtlid="221773">Administrator account email</translation>
@@ -1491,4 +1492,143 @@ The Vade Secure anti-spam solution is compatible with non-authoritative mode (on
    <translation id="exchange_order_view_button_label" qtlid="368245">Order Exchange </translation>
    <translation id="exchange_order_view_button_attached_title" qtlid="368258">Order the account attached to {0}</translation>
    <translation id="exchange_order_view_button_stand_alone_title" qtlid="368271">Order your new Exchange service </translation>
+
+<!-- Wizard -->
+   <translation id="exchange_wizardHostedCreation_welcome_progressBar_addDomainName" qtlid="449401">Domain configuration</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_progressBar_createEmailAddresses" qtlid="449414">Email address customisation</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_progressBar_summary" qtlid="82725">Review </translation>
+   <translation id="exchange_wizardHostedCreation_welcome_header" qtlid="449427">Your Microsoft Exchange<br/> service is not yet configured</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_subtext" qtlid="449440">Configure your service in just a few minutes to receive emails.</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_startButton" qtlid="449453">Start</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_standardConfiguratorButton" qtlid="449466">I prefer to use the standard configuration</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_closeButton" qtlid="4670">Close</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_closeAndSaveButton" qtlid="449479">Close and no longer display the configuration assistant</translation>
+
+   <translation id="exchange_wizardHostedCreation_addDomainName_subtext" qtlid="449492">Configure your Microsoft Exchange service</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_header" qtlid="449505">Add your domain name to your Exchange service</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_ifNoDomain" qtlid="449518">If you don't have a domain name yet,</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_goToOffers" qtlid="449531">check the domains page on our website.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_creationError" qtlid="449544">You cannot register this domain name. Please choose another domain.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_buttonContinueText" qtlid="449557">Add and continue</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_buttonDontContinueText" qtlid="449570">Add and configure later</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameValidationDelay" qtlid="449583">The domain associated with the Exchange server is currently being validated.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameValidation_explanation" qtlid="159202">This action could take a few minutes.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_header" qtlid="449596">Choose a domain name</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_placeholder" qtlid="84153">Choose</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_domainNotInList" qtlid="449609">My domain name does not appear in the list below</translation>
+
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_header" qtlid="4406">Configuration</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isDomainOnlyExchange" qtlid="449622">Are you strictly going to use OVH Exchange with this domain?</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isDomainEmail" qtlid="449635">Is this for an OVH hosted email service (web hosting or MX Plan) or an OVH Professional email service?</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_domainConfigurationAlert" qtlid="449648">Your domain is currently using <strong>{0}</strong> as a incoming server.<br />Emails sent to email addresses that have not been created at OVH will not be received, and will return failed delivery notifications to the sender.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isExchangeOnly" qtlid="34776">Yes</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isNotExchangeOnly" qtlid="34788">No</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isUsedByMails" qtlid="34776">Yes</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isNotUsedByMails" qtlid="449661">No, define a Simple Mail Transfer Protocol (SMTP) server</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isEmailService" qtlid="449674">Your domain will use <strong>mx1.mail.ovh.net</strong> as an incoming server.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_header" qtlid="449687">Simple Mail Tranfer Protocol (SMTP) server</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_title" qtlid="449700">Your DNS zone configuration</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_tooltip" qtlid="449713">With the DNS zone, you can manage various services linked to your domain name.<br /><br />E.g.: you can use the MX record to specify which email server is attached to your domain name.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip_1" qtlid="449726">The SMTP server intervenes if any emails are sent to accounts that are not hosted on your OVH Exchange service.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip_2" qtlid="449739">These emails will be automatically sent to the SMTP server.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_header" qtlid="449752">How would you like to configure your DNS zone?</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_auto" qtlid="273319">Automatic configuration </translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_manual" qtlid="273332">Manual configuration</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_manual_explanation1" qtlid="449765">I would like to configure the MX and SRV records myself,</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_manual_explanation2" qtlid="449778">and start receiving emails when I want to.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_nonAuthoritative" qtlid="449791">Please enter the SMTP service. Emails sent to addresses that have not been created with OVH will be sent to it.</translation>
+
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_header" qtlid="449804">DNS zone configuration</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_explanation" qtlid="449817">Since your domain name is managed by another NIC handle or service provider, you must update the CNAME record manually in your DNS zone. You will need the information below to begin adding this record.<br /><br />With the CNAME record, you can validate your external domain name on the OVH platform. This record will not affect your domain's current configuration.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_dnsZone_explanation" qtlid="449830">With the DNS zone, you can manage various services linked to a domain name. For example, you can link it to a web hosting plan using the A record, and you can link it to an email service using the MX record.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_inputHeader" qtlid="449843">Enter the domain name</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_example" qtlid="449856">E.g.: domainname1.com</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_placeholder" qtlid="66428">Domain name</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_cnameToCopy_header" qtlid="449869">CNAME record to copy</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_targetToCopy_header" qtlid="449882">Target to copy</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_cnameToCopy_explanation" qtlid="449895">This CNAME record must be added with your domain name's service provider within 48 hours. After this time period, you must generate a new one.<br />Once you have carried out this configuration, you can try setting up your Exchange service again.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_input_patternError" qtlid="449908">This record must contain a domain name and can only contain letters, numbers, full stops (.), plus signs (+), hyphens (-), or underscores (_).</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_input_alreadyExists" qtlid="449921">You can select this domain directly from the domain list above.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_waitingForActivation" qtlid="449934">The button will be enabled once verification is complete.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_confirmButton" qtlid="31498">Confirm</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_retrieval_error" qtlid="449947">There was an error loading your domain list.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_error" qtlid="449960">There was an error creating your server.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyNonAuthoritativeEmailPro" qtlid="449973">Since your domain is already associated to an OVH Professional email service, we have selected the best configuration option for your service.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAssociated_error" qtlid="449986">The <strong>{0}</strong> domain is already linked to an Exchange or SharePoint service. Please remove it from the service it is currently associated with before linking it to this service.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_cancelOperation_button" qtlid="449999">Quit installation process</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_cancelOperation_details" qtlid="450012">To go back to configuring your service, click the "Associated domains" tab, then click on the "Add a domain" button.</translation>
+
+   <translation id="exchange_wizardHostedCreation_emailCreation_header" qtlid="450025">Customise your Exchange email accounts</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_introduction_1" qtlid="450038">You can add up to {0} email accounts on your Exchange service.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_introduction_2" qtlid="450051">If you need more accounts, you can order them later from the <strong>Email accounts</strong> section of your Hosted Exchange service.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_header_email" qtlid="11315">Email address</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_header_displayName" qtlid="23515">Display name</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_header_state" qtlid="8230">Status</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_operationInProgress" qtlid="450064">You can customise your email accounts once the operations are complete.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_personnalizeButton" qtlid="450077">Customise an account</translation>
+
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_login_header" qtlid="11315">Email address</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_login_required" qtlid="450090">Required field.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_login_pattern" qtlid="450103">The local-part (before the @) can only contain letters, numbers, full stops (.), hyphens (-) or underscores (_).</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_firstName_title" qtlid="450116">Customise an email account</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_firstName_header" qtlid="23323">First name</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_name_header" qtlid="3818">Name</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_displayName_header" qtlid="23515">Display name</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_password_header" qtlid="2270">Password</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_password_error_confirmation" qtlid="450129">'Password' and 'Confirm password' fields must be identical.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_password_error_short" qtlid="450142">Your security preferences specify that a password must contain more than {0} characters.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_password_error_exchangePreferences" qtlid="450155">Your security preferences specify that a password must contain lower-case letters, upper-case letters, numbers and/or special characters.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_passwordConfirmation_header" qtlid="9983">Order confirmation </translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_emailAlreadyUsed" qtlid="450168">This email address is already used by an email address domain. You can migrate it to your Hosted Exchange account. </translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_emailAlreadyUsed_ifWontChange" qtlid="450181">If you do not wish to migrate your email address, please change the email address in the previous step.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migrationPassword_error" qtlid="450194">Password incorrect. Please try again.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_nextStepButton" qtlid="450207">Complete configuration</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_serviceParametersRetrieval_error" qtlid="450220">There was an error loading the configuration settings for your Exchange service.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_accountCreation_error" qtlid="450233">There was an error creating your email account.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_accountCreation_alreadyExist_error" qtlid="450246">The {0} email address you wish to configure already exists.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migrationChecking_error" qtlid="450259">This email account cannot be migrated to your Exchange service.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migrationChecking_mxPlanTechContact" qtlid="450272">This email account cannot be migrated automatically to your Exchange service. You must be an administrative and technical contact for the two services.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_error" qtlid="450285">An error has occurred migrating your email account.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_question_1" qtlid="450298">This email account already exists. Do you want to migrate it to the Exchange address?</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_question_2" qtlid="450311">All of your existing emails on this account will now be available via the Exchange address.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_warning" qtlid="436892">Important - the following elements are not included in this migration: <br />- your filters, <br />- your automatic replies, <br />- your mailing lists, <br />- and your Roundcube contacts.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_wrongPassword_error" qtlid="450324">Incorrect password.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_addButton_title" qtlid="37923">Add</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_nextButton_title" qtlid="37923">Add</translation>
+
+   <translation id="exchange_wizardHostedCreation_emailCreation_update_firstName_title" qtlid="450337">Modify an email account</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_updateButton_title" qtlid="37875">Edit</translation>
+
+   <translation id="exchange_wizardHostedCreation_emailCreation_update_changePassword_checkbox" qtlid="80394">Change the password</translation>
+
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_header" qtlid="450350">Complete your configuration</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_summary" qtlid="4082">Summary</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_domainName" qtlid="66428">Domain name</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_authoritative" qtlid="450363">Only uses the Exchange service</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_authoritative_yes" qtlid="34776">Yes</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_authoritative_no" qtlid="34788">No</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_emailAdresses" qtlid="450376">Email account(s) added</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_emailAdresses_non" qtlid="30646">No</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_auto_header" qtlid="450389">Your DNS zone will be configured in <strong>automatic</strong> mode.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_auto_explanation1" qtlid="450402">Your Hosted Exchange service for the <strong>{0}</strong> domain has now been configured. Once the MX diagnostic has been validated and turns green, you will begin receiving emails. Your service activation will take between 4 and 24 hours to become operational. View your emails by following this link</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_auto_explanation2" qtlid="450415">or in your <strong>General information</strong> tab, in the <strong>Connection → Webmail</strong> section.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_header" qtlid="450428">Your DNS zone will be configured in <strong>manual</strong> mode.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_part_1" qtlid="450441">By configuring the MX and SRV records,</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_part_2" qtlid="450480">, you are configuring your domain name so that it can receive your emails. You will be able to receive emails once your DNS zone propagates, and this can take between 4 and 24 hours.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_1" qtlid="450454">The OVH MX record links a domain name to an email server.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_2" qtlid="450467">With the SRV record, you can automatically configure your email address in your email software (e.g.: Outlook).</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_table_headers_fieldType" qtlid="129171">Type of field</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_table_headers_data" qtlid="26551">Information</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_table_mx" qtlid="23779">MX</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_table_srv" qtlid="130003">SRV</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_returnButton" qtlid="4118">Back</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_closeButton" qtlid="4070">Continue</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_availableAccountsRetrieval_error" qtlid="450493">An error has occurred loading email accounts associated with your domain.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_dialog_explanation1" qtlid="450506">Now, you just need to modify your DNS zone's MX and SRV records for this domain.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_dialog_explanation2" qtlid="450519">If your domain name is registered with OVH, go to your Control Panel: Web → Domains → DNS zone.<br /><br />If your domain name is registered elsewhere, please refer to your domain name service provider's documentation.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_dialog_explanation3" qtlid="450532">If you have already completed this action, wait or refresh your page. Once the MX diagnostic becomes validated and turns green, you will begin receiving your emails. Your service activation will take between 4 and 24 hours to become operational.</translation>
+
+   <translation id="exchange_wizardHostedCreation_ending_dialog" qtlid="450545">Final step</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_dialog_warning" qtlid="5066">Warning </translation>
+   <translation id="exchange_wizardHostedCreation_lastDialog_closeButton" qtlid="450558">Finalise</translation>
 </translations>
