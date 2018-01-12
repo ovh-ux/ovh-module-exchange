@@ -142,7 +142,7 @@ angular
             if (!_.isEmpty(selectedAccount.password)) {
                 this.simplePasswordFlag = !this.services.ExchangePassword.passwordSimpleCheck(selectedAccount.password, true, this.newAccountOptions.minPasswordLength);
 
-                // see the password complexity requirements of M$ Windows Server (like Exchange)
+                // see the password complexity requirements of Microsoft Windows Server (like Exchange)
                 // https://technet.microsoft.com/en-us/library/hh994562%28v=ws.10%29.aspx
                 if (this.newAccountOptions.passwordComplexityEnabled) {
                     this.simplePasswordFlag = this.simplePasswordFlag || !this.services.ExchangePassword.passwordComplexityCheck(selectedAccount.password);

@@ -1,10 +1,11 @@
 angular
     .module("Module.exchange.services")
     .service("Exchange", class Exchange {
-        constructor ($cacheFactory, $rootScope, Products, $http, $q, OvhHttp, APIExchange, $injector) {
+        constructor ($cacheFactory, $rootScope, ovhUserPref, Products, $http, $q, OvhHttp, APIExchange, $injector) {
             this.services = {
                 $cacheFactory,
                 $rootScope,
+                ovhUserPref,
                 Products,
                 $http,
                 $q,
@@ -54,7 +55,8 @@ angular
                 groupsChanged: "exchange.groups.changed",
                 disclaimersChanged: "exchange.disclaimers.changed",
                 externalcontactsChanged: "exchange.tabs.externalcontacts.changed",
-                publicFoldersChanged: "exchange.tabs.publicFolders.changed"
+                publicFoldersChanged: "exchange.tabs.publicFolders.changed",
+                sslRenewAsked: "exchange.sslRenew.asked"
             };
 
             this.updateValue();
@@ -82,9 +84,9 @@ angular
                 this.publicFolderCache.removeAll();
                 this.disclaimersCache.removeAll();
 
-                for (const request of Object.keys(this.requests)) {
+                _.forEach(Object.keys(this.requests), (request) => {
                     this.requests[request] = null;
-                }
+                });
             }
         }
 
@@ -151,6 +153,12 @@ angular
 
         static isEmailValid (email) {
             return email && email.match(/^[\w!#$%&'*+\/=?^`{|}~-]+(?:\.[\w!#$%&'*+\/=?^`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9]{2}(?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/);
+        }
+
+        retrievingWizardPreference () {
+            return this.services
+                .ovhUserPref
+                .getValue("WIZARD_HOSTED_CREATION_OPENING_PREFERENCE");
         }
 
         /**
@@ -266,7 +274,8 @@ angular
                 },
                 data: {
                     dcv: dcvEmail
-                }
+                },
+                broadcast: this.events.sslRenewAsked
             });
         }
 
@@ -529,7 +538,7 @@ angular
         /**
          * Delete account
          */
-        removeAccount (organization, serviceName, account) {
+        removingAccount (organization, serviceName, account) {
             return this.services
                 .OvhHttp
                 .delete("/email/exchange/{organization}/service/{exchange}/account/{account}", {

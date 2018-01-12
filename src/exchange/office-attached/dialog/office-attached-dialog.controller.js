@@ -19,7 +19,6 @@ angular
             this.maxNumberOfAccounts = 25;
             this.selectedCheckboxes = {};
             this.selectedAccounts = [];
-            this.isInitialLoad = true;
             this.exchange = Exchange.value;
 
             this.searchValue = null;
@@ -69,12 +68,12 @@ angular
             const alreadyKnownAccounts = [];
             const accountsToSave = [];
 
-            for (const alreadyKnownAccount of this.selectedAccounts) {
+            _.forEach(this.selectedAccounts, (alreadyKnownAccount) => {
                 if (!alreadyKnownAccounts.includes(alreadyKnownAccount.primaryEmailDisplayName)) {
                     alreadyKnownAccounts.push(alreadyKnownAccount.primaryEmailDisplayName);
                     accountsToSave.push(alreadyKnownAccount);
                 }
-            }
+            });
 
             this.selectedAccounts = accountsToSave;
 

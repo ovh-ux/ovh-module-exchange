@@ -11,19 +11,21 @@ angular
                 translator,
                 $window
             };
+        }
 
-            this.$routerParams = Exchange.getParams();
-
+        $onInit () {
+            this.$routerParams = this.services.Exchange.getParams();
             this.loading = false;
             this.agree = {
                 value: false
             };
 
-            $scope.retrievingDiskSpaceOptions = () => this.retrievingDiskSpaceOptions();
-            $scope.submitting = () => this.submitting();
-            $scope.loadContracts = () => this.loadContracts();
-            $scope.getAgreementValue = () => this.agree.value;
-            $scope.backToContracts = () => this.backToContracts();
+            this.services.$scope.submitting = () => this.submitting();
+            this.services.$scope.loadContracts = () => this.loadContracts();
+            this.services.$scope.getAgreementValue = () => this.agree.value;
+            this.services.$scope.backToContracts = () => this.backToContracts();
+
+            this.retrievingDiskSpaceOptions();
         }
 
         retrievingDiskSpaceOptions () {

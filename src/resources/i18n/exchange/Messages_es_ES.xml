@@ -70,11 +70,11 @@
    <translation id="exchange_ACTION_export_confirm" qtlid="217080">¿Seguro que quiere exportar sus cuentas?</translation>
 
 <!-- OFFICE ATTACHED -->
-   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Promoción:</strong> ¡Active gratis* Office 365 en sus cuentas Exchange!</translation>
-   <translation id="exchange_office_attached_alert_details" qtlid="404213">* Esta promoción solo se aplica a la solución Office 365 Business. Puede utilizar un máximo de {0} direcciones Exchange. Primer mes gratis. A continuación, la renovación se realizará automáticamente al precio vigente indicado en la fecha de renovación en <a target="_blank" href="https://www.ovh.es:51043">https://www.ovh.es:51043</a></translation>
+   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Promoción:</strong> ¡Active gratis Office 365 en sus cuentas Exchange!</translation>
+   <translation id="exchange_office_attached_alert_details" qtlid="404213">Esta promoción solo se aplica a la solución Office 365 Business. Puede utilizar un máximo de {0} direcciones Exchange. Primer mes gratis. A continuación, la renovación se realizará automáticamente al precio vigente indicado en la fecha de renovación en <a target="_blank" href="https://www.ovh.es:51043">https://www.ovh.es:51043</a>.</translation>
    <translation id="exchange_office_attached_alert_button" qtlid="404226">Aprovechar la promoción</translation>
    <translation id="exchange_office_attached_alert_modale_title" qtlid="404239">Activar la promoción Office 365</translation>
-   <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Disfrute de un mes gratis de Office 365 en un máximo de {0} cuentas Exchange elegidas por usted.</translation>
+   <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Disfrute de un mes gratis de Office 365 Business en un máximo de {0} cuentas Exchange elegidas por usted.</translation>
    <translation id="exchange_office_attached_alert_modale_selected_accounts" qtlid="404265">{0} cuentas seleccionadas para un máximo de {1}</translation>
    <translation id="exchange_office_attached_alert_modale_account_types" qtlid="404278">Tipos de cuenta que se utilizan en la búsqueda</translation>
    <translation id="exchange_office_attached_alert_modale_search_form" qtlid="404291">Buscar las cuenta de correo que se utilizan</translation>
@@ -148,6 +148,7 @@
    <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="171188">Abriendo...</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Suspendido</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Suspendiendo...</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_MIGRATING" qtlid="186713">Migrando...</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SPAM" qtlid="70409">Spam</translation>
 
    <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="31522">OK</translation>
@@ -188,8 +189,8 @@
    <translation id="exchange_tab_ALIAS_back_button" qtlid="4118">Volver</translation>
    <translation id="exchange_tab_ALIAS_header" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_delete_tooltip" qtlid="178848">Eliminar el alias</translation>
-   <translation id="exchange_tab_ALIAS_intro" qtlid="434512">Liste des alias créés pour le compte <strong>{0}</strong></translation>
-   <translation id="exchange_tab_ALIAS_GROUP_intro" qtlid="434525">Liste des alias créés pour le groupe <strong>{0}</strong></translation>
+   <translation id="exchange_tab_ALIAS_intro" qtlid="434512">Alias creados para la cuenta <strong>{0}</strong></translation>
+   <translation id="exchange_tab_ALIAS_GROUP_intro" qtlid="434525">Alias creados para el grupo <strong>{0}</strong></translation>
    <translation id="exchange_tab_ALIAS_table_empty" qtlid="143954">No hay ningún alias para esa cuenta.</translation>
    <translation id="exchange_tab_ALIAS_GROUP_table_empty" qtlid="178874">No hay alias para este grupo</translation>
    <translation id="exchange_tab_ALIAS_state_TASK_ON_DOING" qtlid="26383">En proceso</translation>
@@ -207,7 +208,7 @@
    <translation id="exchange_tab_ALIAS_remove_alias_label" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_remove_account_label" qtlid="143603">Cuenta asociada</translation>
    <translation id="exchange_tab_ALIAS_add_alias_title" qtlid="143616">Crear un alias</translation>
-   <translation id="exchange_tab_ALIAS_add_alias_intro" qtlid="155782">Crear un alias para la cuenta</translation>
+   <translation id="exchange_tab_ALIAS_add_alias_intro" qtlid="416579">Crear un alias para la cuenta <span class="bold">{0}</span></translation>
    <translation id="exchange_tab_ALIAS_add_alias_placeholder" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_add_alias_step2_intro" qtlid="144006">¿Seguro que quiere añadir el alias que se indica a continuación?</translation>
    <translation id="exchange_tab_ALIAS_add_alias_step2_alias_label" qtlid="9466">Alias</translation>
@@ -437,7 +438,7 @@
    <translation id="exchange_ACTION_add_account_step1_last_name_label" qtlid="3818">Nombre</translation>
    <translation id="exchange_ACTION_add_account_step1_display_name_label" qtlid="23515">Nombre mostrado</translation>
    <translation id="exchange_ACTION_add_account_step1_password_label" qtlid="2270">Contraseña</translation>
-   <translation id="exchange_ACTION_add_account_step1_password_confirmation_label" qtlid="9983">Repetir contraseña</translation>
+   <translation id="exchange_ACTION_add_account_step1_password_confirmation_label" qtlid="9983">Confirmar</translation>
    <translation id="exchange_ACTION_add_account_step1_password_tooltip" qtlid="178809">Mínimo 8 caracteres alfanuméricos o especiales.</translation>
    <translation id="exchange_ACTION_add_account_step1_outlook_label" qtlid="136724">Licencia Outlook</translation>
    <translation id="exchange_ACTION_add_account_step1_security_label" qtlid="136750">Opc. de seguridad</translation>
@@ -450,12 +451,11 @@
    <translation id="exchange_ACTION_add_account_step2_last_name_label" qtlid="3818">Nombre</translation>
    <translation id="exchange_ACTION_add_account_step2_display_name_label" qtlid="23515">Nombre mostrado</translation>
    <translation id="exchange_ACTION_add_account_step2_password_label" qtlid="2270">Contraseña</translation>
-   <translation id="exchange_ACTION_add_account_step2_password_confirmation_label" qtlid="9983">Repetir contraseña</translation>
+   <translation id="exchange_ACTION_add_account_step2_password_confirmation_label" qtlid="9983">Confirmar</translation>
    <translation id="exchange_ACTION_add_account_step2_type_label" qtlid="48938">Tipo de cuenta</translation>
    <translation id="exchange_ACTION_add_account_step2_outlook_label" qtlid="136724">Licencia Outlook</translation>
-   <translation id="exchange_ACTION_add_account_step2_security_label" qtlid="136750">Opc. de seguridad</translation>
    <translation id="exchange_ACTION_add_account_step2_GAL_label" qtlid="191954">Ocultar la dirección en Outlook</translation>
-   <translation id="exchange_ACTION_add_account_security_NONE" qtlid="8674">Ninguno </translation>
+   <translation id="exchange_ACTION_add_account_security_NONE" qtlid="8674">Ninguno</translation>
    <translation id="exchange_ACTION_add_account_security_VADERETRO" qtlid="324821">Protección Vade Secure</translation>
    <translation id="exchange_ACTION_add_account_GAL_true" qtlid="34776">Sí</translation>
    <translation id="exchange_ACTION_add_account_GAL_false" qtlid="34788">No</translation>
@@ -478,7 +478,7 @@
    <translation id="exchange_ACTION_update_account_step1_last_name_label" qtlid="3818">Nombre</translation>
    <translation id="exchange_ACTION_update_account_step1_display_name_label" qtlid="23515">Nombre mostrado</translation>
    <translation id="exchange_ACTION_update_account_step1_password_label" qtlid="2270">Contraseña</translation>
-   <translation id="exchange_ACTION_update_account_step1_password_confirmation_label" qtlid="9983">Repetir contraseña</translation>
+   <translation id="exchange_ACTION_update_account_step1_password_confirmation_label" qtlid="9983">Confirmar</translation>
    <translation id="exchange_ACTION_update_account_step1_complex_password_tooltip" qtlid="178822">Mínimo {0} caracteres alfanuméricos o especiales.</translation>
    <translation id="exchange_ACTION_update_account_step1_simple_password_tooltip" qtlid="137595">Mínimo {0} caracteres.</translation>
    <translation id="exchange_ACTION_update_account_step1_outlook_label" qtlid="136724">Licencia Outlook</translation>
@@ -504,7 +504,7 @@
    <translation id="exchange_ACTION_update_account_step2_outlook_label" qtlid="136724">Licencia Outlook</translation>
    <translation id="exchange_ACTION_update_account_step2_security_label" qtlid="136750">Opc. de seguridad</translation>
    <translation id="exchange_ACTION_update_account_step2_GAL_label" qtlid="191954">Ocultar la dirección en Outlook</translation>
-   <translation id="exchange_ACTION_update_account_security_NONE" qtlid="8674">Ninguno </translation>
+   <translation id="exchange_ACTION_update_account_security_NONE" qtlid="8674">Ninguno</translation>
    <translation id="exchange_ACTION_update_account_security_VADERETRO" qtlid="324834">Protección Vade Secure</translation>
    <translation id="exchange_ACTION_update_account_GAL_true" qtlid="34776">Sí</translation>
    <translation id="exchange_ACTION_update_account_GAL_false" qtlid="34788">No</translation>
@@ -547,7 +547,7 @@
    <translation id="exchange_tab_domain_add_step1_user_owned_option" qtlid="397533">Introducir un nombre de dominio no gestionado por su cuenta OVH</translation>
    <translation id="exchange_tab_domain_add_step1_user_owned_info" qtlid="397546">Atención: Asegúrese de que la zona DNS del dominio seleccionado puede ser modificada por su administrador.</translation>
    <translation id="exchange_tab_domain_add_step1_order_domain_option" qtlid="136997">Registrar un dominio</translation>
-   <translation id="exchange_tab_domain_add_step1_domain_none" qtlid="434538">Aucun résultat trouvé</translation>
+   <translation id="exchange_tab_domain_add_step1_domain_none" qtlid="434538">No se han encontrado resultados</translation>
 
    <translation id="exchange_tab_domain_add_step3_cover_guide" qtlid="139572">Imagen de presentación de videoguía</translation>
 
@@ -577,7 +577,7 @@
    <translation id="exchange_tab_domain_add_step2_srv_checkbox" qtlid="138011">Configurar automáticamente el SRV (autodiscover)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_checkbox" qtlid="139585">Configurar automáticamente el MX (recepción del correo)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_tooltip" qtlid="140209">Atención, configurar automáticamente el MX puede afectar a la recepción del correo previamente configurado en ese dominio.</translation>
-   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="273909">Esta opción permitirá a sus clientes de correo, como Outlook o Mail, conocer automáticamente sus parámetros de conexión.</translation>
+   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="273909">Esta opción permitirá a sus clientes de correo, como Outlook o Mail, conocer automáticamente sus parámetros de conexión (siempre que sean compatibles con el protocolo MAPI).</translation>
    <translation id="exchange_tab_domain_add_step3_srv_confirmation" qtlid="137816">Configuración SRV</translation>
    <translation id="exchange_tab_domain_add_step3_mx_confirmation" qtlid="137829">Configuración MX</translation>
    <translation id="exchange_tab_domain_add_step3_mx_replay" qtlid="316957">Servidor de correo de destino</translation>
@@ -598,7 +598,7 @@
    <translation id="exchange_tab_domain_target_mail_server_label" qtlid="316957">Servidor de correo de destino</translation>
    <translation id="exchange_tab_domain_noovh_mx_info" qtlid="317126">Deberá realizar los cambios en los registros MX y SRV manualmente en la zona DNS. Una vez realizada la validación CNAME, podrá encontrar la información necesaria en la pestaña «Dominios asociados».</translation>
    <translation id="exchange_tab_domain_modify_domain" qtlid="137101">Configurar un dominio</translation>
-<translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="416397">
+<translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="416397;416410;416410;169498;416423;416449">
 El antispam Vade Secure es compatible con el modo no autoritario (solo si sus cuentas POP/IMAP están alojadas en OVH). En ese caso, le aconsejamos que utilice: <strong qtlid="266365">{0}</strong>, <strong qtlid="78906">{1}</strong>, <strong qtlid="183112">{2}</strong> y <strong qtlid="292228">{3}</strong>
 <br/><br/> Si utiliza el modo no autoritario con cuentas de correo no alojadas en OVH, deberá utilizar: <strong qtlid="416436">{4}</strong> (ver la sección de dominios asociados)
 </translation>
@@ -617,7 +617,7 @@ El antispam Vade Secure es compatible con el modo no autoritario (solo si sus cu
 <!-- ########################################## -->
 <!-- DELEGATION -->
    <translation id="exchange_ACTION_delegation_title" qtlid="143733">Configuración de delegaciones</translation>
-   <translation id="exchange_ACTION_delegation_step1_intro" qtlid="434551">Une délégation permet à d'autres comptes Exchange d'avoir certains droits sur le compte <strong>{0}</strong></translation>
+   <translation id="exchange_ACTION_delegation_step1_intro" qtlid="434551">Una delegación permite que otras cuentas Exchange tengan determinados permisos sobre la cuenta <strong>{0}</strong>.</translation>
    <translation id="exchange_ACTION_delegation_table_empty" qtlid="150047">No hay cuentas disponibles</translation>
    <translation id="exchange_ACTION_delegation_table_empty_search" qtlid="150060">No hay cuentas que se ajusten a la búsqueda</translation>
    <translation id="exchange_ACTION_delegation_step1_email_header" qtlid="137244">Cuenta de correo</translation>
@@ -625,7 +625,7 @@ El antispam Vade Secure es compatible con el modo no autoritario (solo si sus cu
    <translation id="exchange_ACTION_delegation_step1_sendOnBehalfTo_header" qtlid="181487">Permiso de «envío como»</translation>
    <translation id="exchange_ACTION_delegation_step1_full_header" qtlid="181500">Permiso de acceso</translation>
    <translation id="exchange_ACTION_delegation_step1_task_on_doing" qtlid="201458">Tarea en proceso</translation>
-   <translation id="exchange_ACTION_delegation_step2_intro" qtlid="434564">Les droits de délégation afférents au compte <strong>{0}</strong> :</translation>
+   <translation id="exchange_ACTION_delegation_step2_intro" qtlid="434564">Permisos de delegación asignados a la cuenta <strong>{0}</strong>:</translation>
    <translation id="exchange_ACTION_delegation_step2_email_header" qtlid="137244">Cuenta de correo</translation>
    <translation id="exchange_ACTION_delegation_step2_send_header" qtlid="143798">Permiso de envío</translation>
    <translation id="exchange_ACTION_delegation_step2_sendOnBehalfTo_header" qtlid="181487">Permiso de «envío como»</translation>
@@ -670,7 +670,7 @@ El antispam Vade Secure es compatible con el modo no autoritario (solo si sus cu
    <translation id="exchange_ACTION_add_disclaimer_option_Country" qtlid="25171">País</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Department" qtlid="30706">Provincia</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_DisplayName" qtlid="80922">Nombre mostrado</translation>
-   <translation id="exchange_ACTION_add_disclaimer_option_Email" qtlid="69509">Email</translation>
+   <translation id="exchange_ACTION_add_disclaimer_option_Email" qtlid="69509">Correo electrónico</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_FaxNumber" qtlid="152388">Fax</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_FirstName" qtlid="23323">Nombre</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_HomePhoneNumber" qtlid="152401">Teléfono fijo</translation>
@@ -740,7 +740,7 @@ El antispam Vade Secure es compatible con el modo no autoritario (solo si sus cu
    <translation id="exchange_tab_RESOURCES_table_type" qtlid="2642">Tipo</translation>
    <translation id="exchange_tab_RESOURCES_table_capacity" qtlid="4334">Capacidad</translation>
    <translation id="exchange_tab_RESOURCES_table_allow_conflicts" qtlid="156407">Conflicto autorizado</translation>
-   <translation id="exchange_tab_RESOURCES_table_email" qtlid="69509">Email</translation>
+   <translation id="exchange_tab_RESOURCES_table_email" qtlid="69509">Correo electrónico</translation>
    <translation id="exchange_tab_RESOURCES_table_state" qtlid="8230">Estado</translation>
    <translation id="exchange_tab_RESOURCES_table_state_task" qtlid="156420">Tarea en proceso</translation>
    <translation id="exchange_tab_RESOURCES_action_add_resource_account" qtlid="63710">Añadir una cuenta de recursos</translation>
@@ -826,6 +826,7 @@ El antispam Vade Secure es compatible con el modo no autoritario (solo si sus cu
    <translation id="exchange_DIAGNOSTICS_status_canSendEmail_help_li4" qtlid="319817">Incidencia en la infraestructura Exchange.</translation>
    <translation id="exchange_DIAGNOSTICS_status_support_ticket_subject" qtlid="291643">Diagnóstico Exchange</translation>
    <translation id="exchange_DIAGNOSTICS_status_support_ticket_body" qtlid="291656">Conserve los siguientes datos. Estos le serán útiles para diagnosticar su situación.</translation>
+   <translation id="exchange_DIAGNOSTICS_create_ticket" qtlid="260801">Crear una solicitud de asistencia</translation>
 
 <!-- ########################################## -->
 <!-- TAB MAILING LISTS -->
@@ -833,7 +834,7 @@ El antispam Vade Secure es compatible con el modo no autoritario (solo si sus cu
    <translation id="exchange_tab_GROUPS_header" qtlid="32962">Grupos</translation>
    <translation id="exchange_tab_GROUPS_remove_account_tooltip" qtlid="150073">Quitar la cuenta de este grupo</translation>
    <translation id="exchange_tab_GROUPS_intro" qtlid="155873">Lista de grupos de la cuenta <span class="bold">{0}</span></translation>
-   <translation id="exchange_tab_GROUPS_table_empty" qtlid="150099">No hay grupos en esta cuenta</translation>
+   <translation id="exchange_tab_GROUPS_table_empty" qtlid="150099">No hay grupos en esta cuenta.</translation>
    <translation id="exchange_tab_GROUPS_table_empty_search" qtlid="150112">No hay grupos que se ajusten a la búsqueda</translation>
    <translation id="exchange_tab_GROUPS_state_TASK_ON_DOING" qtlid="26383">En proceso</translation>
    <translation id="exchange_tab_GROUPS_state_TASK_ON_DOING_tooltip" qtlid="150125">Hay una tarea relativa a este grupo planificada un realizándose</translation>
@@ -889,7 +890,7 @@ El antispam Vade Secure es compatible con el modo no autoritario (solo si sus cu
    <translation id="exchange_tab_GROUPS_delete_group_success" qtlid="150151">El grupo va a eliminarse.</translation>
    <translation id="exchange_tab_GROUPS_delete_group_error" qtlid="150164">Se ha producido un error al eliminar el grupo.</translation>
    <translation id="exchange_GROUPS_delegation_title" qtlid="150398">Configuración de la delegación</translation>
-   <translation id="exchange_GROUPS_delegation_step1_intro" qtlid="434577">Une délégation permet à d'autres comptes Exchange d'avoir certains droits sur le groupe <strong>{0}</strong></translation>
+   <translation id="exchange_GROUPS_delegation_step1_intro" qtlid="434577">Una delegación permite que otras cuentas Exchange tengan determinados permisos sobre el grupo <strong>{0}</strong>.</translation>
    <translation id="exchange_GROUPS_delegation_step1_email_header" qtlid="137244">Cuenta de correo</translation>
    <translation id="exchange_GROUPS_delegation_step1_send_header" qtlid="143759">Conceder permiso de envío</translation>
    <translation id="exchange_GROUPS_delegation_step1_full_header" qtlid="144240">Conceder permiso de acceso</translation>
@@ -934,7 +935,7 @@ El antispam Vade Secure es compatible con el modo no autoritario (solo si sus cu
    <translation id="exchange_GROUPS_add_group_help_directory_text" qtlid="184880">Ocultar en Outlook permite que la dirección del grupo no sea visible en la lista de direcciones del servicio Exchange.</translation>
    <translation id="exchange_GROUPS_add_group_help_security_header" qtlid="150528">Es necesario autentificarse</translation>
    <translation id="exchange_GROUPS_add_group_help_security_text" qtlid="150671">Si está marcada, los miembros del grupo son los únicos que pueden enviar un mensaje a la dirección del grupo.</translation>
-   <translation id="exchange_GROUPS_manager_intro" qtlid="434590">Liste des comptes administrateur du groupe <strong>{0}</strong></translation>
+   <translation id="exchange_GROUPS_manager_intro" qtlid="434590">Cuentas de administrador del grupo <strong>{0}</strong></translation>
    <translation id="exchange_GROUPS_manager_back_button" qtlid="4118">Volver</translation>
    <translation id="exchange_GROUPS_manager_delete_tooltip" qtlid="150697">Borrar esta cuenta de la lista de administradores</translation>
    <translation id="exchange_GROUPS_manager_table_empty" qtlid="150710">No hay administradores para este grupo</translation>
@@ -943,9 +944,9 @@ El antispam Vade Secure es compatible con el modo no autoritario (solo si sus cu
    <translation id="exchange_GROUPS_remove_manager_question" qtlid="150749">¿Seguro que quiere eliminar la siguiente cuenta de la lista de administradores del grupo?</translation>
    <translation id="exchange_GROUPS_remove_manager_group_label" qtlid="59507">Grupo</translation>
    <translation id="exchange_GROUPS_remove_manager_manager_label" qtlid="43948">Administrador </translation>
-   <translation id="exchange_GROUPS_remove_manager_success_message" qtlid="434603">Le compte <strong>{0}</strong> va être supprimé de la liste d'administrateurs du groupe <span class="bold">{1}</span>.</translation>
+   <translation id="exchange_GROUPS_remove_manager_success_message" qtlid="434603">La cuenta <strong>{0}</strong> va a eliminarse de la lista de administradores del grupo <span class="bold">{1}</span>.</translation>
    <translation id="exchange_GROUPS_remove_manager_error_message" qtlid="155912">Se ha producido un error al eliminar la cuenta <span class="bold">{0}</span> de la lista de administradores del grupo <span class="bold">{1}</span>.</translation>
-   <translation id="exchange_GROUPS_member_intro" qtlid="434616">Liste des comptes contacts du groupe <strong>{0}</strong></translation>
+   <translation id="exchange_GROUPS_member_intro" qtlid="434616">Cuentas de contactos del grupo <strong>{0}</strong></translation>
    <translation id="exchange_GROUPS_member_back_button" qtlid="4118">Volver</translation>
    <translation id="exchange_GROUPS_member_delete_tooltip" qtlid="150801">Borrar esta cuenta de la lista de contactos</translation>
    <translation id="exchange_GROUPS_member_table_empty" qtlid="150814">No hay contactos para este grupo</translation>
@@ -1175,9 +1176,9 @@ El antispam Vade Secure es compatible con el modo no autoritario (solo si sus cu
    <translation id="minPasswordLength_mustBeInteger_error" qtlid="178055">La longitud mínima de la contraseña debe ser un número entero</translation>
    <translation id="minPasswordLength_number_error" qtlid="178055">La longitud mínima de la contraseña debe ser un número entero</translation>
    <translation id="minPasswordLength_pattern_error" qtlid="178055">La longitud mínima de la contraseña debe ser un número entero</translation>
-   <translation id="minPasswordAge_min_error" qtlid="434629">L'âge minimal du mot de passe ne peut pas être inférieur à 0 jour</translation>
-   <translation id="minPasswordAge_max_error" qtlid="434642">L'âge minimal du mot de passe ne peut pas être supérieur à 90 jours</translation>
-   <translation id="minPasswordAge_mustBeInteger_error" qtlid="434655">L'âge minimal du mot de passe doit être un nombre entier</translation>
+   <translation id="minPasswordAge_min_error" qtlid="434629">La antigüedad mínima de la contraseña no puede ser inferior a 0 días.</translation>
+   <translation id="minPasswordAge_max_error" qtlid="434642">La antigüedad mínima de la contraseña no puede ser superior a 90 días.</translation>
+   <translation id="minPasswordAge_mustBeInteger_error" qtlid="434655">La antigüedad mínima de la contraseña debe ser un número entero.</translation>
    <translation id="minPasswordAge_minToBigForMax_error" qtlid="178094">La antigüedad mínima de la contraseña debe ser inferior a la antigüedad máxima</translation>
    <translation id="minPasswordAge_pattern_error" qtlid="434018">La antigüedad de la contraseña debe ser un número entero. </translation>
    <translation id="minPasswordAge_number_error" qtlid="434018">La antigüedad de la contraseña debe ser un número entero. </translation>
@@ -1214,7 +1215,7 @@ El antispam Vade Secure es compatible con el modo no autoritario (solo si sus cu
    <translation id="lockoutDuration_pattern_error" qtlid="178042">La duración de bloqueo debe ser un número entero.</translation>
    <translation id="exchange_ACTION_configure_success" qtlid="178263">Los cambios van a aplicarse</translation>
    <translation id="exchange_ACTION_configure_error" qtlid="178276">Se ha producido un error en la solicitud. Los cambios no se aplicarán.</translation>
-   <translation id="exchange_ACTION_configure_step2_intro" qtlid="434668">Récapitulatif de configuration pour votre service Exchange <strong>{0}</strong></translation>
+   <translation id="exchange_ACTION_configure_step2_intro" qtlid="434668">Resumen de configuración de su servicio Exchange <strong>{0}</strong></translation>
    <translation id="exchange_ACTION_configure_step2_label_lockoutDuration" qtlid="178302">Duración de bloqueo de la cuenta:</translation>
    <translation id="exchange_ACTION_configure_step2_label_lockoutObservationWindow" qtlid="178315">Ventana de observación para el bloqueo:</translation>
    <translation id="exchange_ACTION_configure_step2_label_lockoutThreshold" qtlid="178328">Umbral de bloqueo de la cuenta:</translation>
@@ -1364,7 +1365,7 @@ El antispam Vade Secure es compatible con el modo no autoritario (solo si sus cu
    <translation id="exchange_tab_SHARED_table_empty_search" qtlid="201588">No hay elementos compartidos que se ajusten a la búsqueda</translation>
 
    <translation id="exchange_tab_SHARED_permissions_intro" qtlid="201601">Lista de cuentas con permisos de acceso al elemento compartido <strong>{0}</strong></translation>
-   <translation id="exchange_tab_SHARED_permissions_header_email" qtlid="69509">Email</translation>
+   <translation id="exchange_tab_SHARED_permissions_header_email" qtlid="69509">Correo electrónico</translation>
    <translation id="exchange_tab_SHARED_permissions_header_quota" qtlid="6874">Límite</translation>
    <translation id="exchange_tab_SHARED_permissions_header_type" qtlid="144253">Permiso de acceso</translation>
    <translation id="exchange_tab_SHARED_permissions_type_EDITOR" qtlid="17321">Escritura</translation>
@@ -1422,7 +1423,7 @@ El antispam Vade Secure es compatible con el modo no autoritario (solo si sus cu
    <translation id="exchange_action_SHARED_permissions_delete_error" qtlid="202056">Se ha producido un error al dejar de compartir el elemento.</translation>
 
    <translation id="exchange_action_SHARED_permissions_update_title" qtlid="202108">Configuración de los permisos de acceso</translation>
-   <translation id="exchange_action_SHARED_permissions_update_intro" qtlid="209190">Un permiso de acceso permite que otras cuentas Exchange<sup>1</sup> tengan determinados derechos sobre el elemento compartido {0}</translation>
+   <translation id="exchange_action_SHARED_permissions_update_intro" qtlid="209190">Un permiso de acceso permite que otras cuentas Exchange<sup>1</sup> tengan determinados permisos sobre el elemento compartido {0}.</translation>
    <translation id="exchange_action_SHARED_permissions_update_legend" qtlid="209203">Las cuentas Exchange de tipo «Basic» no se muestran, ya que no es posible asignarles permisos de acceso a los elementos compartidos.</translation>
    <translation id="exchange_action_SHARED_permissions_update_resume_intro" qtlid="202147">Resumen de los cambios en los permisos de acceso al elemento compartido {0}:</translation>
    <translation id="exchange_action_SHARED_permissions_update_success_message" qtlid="202160">Van a editarse los permisos de acceso del elemento compartido <span class="bold">{0}</span>.</translation>
@@ -1441,8 +1442,8 @@ El antispam Vade Secure es compatible con el modo no autoritario (solo si sus cu
    <translation id="exchange_SHARED_ACCOUNTS_update_action_title" qtlid="215234">Edición de cuenta compartida</translation>
    <translation id="exchange_SHARED_ACCOUNTS_delete_title" qtlid="215364">Eliminar una cuenta compartida</translation>
    <translation id="exchange_SHARED_ACCOUNTS_recap_title" qtlid="82725">Resumen</translation>
-   <translation id="exchange_SHARED_ACCOUNTS_quota_max_error_message" qtlid="215377">Cuota no válida (máximo {0} {1})</translation>
-   <translation id="exchange_SHARED_ACCOUNTS_quota_min_error_message" qtlid="215390">Cuota no válida (mínimo {0} {1})</translation>
+   <translation id="exchange_SHARED_ACCOUNTS_quota_max_error_message" qtlid="215377">Capacidad no válida (máximo {0} {1})</translation>
+   <translation id="exchange_SHARED_ACCOUNTS_quota_min_error_message" qtlid="215390">Capacidad no válida (mínimo {0} {1})</translation>
    <translation id="exchange_SHARED_ACCOUNTS_total_quota_error_message" qtlid="215403">La cuota total de las cuentas compartidas ha superado el límite autorizado. Elimine o reduzca la cuota de una o más cuentas existentes.</translation>
    <translation id="exchange_SHARED_ACCOUNTS_login_error_message" qtlid="215416">Solo están autorizados los caracteres alfanuméricos.</translation>
    <translation id="exchange_SHARED_ACCOUNTS_quota_recap" qtlid="402620">Límite total: <strong>{0}</strong> Mib / Límite restante: <strong>{1}</strong> Mib (<strong>{2}</strong>%)</translation>

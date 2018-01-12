@@ -9,13 +9,16 @@ angular
                 navigation,
                 translator
             };
+        }
 
-            this.$routerParams = Exchange.getParams();
+        $onInit () {
+            this.$routerParams = this.services.Exchange.getParams();
             this.loading = false;
-            this.exchange = Exchange.value;
+            this.exchange = this.services.Exchange.value;
 
-            $scope.retrievingDCVEmails = () => this.retrievingDCVEmails();
-            $scope.submitting = () => this.submitting();
+            this.services.$scope.submitting = () => this.submitting();
+
+            this.retrievingDCVEmails();
         }
 
         retrievingDCVEmails () {

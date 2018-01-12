@@ -10,20 +10,19 @@ angular
                 messaging,
                 translator
             };
+        }
 
-            this.$routerParams = Exchange.getParams();
-            this.currentAccount = navigation.currentActionData.primaryEmailAddress;
+        $onInit () {
+            this.$routerParams = this.services.Exchange.getParams();
+            this.currentAccount = this.services.navigation.currentActionData.primaryEmailAddress;
             this.searchValue = null;
 
             this.services.$scope.updateDelegationRight = () => this.updateDelegationRight();
             this.services.$scope.hasChanged = () => this.hasChanged();
-            this.services.$scope.retrievingAccounts = (count, offset) => this.retrievingAccounts(count, offset);
-            this.services.$scope.getIsLoading = () => this.isLoading;
-            this.services.$scope.getAccounts = () => this.accounts;
+            this.services.$scope.getAccounts = (count, offset) => this.getAccounts(count, offset);
 
-            this.services.$scope.$on(Exchange.events.accountsChanged, () => this.services.$scope.retrievingAccounts());
+            this.services.$scope.$on(this.services.Exchange.events.accountsChanged, () => this.services.$scope.getAccounts());
 
-            this.debouncedRetrievingAccounts = _.debounce(this.retrievingAccounts, 300);
             this.bufferAccounts = [];
         }
 
@@ -65,12 +64,12 @@ angular
         }
 
         onSearchValueChange () {
-            this.debouncedRetrievingAccounts();
+            this.services.$scope.$broadcast("paginationServerSide.loadPage", 1, "delegationsStep1Table");
         }
 
         resetSearch () {
             this.searchValue = null;
-            this.debouncedRetrievingAccounts();
+            this.services.$scope.$broadcast("paginationServerSide.loadPage", 1, "delegationsStep1Table");
         }
 
         constructResult (data) {
@@ -83,21 +82,19 @@ angular
             let state = "OK";
             let numberOfErrors = 0;
 
-            for (const datum of data) {
+            _.forEach(data, (datum) => {
                 if (_(datum).isString()) {
                     this.services.messaging.setMessage(mainMessage, {
                         message: datum,
                         type: "PARTIAL"
                     });
-
-                    return;
                 } else if (datum.status === "ERROR") {
                     datum.message = this.services.translator.tr(`exchange_tab_TASKS_${datum.function}`);
                     datum.type = "ERROR";
                     state = "PARTIAL";
                     numberOfErrors++;
                 }
-            }
+            });
 
             if (numberOfErrors === data.length) {
                 state = "ERROR";
@@ -141,11 +138,11 @@ angular
             return !_.isEmpty(listOfChanges.sendRights) || !_.isEmpty(listOfChanges.fullAccessRights) || !_.isEmpty(listOfChanges.sendOnBehalfToRights);
         }
 
-        retrievingAccounts (count, offset) {
+        getAccounts (count, offset) {
             this.services.messaging.resetMessages();
-            this.isLoading = true;
+            this.loading = true;
 
-            this.services
+            return this.services
                 .Exchange
                 .retrieveAccountDelegationRight(this.$routerParams.organization, this.$routerParams.productId, this.currentAccount, count, offset, this.searchValue)
                 .then((accounts) => {
@@ -167,7 +164,7 @@ angular
                     this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ACCOUNTS_error_message"), failure);
                 })
                 .finally(() => {
-                    this.isLoading = false;
+                    this.loading = false;
                 });
         }
 

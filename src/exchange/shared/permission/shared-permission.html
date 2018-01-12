@@ -2,8 +2,7 @@
     <div class="row">
         <div class="col-md-9">
             <div class="d-flex align-items-center mb-5">
-                <button class="btn btn-default"
-                        type="button"
+                <button class="btn btn-default" type="button"
                         data-ng-click="displayPublicFolders()">
                     <span class="fa fa-chevron-left mr-2" aria-hidden="true"></span>
                     <span data-i18n-static="exchange_GROUPS_manager_back_button"></span>
@@ -11,12 +10,12 @@
                 <span class="ml-4" data-ng-bind-html="tr('exchange_tab_SHARED_permissions_intro', ctrl.selectedFolder.path)"></span>
             </div>
 
-            <div class="alert alert-info"
-                 role="alert"
+            <div class="alert alert-info" role="alert"
                  data-i18n-static="exchange_tab_SHARED_permissions_table_empty"
-                 data-ng-show="!ctrl.search.value && ctrl.permissionsList.list.results.length === 0"></div>
+                 data-ng-if="!ctrl.search.value && ctrl.permissionsList.list.results.length === 0">
+            </div>
 
-            <table class="table table-hover table-striped">
+            <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col" data-i18n-static="exchange_tab_SHARED_permissions_header_email"></th>
@@ -25,27 +24,26 @@
                     </tr>
                 </thead>
 
-                <tbody data-ng-show="ctrl.permissionsLoading">
+                <tbody data-ng-if="ctrl.permissionsLoading">
                     <tr>
                         <td class="loader text-center" colspan="3"></td>
                     </tr>
                 </tbody>
 
-                <tbody data-ng-show="!ctrl.permissionsLoading && ctrl.permissionsList.list.results.length === 0">
+                <tbody data-ng-if="!ctrl.permissionsLoading && ctrl.permissionsList.list.results.length === 0">
                     <tr>
-                        <td colspan="3" class="text-center" data-i18n-static="exchange_tab_SHARED_permissions_table_empty_search"></td>
+                        <td colspan="3" class="text-center"
+                            data-i18n-static="exchange_tab_SHARED_permissions_table_empty_search"></td>
                     </tr>
                 </tbody>
 
-                <tbody data-ng-show="!ctrl.permissionsLoading && ctrl.permissionsList.list.results.length > 0">
+                <tbody data-ng-if="!ctrl.permissionsLoading && ctrl.permissionsList.list.results.length > 0">
                     <tr data-ng-repeat="permission in ctrl.permissionsList.list.results track by $index">
                         <th class="word-break" scope="row"
                             data-ng-bind="permission.primaryAddressDisplayName"></th>
                         <td data-ng-bind="tr('exchange_tab_SHARED_permissions_type_' + permission.accessRights)"></td>
                         <td class="text-center">
-                            <button class="btn btn-icon"
-                                    type="button"
-                                    title="{{i18n.exchange_tab_SHARED_permissions_delete_tooltip}}"
+                            <button class="btn btn-icon" type="button" title="{{i18n.exchange_tab_SHARED_permissions_delete_tooltip}}"
                                     data-ng-click="ctrl.removePermission(permission)">
                                 <span class="oui-icon oui-icon-trash_line oui-icon_small" aria-hidden="true"></span>
                             </button>
@@ -61,7 +59,7 @@
                     </tr>
                 </tbody>
             </table>
-            
+
             <div class="clearfix"
                  data-pagination-server-side="permissionsTable"
                  data-pagination-server-side-function="retrievingPermissions"

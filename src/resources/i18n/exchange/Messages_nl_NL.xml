@@ -23,7 +23,7 @@
    <translation id="exchange_dashboard_hostname" qtlid="136178">Server adres</translation>
    <translation id="exchange_dashboard_renew" qtlid="136191">Verlenging van de dienst</translation>
    <translation id="exchange_dashboard_domains" qtlid="276298">Geassocieerde domeinen</translation>
-   <translation id="exchange_dashboard_accounts" qtlid="136204">Exchange accounts</translation>
+   <translation id="exchange_dashboard_accounts" qtlid="136204">Exchange-accounts</translation>
    <translation id="exchange_dashboard_tasks" qtlid="136217">Recente taken</translation>
    <translation id="exchange_dashboard_diag" qtlid="136230">Diagnose server </translation>
    <translation id="exchange_dashboard_guides" qtlid="366359">Heeft u hulp nodig bij de configuratie van uw Exchange oplossing? </translation>
@@ -35,11 +35,11 @@
    <translation id="exchange_dashboard_diag_a_label" qtlid="23803">A</translation>
    <translation id="exchange_dashboard_diag_a_tooltip_title" qtlid="143251">A record</translation>
    <translation id="exchange_dashboard_diag_a_tooltip_ok" qtlid="137491">Automatische configuratie afgerond</translation>
-   <translation id="exchange_dashboard_diag_a_tooltip_error" qtlid="209151">Indien uw domein wordt gehost door OVH, maak dan A records aan, door het selecteren van de betreffende domeinnaam, vervolgens "Expert Mode" -> "DNS Zone" -> "Add Entry". Voer svp in: <br /> Record Type: <span class="bold">A</span> <br /> Subdomein: <span class="bold"> {0}</ span> <br /> Doel: <span class="bold"> {1}</span> <br /><br /> Indien uw domein elders is geregistreerd, maak dan het A record op dit domein via de manager van uw domein registrar, en voer de bovenstaande gegevens in.</translation>
+   <translation id="exchange_dashboard_diag_a_tooltip_error" qtlid="209151">Indien uw domein wordt gehost door OVH, maak dan A records aan, door het selecteren van de betreffende domeinnaam, vervolgens "Expert Mode" -> "DNS Zone" -> "Add Entry". Voer svp in: <br /> Record Type: <span class="bold">A</span> <br /> Subdomein: <span class="bold"> {0}</span> <br /> Doel: <span class="bold"> {1}</span> <br /><br /> Indien uw domein elders is geregistreerd, maak dan het A record op dit domein via de manager van uw domein registrar, en voer de bovenstaande gegevens in.</translation>
    <translation id="exchange_dashboard_diag_aaaa_label" qtlid="129823">AAAA</translation>
    <translation id="exchange_dashboard_diag_aaaa_tooltip_title" qtlid="143277">IPv6 AAAA record</translation>
    <translation id="exchange_dashboard_diag_aaaa_tooltip_ok" qtlid="137491">Automatische configuratie afgerond</translation>
-   <translation id="exchange_dashboard_diag_aaaa_tooltip_error" qtlid="209164">Indien uw domein wordt gehost door OVH, maak dan AAAA records aan, door het selecteren van de betreffende domeinnaam, vervolgens "Expert Mode" -> "DNS Zone" -> "Add Entry". Voer svp in: <br /> Record Type: <span class="bold">AAAA</span> <br /> Subdomein: <span class="bold"> {0}</ span> <br /> Doel: <span class="bold"> {1}</span> <br /><br /> Indien uw domein elders is geregistreerd, maak dan het AAAA record op dit domein via de manager van uw domein registrar, en voer de bovenstaande gegevens in.</translation>
+   <translation id="exchange_dashboard_diag_aaaa_tooltip_error" qtlid="209164">Indien uw domein wordt gehost door OVH, maak dan AAAA records aan, door het selecteren van de betreffende domeinnaam, vervolgens "Expert Mode" -> "DNS Zone" -> "Add Entry". Voer svp in: <br /> Record Type: <span class="bold">AAAA</span> <br /> Subdomein: <span class="bold"> {0}</span> <br /> Doel: <span class="bold"> {1}</span> <br /><br /> Indien uw domein elders is geregistreerd, maak dan het AAAA record op dit domein via de manager van uw domein registrar, en voer de bovenstaande gegevens in.</translation>
    <translation id="exchange_dashboard_diag_ptr_label" qtlid="143303">PTR</translation>
    <translation id="exchange_dashboard_diag_ptr_tooltip_title" qtlid="143303">PTR</translation>
    <translation id="exchange_dashboard_diag_ptr_tooltip_ok" qtlid="137491">Automatische configuratie afgerond</translation>
@@ -64,17 +64,17 @@
    <translation id="exchange_ACTION_export_accounts_button" qtlid="217015">De accounts naar CSV exporteren</translation>
    <translation id="exchange_ACTION_export_accounts_office_attached_button" qtlid="404187">Probeer Office 365 gratis uit</translation>
    <translation id="exchange_ACTION_export_accounts_doing_button" qtlid="217028">Export wordt uitgevoerd...</translation>
-   <translation id="exchange_ACTION_export_error" qtlid="217041">Er is een fout opgetreden bij het exporteren van uw Exchange accounts.</translation>
-   <translation id="exchange_ACTION_export_success" qtlid="217054">De export van uw Exchange accounts is voltooid.</translation>
+   <translation id="exchange_ACTION_export_error" qtlid="217041">Er is een fout opgetreden bij het exporteren van uw Exchange-accounts.</translation>
+   <translation id="exchange_ACTION_export_success" qtlid="217054">De export van uw Exchange-accounts is voltooid.</translation>
    <translation id="exchange_ACTION_export_explain" qtlid="217067">Het exporteren van uw Exchange accounts kan enkele minuten duren (afhankelijk van het aantal accounts waarvan u eigenaar bent).</translation>
    <translation id="exchange_ACTION_export_confirm" qtlid="217080">Weet u zeker dat u uw accounts wilt exporteren?</translation>
 
 <!-- OFFICE ATTACHED -->
-   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Actie:</strong> activeer Office 365 gratis* op uw Exchange adressen!</translation>
-   <translation id="exchange_office_attached_alert_details" qtlid="404213">*Actie biedt Office 365 Business. Maximaal {0} Exchange adressen kunnen worden gebruikt. Geldt enkel voor de eerste maand, daarna wordt het aanbod automatisch verlengd op de verlengdatum tegen het aangegeven op <a target="_blank" href="https://www.ovh.nl">https://www.ovh.nl</a></translation>
+   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Actie:</strong> activeer Office 365 gratis op uw Exchange-adressen!</translation>
+   <translation id="exchange_office_attached_alert_details" qtlid="404213">Actie biedt Office 365 Business. Maximaal {0} Exchange adressen kunnen worden gebruikt. Geldt enkel voor de eerste maand, daarna wordt het aanbod automatisch verlengd op de verlengdatum tegen het aangegeven op <a target="_blank" href="https://www.ovh.nl:51043">https://www.ovh.nl:51043</a></translation>
    <translation id="exchange_office_attached_alert_button" qtlid="404226">Profiteer van deze aanbieding</translation>
    <translation id="exchange_office_attached_alert_modale_title" qtlid="404239">Activeer de Office 365 aanbieding</translation>
-   <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Verkrijg gratis Office 365 op maximaal {0} Exchange accounts naar keuze</translation>
+   <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Verkrijg gratis Office 365 op maximaal {0} Exchange-accounts naar keuze</translation>
    <translation id="exchange_office_attached_alert_modale_selected_accounts" qtlid="404265">{0} geselecteerde accounts voor een maximum van {1}</translation>
    <translation id="exchange_office_attached_alert_modale_account_types" qtlid="404278">Soorten accounts te gebruiken in de zoekopdrachten</translation>
    <translation id="exchange_office_attached_alert_modale_search_form" qtlid="404291">Zoek te gebruiken e-mailaccounts </translation>
@@ -148,6 +148,7 @@
    <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="171188">Opening wordt uitgevoerd</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Vervallen</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Schorsing wordt uitgevoerd</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_MIGRATING" qtlid="186713">Migratie wordt uitgevoerd</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SPAM" qtlid="70409">Spam</translation>
 
    <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="31522">OK</translation>
@@ -188,8 +189,8 @@
    <translation id="exchange_tab_ALIAS_back_button" qtlid="4118">Terug</translation>
    <translation id="exchange_tab_ALIAS_header" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_delete_tooltip" qtlid="178848">Deze alias verwijderen</translation>
-   <translation id="exchange_tab_ALIAS_intro" qtlid="434512">Liste des alias créés pour le compte <strong>{0}</strong></translation>
-   <translation id="exchange_tab_ALIAS_GROUP_intro" qtlid="434525">Liste des alias créés pour le groupe <strong>{0}</strong></translation>
+   <translation id="exchange_tab_ALIAS_intro" qtlid="434512">Lijst van aliassen gemaakt voor het <strong>{0}</strong> account</translation>
+   <translation id="exchange_tab_ALIAS_GROUP_intro" qtlid="434525">Lijst van aliassen gemaakt voor de <strong>{0}</strong> groep</translation>
    <translation id="exchange_tab_ALIAS_table_empty" qtlid="143954">U heeft geen alias voor deze account</translation>
    <translation id="exchange_tab_ALIAS_GROUP_table_empty" qtlid="178874">U heeft geen alias voor deze groep </translation>
    <translation id="exchange_tab_ALIAS_state_TASK_ON_DOING" qtlid="26383">Wordt uitgevoerd</translation>
@@ -207,7 +208,7 @@
    <translation id="exchange_tab_ALIAS_remove_alias_label" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_remove_account_label" qtlid="143603">Account bevestigd</translation>
    <translation id="exchange_tab_ALIAS_add_alias_title" qtlid="143616">Creëer een alias </translation>
-   <translation id="exchange_tab_ALIAS_add_alias_intro" qtlid="155782">Maak een alias voor het account <span class="bold">{0}</span></translation>
+   <translation id="exchange_tab_ALIAS_add_alias_intro" qtlid="416579">Creëer een alias voor het <span class="bold">{0}</span> account</translation>
    <translation id="exchange_tab_ALIAS_add_alias_placeholder" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_add_alias_step2_intro" qtlid="144006">Weet u zeker dat u de alias hieronder toe wilt voegen?</translation>
    <translation id="exchange_tab_ALIAS_add_alias_step2_alias_label" qtlid="9466">Alias</translation>
@@ -365,7 +366,7 @@
    <translation id="exchange_tab_domain_diagnostic_mx_label_champs" qtlid="46780">MX velden</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_no_antispam" qtlid="319895">Als u gebruik maakt van de non-authoritative modus (Exchange + andere e-mail service) met een niet door OVH gehoste e-mail service: </translation>
    <translation id="exchange_tab_domain_diagnostic_mx_no_antispam_config" qtlid="192929">Prioriteit: <strong>{0}</strong>; target: <strong>{1}</strong></translation>
-   <translation id="exchange_tab_domain_diagnostic_mx_antispam" qtlid="319908">Als u gebruik maakt van de authoritative of non-authoritative modus met een door OVH gehoste e-mail service: </translation>
+   <translation id="exchange_tab_domain_diagnostic_mx_antispam" qtlid="319908">Als u gebruik maakt van de authoritative of non-authoritative modus met een door OVH gehoste e-maildienst: </translation>
    <translation id="exchange_tab_domain_diagnostic_mx_antispam_config" qtlid="192955">Prioriteit: <strong>{0}</strong>; target: <strong>{1}</strong><br /> Prioriteit: <strong>{2}</strong>; target: <strong>{3}</strong><br /> Prioriteit: <strong>{4}</strong>; target: <strong>{5}</strong><br /> Prioriteit: <strong>{6}</strong>; target: <strong>{7}</strong><br /></translation>
    <translation id="exchange_tab_domain_diagnostic_mx_no_ovh" qtlid="349101">Als het domein niet onder hetzelfde klant ID als de Exchange oplossing wordt beheerd, of als uw domein elders is geregistreerd, is automatische configuratie niet mogelijk. Maak aub handmatig een MX-record aan op dit domein met dezelfde informatie die u hierboven heeft ingevoerd. </translation>
    <translation id="exchange_tab_domain_diagnostic_mx_recap" qtlid="192981">Een MX-record zal worden toegevoegd aan de DNS-zone van uw domein. Let op, de reeds bestaande MX-records zullen worden verwijderd.</translation>
@@ -392,7 +393,7 @@
    <translation id="exchange_tab_domain_add_domain" qtlid="8602">Een domein toevoegen</translation>
    <translation id="exchange_tab_domain_delete_domain" qtlid="137556">Verwijder dit domein van de Exchange diensten</translation>
    <translation id="exchange_tab_domain_delete_domain_accounts_warning" qtlid="148227">Dit domein kan niet worden verwijderd, omdat deze  nog steeds wordt gebruikt door een of meer Exchange accounts</translation>
-   <translation id="exchange_tab_domain_NON_AUTHORITATIVE" qtlid="136672">Niet-autoritatief</translation>
+   <translation id="exchange_tab_domain_NON_AUTHORITATIVE" qtlid="136672">Non-authoritative</translation>
    <translation id="exchange_tab_domain_AUTHORITATIVE" qtlid="58807">autoritatief</translation>
    <translation id="exchange_tab_domain_warning" qtlid="136347">Let op!</translation>
    <translation id="exchange_tab_domain_partial" qtlid="137569">Sommige domeinen konden niet juist worden geladen. Vernieuw svp de pagina om het probleem op te lossen.</translation>
@@ -453,7 +454,6 @@
    <translation id="exchange_ACTION_add_account_step2_password_confirmation_label" qtlid="9983">Bevestiging</translation>
    <translation id="exchange_ACTION_add_account_step2_type_label" qtlid="48938">Type account</translation>
    <translation id="exchange_ACTION_add_account_step2_outlook_label" qtlid="136724">Outlook licentie</translation>
-   <translation id="exchange_ACTION_add_account_step2_security_label" qtlid="136750">Beveiligingsopties</translation>
    <translation id="exchange_ACTION_add_account_step2_GAL_label" qtlid="191954">Het adres in Outlook verbergen</translation>
    <translation id="exchange_ACTION_add_account_security_NONE" qtlid="8674">Geen</translation>
    <translation id="exchange_ACTION_add_account_security_VADERETRO" qtlid="324821">Vade Secure bescherming</translation>
@@ -511,7 +511,7 @@
    <translation id="exchange_ACTION_update_account_outlook_true" qtlid="34776">Ja</translation>
    <translation id="exchange_ACTION_update_account_outlook_false" qtlid="136308">Zonder</translation>
    <translation id="exchange_ACTION_update_account_helpwizard_title" qtlid="137712">De exchange account bewerken</translation>
-   <translation id="exchange_ACTION_update_account_helpwizard_intro" qtlid="178887">U kunt het Exchange account security beleid wijzigen, bijvoorbeeld door het opleggen van minimale wachtwoord complexiteitseisen. <br/>Klik op <strong>Stel uw Exchange diensten</ strong> in op het control panel voor uw dienst.</translation>
+   <translation id="exchange_ACTION_update_account_helpwizard_intro" qtlid="178887">U kunt het Exchange account security beleid wijzigen, bijvoorbeeld door het opleggen van minimale wachtwoord complexiteitseisen. <br/>Klik op <strong>Stel uw Exchange diensten</strong> in op het control panel voor uw dienst.</translation>
    <translation id="exchange_ACTION_update_account_helpwizard_password_title" qtlid="2270">Wachtwoord</translation>
    <translation id="exchange_ACTION_update_account_helpwizard_password" qtlid="171240">De wachtwoorden moeten voldoen aan de volgende eisen:<br/><br/>- Deze mogen niet de gehele of gedeeltelijke accountnaam van de gebruiker bevatten<br/>- Een lengte van minstens 8 tekens<br/>- Bevat tekens uit drie van de volgende vier categorieën:<br/><ul><li>Kleine letters van het alfabet (a tot z)<br/></li><li>Cijfers (0 tot 9)<br/></li><li>Niet-alfabetische tekens (bijvoorbeeld: !, $, #, %)<br/></li></ul></translation>
    <translation id="exchange_ACTION_update_account_helpwizard_password_simple" qtlid="195139">De wachtwoorden moeten een lengte hebben van ten minste {0} tekens </translation>
@@ -547,14 +547,14 @@
    <translation id="exchange_tab_domain_add_step1_user_owned_option" qtlid="397533">Voer een domeinnaam in die niet beheerd wordt door uw OVH account</translation>
    <translation id="exchange_tab_domain_add_step1_user_owned_info" qtlid="397546">Let op: zorg ervoor dat uw gekozen DNS zone van uw domein bewerkt kan worden door diens administrator</translation>
    <translation id="exchange_tab_domain_add_step1_order_domain_option" qtlid="136997">Een domeinnaam bestellen</translation>
-   <translation id="exchange_tab_domain_add_step1_domain_none" qtlid="434538">Aucun résultat trouvé</translation>
+   <translation id="exchange_tab_domain_add_step1_domain_none" qtlid="434538">Geen resultaten gevonden</translation>
 
    <translation id="exchange_tab_domain_add_step3_cover_guide" qtlid="139572">Geen resultaat gevonden</translation>
 
    <translation id="exchange_tab_domain_add_step1_main_domain" qtlid="191070">Hoofddomein van een organisatie</translation>
    <translation id="exchange_tab_domain_add_step1_main_domain_tooltip" qtlid="191083">Hoofddomein van de organisatie</translation>
    <translation id="exchange_tab_domain_add_step1_new_organization_intro" qtlid="191096">Het domein van uw organisatie zal "{0}" worden</translation>
-   <translation id="exchange_tab_domain_add_step1_new_organization_placeholder" qtlid="191109">Naam van de organisatie</translation>
+   <translation id="exchange_tab_domain_add_step1_new_organization_placeholder" qtlid="191109">Bedrijfsnaam</translation>
    <translation id="exchange_tab_domain_add_step2_main_domain" qtlid="191122">Hoofddomein</translation>
    <translation id="exchange_tab_domain_add_step2_organization" qtlid="32278">Organisatie</translation>
    <translation id="exchange_tab_domain_add_step2_main_domain_true" qtlid="34776">Ja</translation>
@@ -570,15 +570,14 @@
    <translation id="exchange_tab_domain_step1_helpwizard_subdomain_title" qtlid="137881">Gebruik een subdomein</translation>
    <translation id="exchange_tab_domain_step1_helpwizard_subdomain" qtlid="397559">Om een van de subdomeinen van uw OVH domein toe te voegen, vinkt u 'Voeg een domeinnaam toe die niet beheerd is door uw OVH account' aan en voer het in in het bijbehorende veld. </translation>
    <translation id="exchange_tab_domain_add_step2_which_domain_type" qtlid="137998">Wat voor type domein <span class="italic">{0}</span> is het?</translation>
-   <translation id="exchange_tab_domain_add_step2_auth_intro" qtlid="140859">Uw domein <span class="italic"> {0} </ span> zal worden geconfigureerd in autoritatieve modus.</translation>
-   <translation id="exchange_tab_domain_add_step2_non_auth_intro" qtlid="366372">&#13;
-Uw <span class="italic">{0}</ span> domein zal in in non-authorative modus worden geconfigureerd.</translation>
+   <translation id="exchange_tab_domain_add_step2_auth_intro" qtlid="140859">Uw domein <span class="italic"> {0} </span> zal worden geconfigureerd in autoritatieve modus.</translation>
+   <translation id="exchange_tab_domain_add_step2_non_auth_intro" qtlid="366372">Uw <span class="italic">{0}</span> domein zal in in non-authoritative modus worden geconfigureerd.</translation>
    <translation id="exchange_tab_domain_add_step2bis_intro" qtlid="316944">Selecteer uw domeinformulier: </translation>
 
    <translation id="exchange_tab_domain_add_step2_srv_checkbox" qtlid="138011">Automatisch configureren van de SRV (autodiscover)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_checkbox" qtlid="139585">De MX automatisch configureren (ontvangst van de e-mails)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_tooltip" qtlid="140209">Let op: het automatisch configureren van de MX kan invloed hebben op de ontvangst van e-mails die vooraf zijn geconfigureerd op deze domeinnaam.</translation>
-   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="273909">Deze optie maakt het mogelijk uw e-mailprogramma - bijvoorbeeld Outlook of Mail - de verbindingsinstellingen automatisch te bepalen (zolang het verenigbaar is met het MAPI-protocol).</translation>
+   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="273909">Met deze optie kan uw e-mailclient, zoals Outlook of Mail, automatisch uw verbindingsinstellingen vinden (afhankelijk van compatibiliteit met het MAPI-protocol).</translation>
    <translation id="exchange_tab_domain_add_step3_srv_confirmation" qtlid="137816">SRV-configuratie</translation>
    <translation id="exchange_tab_domain_add_step3_mx_confirmation" qtlid="137829">MX-configuratie</translation>
    <translation id="exchange_tab_domain_add_step3_mx_replay" qtlid="316957">Bestemming e-mail server</translation>
@@ -591,15 +590,15 @@ Uw <span class="italic">{0}</ span> domein zal in in non-authorative modus worde
    <translation id="exchange_tab_domain_modify_failure" qtlid="137075">Er is een fout opgetreden tijdens het bijwerken van het domein.</translation>
    <translation id="exchange_tab_domain_modify_in_progress" qtlid="137088">Conversie naar {0} wordt uitgevoerd</translation>
    <translation id="exchange_tab_domain_inverse_NON_AUTHORITATIVE" qtlid="58807">autoritatief</translation>
-   <translation id="exchange_tab_domain_inverse_AUTHORITATIVE" qtlid="136672">Niet-autoritatief</translation>
+   <translation id="exchange_tab_domain_inverse_AUTHORITATIVE" qtlid="136672">Non-authoritative</translation>
    <translation id="exchange_tab_domain_mode_AUTHORITATIVE" qtlid="316970">Authoritative (enkel Exchange)</translation>
-   <translation id="exchange_tab_domain_mode_NON_AUTHORITATIVE" qtlid="316983">Non authoritative (Exchange + andere e-mail service)</translation>
+   <translation id="exchange_tab_domain_mode_NON_AUTHORITATIVE" qtlid="316983">Non-authoritative (Exchange + andere e-maildienst)</translation>
    <translation id="exchange_tab_domain_AUTHORITATIVE_info" qtlid="324847">De authoritative modus staat het gebruik van een ander e-mailsysteem met Exchange accounts niet toe. Met deze modus kunt u Vade Secure anti-spam activeren. </translation>
-   <translation id="exchange_tab_domain_NON_AUTHORITATIVE_info" qtlid="324860">De non authoritative modus laat u Exchange en een andere e-mailservice gebruiken. Vade Secure anti-spam is alleen compatibel als de pop/imap gehost zijn bij OVH (mxplan of gedeelde service), in dit geval moet u mxl.mail.ovh.net invoeren als de bestemming e-mail server. </translation>
+   <translation id="exchange_tab_domain_NON_AUTHORITATIVE_info" qtlid="324860">De non-authoritative modus laat u Exchange en een andere e-maildienst gebruiken. Vade Secure anti-spam is alleen compatibel als de pop/imap gehost zijn bij OVH (mxplan of gedeelde service), in dit geval moet u mxl.mail.ovh.net invoeren als de  e-mailserver van bestemming. </translation>
    <translation id="exchange_tab_domain_target_mail_server_label" qtlid="316957">Bestemming e-mail server</translation>
    <translation id="exchange_tab_domain_noovh_mx_info" qtlid="317126">MX en SRV wijzigingen dienen handmatig uitgevoerd te worden in uw DNS-zone. U kunt de benodigde informatie vinden in het bijbehorende domeinonderdeel, zodra de CNAME gevalideerd is. </translation>
    <translation id="exchange_tab_domain_modify_domain" qtlid="137101">Een domein bewerken</translation>
-<translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="416397">
+<translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="416397;416410;416410;169498;416423;416449">
 De Vade Secure anti-spam oplossing is compatibel met de niet-gezaghebbende modus (alleen als uw POP/IMAP accounts door OVH worden gehost). In dit geval raden we u aan om: <strong qtlid="266365">{0}</strong>, <strong qtlid="78906">{1}</strong>, <strong qtlid="183112">{2}</strong> en <strong qtlid="292228">{3}</strong>
 <br/><br/> Als u een niet-gezaghebbende modus gebruikt met uw e-mailaccounts die niet door OVH worden gehost, moet u: <strong qtlid="416436">{4}</strong> (uw bijbehorende domeinen)
 </translation>
@@ -618,7 +617,7 @@ De Vade Secure anti-spam oplossing is compatibel met de niet-gezaghebbende modus
 <!-- ########################################## -->
 <!-- DELEGATION -->
    <translation id="exchange_ACTION_delegation_title" qtlid="143733">Delegatie (van rechten) configuratie</translation>
-   <translation id="exchange_ACTION_delegation_step1_intro" qtlid="434551">Une délégation permet à d'autres comptes Exchange d'avoir certains droits sur le compte <strong>{0}</strong></translation>
+   <translation id="exchange_ACTION_delegation_step1_intro" qtlid="434551">Een delegatie stelt andere Exchange-accounts in staat om bepaalde rechten op het <strong>{0}</strong> account te hebben</translation>
    <translation id="exchange_ACTION_delegation_table_empty" qtlid="150047">U heeft geen beschikbare accounts </translation>
    <translation id="exchange_ACTION_delegation_table_empty_search" qtlid="150060">U heeft geen accounts die overeenkomen met deze zoekopdracht </translation>
    <translation id="exchange_ACTION_delegation_step1_email_header" qtlid="137244">E-mailaccount</translation>
@@ -626,7 +625,7 @@ De Vade Secure anti-spam oplossing is compatibel met de niet-gezaghebbende modus
    <translation id="exchange_ACTION_delegation_step1_sendOnBehalfTo_header" qtlid="181487">'Verzenden namens'-recht </translation>
    <translation id="exchange_ACTION_delegation_step1_full_header" qtlid="181500">Toegangsrecht</translation>
    <translation id="exchange_ACTION_delegation_step1_task_on_doing" qtlid="201458">Taak wordt uitgevoerd</translation>
-   <translation id="exchange_ACTION_delegation_step2_intro" qtlid="434564">Les droits de délégation afférents au compte <strong>{0}</strong> :</translation>
+   <translation id="exchange_ACTION_delegation_step2_intro" qtlid="434564">Delegatierechten voor het <strong>{0}</strong> account:</translation>
    <translation id="exchange_ACTION_delegation_step2_email_header" qtlid="137244">E-mailaccount</translation>
    <translation id="exchange_ACTION_delegation_step2_send_header" qtlid="143798">Verzendingsrechten</translation>
    <translation id="exchange_ACTION_delegation_step2_sendOnBehalfTo_header" qtlid="181487">'Verzenden namens'-recht </translation>
@@ -782,7 +781,7 @@ De Vade Secure anti-spam oplossing is compatibel met de niet-gezaghebbende modus
    <translation id="exchange_DIAGNOSTICS_status_isSpammer_help3" qtlid="319466">U moet deze e-mail beantwoorden om uw account te kunnen blokkeren. </translation>
    <translation id="exchange_DIAGNOSTICS_status_isSuspended_ok" qtlid="291461">Dit account-abonnement is geldig</translation>
    <translation id="exchange_DIAGNOSTICS_status_isSuspended_not_ok" qtlid="291474">LET OP: het abonnement op dit account is verlopen</translation>
-   <translation id="exchange_DIAGNOSTICS_status_isSuspended_help" qtlid="319479">In dit geval zal uw abonnement worden uitgeschakeld, u zult geen e-mails kunnen ontvangen of verzenden. Neem contact op met het Exchange support team <strong>(020)73576616</ strong> om uw service weer te activeren.</translation>
+   <translation id="exchange_DIAGNOSTICS_status_isSuspended_help" qtlid="319479">In dit geval zal uw abonnement worden uitgeschakeld, u zult geen e-mails kunnen ontvangen of verzenden. Neem contact op met het Exchange support team <strong>(020)73576616</strong> om uw service weer te activeren.</translation>
    <translation id="exchange_DIAGNOSTICS_status_isLocked_ok" qtlid="291487">Dit account is niet geblokkeerd wegens het veiligheidsbeleid</translation>
    <translation id="exchange_DIAGNOSTICS_status_isLocked_not_ok" qtlid="291500">LET OP: dit account is geblokkeerd wegens het veiligheidsbeleid</translation>
    <translation id="exchange_DIAGNOSTICS_status_isLocked_help1" qtlid="319492">U kunt een veiligheidsbeleid opzetten vanaf uw Exchange account. Uw account kan mogelijk tijdelijk geblokkeerd worden tijdens de configuratie van het beleid. </translation>
@@ -828,6 +827,7 @@ De Vade Secure anti-spam oplossing is compatibel met de niet-gezaghebbende modus
    <translation id="exchange_DIAGNOSTICS_status_canSendEmail_help_li4" qtlid="319817">Storing op de Exchange infrastructuur</translation>
    <translation id="exchange_DIAGNOSTICS_status_support_ticket_subject" qtlid="291643">Exchange Diagnostic </translation>
    <translation id="exchange_DIAGNOSTICS_status_support_ticket_body" qtlid="291656">Bewaar aub de volgende informatie, dit kan helpen bij de diagnose. </translation>
+   <translation id="exchange_DIAGNOSTICS_create_ticket" qtlid="260801">Maak een aanvraag ter assistentie aan</translation>
 
 <!-- ########################################## -->
 <!-- TAB MAILING LISTS -->
@@ -891,7 +891,7 @@ De Vade Secure anti-spam oplossing is compatibel met de niet-gezaghebbende modus
    <translation id="exchange_tab_GROUPS_delete_group_success" qtlid="150151">Uw groep wordt verwijderd.</translation>
    <translation id="exchange_tab_GROUPS_delete_group_error" qtlid="150164">Er is een fout opgetreden bij het verwijderen van uw groep.</translation>
    <translation id="exchange_GROUPS_delegation_title" qtlid="150398">Instellen van de delegatie </translation>
-   <translation id="exchange_GROUPS_delegation_step1_intro" qtlid="434577">Une délégation permet à d'autres comptes Exchange d'avoir certains droits sur le groupe <strong>{0}</strong></translation>
+   <translation id="exchange_GROUPS_delegation_step1_intro" qtlid="434577">Een delegatie maakt het mogelijk dat andere Exchange-accounts bepaalde rechten hebben op de  de<strong>{0}</strong> groep</translation>
    <translation id="exchange_GROUPS_delegation_step1_email_header" qtlid="137244">E-mailaccount</translation>
    <translation id="exchange_GROUPS_delegation_step1_send_header" qtlid="143759">Het toewijzen van verzendingsrechten</translation>
    <translation id="exchange_GROUPS_delegation_step1_full_header" qtlid="144240">Het toewijzen van toegangsrechten</translation>
@@ -936,7 +936,7 @@ De Vade Secure anti-spam oplossing is compatibel met de niet-gezaghebbende modus
    <translation id="exchange_GROUPS_add_group_help_directory_text" qtlid="184880">De 'verbergen'-functie in Outlook zorgt ervoor dat het groepadres niet wordt weergegeven in de adressenlijst van de Exchange dienst.</translation>
    <translation id="exchange_GROUPS_add_group_help_security_header" qtlid="150528">Verificatie vereist</translation>
    <translation id="exchange_GROUPS_add_group_help_security_text" qtlid="150671">Indien deze optie gekozen wordt, kunnen alleen groepsleden een e-mail sturen naar het groepsadres.</translation>
-   <translation id="exchange_GROUPS_manager_intro" qtlid="434590">Liste des comptes administrateur du groupe <strong>{0}</strong></translation>
+   <translation id="exchange_GROUPS_manager_intro" qtlid="434590">Lijst van admin accounts voor de <strong>{0}</strong> groep</translation>
    <translation id="exchange_GROUPS_manager_back_button" qtlid="4118">Terug</translation>
    <translation id="exchange_GROUPS_manager_delete_tooltip" qtlid="150697">Verwijder deze account uit de lijst van de beheerders</translation>
    <translation id="exchange_GROUPS_manager_table_empty" qtlid="150710">U heeft geen beheerders voor deze groep </translation>
@@ -945,9 +945,9 @@ De Vade Secure anti-spam oplossing is compatibel met de niet-gezaghebbende modus
    <translation id="exchange_GROUPS_remove_manager_question" qtlid="150749">Wilt u echt de volgende account van de beheerderlijst van uw groep verwijderen?</translation>
    <translation id="exchange_GROUPS_remove_manager_group_label" qtlid="59507">Groep</translation>
    <translation id="exchange_GROUPS_remove_manager_manager_label" qtlid="43948">Beheerder</translation>
-   <translation id="exchange_GROUPS_remove_manager_success_message" qtlid="434603">Le compte <strong>{0}</strong> va être supprimé de la liste d'administrateurs du groupe <span class="bold">{1}</span>.</translation>
+   <translation id="exchange_GROUPS_remove_manager_success_message" qtlid="434603">Het <strong>{0}</strong> account zal worden verwijderd van de admin lijst voor de <span class="bold">{1}</span> groep.</translation>
    <translation id="exchange_GROUPS_remove_manager_error_message" qtlid="155912">Er is een fout opgetreden tijdens het verwijderen van de account <span class="bold">{0}</span> van de beheerderslijst van de groep <span class="bold">{1}</span>.</translation>
-   <translation id="exchange_GROUPS_member_intro" qtlid="434616">Liste des comptes contacts du groupe <strong>{0}</strong></translation>
+   <translation id="exchange_GROUPS_member_intro" qtlid="434616">Lijst van contact accounts voor de <strong>{0}</strong> groep</translation>
    <translation id="exchange_GROUPS_member_back_button" qtlid="4118">Terug</translation>
    <translation id="exchange_GROUPS_member_delete_tooltip" qtlid="150801">Deze account verwijderen uit de lijst met contactenpersonen</translation>
    <translation id="exchange_GROUPS_member_table_empty" qtlid="150814">U heeft geen contactpersonen voor deze groep</translation>
@@ -1177,9 +1177,9 @@ De Vade Secure anti-spam oplossing is compatibel met de niet-gezaghebbende modus
    <translation id="minPasswordLength_mustBeInteger_error" qtlid="178055">De minimale lengte van het wachtwoord moet een geheel getal zijn</translation>
    <translation id="minPasswordLength_number_error" qtlid="178055">De minimale lengte van het wachtwoord moet een geheel getal zijn</translation>
    <translation id="minPasswordLength_pattern_error" qtlid="178055">De minimale lengte van het wachtwoord moet een geheel getal zijn</translation>
-   <translation id="minPasswordAge_min_error" qtlid="434629">L'âge minimal du mot de passe ne peut pas être inférieur à 0 jour</translation>
-   <translation id="minPasswordAge_max_error" qtlid="434642">L'âge minimal du mot de passe ne peut pas être supérieur à 90 jours</translation>
-   <translation id="minPasswordAge_mustBeInteger_error" qtlid="434655">L'âge minimal du mot de passe doit être un nombre entier</translation>
+   <translation id="minPasswordAge_min_error" qtlid="434629">Het wachtwoord kan niet jonger zijn dan 0 dagen </translation>
+   <translation id="minPasswordAge_max_error" qtlid="434642">Het wachtwoord kan niet ouder zijn dan 90 dagen </translation>
+   <translation id="minPasswordAge_mustBeInteger_error" qtlid="434655">Minimum wachtwoordleeftijd moet een heel getal vormen</translation>
    <translation id="minPasswordAge_minToBigForMax_error" qtlid="178094">De minimum wachtwoord levensduur moet minder zijn dan de maximum levensduur.</translation>
    <translation id="minPasswordAge_pattern_error" qtlid="434018">De leeftijd van het wachtwoord moet een heel getal vormen</translation>
    <translation id="minPasswordAge_number_error" qtlid="434018">De leeftijd van het wachtwoord moet een heel getal vormen</translation>
@@ -1216,7 +1216,7 @@ De Vade Secure anti-spam oplossing is compatibel met de niet-gezaghebbende modus
    <translation id="lockoutDuration_pattern_error" qtlid="178042">De duur van de blokkering moet een geheel getal zijn.</translation>
    <translation id="exchange_ACTION_configure_success" qtlid="178263">De wijzigingen zullen worden uitgevoerd.</translation>
    <translation id="exchange_ACTION_configure_error" qtlid="178276">Er is een fout opgetreden tijdens het verzoek, de wijzigingen worden niet toegepast.</translation>
-   <translation id="exchange_ACTION_configure_step2_intro" qtlid="434668">Récapitulatif de configuration pour votre service Exchange <strong>{0}</strong></translation>
+   <translation id="exchange_ACTION_configure_step2_intro" qtlid="434668">Configuratiesamenvatting voor uw <strong>{0}</strong> Exchange service</translation>
    <translation id="exchange_ACTION_configure_step2_label_lockoutDuration" qtlid="178302">Account lockout duur:</translation>
    <translation id="exchange_ACTION_configure_step2_label_lockoutObservationWindow" qtlid="178315">Lockout observation window:</translation>
    <translation id="exchange_ACTION_configure_step2_label_lockoutThreshold" qtlid="178328">Account lockout drempel:</translation>

@@ -73,7 +73,7 @@ angular
                 });
         }
 
-        gettingAddDomainData (organization, productId) {
+        retrievingDataToCreateDomains (organization, productId) {
             return this.services
                 .OvhHttp
                 .get("/sws/exchange/{organization}/{exchange}/domains/options", {

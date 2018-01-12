@@ -70,11 +70,11 @@
    <translation id="exchange_ACTION_export_confirm" qtlid="217080">Etes-vous certain de vouloir exporter vos comptes ?</translation>
 
 <!-- OFFICE ATTACHED -->
-   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Promotion :</strong> activez gratuitement* Office 365 sur vos adresses Exchange !</translation>
-   <translation id="exchange_office_attached_alert_details" qtlid="404213">*L'offre concerne le produit Office 365 Business. Un maximum de {0} adresses Exchange peuvent être utilisées. Seul le premier mois est offert, l'offre est ensuite reconduite automatiquement au prix indiqué à la date de renouvellement sur le site <a target="_blank" href="https://www.ovh.com">https://www.ovh.com</a></translation>
+   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Promotion :</strong> activez gratuitement Office 365 sur vos adresses Exchange !</translation>
+   <translation id="exchange_office_attached_alert_details" qtlid="404213">L'offre concerne le produit Office 365 Business. Un maximum de {0} adresses Exchange peuvent être utilisées. Seul le premier mois est offert, l'offre est ensuite reconduite automatiquement au prix indiqué à la date de renouvellement sur le site <a target="_blank" href="https://www.ovh.com">https://www.ovh.com</a></translation>
    <translation id="exchange_office_attached_alert_button" qtlid="404226">Profitez de cette offre</translation>
    <translation id="exchange_office_attached_alert_modale_title" qtlid="404239">Activer l'offre promotionnelle Office 365</translation>
-   <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Obtenez un mois gratuit d'Office 365 sur un maximum de {0} comptes Exchange de votre choix</translation>
+   <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Obtenez un mois gratuit d'Office 365 Business sur un maximum de {0} comptes Exchange de votre choix</translation>
    <translation id="exchange_office_attached_alert_modale_selected_accounts" qtlid="404265">{0} comptes sélectionnés pour un maximum de {1}</translation>
    <translation id="exchange_office_attached_alert_modale_account_types" qtlid="404278">Types de comptes à utiliser dans les recherches</translation>
    <translation id="exchange_office_attached_alert_modale_search_form" qtlid="404291">Rechercher des comptes emails à utiliser</translation>
@@ -148,6 +148,7 @@
    <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="171188">Ouverture en cours</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Suspendu</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Suspension en cours</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_MIGRATING" qtlid="186713">Migration en cours</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SPAM" qtlid="70409">Pourriels</translation>
 
    <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="31522">OK</translation>
@@ -207,7 +208,7 @@
    <translation id="exchange_tab_ALIAS_remove_alias_label" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_remove_account_label" qtlid="143603">Compte attaché</translation>
    <translation id="exchange_tab_ALIAS_add_alias_title" qtlid="143616">Créer un alias</translation>
-   <translation id="exchange_tab_ALIAS_add_alias_intro" qtlid="155782">Créer un alias pour le compte</translation>
+   <translation id="exchange_tab_ALIAS_add_alias_intro" qtlid="416579">Créer un alias pour le compte <span class="bold">{0}</span></translation>
    <translation id="exchange_tab_ALIAS_add_alias_placeholder" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_add_alias_step2_intro" qtlid="144006">Etes-vous sûr de vouloir ajouter l’alias ci-dessous?</translation>
    <translation id="exchange_tab_ALIAS_add_alias_step2_alias_label" qtlid="9466">Alias</translation>
@@ -363,9 +364,9 @@
    <translation id="exchange_tab_domain_diagnostic_mx_intro_ovh" qtlid="192890">Votre domaine est hébergé chez OVH, vous pouvez configurer le champ MX de votre domaine {0} de la manière suivante</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_label_champ" qtlid="192903">Champ MX</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_label_champs" qtlid="46780">Champs MX</translation>
-   <translation id="exchange_tab_domain_diagnostic_mx_no_antispam" qtlid="319895">Si vous utilisez le mode non autoritatif (Exchange + autre système de messagerie) avec un système de messagerie non hébergé par OVH :</translation>
+   <translation id="exchange_tab_domain_diagnostic_mx_no_antispam" qtlid="319895">Si vous utilisez le mode non-autoritatif (Exchange + autre système de messagerie) avec un système de messagerie non hébergé par OVH :</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_no_antispam_config" qtlid="192929">Priorité : <strong>{0}</strong>; cible : <strong>{1}</strong></translation>
-   <translation id="exchange_tab_domain_diagnostic_mx_antispam" qtlid="319908">Si vous utilisez le mode autoritatif (Exchange uniquement) ou non autoritatif avec un système de messagerie hébergé (e-mail mutualisé) par OVH :</translation>
+   <translation id="exchange_tab_domain_diagnostic_mx_antispam" qtlid="319908">Si vous utilisez le mode autoritatif (Exchange uniquement) ou non-autoritatif avec un système de messagerie hébergé (e-mail mutualisé) par OVH :</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_antispam_config" qtlid="192955">Priorité : <strong>{0}</strong>; cible : <strong>{1}</strong><br /> Priorité : <strong>{2}</strong>; cible : <strong>{3}</strong><br /> Priorité : <strong>{4}</strong>; cible : <strong>{5}</strong><br /> Priorité : <strong>{6}</strong>; cible : <strong>{7}</strong><br /></translation>
    <translation id="exchange_tab_domain_diagnostic_mx_no_ovh" qtlid="349101">Si le domaine n'est pas géré par le même identifiant client que le service Exchange ou si votre domaine n'est pas hébergé chez OVH, la configuration automatique n'est pas possible. Veuillez créer le champ MX sur ce domaine manuellement en donnant les mêmes informations que ci-dessous.</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_recap" qtlid="192981">Un champ MX va être ajouté dans la zone DNS de votre domaine. Attention, les champs MX pre-existants vont être effacés.</translation>
@@ -392,7 +393,7 @@
    <translation id="exchange_tab_domain_add_domain" qtlid="8602">Ajouter un domaine</translation>
    <translation id="exchange_tab_domain_delete_domain" qtlid="137556">Retirer ce domaine des services Exchange</translation>
    <translation id="exchange_tab_domain_delete_domain_accounts_warning" qtlid="148227">Ce domaine ne peut pas être supprimé car il est encore utilisé par un ou plusieurs compte Exchange</translation>
-   <translation id="exchange_tab_domain_NON_AUTHORITATIVE" qtlid="136672">Non Autoritatif</translation>
+   <translation id="exchange_tab_domain_NON_AUTHORITATIVE" qtlid="136672">Non-autoritatif</translation>
    <translation id="exchange_tab_domain_AUTHORITATIVE" qtlid="58807">Autoritatif</translation>
    <translation id="exchange_tab_domain_warning" qtlid="136347">Attention!</translation>
    <translation id="exchange_tab_domain_partial" qtlid="137569">Certains domaines n'ont pu être chargés correctement. Veuillez rafraîchir la page afin de résoudre le problème.</translation>
@@ -453,7 +454,6 @@
    <translation id="exchange_ACTION_add_account_step2_password_confirmation_label" qtlid="9983">Confirmation</translation>
    <translation id="exchange_ACTION_add_account_step2_type_label" qtlid="48938">Type de compte</translation>
    <translation id="exchange_ACTION_add_account_step2_outlook_label" qtlid="136724">Licence Outlook</translation>
-   <translation id="exchange_ACTION_add_account_step2_security_label" qtlid="136750">Options de sécurité</translation>
    <translation id="exchange_ACTION_add_account_step2_GAL_label" qtlid="191954">Masquer l'adresse dans Outlook</translation>
    <translation id="exchange_ACTION_add_account_security_NONE" qtlid="8674">Aucune</translation>
    <translation id="exchange_ACTION_add_account_security_VADERETRO" qtlid="324821">Protection Vade Secure</translation>
@@ -577,7 +577,7 @@
    <translation id="exchange_tab_domain_add_step2_srv_checkbox" qtlid="138011">Configurer automatiquement le SRV (autodiscover)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_checkbox" qtlid="139585">Configurer automatiquement le MX (réception des courriels)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_tooltip" qtlid="140209">Attention, configurer automatiquement le MX peut impacter la réception des courriels préalablement configurés sur ce nom de domaine.</translation>
-   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="273909">Cette option permettra à votre client de messagerie, comme par exemple Outlook ou Mail, de découvrir automatiquement vos paramètres de connexion.</translation>
+   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="273909">Cette option permettra à votre client de messagerie, comme par exemple Outlook ou Mail, de découvrir automatiquement vos paramètres de connexion (sous réserve de compatibilité avec le protocole Mapi).</translation>
    <translation id="exchange_tab_domain_add_step3_srv_confirmation" qtlid="137816">Configuration SRV</translation>
    <translation id="exchange_tab_domain_add_step3_mx_confirmation" qtlid="137829">Configuration MX</translation>
    <translation id="exchange_tab_domain_add_step3_mx_replay" qtlid="316957">Serveur e-mail cible</translation>
@@ -590,15 +590,15 @@
    <translation id="exchange_tab_domain_modify_failure" qtlid="137075">Une erreur est survenue lors de la mise à jour du domaine.</translation>
    <translation id="exchange_tab_domain_modify_in_progress" qtlid="137088">Passage vers {0} en cours</translation>
    <translation id="exchange_tab_domain_inverse_NON_AUTHORITATIVE" qtlid="58807">Autoritatif</translation>
-   <translation id="exchange_tab_domain_inverse_AUTHORITATIVE" qtlid="136672">Non Autoritatif</translation>
+   <translation id="exchange_tab_domain_inverse_AUTHORITATIVE" qtlid="136672">Non-autoritatif</translation>
    <translation id="exchange_tab_domain_mode_AUTHORITATIVE" qtlid="316970">Autoritatif (Exchange uniquement)</translation>
-   <translation id="exchange_tab_domain_mode_NON_AUTHORITATIVE" qtlid="316983">Non autoritatif (Exchange + autre service de messagerie)</translation>
+   <translation id="exchange_tab_domain_mode_NON_AUTHORITATIVE" qtlid="316983">Non-autoritatif (Exchange + autre service de messagerie)</translation>
    <translation id="exchange_tab_domain_AUTHORITATIVE_info" qtlid="324847">Le mode autoritatif ne permet pas l'usage d'un autre système de messagerie avec des comptes Exchange. Ce mode permet l'activation de l'antispam Vade Secure.</translation>
-   <translation id="exchange_tab_domain_NON_AUTHORITATIVE_info" qtlid="324860">Le mode non autoritatif permet une cohabitation entre Exchange et un autre service de messagerie. L'antispam Vade Secure est compatible si les comptes pop/imap sont hébergés chez OVH (mxplan ou offre mutualisée), il faut indiquer dans ce cas mx1.mail.ovh.net en serveur e-mail cible.</translation>
+   <translation id="exchange_tab_domain_NON_AUTHORITATIVE_info" qtlid="324860">Le mode non-autoritatif permet une cohabitation entre Exchange et un autre service de messagerie. L'antispam Vade Secure est compatible si les comptes pop/imap sont hébergés chez OVH (mxplan ou offre mutualisée), il faut indiquer dans ce cas mx1.mail.ovh.net en serveur e-mail cible.</translation>
    <translation id="exchange_tab_domain_target_mail_server_label" qtlid="316957">Serveur e-mail cible</translation>
    <translation id="exchange_tab_domain_noovh_mx_info" qtlid="317126">Les modifications MX et SRV seront à réaliser manuellement dans votre zone DNS. Vous pouvez retrouver les informations nécessaires dans la section domaines associés, une fois la validation CNAME effectuée.</translation>
    <translation id="exchange_tab_domain_modify_domain" qtlid="137101">Configuration domaine</translation>
-<translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="416397">
+<translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="416397;416410;416410;169498;416423;416449">
 L'antispam Vade Secure est compatible avec le mode non autoritatif (uniquement si vos comptes pop/imap sont hébergés par OVH). Dans ce cas, il est conseillé d'utiliser : <strong qtlid="266365">{0}</strong>, <strong qtlid="78906">{1}</strong>, <strong qtlid="183112">{2}</strong> et <strong qtlid="292228">{3}</strong>
 <br/><br/> Si vous utilisez le mode non autoritatif avec des comptes e-mail non hébergés par OVH, vous devez utiliser : <strong qtlid="416436">{4}</strong> (voir section domaines associés)
 </translation>
@@ -826,6 +826,7 @@ L'antispam Vade Secure est compatible avec le mode non autoritatif (uniquement s
    <translation id="exchange_DIAGNOSTICS_status_canSendEmail_help_li4" qtlid="319817">Un incident sur l'infrastructure Exchange</translation>
    <translation id="exchange_DIAGNOSTICS_status_support_ticket_subject" qtlid="291643">Diagnostic Exchange</translation>
    <translation id="exchange_DIAGNOSTICS_status_support_ticket_body" qtlid="291656">Veillez à conserver les informations suivantes, elles seront utiles au diagnostic de votre situation.</translation>
+   <translation id="exchange_DIAGNOSTICS_create_ticket" qtlid="260801">Créer une demande d'assistance</translation>
 
 <!-- ########################################## -->
 <!-- TAB MAILING LISTS -->
@@ -833,7 +834,7 @@ L'antispam Vade Secure est compatible avec le mode non autoritatif (uniquement s
    <translation id="exchange_tab_GROUPS_header" qtlid="32962">Groupes</translation>
    <translation id="exchange_tab_GROUPS_remove_account_tooltip" qtlid="150073">Enlever le compte de ce groupe</translation>
    <translation id="exchange_tab_GROUPS_intro" qtlid="155873">Liste des groupes du compte <span class="bold">{0}</span></translation>
-   <translation id="exchange_tab_GROUPS_table_empty" qtlid="150099">Vous n'avez pas de groupes pour ce compte</translation>
+   <translation id="exchange_tab_GROUPS_table_empty" qtlid="150099">Vous n'avez pas de groupe pour ce compte</translation>
    <translation id="exchange_tab_GROUPS_table_empty_search" qtlid="150112">Vous n'avez pas de groupe correspondant au terme recherché</translation>
    <translation id="exchange_tab_GROUPS_state_TASK_ON_DOING" qtlid="26383">En cours</translation>
    <translation id="exchange_tab_GROUPS_state_TASK_ON_DOING_tooltip" qtlid="150125">Une tâche concernant ce groupe est planifiée ou en cours d'exécution</translation>
@@ -871,7 +872,7 @@ L'antispam Vade Secure est compatible avec le mode non autoritatif (uniquement s
    <translation id="exchange_tab_GROUPS_all_table_manager" qtlid="81487">Administrateurs</translation>
    <translation id="exchange_tab_GROUPS_all_table_user" qtlid="32206">Contacts</translation>
    <translation id="exchange_tab_GROUPS_all_table_status" qtlid="8230">État</translation>
-   <translation id="exchange_tab_GROUPS_all_table_empty" qtlid="150346">Vous n'avez pas de groupes</translation>
+   <translation id="exchange_tab_GROUPS_all_table_empty" qtlid="150346">Vous n'avez pas de groupe</translation>
    <translation id="exchange_tab_GROUPS_all_error_message" qtlid="150359">Une erreur est survenue lors du chargement de votre liste de groupes.</translation>
    <translation id="exchange_tab_GROUPS_all_add_ml_button" qtlid="150372">Créer un groupe de contact</translation>
    <translation id="exchange_tab_GROUPS_menu_settings" qtlid="150385">Configurer le groupe</translation>
@@ -1481,7 +1482,7 @@ L'antispam Vade Secure est compatible avec le mode non autoritatif (uniquement s
    <translation id="exchange_ACTION_order_upgrade_300G_error_options_message" qtlid="368180">Une erreur est survenue lors de lors de la récupération des tarifs.</translation>
 <!-- Order Exchange -->
    <translation id="exchange_order_view_intro_title" qtlid="368193">Commander un Exchange</translation>
-   <translation id="exchange_order_view_intro_question" qtlid="368206">Souahitez vous créer un nouveau service Exchange ou ajouter un compte à un service existant ?</translation>
+   <translation id="exchange_order_view_intro_question" qtlid="368206">Souhaitez-vous créer un nouveau service Exchange ou ajouter un compte à un service existant ?</translation>
    <translation id="exchange_order_view_stand_alone_option" qtlid="368219">Créer un nouveau service</translation>
    <translation id="exchange_order_view_attached_option" qtlid="368232">Ajouter un compte à un service existant</translation>
    <translation id="exchange_order_view_button_label" qtlid="368245">Commander votre Exchange</translation>
