@@ -72,7 +72,7 @@
    <translation id="exchange_office_1M_promotion_button_title">Essai gratuit d'un mois Office 365</translation>
    <translation id="exchange_office_1M_promotion_button_title_extra">Offre promotionnelle</translation>
    <translation id="exchange_office_1M_promotion_main_title">Activer l'offre promotionnelle Office 365</translation>
-   <translation id="exchange_office_1M_promotion_intro">Obtenez un mois gratuit d'<a href="{0}" target="_blank">Office 365 Business</a> sur un maximum de {0} compte(s) Exchange.</translation>
+   <translation id="exchange_office_1M_promotion_intro">Obtenez un mois gratuit d'<a href="{0}" target="_blank">Office 365 Business</a> sur un maximum de {1} compte(s) Exchange.</translation>
    <translation id="exchange_office_1M_promotion_intro_table">Sélectionnez les comptes e-mails de votre choix</translation>
    <translation id="exchange_office_1M_promotion_selected_accounts">{0} compte(s) sélectionné(s) pour un maximum de {1}</translation>
    <translation id="exchange_office_1M_promotion_search_form">Rechercher des comptes e-mails à utiliser</translation>
