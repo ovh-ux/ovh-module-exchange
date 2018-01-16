@@ -186,19 +186,17 @@ angular
         }
 
         selectAll () {
-            let i = 0;
+            const i = 0;
             if (this.allSelected) {
-                while (i <= this.accountsTotalNumber) {
-                    this.selectedCheckboxes[this.services.$scope.accounts.list.results[i].primaryEmailDisplayName] = true;
-                    this.countNumberOfCheckedAccounts(this.services.$scope.accounts.list.results[i]);
-                    i++;
+                for (const email of this.services.$scope.accounts.ids) {
+                    this.selectedCheckboxes[email] = true;
+                    this.countNumberOfCheckedAccounts({ primaryEmailDisplayName: email });
                 }
             } else {
-                while (i <= this.accountsTotalNumber) {
-                    this.selectedCheckboxes[this.services.$scope.accounts.list.results[i].primaryEmailDisplayName] = false;
+                for (const email of this.services.$scope.accounts.ids) {
+                    this.selectedCheckboxes[email] = false;
                     this.selectedAccounts = [];
                     this.numberOfSelectedCheckboxes = 0;
-                    i++;
                 }
             }
         }
