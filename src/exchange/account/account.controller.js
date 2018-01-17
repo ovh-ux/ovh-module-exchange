@@ -17,7 +17,6 @@ angular
             $scope.getAccounts = (count, offset) => this.getAccounts(count, offset);
             $scope.getLoading = () => this.loading;
             $scope.getAccountValue = () => this.accounts;
-            $scope.subscribeToOfficeAttached = () => this.subscribeToOfficeAttached();
 
             this.$routerParams = Exchange.getParams();
 
@@ -115,10 +114,6 @@ angular
             } else {
                 this.services.navigation.setAction("exchange/account/order/account-order");
             }
-        }
-
-        subscribeToOfficeAttached () {
-            this.services.navigation.setAction("exchange/office-attached/dialog/office-attached-dialog");
         }
 
         isEditable (account) {

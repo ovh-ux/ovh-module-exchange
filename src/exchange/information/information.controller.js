@@ -1,16 +1,18 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeTabInformationCtrl", class ExchangeTabInformationCtrl {
-        constructor ($scope, accountTypes, Exchange, EXCHANGE_CONFIG, exchangeVersion, messaging, navigation, translator, User) {
+        constructor ($scope, accountTypes, Exchange, ExchangeInformationService, EXCHANGE_CONFIG, exchangeVersion, messaging, navigation, translator, User, officeOffer) {
             this.$scope = $scope;
             this.accountTypes = accountTypes;
             this.exchangeService = Exchange;
+            this.informationService = ExchangeInformationService;
             this.EXCHANGE_CONFIG = EXCHANGE_CONFIG;
             this.exchangeVersion = exchangeVersion;
             this.messaging = messaging;
             this.navigation = navigation;
             this.translator = translator;
             this.User = User;
+            this.officeOfferService = officeOffer;
         }
 
         $onInit () {
@@ -26,6 +28,7 @@ angular
                 this.hasSSLTask = true;
                 this.setMessageSSL();
             });
+            this.informationService.displayDashboard();
 
             this.getGuides();
             this.getSharePoint();
@@ -35,6 +38,11 @@ angular
             this.loadPtrTooltip();
             this.loadPtrv6Tooltip();
             this.loadATooltip();
+
+            this.officeOfferService.getOfficeOfferSubscription()
+                .then((displayOfficeOffer) => {
+                    this.shouldDisplayOfficeAttached = displayOfficeOffer;
+                });
         }
 
         getGuides () {
@@ -100,6 +108,14 @@ angular
             return this.exchangeVersion.isAfter(2010);
         }
 
+        shouldDisplayOfficeOffer () {
+            return this.informationService.shouldDisplayOfficeOffer;
+        }
+
+        shouldDisplayDashboard () {
+            return this.informationService.shouldDisplayDashboard;
+        }
+
         shouldDisplaySSLRenew () {
             const now = moment();
             const sslExpirationDate = moment(this.exchange.sslExpirationDate);
@@ -131,6 +147,11 @@ angular
 
         displayOrderDiskSpace () {
             return this.exchangeVersion.isVersion(2010) && this.accountTypes.isProvider();
+        }
+
+        displayOfficeOffer () {
+            this.informationService.displayOfficeOffer();
+            this.$scope.$broadcast("paginationServerSide.loadPage", 1, "aliasTable");
         }
 
         orderDiskSpace () {

@@ -62,24 +62,27 @@
    <translation id="exchange_action_renew_ssl_info_expired" qtlid="325857">Le certificat SSL est expiré, vous pouvez le renouveler.</translation>
    <translation id="exchange_action_renew_ssl_info_next" qtlid="447612">Le certificat SSL expire le {0}, vous pouvez le renouveler dés à présent.</translation>
    <translation id="exchange_ACTION_export_accounts_button" qtlid="217015">Exporter les comptes en CSV</translation>
-   <translation id="exchange_ACTION_export_accounts_office_attached_button" qtlid="404187">Essai gratuit Office 365</translation>
    <translation id="exchange_ACTION_export_accounts_doing_button" qtlid="217028">Export en cours...</translation>
    <translation id="exchange_ACTION_export_error" qtlid="217041">Une erreur s'est produite lors de l'export de vos comptes Exchange.</translation>
    <translation id="exchange_ACTION_export_success" qtlid="217054">L'export de vos comptes Exchange est terminé.</translation>
    <translation id="exchange_ACTION_export_explain" qtlid="217067">L'export de vos comptes Exchange peut durer quelques minutes (en fonction du nombre de comptes que vous possédez).</translation>
    <translation id="exchange_ACTION_export_confirm" qtlid="217080">Etes-vous certain de vouloir exporter vos comptes ?</translation>
 
-<!-- OFFICE ATTACHED -->
-   <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Promotion :</strong> activez gratuitement Office 365 sur vos adresses Exchange !</translation>
-   <translation id="exchange_office_attached_alert_details" qtlid="404213">L'offre concerne le produit Office 365 Business. Un maximum de {0} adresses Exchange peuvent être utilisées. Seul le premier mois est offert, l'offre est ensuite reconduite automatiquement au prix indiqué à la date de renouvellement sur le site <a target="_blank" href="https://www.ovh.com">https://www.ovh.com</a></translation>
-   <translation id="exchange_office_attached_alert_button" qtlid="404226">Profitez de cette offre</translation>
-   <translation id="exchange_office_attached_alert_modale_title" qtlid="404239">Activer l'offre promotionnelle Office 365</translation>
-   <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Obtenez un mois gratuit d'Office 365 Business sur un maximum de {0} comptes Exchange de votre choix</translation>
-   <translation id="exchange_office_attached_alert_modale_selected_accounts" qtlid="404265">{0} comptes sélectionnés pour un maximum de {1}</translation>
-   <translation id="exchange_office_attached_alert_modale_account_types" qtlid="404278">Types de comptes à utiliser dans les recherches</translation>
-   <translation id="exchange_office_attached_alert_modale_search_form" qtlid="404291">Rechercher des comptes emails à utiliser</translation>
-   <translation id="exchange_office_attached_alert_modale_confirmation_header" qtlid="404304">Vous allez activer l'offre Office 365 sur les {0} comptes suivants :</translation>
-   <translation id="exchange_office_attached_alert_modale_confirmation_checkbox" qtlid="404317">En cochant cette case, je confirme vouloir souscrire à l'offre pour les comptes ci-dessus et je confirme avoir compris que l'offre sera reconduite automatiquement si je ne l'annule pas.</translation>
+<!-- OFFICE - One month free promotion -->
+   <translation id="exchange_office_1M_promotion_button_title">Essai gratuit d'un mois Office 365</translation>
+   <translation id="exchange_office_1M_promotion_button_title_extra">Offre promotionnelle</translation>
+   <translation id="exchange_office_1M_promotion_main_title">Activer l'offre promotionnelle Office 365</translation>
+   <translation id="exchange_office_1M_promotion_intro">Obtenez un mois gratuit d'<a href="{0}" target="_blank">Office 365 Business</a> sur un maximum de {1} compte(s) Exchange.</translation>
+   <translation id="exchange_office_1M_promotion_intro_table">Sélectionnez les comptes e-mails de votre choix</translation>
+   <translation id="exchange_office_1M_promotion_selected_accounts">{0} compte(s) sélectionné(s) pour un maximum de {1}</translation>
+   <translation id="exchange_office_1M_promotion_search_form">Rechercher des comptes e-mails à utiliser</translation>
+   <translation id="exchange_office_1M_promotion_account_types">Types de comptes à utiliser dans les recherches</translation>
+   <translation id="exchange_office_1M_promotion_confirmation_table">Confirmez les comptes e-mails</translation>
+   <translation id="exchange_office_1M_promotion_confirmation_header"> {0} sur {1} comptes e-mails sélectionnés</translation>
+   <translation id="exchange_office_1M_promotion_selection_button_caption">Sélectionner</translation>
+   <translation id="exchange_office_1M_promotion_selection_change_link">Modifier mes choix</translation>
+   <translation id="exchange_office_1M_promotion_legal_conditions_caption">En cochant cette case, je confirme vouloir souscrire à l'offre pour les comptes ci-dessus et je confirme avoir compris que l'offre sera reconduite automatiquement si je ne l'annule pas.</translation> 
+   <translation id="exchange_office_1M_promotion_order_button_caption">Profiter de l'offre</translation>
 
 <!-- ########################################## -->
 <!-- TABS -->
@@ -1526,8 +1529,8 @@
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_header" qtlid="449687">Serveur relais (SMTP)</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_title" qtlid="449700">Configuration de votre zone DNS</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_tooltip" qtlid="449713">La zone DNS permet de gérer différents services liés au nom de domaine.<br /><br />Exemple : un enregistrement MX permet d'indiquer quel serveur e-mail est attaché au nom de domaine.</translation>
-   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip_1">Le serveur relais intervient en cas de réception d’e-mails adressés à des comptes non hébergés sur votre service Exchange OVH.</translation>
-   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip_2">Ceux-ci seront automatiquement transmis au serveur relais.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip_1" qtlid="449726">Le serveur relais intervient en cas de réception d’e-mails adressés à des comptes non hébergés sur votre service Exchange OVH.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip_2" qtlid="449739">Ceux-ci seront automatiquement transmis au serveur relais.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_header" qtlid="449752">Comment souhaitez-vous configurer votre zone DNS ?</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_auto" qtlid="273319">Configuration automatique</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_manual" qtlid="273332">Configuration manuelle</translation>
@@ -1586,8 +1589,8 @@
    <translation id="exchange_wizardHostedCreation_emailCreation_add_migrationChecking_error" qtlid="450259">Ce compte e-mail ne peut pas être migré vers votre service Exchange.</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_add_migrationChecking_mxPlanTechContact" qtlid="450272">Ce compte e-mail ne peut pas être migré automatiquement vers votre service Exchange. Vous devez être contact administrateur et technique des deux services.</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_error" qtlid="450285">Une erreur est survenue au moment de la migration de votre compte e-mail.</translation>
-   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_question_1">Ce compte e-mail existe déjà, voulez-vous le migrer vers l'adresse Exchange ?</translation>
-   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_question_2">Tous vos e-mails existants sur ce compte vont être désormais disponible via l'adresse Exchange.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_question_1" qtlid="450298">Ce compte e-mail existe déjà, voulez-vous le migrer vers l'adresse Exchange ?</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_question_2" qtlid="450311">Tous vos e-mails existants sur ce compte vont être désormais disponible via l'adresse Exchange.</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_warning" qtlid="436892">Attention, les éléments suivants ne seront pas pris en charge par la présente migration&#160;: <br />- vos filtres&#160;; <br />- vos répondeurs&#160;; <br />- vos mailing lists&#160;; <br />- vos contacts Roundcube.</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_wrongPassword_error" qtlid="450324">Le mot de passe est incorrect.</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_addButton_title" qtlid="37923">Ajouter</translation>
@@ -1612,8 +1615,8 @@
    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_header" qtlid="450428">La configuration de votre zone DNS s'effectuera en mode <strong>manuel</strong>.</translation>
    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_part_1" qtlid="450441">En configurant les champs MX et SRV</translation>
    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_part_2" qtlid="450480">, vous paramétrerez votre nom de domaine pour pouvoir recevoir vos e-mails. Leur réception effective tient compte de la propagation DNS et peut prendre entre 4 à 24 heures.</translation>
-   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_1">Le champ MX OVH associe un nom de domaine à un serveur de messagerie.</translation>
-   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_2">Le champ SRV vous permettra de configurer automatiquement votre adresse e-mail dans votre logiciel de messagerie (par exemple : Outlook).</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_1" qtlid="450454">Le champ MX OVH associe un nom de domaine à un serveur de messagerie.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_2" qtlid="450467">Le champ SRV vous permettra de configurer automatiquement votre adresse e-mail dans votre logiciel de messagerie (par exemple : Outlook).</translation>
    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_table_headers_fieldType" qtlid="129171">Type de champ</translation>
    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_table_headers_data" qtlid="26551">Informations</translation>
    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_table_mx" qtlid="23779">MX</translation>

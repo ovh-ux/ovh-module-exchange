@@ -2,6 +2,7 @@
 <translations>
 
 <!-- GENERIC -->
+   <translation id="optional_form_field" qtlid="356264">(neprivaloma)</translation>
    <translation id="exchange_reset_search_value" qtlid="433719">Inicijuoti paiešką</translation>
    <translation id="exchange_search_value" qtlid="55493">Paieška</translation>
 
@@ -59,8 +60,7 @@
    <translation id="exchange_action_renew_ssl" qtlid="136256">Atnaujinti SSL sertifikatą</translation>
    <translation id="exchange_action_renew_ssl_info" qtlid="325844">Jūsų SSL sertifikato įdiegimo operacija yra vykdoma, todėl kol kas negalite atnaujinti sertifikato.</translation>
    <translation id="exchange_action_renew_ssl_info_expired" qtlid="325857">SSL sertifikato galiojimas baigėsi, galite jį atnaujinti.</translation>
-   <translation id="exchange_action_renew_ssl_info_normal" qtlid="325870">Jūsų serverio SSL sertifikatas galioja iki {0}, atnaujinimo mygtukas bus matomas likus mėnesiui iki sertifikato galiojimo pabaigos.</translation>
-   <translation id="exchange_action_renew_ssl_info_next" qtlid="325883">Jūsų serverio SSL sertifikatas galioja iki {0}, galite jį atnaujinti.</translation>
+   <translation id="exchange_action_renew_ssl_info_next" qtlid="447612">SSL sertifikatas nustoja galioti {0}, jūs jį jau galite pratęsti.</translation>
    <translation id="exchange_ACTION_export_accounts_button" qtlid="217015">Eksportuoti paskyras CSV formatu</translation>
    <translation id="exchange_ACTION_export_accounts_office_attached_button" qtlid="404187">Office 365: nemokamas bandymas</translation>
    <translation id="exchange_ACTION_export_accounts_doing_button" qtlid="217028">Eksportuojama...</translation>
@@ -127,7 +127,7 @@
    <translation id="exchange_tab_ACCOUNTS_table_alias" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ACCOUNTS_table_group" qtlid="59507">Grupė</translation>
    <translation id="exchange_tab_ACCOUNTS_table_outlook" qtlid="24427">Outlook</translation>
-   <translation id="exchange_tab_ACCOUNTS_table_status" qtlid="8230">Būsena</translation>
+   <translation id="exchange_tab_ACCOUNTS_table_status" qtlid="447625">Būsena</translation>
    <translation id="exchange_tab_ACCOUNTS_table_settings" qtlid="4406">Konfigūracija</translation>
    <translation id="exchange_tab_ACCOUNTS_type_ALL" qtlid="69173">Visi</translation>
    <translation id="exchange_tab_ACCOUNTS_type_BASIC" qtlid="48986">Basic</translation>
@@ -142,16 +142,18 @@
    <translation id="exchange_tab_ACCOUNTS_outlook_false" qtlid="136308">Be</translation>
    <translation id="exchange_tab_ACCOUNTS_action_add_exchange" qtlid="139169">Užsakyti paskyras</translation>
    <translation id="exchange_tab_ACCOUNTS_action_add_extern" qtlid="136334">Pridėti išorinį kontaktą</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_OK" qtlid="31522">OK</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_OK" qtlid="447638">Ok</translation>
    <translation id="exchange_tab_ACCOUNTS_state_CREATING" qtlid="168185">Kūrimas</translation>
    <translation id="exchange_tab_ACCOUNTS_state_DELETING" qtlid="59699">Šalinimas</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_RESETTING" qtlid="447898">Iš naujo</translation>
    <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="171188">Atidaroma</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="449375">Vidinis migravimas</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Pristabdytas</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Pristabdoma</translation>
    <translation id="exchange_tab_ACCOUNTS_state_MIGRATING" qtlid="186713">Vyksta migravimas</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SPAM" qtlid="70409">Spam</translation>
 
-   <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="31522">OK</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="447651">Ok</translation>
    <translation id="exchange_tab_ACCOUNTS_state_creating" qtlid="168185">Kūrimas</translation>
    <translation id="exchange_tab_ACCOUNTS_state_deleting" qtlid="59699">Šalinimas</translation>
    <translation id="exchange_tab_ACCOUNTS_state_reopening" qtlid="171188">Atidaroma</translation>
@@ -364,9 +366,9 @@
    <translation id="exchange_tab_domain_diagnostic_mx_intro_ovh" qtlid="192890">Jūsų domenas talpinamas OVH, domeno {0} MX lauką galite konfigūruoti taip</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_label_champ" qtlid="192903">MX laukas</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_label_champs" qtlid="46780">MX laukai</translation>
-   <translation id="exchange_tab_domain_diagnostic_mx_no_antispam" qtlid="319895">Jei naudojamas režimas yra non-authoritative (Exchange + kita pranešimų siuntimo sistema) su pranešimų siuntimo sistema, talpinama kitur (ne OVH):</translation>
+   <translation id="exchange_tab_domain_diagnostic_mx_no_antispam" qtlid="447664">Jeigu naudojate non-authoritative režimą (Exchange + akita pašto sistema) si pranešimų sistema, kuri nėra OVH:</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_no_antispam_config" qtlid="192929">Pirmenybė: <strong>{0}</strong>; paskirtis: <strong>{1}</strong></translation>
-   <translation id="exchange_tab_domain_diagnostic_mx_antispam" qtlid="319908">Jeigu naudojamas režimas yra authoritative (tik Exchange) ar non-authoritative su OVH talpinama pranešimų siuntimo sistema (bendrai naudojamas el. paštas):</translation>
+   <translation id="exchange_tab_domain_diagnostic_mx_antispam" qtlid="447677">Jeigu naudojate autoritative režimą (tik Exchange) arba non-authoritative su OVH svetainių talpinimo pašto paslauga:</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_antispam_config" qtlid="192955">Pirmenybė: <strong>{0}</strong>; paskirtis: <strong>{1}</strong><br /> Pirmenybė: <strong>{2}</strong>; paskirtis: <strong>{3}</strong><br /> Pirmenybė: <strong>{4}</strong>; paskirtis: <strong>{5}</strong><br /> Pirmenybė: <strong>{6}</strong>; paskirtis: <strong>{7}</strong><br /></translation>
    <translation id="exchange_tab_domain_diagnostic_mx_no_ovh" qtlid="349101">Jeigu domenas nėra administruojamas to paties kliento, kaip ir Exchange paslauga, arba jeigu jūsų domenas nėra registruotas OVH, automatinis konfigūravimas nėra galimas. Prašome sukurti MX tipo lauką rankiniu būdu, įvedę žemiau pateiktą informaciją.</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_recap" qtlid="192981">MX laukas bus įtrauktas į Jūsų domeno DNS zoną. Dėmesio: anksčiau sukurti MX laukai bus ištrinti.</translation>
@@ -383,7 +385,7 @@
    <translation id="exchange_tab_domain_diagnostic_srv_toolbox_ok" qtlid="137491">Atliktas automatinis konfigūravimas </translation>
    <translation id="exchange_tab_domain_error_message" qtlid="144045">Klaida įkeliant domenus.</translation>
    <translation id="exchange_tab_domain_diagnostic_cname" qtlid="129847">CNAME</translation>
-   <translation id="exchange_tab_domain_status" qtlid="8230">Būsena</translation>
+   <translation id="exchange_tab_domain_status" qtlid="447690">Būsena</translation>
    <translation id="exchange_tab_domain_task_in_progress" qtlid="2690">Užduotis vykdoma</translation>
    <translation id="exchange_tab_domain_validation" qtlid="33802">Patvirtinimas</translation>
    <translation id="exchange_tab_domain_validation_doing" qtlid="136646">Domenas tvirtinamas </translation>
@@ -392,8 +394,9 @@
    <translation id="exchange_tab_domain_validation_cname_details" qtlid="363401">Siekiant patvirtinti jūsų domeno nuosavybę, prašome sukurti ši CNAME tipo įrašą: <br /><br /><span class="bold">{0}.{1}</span> į <span class="bold">{2}</span>.<br /><br /> Jums tai reikia atlikti per 48 valandas.</translation>
    <translation id="exchange_tab_domain_add_domain" qtlid="8602">Pridėti domeną</translation>
    <translation id="exchange_tab_domain_delete_domain" qtlid="137556">Pašalinti šį domeną iš Exchange paslaugų </translation>
+   <translation id="exchange_tab_domain_creating" qtlid="26791">Kuriama</translation>
    <translation id="exchange_tab_domain_delete_domain_accounts_warning" qtlid="148227">Šis domenas negali būti ištrintas, nes jis naudojamas su viena ar keliomis Exchange paskyromis.</translation>
-   <translation id="exchange_tab_domain_NON_AUTHORITATIVE" qtlid="136672">Neprivaloma </translation>
+   <translation id="exchange_tab_domain_NON_AUTHORITATIVE" qtlid="447703">Non-autoritative</translation>
    <translation id="exchange_tab_domain_AUTHORITATIVE" qtlid="58807">Authoritative</translation>
    <translation id="exchange_tab_domain_warning" qtlid="136347">Dėmesio!</translation>
    <translation id="exchange_tab_domain_partial" qtlid="137569">Kai kurie domenai negalėjo būti teisingai įkelti. Norėdami išspręsti problemą atnaujinkite puslapį.</translation>
@@ -550,11 +553,11 @@
    <translation id="exchange_tab_domain_add_step1_order_domain_option" qtlid="136997">Užsisakyti domeną </translation>
    <translation id="exchange_tab_domain_add_step1_domain_none" qtlid="434538">Nerasta jokio rezultato</translation>
 
-   <translation id="exchange_tab_domain_add_step3_cover_guide" qtlid="139572">Video gido peržiūra</translation>
+   <translation id="exchange_tab_domain_add_step3_cover_guide" qtlid="139572">Nerastas joks rezultatas</translation>
 
    <translation id="exchange_tab_domain_add_step1_main_domain" qtlid="191070">Pagrindinis organizacijos domenas</translation>
    <translation id="exchange_tab_domain_add_step1_main_domain_tooltip" qtlid="191083">Pagrindinis organizacijos domenas</translation>
-   <translation id="exchange_tab_domain_add_step1_new_organization_intro" qtlid="191096">Jūsų organizacijos pavadinimas bus {0}</translation>
+   <translation id="exchange_tab_domain_add_step1_new_organization_intro" qtlid="447716">Jūsų organizacijos domenas bus <strong>{0}</strong></translation>
    <translation id="exchange_tab_domain_add_step1_new_organization_placeholder" qtlid="191109">Organizacijos pavadinimas</translation>
    <translation id="exchange_tab_domain_add_step2_main_domain" qtlid="191122">Pagrindinis domenas</translation>
    <translation id="exchange_tab_domain_add_step2_organization" qtlid="32278">Organizacija</translation>
@@ -565,6 +568,7 @@
    <translation id="exchange_tab_domain_add_step1_attach_organization_intro" qtlid="191135">Domenas bus įskaičiuotas į šią organizaciją:</translation>
 
    <translation id="exchange_tab_domain_add_set_auto_display" qtlid="416488">Pažymėkite varnelę, kad išvengtumėte pakartotinio lango atvertimo.</translation>
+   <translation id="exchange_tab_domain_add_goToWizardButton" qtlid="449388">Noriu naudoti <br />konfigūravimo asistentą</translation>
 
    <translation id="exchange_tab_domain_add_step1_order_domain_desc1" qtlid="167873">Norėdami patvirtinti užklausą ir pereiti prie valdymo, spragtelėkite mygtuką "Užsakyti".</translation>
    <translation id="exchange_tab_domain_add_step1_order_domain_desc2" qtlid="144175">Atsidarys nauja kortelė ir būsite automatiškai nukreipti į OVH apmokėjimų puslapį.</translation>
@@ -572,13 +576,13 @@
    <translation id="exchange_tab_domain_step1_helpwizard_subdomain" qtlid="397559">Norėdami pridėti subdomeną vienam iš OVH domenų, pažymėkite varnele „Įvesti domeną, nevaldomą OVH kliento paskyroje“ ir įveskite jį atitinkamame lauke.</translation>
    <translation id="exchange_tab_domain_add_step2_which_domain_type" qtlid="137998">Koks tai domenas <span class="italic">{0}</span>?</translation>
    <translation id="exchange_tab_domain_add_step2_auth_intro" qtlid="140859">Jūsų domenas <span class="italic">{0}</span> bus sukonfigūruotas privaloma tvarka.</translation>
-   <translation id="exchange_tab_domain_add_step2_non_auth_intro" qtlid="366372">Jūsų domenas <span class="italic">{0}</span> bus sukonfigūruotas non-authoritative režimu.</translation>
+   <translation id="exchange_tab_domain_add_step2_non_auth_intro" qtlid="447729">Jūsų domenas <span class="italic">{0}</span> bus sukonfigūruotas kaip non-autoritative.</translation>
    <translation id="exchange_tab_domain_add_step2bis_intro" qtlid="316944">Pasirinkite domeno režimą:</translation>
 
    <translation id="exchange_tab_domain_add_step2_srv_checkbox" qtlid="138011">Automatiškai konfigūruoti SRV (autodiscover)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_checkbox" qtlid="139585">Automatiškai konfigūruoti MX (el. laiškų gavimas)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_tooltip" qtlid="140209">Dėmesio, automatinis MX konfigūravimas turės įtakos anksčiau sukonfigūruotam laiškų gavimui.</translation>
-   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="273909">Ši parinktis leis jūsų klientinei programai, pvz., Outlook ar Mail, automatiškai aptikti prisijungimo nustatymus (jeigu suderinama su Mapi protokolu).</translation>
+   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="447742">Šis pasirinkimas leis pašto programoms, pvz., Outlook ar Mail, autoatiškai gauti prisijungimo duomenis.</translation>
    <translation id="exchange_tab_domain_add_step3_srv_confirmation" qtlid="137816">SRV konfigūravimas </translation>
    <translation id="exchange_tab_domain_add_step3_mx_confirmation" qtlid="137829">MX konfigūravimas </translation>
    <translation id="exchange_tab_domain_add_step3_mx_replay" qtlid="316957">Paskirties el. pašto serveris</translation>
@@ -591,18 +595,15 @@
    <translation id="exchange_tab_domain_modify_failure" qtlid="137075">Įvyko klaida atnaujinant domeną.</translation>
    <translation id="exchange_tab_domain_modify_in_progress" qtlid="137088">Pereinama prie {0} </translation>
    <translation id="exchange_tab_domain_inverse_NON_AUTHORITATIVE" qtlid="58807">Authoritative</translation>
-   <translation id="exchange_tab_domain_inverse_AUTHORITATIVE" qtlid="136672">Neprivaloma </translation>
+   <translation id="exchange_tab_domain_inverse_AUTHORITATIVE" qtlid="447755">Non-authoritative</translation>
    <translation id="exchange_tab_domain_mode_AUTHORITATIVE" qtlid="316970">Authoritative (tik Exchange)</translation>
-   <translation id="exchange_tab_domain_mode_NON_AUTHORITATIVE" qtlid="316983">Non-authoritative (Exchange + kita pranešimų siuntimo paslauga)</translation>
+   <translation id="exchange_tab_domain_mode_NON_AUTHORITATIVE" qtlid="447768">Non-authoritative (Exchange + kita pašto paslauga)</translation>
    <translation id="exchange_tab_domain_AUTHORITATIVE_info" qtlid="324847">Jei įjungtas režimas yra authoritative, kita pranešimų siuntimo sistema negali būti naudojama su Exchange paskyromis. Šis režimas leidžia įjungti Anti-spam Vade Secure apsaugą.</translation>
-   <translation id="exchange_tab_domain_NON_AUTHORITATIVE_info" qtlid="324860">Non-authoritative režimas leidžia naudoti Exchange su kita pranešimų siuntimo paslauga. Anti-spam Vade Secure apsauga suderinama, jei pop/imap paskyros talpinamos OVH (naudojamas mxplan ar svetainių talpinimo el. paštas), šiuo atveju, reikia nurodyti mx1.mail.ovh.net el. pašto serverio paskirtyje.</translation>
+   <translation id="exchange_tab_domain_NON_AUTHORITATIVE_info" qtlid="447781">Non-authoritative režimu Exchange veiks kartu su kita el. pašto paslauga. Vade Secure suderinama su  pop/imap paskyromis, esančiomis OVH (mxplan ar svetainių talpinimo pašto). Tokiu atveju MX pašto serverį nurodykite mx1.mail.ovh.net.</translation>
    <translation id="exchange_tab_domain_target_mail_server_label" qtlid="316957">Paskirties el. pašto serveris</translation>
    <translation id="exchange_tab_domain_noovh_mx_info" qtlid="317126">MX ir SRV įrašai bus keičiami rankiniu būdu jūsų DNS zonoje. Visa būtina informacija bus matoma susijusių domenų skiltyje, iš karto po CNAME patvirtinimo.</translation>
    <translation id="exchange_tab_domain_modify_domain" qtlid="137101">Domeno konfigūravimas</translation>
-<translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="416397;416410;416410;169498;416423;416449">
-Anti-spam Vade Secure paslauga yra suderinama su Non-authorative režimu (tik jeigu jūsų pop/imap el. paštas yra talpinamas OVH). Tokiu atveju rekomenduojama naudoti: <strong qtlid="266365">{0}</strong>, <strong qtlid="78906">{1}</strong>, <strong qtlid="183112">{2}</strong> ir <strong qtlid="292228">{3}</strong>
-<br/><br/> Jeigu naudosite Non-authoritative režimą el. pašto dėžutėms, talpinamoms OVH, tuomet jūs turėtumėte naudoti: <strong qtlid="416436">{4}</strong> (peržiūrėti susijusių domenų skiltį)
-</translation>
+   <translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="444667">Anti-spam Vade Secure parinktis yra suderinama su non-authoritative režimu (tik jeigu jūsų POP/IMAP el. pašto dėžutės yra talpinamos OVH). Tokiu atveju yra rekomenduojama naudoti: <strong>{0}</strong>, <strong>{1}</strong>, <strong>{2}</strong> ir <strong>{3}</strong><br/><br/> Jeigu jūs norite naudoti non-authoritative režimą su el. pašto dėžutėmis, kurios nėra talpinamos OVH, jūs turite naudoti: <strong>{4}</strong> (žiūrėkite atitinkamų domenų skiltis)</translation>
    <translation id="exchange_tab_domain_modify_title" qtlid="137920">Ar tikrai pageidaujate pakeisti šį jūsų Exchange paskyros domeną?</translation>
    <translation id="exchange_tab_domain_modify_loop_warning" qtlid="210319">Dėmesio: begalinis ciklas!</translation>
    <translation id="exchange_tab_domain_modify_domain_warning" qtlid="210332">Negaliojantis domenas.</translation>
@@ -647,7 +648,7 @@ Anti-spam Vade Secure paslauga yra suderinama su Non-authorative režimu (tik je
    <translation id="exchange_tab_DISCLAIMER_table_empty" qtlid="152258">Jūs neturite parašo.</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_content" qtlid="152271">Turinys</translation>
    <translation id="exchange_tab_DISCLAIMER_associated_domains" qtlid="133110">Susietas domenas </translation>
-   <translation id="exchange_tab_DISCLAIMER_state_header" qtlid="8230">Būsena</translation>
+   <translation id="exchange_tab_DISCLAIMER_state_header" qtlid="447794">Būsena</translation>
    <translation id="exchange_tab_DISCLAIMER_state_doing_tooltip" qtlid="143863">Užduotis suplanuota ar vykdoma</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_outside_only" qtlid="152284">Tik į išorę</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_outside_only_tooltip" qtlid="152297">Parašas naudojamas tik siuntimui į užsienį</translation>
@@ -687,7 +688,7 @@ Anti-spam Vade Secure paslauga yra suderinama su Non-authorative režimu (tik je
    <translation id="exchange_ACTION_add_disclaimer_option_OtherPhoneNumber" qtlid="152479">Kitas tel. nr.</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_PagerNumber" qtlid="152492">Pranešimų gaviklis</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_PhoneNumber" qtlid="152505">Telefono nr.</translation>
-   <translation id="exchange_ACTION_add_disclaimer_option_State" qtlid="8230">Būsena</translation>
+   <translation id="exchange_ACTION_add_disclaimer_option_State" qtlid="447807">Būsena</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Street" qtlid="152518">Gatvė</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Title" qtlid="16469">Pavadinimas</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_UserLogonName" qtlid="46792">Identifikatorius</translation>
@@ -742,7 +743,7 @@ Anti-spam Vade Secure paslauga yra suderinama su Non-authorative režimu (tik je
    <translation id="exchange_tab_RESOURCES_table_capacity" qtlid="4334">Talpa</translation>
    <translation id="exchange_tab_RESOURCES_table_allow_conflicts" qtlid="156407">Konfliktas autorizuotas</translation>
    <translation id="exchange_tab_RESOURCES_table_email" qtlid="69509">El. paštas</translation>
-   <translation id="exchange_tab_RESOURCES_table_state" qtlid="8230">Būsena</translation>
+   <translation id="exchange_tab_RESOURCES_table_state" qtlid="447820">Būsena</translation>
    <translation id="exchange_tab_RESOURCES_table_state_task" qtlid="156420">Užduotis vykdoma</translation>
    <translation id="exchange_tab_RESOURCES_action_add_resource_account" qtlid="63710">Sukurti resursų paskyrą</translation>
    <translation id="exchange_tab_RESOURCES_type_EQUIPMENT" qtlid="82063">Įranga</translation>
@@ -872,8 +873,8 @@ Anti-spam Vade Secure paslauga yra suderinama su Non-authorative režimu (tik je
    <translation id="exchange_tab_GROUPS_all_table_address" qtlid="11315">El. pašto adresas</translation>
    <translation id="exchange_tab_GROUPS_all_table_manager" qtlid="81487">Administratoriai</translation>
    <translation id="exchange_tab_GROUPS_all_table_user" qtlid="32206">Kontaktai</translation>
-   <translation id="exchange_tab_GROUPS_all_table_status" qtlid="8230">Būsena</translation>
-   <translation id="exchange_tab_GROUPS_all_table_empty" qtlid="150346">Jūs neturite grupių</translation>
+   <translation id="exchange_tab_GROUPS_all_table_status" qtlid="447833">Būsena</translation>
+   <translation id="exchange_tab_GROUPS_all_table_empty" qtlid="150346">Jūs neturite grupės</translation>
    <translation id="exchange_tab_GROUPS_all_error_message" qtlid="150359">Klaida įkeliant jūsų grupių sąrašą.</translation>
    <translation id="exchange_tab_GROUPS_all_add_ml_button" qtlid="150372">Sukurti kontaktų grupę</translation>
    <translation id="exchange_tab_GROUPS_menu_settings" qtlid="150385">Konfigūruoti grupę</translation>
@@ -1071,7 +1072,7 @@ Anti-spam Vade Secure paslauga yra suderinama su Non-authorative režimu (tik je
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_externalEmailAddress" qtlid="30430">Adresas</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_displayName" qtlid="80922">Rodomas vardas</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_creationDate" qtlid="4358">Sukurta</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state" qtlid="8230">Būsena</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state" qtlid="447846">Būsena</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_CREATING" qtlid="26227">Kuriama</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_DELETING" qtlid="133929">Šalinama</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_REOPENING" qtlid="171279">Atidaroma iš naujo</translation>
@@ -1354,7 +1355,7 @@ Anti-spam Vade Secure paslauga yra suderinama su Non-authorative režimu (tik je
    <translation id="exchange_tab_SHARED_header_path" qtlid="6838">Kelias</translation>
    <translation id="exchange_tab_SHARED_header_type" qtlid="2642">Tipas</translation>
    <translation id="exchange_tab_SHARED_header_access" qtlid="201510">Prieigos teisės</translation>
-   <translation id="exchange_tab_SHARED_header_status" qtlid="8230">Būsena</translation>
+   <translation id="exchange_tab_SHARED_header_status" qtlid="447859">Būsena</translation>
    <translation id="exchange_tab_SHARED_header_access_PLAIN" qtlid="61656">Katalogas</translation>
    <translation id="exchange_tab_SHARED_header_access_CALENDAR" qtlid="201523">Kalendorius</translation>
    <translation id="exchange_tab_SHARED_header_access_CONTACTS" qtlid="32206">Kontaktai</translation>
@@ -1424,9 +1425,9 @@ Anti-spam Vade Secure paslauga yra suderinama su Non-authorative režimu (tik je
    <translation id="exchange_action_SHARED_permissions_delete_error" qtlid="202056">Klaida trinant bendrai naudojamą objektą.</translation>
 
    <translation id="exchange_action_SHARED_permissions_update_title" qtlid="202108">Prieigos teisių konfigūravimas</translation>
-   <translation id="exchange_action_SHARED_permissions_update_intro" qtlid="209190">Prieigos leidimas suteikia kitoms Exchange<sup>1</sup> paskyroms tam tikras teises į bendrą naudojimą {0}</translation>
+   <translation id="exchange_action_SHARED_permissions_update_intro" qtlid="209190">Prieigos suteikimas kitoms Exchange<sup>1</sup> paskyroms suteikia tam tikras teises į bendro naudojimo objektą {0}</translation>
    <translation id="exchange_action_SHARED_permissions_update_legend" qtlid="209203">Basic Exchange paskyros neskelbiamos, kadangi joms nesuteikiama prieiga prie bendrai naudojamų resursų.</translation>
-   <translation id="exchange_action_SHARED_permissions_update_resume_intro" qtlid="202147">Prieigos teisių bendram naudojimui {0} suvestinė:</translation>
+   <translation id="exchange_action_SHARED_permissions_update_resume_intro" qtlid="202147">Prieigos teisių prie bendro naudojimo objekto {0} suvestinė:</translation>
    <translation id="exchange_action_SHARED_permissions_update_success_message" qtlid="202160">Bendrai naudojamo objekto <span class="bold">{0}</span> prieigos teisės bus pakeistos.</translation>
    <translation id="exchange_action_SHARED_permissions_update_partial_message" qtlid="202173">Prašymas atnaujinti bendrai naudojamo objekto <span class="bold">{0}</span> teises buvo dalinai priimtas, kilo keletas klaidų.</translation>
    <translation id="exchange_action_SHARED_permissions_update_error_message" qtlid="202186">Kilo klaidų atnaujinant bendrai naudojamo objekto <span class="bold">{0}</span> prieigos teises.</translation>
@@ -1489,4 +1490,143 @@ Anti-spam Vade Secure paslauga yra suderinama su Non-authorative režimu (tik je
    <translation id="exchange_order_view_button_label" qtlid="368245">Jūsų Exchange užsakymas</translation>
    <translation id="exchange_order_view_button_attached_title" qtlid="368258">Užsakyti paskyrą, susietą su {0}</translation>
    <translation id="exchange_order_view_button_stand_alone_title" qtlid="368271">Užsakyti naują Exchange paslaugą</translation>
+
+<!-- Wizard -->
+   <translation id="exchange_wizardHostedCreation_welcome_progressBar_addDomainName" qtlid="449401">Domeno konfigūravimas</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_progressBar_createEmailAddresses" qtlid="449414">El. pašto adreso konfigūravimas</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_progressBar_summary" qtlid="82725">Suvestinė</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_header" qtlid="449427">Jūsų Microsoft Exchange paslauga<br/> dar nesukonfigūruota</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_subtext" qtlid="449440">Sukonfigūruokite savo pašto paslaugą vos per kelias minutes.</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_startButton" qtlid="449453">Pradėti</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_standardConfiguratorButton" qtlid="449466">Noriu standartinės konfigūracijos</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_closeButton" qtlid="4670">Uždaryti</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_closeAndSaveButton" qtlid="449479">Uždaryti ir daugiau nerodyti konfigūravimo asistento</translation>
+
+   <translation id="exchange_wizardHostedCreation_addDomainName_subtext" qtlid="449492">Microsoft Exchange konfigūravimas</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_header" qtlid="449505">Pridėti domeną prie Exchange</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_ifNoDomain" qtlid="449518">Jeigu dar neturite savo domeno,</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_goToOffers" qtlid="449531">peržiūrėkite pasiūlymus mūsų svetainėje.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_creationError" qtlid="449544">Šis domenas negali būti sukurtas. Pabandykite kitą.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_buttonContinueText" qtlid="449557">Pridėti ir tęsti</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_buttonDontContinueText" qtlid="449570">Pridėti ir konfigūruoti vėliau</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameValidationDelay" qtlid="449583">Su Exchange susietas domenas yra tvirtinamas.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameValidation_explanation" qtlid="159202">Operacija truks kelias minutes.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_header" qtlid="449596">Pasirinkti domeną</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_placeholder" qtlid="84153">Pasirinkti</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_domainNotInList" qtlid="449609">Mano domeno nėra sąraše</translation>
+
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_header" qtlid="4406">Konfigūracija</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isDomainOnlyExchange" qtlid="449622">Ar su šiuo domenu naudosite tik OVH Exchange paslaugą?</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isDomainEmail" qtlid="449635">Ar tai OVH el. pašto paslauga (svetainių talpinimo ar MX Plan) arba OVH E-mail Pro?</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_domainConfigurationAlert" qtlid="449648">Jūsų domenas dabar naudoja <strong>{0}</strong> kaip įeinančių laiškų serverį.<br />Laiškai, siunčiami ne į OVh sukurtas dėžutes, nebus gaunami.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isExchangeOnly" qtlid="34776">Taip</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isNotExchangeOnly" qtlid="34788">Ne</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isUsedByMails" qtlid="34776">Taip</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isNotUsedByMails" qtlid="449661">Ne, nurodykite pranešimų siuntimo serverį (SMTP)</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isEmailService" qtlid="449674">Jūsų domenas naudos <strong>mx1.mail.ovh.net</strong> kaip laiškų gavimo serverį.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_header" qtlid="449687">Siuntimo serveris (SMTP)</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_title" qtlid="449700">DNS zonos konfigūravimas</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_tooltip" qtlid="449713">DNS zonoje galite valdyti įvairias paslaugas, susijusias su domenu.<br /><br />Pavyzdžiui, MX lauke galite nurodyti, kuris serveris priiminės su domenu susijusius laiškus.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip_1" qtlid="449726">Siuntimo serveris naudojamas kai laiškai siunčiami į paskyras, kurios nėra OVH Exchange.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip_2" qtlid="449739">Tokie laiškai automatiškai persiunčiami į SMTP</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_header" qtlid="449752">Kaip norite konfigūruoti savo DNS zoną?</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_auto" qtlid="273319">Automatinis konfigūravimas</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_manual" qtlid="273332">Konfigūravimas rankiniu būdu</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_manual_explanation1" qtlid="449765">Noriu pats konfigūruoti MX ir SRV laukus</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_manual_explanation2" qtlid="449778">ir gauti laiškus kur aš noriu.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_nonAuthoritative" qtlid="449791">Įveskite SMTP serverį. Laiškai, siunčiami ne į OVH dėžutes, bus persiųsti į jį.</translation>
+
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_header" qtlid="449804">DNS zonos konfigūravimas</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_explanation" qtlid="449817">Kadangi jūsų domenas valdomas kitoje paskyroje ar kito IPT, turite patys atnaujinti CNAME lauką DNS zonoje. Lauko atnaujinimui prireiks žemiau pateikiamos informacijos.<br /><br />Atlikę CNAME lauko keitimus patvirtinsite išorinį domeną OVH infrastruktūroje. Šis įrašas niekaip nepaveiks dabartinio domeno veikimo.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_dnsZone_explanation" qtlid="449830">DNS zonoje galite konfigūruoti įvairias domeno paslaugas. Pavyzdžiui, galite susieti domeną su talpinimo planu per A lauką, o naudodami MX lauką galite susieti jį su el. pašto paslauga.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_inputHeader" qtlid="449843">Įveskite domeną</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_example" qtlid="449856">Pavyzdys: domenas1.com</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_placeholder" qtlid="66428">Domenas</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_cnameToCopy_header" qtlid="449869">CNAME įrašas kopijavimui</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_targetToCopy_header" qtlid="449882">Paskirtis kopijavimui</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_cnameToCopy_explanation" qtlid="449895">Šis CNAME turi būti įdiegtas per 48 valandas. Pasibaigus nurodytam periodui, reikės generuoti naują.<br />Kai konfigūravimas bus baigtas, galite toliau nustatinėti Exchange paslaugą.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_input_patternError" qtlid="449908">Šiame lauke turi būti domenas ir galite naudoti tik raides, skaičius, tašką (.), sudėties simbolį (+) arba brūkšnelius (- arba _).</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_input_alreadyExists" qtlid="449921">Galite pasirinkti domeną iš sąrašo žemiau.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_waitingForActivation" qtlid="449934">Mygtukas bus aktyvus kai baigsite patvirtinimą.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_confirmButton" qtlid="31498">Patvirtinti</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_retrieval_error" qtlid="449947">Klaida gaunant domenų sąrašą.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_error" qtlid="449960">Klaida kuriant serverį. </translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyNonAuthoritativeEmailPro" qtlid="449973">Jūsų domenas jau susietas su OVH Email Pro paslauga. Mes nustatėme geriausią konfigūraciją tokiam atvejui. </translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAssociated_error" qtlid="449986">Domenas <strong>{0}</strong> jau susietas su Exchange arba Sharepoint paslauga. Prašome panaikinti domeną iš minėtų paslaugų prieš susiejant su šia paslauga.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_cancelOperation_button" qtlid="449999">Nutraukti diegimo procesus</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_cancelOperation_details" qtlid="450012">Norėdami grįžti prie paslaugos konfigūravimo, spauskite "Susieti domenai", po to "Pridėti domeną".</translation>
+
+   <translation id="exchange_wizardHostedCreation_emailCreation_header" qtlid="450025">Personalizuokite Exchange paskyras</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_introduction_1" qtlid="450038">Savo Exchange paskyroje galite kurti iki {0} paskyrų.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_introduction_2" qtlid="450051">Jeigu reikia daugiau paskyrų, galite užsakyti jas vėliau, Hosted Exchange valdymo skyriuje <strong>El. pašto paskyros</strong>.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_header_email" qtlid="11315">El. pašto adresas</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_header_displayName" qtlid="23515">Rodomas vardas</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_header_state" qtlid="8230">Būsena</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_operationInProgress" qtlid="450064">Kai visos operacijos bus baigtos, galėsite personalizuoti paskyras.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_personnalizeButton" qtlid="450077">Personalizuoti paskyrą</translation>
+
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_login_header" qtlid="11315">El. pašto adresas</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_login_required" qtlid="450090">Privalomas laukas.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_login_pattern" qtlid="450103">Lokali dalis (prieš @) gali būti sudaryta iš skaičių, raidžių, taškų (.) ir brūkšnelių (- ar _).</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_firstName_title" qtlid="450116">Personalizuoti el. pašto paskyrą</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_firstName_header" qtlid="23323">Vardas</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_name_header" qtlid="3818">Pavadinimas</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_displayName_header" qtlid="23515">Rodomas vardas</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_password_header" qtlid="2270">Slaptažodis</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_password_error_confirmation" qtlid="450129">Slaptažodžiai turi sutapti.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_password_error_short" qtlid="450142">Jūsų saugumo nustatymuose nurodyta, kad slaptažodis turi būti sudarytas iš {0} simbolių.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_password_error_exchangePreferences" qtlid="450155">Jūsų saugumo nustatymuose nurodyta, kad slaptažodžiai gali būti sudaryti iš didžiųjų bei mažųjų raidžių, skaičių ir/ar specialių simbolių.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_passwordConfirmation_header" qtlid="9983">Patvirtinimas</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_emailAlreadyUsed" qtlid="450168">Toks adresas jau naudojamas kaip domeno el. pašto adresas. Galite jį migruoti į Hosted Exchange.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_emailAlreadyUsed_ifWontChange" qtlid="450181">Jeigu nenorite migruoti el. pašto adreso, pakeiskite jį ankstesniame žingsnyje.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migrationPassword_error" qtlid="450194">Neteisingas slaptažodis. Bandykite dar kartą.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_nextStepButton" qtlid="450207">Baigti konfigūravimą</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_serviceParametersRetrieval_error" qtlid="450220">Klaida įkeliant Exchange paskyros konfigūracinius nustatymus.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_accountCreation_error" qtlid="450233">Klaiad kuriant jūsų el pašto paskyrą.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_accountCreation_alreadyExist_error" qtlid="450246">El. pašto adresas {0} jau egzistuoja.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migrationChecking_error" qtlid="450259">Ši paskyra negali būti migruota į Exchange.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migrationChecking_mxPlanTechContact" qtlid="450272">Ši el. pašto paskyra negali būti automatiškai migruota į Exchange. Susisiekite su paskyros administratoriumi.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_error" qtlid="450285">Klaida migruojant jūsų paskyrą.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_question_1" qtlid="450298">Tokia paskyra jau egzistuoja, ar norite migruoti ją į Exchange?</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_question_2" qtlid="450311">Visos el. pašto paskyros bus pasiekiamos Exchange adresais.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_warning" qtlid="436892">Dėmesio: migruojant nebus atsižvelgta į šiuos elementus: <br />- jūsų filtrai; <br />- jūsų atsakikliai; <br />- jūsų el. pašto konferencijos; <br />- jūsų Roundcube kontaktai.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_wrongPassword_error" qtlid="450324">Neteisingas slaptažodis.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_addButton_title" qtlid="37923">Pridėti</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_nextButton_title" qtlid="37923">Pridėti</translation>
+
+   <translation id="exchange_wizardHostedCreation_emailCreation_update_firstName_title" qtlid="450337">Redaguoti paskyrą.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_updateButton_title" qtlid="37875">Keisti</translation>
+
+   <translation id="exchange_wizardHostedCreation_emailCreation_update_changePassword_checkbox" qtlid="80394">Keisti slaptažodį</translation>
+
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_header" qtlid="450350">Konfigūravimo baigimas.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_summary" qtlid="4082">Santrauka</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_domainName" qtlid="66428">Domenas</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_authoritative" qtlid="450363">Naudoti tik Exchange paslaugą</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_authoritative_yes" qtlid="34776">Taip</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_authoritative_no" qtlid="34788">Ne</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_emailAdresses" qtlid="450376">El. pašto paskyros prodėtos.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_emailAdresses_non" qtlid="30646">Nėra</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_auto_header" qtlid="450389">DNS zonos konfigūravimas bus atliktas <strong>automatiškai</strong>.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_auto_explanation1" qtlid="450402">Jūsų domeno <strong>{0}</strong> Hosted Exchange paslauga sukonfigūruota. Kai MX tikrinimas bus baigtas ir pažymėtas žaliai, pradėsite gauti laiškus. Paslauga pilnai veikianti bus po 4 - 24 valandų. Laiškus skaitykite čia</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_auto_explanation2" qtlid="450415">arba skyriuje <strong>Pagrindinė informacija</strong> spragtelėkite <strong>Prisijungimai → Webmail</strong>.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_header" qtlid="450428">DNS zona bus konfigūruojama <strong>rankiniu būdu</strong>.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_part_1" qtlid="450441">Konfigūruojant MX ir SRV laukus</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_part_2" qtlid="450480"> domenas sukonfigūruojamas taip, kad pradėtumėte gauti laiškus. Laiškai pradės jus pasiekti po zonos paskelbimo, tai trunka 4 - 24 valandas.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_1" qtlid="450454">OVH MX laukas susieja domeną su el. pašto serveriu.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_2" qtlid="450467">SRV laukas leidžia automatiškai konfigūruoti el. pašto programas (pvz., Outlook).</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_table_headers_fieldType" qtlid="129171">Lauko tipas </translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_table_headers_data" qtlid="26551">Informacija</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_table_mx" qtlid="23779">MX</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_table_srv" qtlid="130003">SRV</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_returnButton" qtlid="4118">Atgal</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_closeButton" qtlid="4070">Tęsti</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_availableAccountsRetrieval_error" qtlid="450493">Klaida įkeliant su domenu susietas paskyras.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_dialog_explanation1" qtlid="450506">Dabar reikia sukonfigūruoti domeno MX ir SRV laukus.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_dialog_explanation2" qtlid="450519">jeigu jūsų domenas yra OVH, eikite į skyrių: Web → Domenai → DNS zona.<br /><br />Jeigu domenas registruotas kitur, naudokite paslaugų teikėjo dokumentaciją.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_dialog_explanation3" qtlid="450532">Jeigu jau padarėte tai, palaukite, kol informacija atsinaujins. Kai MX tikrinimas bus baigtas, jis bus žymimas žaliai ir pradėsite gauti laiškus. Paslaugos aktyvavimas gali trukti nuo 4 iki 24 valandų.</translation>
+
+   <translation id="exchange_wizardHostedCreation_ending_dialog" qtlid="450545">Paskutinis etapas</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_dialog_warning" qtlid="5066">Dėmesio</translation>
+   <translation id="exchange_wizardHostedCreation_lastDialog_closeButton" qtlid="450558">Baigti</translation>
 </translations>

@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeCtrl", class ExchangeCtrl {
-        constructor (accountTypes, $rootScope, $scope, $timeout, $location, Products, translator, Exchange, APIExchange, User, EXCHANGE_CONFIG, navigation, ovhUserPref, messaging, exchangeVersion, officeAttached) {
+        constructor (accountTypes, $rootScope, $scope, $timeout, $location, Products, translator, Exchange, APIExchange, User, EXCHANGE_CONFIG, navigation, ovhUserPref, messaging, exchangeVersion, officeOffer) {
             this.services = {
                 accountTypes,
                 $rootScope,
@@ -18,7 +18,7 @@ angular
                 ovhUserPref,
                 messaging,
                 exchangeVersion,
-                officeAttached
+                officeOffer
             };
 
             this.$routerParams = Exchange.getParams();
@@ -155,9 +155,17 @@ angular
                     this.services.Exchange.value = exchange;
                     this.exchange = exchange;
                     this.displayName = exchange.displayName;
+
+                    this.services
+                        .officeOffer
+                        .getOfficeOfferSubscription()
+                        .then((data) => {
+                            this.canSubscribeToOfficeAttach = data;
+                        });
+
                 })
                 .then(() => this.canActivateSharepoint())
-                .then(() => this.services.officeAttached.getOfficeAttachSubscription())
+                .then(() => this.services.officeOffer.getOfficeOfferSubscription())
                 .then((data) => {
                     this.canSubscribeToOfficeAttach = data;
                     if (!_.isEmpty(this.exchange.messages)) {
@@ -180,8 +188,6 @@ angular
 
                         if (response.code === 460 || response.status === 460) {
                             this.services.messaging.writeError(this.services.translator.tr("common_service_expired", [response.id]), data);
-                        } else {
-                            this.services.messaging.writeError(this.services.translator.tr("exchange_dashboard_loading_error"), data);
                         }
                     } else {
                         this.loadingExchangeError = true;

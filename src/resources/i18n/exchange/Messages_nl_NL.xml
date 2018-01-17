@@ -2,6 +2,7 @@
 <translations>
 
 <!-- GENERIC -->
+   <translation id="optional_form_field" qtlid="356264">(optioneel)</translation>
    <translation id="exchange_reset_search_value" qtlid="433719">Opnieuw zoeken</translation>
    <translation id="exchange_search_value" qtlid="55493">Zoeken</translation>
 
@@ -12,20 +13,20 @@
    <translation id="exchange_offer_type_HOSTED" qtlid="137231">Hosted Exchange</translation>
    <translation id="exchange_offer_type_PROVIDER" qtlid="136152">Exchange reseller</translation>
    <translation id="exchange_offer_type_25g" qtlid="264042">Exchange Individual</translation>
-   <translation id="exchange_dashboard_loading_error" qtlid="168120">Er is een fout opgetreden, bij het uploaden van de gegevens. </translation>
+   <translation id="exchange_dashboard_loading_error" qtlid="168120">Er is een fout opgetreden tijdens het uploaden van de gegevens. </translation>
    <translation id="exchange_dashboard_action_doing" qtlid="149787">Bewerking wordt uitgevoerd</translation>
    <translation id="exchange_dashboard_display_name_edit" qtlid="37875">Wijzigen</translation>
    <translation id="exchange_dashboard_display_name_save" qtlid="177912">Minimaal 4 tekens</translation>
    <translation id="exchange_dashboard_display_name_min" qtlid="177925">Bewerking geannuleerd. Minimaal 5 tekens vereist.</translation>
    <translation id="exchange_dashboard_display_name_reset" qtlid="37935">Bewerking geannuleerd</translation>
    <translation id="exchange_dashboard_message_see_more" qtlid="91645">De details bekijken</translation>
-   <translation id="exchange_dashboard_name" qtlid="136165">Server verwijzing</translation>
-   <translation id="exchange_dashboard_hostname" qtlid="136178">Server adres</translation>
+   <translation id="exchange_dashboard_name" qtlid="136165">Serververwijzing</translation>
+   <translation id="exchange_dashboard_hostname" qtlid="136178">Serveradres</translation>
    <translation id="exchange_dashboard_renew" qtlid="136191">Verlenging van de dienst</translation>
    <translation id="exchange_dashboard_domains" qtlid="276298">Geassocieerde domeinen</translation>
    <translation id="exchange_dashboard_accounts" qtlid="136204">Exchange-accounts</translation>
    <translation id="exchange_dashboard_tasks" qtlid="136217">Recente taken</translation>
-   <translation id="exchange_dashboard_diag" qtlid="136230">Diagnose server </translation>
+   <translation id="exchange_dashboard_diag" qtlid="136230">Diagnose-server </translation>
    <translation id="exchange_dashboard_guides" qtlid="366359">Heeft u hulp nodig bij de configuratie van uw Exchange oplossing? </translation>
    <translation id="exchange_dashboard_guides_url" qtlid="156732">Raadpleeg onze online handleidingen.</translation>
    <translation id="exchange_diagnostic_guide" qtlid="297891">Bij de diagnose zijn fouten opgemerkt. Meer informatie kunt u vinden in onze</translation>
@@ -34,20 +35,20 @@
    <translation id="exchange_dashboard_new_window" qtlid="222176">Nieuw scherm</translation>
    <translation id="exchange_dashboard_diag_a_label" qtlid="23803">A</translation>
    <translation id="exchange_dashboard_diag_a_tooltip_title" qtlid="143251">A record</translation>
-   <translation id="exchange_dashboard_diag_a_tooltip_ok" qtlid="137491">Automatische configuratie afgerond</translation>
+   <translation id="exchange_dashboard_diag_a_tooltip_ok" qtlid="137491">Automatische configuratie voltooid</translation>
    <translation id="exchange_dashboard_diag_a_tooltip_error" qtlid="209151">Indien uw domein wordt gehost door OVH, maak dan A records aan, door het selecteren van de betreffende domeinnaam, vervolgens "Expert Mode" -> "DNS Zone" -> "Add Entry". Voer svp in: <br /> Record Type: <span class="bold">A</span> <br /> Subdomein: <span class="bold"> {0}</span> <br /> Doel: <span class="bold"> {1}</span> <br /><br /> Indien uw domein elders is geregistreerd, maak dan het A record op dit domein via de manager van uw domein registrar, en voer de bovenstaande gegevens in.</translation>
    <translation id="exchange_dashboard_diag_aaaa_label" qtlid="129823">AAAA</translation>
    <translation id="exchange_dashboard_diag_aaaa_tooltip_title" qtlid="143277">IPv6 AAAA record</translation>
-   <translation id="exchange_dashboard_diag_aaaa_tooltip_ok" qtlid="137491">Automatische configuratie afgerond</translation>
+   <translation id="exchange_dashboard_diag_aaaa_tooltip_ok" qtlid="137491">Automatische configuratie voltooid</translation>
    <translation id="exchange_dashboard_diag_aaaa_tooltip_error" qtlid="209164">Indien uw domein wordt gehost door OVH, maak dan AAAA records aan, door het selecteren van de betreffende domeinnaam, vervolgens "Expert Mode" -> "DNS Zone" -> "Add Entry". Voer svp in: <br /> Record Type: <span class="bold">AAAA</span> <br /> Subdomein: <span class="bold"> {0}</span> <br /> Doel: <span class="bold"> {1}</span> <br /><br /> Indien uw domein elders is geregistreerd, maak dan het AAAA record op dit domein via de manager van uw domein registrar, en voer de bovenstaande gegevens in.</translation>
    <translation id="exchange_dashboard_diag_ptr_label" qtlid="143303">PTR</translation>
    <translation id="exchange_dashboard_diag_ptr_tooltip_title" qtlid="143303">PTR</translation>
-   <translation id="exchange_dashboard_diag_ptr_tooltip_ok" qtlid="137491">Automatische configuratie afgerond</translation>
-   <translation id="exchange_dashboard_diag_ptr_tooltip_error" qtlid="143316">Er is een probleem met de inverse resolution van uw IP-adres. Neem contact op met het support team.</translation>
+   <translation id="exchange_dashboard_diag_ptr_tooltip_ok" qtlid="137491">Automatische configuratie voltooid</translation>
+   <translation id="exchange_dashboard_diag_ptr_tooltip_error" qtlid="143316">Er is een probleem met de inverse resolution van uw IP-adres. Neem aub contact op met het support team.</translation>
    <translation id="exchange_dashboard_diag_ptrv6_label" qtlid="143329">PTR v6</translation>
    <translation id="exchange_dashboard_diag_ptrv6_tooltip_title" qtlid="143329">PTR v6</translation>
-   <translation id="exchange_dashboard_diag_ptrv6_tooltip_ok" qtlid="137491">Automatische configuratie afgerond</translation>
-   <translation id="exchange_dashboard_diag_ptrv6_tooltip_error" qtlid="143342">Bij de inverse resolution van uw IPv6-adres is een probleem opgetreden. Neem contact op met het support team.</translation>
+   <translation id="exchange_dashboard_diag_ptrv6_tooltip_ok" qtlid="137491">Automatische configuratie voltooid</translation>
+   <translation id="exchange_dashboard_diag_ptrv6_tooltip_error" qtlid="143342">Bij de inverse resolution van uw IPv6-adres is een probleem opgetreden. Neem aub contact op met het support team.</translation>
    <translation id="exchange_dashboard_billing" qtlid="32950">Facturatie</translation>
    <translation id="exchange_dashboard_expiration" qtlid="168172">Verlenging</translation>
    <translation id="exchange_dashboard_ssl_expiration" qtlid="190797">SSL vervaldatum</translation>
@@ -59,8 +60,7 @@
    <translation id="exchange_action_renew_ssl" qtlid="136256">Het SSL-certificaat verlengen</translation>
    <translation id="exchange_action_renew_ssl_info" qtlid="325844">Uw SSL-certificaat wordt geïnstalleerd, het kan op dit moment niet verlengd worden. </translation>
    <translation id="exchange_action_renew_ssl_info_expired" qtlid="325857">Het SSL-certificaat is verlopen, u kunt het verlengen. </translation>
-   <translation id="exchange_action_renew_ssl_info_normal" qtlid="325870">Het SSL-certificaat voor uw server is geldig tot en met {0}, deze button zal één maand voordat uw certificaat verloopt beschikbaar zijn.</translation>
-   <translation id="exchange_action_renew_ssl_info_next" qtlid="325883">Het SSL-certificaat voor uw server is geldig tot en met {0}, u kunt het verlengen. </translation>
+   <translation id="exchange_action_renew_ssl_info_next" qtlid="447612">Het SSL-certificaat verloopt op {0} - u kunt het nu verlengen.</translation>
    <translation id="exchange_ACTION_export_accounts_button" qtlid="217015">De accounts naar CSV exporteren</translation>
    <translation id="exchange_ACTION_export_accounts_office_attached_button" qtlid="404187">Probeer Office 365 gratis uit</translation>
    <translation id="exchange_ACTION_export_accounts_doing_button" qtlid="217028">Export wordt uitgevoerd...</translation>
@@ -127,7 +127,7 @@
    <translation id="exchange_tab_ACCOUNTS_table_alias" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ACCOUNTS_table_group" qtlid="59507">Groep</translation>
    <translation id="exchange_tab_ACCOUNTS_table_outlook" qtlid="24427">Outlook</translation>
-   <translation id="exchange_tab_ACCOUNTS_table_status" qtlid="8230">Status</translation>
+   <translation id="exchange_tab_ACCOUNTS_table_status" qtlid="447625">Status</translation>
    <translation id="exchange_tab_ACCOUNTS_table_settings" qtlid="4406">Configuratie</translation>
    <translation id="exchange_tab_ACCOUNTS_type_ALL" qtlid="69173">Alle</translation>
    <translation id="exchange_tab_ACCOUNTS_type_BASIC" qtlid="48986">Basis</translation>
@@ -142,16 +142,18 @@
    <translation id="exchange_tab_ACCOUNTS_outlook_false" qtlid="136308">Zonder</translation>
    <translation id="exchange_tab_ACCOUNTS_action_add_exchange" qtlid="139169">Accounts bestellen</translation>
    <translation id="exchange_tab_ACCOUNTS_action_add_extern" qtlid="136334">Een extern contactpersoon toevoegen</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_OK" qtlid="31522">OK</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_OK" qtlid="447638">Ok</translation>
    <translation id="exchange_tab_ACCOUNTS_state_CREATING" qtlid="168185">Het aanmaken</translation>
    <translation id="exchange_tab_ACCOUNTS_state_DELETING" qtlid="59699">Verwijdering</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_RESETTING" qtlid="447898">Reset</translation>
    <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="171188">Opening wordt uitgevoerd</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="449375">Interne migratie</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Vervallen</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Schorsing wordt uitgevoerd</translation>
    <translation id="exchange_tab_ACCOUNTS_state_MIGRATING" qtlid="186713">Migratie wordt uitgevoerd</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SPAM" qtlid="70409">Spam</translation>
 
-   <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="31522">OK</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="447651">Ok</translation>
    <translation id="exchange_tab_ACCOUNTS_state_creating" qtlid="168185">Het aanmaken</translation>
    <translation id="exchange_tab_ACCOUNTS_state_deleting" qtlid="59699">Verwijdering</translation>
    <translation id="exchange_tab_ACCOUNTS_state_reopening" qtlid="171188">Opening wordt uitgevoerd</translation>
@@ -360,13 +362,13 @@
    <translation id="exchange_tab_domain_diagnostic" qtlid="95059">Diagnostisch</translation>
    <translation id="exchange_tab_domain_diagnostic_mx" qtlid="23779">MX</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_title" qtlid="137478">MX-diagnose</translation>
-   <translation id="exchange_tab_domain_diagnostic_mx_toolbox_ok" qtlid="137491">Automatische configuratie afgerond</translation>
+   <translation id="exchange_tab_domain_diagnostic_mx_toolbox_ok" qtlid="137491">Automatische configuratie voltooid</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_intro_ovh" qtlid="192890">Uw domein wordt gehost door OVH, u kunt het MX-record van uw domein {0} op de volgende manier configureren</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_label_champ" qtlid="192903">MX-record</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_label_champs" qtlid="46780">MX velden</translation>
-   <translation id="exchange_tab_domain_diagnostic_mx_no_antispam" qtlid="319895">Als u gebruik maakt van de non-authoritative modus (Exchange + andere e-mail service) met een niet door OVH gehoste e-mail service: </translation>
+   <translation id="exchange_tab_domain_diagnostic_mx_no_antispam" qtlid="447664">Als u de niet-autoritieve modus gebruikt (Exchange + een ander berichtensysteem) met een berichtensysteem dat niet wordt gehost door OVH:</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_no_antispam_config" qtlid="192929">Prioriteit: <strong>{0}</strong>; target: <strong>{1}</strong></translation>
-   <translation id="exchange_tab_domain_diagnostic_mx_antispam" qtlid="319908">Als u gebruik maakt van de authoritative of non-authoritative modus met een door OVH gehoste e-maildienst: </translation>
+   <translation id="exchange_tab_domain_diagnostic_mx_antispam" qtlid="447677">Als u de autoritieve modus (alleen Exchange) of de niet-autoritieve modus gebruikt met een berichtensysteem (gedeelde e-mailservice) gehost door OVH:</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_antispam_config" qtlid="192955">Prioriteit: <strong>{0}</strong>; target: <strong>{1}</strong><br /> Prioriteit: <strong>{2}</strong>; target: <strong>{3}</strong><br /> Prioriteit: <strong>{4}</strong>; target: <strong>{5}</strong><br /> Prioriteit: <strong>{6}</strong>; target: <strong>{7}</strong><br /></translation>
    <translation id="exchange_tab_domain_diagnostic_mx_no_ovh" qtlid="349101">Als het domein niet onder hetzelfde klant ID als de Exchange oplossing wordt beheerd, of als uw domein elders is geregistreerd, is automatische configuratie niet mogelijk. Maak aub handmatig een MX-record aan op dit domein met dezelfde informatie die u hierboven heeft ingevoerd. </translation>
    <translation id="exchange_tab_domain_diagnostic_mx_recap" qtlid="192981">Een MX-record zal worden toegevoegd aan de DNS-zone van uw domein. Let op, de reeds bestaande MX-records zullen worden verwijderd.</translation>
@@ -380,10 +382,10 @@
 
    <translation id="exchange_tab_domain_diagnostic_srv" qtlid="130003">SRV</translation>
    <translation id="exchange_tab_domain_diagnostic_srv_title" qtlid="137517">Diagnostische SRV</translation>
-   <translation id="exchange_tab_domain_diagnostic_srv_toolbox_ok" qtlid="137491">Automatische configuratie afgerond</translation>
+   <translation id="exchange_tab_domain_diagnostic_srv_toolbox_ok" qtlid="137491">Automatische configuratie voltooid</translation>
    <translation id="exchange_tab_domain_error_message" qtlid="144045">Er is een fout opgetreden tijdens het laden van uw domeinen.</translation>
    <translation id="exchange_tab_domain_diagnostic_cname" qtlid="129847">CNAME</translation>
-   <translation id="exchange_tab_domain_status" qtlid="8230">Status</translation>
+   <translation id="exchange_tab_domain_status" qtlid="447690">Status</translation>
    <translation id="exchange_tab_domain_task_in_progress" qtlid="2690">De taak wordt uitgevoerd</translation>
    <translation id="exchange_tab_domain_validation" qtlid="33802">Validatie</translation>
    <translation id="exchange_tab_domain_validation_doing" qtlid="136646">Validatie van het domein wordt uitgevoerd</translation>
@@ -392,8 +394,9 @@
    <translation id="exchange_tab_domain_validation_cname_details" qtlid="363401">Om te bevestigen dat u de eigenaar bent van dit domein, maakt u een CNAME-record aan: <br /><br /><span class="bold">{0}.{1}</span> naar <span class="bold">{2}</span>.<br /><br /> U heeft 48 uur de tijd om dit te doen.</translation>
    <translation id="exchange_tab_domain_add_domain" qtlid="8602">Een domein toevoegen</translation>
    <translation id="exchange_tab_domain_delete_domain" qtlid="137556">Verwijder dit domein van de Exchange diensten</translation>
+   <translation id="exchange_tab_domain_creating" qtlid="26791">Creatie</translation>
    <translation id="exchange_tab_domain_delete_domain_accounts_warning" qtlid="148227">Dit domein kan niet worden verwijderd, omdat deze  nog steeds wordt gebruikt door een of meer Exchange accounts</translation>
-   <translation id="exchange_tab_domain_NON_AUTHORITATIVE" qtlid="136672">Non-authoritative</translation>
+   <translation id="exchange_tab_domain_NON_AUTHORITATIVE" qtlid="447703">Niet-autoritief</translation>
    <translation id="exchange_tab_domain_AUTHORITATIVE" qtlid="58807">autoritatief</translation>
    <translation id="exchange_tab_domain_warning" qtlid="136347">Let op!</translation>
    <translation id="exchange_tab_domain_partial" qtlid="137569">Sommige domeinen konden niet juist worden geladen. Vernieuw svp de pagina om het probleem op te lossen.</translation>
@@ -528,7 +531,7 @@
    <translation id="exchange_ACTION_change_password_account_error_message_linked" qtlid="148279">Echter, er is een fout opgetreden bij het wijzigen van het wachtwoord.</translation>
    <translation id="exchange_ACTION_update_account_title" qtlid="137712">De exchange account bewerken</translation>
    <translation id="exchange_ACTION_update_account_tooltip" qtlid="37875">Wijzigen</translation>
-   <translation id="exchange_ACTION_update_account_shared_password_warning" qtlid="316918">Het wachtwoord voor de geassocieerde SharePoint service zal ook gewijzigd zijn. </translation>
+   <translation id="exchange_ACTION_update_account_shared_password_warning" qtlid="316918">Het wachtwoord voor de geassocieerde SharePoint dienst zal ook gewijzigd zijn. </translation>
    <translation id="exchange_tab_account_reset_account" qtlid="376024">Een account resetten</translation>
    <translation id="exchange_tab_account_reset_email_info" qtlid="376037">Het resetten van een account verwijdert de data en bijbehorende naam maar u zult wel voor dit account gefactureerd worden. </translation>
    <translation id="exchange_tab_account_reset_title" qtlid="376050">Weet u zeker dat u het volgende Exchange account wilt resetten? </translation>
@@ -553,7 +556,7 @@
 
    <translation id="exchange_tab_domain_add_step1_main_domain" qtlid="191070">Hoofddomein van een organisatie</translation>
    <translation id="exchange_tab_domain_add_step1_main_domain_tooltip" qtlid="191083">Hoofddomein van de organisatie</translation>
-   <translation id="exchange_tab_domain_add_step1_new_organization_intro" qtlid="191096">Het domein van uw organisatie zal "{0}" worden</translation>
+   <translation id="exchange_tab_domain_add_step1_new_organization_intro" qtlid="447716">Uw bedrijfsdomein zal <strong>{0}</strong> zijn</translation>
    <translation id="exchange_tab_domain_add_step1_new_organization_placeholder" qtlid="191109">Bedrijfsnaam</translation>
    <translation id="exchange_tab_domain_add_step2_main_domain" qtlid="191122">Hoofddomein</translation>
    <translation id="exchange_tab_domain_add_step2_organization" qtlid="32278">Organisatie</translation>
@@ -564,6 +567,7 @@
    <translation id="exchange_tab_domain_add_step1_attach_organization_intro" qtlid="191135">De domeinnaam zal worden opgenomen in de volgende organisatie:</translation>
 
    <translation id="exchange_tab_domain_add_set_auto_display" qtlid="416488">Vink dit vakje aan om te voorkomen dat dit venster opnieuw wordt geopend.</translation>
+   <translation id="exchange_tab_domain_add_goToWizardButton" qtlid="449388">Ik gebruik bij voorkeur de <br />configuratie-assistent</translation>
 
    <translation id="exchange_tab_domain_add_step1_order_domain_desc1" qtlid="167873">Om uw bestelling te bevestigen, ga svp naar betalen door op de knop "Bestellen" te klikken.</translation>
    <translation id="exchange_tab_domain_add_step1_order_domain_desc2" qtlid="144175">Een nieuwe tab wordt geopend en u wordt automatisch doorgestuurd naar de betalingsinterface van OVH.</translation>
@@ -571,13 +575,13 @@
    <translation id="exchange_tab_domain_step1_helpwizard_subdomain" qtlid="397559">Om een van de subdomeinen van uw OVH domein toe te voegen, vinkt u 'Voeg een domeinnaam toe die niet beheerd is door uw OVH account' aan en voer het in in het bijbehorende veld. </translation>
    <translation id="exchange_tab_domain_add_step2_which_domain_type" qtlid="137998">Wat voor type domein <span class="italic">{0}</span> is het?</translation>
    <translation id="exchange_tab_domain_add_step2_auth_intro" qtlid="140859">Uw domein <span class="italic"> {0} </span> zal worden geconfigureerd in autoritatieve modus.</translation>
-   <translation id="exchange_tab_domain_add_step2_non_auth_intro" qtlid="366372">Uw <span class="italic">{0}</span> domein zal in in non-authoritative modus worden geconfigureerd.</translation>
+   <translation id="exchange_tab_domain_add_step2_non_auth_intro" qtlid="447729">Uw domein <span class="italic">{0}</span> zal worden geconfigureerd in de niet-autoritieve modus</translation>
    <translation id="exchange_tab_domain_add_step2bis_intro" qtlid="316944">Selecteer uw domeinformulier: </translation>
 
    <translation id="exchange_tab_domain_add_step2_srv_checkbox" qtlid="138011">Automatisch configureren van de SRV (autodiscover)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_checkbox" qtlid="139585">De MX automatisch configureren (ontvangst van de e-mails)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_tooltip" qtlid="140209">Let op: het automatisch configureren van de MX kan invloed hebben op de ontvangst van e-mails die vooraf zijn geconfigureerd op deze domeinnaam.</translation>
-   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="273909">Met deze optie kan uw e-mailclient, zoals Outlook of Mail, automatisch uw verbindingsinstellingen vinden (afhankelijk van compatibiliteit met het MAPI-protocol).</translation>
+   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="447742">Met deze optie kan uw e-mailclient (bijvoorbeeld Outlook of Mail) automatisch uw aanmeldingsinstellingen detecteren.</translation>
    <translation id="exchange_tab_domain_add_step3_srv_confirmation" qtlid="137816">SRV-configuratie</translation>
    <translation id="exchange_tab_domain_add_step3_mx_confirmation" qtlid="137829">MX-configuratie</translation>
    <translation id="exchange_tab_domain_add_step3_mx_replay" qtlid="316957">Bestemming e-mail server</translation>
@@ -590,18 +594,15 @@
    <translation id="exchange_tab_domain_modify_failure" qtlid="137075">Er is een fout opgetreden tijdens het bijwerken van het domein.</translation>
    <translation id="exchange_tab_domain_modify_in_progress" qtlid="137088">Conversie naar {0} wordt uitgevoerd</translation>
    <translation id="exchange_tab_domain_inverse_NON_AUTHORITATIVE" qtlid="58807">autoritatief</translation>
-   <translation id="exchange_tab_domain_inverse_AUTHORITATIVE" qtlid="136672">Non-authoritative</translation>
+   <translation id="exchange_tab_domain_inverse_AUTHORITATIVE" qtlid="447755">Niet-autoritief</translation>
    <translation id="exchange_tab_domain_mode_AUTHORITATIVE" qtlid="316970">Authoritative (enkel Exchange)</translation>
-   <translation id="exchange_tab_domain_mode_NON_AUTHORITATIVE" qtlid="316983">Non-authoritative (Exchange + andere e-maildienst)</translation>
+   <translation id="exchange_tab_domain_mode_NON_AUTHORITATIVE" qtlid="447768">Niet-autoritief (Exchange + een andere e-mailservice)</translation>
    <translation id="exchange_tab_domain_AUTHORITATIVE_info" qtlid="324847">De authoritative modus staat het gebruik van een ander e-mailsysteem met Exchange accounts niet toe. Met deze modus kunt u Vade Secure anti-spam activeren. </translation>
-   <translation id="exchange_tab_domain_NON_AUTHORITATIVE_info" qtlid="324860">De non-authoritative modus laat u Exchange en een andere e-maildienst gebruiken. Vade Secure anti-spam is alleen compatibel als de pop/imap gehost zijn bij OVH (mxplan of gedeelde service), in dit geval moet u mxl.mail.ovh.net invoeren als de  e-mailserver van bestemming. </translation>
+   <translation id="exchange_tab_domain_NON_AUTHORITATIVE_info" qtlid="447781">In de niet-autoritieve modus kan uw Exchange-dienst naast een andere e-maildienst worden gebruikt. Het Vade Secure anti-spamsysteem is compatibel als de POP/IMAP-accounts worden gehost bij OVH (MX-plan of gehost pakket). Als dit het geval is, moet u mx1.mail.ovh.net opgeven als doelserver voor e-mail.</translation>
    <translation id="exchange_tab_domain_target_mail_server_label" qtlid="316957">Bestemming e-mail server</translation>
    <translation id="exchange_tab_domain_noovh_mx_info" qtlid="317126">MX en SRV wijzigingen dienen handmatig uitgevoerd te worden in uw DNS-zone. U kunt de benodigde informatie vinden in het bijbehorende domeinonderdeel, zodra de CNAME gevalideerd is. </translation>
    <translation id="exchange_tab_domain_modify_domain" qtlid="137101">Een domein bewerken</translation>
-<translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="416397;416410;416410;169498;416423;416449">
-De Vade Secure anti-spam oplossing is compatibel met de niet-gezaghebbende modus (alleen als uw POP/IMAP accounts door OVH worden gehost). In dit geval raden we u aan om: <strong qtlid="266365">{0}</strong>, <strong qtlid="78906">{1}</strong>, <strong qtlid="183112">{2}</strong> en <strong qtlid="292228">{3}</strong>
-<br/><br/> Als u een niet-gezaghebbende modus gebruikt met uw e-mailaccounts die niet door OVH worden gehost, moet u: <strong qtlid="416436">{4}</strong> (uw bijbehorende domeinen)
-</translation>
+   <translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="444667">Vade Secure anti-spam is compatibel met de non-authoritative modus (alleen als uw POP/IMAP-accounts worden gehost door OVH). Als dit het geval is dan raden we u aan om <strong>{0}</strong>, <strong>{1}</strong>, <strong>{2}</strong>, en <strong>{3}</strong><br/><br/> Als u de niet-exclusieve modus gebruikt met e-mailaccounts die niet worden gehost door OVH, moet u <strong>{4}</strong> gebruiken (zie het gedeelte 'Verwante domeinen') </translation>
    <translation id="exchange_tab_domain_modify_title" qtlid="137920">Weet u zeker dat u het volgende domein van uw Exchange dienst wilt bewerken?</translation>
    <translation id="exchange_tab_domain_modify_loop_warning" qtlid="210319">Let op, oneindige loop!</translation>
    <translation id="exchange_tab_domain_modify_domain_warning" qtlid="210332">Ongeldig domein.</translation>
@@ -646,7 +647,7 @@ De Vade Secure anti-spam oplossing is compatibel met de niet-gezaghebbende modus
    <translation id="exchange_tab_DISCLAIMER_table_empty" qtlid="152258">U heeft geen signature.</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_content" qtlid="152271">Inhoud</translation>
    <translation id="exchange_tab_DISCLAIMER_associated_domains" qtlid="133110">Bijbehorend domein</translation>
-   <translation id="exchange_tab_DISCLAIMER_state_header" qtlid="8230">Status</translation>
+   <translation id="exchange_tab_DISCLAIMER_state_header" qtlid="447794">Status</translation>
    <translation id="exchange_tab_DISCLAIMER_state_doing_tooltip" qtlid="143863">Een taak is gepland of wordt uitgevoerd</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_outside_only" qtlid="152284">Slechts voor externe verzendingen</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_outside_only_tooltip" qtlid="152297">Signature die slechts gebruikt wordt voor verzendingen naar buiten</translation>
@@ -686,7 +687,7 @@ De Vade Secure anti-spam oplossing is compatibel met de niet-gezaghebbende modus
    <translation id="exchange_ACTION_add_disclaimer_option_OtherPhoneNumber" qtlid="152479">Telefoon 2</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_PagerNumber" qtlid="152492">Pagernummer</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_PhoneNumber" qtlid="152505">Telefoonnummer</translation>
-   <translation id="exchange_ACTION_add_disclaimer_option_State" qtlid="8230">Status</translation>
+   <translation id="exchange_ACTION_add_disclaimer_option_State" qtlid="447807">Status</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Street" qtlid="152518">Straat</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Title" qtlid="16469">Titel</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_UserLogonName" qtlid="46792">Gebruikersnaam</translation>
@@ -741,7 +742,7 @@ De Vade Secure anti-spam oplossing is compatibel met de niet-gezaghebbende modus
    <translation id="exchange_tab_RESOURCES_table_capacity" qtlid="4334">Capaciteit</translation>
    <translation id="exchange_tab_RESOURCES_table_allow_conflicts" qtlid="156407">Conflict geautoriseerd</translation>
    <translation id="exchange_tab_RESOURCES_table_email" qtlid="69509">E-mail</translation>
-   <translation id="exchange_tab_RESOURCES_table_state" qtlid="8230">Status</translation>
+   <translation id="exchange_tab_RESOURCES_table_state" qtlid="447820">Status</translation>
    <translation id="exchange_tab_RESOURCES_table_state_task" qtlid="156420">Taak wordt uitgevoerd</translation>
    <translation id="exchange_tab_RESOURCES_action_add_resource_account" qtlid="63710">Voeg een resource account toe</translation>
    <translation id="exchange_tab_RESOURCES_type_EQUIPMENT" qtlid="82063">Apparatuur</translation>
@@ -872,7 +873,7 @@ De Vade Secure anti-spam oplossing is compatibel met de niet-gezaghebbende modus
    <translation id="exchange_tab_GROUPS_all_table_address" qtlid="11315">E-mailadres</translation>
    <translation id="exchange_tab_GROUPS_all_table_manager" qtlid="81487">Beheerders</translation>
    <translation id="exchange_tab_GROUPS_all_table_user" qtlid="32206">Contacten</translation>
-   <translation id="exchange_tab_GROUPS_all_table_status" qtlid="8230">Status</translation>
+   <translation id="exchange_tab_GROUPS_all_table_status" qtlid="447833">Status</translation>
    <translation id="exchange_tab_GROUPS_all_table_empty" qtlid="150346">U heeft geen groepen</translation>
    <translation id="exchange_tab_GROUPS_all_error_message" qtlid="150359">Er is een fout opgetreden tijdens het uploaden van uw groepenlijst.</translation>
    <translation id="exchange_tab_GROUPS_all_add_ml_button" qtlid="150372">Een contactgroep creëren</translation>
@@ -1071,7 +1072,7 @@ De Vade Secure anti-spam oplossing is compatibel met de niet-gezaghebbende modus
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_externalEmailAddress" qtlid="30430">Adres</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_displayName" qtlid="80922">Weergavenaam</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_creationDate" qtlid="4358">Gemaakt op</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state" qtlid="8230">Status</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state" qtlid="447846">Status</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_CREATING" qtlid="26227">Wordt gecreëerd</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_DELETING" qtlid="133929">Wordt verwijderd</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_REOPENING" qtlid="171279">Wordt heropend</translation>
@@ -1356,7 +1357,7 @@ De Vade Secure anti-spam oplossing is compatibel met de niet-gezaghebbende modus
    <translation id="exchange_tab_SHARED_header_path" qtlid="6838">'Path'</translation>
    <translation id="exchange_tab_SHARED_header_type" qtlid="2642">Type</translation>
    <translation id="exchange_tab_SHARED_header_access" qtlid="201510">Toegangsrechten</translation>
-   <translation id="exchange_tab_SHARED_header_status" qtlid="8230">Status</translation>
+   <translation id="exchange_tab_SHARED_header_status" qtlid="447859">Status</translation>
    <translation id="exchange_tab_SHARED_header_access_PLAIN" qtlid="61656">Directory</translation>
    <translation id="exchange_tab_SHARED_header_access_CALENDAR" qtlid="201523">Kalender</translation>
    <translation id="exchange_tab_SHARED_header_access_CONTACTS" qtlid="32206">Contacten</translation>
@@ -1448,7 +1449,7 @@ De Vade Secure anti-spam oplossing is compatibel met de niet-gezaghebbende modus
    <translation id="exchange_SHARED_ACCOUNTS_quota_max_error_message" qtlid="215377">Ongeldig quota (maximum {0} {1})</translation>
    <translation id="exchange_SHARED_ACCOUNTS_quota_min_error_message" qtlid="215390">Ongeldig quota (minimum {0} {1})</translation>
    <translation id="exchange_SHARED_ACCOUNTS_total_quota_error_message" qtlid="215403">Het totale quotum van de gedeelde accounts heeft een drempel overschreden. Verwijder of verminder het quota van een of meer bestaande accounts.</translation>
-   <translation id="exchange_SHARED_ACCOUNTS_login_error_message" qtlid="215416">Enkel alfanumerieke tekens zijn toegestaan​​.</translation>
+   <translation id="exchange_SHARED_ACCOUNTS_login_error_message" qtlid="215416">Alleen letters en cijfers zijn toegestaan​​.</translation>
    <translation id="exchange_SHARED_ACCOUNTS_quota_recap" qtlid="402620">Totaal quota: <strong>{0}</strong> Mib/Remaining quota: <strong>{1}</strong> Mib (<strong>{2}</strong>%)</translation>
 
    <translation id="exchange_ACTION_betaSharepoint_label_primaryEmailAddress" qtlid="221773">E-mailadres van het administrator account </translation>
@@ -1486,10 +1487,149 @@ Deze procedure kan tot een paar uur duren en gaat van start zodra de bestelling 
    <translation id="exchange_ACTION_order_upgrade_300G_error_options_message" qtlid="368180">Er is een fout opgetreden tijdens het ophalen van de tarieven. </translation>
 <!-- Order Exchange -->
    <translation id="exchange_order_view_intro_title" qtlid="368193">Bestel Exchange</translation>
-   <translation id="exchange_order_view_intro_question" qtlid="368206">Wilt u een nieuwe Exchange dienst creëren of een account toevoegen aan een reeds bestaande dienst? </translation>
+   <translation id="exchange_order_view_intro_question" qtlid="368206">Wilt u een nieuwe Exchange-dienst creëren of een account toevoegen aan een reeds bestaande dienst? </translation>
    <translation id="exchange_order_view_stand_alone_option" qtlid="368219">Creëer een nieuwe dienst</translation>
    <translation id="exchange_order_view_attached_option" qtlid="368232">Account toevoegen aan een bestaande dienst</translation>
    <translation id="exchange_order_view_button_label" qtlid="368245">Bestel Exchange</translation>
    <translation id="exchange_order_view_button_attached_title" qtlid="368258">Bestel een account voor {0}</translation>
    <translation id="exchange_order_view_button_stand_alone_title" qtlid="368271">Bestel uw nieuwe Exchange dienst </translation>
+
+<!-- Wizard -->
+   <translation id="exchange_wizardHostedCreation_welcome_progressBar_addDomainName" qtlid="449401">Domeinconfiguratie</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_progressBar_createEmailAddresses" qtlid="449414">Aanpassing van e-mailadressen</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_progressBar_summary" qtlid="82725">Overzicht</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_header" qtlid="449427">Uw Microsoft Exchange dienst<br/> is nog niet geconfigureerd</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_subtext" qtlid="449440">Configureer uw dienst in slechts een paar minuten om e-mails te ontvangen.</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_startButton" qtlid="449453">Start</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_standardConfiguratorButton" qtlid="449466">Ik gebruik liever de standaardconfiguratie</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_closeButton" qtlid="4670">Sluiten</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_closeAndSaveButton" qtlid="449479">Sluiten en niet langer de configuratie-assistent weergeven</translation>
+
+   <translation id="exchange_wizardHostedCreation_addDomainName_subtext" qtlid="449492">Configureer uw Microsoft Exchange-dienst</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_header" qtlid="449505">Voeg uw domeinnaam toe aan uw Exchange-dienst</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_ifNoDomain" qtlid="449518">Als u nog geen domeinnaam hebt, </translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_goToOffers" qtlid="449531">raadpleeg dan de domeinpagina's op onze website.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_creationError" qtlid="449544">Dit domein kan niet worden gemaakt. Kies alstublieft een ander domein.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_buttonContinueText" qtlid="449557">Toevoegen en verdergaan</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_buttonDontContinueText" qtlid="449570">Toevoegen en later configureren</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameValidationDelay" qtlid="449583">Het domein dat is gekoppeld aan de Exchange-server wordt momenteel gevalideerd.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameValidation_explanation" qtlid="159202">Dit kan enkele minuten duren.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_header" qtlid="449596">Kies een domeinnaam</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_placeholder" qtlid="84153">Kiezen</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_domainNotInList" qtlid="449609">Mijn domeinnaam wordt niet weergegeven in de onderstaande lijst</translation>
+
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_header" qtlid="4406">Configuratie</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isDomainOnlyExchange" qtlid="449622">Gebruikt u de OVH Exchange-oplossing alleen met dit domein?</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isDomainEmail" qtlid="449635">Is dit voor een door OVH gehoste e-maildienst (webhosting of MX-plan) of een OVH Professional e-maildienst?</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_domainConfigurationAlert" qtlid="449648">Uw domein gebruikt momenteel <strong>{0}</strong> als  ontvangende server. <br />E-mails die naar e-mailadressen worden gestuurd die niet bij OVH zijn aangemaakt, worden niet ontvangen en retourneren mislukte afleveringsmeldingen aan de afzender .</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isExchangeOnly" qtlid="34776">Ja</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isNotExchangeOnly" qtlid="34788">Nee</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isUsedByMails" qtlid="34776">Ja</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isNotUsedByMails" qtlid="449661">Nee, definieer een Simple Mail Transfer Protocol (SMTP) server</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isEmailService" qtlid="449674">Uw domein zal <strong>mx1.mail.ovh.net</strong> als ontvangende server gebruiken.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_header" qtlid="449687">Simple Mail Tranfer Protocol (SMTP) server</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_title" qtlid="449700">Uw DNS zone configuratie</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_tooltip" qtlid="449713">Met de DNS-zone kunt u verschillende diensten beheren die aan uw domeinnaam zijn gekoppeld. <br /><br />Bijvoorbeeld: u kunt het MX-record gebruiken om aan te geven welke e-mailserver aan uw domeinnaam is gekoppeld.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip_1" qtlid="449726">De SMTP-server grijpt in als e-mails worden verzonden naar accounts die niet worden gehost op uw OVH Exchange-dienst.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip_2" qtlid="449739">Deze e-mails worden automatisch verzonden naar de SMTP-server.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_header" qtlid="449752">Hoe wilt u uw DNS-zone configureren?</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_auto" qtlid="273319">Automatische configuratie</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_manual" qtlid="273332">Handmatige configuratie</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_manual_explanation1" qtlid="449765">Ik wil de MX- en SRV-records zelf configureren,</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_manual_explanation2" qtlid="449778">en e-mails ontvangen wanneer ik dat wil.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_nonAuthoritative" qtlid="449791">Voer de SMTP-dienst in. E-mailberichten die worden verzonden naar adressen die niet met OVH zijn gemaakt, worden ernaar verzonden.</translation>
+
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_header" qtlid="449804">Configuration de la zone DNS</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_explanation" qtlid="449817">Omdat uw domeinnaam wordt beheerd door een andere NIC handle of serviceprovider, moet u het CNAME-record handmatig bijwerken in uw DNS-zone. U hebt de onderstaande informatie nodig om te beginnen met het toevoegen van dit record. <br /><br />Met het CNAME-record kunt u uw externe domeinnaam op het OVH-platform valideren. Dit record heeft geen invloed op de huidige configuratie van uw domein.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_dnsZone_explanation" qtlid="449830">Met de DNS-zone kunt u verschillende diensten beheren die aan een domeinnaam zijn gekoppeld. U kunt het bijvoorbeeld koppelen aan een webhostingplan met behulp van het A-record, en het koppelen aan een e-maildienst met behulp van het MX-record.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_inputHeader" qtlid="449843">Domeinnaam invoeren</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_example" qtlid="449856">Voorbeeld: domainname1.com</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_placeholder" qtlid="66428">Domeinnaam</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_cnameToCopy_header" qtlid="449869">Te kopiëren CNAME record</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_targetToCopy_header" qtlid="449882">Te kopiëren target</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_cnameToCopy_explanation" qtlid="449895">Dit CNAMErecord moet binnen 48 uur worden toegevoegd aan de serviceprovider van uw domeinnaam. Na deze periode moet u een nieuwe genereren. <br />Nadat u deze configuratie hebt uitgevoerd, kunt u proberen uw Exchange-dienst opnieuw in te stellen.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_input_patternError" qtlid="449908">Dit record moet een domeinnaam bevatten en mag alleen letters, cijfers, punten (.), plustekens (+), koppeltekens (-), of onderstrepingstekens (_) bevatten.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_input_alreadyExists" qtlid="449921">U kunt dit domein rechtstreeks selecteren in de bovenstaande domeinenlijst.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_waitingForActivation" qtlid="449934">De knop wordt ingeschakeld zodra de verificatie is voltooid.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_confirmButton" qtlid="31498">Bevestigen</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_retrieval_error" qtlid="449947">Er is een fout opgetreden bij het laden van uw domeinlijst.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_error" qtlid="449960">Er is een fout opgetreden bij het maken van uw server.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyNonAuthoritativeEmailPro" qtlid="449973">Omdat uw domein al is gekoppeld aan een OVH Professional e-maildienst, hebben we de beste configuratieoptie voor uw service geselecteerd.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAssociated_error" qtlid="449986">Het <strong>{0}</strong> domein is al gekoppeld aan een Exchange- of SharePoint-dienst. Koppel dit los van de dienst waaraan het momenteel is gekoppeld voordat u het aan deze dienst koppelt.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_cancelOperation_button" qtlid="449999">Installatieproces beëindigen </translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_cancelOperation_details" qtlid="450012">Als u wilt teruggaan naar het configureren van uw dienst, klikt u op het tabblad 'Gekoppelde domeinen' en klikt u vervolgens op de knop 'Domein toevoegen'.</translation>
+
+   <translation id="exchange_wizardHostedCreation_emailCreation_header" qtlid="450025">Personaliseren van uw Exchange e-mailaccounts </translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_introduction_1" qtlid="450038">U kunt maximaal {0} e-mailaccounts toevoegen aan uw Exchange-dienst.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_introduction_2" qtlid="450051">Als u meer accounts nodig hebt, kunt u deze in een later stadium bestellen in het gedeelte <strong>E-mailaccounts</strong> van uw Hosted Exchange-dienst.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_header_email" qtlid="11315">E-mailadres</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_header_displayName" qtlid="23515">Weergavenaam</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_header_state" qtlid="8230">Status</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_operationInProgress" qtlid="450064">U kunt uw e-mailaccounts aanpassen zodra de bewerkingen zijn voltooid.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_personnalizeButton" qtlid="450077">Personaliseren van een account</translation>
+
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_login_header" qtlid="11315">E-mailadres</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_login_required" qtlid="450090">Vereist veld. </translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_login_pattern" qtlid="450103">Het lokale deel (vóór de @) mag alleen letters, cijfers, punten (.), koppeltekens (-), of onderstrepingstekens (_) bevatten.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_firstName_title" qtlid="450116">Personaliseren van een e-mailaccount </translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_firstName_header" qtlid="23323">Voornaam</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_name_header" qtlid="3818">Naam</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_displayName_header" qtlid="23515">Weergavenaam</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_password_header" qtlid="2270">Wachtwoord</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_password_error_confirmation" qtlid="450129">De velden 'Wachtwoord' en 'Wachtwoord bevestigen' moeten identiek zijn.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_password_error_short" qtlid="450142">Uw beveiligingsvoorkeuren geven aan dat een wachtwoord meer dan {0} tekens moet bevatten.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_password_error_exchangePreferences" qtlid="450155">Uw beveiligingsvoorkeuren geven aan dat een wachtwoord kleine letters, hoofdletters, cijfers en/of speciale tekens moet bevatten.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_passwordConfirmation_header" qtlid="9983">Bevestiging</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_emailAlreadyUsed" qtlid="450168">Dit e-mailadres wordt al gebruikt door een e-mailadresdomein. U kunt het migreren naar uw Hosted Exchange-account.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_emailAlreadyUsed_ifWontChange" qtlid="450181">Als u uw e-mailadres niet wilt migreren, wijzigt u het e-mailadres in de vorige stap.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migrationPassword_error" qtlid="450194">Fout wachtwoord. Probeer het opnieuw.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_nextStepButton" qtlid="450207">Configuratie voltooien</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_serviceParametersRetrieval_error" qtlid="450220">Er is een fout opgetreden met de configuratie-instellingen voor uw Exchange-dienst.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_accountCreation_error" qtlid="450233">Er is een fout opgetreden bij het maken van uw e-mailaccount.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_accountCreation_alreadyExist_error" qtlid="450246">Het {0} e-mailadres dat u wilt configureren bestaat al.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migrationChecking_error" qtlid="450259">Dit e-mailaccount kan niet worden gemigreerd naar uw Exchange-dienst.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migrationChecking_mxPlanTechContact" qtlid="450272">Dit e-mailaccount kan niet automatisch worden gemigreerd naar uw Exchange-dienst. U moet een administratief en technisch contactpersoon zijn voor de twee diensten.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_error" qtlid="450285">Er is een fout opgetreden bij het migreren van uw e-mailaccount.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_question_1" qtlid="450298">Dit e-mailaccount bestaat al. Wilt u het migreren naar het Exchange-adres?</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_question_2" qtlid="450311">Al uw bestaande e-mails voor dit account zijn nu beschikbaar via het Exchange-adres.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_warning" qtlid="436892">Let op, de volgende items worden niet ondersteund door deze migratie: <br />- uw filters&#160;; <br />- uw automatische antwoorden&#160;; <br />- uw mailinglists&#160;; <br />- uw Roundcube contacten.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_wrongPassword_error" qtlid="450324">Wachtwoord is onjuist. </translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_addButton_title" qtlid="37923">Toevoegen</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_nextButton_title" qtlid="37923">Toevoegen</translation>
+
+   <translation id="exchange_wizardHostedCreation_emailCreation_update_firstName_title" qtlid="450337">E-mailaccount bewerken</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_updateButton_title" qtlid="37875">Wijzigen</translation>
+
+   <translation id="exchange_wizardHostedCreation_emailCreation_update_changePassword_checkbox" qtlid="80394">Wijzig het wachtwoord </translation>
+
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_header" qtlid="450350">Configuratie voltooien</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_summary" qtlid="4082">Overzicht</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_domainName" qtlid="66428">Domeinnaam</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_authoritative" qtlid="450363">Gebruikt alleen de Exchange-service</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_authoritative_yes" qtlid="34776">Ja</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_authoritative_no" qtlid="34788">Nee</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_emailAdresses" qtlid="450376">E-mailaccount(s) toegevoegd</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_emailAdresses_non" qtlid="30646">Geen</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_auto_header" qtlid="450389">Uw DNS-zone wordt geconfigureerd in de <strong>automatische</strong> modus.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_auto_explanation1" qtlid="450402">Uw Hosted Exchange-dienst voor het <strong>{0}</strong> domein is nu geconfigureerd. Nadat de MX-diagnose is gevalideerd en groen wordt, ontvangt u e-mails. Het activeren van uw dienst duurt tussen 4 en 24 uur. Bekijk uw e-mails via deze link</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_auto_explanation2" qtlid="450415">of op het tabblad <strong>Algemene informatie</strong> in het gedeelte <strong>Verbinding → Webmail</strong>.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_header" qtlid="450428">Uw DNS-zone zal worden geconfigureerd in <strong>handmatige</strong> modus.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_part_1" qtlid="450441">Door de MX- en SRV-records te configureren,</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_part_2" qtlid="450480">, configureert u uw domeinnaam zodat deze uw e-mails kan ontvangen. U kunt e-mails ontvangen zodra uw DNS-zone zich verspreidt, en dit kan tussen de 4 en 24 uur duren.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_1" qtlid="450454">Het OVH MX-record koppelt een domeinnaam aan een e-mailserver.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_2" qtlid="450467">Met het SRV-record kunt u uw e-mailadres automatisch in uw e-mailsoftware configureren (bijvoorbeeld: Outlook).</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_table_headers_fieldType" qtlid="129171">Record type</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_table_headers_data" qtlid="26551">Informatie</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_table_mx" qtlid="23779">MX</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_table_srv" qtlid="130003">SRV</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_returnButton" qtlid="4118">Terug</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_closeButton" qtlid="4070">Doorgaan</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_availableAccountsRetrieval_error" qtlid="450493">Er is een fout opgetreden bij het laden van e-mailaccounts die aan uw domein zijn gekoppeld.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_dialog_explanation1" qtlid="450506">Nu hoeft u alleen de MX- en SRV-records van uw DNS-zone voor dit domein te wijzigen.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_dialog_explanation2" qtlid="450519">Als uw domeinnaam is geregistreerd bij OVH, gaat u naar uw configuratiescherm: Web → Domeinen → DNS-zone. <br /><br />Als uw domeinnaam elders is geregistreerd, raadpleegt u de documentatie van uw domeinnaamserviceprovider.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_dialog_explanation3" qtlid="450532">Als u deze actie al hebt voltooid, wacht of ververs u uw pagina. Zodra de MX-diagnose gevalideerd en groen wordt, ontvangt u uw e-mails. Het activeren van uw dienst duurt tussen 4 en 24 uur.</translation>
+
+   <translation id="exchange_wizardHostedCreation_ending_dialog" qtlid="450545">Laatste stap</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_dialog_warning" qtlid="5066">Let op</translation>
+   <translation id="exchange_wizardHostedCreation_lastDialog_closeButton" qtlid="450558">Voltooien</translation>
 </translations>
