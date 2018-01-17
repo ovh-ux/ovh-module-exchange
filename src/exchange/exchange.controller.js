@@ -165,7 +165,7 @@ angular
 
                 })
                 .then(() => this.canActivateSharepoint())
-                .then(() => this.services.officeAttached.getOfficeAttachSubscription())
+                .then(() => this.services.officeOffer.getOfficeOfferSubscription())
                 .then((data) => {
                     this.canSubscribeToOfficeAttach = data;
                     if (!_.isEmpty(this.exchange.messages)) {
