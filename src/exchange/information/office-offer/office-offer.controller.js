@@ -188,16 +188,18 @@ angular
         selectAll () {
             const i = 0;
             if (this.allSelected) {
+                this.selectedCheckboxes = {};
+                this.selectedAccounts = [];
+                this.numberOfSelectedCheckboxes = 0;
                 for (const email of this.services.$scope.accounts.ids) {
                     this.selectedCheckboxes[email] = true;
-                    this.countNumberOfCheckedAccounts({ primaryEmailDisplayName: email });
+                    this.selectedAccounts.push({ primaryEmailDisplayName: email });
                 }
+                this.numberOfSelectedCheckboxes = this.selectedAccounts.length;
             } else {
-                for (const email of this.services.$scope.accounts.ids) {
-                    this.selectedCheckboxes[email] = false;
-                    this.selectedAccounts = [];
-                    this.numberOfSelectedCheckboxes = 0;
-                }
+                this.selectedCheckboxes = {};
+                this.selectedAccounts = [];
+                this.numberOfSelectedCheckboxes = 0;
             }
         }
 
