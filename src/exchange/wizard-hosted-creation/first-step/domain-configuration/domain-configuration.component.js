@@ -286,7 +286,7 @@
                     this.onDomainNameSelectionChange();
 
                     if (error.message === "Authoritative domain detected") {
-                        if (this.homepage.domainIsOnlyForExchange) {
+                        if (!this.homepage.domainIsOnlyForExchange) {
                             this.messaging.writeSuccess(this.translator.tr("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyNonAuthoritativeEmailPro"));
                             this.homepage.domainIsOnlyForExchange = false;
                             this.userHasTriedToAssociatedNonAutoritativeDomain = true;
