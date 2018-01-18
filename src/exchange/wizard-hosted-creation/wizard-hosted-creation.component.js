@@ -3,7 +3,14 @@
 
     class controller {
         constructor (Exchange, messaging, navigation, ovhUserPref, $rootScope, $timeout, translator, wizardHostedCreationDomainConfiguration) {
-            Object.assign(this, { Exchange, messaging, navigation, ovhUserPref, $rootScope, $timeout, translator, wizardHostedCreationDomainConfiguration });
+            this.Exchange = Exchange;
+            this.messaging = messaging;
+            this.navigation = navigation;
+            this.ovhUserPref = ovhUserPref;
+            this.$rootScope = $rootScope;
+            this.$timeout = $timeout;
+            this.translator = translator;
+            this.wizardHostedCreationDomainConfiguration = wizardHostedCreationDomainConfiguration;
         }
 
         $onInit () {
