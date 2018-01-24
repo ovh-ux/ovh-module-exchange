@@ -186,6 +186,7 @@
             } else {
                 this.homepage.domainIsOnlyForExchange = null;
                 this.homepage.isAutoConfigurationMode = null;
+                this.homepage.domainIsAssociatedToEmailService = null;
                 this.homepage.mxRelay = null;
                 this.userHasTriedToAssociatedNonAutoritativeDomain = false;
 
@@ -300,6 +301,7 @@
                     } else {
                         this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_addDomainName_OVHDomain_error"), error);
                     }
+
                     this.loaders.IsWaitingForDomainAssociation = false;
                     this.homepage.shouldDisabledDomainSelection = false;
                     this.scrollToTop();
