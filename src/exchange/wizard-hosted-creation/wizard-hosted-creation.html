@@ -1,16 +1,8 @@
 <div class="tab-content container-fluid mx-5">
-    <pre>
-        AlertType:
-            {{$ctrl.messaging.alertType}}
-
-
-        Message:
-            {{$ctrl.messaging.message}}
-    </pre>
-
     <div class="alert alert-dismissible"
          role="alert"
          data-ng-class="$ctrl.messaging.alertType"
+         data-ng-show="$ctrl.messaging.message"
          id="wizard-error-message">
         <button class="close"
                 type="button"
@@ -20,10 +12,6 @@
        </button>
 
        <p data-ng-bind-html="$ctrl.messaging.message"></p>
-
-       <p>dfkfjsdlsdflkj TEST BELOW</p>
-
-       {{ $ctrl.messaging.message }}
 
        <ul class="mb-1 ml-2" data-ng-if="$ctrl.messaging.messageDetails != null && $ctrl.messaging.messageDetails.length > 0">
             <li data-ng-repeat="message in $ctrl.messaging.messageDetails track by $index">
