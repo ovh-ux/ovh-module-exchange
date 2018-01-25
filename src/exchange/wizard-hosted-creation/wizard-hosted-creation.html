@@ -20,7 +20,9 @@
                 data-ng-click="$ctrl.closeMessages()">
        </button>
 
-       <span data-ng-bind-html="$ctrl.messaging.message"></span>
+       <p data-ng-bind-html="$ctrl.messaging.message"></p>
+
+       {{:: $ctrl.messaging.message }}
 
        <ul class="mb-1 ml-2" data-ng-if="$ctrl.messaging.messageDetails != null && $ctrl.messaging.messageDetails.length > 0">
             <li data-ng-repeat="message in $ctrl.messaging.messageDetails track by $index">
