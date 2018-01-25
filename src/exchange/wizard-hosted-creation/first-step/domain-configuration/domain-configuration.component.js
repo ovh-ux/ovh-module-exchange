@@ -321,11 +321,11 @@
 
                     if (error.message === "Authoritative domain detected") {
                         if (domainIsOnlyForExchange) {
-                            this.messaging.writeSuccess(this.translator.tr("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyNonAuthoritativeEmailPro"));
+                            this.messaging.writeInfo(this.translator.tr("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyNonAuthoritativeEmailPro"));
                             this.homepage.domainIsOnlyForExchange = false;
                             this.userHasTriedToAssociatedNonAutoritativeDomain = true;
                         } else {
-                            this.messaging.writeSuccess(this.translator.tr("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAuthoritativeEmailPro"));
+                            this.messaging.writeWarning(this.translator.tr("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAuthoritativeEmailPro"));
                         }
                     } else if (_(error.message).startsWith("UPN suffix")) {
                         this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAssociated_error", [formattedDomainName]));
