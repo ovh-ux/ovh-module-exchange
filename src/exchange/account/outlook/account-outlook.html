@@ -60,7 +60,7 @@
                     </div>
                 </div>
 
-                <oui-loader data-ng-if="!ctrl.versionsList"></oui-loader>
+                <oui-spinner data-ng-if="!ctrl.versionsList"></oui-spinner>
 
                 <div class="alert alert-warning mt-5" role="alert"
                      data-ng-bind-html="i18n.exchange_ACTION_display_outlook_step1_extra_label"
@@ -74,7 +74,7 @@
              data-wizard-step-on-load="generateOutlookLicence">
 
             <div class="text-center" data-ng-if="!ctrl.outlook">
-                <oui-loader></oui-loader>
+                <oui-spinner></oui-spinner>
                 <span data-i18n-static="exchange_ACTION_display_outlook_step2_loading_label"></span>
             </div>
 

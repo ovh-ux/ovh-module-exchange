@@ -7,7 +7,7 @@
         </button>
         <h2 data-ng-bind-html="tr('exchange_tab_ALIAS_GROUP_intro', ctrl.services.navigation.selectedGroup.mailingListDisplayName)"></h2>
 
-        <oui-loader size="l" data-ng-if="ctrl.loading"></oui-loader>
+        <oui-spinner data-size="l" data-ng-if="ctrl.loading"></oui-spinner>
 
         <div class="alert alert-info" role="alert"
              data-i18n-static="exchange_tab_ALIAS_GROUP_table_empty"

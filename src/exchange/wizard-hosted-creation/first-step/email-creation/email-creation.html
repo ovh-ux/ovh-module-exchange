@@ -5,7 +5,7 @@
       data-ng-if="$ctrl.homepage.numberOfAvailableAccounts > 0"></span>
 <p class="mb-4" data-ng-bind-html="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_introduction_2')"></p>
 
-<oui-loader data-ng-if="$ctrl.isLoading"></oui-loader>
+<oui-spinner data-ng-if="$ctrl.isLoading"></oui-spinner>
 
 <div data-ng-show="!$ctrl.isLoading" class="mb-5 pb-5" id="email-creation-main-container">
     <button class="oui-button oui-button_secondary mb-4"
@@ -19,13 +19,13 @@
     </button>
 
     <div data-ng-if="$ctrl.homepage.otherAccounts.count !== 0">
-        <table class="oui-table oui-table_responsive">
-            <thead class="oui-table__headers">
+        <table class="oui-datagrid oui-datagrid_responsive">
+            <thead class="oui-datagrid__headers">
                 <tr>
-                    <th scope="col" class="oui-table__header" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_header_email')"></th>
-                    <th scope="col" class="oui-table__header" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_header_displayName')"></th>
-                    <th scope="col" class="oui-table__header" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_header_state')"></th>
-                    <th scope="col" class="oui-table__header">
+                    <th scope="col" class="oui-datagrid__header" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_header_email')"></th>
+                    <th scope="col" class="oui-datagrid__header" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_header_displayName')"></th>
+                    <th scope="col" class="oui-datagrid__header" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_header_state')"></th>
+                    <th scope="col" class="oui-datagrid__header">
                         <button class="btn btn-icon"
                                 type="button"
                                 title="{{i18n.refresh}}"
@@ -37,13 +37,13 @@
                 </tr>
             </thead>
 
-            <tbody class="oui-table__body" data-ng-show="$ctrl.homepage.otherAccounts.count !== 0">
-                <tr class="oui-table__row" data-ng-repeat="account in $ctrl.homepage.otherAccounts.list.results | orderBy:'login': false track by $index">
-                    <th scope="row" class="oui-table__cell word-break" data-ng-bind-template="{{account.login}}@{{$ctrl.homepage.domainName}}"></th>
+            <tbody class="oui-datagrid__body" data-ng-show="$ctrl.homepage.otherAccounts.count !== 0">
+                <tr class="oui-datagrid__row" data-ng-repeat="account in $ctrl.homepage.otherAccounts.list.results | orderBy:'login': false track by $index">
+                    <th scope="row" class="oui-datagrid__cell word-break" data-ng-bind-template="{{account.login}}@{{$ctrl.homepage.domainName}}"></th>
 
-                    <td class="oui-table__cell" data-ng-bind="$ctrl.constructor.getDisplayName(account)"></td>
+                    <td class="oui-datagrid__cell" data-ng-bind="$ctrl.constructor.getDisplayName(account)"></td>
 
-                    <td class="oui-table__cell">
+                    <td class="oui-datagrid__cell">
                         <span class="fa fa-hourglass-half"
                               title="{{:: $ctrl.translator.tr('exchange_tab_ACCOUNTS_state_TASK_ON_ERROR')}}"
                               data-ng-if="$ctrl.exchangeStates.constructor.isInError(account)"></span>
@@ -73,7 +73,7 @@
                               data-ng-if="$ctrl.exchangeStates.constructor.isOk(account) && account.taskPendingId === 0"></span>
                     </td>
 
-                    <td class="oui-table__cell oui-table__cell_action">
+                    <td class="oui-datagrid__cell oui-datagrid__cell_action">
                         <button class="btn btn-icon"
                                 type="button"
                                 title="{{:: $ctrl.translator.tr('exchange_tab_ACCOUNTS_edit_account_tooltip') }}"
