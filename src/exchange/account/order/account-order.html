@@ -10,6 +10,11 @@
              data-wizard-step-valid="isValid()">
 
             <oui-spinner data-ng-if="!ctrl.ordersList"></oui-spinner>
+           
+            <div class="oui-message oui-message_info" role="alert" data-ng-if="ctrl.numConfigureMeAccount">
+                <i class="oui-icon oui-icon-info_circle oui-icon_bicolor" aria-hidden="true"></i>
+                <p class="oui-message__body" data-i18n-static="exchange_ACTION_order_accounts_step1_not_configured_account_message"></p>
+            </div>
 
             <div data-ng-if="ctrl.ordersList">
                 <p data-i18n-static="exchange_ACTION_order_accounts_step1_intro"></p>
