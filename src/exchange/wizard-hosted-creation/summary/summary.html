@@ -1,7 +1,7 @@
 <h1 class="oui-header_3 oui-header_underline title-underlined"
     data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_configureDNSZone_header')"></h1>
 
-<oui-loader data-ng-if="$ctrl.isLoading"></oui-loader>
+<oui-spinner data-ng-if="$ctrl.isLoading"></oui-spinner>
 
 <div data-ng-if="!$ctrl.isLoading">
     <strong data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_configureDNSZone_summary')"></strong>

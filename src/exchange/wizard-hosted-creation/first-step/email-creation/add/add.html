@@ -11,7 +11,7 @@
              data-wizard-next-button-text="i18n.exchange_wizardHostedCreation_emailCreation_nextButton_title"
              data-wizard-step-valid="$ctrl.addForm.login.$dirty && $ctrl.addForm.password.$dirty && $ctrl.addForm.passwordConfirmation.$dirty && $ctrl.addForm.$valid">
 
-            <oui-loader data-ng-if="$ctrl.isLoading"></oui-loader>
+            <oui-spinner data-ng-if="$ctrl.isLoading"></oui-spinner>
 
             <form name="$ctrl.addForm" data-ng-if="!$ctrl.isLoading">
                 <fieldset data-ng-disabled="$ctrl.dataHasBeenSubmitted">
@@ -127,7 +127,7 @@
                 <p role="alert" class="alert alert-warning" data-ng-bind-html="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_add_migration_warning')"></p>
             </div>
 
-            <oui-loader data-ng-if="$ctrl.dataHasBeenSubmitted"></oui-loader>
+            <oui-spinner data-ng-if="$ctrl.dataHasBeenSubmitted"></oui-spinner>
         </div>
     </div>
 </div>

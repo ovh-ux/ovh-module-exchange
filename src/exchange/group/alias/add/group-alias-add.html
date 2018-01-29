@@ -9,7 +9,7 @@
              data-wizard-step-on-load="loadDomainData"
              data-wizard-step-valid="aliasIsValid()">
 
-            <oui-loader data-ng-if="!ctrl.availableDomains"></oui-loader>
+            <oui-spinner data-ng-if="!ctrl.availableDomains"></oui-spinner>
 
             <div data-ng-if="ctrl.availableDomains">
                 <p data-ng-bind-html="tr('exchange_tab_GROUPS_add_alias_intro', ctrl.selectedMailingList.mailingListDisplayName)"></p>
