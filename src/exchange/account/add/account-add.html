@@ -36,10 +36,15 @@
 
                 <div class="form-group"
                      data-ng-if="ctrl.services.exchangeVersion.isVersion(2010) && !ctrl.services.accountTypes.isHosted()">
-                    <label class="control-label" for="accountToAddSameAccountName"
-                           data-i18n-static="exchange_ACTION_update_account_step1_exchange_SAMA_label"></label>
-                    <input type="text" class="form-control" id="accountToAddSameAccountName" maxlength="256" name="accountToAddSameAccountName"
-                           data-ng-model="ctrl.accountToAdd.samaccountName">
+                    <label class="control-label"
+                           for="samAccountName"
+                           data-i18n-static="exchange_ACTION_update_account_step1_exchange_samAccountName_label"></label>
+                    <input type="text"
+                           class="form-control"
+                           id="samAccountName"
+                           maxlength="20"
+                           name="samAccountName"
+                           data-ng-model="ctrl.accountToAdd.SAMAccountName">
                 </div>
 
                 <div class="form-group"
@@ -80,7 +85,7 @@
                 </div>
 
                 <div class="form-group"
-                     data-ng-class="{'has-error': ctrl.simplePasswordFlag || ctrl.containsNameFlag || ctrl.containsSamAccountNameFlag}">
+                     data-ng-class="{'has-error': ctrl.simplePasswordFlag || ctrl.containsNameFlag || ctrl.passwordContainsSAMAccountName }">
                     <label class="control-label required" for="accountToAddPassword"
                            data-i18n-static="exchange_ACTION_add_account_step1_password_label"></label>
                     <input type="password" autocomplete="off" class="form-control" id="accountToAddPassword" name="accountToAddPassword" required
@@ -94,8 +99,8 @@
                            data-i18n-static="exchange_ACTION_update_account_step1_password_contains_name"
                            data-ng-if="ctrl.containsNameFlag"></small>
                     <small class="help-block"
-                           data-ng-bind="ctrl.containsSamAccountNameLabel"
-                           data-ng-if="ctrl.containsSamAccountNameFlag"></small>
+                           data-ng-bind="ctrl.passwordContainsSAMAccountNameLabel"
+                           data-ng-if="ctrl.passwordContainsSAMAccountName"></small>
                 </div>
 
                 <div class="form-group"

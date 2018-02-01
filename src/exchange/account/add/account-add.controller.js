@@ -41,7 +41,7 @@ angular
             this.differentPasswordFlag = false;
             this.simplePasswordFlag = false;
             this.containsNameFlag = false;
-            this.containsSameAccountNameFlag = false;
+            this.passwordContainsSAMAccountName = false;
             this.takenEmailError = false;
             this.exchange = Exchange.value;
 
@@ -63,7 +63,7 @@ angular
             this.differentPasswordFlag = false;
             this.simplePasswordFlag = false;
             this.containsNameFlag = false;
-            this.containsSameAccountNameFlag = false;
+            this.passwordContainsSAMAccountName = false;
 
             const hasPassword = _.has(selectedAccount, "password") && !_.isEmpty(selectedAccount.password);
             const hasConfirmation = _.has(selectedAccount, "passwordConfirmation") && !_.isEmpty(selectedAccount.passwordConfirmation);
@@ -99,10 +99,10 @@ angular
                     }
                 }
 
-                this.containsSamAccountNameFlag = !_.isEmpty(selectedAccount.samaccountName) && ~selectedAccount.password.indexOf(selectedAccount.samaccountName);
+                this.passwordContainsSAMAccountName = !_.isEmpty(selectedAccount.SAMAccountName) && _.includes(selectedAccount.password, selectedAccount.SAMAccountName);
 
-                if (this.containsSamAccountNameFlag && _.isEmpty(this.containsSamAccountNameLabel)) {
-                    this.containsSamAccountNameLabel = this.services.translator.tr("exchange_ACTION_update_account_step1_password_contains_samaccount_name", [selectedAccount.samaccountName]);
+                if (this.passwordContainsSAMAccountName) {
+                    this.passwordContainsSAMAccountNameLabel = this.services.translator.tr("exchange_ACTION_update_account_step1_password_contains_samAccountName_name");
                 }
             }
         }
