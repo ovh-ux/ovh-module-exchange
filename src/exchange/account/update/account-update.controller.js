@@ -160,10 +160,6 @@ angular
 
                     this.passwordContainsSAMAccountName = !_.isEmpty(selectedAccount.samaccountName) && _.includes(selectedAccount.password, selectedAccount.samaccountName);
 
-                    if (this.passwordContainsSAMAccountName) {
-                        this.passwordContainsSAMAccountNameLabel = this.services.translator.tr("exchange_ACTION_update_account_step1_password_contains_samAccountName_name");
-                    }
-
                     this.containsWhitespaces = /\s/.test(this.selectedAccount.password);
                 }
             }

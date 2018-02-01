@@ -100,10 +100,6 @@ angular
                 }
 
                 this.passwordContainsSAMAccountName = !_.isEmpty(selectedAccount.SAMAccountName) && _.includes(selectedAccount.password, selectedAccount.SAMAccountName);
-
-                if (this.passwordContainsSAMAccountName) {
-                    this.passwordContainsSAMAccountNameLabel = this.services.translator.tr("exchange_ACTION_update_account_step1_password_contains_samAccountName_name");
-                }
             }
         }
 
