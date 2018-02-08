@@ -317,6 +317,7 @@
                         this.homepage.domainIsOnlyForExchange = false;
                         this.userHasTriedToAssociatedNonAutoritativeDomain = true;
                     } else if (_(error.message).startsWith("UPN suffix")) {
+                        const formattedDomainName = punycode.toASCII(this.homepage.domainName.replace(/^www\./, ""));
                         this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAssociated_error", [formattedDomainName]));
                         this.homepage.domainName = "";
                     } else {

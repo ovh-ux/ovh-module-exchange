@@ -598,10 +598,7 @@
    <translation id="exchange_tab_domain_target_mail_server_label" qtlid="316957">Ziel-E-Mail-Server</translation>
    <translation id="exchange_tab_domain_noovh_mx_info" qtlid="317126">Die Änderungen an den MX und SRV Einträgen müssen von Hand in Ihrer DNS Zone durchgeführt werden. Sie finden die notwendigen Informationen in der Rubrik "Assoziierte Domains", sobald die CNAME Validierung durchgeführt wurde.</translation>
    <translation id="exchange_tab_domain_modify_domain" qtlid="137101">Eine Domain bearbeiten</translation>
-<translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="416397;416410;416410;169498;416423;416449">
-Die Vade Secure Antispam-Lösung ist mit dem nicht autoritativen Modus kompatibel, sofern Ihre POP/IMAP Accounts bei OVH gehostet sind. Verwenden Sie in diesem Fall: <strong qtlid="266365">{0}</strong>, <strong qtlid="78906">{1}</strong>, <strong qtlid="183112">{2}</strong> und <strong qtlid="292228">{3}</strong>
-<br/><br/> Wenn Sie den nicht autoritativen Modus mit E-Mail-Accounts nutzen, die nicht bei OVH gehostet sind, verwenden Sie: <strong qtlid="416436">{4}</strong> (in dem Bereich "Assoziierte Domains")
-</translation>
+   <translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="444667">Die Vade Secure Antispam-Lösung ist mit dem nicht autoritativen Modus kompatibel, sofern Ihre POP/IMAP Accounts bei OVH gehostet sind. Verwenden Sie in diesem Fall: <strong>{0}</strong>, <strong>{1}</strong>, <strong>{2}</strong> und <strong>{3}</strong><br/><br/> Wenn Sie den nicht autoritativen Modus mit E-Mail-Accounts nutzen, die nicht bei OVH gehostet sind, verwenden Sie: <strong>{4}</strong> (in dem Bereich "Assoziierte Domains")</translation>
    <translation id="exchange_tab_domain_modify_title" qtlid="137920">Sind Sie sicher, dass Sie folgende Domain Ihrer Exchange Dienstleistung bearbeiten möchten?</translation>
    <translation id="exchange_tab_domain_modify_loop_warning" qtlid="210319">Achtung, Endlosschleife! </translation>
    <translation id="exchange_tab_domain_modify_domain_warning" qtlid="210332">Ungültige Domain.</translation>
