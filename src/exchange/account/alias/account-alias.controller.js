@@ -11,36 +11,28 @@ angular
                 messaging,
                 translator
             };
-
             this.$routerParams = Exchange.getParams();
-            this.aliasLoading = false;
+            this.getAliasesParams = {};
 
             this.aliasMaxLimit = Exchange.aliasMaxLimit;
-            $scope.$on(Exchange.events.accountsChanged, () => {
-                $scope.$broadcast("paginationServerSide.reload", "aliasTable");
-            });
-
-            $scope.getAliases = (count, offset) => this.getAliases(count, offset);
-            $scope.getAliasesValue = () => this.aliases;
-            $scope.getAliasLoading = () => this.aliasLoading;
+            $scope.$on(Exchange.events.accountsChanged, () => this.getAliases(this.getAliasesParams));
         }
 
-        getAliases (count, offset) {
-            if (this.services.ExchangeAccountService.selectedAccount) {
-                this.aliasLoading = true;
-                this.services
-                    .Exchange
-                    .getAliases(this.$routerParams.organization, this.$routerParams.productId, this.services.ExchangeAccountService.selectedAccount.primaryEmailAddress, count, offset)
-                    .then((data) => {
-                        this.aliases = data;
-                    })
-                    .catch((err) => {
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ALIAS_error_message"), err);
-                    })
-                    .finally(() => {
-                        this.aliasLoading = false;
-                    });
-            }
+        getAliases ({ pageSize, offset }) {
+            this.getAliasesParams.pageSize = pageSize;
+            this.getAliasesParams.offset = offset;
+
+            return this.services.Exchange.getAliases(this.$routerParams.organization, this.$routerParams.productId, this.services.ExchangeAccountService.selectedAccount.primaryEmailAddress, pageSize, offset - 1)
+                .then((data) => {
+                    this.aliases = data;
+                    return {
+                        data: data.list.results,
+                        meta: {
+                            totalCount: data.count
+                        }
+                    };
+                })
+                .catch((err) => this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ALIAS_error_message"), err));
         }
 
         displayAccounts () {
