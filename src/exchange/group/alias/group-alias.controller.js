@@ -13,31 +13,29 @@ angular
 
             this.$routerParams = Exchange.getParams();
             this.aliasMaxLimit = this.services.Exchange.aliasMaxLimit;
+            this.getAliasesParams = {};
 
-            $scope.$on(this.services.Exchange.events.groupsChanged, () => this.services.$scope.$broadcast("paginationServerSide.reload", "groupAliasTable"));
-            $scope.getAliases = (count, offset) => this.getAliases(count, offset);
+            $scope.$on(this.services.Exchange.events.groupsChanged, () => this.getAliases(this.getAliasesParams));
+            $scope.getAliases = (pageSize, offset) => this.getAliases(pageSize, offset);
             $scope.getAliaseObjects = () => this.getAliaseObjects();
-            $scope.getLoading = () => this.getLoading();
         }
 
-        getAliases (count, offset) {
-            if (_.has(this.services.navigation.selectedGroup, "mailingListAddress")) {
-                this.loading = true;
+        getAliases ({ pageSize, offset }) {
+            this.getAliasesParams.pageSize = pageSize;
+            this.getAliasesParams.offset = offset;
 
-                this.services
-                    .Exchange
-                    .getGroupAliasList(this.$routerParams.organization, this.$routerParams.productId, this.services.navigation.selectedGroup.mailingListAddress, count, offset)
-                    .then((data) => {
-                        this.aliases = data;
-                    })
-                    .catch((err) => {
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ALIAS_error_message"), err);
-                    })
-                    .finally(() => {
-                        this.services.$scope.$broadcast("paginationServerSide.loadPage", 1, "groupAliasTable");
-                        this.loading = false;
-                    });
-            }
+            return this.services.Exchange
+                .getGroupAliasList(this.$routerParams.organization, this.$routerParams.productId, this.services.navigation.selectedGroup.mailingListAddress, pageSize, offset - 1)
+                .then((data) => {
+                    this.aliases = data;
+                    return {
+                        data: data.list.results,
+                        meta: {
+                            totalCount: data.count
+                        }
+                    };
+                })
+                .catch((err) => this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ALIAS_error_message"), err));
         }
 
         hide () {
@@ -69,9 +67,5 @@ angular
 
         getAliaseObjects () {
             return this.aliases;
-        }
-
-        getLoading () {
-            return this.loading;
         }
     });

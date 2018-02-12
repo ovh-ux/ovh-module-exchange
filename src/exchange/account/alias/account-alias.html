@@ -24,40 +24,6 @@
                                       data-on-click="ctrl.deleteAlias($row)"></oui-action-menu-item>
             </oui-action-menu>
         </oui-datagrid>
-        <!-- <div data-ng-show="!ctrl.aliasLoading && ctrl.aliases.list.results.length > 0">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col" data-i18n-static="exchange_tab_ALIAS_header"></th>
-                        <th class="min-width" scope="col"></th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr data-ng-repeat="alias in ctrl.aliases.list.results track by $index">
-                        <th scope="row"
-                            data-ng-bind="alias.displayName"></th>
-                        <td class="text-center">
-                            <span class="label label-info" title="{{i18n.exchange_tab_ALIAS_state_TASK_ON_DOING_tooltip}}"
-                                  data-i18n-static="exchange_tab_ALIAS_state_TASK_ON_DOING"
-                                  data-ng-if="alias.taskPendingId"></span>
-                            <button class="btn btn-icon" type="button" title="{{i18n.exchange_tab_ALIAS_delete_tooltip}}"
-                                    data-ng-click="ctrl.deleteAlias(alias)"
-                                    data-ng-if="!alias.taskPendingId">
-                                <span class="oui-icon oui-icon-trash_line oui-icon_small" aria-hidden="true"></span>
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="clearfix"
-                 data-pagination-server-side="aliasTable"
-                 data-pagination-server-side-function="getAliases"
-                 data-pagination-server-side-paginated-stuff="getAliasesValue()"
-                 data-pagination-server-side-table-loading="getAliasLoading()">
-            </div>
-        </div> -->
     </div>
 
     <div class="col-md-3 mt-5 mt-lg-0">
