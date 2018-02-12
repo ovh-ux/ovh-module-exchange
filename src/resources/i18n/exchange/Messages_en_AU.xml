@@ -673,7 +673,7 @@ I therefore explicitly renounce my right to cancel under the provisions of Artic
    <translation id="exchange_ACTION_add_disclaimer_option_Country" qtlid="25171">Country</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Department" qtlid="30706">Department</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_DisplayName" qtlid="80922">Display name</translation>
-   <translation id="exchange_ACTION_add_disclaimer_option_Email" qtlid="69509">E-mail</translation>
+   <translation id="exchange_ACTION_add_disclaimer_option_Email" qtlid="69509">Email</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_FaxNumber" qtlid="152388">Fax number</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_FirstName" qtlid="23323">First name</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_HomePhoneNumber" qtlid="152401">Home phone number</translation>
@@ -743,7 +743,7 @@ I therefore explicitly renounce my right to cancel under the provisions of Artic
    <translation id="exchange_tab_RESOURCES_table_type" qtlid="2642">Type</translation>
    <translation id="exchange_tab_RESOURCES_table_capacity" qtlid="4334">Capacity</translation>
    <translation id="exchange_tab_RESOURCES_table_allow_conflicts" qtlid="156407">Conflict authorised</translation>
-   <translation id="exchange_tab_RESOURCES_table_email" qtlid="69509">E-mail</translation>
+   <translation id="exchange_tab_RESOURCES_table_email" qtlid="69509">Email</translation>
    <translation id="exchange_tab_RESOURCES_table_state" qtlid="447820">Status</translation>
    <translation id="exchange_tab_RESOURCES_table_state_task" qtlid="156420">Task in progress</translation>
    <translation id="exchange_tab_RESOURCES_action_add_resource_account" qtlid="63710">Add a resource account</translation>
@@ -1369,7 +1369,7 @@ I therefore explicitly renounce my right to cancel under the provisions of Artic
    <translation id="exchange_tab_SHARED_table_empty_search" qtlid="201588">You haven't shared anything corresponding to the search term</translation>
 
    <translation id="exchange_tab_SHARED_permissions_intro" qtlid="201601">Liste of accounts with access permission for the share <strong>{0}</strong></translation>
-   <translation id="exchange_tab_SHARED_permissions_header_email" qtlid="69509">E-mail</translation>
+   <translation id="exchange_tab_SHARED_permissions_header_email" qtlid="69509">Email</translation>
    <translation id="exchange_tab_SHARED_permissions_header_quota" qtlid="6874">Quota</translation>
    <translation id="exchange_tab_SHARED_permissions_header_type" qtlid="144253">Access rights</translation>
    <translation id="exchange_tab_SHARED_permissions_type_EDITOR" qtlid="17321">Write</translation>
@@ -1554,6 +1554,7 @@ I therefore explicitly renounce my right to cancel under the provisions of Artic
    <translation id="exchange_wizardHostedCreation_addDomainName_retrieval_error" qtlid="449947">There was an error loading your domain list.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_error" qtlid="449960">There was an error creating your server.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyNonAuthoritativeEmailPro" qtlid="449973">Since your domain is already associated to an OVH Professional email service, we have selected the best configuration option for your service.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAuthoritativeEmailPro">Votre domaine est déjà associé à un service E-mail Pro OVH en mode autoritatif. Pour pouvoir continuer la configuration, veuillez paramétrer ce domaine en mode non-autoritatif pour le service E-mail Pro OVH associé.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAssociated_error" qtlid="449986">The <strong>{0}</strong> domain is already linked to an Exchange or SharePoint service. Please remove it from the service it is currently associated with before linking it to this service.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_cancelOperation_button" qtlid="449999">Quit installation process</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_cancelOperation_details" qtlid="450012">To go back to configuring your service, click the "Associated domains" tab, then click on the "Add a domain" button.</translation>
