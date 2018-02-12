@@ -15,7 +15,7 @@ angular
             this.aliasMaxLimit = this.services.Exchange.aliasMaxLimit;
             this.getAliasesParams = {};
 
-            $scope.$on(this.services.Exchange.events.groupsChanged, () => this.getAliases(this.getAliasesParams));
+            $scope.$on(this.services.Exchange.events.groupsChanged, () => this.refreshList());
             $scope.getAliases = (pageSize, offset) => this.getAliases(pageSize, offset);
             $scope.getAliaseObjects = () => this.getAliaseObjects();
         }
@@ -27,13 +27,27 @@ angular
             return this.services.Exchange
                 .getGroupAliasList(this.$routerParams.organization, this.$routerParams.productId, this.services.navigation.selectedGroup.mailingListAddress, pageSize, offset - 1)
                 .then((data) => {
-                    this.aliases = data;
+                    this.aliases = data.list.results;
                     return {
                         data: data.list.results,
                         meta: {
                             totalCount: data.count
                         }
                     };
+                })
+                .catch((err) => this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ALIAS_error_message"), err));
+        }
+
+        refreshList () {
+            this.services.Exchange
+                .getGroupAliasList(this.$routerParams.organization, this.$routerParams.productId, this.services.navigation.selectedGroup.mailingListAddress, this.getAliasesParams.pageSize, this.getAliasesParams.offset - 1)
+                .then((data) => {
+                    for (let i = 0; i < data.list.results.length; i++) {
+                        this.aliases.splice(i, 1, data.list.results[i]);
+                    }
+                    for (let i = data.list.results.length; i < this.aliases.length; i++) {
+                        this.aliases.splice(i, 1);
+                    }
                 })
                 .catch((err) => this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ALIAS_error_message"), err));
         }
