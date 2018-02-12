@@ -1,7 +1,15 @@
 {
     class controller {
         constructor (Exchange, ExchangeDomains, exchangeStates, messaging, $rootScope, $timeout, translator, User, wizardHostedCreationDomainConfiguration) {
-            Object.assign(this, { Exchange, ExchangeDomains, exchangeStates, messaging, $rootScope, $timeout, translator, User, wizardHostedCreationDomainConfiguration });
+            this.Exchange = Exchange;
+            this.ExchangeDomains = ExchangeDomains;
+            this.exchangeStates = exchangeStates;
+            this.messaging = messaging;
+            this.$rootScope = $rootScope;
+            this.$timeout = $timeout;
+            this.translator = translator;
+            this.User = User;
+            this.wizardHostedCreationDomainConfiguration = wizardHostedCreationDomainConfiguration;
         }
 
         $onInit () {
