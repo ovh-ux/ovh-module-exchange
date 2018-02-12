@@ -11,8 +11,9 @@ angular
         }
 
         $onInit () {
-            this.$routerParams = this.services.Exchange.getParams();
-            this.tableLoading = false;
+            const params = this.services.Exchange.getParams();
+            this.organization = params.organization;
+            this.productId = params.productId;
 
             this.states = {
                 doing: "DOING",
@@ -22,24 +23,48 @@ angular
                 todo: "TODO"
             };
 
-            this.services.$scope.$on(this.services.Exchange.events.tasksChanged, () => this.services.$scope.$broadcast("paginationServerSide.reload", "tasksTable"));
+            this.services.$scope.$on(this.services.Exchange.events.tasksChanged, () => this.refreshTasks());
 
-            this.services.$scope.retrieveTasks = (count, offset) => this.retrieveTasks(count, offset);
         }
 
-        retrieveTasks (count, offset) {
-            this.tableLoading = true;
-
+        _getTasks ({ count, offset }) {
             return this.services.Exchange
-                .getTasks(this.$routerParams.organization, this.$routerParams.productId, count, offset)
-                .then((tasks) => {
-                    this.tasksList = tasks;
+                .getTasks(this.organization, this.productId, count, offset - 1);
+        }
+
+        loadPaginated ($config) {
+            this.tasksList = null;
+            this.pageSize = $config.pageSize;
+            this.offset = $config.offset;
+            return this._getTasks($config)
+                .then((response) => {
+                    this.tasksList = response.list.results;
+                    return {
+                        data: this.tasksList,
+                        meta: {
+                            totalCount: response.count
+                        }
+                    };
                 })
-                .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_TASKS_error_message"), failure);
+                .catch((error) => {
+                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_TASKS_error_message"), error);
+                });
+        }
+
+        refreshTasks () {
+            if (!this.tasksList) { return undefined; }
+            const config = { pageSize: this.pageSize, offset: this.offset };
+            return this._getTasks(config)
+                .then((response) => {
+                    for (let i = 0; i < response.list.results.length; i++) {
+                        this.tasksList.splice(i, 1, response.list.results[i]);
+                    }
+                    for (let i = response.list.results.length; i < this.tasksList.length; i++) {
+                        this.tasksList.splice(i, 1);
+                    }
                 })
-                .finally(() => {
-                    this.tableLoading = false;
+                .catch((error) => {
+                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_TASKS_error_message"), error);
                 });
         }
     });
