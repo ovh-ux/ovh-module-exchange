@@ -15,7 +15,7 @@ angular
             this.getAliasesParams = {};
 
             this.aliasMaxLimit = Exchange.aliasMaxLimit;
-            $scope.$on(Exchange.events.accountsChanged, () => this.getAliases(this.getAliasesParams));
+            $scope.$on(Exchange.events.accountsChanged, () => this.refreshList());
         }
 
         getAliases ({ pageSize, offset }) {
@@ -24,13 +24,26 @@ angular
 
             return this.services.Exchange.getAliases(this.$routerParams.organization, this.$routerParams.productId, this.services.ExchangeAccountService.selectedAccount.primaryEmailAddress, pageSize, offset - 1)
                 .then((data) => {
-                    this.aliases = data;
+                    this.aliases = data.list.results;
                     return {
                         data: data.list.results,
                         meta: {
                             totalCount: data.count
                         }
                     };
+                })
+                .catch((err) => this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ALIAS_error_message"), err));
+        }
+
+        refreshList () {
+            this.services.Exchange.getAliases(this.$routerParams.organization, this.$routerParams.productId, this.services.ExchangeAccountService.selectedAccount.primaryEmailAddress, this.getAliasesParams.pageSize, this.getAliasesParams.offset - 1)
+                .then((data) => {
+                    for (let i = 0; i < data.list.results.length; i++) {
+                        this.aliases.splice(i, 1, data.list.results[i]);
+                    }
+                    for (let i = data.list.results.length; i < this.aliases.length; i++) {
+                        this.aliases.splice(i, 1);
+                    }
                 })
                 .catch((err) => this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ALIAS_error_message"), err));
         }

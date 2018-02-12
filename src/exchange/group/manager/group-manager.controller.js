@@ -14,7 +14,7 @@ angular
             this.$routerParams = Exchange.getParams();
             this.getGroupParams = {};
 
-            $scope.$on(Exchange.events.accountsChanged, () => this.getManagersByGroup(this.getGroupParams));
+            $scope.$on(Exchange.events.accountsChanged, () => this.refreshList());
             $scope.getManagersList = () => this.managersList;
             $scope.getManagersByGroup = (pageSize, offset) => this.getManagersByGroup(pageSize, offset);
         }
@@ -31,13 +31,27 @@ angular
             return this.services.group
                 .retrievingManagersByGroup(this.$routerParams.organization, this.$routerParams.productId, this.services.navigation.selectedGroup.mailingListName, pageSize, offset - 1)
                 .then((accounts) => {
-                    this.managersList = accounts;
+                    this.managersList = accounts.list.results;
                     return {
                         data: accounts.list.results,
                         meta: {
                             totalCount: accounts.count
                         }
                     };
+                })
+                .catch((failure) => this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ACCOUNTS_error_message"), failure));
+        }
+
+        refreshList () {
+            this.services.group
+                .retrievingManagersByGroup(this.$routerParams.organization, this.$routerParams.productId, this.services.navigation.selectedGroup.mailingListName, this.getGroupParams.pageSize, this.getGroupParams.offset - 1)
+                .then((data) => {
+                    for (let i = 0; i < data.list.results.length; i++) {
+                        this.managersList.splice(i, 1, data.list.results[i]);
+                    }
+                    for (let i = data.list.results.length; i < this.managersList.length; i++) {
+                        this.managersList.splice(i, 1);
+                    }
                 })
                 .catch((failure) => this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ACCOUNTS_error_message"), failure));
         }
