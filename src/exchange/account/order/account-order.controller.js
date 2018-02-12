@@ -13,6 +13,7 @@ angular
             };
 
             this.$routerParams = Exchange.getParams();
+            this.numConfigureMeAccount = navigation.currentActionData.numConfigureMeAccount;
 
             // default values
             this.accountsToAdd = {
