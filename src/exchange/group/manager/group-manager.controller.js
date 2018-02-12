@@ -12,36 +12,34 @@ angular
             };
 
             this.$routerParams = Exchange.getParams();
+            this.getGroupParams = {};
 
-            $scope.$on(Exchange.events.accountsChanged, () => $scope.$broadcast("paginationServerSide.reload", "managersTable"));
+            $scope.$on(Exchange.events.accountsChanged, () => this.getManagersByGroup(this.getGroupParams));
             $scope.getManagersList = () => this.managersList;
-            $scope.getLoading = () => this.loading;
-            $scope.getManagersByGroup = (count, offset) => this.getManagersByGroup(count, offset);
+            $scope.getManagersByGroup = (pageSize, offset) => this.getManagersByGroup(pageSize, offset);
         }
 
         hide () {
             this.services.$scope.$emit("showGroups");
         }
 
-        getManagersByGroup (count, offset) {
-            if (_.has(this.services, "navigation.selectedGroup.mailingListName")) {
-                this.services.messaging.resetMessages();
-                this.loading = true;
+        getManagersByGroup ({ pageSize, offset }) {
+            this.getGroupParams.pageSize = pageSize;
+            this.getGroupParams.offset = offset;
+            this.services.messaging.resetMessages();
 
-                this.services
-                    .group
-                    .retrievingManagersByGroup(this.$routerParams.organization, this.$routerParams.productId, this.services.navigation.selectedGroup.mailingListName, count, offset)
-                    .then((accounts) => {
-                        this.managersList = accounts;
-                    })
-                    .catch((failure) => {
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ACCOUNTS_error_message"), failure);
-                    })
-                    .finally(() => {
-                        this.services.$scope.$broadcast("paginationServerSide.loadPage", 1, "managersTable");
-                        this.loading = false;
-                    });
-            }
+            return this.services.group
+                .retrievingManagersByGroup(this.$routerParams.organization, this.$routerParams.productId, this.services.navigation.selectedGroup.mailingListName, pageSize, offset - 1)
+                .then((accounts) => {
+                    this.managersList = accounts;
+                    return {
+                        data: accounts.list.results,
+                        meta: {
+                            totalCount: accounts.count
+                        }
+                    };
+                })
+                .catch((failure) => this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ACCOUNTS_error_message"), failure));
         }
 
         removeManager (manager) {
