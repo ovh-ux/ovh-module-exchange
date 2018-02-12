@@ -1,7 +1,15 @@
 {
     class controller {
         constructor (Exchange, ExchangeDomains, exchangeStates, messaging, $rootScope, $timeout, translator, User, wizardHostedCreationDomainConfiguration) {
-            Object.assign(this, { Exchange, ExchangeDomains, exchangeStates, messaging, $rootScope, $timeout, translator, User, wizardHostedCreationDomainConfiguration });
+            this.Exchange = Exchange;
+            this.ExchangeDomains = ExchangeDomains;
+            this.exchangeStates = exchangeStates;
+            this.messaging = messaging;
+            this.$rootScope = $rootScope;
+            this.$timeout = $timeout;
+            this.translator = translator;
+            this.User = User;
+            this.wizardHostedCreationDomainConfiguration = wizardHostedCreationDomainConfiguration;
         }
 
         $onInit () {
@@ -186,6 +194,7 @@
             } else {
                 this.homepage.domainIsOnlyForExchange = null;
                 this.homepage.isAutoConfigurationMode = null;
+                this.homepage.domainIsAssociatedToEmailService = null;
                 this.homepage.mxRelay = null;
                 this.userHasTriedToAssociatedNonAutoritativeDomain = false;
 
@@ -283,12 +292,17 @@
                     return this.homepage.savingCheckpoint();
                 })
                 .catch((error) => {
+                    const domainIsOnlyForExchange = this.homepage.domainIsOnlyForExchange;
                     this.onDomainNameSelectionChange();
 
                     if (error.message === "Authoritative domain detected") {
-                        this.messaging.writeSuccess(this.translator.tr("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyNonAuthoritativeEmailPro"));
-                        this.homepage.domainIsOnlyForExchange = false;
-                        this.userHasTriedToAssociatedNonAutoritativeDomain = true;
+                        if (domainIsOnlyForExchange) {
+                            this.messaging.writeInfo(this.translator.tr("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyNonAuthoritativeEmailPro"));
+                            this.homepage.domainIsOnlyForExchange = false;
+                            this.userHasTriedToAssociatedNonAutoritativeDomain = true;
+                        } else {
+                            this.messaging.writeWarning(this.translator.tr("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAuthoritativeEmailPro"));
+                        }
                     } else if (_(error.message).startsWith("UPN suffix")) {
                         this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAssociated_error", [formattedDomainName]));
                         this.homepage.domainName = "";
@@ -310,12 +324,17 @@
                     this.closeWizard();
                 })
                 .catch((error) => {
+                    const domainIsOnlyForExchange = this.homepage.domainIsOnlyForExchange;
                     this.onDomainNameSelectionChange();
 
                     if (error.message === "Authoritative domain detected") {
-                        this.messaging.writeSuccess(this.translator.tr("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyNonAuthoritativeEmailPro"));
-                        this.homepage.domainIsOnlyForExchange = false;
-                        this.userHasTriedToAssociatedNonAutoritativeDomain = true;
+                        if (domainIsOnlyForExchange) {
+                            this.messaging.writeInfo(this.translator.tr("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyNonAuthoritativeEmailPro"));
+                            this.homepage.domainIsOnlyForExchange = false;
+                            this.userHasTriedToAssociatedNonAutoritativeDomain = true;
+                        } else {
+                            this.messaging.writeWarning(this.translator.tr("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAuthoritativeEmailPro"));
+                        }
                     } else if (_(error.message).startsWith("UPN suffix")) {
                         this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAssociated_error", [formattedDomainName]));
                         this.homepage.domainName = "";
