@@ -106,8 +106,8 @@ angular
         }
 
         newAccount () {
-            const numConfigureMeAccount = _.sum(this.accounts.list.results, (account) => account.domain === "configureme.me" );
-            
+            const numConfigureMeAccount = _.sum(this.accounts.list.results, (account) => account.domain === "configureme.me");
+
             if (this.services.accountTypes.is25g()) {
                 this.services.navigation.setAction("exchange/account/order/account-order", { numConfigureMeAccount });
             } else if (this.services.accountTypes.isDedicated()) {
