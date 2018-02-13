@@ -85,13 +85,13 @@ angular
 
         updateDisclaimer (disclaimer) {
             if (!disclaimer.taskPendingId) {
-                this.services.navigation.setAction("exchange/disclaimer/update/disclaimer-update", angular.copy(disclaimer));
+                this.services.navigation.setAction("exchange/disclaimer/update/disclaimer-update", disclaimer);
             }
         }
 
         deleteDisclaimer (disclaimer) {
             if (!disclaimer.taskPendingId) {
-                this.services.navigation.setAction("exchange/disclaimer/remove/disclaimer-remove", angular.copy(disclaimer));
+                this.services.navigation.setAction("exchange/disclaimer/remove/disclaimer-remove", disclaimer);
             }
         }
     });
