@@ -106,12 +106,21 @@ angular
         newAccount () {
             const numConfigureMeAccount = _.sum(this.accounts.list.results, (account) => account.domain === "configureme.me");
 
+<<<<<<< refs/remotes/origin/master
             if (this.accountTypes.is25g()) {
                 this.navigation.setAction("exchange/account/order/account-order", { numConfigureMeAccount });
             } else if (this.accountTypes.isDedicated()) {
                 this.navigation.setAction("exchange/account/add/account-add");
             } else if (this.accountTypes.isProvider() && this.exchangeVersion.isVersion(2010)) {
                 this.navigation.setAction("exchange/account/add/account-add");
+=======
+            if (this.services.accountTypes.is25g()) {
+                this.services.navigation.setAction("exchange/account/order/account-order", { numConfigureMeAccount });
+            } else if (this.services.accountTypes.isDedicated()) {
+                this.services.navigation.setAction("exchange/account/add/account-add");
+            } else if (this.services.accountTypes.isProvider() && this.services.exchangeVersion.isVersion(2010)) {
+                this.services.navigation.setAction("exchange/account/add/account-add");
+>>>>>>> :ambulance: fix(account): fix indent for eslint
             } else {
                 this.navigation.setAction("exchange/account/order/account-order", { numConfigureMeAccount });
             }
