@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeCtrl", class ExchangeCtrl {
-        constructor (accountTypes, $rootScope, $scope, $timeout, $location, Products, translator, Exchange, APIExchange, User, EXCHANGE_CONFIG, navigation, ovhUserPref, messaging, exchangeVersion, officeAttached) {
+        constructor (accountTypes, $rootScope, $scope, $timeout, $location, Products, translator, Exchange, APIExchange, User, EXCHANGE_CONFIG, navigation, ovhUserPref, messaging, exchangeVersion, officeAttach) {
             this.services = {
                 accountTypes,
                 $rootScope,
@@ -18,7 +18,7 @@ angular
                 ovhUserPref,
                 messaging,
                 exchangeVersion,
-                officeAttached
+                officeAttach
             };
 
             this.$routerParams = Exchange.getParams();
@@ -157,9 +157,10 @@ angular
                     this.displayName = exchange.displayName;
                 })
                 .then(() => this.canActivateSharepoint())
-                .then(() => this.services.officeAttached.getOfficeAttachSubscription())
-                .then((data) => {
-                    this.canSubscribeToOfficeAttach = data;
+                .then(() => this.services.officeAttach.retrievingIfUserAlreadyHasSubscribed(this.exchange.domain))
+                .then((userHasAlreadySubscribedToOfficeAttach) => {
+                    this.canSubscribeToOfficeAttach = !userHasAlreadySubscribedToOfficeAttach;
+
                     if (!_.isEmpty(this.exchange.messages)) {
                         this.services.messaging.writeError(this.services.translator.tr("exchange_dashboard_loading_error"), this.exchange);
                     }
