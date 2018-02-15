@@ -13,7 +13,7 @@ angular
 
             this.$routerParams = Exchange.getParams();
             this.aliasMaxLimit = this.services.Exchange.aliasMaxLimit;
-            this.getAliasesParams = {};
+            this.aliasesParams = {};
 
             $scope.$on(this.services.Exchange.events.groupsChanged, () => this.refreshList());
             $scope.getAliases = (pageSize, offset) => this.getAliases(pageSize, offset);
@@ -21,27 +21,29 @@ angular
         }
 
         getAliases ({ pageSize, offset }) {
-            this.getAliasesParams.pageSize = pageSize;
-            this.getAliasesParams.offset = offset;
+            this.aliasesParams.pageSize = pageSize;
+            this.aliasesParams.offset = offset;
 
             return this.services.Exchange
                 .getGroupAliasList(this.$routerParams.organization, this.$routerParams.productId, this.services.navigation.selectedGroup.mailingListAddress, pageSize, offset - 1)
                 .then((data) => {
                     this.aliases = data.list.results;
-                    return {
+                    this.aliasesParams.results = {
                         data: data.list.results,
                         meta: {
                             totalCount: data.count
                         }
                     };
+                    return this.aliasesParams.results;
                 })
                 .catch((err) => this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ALIAS_error_message"), err));
         }
 
         refreshList () {
             this.services.Exchange
-                .getGroupAliasList(this.$routerParams.organization, this.$routerParams.productId, this.services.navigation.selectedGroup.mailingListAddress, this.getAliasesParams.pageSize, this.getAliasesParams.offset - 1)
+                .getGroupAliasList(this.$routerParams.organization, this.$routerParams.productId, this.services.navigation.selectedGroup.mailingListAddress, this.aliasesParams.pageSize, this.aliasesParams.offset - 1)
                 .then((data) => {
+                    this.aliasesParams.results.meta.totalCount = data.count;
                     for (let i = 0; i < data.list.results.length; i++) {
                         this.aliases.splice(i, 1, data.list.results[i]);
                     }
