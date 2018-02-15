@@ -12,21 +12,21 @@ angular
                 translator
             };
             this.$routerParams = Exchange.getParams();
-            this.getAliasesParams = {};
+            this.aliasesParams = {};
 
             this.aliasMaxLimit = Exchange.aliasMaxLimit;
             $scope.$on(Exchange.events.accountsChanged, () => this.refreshList());
         }
 
         getAliases ({ pageSize, offset }) {
-            this.getAliasesParams.pageSize = pageSize;
-            this.getAliasesParams.offset = offset;
+            this.aliasesParams.pageSize = pageSize;
+            this.aliasesParams.offset = offset;
 
             return this.services.Exchange.getAliases(this.$routerParams.organization, this.$routerParams.productId, this.services.ExchangeAccountService.selectedAccount.primaryEmailAddress, pageSize, offset - 1)
                 .then((data) => {
                     this.aliases = data.list.results;
                     return {
-                        data: data.list.results,
+                        data: this.aliases,
                         meta: {
                             totalCount: data.count
                         }
@@ -36,7 +36,7 @@ angular
         }
 
         refreshList () {
-            this.services.Exchange.getAliases(this.$routerParams.organization, this.$routerParams.productId, this.services.ExchangeAccountService.selectedAccount.primaryEmailAddress, this.getAliasesParams.pageSize, this.getAliasesParams.offset - 1)
+            this.services.Exchange.getAliases(this.$routerParams.organization, this.$routerParams.productId, this.services.ExchangeAccountService.selectedAccount.primaryEmailAddress, this.aliasesParams.pageSize, this.aliasesParams.offset - 1)
                 .then((data) => {
                     for (let i = 0; i < data.list.results.length; i++) {
                         this.aliases.splice(i, 1, data.list.results[i]);

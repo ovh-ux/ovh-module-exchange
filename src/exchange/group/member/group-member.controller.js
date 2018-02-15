@@ -13,7 +13,7 @@ angular
             };
 
             this.$routerParams = Exchange.getParams();
-            this.getGroupParams = {};
+            this.groupParams = {};
 
             $scope.$on(Exchange.events.accountsChanged, () => this.refreshList());
             $scope.getMembersList = () => this.membersList;
@@ -21,8 +21,8 @@ angular
         }
 
         getMembersByGroup ({ pageSize, offset }) {
-            this.getGroupParams.pageSize = pageSize;
-            this.getGroupParams.offset = offset;
+            this.groupParams.pageSize = pageSize;
+            this.groupParams.offset = offset;
             this.services.messaging.resetMessages();
 
             return this.services.group
@@ -41,7 +41,7 @@ angular
 
         refreshList () {
             this.services.group
-                .retrievingMembersByGroup(this.$routerParams.organization, this.$routerParams.productId, this.services.navigation.selectedGroup.mailingListName, this.getGroupParams.pageSize, this.getGroupParams.offset - 1)
+                .retrievingMembersByGroup(this.$routerParams.organization, this.$routerParams.productId, this.services.navigation.selectedGroup.mailingListName, this.groupParams.pageSize, this.groupParams.offset - 1)
                 .then((data) => {
                     for (let i = 0; i < data.list.results.length; i++) {
                         this.membersList.splice(i, 1, data.list.results[i]);
