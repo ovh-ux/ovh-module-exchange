@@ -27,9 +27,9 @@ angular
 
         }
 
-        _getTasks ({ count, offset }) {
+        _getTasks ({ pageSize, offset }) {
             return this.services.Exchange
-                .getTasks(this.organization, this.productId, count, offset - 1);
+                .getTasks(this.organization, this.productId, pageSize, offset - 1);
         }
 
         loadPaginated ($config) {
