@@ -77,9 +77,9 @@ angular
             return !this.disclaimersList || !this.hasEmptySlot(this.disclaimersList);
         }
 
-        addDisclaimer () {
+        addDisclaimer (disclaimer) {
             if (!this.newDisclaimersDisabled()) {
-                this.services.navigation.setAction("exchange/disclaimer/add/disclaimer-add");
+                this.services.navigation.setAction("exchange/disclaimer/add/disclaimer-add", disclaimer);
             }
         }
 

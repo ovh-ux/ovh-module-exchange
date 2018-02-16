@@ -39,8 +39,8 @@ angular
                     this.loadingData = false;
 
                     if (data.availableDomains) {
-                        this.data.completeDomain = data.availableDomains[0];
                         this.availableDomains = data.availableDomains;
+                        this.selectCurrentDomain();
 
                         this.data.selectedAttribute = data.availableAttributes[0];
                         this.availableAttributes = data.availableAttributes;
@@ -49,6 +49,15 @@ angular
                         this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_add_disclaimer_no_domains"));
                     }
                 });
+        }
+
+        selectCurrentDomain () {
+            if (_.get(this.services.navigation, "currentActionData.domain.name")) {
+                this.data.completeDomain = _.find(this.availableDomains, "name", this.services.navigation.currentActionData.domain.name);
+            }
+            if (!this.data.completeDomain) {
+                this.data.completeDomain = this.availableDomains[0];
+            }
         }
 
         isStep1Valid () {
