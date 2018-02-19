@@ -983,7 +983,7 @@
    <translation id="exchange_ACTION_add_outlook_wizard_help_title" qtlid="136724">Outlook Lizenz</translation>
    <translation id="exchange_ACTION_add_outlook_wizard_help" qtlid="184893">Eine Outlook Lizenz erlaubt Ihnen die Installation des Outlook E-Mail-Programms von Microsoft. Nach Abschluss der Bestellung erhalten Sie einen Link, über den Sie das Programm herunterladen können, sowie einen Lizenz-Key für dessen Installation.</translation>
    <translation id="exchange_ACTION_add_outlook_duration_label" qtlid="156875">Laufzeit:</translation>
-   <translation id="exchange_ACTION_add_outlook_price_withoutIVA_label" qtlid="169238">Preis ohne MwSt:</translation>
+   <translation id="exchange_ACTION_add_outlook_price_withoutIVA_label" qtlid="169238">Preis zzgl. MwSt:</translation>
    <translation id="exchange_ACTION_add_outlook_price_withIVA_label" qtlid="169251">Preis inkl. MwSt:</translation>
    <translation id="exchange_ACTION_add_outlook_price_label" qtlid="181084">Preis:</translation>
    <translation id="exchange_ACTION_add_outlook_contracts_label" qtlid="169472">Um Ihre Anfrage zu bestätigen akzeptieren Sie bitte die Nutzungsbedingungen und klicken Sie dann auf "Weiter".</translation>
@@ -1324,7 +1324,7 @@
 <!-- ORDER DISK SPACE -->
    <translation id="exchange_action_order_space_disk_title" qtlid="191668">Zusätzlichen Speicherplatz bestellen</translation>
    <translation id="exchange_action_order_space_disk_intro" qtlid="191785">Sie können zusätzlichen Speicherplatz bestellen</translation>
-   <translation id="exchange_action_order_space_disk_price" qtlid="146177">Gesamtpreis ohne MwSt:</translation>
+   <translation id="exchange_action_order_space_disk_price" qtlid="146177">Gesamtpreis zzgl. MwSt:</translation>
    <translation id="exchange_action_order_space_disk_price_iva" qtlid="146190">Gesamtpreis inkl. MwSt:</translation>
    <translation id="exchange_action_order_space_disk_contracts_intro" qtlid="191798">Verträge und allgemeine Bedingungen der Dienstleistung:</translation>
    <translation id="exchange_action_order_space_disk_summary" qtlid="177496">Zusammenfassung Ihrer Bestellung</translation>
@@ -1553,6 +1553,7 @@
    <translation id="exchange_wizardHostedCreation_addDomainName_retrieval_error" qtlid="449947">Beim Laden der Liste Ihrer Domains ist ein Fehler aufgetreten.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_error" qtlid="449960">Beim Erstellen Ihres Servers ist ein Fehler aufgetreten.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyNonAuthoritativeEmailPro" qtlid="449973">Da Ihre Domain bereits mit einer E-Mail Pro Dienstleistung von OVH verbunden ist, haben wir die beste Konfiguration für Ihren Dienst gewählt.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAuthoritativeEmailPro">Votre domaine est déjà associé à un service E-mail Pro OVH en mode autoritatif. Pour pouvoir continuer la configuration, veuillez paramétrer ce domaine en mode non-autoritatif pour le service E-mail Pro OVH associé.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAssociated_error" qtlid="449986">Die Domain <strong>{0}</strong> ist bereits mit einem Exchange oder Sharepoint Dienst verbunden. Um die Domain mit dieser Dienstleistung zu verbinden, trennen Sie diese bitte zunächst von dem bereits verbundenen Dienst.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_cancelOperation_button" qtlid="449999">Installationsprozess verlassen</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_cancelOperation_details" qtlid="450012">Um die Konfiguration Ihrer Dienstleistung fortzusetzen, klicken Sie im Tab "Assoziierte Domains" auf den Button "Eine Domain hinzufügen".</translation>

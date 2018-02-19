@@ -2,7 +2,15 @@ angular
     .module("Module.exchange.controllers")
     .controller("exchangeWizardHostedCreationEmailCreationUpdateController", class ExchangeWizardHostedCreationEmailCreationUpdateController {
         constructor (Exchange, ExchangePassword, messaging, navigation, $rootScope, $scope, $timeout, translator, wizardHostedCreationEmailCreation) {
-            Object.assign(this, { Exchange, ExchangePassword, messaging, navigation, $rootScope, $scope, $timeout, translator, wizardHostedCreationEmailCreation });
+            this.Exchange = Exchange;
+            this.ExchangePassword = ExchangePassword;
+            this.messaging = messaging;
+            this.navigation = navigation;
+            this.$rootScope = $rootScope;
+            this.$scope = $scope;
+            this.$timeout = $timeout;
+            this.translator = translator;
+            this.wizardHostedCreationEmailCreation = wizardHostedCreationEmailCreation;
         }
 
         $onInit () {

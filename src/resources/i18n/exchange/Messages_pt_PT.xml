@@ -15,7 +15,7 @@
    <translation id="exchange_offer_type_25g" qtlid="264042">Exchange individual</translation>
    <translation id="exchange_dashboard_loading_error" qtlid="168120">Ocorreu um erro no acesso às informações</translation>
    <translation id="exchange_dashboard_action_doing" qtlid="149787">Operação em curso...</translation>
-   <translation id="exchange_dashboard_display_name_edit" qtlid="37875">Modificar</translation>
+   <translation id="exchange_dashboard_display_name_edit" qtlid="37875">Alterar</translation>
    <translation id="exchange_dashboard_display_name_save" qtlid="177912">Mínimo de 4 caracteres</translation>
    <translation id="exchange_dashboard_display_name_min" qtlid="177925">Operação anulada. No Mínimo são necessários 5 caracteres</translation>
    <translation id="exchange_dashboard_display_name_reset" qtlid="37935">Operação anulada</translation>
@@ -55,7 +55,7 @@
    <translation id="exchange_dashboard_stats" qtlid="26671">Estatísticas</translation>
    <translation id="exchange_dashboard_disk_usage" qtlid="28159">Espaço em disco</translation>
    <translation id="exchange_action_configuration" qtlid="136243">Gerir as regras de segurança</translation>
-   <translation id="exchange_action_resigne" qtlid="56337">Cancelar o serviço</translation>
+   <translation id="exchange_action_resigne" qtlid="56337">Cancelar serviço</translation>
    <translation id="exchange_action_order_space_disk" qtlid="191668">Solicitar espaço adicional</translation>
    <translation id="exchange_action_renew_ssl" qtlid="136256">Renovar certificado SSL</translation>
    <translation id="exchange_action_renew_ssl_info" qtlid="325844">Está atualmente em curso uma operação de instalação do seu certificado SSL, e como tal, não é agora possível a renovação do seu certificado SSL.</translation>
@@ -314,7 +314,7 @@
    <translation id="exchange_resilitation_action_intro" qtlid="190901">Tẽm a certeza de que deseja eliminar o seu serviço Exchange "{0}"? <br />Esta ação anulará a renovação automática no final do período de expiração e levará ao bloqueio do serviço.<br /><br /> Poderá utilizar normalmente o serviço até essa data.</translation>
    <translation id="exchange_resilitation_action_expiration" qtlid="33010">Data de expiração</translation>
    <translation id="exchange_resilitation_action_hosted_warning" qtlid="209073">As suas contas serão suspensas na data de "expiração".</translation>
-   <translation id="exchange_resilitation_action_button" qtlid="48646">Rescindir</translation>
+   <translation id="exchange_resilitation_action_button" qtlid="48646">Cancelar</translation>
    <translation id="exchange_resilitation_action_button_cancel" qtlid="211567">Anular a eliminação</translation>
    <translation id="exchange_resilitation_action_confirmation" qtlid="190914">Atenção, está no ponto de encerrar integralmente o serviço "{0}" bem como as {1} contas Exchange que estão associadas. <br />Deseja realmente proceder a esta operação?</translation>
    <translation id="exchange_resilitation_action_success" qtlid="190927">O serviço Exchange vai ser eliminado à data de expiração.</translation>
@@ -530,7 +530,7 @@
    <translation id="exchange_ACTION_change_password_account_error_message" qtlid="157447">Ocorreu um erro durante a alteração da palavra-passe.</translation>
    <translation id="exchange_ACTION_change_password_account_error_message_linked" qtlid="148279">No entanto, ocorreu um erro aquando da alteração da password.</translation>
    <translation id="exchange_ACTION_update_account_title" qtlid="137712">Modificar a conta Exchange</translation>
-   <translation id="exchange_ACTION_update_account_tooltip" qtlid="37875">Modificar</translation>
+   <translation id="exchange_ACTION_update_account_tooltip" qtlid="37875">Alterar</translation>
    <translation id="exchange_ACTION_update_account_shared_password_warning" qtlid="316918">A password será igualmente modificada para o serviço SharePoint associado.</translation>
    <translation id="exchange_tab_account_reset_account" qtlid="376024">Reinicializar uma conta</translation>
    <translation id="exchange_tab_account_reset_email_info" qtlid="376037">A reinicialização de uma conta consiste em eliminar os dados e o nome associado, embora seja faturada na mesma. Se não deseja ser faturada, clique em "modo de faturação" e depois clique em "nenhum" para a conta em questão, e depois valide.</translation>
@@ -569,7 +569,7 @@
    <translation id="exchange_tab_domain_add_set_auto_display" qtlid="416488">Escolha esta opção para impedir que outra janela seja aberta.</translation>
    <translation id="exchange_tab_domain_add_goToWizardButton" qtlid="449388">Prefiro usar <br />o assistente de configuração</translation>
 
-   <translation id="exchange_tab_domain_add_step1_order_domain_desc1" qtlid="167873">Para confirmar o seu pedido queira proceder ao pagamento ao clicar no botão "Encomendar" em baixo.</translation>
+   <translation id="exchange_tab_domain_add_step1_order_domain_desc1" qtlid="167873">Para confirmar o pedido, efetue o pagamento. Para tal, deverá clicar no botão "Encomendar".</translation>
    <translation id="exchange_tab_domain_add_step1_order_domain_desc2" qtlid="144175">Será aberto um novo separador e será automaticamente reencaminhado para a interface de pagamentos OVH.</translation>
    <translation id="exchange_tab_domain_step1_helpwizard_subdomain_title" qtlid="137881">Utilizar um sub-domínio</translation>
    <translation id="exchange_tab_domain_step1_helpwizard_subdomain" qtlid="397559">Para adicionar um subdomínio de um dos seus domínios OVH deve optar pela opção "Utilizar um nome de domínio não gerido pela sua conta OVH" e deve introduzi-lo no campo correspondente.</translation>
@@ -655,7 +655,7 @@ Se usar o modo nonauthoritative com contas de e-mail não alojadas pela OVH, dev
    <translation id="exchange_tab_DISCLAIMER_disclaimer_outside_only_true" qtlid="34776">Sim</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_outside_only_false" qtlid="34788">Não</translation>
    <translation id="exchange_tab_DISCLAIMER_table_no_domain" qtlid="152310">Adicione um domínio e aguarde que o mesmo seja validado para criar uma assinatura.</translation>
-   <translation id="exchange_tab_DISCLAIMER_menu_settings" qtlid="37875">Modificar</translation>
+   <translation id="exchange_tab_DISCLAIMER_menu_settings" qtlid="37875">Alterar</translation>
    <translation id="exchange_tab_DISCLAIMER_menu_delete" qtlid="2414">Eliminar</translation>
    <translation id="exchange_ACTION_add_disclaimer_button" qtlid="152206">Adicionar uma assinatura</translation>
    <translation id="exchange_ACTION_add_disclaimer_title" qtlid="152206">Adicionar uma assinatura</translation>
@@ -726,7 +726,7 @@ Se usar o modo nonauthoritative com contas de e-mail não alojadas pela OVH, dev
    <translation id="exchange_tab_RESOURCES_add_resource_step2_title" qtlid="156264">Têm a certeza de que deseja adicionar a conta de recurso abaixo ao servidor Exchange?</translation>
    <translation id="exchange_tab_RESOURCES_add_resource_success" qtlid="156277">A adição da conta de recurso vai ser efetuada.</translation>
    <translation id="exchange_tab_RESOURCES_edit_resource_step2_title" qtlid="156290">Têm a certeza de que deseja modificar a conta de recurso {0}?</translation>
-   <translation id="exchange_tab_RESOURCES_edit_resource_confirm" qtlid="37875">Modificar</translation>
+   <translation id="exchange_tab_RESOURCES_edit_resource_confirm" qtlid="37875">Alterar</translation>
    <translation id="exchange_tab_RESOURCES_edit_resource_success" qtlid="156303">A modificação da conta de recurso vai ser efetuada.</translation>
    <translation id="exchange_tab_RESOURCES_edit_resource_error" qtlid="155574">Ocorreu um erro aquando da modificação da conta de recurso.</translation>
    <translation id="exchange_tab_RESOURCES_no_domain_warning" qtlid="171253">Ainda não adicionou um nome de domínio ou o mesmo ainda não foi validado <br/>Deverá adicionar um nome de domínio e aguardar que o mesmo seja validado para criar uma conta Exchange.</translation>
@@ -751,7 +751,7 @@ Se usar o modo nonauthoritative com contas de e-mail não alojadas pela OVH, dev
    <translation id="exchange_tab_RESOURCES_allow_conflicts_true" qtlid="34776">Sim</translation>
    <translation id="exchange_tab_RESOURCES_allow_conflicts_false" qtlid="34788">Não</translation>
    <translation id="exchange_tab_RESOURCES_popover_delete" qtlid="2414">Eliminar</translation>
-   <translation id="exchange_tab_RESOURCES_tooltip_edit" qtlid="37875">Modificar</translation>
+   <translation id="exchange_tab_RESOURCES_tooltip_edit" qtlid="37875">Alterar</translation>
    <translation id="exchange_tab_RESOURCES_wizard_intro" qtlid="170863">Acessível a partir do Outlook, a função de contas de recursos permite planificar as necessidades dos seus colaborado res. <br /> Pode criar tantas contas de recursos quantas desejar.</translation>
    <translation id="exchange_tab_RESOURCES_wizard_type" qtlid="171266">Dois tipos de recursos estão disponíveis : "Sala" ou "Equipamento".<br /> Basta introduzir os parâmetros seguintes : <ul><li>Nome</li> <li> Capacidade </li></ul></translation>
    <translation id="exchange_tab_RESOURCES_wizard_example" qtlid="191148"><b>Exemplo</b>: Deseja reservar a sala <b>"X"</b> que pode acolher <b>"N"</b> pessoas.</translation>
@@ -997,8 +997,8 @@ Se usar o modo nonauthoritative com contas de e-mail não alojadas pela OVH, dev
    <translation id="exchange_ACTION_add_outlook_order_step2_generation_bc" qtlid="169511">A gerar a nota de encomenda ...</translation>
    <translation id="exchange_ACTION_add_outlook_order_step2_bc_ok" qtlid="169524">A nota de encomenda foi gerada com sucesso.</translation>
    <translation id="exchange_ACTION_add_outlook_order_step2_continue" qtlid="169537">Para confirmar a sua encomenda queira clicar no botão "Pagar" em baixo.</translation>
-   <translation id="exchange_ACTION_add_outlook_order_step2_explication" qtlid="169225">Queira ter em conta que podem ser necessárias 2 horas a contar a partir da validação do seu pagamento para que a ativação da opção seja tomada em conta no seu Espaço de Cliente Web.</translation>
-   <translation id="exchange_ACTION_add_outlook_order_step2_explication2" qtlid="167886">Irá ser aberto um novo separador e será automaticamente reencaminhado para a interface de pagamentos OVH.</translation>
+   <translation id="exchange_ACTION_add_outlook_order_step2_explication" qtlid="169225">Atenção: a ativação pode demorar cerca de 2 horas até ficar registada na Área de Cliente.</translation>
+   <translation id="exchange_ACTION_add_outlook_order_step2_explication2" qtlid="167886">Irá surgir um novo separador, e será reencaminhado(a) para a interface de pagamentos OVH.</translation>
    <translation id="exchange_ACTION_activate_outlook_title" qtlid="397416">Ativar a licença Outlook</translation>
    <translation id="exchange_ACTION_activate_outlook_intro_label" qtlid="397429">Deseja ativar a licença Outlook na conta Exchange?</translation>
    <translation id="exchange_ACTION_remove_outlook_intro_label" qtlid="397442">Deseja eliminar a sua licença Outlook?</translation>
@@ -1081,7 +1081,7 @@ Se usar o modo nonauthoritative com contas de e-mail não alojadas pela OVH, dev
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_SUSPENDING" qtlid="171292">Suspensão em progresso</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_MODIFYING" qtlid="174646">Alteração em curso</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_OK" qtlid="433745">Ok</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_actions_menu_modify" qtlid="37875">Modificar</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_actions_menu_modify" qtlid="37875">Alterar</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_actions_menu_delete" qtlid="2414">Eliminar</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_tooltip_GAL_false" qtlid="184906">O endereço aparece no Outlook</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_tooltip_GAL_true" qtlid="184919">O endereço não aparece no Outlook</translation>
@@ -1329,7 +1329,7 @@ Se usar o modo nonauthoritative com contas de e-mail não alojadas pela OVH, dev
    <translation id="exchange_action_order_space_disk_contracts_intro" qtlid="191798">Contratos e condições gerais anexadas ao serviço:</translation>
    <translation id="exchange_action_order_space_disk_summary" qtlid="177496">Resumo da sua nota de encomenda</translation>
    <translation id="exchange_action_order_space_disk_final_txt" qtlid="181240">Clique no botão "Validar" para confirmar a sua encomenda.</translation>
-   <translation id="exchange_action_order_space_disk_final_txt2" qtlid="181253">Um novo separador ser-lhe-à apresentado e será automaticamente reencaminhado para a interface de pagamento.</translation>
+   <translation id="exchange_action_order_space_disk_final_txt2" qtlid="181253">Irá visualizar um novo separador, e será automaticamente reencaminhado para a página de pagamento.</translation>
    <translation id="exchange_action_order_space_disk_button" qtlid="26047">Validar</translation>
    <translation id="exchange_action_order_space_disk_success" qtlid="254024">A encomenda de espaço em disco número <a href='{0}' target="_blank">{1}</a> foi corretamente tomada em conta.</translation>
    <translation id="exchange_action_order_space_disk_failure" qtlid="191824">A encomenda de espaço de disco suplementar falhou. Queria tentar novamente.</translation>
@@ -1553,6 +1553,7 @@ Se usar o modo nonauthoritative com contas de e-mail não alojadas pela OVH, dev
    <translation id="exchange_wizardHostedCreation_addDomainName_retrieval_error" qtlid="449947">Atenção: erro no acesso à lista dos domínios!</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_error" qtlid="449960">Atenção: erro na criação do servidor!</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyNonAuthoritativeEmailPro" qtlid="449973">O seu domínio está associado a um serviço Email Pro da OVH. Como tal, escolhemos a melhor configuração para o seu serviço.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAuthoritativeEmailPro">Votre domaine est déjà associé à un service E-mail Pro OVH en mode autoritatif. Pour pouvoir continuer la configuration, veuillez paramétrer ce domaine en mode non-autoritatif pour le service E-mail Pro OVH associé.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAssociated_error" qtlid="449986">O domínio <strong>{0}</strong> já está associado a um serviço Exchange ou a um serviço SharePoint. Para associar o domínio a este sistema, terá de dissociá-lo de outros serviços.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_cancelOperation_button" qtlid="449999">Terminar o processo de instalação</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_cancelOperation_details" qtlid="450012">Para voltar à configuração do serviço, clique em «Domínios associados» e depois em «Adicionar domínio».</translation>
@@ -1597,7 +1598,7 @@ Se usar o modo nonauthoritative com contas de e-mail não alojadas pela OVH, dev
    <translation id="exchange_wizardHostedCreation_emailCreation_nextButton_title" qtlid="37923">Adicionar</translation>
 
    <translation id="exchange_wizardHostedCreation_emailCreation_update_firstName_title" qtlid="450337">Alterar uma conta de e-mail</translation>
-   <translation id="exchange_wizardHostedCreation_emailCreation_updateButton_title" qtlid="37875">Modificar</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_updateButton_title" qtlid="37875">Alterar</translation>
 
    <translation id="exchange_wizardHostedCreation_emailCreation_update_changePassword_checkbox" qtlid="80394">Alterar a password</translation>
 

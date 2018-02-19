@@ -28,7 +28,7 @@
    <translation id="exchange_dashboard_tasks" qtlid="136217">Ostatnie zadania</translation>
    <translation id="exchange_dashboard_diag" qtlid="136230">Diagnostyka serwera</translation>
    <translation id="exchange_dashboard_guides" qtlid="366359">Potrzebujesz pomocy w skonfigurowaniu usługi Exchange?</translation>
-   <translation id="exchange_dashboard_guides_url" qtlid="156732">Sprawdź naszą dokumentację. </translation>
+   <translation id="exchange_dashboard_guides_url" qtlid="156732">Sprawdź nasze przewodniki online</translation>
    <translation id="exchange_diagnostic_guide" qtlid="297891">Podczas diagnostyki wykryto błędy. Aby uzyskać informacje na temat każdego z nich,</translation>
    <translation id="exchange_diagnostic_guides_url" qtlid="297904">zapoznaj się z naszym przewodnikiem.</translation>
    <translation id="exchange_dashboard_2016_migration" qtlid="287072">Sprawdź program migracji na Exchange 2016.</translation>
@@ -165,7 +165,7 @@
    <translation id="exchange_tab_ACCOUNTS_edit_account_tooltip" qtlid="4406">Konfiguracja</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_account_tooltip" qtlid="19075">Więcej operacji</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_account_no_domain_tooltip" qtlid="148188">Musisz dodać domenę i poczekać na jej potwierdzenie, aby edytować konto</translation>
-   <translation id="exchange_tab_domain_no_domain_attached" qtlid="271361">Usługa Exchange jest prawie gotowa. Należy przypisać domenę do usługi. Jeśli nie posiadasz domeny, <a href="https://www.ovh.pl/cgi-bin/newOrder/order.cgi" target="_blank">kliknij tutaj</a>, aby ją zamówić.</translation>
+   <translation id="exchange_tab_domain_no_domain_attached" qtlid="271361">Usługa Exchange jest prawie gotowa. Należy przypisać domenę do usługi. Jeśli nie posiadasz domeny, <a href="https://www.ovh.pl:51043/cgi-bin/newOrder/order.cgi" target="_blank">kliknij tutaj</a>, aby ją zamówić.</translation>
    <translation id="exchange_tab_ACCOUNTS_warning" qtlid="108456">Uwaga!</translation>
    <translation id="exchange_tab_ACCOUNTS_partial" qtlid="143889">Niektóre konta nie mogły zostać poprawnie wyświetlone. Odśwież stronę, aby rozwiązać problem.</translation>
    <translation id="exchange_tab_ACCOUNTS_partial_account" qtlid="139208">Konto zostało pobrane niepoprawnie.</translation>
@@ -195,7 +195,7 @@
    <translation id="exchange_tab_ALIAS_GROUP_intro" qtlid="434525">Lista aliasów utworzonych dla grupy <strong>{0}</strong></translation>
    <translation id="exchange_tab_ALIAS_table_empty" qtlid="143954">Nie posiadasz aliasu dla tego konta.</translation>
    <translation id="exchange_tab_ALIAS_GROUP_table_empty" qtlid="178874">Nie posiadasz aliasów dla tej grupy</translation>
-   <translation id="exchange_tab_ALIAS_state_TASK_ON_DOING" qtlid="26383">W trakcie</translation>
+   <translation id="exchange_tab_ALIAS_state_TASK_ON_DOING" qtlid="26383">W toku</translation>
    <translation id="exchange_tab_ALIAS_state_TASK_ON_DOING_tooltip" qtlid="143967">Zadanie dotyczące tego aliasu jest już zaplanowane lub wykonywane.</translation>
    <translation id="exchange_tab_ALIAS_add_button" qtlid="143538">Dodaj alias</translation>
    <translation id="exchange_tab_ALIAS_creation_quota_description" qtlid="433784">Rozmiar musi być zawarty między <strong>{0} {1}</strong> i <strong>{2} {1}</strong>.</translation>
@@ -228,7 +228,7 @@
    <translation id="exchange_tab_TASKS_table_function" qtlid="61872">Zadanie</translation>
    <translation id="exchange_tab_TASKS_table_state" qtlid="167912">Status</translation>
    <translation id="exchange_tabled" qtlid="27631">Anulowany</translation>
-   <translation id="exchange_tab_TASKS_DOING" qtlid="26383">W trakcie</translation>
+   <translation id="exchange_tab_TASKS_DOING" qtlid="26383">W toku</translation>
    <translation id="exchange_tab_TASKS_CANCELLED" qtlid="27631">Anulowany</translation>
    <translation id="exchange_tab_TASKS_DONE" qtlid="8662">Zakończone</translation>
    <translation id="exchange_tab_TASKS_ERROR" qtlid="45508">Błąd</translation>
@@ -719,7 +719,7 @@
    <translation id="exchange_tab_RESOURCES_add_resource_capacity_warning" qtlid="156225">Nieprawidłowa wartość</translation>
    <translation id="exchange_tab_RESOURCES_add_resource_allow_conflict" qtlid="156238">Zezwalaj na konflikty</translation>
    <translation id="exchange_tab_RESOURCES_add_resource_type" qtlid="63734">Rodzaj zasobów</translation>
-   <translation id="exchange_tab_RESOURCES_add_resource_type_EQUIPMENT" qtlid="82063">Parametry</translation>
+   <translation id="exchange_tab_RESOURCES_add_resource_type_EQUIPMENT" qtlid="82063">Sprzęt</translation>
    <translation id="exchange_tab_RESOURCES_add_resource_type_ROOM" qtlid="63746">Sala</translation>
    <translation id="exchange_tab_RESOURCES_add_resource_taken_email_warning" qtlid="156251">Wybrany adres e-mail już istnieje.</translation>
    <translation id="exchange_tab_RESOURCES_add_resource_step2_title" qtlid="156264">Czy na pewno chcesz dodać konto zasobów do serwera Exchange?</translation>
@@ -745,7 +745,7 @@
    <translation id="exchange_tab_RESOURCES_table_state" qtlid="447820">Satus</translation>
    <translation id="exchange_tab_RESOURCES_table_state_task" qtlid="156420">Zadanie w trakcie</translation>
    <translation id="exchange_tab_RESOURCES_action_add_resource_account" qtlid="63710">Dodaj konto zasobów</translation>
-   <translation id="exchange_tab_RESOURCES_type_EQUIPMENT" qtlid="82063">Parametry</translation>
+   <translation id="exchange_tab_RESOURCES_type_EQUIPMENT" qtlid="82063">Sprzęt</translation>
    <translation id="exchange_tab_RESOURCES_type_ROOM" qtlid="63746">Sala</translation>
    <translation id="exchange_tab_RESOURCES_allow_conflicts_true" qtlid="34776">Tak</translation>
    <translation id="exchange_tab_RESOURCES_allow_conflicts_false" qtlid="34788">Nie</translation>
@@ -837,7 +837,7 @@
    <translation id="exchange_tab_GROUPS_intro" qtlid="155873">Lista grup dla konta <span class="bold">{0}</span></translation>
    <translation id="exchange_tab_GROUPS_table_empty" qtlid="150099">Nie posiadasz grup dla tego konta</translation>
    <translation id="exchange_tab_GROUPS_table_empty_search" qtlid="150112">Nie posiadasz grup odpowiadających kryteriom wyszukiwania</translation>
-   <translation id="exchange_tab_GROUPS_state_TASK_ON_DOING" qtlid="26383">W trakcie</translation>
+   <translation id="exchange_tab_GROUPS_state_TASK_ON_DOING" qtlid="26383">W toku</translation>
    <translation id="exchange_tab_GROUPS_state_TASK_ON_DOING_tooltip" qtlid="150125">Zadanie dla tej grupy jest zaplanowane lub wykonywane.</translation>
    <translation id="exchange_tab_GROUPS_add_to_group_button" qtlid="143902">Zintegruj w grupie</translation>
    <translation id="exchange_tab_GROUPS_add_button" qtlid="44776">Dodaj grupę</translation>
@@ -1235,10 +1235,10 @@ Zamknięta: administrator zapisuje członków grupy.</translation>
    <translation id="spf_value_true" qtlid="62028">Aktywne</translation>
    <translation id="spf_value_false" qtlid="125084">Wyłączone</translation>
    <translation id="exchange_ACTION_configure_step2_label_putInJunk" qtlid="402490">Automatyczne przenoszenie niechcianych wiadomości do kosza:</translation>
-   <translation id="putInJunk_value_true" qtlid="30250">Aktywne</translation>
+   <translation id="putInJunk_value_true" qtlid="30250">Aktywny</translation>
    <translation id="putInJunk_value_false" qtlid="24967">Wyłączony</translation>
    <translation id="exchange_ACTION_configure_step2_label_tagSpam" qtlid="402503">Tagowanie niechcianych wiadomości (SPAM):</translation>
-   <translation id="tagSpam_value_true" qtlid="30250">Aktywne</translation>
+   <translation id="tagSpam_value_true" qtlid="30250">Aktywny</translation>
    <translation id="tagSpam_value_false" qtlid="24967">Wyłączony</translation>
    <translation id="complexityEnabled_value_true" qtlid="178406">Włączone</translation>
    <translation id="complexityEnabled_value_false" qtlid="178419">Wyłączone</translation>
@@ -1426,8 +1426,7 @@ Zamknięta: administrator zapisuje członków grupy.</translation>
    <translation id="exchange_action_SHARED_permissions_delete_error" qtlid="202056">Wystąpił błąd podczas usuwania konta zasobów współdzielonych.</translation>
 
    <translation id="exchange_action_SHARED_permissions_update_title" qtlid="202108">Konfiguracja uprawnień dostępu</translation>
-   <translation id="exchange_action_SHARED_permissions_update_intro" qtlid="209190">Uprawnienie dostępu pozwala innym kontom Exchange &#13;
-<sup>1</sup> na posiadanie niektórych uprawnień do zasobów współdzielonych  <strong>{0}</strong></translation>
+   <translation id="exchange_action_SHARED_permissions_update_intro" qtlid="209190">Uprawnienia dostępu umożliwiają innym kontom Exchange<sup>1</sup> dostęp do konta zasobów współdzielonych{0}</translation>
    <translation id="exchange_action_SHARED_permissions_update_legend" qtlid="209203">Opcja udostępniania uprawnień jest niedostępna dla kont Exchange typu "Basic".</translation>
    <translation id="exchange_action_SHARED_permissions_update_resume_intro" qtlid="202147">Podsumowanie zmian dotyczących uprawnień dostępu do zasobów współdzielonych {0}:</translation>
    <translation id="exchange_action_SHARED_permissions_update_success_message" qtlid="202160">Uprawnienia dostępu dla konta zasobów współdzielonych <span class="bold">{0}</span> zostaną zmienione.</translation>
@@ -1486,7 +1485,7 @@ Zamknięta: administrator zapisuje członków grupy.</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_options_message" qtlid="368180">Wystąpił błąd podczas pobierania cennika.</translation>
 <!-- Order Exchange -->
    <translation id="exchange_order_view_intro_title" qtlid="368193">Zamów usługę Exchange</translation>
-   <translation id="exchange_order_view_intro_question" qtlid="368206">Chcesz założyć nową usługę Exchange czy dodać konto do istniejącej usługi?</translation>
+   <translation id="exchange_order_view_intro_question" qtlid="368206">Chcesz utworzyć nową usługę Exchange czy dodać konto do istniejącej usługi?</translation>
    <translation id="exchange_order_view_stand_alone_option" qtlid="368219">Załóż nową usługę</translation>
    <translation id="exchange_order_view_attached_option" qtlid="368232">Dodaj konto do istniejącej usługi</translation>
    <translation id="exchange_order_view_button_label" qtlid="368245">Zamów Exchange</translation>
@@ -1554,6 +1553,7 @@ Zamknięta: administrator zapisuje członków grupy.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_retrieval_error" qtlid="449947">Wystąpił błąd podczas ładowania listy Twoich domen.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_error" qtlid="449960">Wystąpił błąd podczas tworzenia Twojego serwera.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyNonAuthoritativeEmailPro" qtlid="449973">Ponieważ Twoja domena jest powiązana z usługą  E-mail Pro, wybraliśmy dla Ciebie najlepszą opcję konfiguracji Twojej usługi.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAuthoritativeEmailPro">Votre domaine est déjà associé à un service E-mail Pro OVH en mode autoritatif. Pour pouvoir continuer la configuration, veuillez paramétrer ce domaine en mode non-autoritatif pour le service E-mail Pro OVH associé.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAssociated_error" qtlid="449986">Domena <strong>{0}</strong> jest już powiązana z usługą Exchange lub Sharepoint. Aby powiązać domenę z tą usługą, usuń jej powiązanie z wcześniej wybraną usługą.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_cancelOperation_button" qtlid="449999">Przerwij proces instalacji</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_cancelOperation_details" qtlid="450012">Będziesz mógł wznowić konfigurację usługi, klikając w zakładkę «Powiązane domeny», a następnie w przycisk «Dodaj domenę».</translation>
@@ -1563,7 +1563,7 @@ Zamknięta: administrator zapisuje członków grupy.</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_introduction_2" qtlid="450051">Jeśli potrzebujesz więcej kont, możesz je zamówić później w sekcji <strong>Konta e-mail</strong> w ramach Twojej usługi Hosted Exchange.</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_header_email" qtlid="11315">Adres email</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_header_displayName" qtlid="23515">Nazwa do wyświetlenia</translation>
-   <translation id="exchange_wizardHostedCreation_emailCreation_header_state" qtlid="8230">Państwo</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_header_state" qtlid="8230">Status</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_operationInProgress" qtlid="450064">Po zakończeniu bieżących operacji będziesz mógł ponownie spersonalizować konta e-mail.</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_personnalizeButton" qtlid="450077">Spersonalizuj konto</translation>
 
