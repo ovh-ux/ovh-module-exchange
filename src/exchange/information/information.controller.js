@@ -1,7 +1,8 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeTabInformationCtrl", class ExchangeTabInformationCtrl {
-        constructor ($scope, accountTypes, Exchange, EXCHANGE_CONFIG, exchangeVersion, messaging, navigation, translator, User) {
+        constructor ($rootScope, $scope, accountTypes, Exchange, EXCHANGE_CONFIG, exchangeVersion, messaging, navigation, translator, User) {
+            this.$rootScope = $rootScope;
             this.$scope = $scope;
             this.accountTypes = accountTypes;
             this.exchangeService = Exchange;
@@ -21,7 +22,7 @@ angular
                 sharePoint: false,
                 sslButton: false
             };
-
+            this.worldPart = this.$rootScope.worldPart;
             this.$scope.$on(this.exchangeService.events.sslRenewAsked, () => {
                 this.hasSSLTask = true;
                 this.setMessageSSL();
