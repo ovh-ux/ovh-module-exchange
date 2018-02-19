@@ -73,14 +73,14 @@ angular
                 });
         }
 
-        retrievingAccounts (organizationName, exchangeService, count = 10, offset = 0) {
+        retrievingAccounts (organizationName, exchangeService, search = "", count = 10, offset = 0) {
             return this.OvhHttp
                 .get(`/sws/exchange/${organizationName}/${exchangeService}/accounts`, {
                     rootPath: "2api",
                     params: {
                         count,
                         offset,
-                        search: "",
+                        search,
                         configurableOnly: 1,
                         typeLicence: ""
                     }

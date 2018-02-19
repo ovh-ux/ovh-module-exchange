@@ -73,7 +73,7 @@
 
         retrievingEmailAccounts (count, offset) {
             return this.wizardHostedCreationEmailCreation
-                .retrievingAccounts(this.$routerParams.organization, this.$routerParams.productId, count, offset)
+                .retrievingAccounts(this.$routerParams.organization, this.$routerParams.productId, "", count, offset)
                 .then((accounts) => {
                     const copy = _(accounts).clone();
                     copy.list.results = _(accounts.list.results).filter((currentAccount) => currentAccount.domain === this.homepage.domainName).value();

@@ -54,18 +54,19 @@
                 });
         }
 
-        retrievingEmailAccounts (count, offset) {
+        retrievingEmailAccounts () {
             this.isLoading = true;
 
             return this.wizardHostedCreationEmailCreation
-                .retrievingAccounts(this.$routerParams.organization, this.$routerParams.productId, count, offset)
+                .retrievingAccounts(this.$routerParams.organization, this.$routerParams.productId)
                 .then((accounts) => {
-                    const copy = _(accounts).clone();
-                    copy.list.results = _(accounts.list.results).filter((currentAccount) => currentAccount.domain === this.homepage.domainName).value();
-                    copy.count = copy.list.results.length;
-                    this.homepage.otherAccounts = copy;
+                    const count = accounts.count;
+                    return this.wizardHostedCreationEmailCreation.retrievingAccounts(this.$routerParams.organization, this.$routerParams.productId, this.homepage.domainName, count);
                 })
-                .then(() => this.retrievingAvailableEmailAccounts())
+                .then((accounts) => {
+                    this.homepage.otherAccounts = accounts;
+                    return this.retrievingAvailableEmailAccounts();
+                })
                 .catch((error) => {
                     this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_configureDNSZone_availableAccountsRetrieval_error"), error);
                 })
