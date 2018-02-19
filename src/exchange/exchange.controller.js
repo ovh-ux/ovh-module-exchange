@@ -21,6 +21,8 @@ angular
                 officeAttached
             };
 
+            this.worldPart = this.services.$rootScope.worldPart;
+
             this.$routerParams = Exchange.getParams();
 
             navigation.$exchangeRootScope = $scope;
@@ -201,10 +203,10 @@ angular
                     const isAlreadyActivated = sharepoint != null;
                     const isSupportedExchangeType = this.services.accountTypes.isHosted();
 
-                    this.canSubscribeToSharepoint = !isAlreadyActivated && isSupportedExchangeType;
+                    this.canSubscribeToSharepoint = !isAlreadyActivated && isSupportedExchangeType && this.worldPart === "EU";
                 })
                 .catch(() => {
-                    this.canSubscribeToSharepoint = this.services.accountTypes.isHosted();
+                    this.canSubscribeToSharepoint = this.services.accountTypes.isHosted() && this.worldPart === "EU";
                 });
         }
 
