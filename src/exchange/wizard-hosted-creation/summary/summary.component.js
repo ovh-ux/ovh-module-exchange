@@ -1,7 +1,15 @@
 {
     class controller {
         constructor (constants, Exchange, ExchangeDomains, EXCHANGE_MX_CONFIG, messaging, navigation, translator, $rootScope, wizardHostedCreationEmailCreation) {
-            Object.assign(this, { constants, Exchange, ExchangeDomains, EXCHANGE_MX_CONFIG, messaging, navigation, translator, $rootScope, wizardHostedCreationEmailCreation });
+            this.constants = constants;
+            this.Exchange = Exchange;
+            this.ExchangeDomains = ExchangeDomains;
+            this.EXCHANGE_MX_CONFIG = EXCHANGE_MX_CONFIG;
+            this.messaging = messaging;
+            this.navigation = navigation;
+            this.translator = translator;
+            this.$rootScope = $rootScope;
+            this.wizardHostedCreationEmailCreation = wizardHostedCreationEmailCreation;
         }
 
         $onInit () {

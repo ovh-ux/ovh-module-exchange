@@ -2,7 +2,12 @@ angular
     .module("Module.exchange.controllers")
     .controller("exchangeWizardHostedCreationEmailCreationDeleteController", class ExchangeWizardHostedCreationEmailCreationDeleteController {
         constructor (Exchange, messaging, navigation, $rootScope, $scope, translator) {
-            Object.assign(this, { Exchange, messaging, navigation, $rootScope, $scope, translator });
+            this.Exchange = Exchange;
+            this.messaging = messaging;
+            this.navigation = navigation;
+            this.$rootScope = $rootScope;
+            this.$scope = $scope;
+            this.translator = translator;
         }
 
         $onInit () {

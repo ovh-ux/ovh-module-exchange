@@ -32,8 +32,16 @@ angular
             }
         }
 
+        writeInfo (message, details = null) {
+            this.write(message, "alert-info", details);
+        }
+
         writeSuccess (message, details = null) {
             this.write(message, "alert-success", details);
+        }
+
+        writeWarning (message, details = null) {
+            this.write(message, "alert-warning", details);
         }
 
         writeError (message, details = null) {

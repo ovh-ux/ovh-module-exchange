@@ -1552,6 +1552,7 @@
    <translation id="exchange_wizardHostedCreation_addDomainName_retrieval_error" qtlid="449947">Klaida gaunant domenų sąrašą.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_error" qtlid="449960">Klaida kuriant serverį. </translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyNonAuthoritativeEmailPro" qtlid="449973">Jūsų domenas jau susietas su OVH Email Pro paslauga. Mes nustatėme geriausią konfigūraciją tokiam atvejui. </translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAuthoritativeEmailPro">Votre domaine est déjà associé à un service E-mail Pro OVH en mode autoritatif. Pour pouvoir continuer la configuration, veuillez paramétrer ce domaine en mode non-autoritatif pour le service E-mail Pro OVH associé.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAssociated_error" qtlid="449986">Domenas <strong>{0}</strong> jau susietas su Exchange arba Sharepoint paslauga. Prašome panaikinti domeną iš minėtų paslaugų prieš susiejant su šia paslauga.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_cancelOperation_button" qtlid="449999">Nutraukti diegimo procesus</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_cancelOperation_details" qtlid="450012">Norėdami grįžti prie paslaugos konfigūravimo, spauskite "Susieti domenai", po to "Pridėti domeną".</translation>
