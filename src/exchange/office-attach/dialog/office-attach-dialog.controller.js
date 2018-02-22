@@ -1,9 +1,19 @@
 angular
     .module("Module.exchange.controllers")
-    .controller("OfficeAttachedDialogCtrl", class OfficeAttachedDialogCtrl {
-        constructor ($scope, Exchange, $window, ovhUserPref, messaging, translator, navigation, exchangeVersion, User) {
-            this.services = { $scope, Exchange, $window, ovhUserPref, messaging, translator, navigation, exchangeVersion, User };
+    .controller("officeAttachDialogCtrl", class OfficeAttachDialogCtrl {
+        constructor (Exchange, exchangeVersion, messaging, navigation, ovhUserPref, $scope, translator, User, $window) {
+            this.Exchange = Exchange;
+            this.exchangeVersion = exchangeVersion;
+            this.messaging = messaging;
+            this.navigation = navigation;
+            this.ovhUserPref = ovhUserPref;
+            this.$scope = $scope;
+            this.translator = translator;
+            this.User = User;
+            this.$window = $window;
+        }
 
+        $onInit () {
             this.loading = {
                 step1: {
                     general: false,
@@ -19,37 +29,33 @@ angular
             this.maxNumberOfAccounts = 25;
             this.selectedCheckboxes = {};
             this.selectedAccounts = [];
-            this.exchange = Exchange.value;
+            this.exchange = this.Exchange.value;
 
             this.searchValue = null;
             this.isStep1Valid = false;
 
             this.accountTypes = ["ALL", "BASIC", "STANDARD", "ENTERPRISE"];
             this.filterType = "ALL";
-            this.tr = $scope.tr;
+            this.tr = this.$scope.tr;
 
-            $scope.onWizardCancel = () => this.onWizardCancel();
-            $scope.onWizardFinish = () => this.onWizardFinish();
-            $scope.onWizardLoad = () => this.onWizardLoad();
-            $scope.loadSelectedAccounts = () => this.loadSelectedAccounts();
+            this.$scope.onWizardCancel = () => this.onWizardCancel();
+            this.$scope.onWizardFinish = () => this.onWizardFinish();
+            this.$scope.onWizardLoad = () => this.onWizardLoad();
+            this.$scope.loadSelectedAccounts = () => this.loadSelectedAccounts();
 
-            $scope.loading = this.loading;
-            $scope.retrieveAccounts = (count, offset) => this.retrieveAccounts(count, offset);
-            $scope.isStep1Valid = this.isStep1Valid;
-            $scope.isStep2Valid = () => this.isStep2Valid();
-        }
+            this.$scope.loading = this.loading;
+            this.$scope.retrieveAccounts = (count, offset) => this.retrieveAccounts(count, offset);
+            this.$scope.isStep1Valid = this.isStep1Valid;
+            this.$scope.isStep2Valid = () => this.isStep2Valid();
 
-        $onInit () {
-            this.services
-                .User
-                .getUser()
+            return this.User.getUser()
                 .then((user) => {
                     this.ovhSubsidiary = user.ovhSubsidiary;
                 });
         }
 
         onWizardCancel () {
-            this.services.navigation.resetAction();
+            this.navigation.resetAction();
         }
 
         resetSearch () {
@@ -58,7 +64,7 @@ angular
         }
 
         onWizardFinish () {
-            this.services.navigation.resetAction();
+            this.navigation.resetAction();
 
             let displayName = `${this.exchange.displayName} Office`;
             if (this.exchange.displayName.match(/.*hosted.*/i) || this.exchange.displayName.match(/.*exchange.*/i) || this.exchange.displayName.match(/.*private.*/i)) {
@@ -124,8 +130,8 @@ angular
                 quantity: 1
             }));
 
-            this.services.User.getUrlOfEndsWithSubsidiary("express_order").then((expressOrderUrl) => {
-                this.services.$window.open(`${expressOrderUrl}#/new/express/resume?products=${JSURL.stringify(answer)}`, "_blank");
+            this.User.getUrlOfEndsWithSubsidiary("express_order").then((expressOrderUrl) => {
+                this.$window.open(`${expressOrderUrl}#/new/express/resume?products=${JSURL.stringify(answer)}`, "_blank");
             });
         }
 
@@ -134,16 +140,15 @@ angular
         }
 
         setFilter () {
-            this.services.$scope.$broadcast("paginationServerSide.loadPage", 1, "officeAttachedTable");
+            this.$scope.$broadcast("paginationServerSide.loadPage", 1, "officeAttachTable");
         }
 
         step1IsValid () {
-            this.services.$scope.isStep1Valid = this.numberOfSelectedCheckboxes <= this.maxNumberOfAccounts && this.numberOfSelectedCheckboxes > 0;
+            this.$scope.isStep1Valid = this.numberOfSelectedCheckboxes <= this.maxNumberOfAccounts && this.numberOfSelectedCheckboxes > 0;
         }
 
         onWizardLoad () {
-            this.services
-                .Exchange
+            return this.Exchange
                 .getAccounts(this.maxNumberOfAccounts, 0, this.searchValue, false, null)
                 .then((accounts) => {
                     let i = 0;
@@ -169,21 +174,20 @@ angular
         }
 
         retrieveAccounts (count, offset) {
-            this.services.messaging.resetMessages();
+            this.messaging.resetMessages();
             this.offset = offset;
             this.loading.step1.table = true;
             const filterType = this.filterType === "ALL" ? null : this.filterType;
 
             this.updateAccounts(null);
 
-            this.services
-                .Exchange
+            return this.Exchange
                 .getAccounts(count, offset, this.searchValue, false, filterType)
                 .then((accounts) => {
                     this.updateAccounts(accounts);
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.tr("exchange_tab_ACCOUNTS_error_message"), failure);
+                    this.messaging.writeError(this.tr("exchange_tab_ACCOUNTS_error_message"), failure);
                 })
                 .finally(() => {
                     this.loading.step1.table = false;
@@ -199,7 +203,7 @@ angular
                 this.selectedAccounts = this.selectedAccounts.concat(accounts.list.results.filter((account) => !alreadyPresentAccounts.includes(account.primaryEmailDisplayName)));
             }
 
-            this.services.$scope.accounts = accounts;
+            this.$scope.accounts = accounts;
         }
 
         countNumberOfCheckedAccounts () {

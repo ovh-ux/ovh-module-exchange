@@ -76,16 +76,16 @@
                                data-i18n-static="exchange_tab_INFORMATIONS_order_sharepoint">
                             </a>
                         </li>
-                        <li data-ng-if="!ctrl.canSubscribeToOfficeAttach">
+                        <li data-ng-if="!ctrl.canSubscribeToOfficeAttach && ctrl.worldPart === 'EU'">
                             <i class="ovh-font ovh-font-cart" aria-hidden="true"></i>
                             <a href="#/configuration/microsoft/office/license/order"
                                data-i18n-static="exchange_tab_INFORMATIONS_order_office">
                             </a>
                         </li>
-                        <li data-ng-if="ctrl.canSubscribeToOfficeAttach">
+                        <li data-ng-if="ctrl.canSubscribeToOfficeAttach && ctrl.worldPart === 'EU'">
                             <button class="btn btn-link" type="button"
                                     data-i18n-static="exchange_ACTION_export_accounts_office_attached_button"
-                                    data-ng-click="ctrl.services.navigation.setAction('exchange/office-attached/dialog/office-attached-dialog', ctrl.exchange)">
+                                    data-ng-click="ctrl.services.navigation.setAction('exchange/office-attach/dialog/office-attach-dialog', ctrl.exchange)">
                             </button>
                         </li>
                         <li class="dropdown-divider">
