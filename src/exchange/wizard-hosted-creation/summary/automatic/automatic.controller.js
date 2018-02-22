@@ -2,7 +2,10 @@ angular
     .module("Module.exchange.controllers")
     .controller("exchangeWizardHostedCreationAutoController", class ExchangeWizardHostedCreationAutoController {
         constructor (Exchange, navigation, $scope, translator) {
-            Object.assign(this, { Exchange, navigation, $scope, translator });
+            this.Exchange = Exchange;
+            this.navigation = navigation;
+            this.$scope = $scope;
+            this.translator = translator;
         }
 
         $onInit () {

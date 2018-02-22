@@ -72,14 +72,7 @@ angular
             }
 
             return this.services
-                .APIExchange
-                .put("/{organizationName}/service/{exchangeService}", {
-                    urlParams: {
-                        organizationName: this.exchange.organization,
-                        exchangeService: this.exchange.domain
-                    },
-                    data: dataToSend
-                })
+                .Exchange.setConfiguration(this.exchange.organization, this.exchange.domain, dataToSend)
                 .then(() => {
                     this.services.Exchange.resetAccounts();
                     this.services.messaging.writeSuccess(this.services.translator.tr("exchange_ACTION_configure_success"));

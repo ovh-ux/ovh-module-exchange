@@ -106,14 +106,16 @@ angular
         }
 
         newAccount () {
+            const numConfigureMeAccount = _.sum(this.accounts.list.results, (account) => account.domain === "configureme.me");
+
             if (this.services.accountTypes.is25g()) {
-                this.services.navigation.setAction("exchange/account/order/account-order");
+                this.services.navigation.setAction("exchange/account/order/account-order", { numConfigureMeAccount });
             } else if (this.services.accountTypes.isDedicated()) {
                 this.services.navigation.setAction("exchange/account/add/account-add");
             } else if (this.services.accountTypes.isProvider() && this.services.exchangeVersion.isVersion(2010)) {
                 this.services.navigation.setAction("exchange/account/add/account-add");
             } else {
-                this.services.navigation.setAction("exchange/account/order/account-order");
+                this.services.navigation.setAction("exchange/account/order/account-order", { numConfigureMeAccount });
             }
         }
 

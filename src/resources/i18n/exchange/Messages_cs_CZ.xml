@@ -2,6 +2,7 @@
 <translations>
 
 <!-- GENERIC -->
+   <translation id="optional_form_field" qtlid="356264">(volitelné)</translation>
    <translation id="exchange_reset_search_value" qtlid="433719">Vyhledat znovu</translation>
    <translation id="exchange_search_value" qtlid="55493">Hledat</translation>
 
@@ -48,7 +49,7 @@
    <translation id="exchange_dashboard_diag_ptrv6_tooltip_title" qtlid="143329">PTR v6</translation>
    <translation id="exchange_dashboard_diag_ptrv6_tooltip_ok" qtlid="137491">Automatické nastavení dokončeno</translation>
    <translation id="exchange_dashboard_diag_ptrv6_tooltip_error" qtlid="143342">Je zde problém s reverzí Vaší IP adresy. Kontaktujte prosím podporu.</translation>
-   <translation id="exchange_dashboard_billing" qtlid="32950">Fakturační kontakt</translation>
+   <translation id="exchange_dashboard_billing" qtlid="32950">Fakturace</translation>
    <translation id="exchange_dashboard_expiration" qtlid="168172">Obnovení</translation>
    <translation id="exchange_dashboard_ssl_expiration" qtlid="190797">Expirace SSL</translation>
    <translation id="exchange_dashboard_stats" qtlid="26671">Statistiky</translation>
@@ -59,8 +60,7 @@
    <translation id="exchange_action_renew_ssl" qtlid="136256">Obnovení SSL certifikátu</translation>
    <translation id="exchange_action_renew_ssl_info" qtlid="325844">Momentálně probíhá instalace SSL certifikátu, certifikát nelze v tuto chvíli obnovit.</translation>
    <translation id="exchange_action_renew_ssl_info_expired" qtlid="325857">Certifikát SSL expiroval, můžete jej obnovit.</translation>
-   <translation id="exchange_action_renew_ssl_info_normal" qtlid="325870">Certifikát SSL Vašeho serveru platí do {0}, toto tlačítko bude k dispozici jeden měsíc před jeho expirací.</translation>
-   <translation id="exchange_action_renew_ssl_info_next" qtlid="325883">Certifikát SSL Vašeho serveru platí do {0}, můžete provést obnovení.</translation>
+   <translation id="exchange_action_renew_ssl_info_next" qtlid="447612">SSL certifikát expiruje {0} - již nyní ho můžete obnovit.</translation>
    <translation id="exchange_ACTION_export_accounts_button" qtlid="217015">Export účtu do CSV</translation>
    <translation id="exchange_ACTION_export_accounts_office_attached_button" qtlid="404187">Trial verze Office 365 zdarma</translation>
    <translation id="exchange_ACTION_export_accounts_doing_button" qtlid="217028">Exportování...</translation>
@@ -127,7 +127,7 @@
    <translation id="exchange_tab_ACCOUNTS_table_alias" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ACCOUNTS_table_group" qtlid="59507">Skupina</translation>
    <translation id="exchange_tab_ACCOUNTS_table_outlook" qtlid="24427">Outlook</translation>
-   <translation id="exchange_tab_ACCOUNTS_table_status" qtlid="8230">Stav</translation>
+   <translation id="exchange_tab_ACCOUNTS_table_status" qtlid="447625">Stav</translation>
    <translation id="exchange_tab_ACCOUNTS_table_settings" qtlid="4406">Konfigurace</translation>
    <translation id="exchange_tab_ACCOUNTS_type_ALL" qtlid="69173">Vše</translation>
    <translation id="exchange_tab_ACCOUNTS_type_BASIC" qtlid="48986">Basic</translation>
@@ -142,16 +142,18 @@
    <translation id="exchange_tab_ACCOUNTS_outlook_false" qtlid="136308">Bez</translation>
    <translation id="exchange_tab_ACCOUNTS_action_add_exchange" qtlid="139169">Objednávka účtů</translation>
    <translation id="exchange_tab_ACCOUNTS_action_add_extern" qtlid="136334">Přidat externí kontakt</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_OK" qtlid="31522">OK</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_OK" qtlid="447638">OK</translation>
    <translation id="exchange_tab_ACCOUNTS_state_CREATING" qtlid="168185">Vytvoření</translation>
    <translation id="exchange_tab_ACCOUNTS_state_DELETING" qtlid="59699">Smazat</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_RESETTING" qtlid="447898">Resetování</translation>
    <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="171188">Otevírání...</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="449375">Interní migrace</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Zrušený</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Ukončení...</translation>
    <translation id="exchange_tab_ACCOUNTS_state_MIGRATING" qtlid="186713">Migrování...</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SPAM" qtlid="70409">Spam</translation>
 
-   <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="31522">OK</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="447651">OK</translation>
    <translation id="exchange_tab_ACCOUNTS_state_creating" qtlid="168185">Vytvoření</translation>
    <translation id="exchange_tab_ACCOUNTS_state_deleting" qtlid="59699">Smazat</translation>
    <translation id="exchange_tab_ACCOUNTS_state_reopening" qtlid="171188">Otevírání...</translation>
@@ -364,9 +366,9 @@
    <translation id="exchange_tab_domain_diagnostic_mx_intro_ovh" qtlid="192890">Vaše doména je hostovaná u OVH. MX záznam u Vaší domény {0} si nastavte následovně</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_label_champ" qtlid="192903">MX záznam</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_label_champs" qtlid="46780">MX pole</translation>
-   <translation id="exchange_tab_domain_diagnostic_mx_no_antispam" qtlid="319895">Pokud použijete neautoritativní režim (Exchange + jiná e-mailová služba) s jinou e-mailovou službou neprovozovanou u OVH:</translation>
+   <translation id="exchange_tab_domain_diagnostic_mx_no_antispam" qtlid="447664">Pokud požíváte neautoritativní režim (Exchange + další emailové řešení) s řešením, které není hostováno u OVH:</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_no_antispam_config" qtlid="192929">Priorita: <strong>{0}</strong>; cíl: <strong>{1}</strong></translation>
-   <translation id="exchange_tab_domain_diagnostic_mx_antispam" qtlid="319908">Pokud použijete autoritativní režim (tedy pouze Exchange) nebo neautoritativní režim se službou e-mail od OVH:</translation>
+   <translation id="exchange_tab_domain_diagnostic_mx_antispam" qtlid="447677">Pokud požíváte autoritativní režim (pouze Exchange) nebo neautoritativní režim s e-mailovým systémem (sdílené e-mailové řešení) hostovaným u OVH:</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_antispam_config" qtlid="192955">Priorita: <strong>{0}</strong>; cíl: <strong>{1}</strong><br /> Priorita: <strong>{2}</strong>; cíl: <strong>{3}</strong><br /> Priorita: <strong>{4}</strong>; cíl: <strong>{5}</strong><br /> Priorita: <strong>{6}</strong>; cíl: <strong>{7}</strong><br /></translation>
    <translation id="exchange_tab_domain_diagnostic_mx_no_ovh" qtlid="349101">Pokud doména není spravována stejným zákaznickým identifikátorem jako řešení Exchange, nebo pokud doména není hostována u OVH, není volba automatické konfigurace dostupná. V takovém případě prosím vytvořte MX záznam na doméně manuálně, a to za použití níže uvedených informací.</translation>
    <translation id="exchange_tab_domain_diagnostic_mx_recap" qtlid="192981">MX záznam bude přidán do DNS zóny Vaší domény. Pozor: existující záznam bude vymazán.</translation>
@@ -383,7 +385,7 @@
    <translation id="exchange_tab_domain_diagnostic_srv_toolbox_ok" qtlid="137491">Automatické nastavení dokončeno</translation>
    <translation id="exchange_tab_domain_error_message" qtlid="144045">Při načítání Vašich domén došlo k chybě</translation>
    <translation id="exchange_tab_domain_diagnostic_cname" qtlid="129847">CNAME</translation>
-   <translation id="exchange_tab_domain_status" qtlid="8230">Stav</translation>
+   <translation id="exchange_tab_domain_status" qtlid="447690">Stav</translation>
    <translation id="exchange_tab_domain_task_in_progress" qtlid="2690">Probíhá zpracování...</translation>
    <translation id="exchange_tab_domain_validation" qtlid="33802">Schválení</translation>
    <translation id="exchange_tab_domain_validation_doing" qtlid="136646">Probíhající schvalování domén</translation>
@@ -392,8 +394,9 @@
    <translation id="exchange_tab_domain_validation_cname_details" qtlid="363401">Za účelem ověření, že jste skutečným vlastníkem domény, vytvořte prosím CNAME záznam: <br /><br /><span class="bold">{0}.{1}</span> směrující na <span class="bold">{2}</span>. Na provedení této operace máte 48 hodin.</translation>
    <translation id="exchange_tab_domain_add_domain" qtlid="8602">Přidat doménu</translation>
    <translation id="exchange_tab_domain_delete_domain" qtlid="137556">Odebrat tuto doménu ze služeb Exchange</translation>
+   <translation id="exchange_tab_domain_creating" qtlid="26791">Vytvoření</translation>
    <translation id="exchange_tab_domain_delete_domain_accounts_warning" qtlid="148227">Tato doména nemůže být vymazána a je stále používána jedním či více účty Exchange</translation>
-   <translation id="exchange_tab_domain_NON_AUTHORITATIVE" qtlid="136672">Neautoritativní</translation>
+   <translation id="exchange_tab_domain_NON_AUTHORITATIVE" qtlid="447703">Neautoritativní</translation>
    <translation id="exchange_tab_domain_AUTHORITATIVE" qtlid="58807">Autoritativní</translation>
    <translation id="exchange_tab_domain_warning" qtlid="136347">Pozor!</translation>
    <translation id="exchange_tab_domain_partial" qtlid="137569">Některé domény se nenačetli správně. Pro vyřešení tohoto problému obnovte stránku.</translation>
@@ -435,7 +438,7 @@
    <translation id="exchange_ACTION_add_account_title" qtlid="143225">Přidat účet Exchange</translation>
    <translation id="exchange_ACTION_add_account_step1_email_label" qtlid="137244">E-mailový účet</translation>
    <translation id="exchange_ACTION_add_account_step1_first_name_label" qtlid="23323">Jméno</translation>
-   <translation id="exchange_ACTION_add_account_step1_last_name_label" qtlid="3818">Příjmení</translation>
+   <translation id="exchange_ACTION_add_account_step1_last_name_label" qtlid="3818">Název</translation>
    <translation id="exchange_ACTION_add_account_step1_display_name_label" qtlid="23515">Zobrazit název</translation>
    <translation id="exchange_ACTION_add_account_step1_password_label" qtlid="2270">Heslo</translation>
    <translation id="exchange_ACTION_add_account_step1_password_confirmation_label" qtlid="9983">Potvrzení hesla</translation>
@@ -448,7 +451,7 @@
    <translation id="exchange_ACTION_add_account_step2_confirmation_intro" qtlid="136841">Váš účet:</translation>
    <translation id="exchange_ACTION_add_account_step2_email_label" qtlid="137244">E-mailový účet</translation>
    <translation id="exchange_ACTION_add_account_step2_first_name_label" qtlid="23323">Jméno</translation>
-   <translation id="exchange_ACTION_add_account_step2_last_name_label" qtlid="3818">Příjmení</translation>
+   <translation id="exchange_ACTION_add_account_step2_last_name_label" qtlid="3818">Název</translation>
    <translation id="exchange_ACTION_add_account_step2_display_name_label" qtlid="23515">Zobrazit název</translation>
    <translation id="exchange_ACTION_add_account_step2_password_label" qtlid="2270">Heslo</translation>
    <translation id="exchange_ACTION_add_account_step2_password_confirmation_label" qtlid="9983">Potvrzení hesla</translation>
@@ -475,7 +478,7 @@
    <translation id="exchange_ACTION_update_account_step1_type_BASIC" qtlid="48986">Basic</translation>
    <translation id="exchange_ACTION_update_account_step1_type_ENTERPRISE" qtlid="49022">Společnost / OSVČ</translation>
    <translation id="exchange_ACTION_update_account_step1_first_name_label" qtlid="23323">Jméno</translation>
-   <translation id="exchange_ACTION_update_account_step1_last_name_label" qtlid="3818">Příjmení</translation>
+   <translation id="exchange_ACTION_update_account_step1_last_name_label" qtlid="3818">Název</translation>
    <translation id="exchange_ACTION_update_account_step1_display_name_label" qtlid="23515">Zobrazit název</translation>
    <translation id="exchange_ACTION_update_account_step1_password_label" qtlid="2270">Heslo</translation>
    <translation id="exchange_ACTION_update_account_step1_password_confirmation_label" qtlid="9983">Potvrzení hesla</translation>
@@ -498,7 +501,7 @@
    <translation id="exchange_ACTION_update_account_step2_confirmation_intro" qtlid="136841">Váš účet:</translation>
    <translation id="exchange_ACTION_update_account_step2_email_label" qtlid="137244">E-mailový účet</translation>
    <translation id="exchange_ACTION_update_account_step2_first_name_label" qtlid="23323">Jméno</translation>
-   <translation id="exchange_ACTION_update_account_step2_last_name_label" qtlid="3818">Příjmení</translation>
+   <translation id="exchange_ACTION_update_account_step2_last_name_label" qtlid="3818">Název</translation>
    <translation id="exchange_ACTION_update_account_step2_display_name_label" qtlid="23515">Zobrazit název</translation>
    <translation id="exchange_ACTION_update_account_step2_password_label" qtlid="139650">Heslo</translation>
    <translation id="exchange_ACTION_update_account_step2_outlook_label" qtlid="136724">Licence Outlook</translation>
@@ -549,11 +552,11 @@
    <translation id="exchange_tab_domain_add_step1_order_domain_option" qtlid="136997">Objednat doménu</translation>
    <translation id="exchange_tab_domain_add_step1_domain_none" qtlid="434538">Nebyl nalezen žádný výsledek</translation>
 
-   <translation id="exchange_tab_domain_add_step3_cover_guide" qtlid="139572">Náhled video příručky</translation>
+   <translation id="exchange_tab_domain_add_step3_cover_guide" qtlid="139572">Nebyl nalezen žádný výsledek</translation>
 
    <translation id="exchange_tab_domain_add_step1_main_domain" qtlid="191070">Hlavní doména organizace</translation>
    <translation id="exchange_tab_domain_add_step1_main_domain_tooltip" qtlid="191083">Hlavní doména organizace</translation>
-   <translation id="exchange_tab_domain_add_step1_new_organization_intro" qtlid="191096">Doména Vaší organizace bude "{0}"</translation>
+   <translation id="exchange_tab_domain_add_step1_new_organization_intro" qtlid="447716">Doména Vaší organizace bude <strong>{0}</strong></translation>
    <translation id="exchange_tab_domain_add_step1_new_organization_placeholder" qtlid="191109">Název organizace</translation>
    <translation id="exchange_tab_domain_add_step2_main_domain" qtlid="191122">Hlavní doména</translation>
    <translation id="exchange_tab_domain_add_step2_organization" qtlid="32278">Organizace</translation>
@@ -564,6 +567,7 @@
    <translation id="exchange_tab_domain_add_step1_attach_organization_intro" qtlid="191135">Doména bude zahrnuta do následující organizace:</translation>
 
    <translation id="exchange_tab_domain_add_set_auto_display" qtlid="416488">Zaškrtněte toto políčko, abyste zabránili opětovnému otevření tohoto okna.</translation>
+   <translation id="exchange_tab_domain_add_goToWizardButton" qtlid="449388">Preferuji použití <br />průvodce konfigurací</translation>
 
    <translation id="exchange_tab_domain_add_step1_order_domain_desc1" qtlid="167873">K potvrzení objednávky a platbě prosím pokračujte kliknutím na tlačítko "Objednat".</translation>
    <translation id="exchange_tab_domain_add_step1_order_domain_desc2" qtlid="144175">Otevře se Vám nová záložka a budete automaticky přesměrováni do platebního rozhraní OVH.</translation>
@@ -571,13 +575,13 @@
    <translation id="exchange_tab_domain_step1_helpwizard_subdomain" qtlid="397559">Pro přidání subdomény pro některou z Vašich domén OVH zaškrtněte prosím volbu "Zadat doménu, která není spravována Vaším účtem OVH". Subdoménu následně zadejte do příslušného pole.</translation>
    <translation id="exchange_tab_domain_add_step2_which_domain_type" qtlid="137998">O jaký typ domény <span class="italic">{0}</span> se jedná?</translation>
    <translation id="exchange_tab_domain_add_step2_auth_intro" qtlid="140859">Vaše doména <span class="italic">{0}</span> bude nastavena v autoritativním režimu.</translation>
-   <translation id="exchange_tab_domain_add_step2_non_auth_intro" qtlid="366372">Vaše doména <span class="italic">{0}</span> bude nakonfigurována v neautoritativním režimu.</translation>
+   <translation id="exchange_tab_domain_add_step2_non_auth_intro" qtlid="447729">Vaše doména <span class="italic">{0}</span> bude nakonfigurována v neautoritativním režimu.</translation>
    <translation id="exchange_tab_domain_add_step2bis_intro" qtlid="316944">Vyberte režim své domény:</translation>
 
    <translation id="exchange_tab_domain_add_step2_srv_checkbox" qtlid="138011">Nasatvit SRV automaticky (autodiscover)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_checkbox" qtlid="139585">Automatická konfigurace MX (příjem e-mailů)</translation>
    <translation id="exchange_tab_domain_add_step2_mx_tooltip" qtlid="140209">Pozor, automatická konfigurace MX záznamu může zapříčinit přerušení přijímání e-mailů na schránky vytvořené na této doméně.</translation>
-   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="273909">Tato volba umožní Vašemu e-mailovému klientu (jako je Outlook nebo Mail) automaticky detekovat Vaše nastavení připojení (v závislosti na kompatibilitě s protokolem MAPI).</translation>
+   <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="447742">Zaškrtnutím této možnosti umožníte svému e-mailovému klientovi (Outlook, Mail apod.) automaticky detekovat parametry pro připojení.</translation>
    <translation id="exchange_tab_domain_add_step3_srv_confirmation" qtlid="137816">Nastavení SRV</translation>
    <translation id="exchange_tab_domain_add_step3_mx_confirmation" qtlid="137829">Nastavení MX</translation>
    <translation id="exchange_tab_domain_add_step3_mx_replay" qtlid="316957">Cílový mailserver</translation>
@@ -590,18 +594,15 @@
    <translation id="exchange_tab_domain_modify_failure" qtlid="137075">Při aktualizaci domény došlo k chybě.</translation>
    <translation id="exchange_tab_domain_modify_in_progress" qtlid="137088">Probíhá přesun na {0}</translation>
    <translation id="exchange_tab_domain_inverse_NON_AUTHORITATIVE" qtlid="58807">Autoritativní</translation>
-   <translation id="exchange_tab_domain_inverse_AUTHORITATIVE" qtlid="136672">Neautoritativní</translation>
+   <translation id="exchange_tab_domain_inverse_AUTHORITATIVE" qtlid="447755">Neautoritativní</translation>
    <translation id="exchange_tab_domain_mode_AUTHORITATIVE" qtlid="316970">Autoritativní (pouze Exchange)</translation>
-   <translation id="exchange_tab_domain_mode_NON_AUTHORITATIVE" qtlid="316983">Neautoritativní (Exchange + jiná e-mailová služba)</translation>
+   <translation id="exchange_tab_domain_mode_NON_AUTHORITATIVE" qtlid="447768">Neautoritativní (Exchange + další e-mailové řešení)</translation>
    <translation id="exchange_tab_domain_AUTHORITATIVE_info" qtlid="324847">Autoritativní režim neumožňuje použití jiných emailových služeb na doméně mimo účtů Exchange. Tento režim umožňuje aktivaci antispamu Vade Secure.</translation>
-   <translation id="exchange_tab_domain_NON_AUTHORITATIVE_info" qtlid="324860">Neautoritativní režim umožňuje používat Exchange spolu s jinou e-mailovou službou. Antispam Vade Secure je kompatibilní pouze pokud pop/imap jsou hostovány u OVH (mxplan nebo webhosting). V takovém případě musíte zadat jako cílový e-mailový server: mx1.mail.ovh.net</translation>
+   <translation id="exchange_tab_domain_NON_AUTHORITATIVE_info" qtlid="447781">Neautoritativní režim připouští koexistenci služby Exchange a dalšího e-mailového řešení. Antispam Vade Secure je kompatibilní za předpokladu, že jsou účty pop/imap hostovány u společnosti OVH (MX Plan či webhosting). V takovém případě je do kolonky "cílový server" zapotřebí zadat "mx1.mail.ovh.net".</translation>
    <translation id="exchange_tab_domain_target_mail_server_label" qtlid="316957">Cílový mailserver</translation>
    <translation id="exchange_tab_domain_noovh_mx_info" qtlid="317126">Změny záznamů MX a SRV musí být provedeny ručně, ve Vaší DNS zóně. Jakmile bude potvrzen záznam CNAME, najdete všechny potřebné informace v sekci asociovaných domén.</translation>
    <translation id="exchange_tab_domain_modify_domain" qtlid="137101">Úprava domény</translation>
-<translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="416397;416410;416410;169498;416423;416449">
-Anti-spam Vade Secure je kompatibilní s autoritativním režimem (pouze pokud jsou Vaše účty pop/imap hostovány u OVH). V takovém případě je vhodné použít: <strong qtlid="266365">{0}</strong>, <strong qtlid="78906">{1}</strong>, <strong qtlid="183112">{2}</strong> a <strong qtlid="292228">{3}</strong>
-<br/><br/> Pokud používáte neautoritativní režim s e-mailovými účty, které nejsou hostovány u OVH, je potřeba použít: <strong qtlid="416436">{4}</strong> (viz sekce asociované domény)
-</translation>
+   <translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="444667">Antispam Vade Secure je kompatibilní s neautoritativním režimem (pouze pokud jsou Vaše pop/imap účty hostovány u OVH). V takovém případě doporučujeme použít následující mailové servery: <strong>{0}</strong>, <strong>{1}</strong>, <strong>{2}</strong> a <strong>{3}</strong><br/><br/> Pokud chcete neautoritativní režim používat s e-mailovými účty, které nejsou hostovány u OVH, musíte použít následující mailový server: <strong>{4}</strong> (viz sekce "asociované domény").</translation>
    <translation id="exchange_tab_domain_modify_title" qtlid="137920">Opravdu si přejete změnit následující doménu ze svých služeb Exchange?</translation>
    <translation id="exchange_tab_domain_modify_loop_warning" qtlid="210319">Pozor: nekonečná smyčka!</translation>
    <translation id="exchange_tab_domain_modify_domain_warning" qtlid="210332">Neplatná doména.</translation>
@@ -647,7 +648,7 @@ Anti-spam Vade Secure je kompatibilní s autoritativním režimem (pouze pokud j
    <translation id="exchange_tab_DISCLAIMER_table_empty" qtlid="152258">Nemáte žádné podpisy.</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_content" qtlid="152271">Obsah</translation>
    <translation id="exchange_tab_DISCLAIMER_associated_domains" qtlid="133110">Přiřazené domény</translation>
-   <translation id="exchange_tab_DISCLAIMER_state_header" qtlid="8230">Stav</translation>
+   <translation id="exchange_tab_DISCLAIMER_state_header" qtlid="447794">Stav</translation>
    <translation id="exchange_tab_DISCLAIMER_state_doing_tooltip" qtlid="143863">Právě probíhá úkol, nebo je nějaký naplánovaný</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_outside_only" qtlid="152284">Pouze externí</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_outside_only_tooltip" qtlid="152297">Podpis použit pouze pro odchozí e-maily</translation>
@@ -658,7 +659,7 @@ Anti-spam Vade Secure je kompatibilní s autoritativním režimem (pouze pokud j
    <translation id="exchange_tab_DISCLAIMER_menu_delete" qtlid="2414">Odstranit</translation>
    <translation id="exchange_ACTION_add_disclaimer_button" qtlid="152206">Přidat podpis</translation>
    <translation id="exchange_ACTION_add_disclaimer_title" qtlid="152206">Přidat podpis</translation>
-   <translation id="exchange_ACTION_disclaimer_name" qtlid="3818">Příjmení</translation>
+   <translation id="exchange_ACTION_disclaimer_name" qtlid="3818">Název</translation>
    <translation id="exchange_ACTION_disclaimer_associated_domains" qtlid="133110">Přiřazené domény</translation>
    <translation id="exchange_ACTION_disclaimer_variables" qtlid="152323">Proměnná</translation>
    <translation id="exchange_ACTION_disclaimer_insert" qtlid="152336">Vložit proměnnou</translation>
@@ -676,7 +677,7 @@ Anti-spam Vade Secure je kompatibilní s autoritativním režimem (pouze pokud j
    <translation id="exchange_ACTION_add_disclaimer_option_FirstName" qtlid="23323">Jméno</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_HomePhoneNumber" qtlid="152401">Pevná linka</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Initials" qtlid="152414">Iniciály</translation>
-   <translation id="exchange_ACTION_add_disclaimer_option_LastName" qtlid="3818">Příjmení</translation>
+   <translation id="exchange_ACTION_add_disclaimer_option_LastName" qtlid="3818">Název</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Manager" qtlid="152427">Zodpovědná osoba</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_MobileNumber" qtlid="152440">Mobilní číslo</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Name" qtlid="109614">Celé jméno</translation>
@@ -687,7 +688,7 @@ Anti-spam Vade Secure je kompatibilní s autoritativním režimem (pouze pokud j
    <translation id="exchange_ACTION_add_disclaimer_option_OtherPhoneNumber" qtlid="152479">Telefon 2</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_PagerNumber" qtlid="152492">Číslo pageru</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_PhoneNumber" qtlid="152505">Telefonní číslo</translation>
-   <translation id="exchange_ACTION_add_disclaimer_option_State" qtlid="8230">Stav</translation>
+   <translation id="exchange_ACTION_add_disclaimer_option_State" qtlid="447807">Stav</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Street" qtlid="152518">Adresa</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Title" qtlid="16469">Titul</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_UserLogonName" qtlid="46792">Identifikátor</translation>
@@ -737,12 +738,12 @@ Anti-spam Vade Secure je kompatibilní s autoritativním režimem (pouze pokud j
    <translation id="exchange_tab_RESOURCES_remove_resource_failure" qtlid="156368">Při mazání zdrojového účtu došlo k chybě.</translation>
    <translation id="exchange_tab_RESOURCES_table_empty" qtlid="156381">Nemáte žádné zdrojové účty.</translation>
    <translation id="exchange_tab_RESOURCES_error_message" qtlid="156394">Při načítání zdrojů došlo k chybě.</translation>
-   <translation id="exchange_tab_RESOURCES_table_account" qtlid="3818">Příjmení</translation>
+   <translation id="exchange_tab_RESOURCES_table_account" qtlid="3818">Název</translation>
    <translation id="exchange_tab_RESOURCES_table_type" qtlid="2642">Typ</translation>
    <translation id="exchange_tab_RESOURCES_table_capacity" qtlid="4334">Kapacita</translation>
    <translation id="exchange_tab_RESOURCES_table_allow_conflicts" qtlid="156407">Povolení konfliktu</translation>
    <translation id="exchange_tab_RESOURCES_table_email" qtlid="69509">E-mail</translation>
-   <translation id="exchange_tab_RESOURCES_table_state" qtlid="8230">Stav</translation>
+   <translation id="exchange_tab_RESOURCES_table_state" qtlid="447820">Stav</translation>
    <translation id="exchange_tab_RESOURCES_table_state_task" qtlid="156420">Probíhající operace</translation>
    <translation id="exchange_tab_RESOURCES_action_add_resource_account" qtlid="63710">Přidat adresář zdrojů</translation>
    <translation id="exchange_tab_RESOURCES_type_EQUIPMENT" qtlid="82063">Vybavení</translation>
@@ -875,7 +876,7 @@ Klikněte na štítek a budete přesměrováni na e-mail, který přišel po zab
    <translation id="exchange_tab_GROUPS_all_table_address" qtlid="11315">E-mailová adresa</translation>
    <translation id="exchange_tab_GROUPS_all_table_manager" qtlid="81487">Administrátoři</translation>
    <translation id="exchange_tab_GROUPS_all_table_user" qtlid="32206">Kontakty</translation>
-   <translation id="exchange_tab_GROUPS_all_table_status" qtlid="8230">Stav</translation>
+   <translation id="exchange_tab_GROUPS_all_table_status" qtlid="447833">Stav</translation>
    <translation id="exchange_tab_GROUPS_all_table_empty" qtlid="150346">Nemáte žádné skupiny</translation>
    <translation id="exchange_tab_GROUPS_all_error_message" qtlid="150359">Při načítání seznamu skupin došlo k chybě.</translation>
    <translation id="exchange_tab_GROUPS_all_add_ml_button" qtlid="150372">Vytvořit skupinu kontaktů</translation>
@@ -1079,7 +1080,7 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_externalEmailAddress" qtlid="30430">Adresa</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_displayName" qtlid="80922">Zobrazit jméno</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_creationDate" qtlid="4358">Vytvořeno</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state" qtlid="8230">Stav</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state" qtlid="447846">Stav</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_CREATING" qtlid="26227">Vytváří se</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_DELETING" qtlid="133929">Odstraňování</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_REOPENING" qtlid="171279">Opětovné otevírání...</translation>
@@ -1101,7 +1102,7 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_email_invalid" qtlid="171370">E-mailová adresa není platná</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_organization2010_label" qtlid="32278">Organizace</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_first_name_label" qtlid="23323">Jméno</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_last_name_label" qtlid="3818">Příjmení</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_last_name_label" qtlid="3818">Název</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_display_name_label" qtlid="23515">Zobrazit název</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_GAL_label" qtlid="184932">Skrýt v Outlooku</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_option_fail" qtlid="137621">Při načítání možností účtu Exchange došlo k chybě.</translation>
@@ -1111,7 +1112,7 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_question" qtlid="171435">Opravdu chcete přidat následující externí kontakt?</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_email_label" qtlid="137244">E-mailový účet</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_first_name_label" qtlid="23323">Jméno</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_last_name_label" qtlid="3818">Příjmení</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_last_name_label" qtlid="3818">Název</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_display_name_label" qtlid="23515">Zobrazit název</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_GAL_label" qtlid="191954">Skrýt adresu v Outlook</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_GAL_true" qtlid="34776">Ano</translation>
@@ -1124,7 +1125,7 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_email_label" qtlid="137244">E-mailový účet</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_email_invalid" qtlid="171370">E-mailová adresa není platná</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_first_name_label" qtlid="23323">Jméno</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_last_name_label" qtlid="3818">Příjmení</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_last_name_label" qtlid="3818">Název</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_display_name_label" qtlid="23515">Zobrazit název</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_GAL_label" qtlid="191954">Skrýt adresu v Outlook</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_mandatory_fields" qtlid="137634">Povinná pole</translation>
@@ -1133,7 +1134,7 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_question" qtlid="171500">Opravdu si přejete změnit následující externí kontakt?</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_email_label" qtlid="137244">E-mailový účet</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_first_name_label" qtlid="23323">Jméno</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_last_name_label" qtlid="3818">Příjmení</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_last_name_label" qtlid="3818">Název</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_display_name_label" qtlid="23515">Zobrazit název</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_GAL_label" qtlid="191954">Skrýt adresu v Outlook</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_GAL_true" qtlid="34776">Ano</translation>
@@ -1363,7 +1364,7 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
    <translation id="exchange_tab_SHARED_header_path" qtlid="6838">Cesta</translation>
    <translation id="exchange_tab_SHARED_header_type" qtlid="2642">Typ</translation>
    <translation id="exchange_tab_SHARED_header_access" qtlid="201510">Přístupová práva</translation>
-   <translation id="exchange_tab_SHARED_header_status" qtlid="8230">Stav</translation>
+   <translation id="exchange_tab_SHARED_header_status" qtlid="447859">Stav</translation>
    <translation id="exchange_tab_SHARED_header_access_PLAIN" qtlid="61656">Adresář</translation>
    <translation id="exchange_tab_SHARED_header_access_CALENDAR" qtlid="201523">Kalendář</translation>
    <translation id="exchange_tab_SHARED_header_access_CONTACTS" qtlid="32206">Kontakty</translation>
@@ -1433,9 +1434,9 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
    <translation id="exchange_action_SHARED_permissions_delete_error" qtlid="202056">Při mazání sdílení došlo k chybě.</translation>
 
    <translation id="exchange_action_SHARED_permissions_update_title" qtlid="202108">Nastavit přístupová oprávnění</translation>
-   <translation id="exchange_action_SHARED_permissions_update_intro" qtlid="209190">Přístupová oprávnění umožňují účtům Exchange <sup>1</sup> mít určitá oprávnění pro sdílení {0}</translation>
+   <translation id="exchange_action_SHARED_permissions_update_intro" qtlid="209190">Přístupové oprávnění umožňuje účtům Exchange <sup>1</sup> mít určitá oprávnění pro sdílení {0}</translation>
    <translation id="exchange_action_SHARED_permissions_update_legend" qtlid="209203">Základní účty Exchange nebudou zobrazeny, protože nejsou uzpůsobeny pro sdílení oprávnění.</translation>
-   <translation id="exchange_action_SHARED_permissions_update_resume_intro" qtlid="202147">Shrnutí přístupových oprávnění pro sdílení {0}:</translation>
+   <translation id="exchange_action_SHARED_permissions_update_resume_intro" qtlid="202147">Shrnutí změn v přístupových oprávněních pro sdílení {0}:</translation>
    <translation id="exchange_action_SHARED_permissions_update_success_message" qtlid="202160">Přístupová oprávnění pro sdílení <span class="bold">{0}</span> budou změněna.</translation>
    <translation id="exchange_action_SHARED_permissions_update_partial_message" qtlid="202173">Váš požadavek na aktualizaci přístupových oprávnění pro sdílení <span class="bold">{0}</span> byla částečně přijata, ale došlo k nějakým problémům.</translation>
    <translation id="exchange_action_SHARED_permissions_update_error_message" qtlid="202186">Při aktualizaci přístupových oprávnění pro sdílení <span class="bold">{0}</span> došlo k chybám.</translation>
@@ -1498,4 +1499,147 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
    <translation id="exchange_order_view_button_label" qtlid="368245">Objednat Exchange</translation>
    <translation id="exchange_order_view_button_attached_title" qtlid="368258">Objednat účet pro {0}</translation>
    <translation id="exchange_order_view_button_stand_alone_title" qtlid="368271">Objednat novou službu Exchange</translation>
+
+<!-- Wizard -->
+   <translation id="exchange_wizardHostedCreation_welcome_progressBar_addDomainName" qtlid="449401">Konfigurace domény</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_progressBar_createEmailAddresses" qtlid="449414">Přizpůsobení e-mailových adres</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_progressBar_summary" qtlid="82725">Shrnutí</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_header" qtlid="449427">Vaše služba Microsoft Exchange<br/> není doposud nakonfigurována</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_subtext" qtlid="449440">Nakonfigurujte svou službu pro přijímání e-mailů v rámci několika minut.</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_startButton" qtlid="449453">Začít</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_standardConfiguratorButton" qtlid="449466">Preferuji použití standardního konfigurátoru</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_closeButton" qtlid="4670">Zavřít</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_closeAndSaveButton" qtlid="449479">Zavřít a již více nezobrazovat průvodce konfigurací</translation>
+
+   <translation id="exchange_wizardHostedCreation_addDomainName_subtext" qtlid="449492">Konfigurace služby Microsoft Exchange</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_header" qtlid="449505">Přidání domény ke službě Exchange</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_ifNoDomain" qtlid="449518">Pokud ještě nemáte doménu, </translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_goToOffers" qtlid="449531">podívejte se na aktuální nabídky na našich webových stránkách.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_creationError" qtlid="449544">Tuto doménu nelze vytvořit. Zvolte prosím jinou doménu.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_buttonContinueText" qtlid="449557">Přidat a pokračovat</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_buttonDontContinueText" qtlid="449570">Přidat a nakonfigurovat později</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameValidationDelay" qtlid="449583">Probíhá ověřování domény asociované se serverem Exchange.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameValidation_explanation" qtlid="159202">Tato operace může trvat několik minut.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_header" qtlid="449596">Zvolte doménu</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_placeholder" qtlid="84153">Zvolte</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_domainNotInList" qtlid="449609">Má doména v níže uvedeném seznamu chybí</translation>
+
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_header" qtlid="4406">Konfigurace</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isDomainOnlyExchange" qtlid="449622">Budete s touto doménou používat pouze řešení OVH Exchange?</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isDomainEmail" qtlid="449635">Jedná se o službu sdíleného e-mailu OVH (webhosting nebo MX Plan), nebo o službu OVH E-mail Pro?</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_domainConfigurationAlert" qtlid="449648">Vaše doména aktuálně pro příjem e-mailů používá následující server: <strong>{0}</strong>. E-maily odeslané na adresy mimo OVH budou vraceny zpět.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isExchangeOnly" qtlid="34776">Ano</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isNotExchangeOnly" qtlid="34788">Ne</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isUsedByMails" qtlid="34776">Ano</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isNotUsedByMails" qtlid="449661">Nikoli, definujte Simple Mail Transfer Protocol (SMTP) server&#13;
+&#13;
+&#13;
+</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isEmailService" qtlid="449674">Vaše doména bude pro příjem e-mailů používat server <strong>mx1.mail.ovh.net</strong>.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_header" qtlid="449687">Simple Mail Transfer Protocol (SMTP) server</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_title" qtlid="449700">Konfigurace Vaší DNS zóny</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_tooltip" qtlid="449713">DNS zóna umožňuje provádět správu nejrůznějších služeb spjatých s Vaší doménou.<br /><br />Příklad: MX záznam udává, který mailový server je k dané doméně přiřazen.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip_1" qtlid="449726">SMTP server zasáhne v případě obdržení e-mailů adresovaných účtům, které nejsou hostovány v rámci Vaší služby OVH Exchange.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip_2" qtlid="449739">Tyto e-maily budou automaticky přeposílány na SMTP server.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_header" qtlid="449752">Jak si přejete nakonfigurovat svou DNS zónu?</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_auto" qtlid="273319">Automatická konfigurace</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_manual" qtlid="273332">Ruční konfigurace</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_manual_explanation1" qtlid="449765">Přeji si provést manuální konfiguraci MX a SRV záznamů</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_manual_explanation2" qtlid="449778">a přijímání e-mailů zahájit až ve mnou definovaném okamžiku.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_nonAuthoritative" qtlid="449791">Zadejte prosím SMTP službu pro přeposílání e-mailů, které byly odeslány na adresy hostované mimo OVH.</translation>
+
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_header" qtlid="449804">Konfigurace DNS zóny</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_explanation" qtlid="449817">Jelikož je Vaše doména spravována jiným zákaznickým identifikátorem či vlastníkem, musíte aktualizaci záznamu CNAME ve své DNS zóně provést manuálně. Pro přidání tohoto záznamu budete potřebovat níže uvedené informace.<br /><br /> Záznam CNAME Vám umožní provést ověření externí domény v rámci platformy OVH. Tento záznam nebude mít žádný vliv na aktuální konfiguraci Vaší domény.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_dnsZone_explanation" qtlid="449830">DNS zóna umožňuje provádět správu nejrůznějších služeb spjatých s doménou. Svou doménu tak například můžete prostřednictvím záznamu A přiřadit k webhostingu, nebo k ní pomocí záznamu MX přidat e-mailové řešení.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_inputHeader" qtlid="449843">Zadejte doménu</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_example" qtlid="449856">Příklad: domena1.cz</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_placeholder" qtlid="66428">Název domény</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_cnameToCopy_header" qtlid="449869">CNAME záznam ke zkopírování</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_targetToCopy_header" qtlid="449882">Cíl ke zkopírování</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_cnameToCopy_explanation" qtlid="449895">Tento CNAME záznam musí být přidán do DNS zóny Vaší domény do 48 hodin. Po uplynutí této lhůty bude nutné vygenerovat nový záznam.<br />Jakmile provedete požadované změny v konfiguraci, bude možné provést opětovnou instalaci služby Exchange.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_input_patternError" qtlid="449908">Tento záznam musí mít formát domény a nesmí obsahovat nic jiného než alfanumerické znaky, tečky (.), znaménka plus (+), pomlčky a podtržítka (- nebo _).</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_input_alreadyExists" qtlid="449921">Tuto doménu můžete vybrat přímo z níže uvedeného seznamu domén.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_waitingForActivation" qtlid="449934">Toto tlačítko se aktivuje jakmile bude dokončeno ověření.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_confirmButton" qtlid="31498">Dokončit</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_retrieval_error" qtlid="449947">Při načítání seznamu Vašich domén došlo k chybě.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_error" qtlid="449960">Při vytváření serveru došlo k chybě.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyNonAuthoritativeEmailPro" qtlid="449973">Vaše doména je již asociována se službou OVH E-mail Pro. Vaše služba byla nakonfigurována v optimálním režimu.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAuthoritativeEmailPro">Votre domaine est déjà associé à un service E-mail Pro OVH en mode autoritatif. Pour pouvoir continuer la configuration, veuillez paramétrer ce domaine en mode non-autoritatif pour le service E-mail Pro OVH associé.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAssociated_error" qtlid="449986">Doména <strong>{0}</strong> je již asociována se službou Exchange či Sharepoint. Aby ji bylo možné asociovat s touto službou, musíte ji nejdříve odebrat z některé z výše uvedených služeb.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_cancelOperation_button" qtlid="449999">Ukončit instalační proces</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_cancelOperation_details" qtlid="450012">Opětovnou konfiguraci domény můžete zahájit kliknutím na tlačítko "Přidat doménu" v záložce "Asociované domény".</translation>
+
+   <translation id="exchange_wizardHostedCreation_emailCreation_header" qtlid="450025">Přizpůsobte si své e-mailové účty Exchange</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_introduction_1" qtlid="450038">Vaše služba Exchange dovoluje přidat ještě {0} e-mailových účtů.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_introduction_2" qtlid="450051">Další e-mailové účty si můžete přiobjednat v sekci <strong>"E-mailové účty"</strong>, v rozhraní služby Hosted Exchange.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_header_email" qtlid="11315">E-mailová adresa</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_header_displayName" qtlid="23515">Zobrazit název</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_header_state" qtlid="8230">Stav</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_operationInProgress" qtlid="450064">Své e-mailové účty budete moci upravovat jakmile budou ukončeny právě probíhající operace.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_personnalizeButton" qtlid="450077">Upravit účet</translation>
+
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_login_header" qtlid="11315">E-mailová adresa</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_login_required" qtlid="450090">Povinné pole.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_login_pattern" qtlid="450103">Část před "@" nesmí obsahovat nic jiného než alfanumerické znaky, tečky (.), pomlčky a podtržítka (- nebo _).</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_firstName_title" qtlid="450116">Upravit e-mailový účet</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_firstName_header" qtlid="23323">Jméno</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_name_header" qtlid="3818">Název</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_displayName_header" qtlid="23515">Zobrazit název</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_password_header" qtlid="2270">Heslo</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_password_error_confirmation" qtlid="450129">Hesla musí být identická.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_password_error_short" qtlid="450142">V závislosti na Vašem aktuálním bezpečnostním nastavení musí být délka hesla větší než {0} znaků.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_password_error_exchangePreferences" qtlid="450155">V závislosti na Vašem aktuálním bezpečnostním nastavení musí heslo obsahovat malá i velká písmena, čísla a/nebo speciální znaky.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_passwordConfirmation_header" qtlid="9983">Potvrzení hesla</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_emailAlreadyUsed" qtlid="450168">Tato e-mailová adresa je již používána e-mailovou doménou. Adresu můžete migrovat na svůj Hosted Exchange účet.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_emailAlreadyUsed_ifWontChange" qtlid="450181">Pokud si adresu nepřejete migrovat, změňte prosím e-mailovou adresu v předcházejícím kroku.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migrationPassword_error" qtlid="450194">Nesprávné heslo. Zkuste to prosím znovu.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_nextStepButton" qtlid="450207">Dokončit konfiguraci</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_serviceParametersRetrieval_error" qtlid="450220">Při načítání konfiguračních parametrů služby Exchange došlo k chybě.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_accountCreation_error" qtlid="450233">Při vytváření e-mailového účtu došlo k chybě.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_accountCreation_alreadyExist_error" qtlid="450246">E-mailová adresa {0} již existuje.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migrationChecking_error" qtlid="450259">Tento e-mailový účet nelze migrovat na službu Exchange.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migrationChecking_mxPlanTechContact" qtlid="450272">Tento e-mailový účet nelze automaticky migrovat na službu Exchange. Musíte být administrátor a technický kontakt obou služeb.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_error" qtlid="450285">Při migraci e-mailového účtu došlo k chybě.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_question_1" qtlid="450298">Tento e-mailový účet již existuje. Přejete si ho migrovat na adresu Exchange?</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_question_2" qtlid="450311">Všechny e-maily z tohoto účtu budou od nynějška dostupné prostřednictvím adresy Exchange.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_migration_warning" qtlid="436892">Pozor, migrace nezahrnuje následující položky:  <br />- filtry; <br />- automatické odpovědi; <br />- mailing listy; <br />- Roundcube kontakty.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_wrongPassword_error" qtlid="450324">Nesprávné heslo.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_addButton_title" qtlid="37923">Přidat</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_nextButton_title" qtlid="37923">Přidat</translation>
+
+   <translation id="exchange_wizardHostedCreation_emailCreation_update_firstName_title" qtlid="450337">Upravit e-mailový účet</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_updateButton_title" qtlid="37875">Upravit</translation>
+
+   <translation id="exchange_wizardHostedCreation_emailCreation_update_changePassword_checkbox" qtlid="80394">Změna hesla</translation>
+
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_header" qtlid="450350">Dokončení konfigurace</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_summary" qtlid="4082">Shrnutí</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_domainName" qtlid="66428">Název domény</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_authoritative" qtlid="450363">Používá pouze službu Exchange</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_authoritative_yes" qtlid="34776">Ano</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_authoritative_no" qtlid="34788">Ne</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_emailAdresses" qtlid="450376">Přidané e-mailové účty</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_emailAdresses_non" qtlid="30646">Ne</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_auto_header" qtlid="450389">Vaše DNS zóna bude nakonfigurována v <strong>automatickém režimu</strong>.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_auto_explanation1" qtlid="450402">Služba Hosted Exchange pro doménu <strong>{0}</strong> byla úspěšně nakonfigurována. Jakmile bude MX diagnostika dokončena a zobrazí se zelené tlačítko, započne přijímání e-mailů. Aktivace služby zabere mezi 4 až 24 hodinami. Své e-maily naleznete na následujícím odkazu</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_auto_explanation2" qtlid="450415">nebo v záložce <strong>Základní informace</strong> (sekce <strong>Připojení → Webmail</strong>).</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_header" qtlid="450428">Vaše DNS zóna bude nakonfigurována v <strong>manuálním režimu</strong>.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_part_1" qtlid="450441">Konfigurací záznamů MX a SRV</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_part_2" qtlid="450480">provádíte konfiguraci domény pro přijímání e-mailů. E-maily budete moci začít přijímat jakmile dojde ke změně nastavení DNS zóny (tento proces obvykle zabere 4 až 24 hodin).</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_1" qtlid="450454">OVH MX záznam asociuje doménu s e-mailovým serverem.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_2" qtlid="450467">SRV záznam umožňuje provedení automatické konfigurace adresy v rámci e-mailového klienta (např. Outlook).</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_table_headers_fieldType" qtlid="129171">Typ pole</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_table_headers_data" qtlid="26551">Informace</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_table_mx" qtlid="23779">MX</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_table_srv" qtlid="130003">SRV</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_returnButton" qtlid="4118">Zpět</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_closeButton" qtlid="4070">Pokračovat</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_availableAccountsRetrieval_error" qtlid="450493">Při načítání e-mailových účtů asociovaných s Vaší doménou došlo k chybě.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_dialog_explanation1" qtlid="450506">Nyní stačí upravit MX a SRV záznamy v DNS zóně Vaší domény.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_dialog_explanation2" qtlid="450519">Pokud je Vaše doména registrována u OVH, přejděte prosím do svého Zákaznického prostoru OVH, sekce Web → Domény → DNS zóna.<br /><br />V opačném případě se prosím obraťte na dokumentaci příslušného registrátora domény.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_dialog_explanation3" qtlid="450532">Pokud jste tuto akci již provedli, vyčkejte nebo obnovte stránku. Jakmile bude MX diagnostika dokončena a zobrazí se zelené tlačítko, započne přijímání e-mailů. Aktivace služby zabere mezi 4 až 24 hodinami.</translation>
+
+   <translation id="exchange_wizardHostedCreation_ending_dialog" qtlid="450545">Poslední krok</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_dialog_warning" qtlid="5066">Pozor</translation>
+   <translation id="exchange_wizardHostedCreation_lastDialog_closeButton" qtlid="450558">Dokončit</translation>
 </translations>
