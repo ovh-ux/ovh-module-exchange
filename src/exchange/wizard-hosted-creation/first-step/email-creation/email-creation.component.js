@@ -68,10 +68,7 @@
 
             return this.wizardHostedCreationEmailCreation
                 .retrievingAccounts(this.$routerParams.organization, this.$routerParams.productId)
-                .then((accounts) => {
-                    const count = accounts.count;
-                    return this.wizardHostedCreationEmailCreation.retrievingAccounts(this.$routerParams.organization, this.$routerParams.productId, this.homepage.domainName, count);
-                })
+                .then((accounts) => this.wizardHostedCreationEmailCreation.retrievingAccounts(this.$routerParams.organization, this.$routerParams.productId, this.homepage.domainName, accounts.count))
                 .then((accounts) => {
                     this.homepage.otherAccounts = accounts;
                     return this.retrievingAvailableEmailAccounts();
