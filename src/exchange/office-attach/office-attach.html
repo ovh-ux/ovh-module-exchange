@@ -1,0 +1,19 @@
+<div class="row" data-ng-if="$ctrl.canDisplay">
+    <div class="col-md-9">
+        <div class="alert alert-info" role="note">
+            <button class="close"
+                    type="button"
+                    aria-label="{{i18n.wizard_close}}"
+                    data-dismiss="alert"
+                    data-ng-click="$ctrl.officeAttach.savingHidingPreferences()"></button>
+
+            <p data-ng-bind-html="tr('exchange_office_attached_alert_main')"></p>
+            <p data-ng-bind-html="tr('exchange_office_attached_alert_details', [$ctrl.maxNumberOfAccounts])"></p>
+
+            <button class="btn btn-info mt-3"
+                    type="button"
+                    data-i18n-static="exchange_office_attached_alert_button"
+                    data-ng-click="setAction('exchange/office-attach/dialog/office-attach-dialog')"></button>
+        </div>
+    </div>
+</div>
