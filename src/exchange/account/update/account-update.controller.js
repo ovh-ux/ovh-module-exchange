@@ -158,7 +158,7 @@ angular
                         this.containsNameFlag = true;
                     }
 
-                    this.passwordContainsSAMAccountName = !_.isEmpty(selectedAccount.samaccountName) && _.includes(selectedAccount.password, selectedAccount.samaccountName);
+                    this.passwordContainsSAMAccountName = !_(selectedAccount.samaccountName).isEmpty() && _(selectedAccount.password).includes(selectedAccount.samaccountName);
 
                     this.containsWhitespaces = /\s/.test(this.selectedAccount.password);
                 }

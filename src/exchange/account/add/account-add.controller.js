@@ -99,7 +99,7 @@ angular
                     }
                 }
 
-                this.passwordContainsSAMAccountName = !_.isEmpty(selectedAccount.SAMAccountName) && _.includes(selectedAccount.password, selectedAccount.SAMAccountName);
+                this.passwordContainsSAMAccountName = !_(selectedAccount.SAMAccountName).isEmpty() && _(selectedAccount.password).includes(selectedAccount.SAMAccountName);
             }
         }
 
