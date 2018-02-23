@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeCtrl", class ExchangeCtrl {
-        constructor (accountTypes, $rootScope, $scope, $timeout, $location, Products, translator, Exchange, APIExchange, User, EXCHANGE_CONFIG, navigation, ovhUserPref, messaging, exchangeVersion, officeAttached) {
+        constructor (accountTypes, $rootScope, $scope, $timeout, $location, Products, translator, Exchange, APIExchange, User, EXCHANGE_CONFIG, navigation, ovhUserPref, messaging, exchangeVersion, officeAttach) {
             this.services = {
                 accountTypes,
                 $rootScope,
@@ -18,8 +18,10 @@ angular
                 ovhUserPref,
                 messaging,
                 exchangeVersion,
-                officeAttached
+                officeAttach
             };
+
+            this.worldPart = this.services.$rootScope.worldPart;
 
             this.$routerParams = Exchange.getParams();
 
@@ -157,9 +159,10 @@ angular
                     this.displayName = exchange.displayName;
                 })
                 .then(() => this.canActivateSharepoint())
-                .then(() => this.services.officeAttached.getOfficeAttachSubscription())
-                .then((data) => {
-                    this.canSubscribeToOfficeAttach = data;
+                .then(() => this.services.officeAttach.retrievingIfUserAlreadyHasSubscribed(this.exchange.domain))
+                .then((userHasAlreadySubscribedToOfficeAttach) => {
+                    this.canSubscribeToOfficeAttach = !userHasAlreadySubscribedToOfficeAttach;
+
                     if (!_.isEmpty(this.exchange.messages)) {
                         this.services.messaging.writeError(this.services.translator.tr("exchange_dashboard_loading_error"), this.exchange);
                     }
@@ -201,10 +204,10 @@ angular
                     const isAlreadyActivated = sharepoint != null;
                     const isSupportedExchangeType = this.services.accountTypes.isHosted();
 
-                    this.canSubscribeToSharepoint = !isAlreadyActivated && isSupportedExchangeType;
+                    this.canSubscribeToSharepoint = !isAlreadyActivated && isSupportedExchangeType && this.worldPart === "EU";
                 })
                 .catch(() => {
-                    this.canSubscribeToSharepoint = this.services.accountTypes.isHosted();
+                    this.canSubscribeToSharepoint = this.services.accountTypes.isHosted() && this.worldPart === "EU";
                 });
         }
 

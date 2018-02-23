@@ -1,72 +1,70 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeTabAccountsCtrl", class ExchangeTabAccountsCtrl {
-        constructor ($scope, Exchange, ExchangeAccountService, navigation, messaging, translator, exchangeVersion, accountTypes, exchangeStates) {
-            this.services = {
-                $scope,
-                Exchange,
-                ExchangeAccountService,
-                navigation,
-                messaging,
-                translator,
-                exchangeVersion,
-                accountTypes,
-                exchangeStates
-            };
+        constructor (accountTypes, Exchange, ExchangeAccountService, exchangeStates, exchangeVersion, messaging, navigation, officeAttach, $scope, translator) {
+            this.accountTypes = accountTypes;
+            this.Exchange = Exchange;
+            this.ExchangeAccountService = ExchangeAccountService;
+            this.exchangeStates = exchangeStates;
+            this.exchangeVersion = exchangeVersion;
+            this.messaging = messaging;
+            this.navigation = navigation;
+            this.officeAttach = officeAttach;
+            this.$scope = $scope;
+            this.translator = translator;
+        }
 
-            $scope.getAccounts = (count, offset) => this.getAccounts(count, offset);
-            $scope.getLoading = () => this.loading;
-            $scope.getAccountValue = () => this.accounts;
-            $scope.subscribeToOfficeAttached = () => this.subscribeToOfficeAttached();
+        $onInit () {
+            this.$scope.getAccounts = (count, offset) => this.getAccounts(count, offset);
+            this.$scope.getLoading = () => this.loading;
+            this.$scope.getAccountValue = () => this.accounts;
+            this.$scope.subscribeToOfficeAttach = () => this.subscribeToOfficeAttach();
 
-            this.$routerParams = Exchange.getParams();
+            this.$routerParams = this.Exchange.getParams();
 
-            this.accountTypes = ["ALL", "BASIC", "STANDARD", "ENTERPRISE"];
+            this.typesOfAccounts = ["ALL", "BASIC", "STANDARD", "ENTERPRISE"];
             this.filterType = "ALL";
 
             this.loading = false;
             this.accounts = null;
             this.displayAccounts();
 
-            this.services.ExchangeAccountService.selectedAccount = null;
+            this.ExchangeAccountService.selectedAccount = null;
             this.noDomainFlag = true;
 
-            this.exchange = Exchange.value;
-            this.removeAccountInsteadOfReset = Exchange.removeAccountInsteadOfReset(this.exchange);
+            this.exchange = this.Exchange.value;
+            this.removeAccountInsteadOfReset = this.Exchange.removeAccountInsteadOfReset(this.exchange);
 
-            this.services
-                .Exchange
-                .getNewAccountOptions(this.$routerParams.organization, this.$routerParams.productId)
-                .then((data) => { this.noDomainFlag = _.isEmpty(data.availableDomains); });
+            this.spamTooltipContent = this.translator.tr("exchange_tab_ACCOUNTS_popover_span_text", [`#/ticket?serviceName=${this.$routerParams.productId}`]);
 
-            this.spamTooltipContent = this.services.translator.tr("exchange_tab_ACCOUNTS_popover_span_text", [`#/ticket?serviceName=${this.$routerParams.productId}`]);
+            this.$scope.$on(this.Exchange.events.accountsChanged, () => this.$scope.$broadcast("paginationServerSide.reload", "accountsTable"));
 
-            $scope.$on(Exchange.events.accountsChanged, () => $scope.$broadcast("paginationServerSide.reload", "accountsTable"));
+            return this.officeAttach.retrievingIfUserAlreadyHasSubscribed(this.$routerParams.productId)
+                .then((userHasAlreadySubscribed) => {
+                    this.canSubscribeToOfficeAttach = !userHasAlreadySubscribed;
+                })
+                .then(() => this.Exchange.getNewAccountOptions(this.$routerParams.organization, this.$routerParams.productId))
+                .then((newAccountOptions) => { this.noDomainFlag = _.isEmpty(newAccountOptions.availableDomains); });
         }
 
         setFilter () {
-            this.services.$scope.$broadcast("paginationServerSide.loadPage", 1, "accountsTable");
+            this.$scope.$broadcast("paginationServerSide.loadPage", 1, "accountsTable");
         }
 
         onSearch () {
-            this.services.$scope.$broadcast("paginationServerSide.loadPage", 1, "accountsTable");
+            this.$scope.$broadcast("paginationServerSide.loadPage", 1, "accountsTable");
         }
 
         resetSearch () {
             this.search.value = null;
-            this.services.$scope.$broadcast("paginationServerSide.loadPage", 1, "accountsTable");
-        }
-
-        shouldShowAccounts () {
-            return this.services.ExchangeAccountService.shouldShowAccounts;
+            this.$scope.$broadcast("paginationServerSide.loadPage", 1, "accountsTable");
         }
 
         getAccounts (count, offset) {
-            this.services.messaging.resetMessages();
+            this.messaging.resetMessages();
             this.loading = true;
 
-            this.services
-                .Exchange
+            return this.Exchange
                 .getAccounts(count, offset, this.search.value, false, this.filterType === "ALL" ? null : this.filterType)
                 .then((accounts) => {
                     this.accounts = accounts;
@@ -78,7 +76,7 @@ angular
                     /* eslint-enable no-restricted-properties */
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ACCOUNTS_error_message"), failure);
+                    this.messaging.writeError(this.translator.tr("exchange_tab_ACCOUNTS_error_message"), failure);
                 })
                 .finally(() => {
                     this.loading = false;
@@ -86,73 +84,74 @@ angular
         }
 
         canOrderAccount () {
-            const isExchange2010 = this.services.exchangeVersion.isVersion(2010);
-            const isAfter2010 = this.services.exchangeVersion.isAfter(2010);
-            const is25g = this.services.accountTypes.is25g();
-            const isHosted = this.services.accountTypes.isHosted();
-            const isDedicated = this.services.accountTypes.isDedicated();
+            const isExchange2010 = this.exchangeVersion.isVersion(2010);
+            const isAfter2010 = this.exchangeVersion.isAfter(2010);
+            const is25g = this.accountTypes.is25g();
+            const isHosted = this.accountTypes.isHosted();
+            const isDedicated = this.accountTypes.isDedicated();
 
             return (isExchange2010 && is25g) || (isExchange2010 && isHosted) || (isAfter2010 && !isDedicated);
         }
 
         canAddAccount () {
-            const isExchange2010 = this.services.exchangeVersion.isVersion(2010);
-            const isAfter2010 = this.services.exchangeVersion.isAfter(2010);
-            const is25g = this.services.accountTypes.is25g();
-            const isHosted = this.services.accountTypes.isHosted();
-            const isDedicated = this.services.accountTypes.isDedicated();
+            const isExchange2010 = this.exchangeVersion.isVersion(2010);
+            const isAfter2010 = this.exchangeVersion.isAfter(2010);
+            const is25g = this.accountTypes.is25g();
+            const isHosted = this.accountTypes.isHosted();
+            const isDedicated = this.accountTypes.isDedicated();
 
             return !is25g && ((isExchange2010 && !isHosted) || (isAfter2010 && isDedicated));
         }
 
         newAccount () {
+
             const numConfigureMeAccount = _.sum(this.accounts.list.results, (account) => account.domain === "configureme.me");
 
-            if (this.services.accountTypes.is25g()) {
-                this.services.navigation.setAction("exchange/account/order/account-order", { numConfigureMeAccount });
-            } else if (this.services.accountTypes.isDedicated()) {
-                this.services.navigation.setAction("exchange/account/add/account-add");
-            } else if (this.services.accountTypes.isProvider() && this.services.exchangeVersion.isVersion(2010)) {
-                this.services.navigation.setAction("exchange/account/add/account-add");
+            if (this.accountTypes.is25g()) {
+                this.navigation.setAction("exchange/account/order/account-order", { numConfigureMeAccount });
+            } else if (this.accountTypes.isDedicated()) {
+                this.navigation.setAction("exchange/account/add/account-add");
+            } else if (this.accountTypes.isProvider() && this.exchangeVersion.isVersion(2010)) {
+                this.navigation.setAction("exchange/account/add/account-add");
             } else {
-                this.services.navigation.setAction("exchange/account/order/account-order", { numConfigureMeAccount });
+                this.navigation.setAction("exchange/account/order/account-order", { numConfigureMeAccount });
             }
         }
 
-        subscribeToOfficeAttached () {
-            this.services.navigation.setAction("exchange/office-attached/dialog/office-attached-dialog");
+        subscribeToOfficeAttach () {
+            this.navigation.setAction("exchange/office-attach/dialog/office-attach-dialog");
         }
 
         isEditable (account) {
-            return (this.services.exchangeStates.constructor.isOk(account) || this.services.exchangeStates.constructor.isDoing(account) || this.services.exchangeStates.constructor.isInError(account)) && !this.noDomainFlag;
+            return (this.exchangeStates.constructor.isOk(account) || this.exchangeStates.constructor.isDoing(account) || this.exchangeStates.constructor.isInError(account)) && !this.noDomainFlag;
         }
 
         isConfigurable (account) {
-            return this.services.exchangeStates.constructor.isOk(account);
+            return this.exchangeStates.constructor.isOk(account);
         }
 
         editAccount (account) {
             const populateAccount = angular.copy(account);
-            populateAccount.is25g = this.services.accountTypes.is25g();
+            populateAccount.is25g = this.accountTypes.is25g();
 
             if (this.isEditable(account)) {
-                this.services.navigation.setAction("exchange/account/update/account-update", populateAccount);
+                this.navigation.setAction("exchange/account/update/account-update", populateAccount);
             }
         }
 
         displayAliases (account) {
-            if (!this.services.accountTypes.is25g()) {
-                this.services.ExchangeAccountService.displayAliases(account);
-                this.services.$scope.$broadcast("paginationServerSide.loadPage", 1, "aliasTable");
+            if (!this.accountTypes.is25g()) {
+                this.ExchangeAccountService.displayAliases(account);
+                this.$scope.$broadcast("paginationServerSide.loadPage", 1, "aliasTable");
             }
         }
 
         shouldDisplayAliases () {
-            return this.services.ExchangeAccountService.shouldDisplayAliases;
+            return this.ExchangeAccountService.shouldDisplayAliases;
         }
 
         configureAccountIsAuthorized () {
-            return _.includes(this.exchange.nicType, this.services.Exchange.nicAdmin) || _.includes(this.exchange.nicType, this.services.Exchange.nicTech);
+            return _.includes(this.exchange.nicType, this.Exchange.nicAdmin) || _.includes(this.exchange.nicType, this.Exchange.nicTech);
         }
 
         isOutlookCanBeOrdered (account) {
@@ -165,24 +164,24 @@ angular
 
         outlookSettings (account) {
             if (account.canBeConfigured) {
-                this.services.navigation.setAction("exchange/account/outlook/account-outlook", angular.copy(account));
+                this.navigation.setAction("exchange/account/outlook/account-outlook", angular.copy(account));
             }
         }
 
         orderOutlook (account) {
             if (account.canBeConfigured) {
-                this.services.navigation.setAction("exchange/account/outlook/add/account-outlook-add", angular.copy(account));
+                this.navigation.setAction("exchange/account/outlook/add/account-outlook-add", angular.copy(account));
             }
         }
 
         activateOutlook (account) {
             if (account.canBeConfigured) {
-                this.services.navigation.setAction("exchange/account/outlook/activate/account-outlook-activate", angular.copy(account));
+                this.navigation.setAction("exchange/account/outlook/activate/account-outlook-activate", angular.copy(account));
             }
         }
 
         shouldDisplayAccounts () {
-            return this.services.ExchangeAccountService.shouldDisplayAccounts;
+            return this.ExchangeAccountService.shouldDisplayAccounts;
         }
 
         displayAccounts () {
@@ -190,8 +189,8 @@ angular
                 value: null
             };
 
-            this.services.ExchangeAccountService.selectedAccount = null;
-            this.services.ExchangeAccountService.displayAccounts();
-            this.services.$scope.$broadcast("paginationServerSide.loadPage", 1, "accountsTable");
+            this.ExchangeAccountService.selectedAccount = null;
+            this.ExchangeAccountService.displayAccounts();
+            this.$scope.$broadcast("paginationServerSide.loadPage", 1, "accountsTable");
         }
     });
