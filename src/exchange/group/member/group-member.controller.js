@@ -13,32 +13,44 @@ angular
             };
 
             this.$routerParams = Exchange.getParams();
+            this.groupParams = {};
 
-            $scope.$on(Exchange.events.accountsChanged, () => $scope.$broadcast("paginationServerSide.reload", "membersTable"));
+            $scope.$on(Exchange.events.accountsChanged, () => this.refreshList());
             $scope.getMembersList = () => this.membersList;
-            $scope.getLoading = () => this.loading;
-            $scope.getMembersByGroup = (count, offset) => this.getMembersByGroup(count, offset);
+            $scope.getMembersByGroup = (pageSize, offset) => this.getMembersByGroup(pageSize, offset);
         }
 
-        getMembersByGroup (count, offset) {
-            if (_.has(this.services, "navigation.selectedGroup.mailingListName")) {
-                this.services.messaging.resetMessages();
-                this.loading = true;
+        getMembersByGroup ({ pageSize, offset }) {
+            this.groupParams.pageSize = pageSize;
+            this.groupParams.offset = offset;
+            this.services.messaging.resetMessages();
 
-                this.services
-                    .group
-                    .retrievingMembersByGroup(this.$routerParams.organization, this.$routerParams.productId, this.services.navigation.selectedGroup.mailingListName, count, offset)
-                    .then((accounts) => {
-                        this.membersList = accounts;
-                    })
-                    .catch((failure) => {
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ACCOUNTS_error_message"), failure);
-                    })
-                    .finally(() => {
-                        this.loading = false;
-                        this.services.$scope.$broadcast("paginationServerSide.loadPage", 1, "membersTable");
-                    });
-            }
+            return this.services.group
+                .retrievingMembersByGroup(this.$routerParams.organization, this.$routerParams.productId, this.services.navigation.selectedGroup.mailingListName, pageSize, offset - 1)
+                .then((accounts) => {
+                    this.membersList = accounts.list.results;
+                    return {
+                        data: accounts.list.results,
+                        meta: {
+                            totalCount: accounts.count
+                        }
+                    };
+                })
+                .catch((failure) => this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ACCOUNTS_error_message"), failure));
+        }
+
+        refreshList () {
+            this.services.group
+                .retrievingMembersByGroup(this.$routerParams.organization, this.$routerParams.productId, this.services.navigation.selectedGroup.mailingListName, this.groupParams.pageSize, this.groupParams.offset - 1)
+                .then((data) => {
+                    for (let i = 0; i < data.list.results.length; i++) {
+                        this.membersList.splice(i, 1, data.list.results[i]);
+                    }
+                    for (let i = data.list.results.length; i < this.membersList.length; i++) {
+                        this.membersList.splice(i, 1);
+                    }
+                })
+                .catch((failure) => this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ACCOUNTS_error_message"), failure));
         }
 
         hide () {

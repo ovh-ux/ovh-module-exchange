@@ -104,14 +104,17 @@ angular
         }
 
         newAccount () {
+
+            const numConfigureMeAccount = _.sum(this.accounts.list.results, (account) => account.domain === "configureme.me");
+
             if (this.accountTypes.is25g()) {
-                this.navigation.setAction("exchange/account/order/account-order");
+                this.navigation.setAction("exchange/account/order/account-order", { numConfigureMeAccount });
             } else if (this.accountTypes.isDedicated()) {
                 this.navigation.setAction("exchange/account/add/account-add");
             } else if (this.accountTypes.isProvider() && this.exchangeVersion.isVersion(2010)) {
                 this.navigation.setAction("exchange/account/add/account-add");
             } else {
-                this.navigation.setAction("exchange/account/order/account-order");
+                this.navigation.setAction("exchange/account/order/account-order", { numConfigureMeAccount });
             }
         }
 
