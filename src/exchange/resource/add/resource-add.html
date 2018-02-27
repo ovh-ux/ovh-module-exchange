@@ -66,14 +66,13 @@
                 <div class="form-group">
                     <label class="control-label"
                            data-i18n-static="exchange_tab_RESOURCES_add_resource_type"></label>
-                    <div class="oui-radio" data-ng-repeat="type in ctrl.availableTypes track by $index">
-                        <input type="radio" class="oui-radio__input" id="resourceType-{{$index}}" name="resourceType"
-                               data-ng-model="ctrl.model.resourceType"
-                               data-ng-value="type">
-                        <label class="oui-radio__label-container" for="resourceType-{{$index}}">
-                            <span class="oui-radio__label"
-                                  data-ng-bind="tr('exchange_tab_RESOURCES_add_resource_type_' + type)"></span>
-                        </label>
+
+                    <div data-ng-repeat="type in ctrl.availableTypes track by $index">
+                        <oui-radio text="{{tr('exchange_tab_RESOURCES_add_resource_type_' + type)}}" 
+                                model="ctrl.model.resourceType" 
+                                name="resource-add" 
+                                value="type">
+                        </oui-radio>     
                     </div>
                 </div>
             </form>

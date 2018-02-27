@@ -7,26 +7,19 @@
     <p data-i18n-static="exchange_order_view_intro_question"></p>
 
     <form name="exchangeOrderForm">
-        <div class="mb-5">
-            <div class="oui-radio">
-                <input type="radio" class="oui-radio__input" id="standAlone" name="exchangeType"
-                       data-ng-model="ctrl.alreadyHasAnExchange"
-                       data-ng-value="false">
-                <label class="oui-radio__label-container" for="standAlone">
-                <span class="oui-radio__label"
-                      data-i18n-static="exchange_order_view_stand_alone_option"></span>
-                </label>
-            </div>
+        <div class="mb-5">            
 
-            <div class="oui-radio">
-                <input type="radio" class="oui-radio__input" id="associated" name="exchangeType"
-                       data-ng-model="ctrl.alreadyHasAnExchange"
-                       data-ng-value="true">
-                <label class="oui-radio__label-container" for="associated">
-                <span class="oui-radio__label"
-                      data-i18n-static="exchange_order_view_attached_option"></span>
-                </label>
-            </div>
+            <oui-radio text="{{tr('exchange_order_view_stand_alone_option')}}" 
+                    model="ctrl.alreadyHasAnExchange" 
+                    name="order-exchange" 
+                    value="false">
+            </oui-radio>
+
+            <oui-radio text="{{tr('exchange_order_view_attached_option')}}" 
+                    model="ctrl.alreadyHasAnExchange" 
+                    name="order-exchange" 
+                    value="true">
+            </oui-radio>
         </div>
 
         <div class="oui-field mb-5">

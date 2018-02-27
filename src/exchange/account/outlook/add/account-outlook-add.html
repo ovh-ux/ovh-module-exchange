@@ -18,17 +18,14 @@
                     <div class="mb-4">
                         <label class="oui-label"
                                data-i18n-static="exchange_ACTION_add_outlook_duration_label"></label>
-                        <div class="oui-radio"
-                             data-ng-repeat="option in ctrl.selectedVersion.options track by $index">
-                            <input type="radio" class="oui-radio__input" id="duration-{{$index}}" name="durationTypeGroup"
-                                   data-ng-click="ctrl.selectDuration(option)"
-                                   data-ng-disabled="ctrl.selectedVersion === null"
-                                   data-ng-model="ctrl.model.duration"
-                                   data-ng-value="option.duration.duration">
-                            <label class="oui-radio__label-container" for="duration-{{$index}}">
-                                <span class="oui-radio__label"
-                                      data-ng-bind="tr('exchange_ACTION_add_outlook_duration_type_' + option.duration.duration)"></span>
-                            </label>
+                        <div data-ng-repeat="option in ctrl.selectedVersion.options track by $index">
+                            <oui-radio text="{{tr('exchange_ACTION_add_outlook_duration_type_' + option.duration.duration)}}"
+                                    on-change="ctrl.selectDuration(option)"
+                                    disabled="ctrl.selectedVersion === null"
+                                    model="ctrl.model.duration"
+                                    name="exchange-outlook"
+                                    value="option.duration.duration">
+                            </oui-radio>
                         </div>
                     </div>
 
