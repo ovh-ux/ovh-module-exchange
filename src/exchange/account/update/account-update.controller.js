@@ -158,15 +158,7 @@ angular
                         this.containsNameFlag = true;
                     }
 
-                    if (selectedAccount.samaccountName && _.includes(selectedAccount.password, selectedAccount.samaccountName)) {
-                        if (!this.containsSamAccountNameLabel) {
-                            this.containsSamAccountNameLabel = this.services.translator.tr("exchange_ACTION_update_account_step1_password_contains_samaccount_name", [selectedAccount.samaccountName]);
-                        }
-
-                        this.containsSamAccountNameFlag = true;
-                    } else {
-                        this.containsSamAccountNameFlag = false;
-                    }
+                    this.passwordContainsSAMAccountName = !_(selectedAccount.samaccountName).isEmpty() && _(selectedAccount.password).includes(selectedAccount.samaccountName);
 
                     this.containsWhitespaces = /\s/.test(this.selectedAccount.password);
                 }

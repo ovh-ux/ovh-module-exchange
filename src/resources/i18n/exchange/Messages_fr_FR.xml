@@ -491,13 +491,13 @@
    <translation id="exchange_ACTION_update_account_step1_password_weak" qtlid="139624">Mot de passe trop simple.</translation>
    <translation id="exchange_ACTION_update_account_step1_password_whitespace" qtlid="416462">Le mot de passe ne peut pas contenir d'espaces.</translation>
    <translation id="exchange_ACTION_update_account_step1_password_contains_name" qtlid="254856">Le mot de passe ne peut pas contenir tout ou une partie du nom à afficher ou du login Exchange.</translation>
-   <translation id="exchange_ACTION_update_account_step1_password_contains_samaccount_name" qtlid="254869">Le mot de passe ne peut pas contenir "{0}", le samaccountName, un identifiant interne.</translation>
+   <translation id="exchange_ACTION_update_account_step1_password_contains_samAccountName_name">Le mot de passe ne peut pas contenir le nom de compte SAM (login Exchange 2010).</translation>
    <translation id="exchange_ACTION_update_account_step1_password_different" qtlid="139637">Mots de passe différents.</translation>
    <translation id="exchange_ACTION_update_account_step1_password_placeholder" qtlid="156745">Garder l'ancien</translation>
    <translation id="exchange_ACTION_update_account_step1_security_label" qtlid="136750">Options de sécurité</translation>
    <translation id="exchange_ACTION_update_account_step1_GAL_label" qtlid="191980">Cacher l'adresse dans l'annuaire</translation>
    <translation id="exchange_ACTION_update_account_step1_exchange_guid_label" qtlid="174633">Exchange GUID</translation>
-   <translation id="exchange_ACTION_update_account_step1_exchange_SAMA_label" qtlid="201445">Login Exchange 2010</translation>
+   <translation id="exchange_ACTION_update_account_step1_exchange_samAccountName_label">Le nom de compte SAM (login Exchange 2010)</translation>
    <translation id="exchange_ACTION_update_account_step1_mandatory_fields" qtlid="137634">Champs obligatoires</translation>
    <translation id="exchange_ACTION_update_account_step2_confirmation_intro" qtlid="136841">Votre compte :</translation>
    <translation id="exchange_ACTION_update_account_step2_email_label" qtlid="137244">Compte e-mail</translation>

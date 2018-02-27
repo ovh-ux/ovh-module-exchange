@@ -98,7 +98,7 @@
                 </div>
 
                 <div class="oui-field mb-4"
-                     data-ng-class="{'oui-field_error has-error': ctrl.simplePasswordFlag || ctrl.containsNameFlag || ctrl.containsSamAccountNameFlag || ctrl.containsWhitespaces}">
+                     data-ng-class="{'oui-field_error has-error': ctrl.simplePasswordFlag || ctrl.containsNameFlag || ctrl.passwordContainsSAMAccountName || ctrl.containsWhitespaces}">
                     <label class="oui-field__label oui-label" for="selectedAccountPassword"
                            data-i18n-static="exchange_ACTION_update_account_step1_password_label"
                            data-ng-class="{'required': !ctrl.selectedAccount.canBeConfigured}"></label>
@@ -106,7 +106,7 @@
                         <div class="oui-field-control oui-field-control_3">
                             <input type="password" class="oui-input" id="selectedAccountPassword" name="selectedAccountPassword" placeholder="{{ctrl.getPasswordPlaceholder()}}"
                                    data-ng-change="ctrl.setPasswordsFlag(ctrl.selectedAccount)"
-                                   data-ng-class="{'oui-input_error': ctrl.simplePasswordFlag || ctrl.containsNameFlag || ctrl.containsSamAccountNameFlag || ctrl.containsWhitespaces}"
+                                   data-ng-class="{'oui-input_error': ctrl.simplePasswordFlag || ctrl.containsNameFlag || ctrl.passwordContainsSAMAccountName || ctrl.containsWhitespaces}"
                                    data-ng-model="ctrl.selectedAccount.password"
                                    data-ng-required="!ctrl.selectedAccount.canBeConfigured"
                                    data-uib-tooltip="{{ctrl.passwordTooltip}}">
@@ -117,8 +117,8 @@
                                    data-i18n-static="exchange_ACTION_update_account_step1_password_contains_name"
                                    data-ng-if="ctrl.containsNameFlag"></small>
                             <small class="help-block"
-                                   data-ng-bind="ctrl.containsSamAccountNameLabel"
-                                   data-ng-if="ctrl.containsSamAccountNameFlag"></small>
+                                   data-i18n-static="exchange_ACTION_update_account_step1_password_contains_samAccountName_name"
+                                   data-ng-if="ctrl.passwordContainsSAMAccountName"></small>
                             <small class="help-block"
                                    data-i18n-static="exchange_ACTION_update_account_step1_password_whitespace"
                                    data-ng-if="ctrl.containsWhitespaces"></small>
@@ -196,7 +196,7 @@
                 <div class="mb-4"
                      data-ng-if="ctrl.services.exchangeVersion.isVersion(2010) && !ctrl.service.accountTypes.isHosted()">
                     <span class="oui-label"
-                          data-i18n-static="exchange_ACTION_update_account_step1_exchange_SAMA_label"></span>
+                          data-i18n-static="exchange_ACTION_update_account_step1_exchange_samAccountName_label"></span>
                     <span class="form-control-static"
                           data-ng-bind="ctrl.selectedAccount.samaccountName"
                           data-ng-if="ctrl.selectedAccount.samaccountName"></span>
