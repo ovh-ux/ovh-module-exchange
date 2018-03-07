@@ -181,17 +181,9 @@ angular
         openSupportTicket () {
             if (!this.services.OtrsPopupService.isLoaded()) {
                 this.services.OtrsPopupService.init();
+            } else {
+                this.services.OtrsPopupService.toggle();
             }
-
-            this.services.$timeout(() => {
-                const body = this.makingSupportTicketBody();
-                const subject = this.services.translator.tr("exchange_DIAGNOSTICS_status_support_ticket_subject");
-                this.services.OtrsPopupService.changeTicket({
-                    subject,
-                    body
-                });
-                this.services.OtrsPopupService.restore();
-            });
         }
 
         makingSupportTicketBody () {

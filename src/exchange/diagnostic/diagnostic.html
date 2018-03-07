@@ -5,72 +5,65 @@
 
     <div class="row" data-ng-if="!ctrl.loaders.accounts">
         <div class="col-md-9">
+            <div class="alert alert-warning"
+                 role="alert"
+                 data-i18n-static="exchange_DIAGNOSTICS_stay_on_page_while_diagnostic_is_running"
+                 data-ng-if="ctrl.loaders.diagnosticInProgress">
+            </div>
+
             <p data-i18n-static="exchange_DIAGNOSTICS_description"></p>
 
             <!-- REQUESTING_NEW_DIAGNOSTIC -->
-            <form class="form-horizontal mt-5" name="ctrl.diagnosticForm"
+            <form name="ctrl.diagnosticForm"
                   data-ng-if="ctrl.state === ctrl.states.REQUESTING_NEW_DIAGNOSTIC"
                   data-ng-submit="ctrl.launchDiagnostic()">
-                <div class="form-group">
-                    <label class="control-label col-md-4 required" for="exchange_DIAGNOSTICS_input_email"
-                           data-i18n-static="exchange_DIAGNOSTICS_input_email"></label>
-                    <div class="col-md-6">
-                        <input type="email" class="form-control" id="exchange_DIAGNOSTICS_input_email" name="exchangeDiagnosticEmail" required
-                               data-ng-disabled="ctrl.loaders.diagnosticInProgress"
-                               data-ng-if="!ctrl.accountIds.length || ctrl.accountIds.length > 100"
-                               data-ng-model="ctrl.email">
-                        <div class="oui-select"
-                             data-ng-if="ctrl.accountIds.length > 0 && ctrl.accountIds.length <= 100">
-                            <select class="oui-select__input" id="exchange_DIAGNOSTICS_input_email" name="exchangeDiagnosticEmail"
-                                    data-ng-disabled="ctrl.loaders.diagnosticInProgress"
-                                    data-ng-model="ctrl.email"
-                                    data-ng-options="account for account in ctrl.accountIds track by account">
-                                <option value="" disabled
-                                        data-i18n-static="select_placeholder"></option>
-                            </select>
-                            <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="form-group">
-                    <label class="control-label col-md-4 required" for="exchange_DIAGNOSTICS_input_password"
-                           data-i18n-static="exchange_DIAGNOSTICS_input_password"></label>
-                    <div class="col-md-6">
-                        <input type="password" class="form-control" id="exchange_DIAGNOSTICS_input_password" name="exchangeDiagnosticPassword" required
-                               data-ng-disabled="ctrl.loaders.diagnosticInProgress"
-                               data-ng-model="ctrl.password">
-                    </div>
-                </div>
+                <oui-field label="{{tr('exchange_DIAGNOSTICS_input_email')}}"
+                           data-ng-if="!ctrl.accountIds.length || ctrl.accountIds.length > 100">
+                    <input class="oui-input"
+                           type="email"
+                           id="exchange_DIAGNOSTICS_input_email"
+                           name="exchangeDiagnosticEmail"
+                           required
+                           data-ng-model="ctrl.email">
+                </oui-field>
+                <oui-field label="{{tr('exchange_DIAGNOSTICS_input_email')}}"
+                           data-ng-if="ctrl.accountIds.length > 0 && ctrl.accountIds.length <= 100">
+                    <oui-select id="exchange_DIAGNOSTICS_select_select"
+                                name="exchangeDiagnosticEmail"
+                                model="ctrl.email"
+                                data-title="{{tr('select_placeholder')}}"
+                                placeholder="{{tr('select_placeholder')}}"
+                                items="ctrl.accountIds"
+                                required
+                                data-ng-disabled="ctrl.loaders.diagnosticInProgress"
+                                data-align="start">
+                        <span ng-bind="$item"></span>
+                    </oui-select>
+                </oui-field>
+                <oui-field label="{{tr('exchange_DIAGNOSTICS_input_password')}}">
+                    <input class="oui-input"
+                           type="password"
+                           id="exchange_DIAGNOSTICS_input_password"
+                           name="exchangeDiagnosticPassword"
+                           required
+                           data-ng-disabled="ctrl.loaders.diagnosticInProgress"
+                           data-ng-model="ctrl.password">
+                </oui-field>
 
-                <div class="row mt-5">
-                    <div class="col-md-8 col-md-offset-4">
-                        <button class="oui-button oui-button_primary oui-button_large-height" type="submit"
-                                data-ng-disabled="ctrl.diagnosticForm.$invalid || ctrl.loaders.diagnosticInProgress">
-                            <span data-i18n-static="exchange_DIAGNOSTICS_button_launch_diagnostic"
-                                  data-ng-if="!ctrl.loaders.diagnosticInProgress"></span>
-                            <span data-ng-if="ctrl.loaders.diagnosticInProgress">
-                                <oui-spinner data-size="s"></oui-spinner>
-                                <span data-i18n-static="exchange_DIAGNOSTICS_button_diagnostic_in_progress"></span>
-                            </span>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="alert alert-warning mt-5" role="alert"
-                     data-i18n-static="exchange_DIAGNOSTICS_stay_on_page_while_diagnostic_is_running"
-                     data-ng-if="ctrl.loaders.diagnosticInProgress">
-                </div>
+                <button class="oui-button oui-button_primary oui-button_large-height"
+                        type="submit"
+                        data-ng-disabled="ctrl.diagnosticForm.$invalid || ctrl.loaders.diagnosticInProgress">
+                    <span data-i18n-static="exchange_DIAGNOSTICS_button_launch_diagnostic"></span>
+                </button>
+                <span class="d-inline-block mt-3" data-ng-if="ctrl.loaders.diagnosticInProgress">
+                    <oui-spinner data-size="s"></oui-spinner>
+                    <span data-i18n-static="exchange_DIAGNOSTICS_button_diagnostic_in_progress"></span>
+                </span>
             </form>
 
             <!-- DISPLAYING_DIAGNOSTIC_RESULT -->
             <div data-ng-if="ctrl.state === ctrl.states.DISPLAYING_DIAGNOSTIC_RESULT">
-                <button class="oui-button oui-button_primary oui-button_icon-left oui-button_large-height mt-4" type="button"
-                        data-ng-click="ctrl.requestNewDiagnostic()">
-                    <span class="oui-icon oui-icon-add oui-icon_circle" aria-hidden="true"></span>
-                    <span data-i18n-static="exchange_DIAGNOSTICS_button_new_diagnostic"></span>
-                </button>
-
                 <p>
                     <span data-i18n-static="exchange_DIAGNOSTICS_label_analyzed_email"></span>
                     <strong data-ng-bind="ctrl.email"></strong>
@@ -78,7 +71,8 @@
 
                 <p data-ng-if="ctrl.diagnosticGuideUrl && !ctrl.isAllOK()">
                     <span data-i18n-static="exchange_diagnostic_guide"></span>
-                    <a target="_blank" title="{{tr('exchange_diagnostic_guides_url')}} ({{tr('exchange_dashboard_new_window')}})"
+                    <a target="_blank"
+                       title="{{tr('exchange_diagnostic_guides_url')}} ({{tr('exchange_dashboard_new_window')}})"
                        data-ng-href="{{ctrl.diagnosticGuideUrl}}">
                         <span data-i18n-static="exchange_diagnostic_guides_url"></span>
                         <span class="fa fa-external-link" aria-hidden="true"></span>
@@ -104,11 +98,12 @@
                         </div>
                     </li>
                 </ul>
-
-                <button class="oui-button oui-button_primary oui-button_large-height" type="button"
-                        data-i18n-static="exchange_DIAGNOSTICS_create_ticket"
-                        data-ng-click="ctrl.openSupportTicket()">
-                </button>
+                <oui-form-actions
+                    on-submit="ctrl.openSupportTicket()"
+                    on-cancel="ctrl.requestNewDiagnostic()"
+                    submit-text="{{ tr('exchange_DIAGNOSTICS_create_ticket') }}"
+                    cancel-text="{{ tr('exchange_DIAGNOSTICS_button_new_diagnostic') }}">
+                </oui-form-actions>
             </div>
         </div>
     </div>
