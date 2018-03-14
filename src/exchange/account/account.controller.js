@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeTabAccountsCtrl", class ExchangeTabAccountsCtrl {
-        constructor (accountTypes, Exchange, ExchangeAccountService, exchangeStates, exchangeVersion, messaging, navigation, officeAttach, $scope, translator) {
+        constructor (accountTypes, Exchange, ExchangeAccountService, exchangeStates, exchangeVersion, messaging, navigation, officeAttach, $scope, translator, constants) {
             this.accountTypes = accountTypes;
             this.Exchange = Exchange;
             this.ExchangeAccountService = ExchangeAccountService;
@@ -12,6 +12,7 @@ angular
             this.officeAttach = officeAttach;
             this.$scope = $scope;
             this.translator = translator;
+            this.constants = constants;
         }
 
         $onInit () {
@@ -41,7 +42,7 @@ angular
 
             return this.officeAttach.retrievingIfUserAlreadyHasSubscribed(this.$routerParams.productId)
                 .then((userHasAlreadySubscribed) => {
-                    this.canSubscribeToOfficeAttach = !userHasAlreadySubscribed;
+                    this.canSubscribeToOfficeAttach = !userHasAlreadySubscribed && this.constants.target === "EU";
                 })
                 .then(() => this.Exchange.getNewAccountOptions(this.$routerParams.organization, this.$routerParams.productId))
                 .then((newAccountOptions) => { this.noDomainFlag = _.isEmpty(newAccountOptions.availableDomains); });
