@@ -159,6 +159,10 @@
                     return this.ovhUserPref.create(PREFERENCE_CHECKPOINT, preferences);
                 });
         }
+
+        displayAlert (componentName) {
+            return this.navigationState === componentName && this.messaging.message;
+        }
     }
 
     angular
