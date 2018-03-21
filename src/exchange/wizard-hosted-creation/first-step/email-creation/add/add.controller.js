@@ -123,9 +123,9 @@ angular
                         } else {
                             this.hideConfirmButton = false;
                             this.canMigrate = true;
+                            this.scrollToBottom();
                         }
 
-                        this.scrollToBottom();
                         return null;
                     })
                     .catch((error) => {
