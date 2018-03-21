@@ -1,12 +1,13 @@
 <div class="tab-content container-fluid mx-5">
-    <div class="alert alert-dismissible" 
+    <div class="alert alert-dismissible"
+         role="alert"
          data-ng-class="$ctrl.messaging.alertType"
-         data-ng-if="$ctrl.messaging.message" 
+         data-ng-if="$ctrl.messaging.message"
          id="wizard-error-message">
-        <button class="close" 
-                 type="button" 
-                 aria-label="tr('wizard_close')" 
-                 data-ng-click="$ctrl.closeMessages()">
+        <button class="close"
+                type="button"
+                aria-label="tr('wizard_close')"
+                data-ng-click="$ctrl.closeMessages()">
         </button>
 
         <p data-ng-bind-html="$ctrl.messaging.message"></p>
