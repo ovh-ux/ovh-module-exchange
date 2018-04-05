@@ -21,7 +21,7 @@
   ],
   "dependencies": {
     "URIjs": "uri.js#~1.14.0",
-    "ckeditor": "^4.7.2",
+    "ckeditor": "^4.9.1",
     "ng-ckeditor": "^0.2.1",
     "punycode": "~1.2.4",
     "jsurl": "https://github.com/Sage/jsurl.git#~0.1.4"
