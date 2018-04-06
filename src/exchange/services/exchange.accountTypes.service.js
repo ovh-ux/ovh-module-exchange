@@ -20,6 +20,10 @@ angular
             return this.isType("DEDICATED");
         }
 
+        isDedicatedCluster () {
+            return this.isType("DEDICATED_CLUSTER");
+        }
+
         isHosted () {
             return this.isType("HOSTED");
         }

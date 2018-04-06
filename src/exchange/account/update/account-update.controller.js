@@ -234,7 +234,7 @@ angular
             this.noDomainMessage = null;
             this.services
                 .Exchange
-                .getNewAccountOptions(this.$routerParams.organization, this.$routerParams.productId)
+                .fetchingAccountCreationOptions(this.$routerParams.organization, this.$routerParams.productId)
                 .then((data) => {
                     this.newAccountOptions = data;
 

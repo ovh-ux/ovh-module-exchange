@@ -1,8 +1,8 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeTabSharedAccountsCtrl", class ExchangeTabSharedAccountsCtrl {
-        constructor ($scope, Exchange, ExchangeSharedAccounts, exchangeVersion, messaging, translator, navigation) {
-            this.services = { $scope, Exchange, ExchangeSharedAccounts, exchangeVersion, messaging, translator, navigation };
+        constructor ($scope, accountTypes, Exchange, ExchangeSharedAccounts, exchangeVersion, messaging, translator, navigation) {
+            this.services = { $scope, accountTypes, Exchange, ExchangeSharedAccounts, exchangeVersion, messaging, translator, navigation };
 
             this.$routerParams = Exchange.getParams();
 
@@ -34,7 +34,7 @@ angular
             this.noDomainFlag = true;
             this.exchange = Exchange.value;
 
-            Exchange.getNewAccountOptions(this.$routerParams.organization, this.$routerParams.productId)
+            Exchange.fetchingAccountCreationOptions(this.$routerParams.organization, this.$routerParams.productId)
                 .then((data) => {
                     this.noDomainFlag = data.availableDomains.length === 0;
                 });
@@ -112,7 +112,7 @@ angular
         /* eslint-enable class-methods-use-this */
 
         isSharedAccountAdjustable () {
-            return this.exchange && !((this.exchange.offer === this.services.Exchange.accountTypeDedicated || this.exchange.offer === this.services.Exchange.accountTypeProvider) && this.services.exchangeVersion.isExchangeVersion(2010));
+            return this.exchange && !((this.services.accountTypes.isDedicated() || this.services.accountTypes.isDedicatedCluster() || this.services.accountTypes.isProvider()) && this.services.exchangeVersion.isExchangeVersion(2010));
         }
 
         editAccount (account) {

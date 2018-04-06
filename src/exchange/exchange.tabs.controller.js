@@ -57,7 +57,7 @@ angular
                             ]
                         };
 
-                        if (this.services.accountTypes.isDedicated() && this.services.exchangeVersion.isVersion(2010)) {
+                        if ((this.services.accountTypes.isDedicated() || this.services.accountTypes.isDedicatedCluster()) && this.services.exchangeVersion.isVersion(2010)) {
                             this.dropdownMenuItems.items.push({
                                 label: translator.tr("exchange_tab_SHARED"),
                                 target: "SHARED",

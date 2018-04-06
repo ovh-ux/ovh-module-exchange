@@ -1,11 +1,11 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeToolboxAccountsCtrl", class ExchangeToolboxAccountsCtrl {
-        constructor ($scope, Exchange, ExchangeAccountService, navigation, $rootScope, exchangeStates, accountTypes) {
+        constructor ($scope, Exchange, exchangeAccount, navigation, $rootScope, exchangeStates, accountTypes) {
             this.services = {
                 $scope,
                 Exchange,
-                ExchangeAccountService,
+                exchangeAccount,
                 navigation,
                 $rootScope,
                 exchangeStates,
@@ -45,7 +45,7 @@ angular
 
         aliasDisplay (account) {
             if (this.services.exchangeStates.constructor.isOk(account)) {
-                this.services.ExchangeAccountService.displayAliases(account);
+                this.services.exchangeAccount.displayAliases(account);
                 this.services.$rootScope.$broadcast("paginationServerSide.loadPage", 1, "aliasTable");
             }
         }

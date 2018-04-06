@@ -9,6 +9,7 @@
 <!-- ########################################## -->
 <!-- DASHBOARD -->
    <translation id="exchange_common_error" qtlid="299384">Une erreur est survenue :</translation>
+   <translation id="exchange_offer_type_DEDICATED_CLUSTER">Dedicated Exchange</translation>
    <translation id="exchange_offer_type_DEDICATED" qtlid="137218">Private Exchange</translation>
    <translation id="exchange_offer_type_HOSTED" qtlid="137231">Hosted Exchange</translation>
    <translation id="exchange_offer_type_PROVIDER" qtlid="136152">Exchange revendeur</translation>
@@ -137,6 +138,9 @@
    <translation id="exchange_tab_ACCOUNTS_type_basic" qtlid="48986">Basic</translation>
    <translation id="exchange_tab_ACCOUNTS_type_standard" qtlid="48998">Standard</translation>
    <translation id="exchange_tab_ACCOUNTS_type_enterprise" qtlid="49022">Entreprise</translation>
+
+   <translation id="exchange_tab_dedicatedCluster_account_type_BASIC">E-Mail Pro</translation>
+   <translation id="exchange_tab_dedicatedCluster_account_type_STANDARD">Exchange</translation>
 
    <translation id="exchange_tab_ACCOUNTS_outlook_true" qtlid="34776">Oui</translation>
    <translation id="exchange_tab_ACCOUNTS_outlook_false" qtlid="136308">Sans</translation>

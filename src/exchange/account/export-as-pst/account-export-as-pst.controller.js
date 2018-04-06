@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeExportAsPstCtrl", class ExchangeExportAsPstCtrl {
-        constructor ($scope, $timeout, Exchange, APIExchange, navigation, messaging, translator, ExchangeAccount) {
+        constructor ($scope, $timeout, Exchange, APIExchange, navigation, messaging, translator, exchangeAccount) {
             this.services = {
                 $scope,
                 $timeout,
@@ -10,7 +10,7 @@ angular
                 navigation,
                 messaging,
                 translator,
-                ExchangeAccount
+                exchangeAccount
             };
 
             this.selectedAccount = navigation.currentActionData;
@@ -33,7 +33,7 @@ angular
 
         getSelected () {
             return this.services
-                .ExchangeAccount
+                .exchangeAccount
                 .getTasks(this.$routerParams.organization, this.$routerParams.productId, this.selectedAccount.primaryEmailAddress)
                 .then((tasksId) => {
                     if (!_.isEmpty(tasksId)) {

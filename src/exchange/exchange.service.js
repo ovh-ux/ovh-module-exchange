@@ -346,16 +346,8 @@ angular
         /**
          * Data necessary for new account creation
          */
-        getNewAccountOptions (organization, serviceName) {
-            return this.services
-                .OvhHttp
-                .get("/sws/exchange/{organization}/{exchange}/accounts/options", {
-                    rootPath: "2api",
-                    urlParams: {
-                        organization,
-                        exchange: serviceName
-                    }
-                });
+        fetchingAccountCreationOptions (organization, serviceName) {
+            return this.services.OvhHttp.get(`/sws/exchange/${organization}/${serviceName}/accounts/options`, { rootPath: "2api" });
         }
 
         /**
@@ -560,9 +552,9 @@ angular
          * Remove account if dedicated or provider 2010 is true, else reset it
          */
         removeAccountInsteadOfReset (exchange) {
-            const isDedicated = this.value.offer.toUpperCase() === "DEDICATED";
+            const isDedicatedOrCluster = this.value.offer.toUpperCase() === "DEDICATED" || this.value.offer.toUpperCase() === "DEDICATED_CLUSTER";
             const isProvider = this.value.offer.toUpperCase() === "PROVIDER";
-            return isDedicated || (isProvider && _(this.value.serverDiagnostic.commercialVersion).includes(2010));
+            return isDedicatedOrCluster || (isProvider && _(this.value.serverDiagnostic.commercialVersion).includes(2010));
         }
 
         retrieveAccountDelegationRight (organization, exchange, account, count = 10, offset = 0, search = "") {

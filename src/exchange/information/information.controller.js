@@ -86,7 +86,7 @@ angular
         }
 
         displayRenewDate () {
-            return this.exchange.expiration && this.exchangeVersion.isAfter(2010) && this.accountTypes.isDedicated();
+            return this.exchange.expiration && this.exchangeVersion.isAfter(2010) && (this.accountTypes.isDedicated() || this.accountTypes.isDedicatedCluster());
         }
 
         shouldDisplayMigration2016 () {
@@ -108,7 +108,7 @@ angular
             const isAlreadyExpired = now.isAfter(sslExpirationDate);
             const canRenewBeforeExpiration = now.isAfter(aMonthBeforeSSLExpirationDate);
 
-            const isDedicatedAccount = this.accountTypes.isDedicated();
+            const isDedicatedAccount = this.accountTypes.isDedicated() || this.accountTypes.isDedicatedCluster();
             const is2010DedicatedOrProvider = this.exchangeVersion.isVersion(2010) && !this.accountTypes.isHosted();
 
             this.shouldDisplaySSLRenewValue = (isDedicatedAccount || is2010DedicatedOrProvider) && (canRenewBeforeExpiration || isAlreadyExpired);
