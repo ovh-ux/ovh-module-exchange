@@ -381,6 +381,12 @@ angular
                 });
         }
 
+        refreshViews (views) {
+            views.forEach((view) => {
+                this[`reset${view}`]();
+            });
+        }
+
         getAccountsOptions (organization, serviceName, params) {
             return this.services
                 .OvhHttp
