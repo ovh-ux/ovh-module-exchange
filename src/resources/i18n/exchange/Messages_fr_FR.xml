@@ -453,18 +453,28 @@ Exchange : profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync.
 <li>il est impossible de mettre côte à côte des caractères spéciaux.</li>
 </ul></translation>
    <translation id="exchange_account_add_emailAddress_error_alreadyExists">Cette adresse e-mail existe déjà.</translation>
-   <translation id="exchange_account_add_samAccountName_label">Login Exchange 2010 (optionnel)</translation>
+   <translation id="exchange_account_add_samAccountName_label">Nom de compte Exchange 2010 (optionnel)</translation>
    <translation id="exchange_account_add_firstName_label">Prénom (optionnel)</translation>
    <translation id="exchange_account_add_lastName_label">Nom (optionnel)</translation>
    <translation id="exchange_account_add_displayName_label">Nom à afficher (optionnel)</translation>
    <translation id="exchange_account_add_password_label">Mot de passe</translation>
+   <translation id="exchange_account_add_password_hint_simple">Ce champ doit avoir une longueur d'au moins {0} caractères.</translation>
+   <translation id="exchange_account_add_password_hint_complex_1">Ce champ doit respecter les exigences suivantes :</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_1">Ne doit pas contenir tout ou une partie du nom à afficher (sans respect de la casse) ;</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_2">Ne doit pas contenir le nom de compte Exchange 2010 (sans respect de la casse) ;</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_3">Doit avoir une longueur d'au moins {0} caractères ;</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_4">Doit contenir des caractères de trois des cinq catégories suivantes :</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_4_1">Lettres minuscules des langues européennes (de « a » à « z », les signes diacritiques, de l'alphabet Grec et de l'alphabet cyrillique) ;</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_4_2">Lettres majuscules des langues européennes (de « A » à « Z », Eszett, les signes diacritiques, de l'alphabet Grec et de l'alphabet cyrillique) ;</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_4_3">Chiffres de la base 10 (de « 0 » à « 9 ») ;</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_4_4">Caractères non alphanumériques (« ~ », « ! », « @ », « # », « $ », « % », « ^ », « & », « * », « _ », « - », « + », « = », « ` », « | », « \ », « ( », « ) », « { », « } », « [ », « ] », « : », « ; », « " », « ' », « < », « > », « , », « . », « ? » ou « / »).</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_4_5">Caractères Unicode alphabétiques qui ne sont ni majuscules, ni minuscules, dont les caractères Unicode des langues asiatiques.</translation>
    <translation id="exchange_account_add_passwordConfirmation_label">Confirmation</translation>
    <translation id="exchange_account_add_order_button">Commander</translation>
    <translation id="exchange_account_add_field_error_required">Veuillez compléter ce champ.</translation>
    <translation id="exchange_account_add_field_error_respectsComplexityRules">Ce champ ne respecte pas les règles de complexité.</translation>
    <translation id="exchange_account_add_field_error_passwordConfirmation">Mots de passe différents.</translation>
    <translation id="exchange_account_add_field_error_pattern">Veuillez saisir un format valide.</translation>
-   <translation id="exchange_account_add_field_passwordConfirmation_error">Veuillez compléter ce champ.</translation>
    <translation id="exchange_account_add_submit_success">La création du compte {0} a été effectuée. Vous pourrez l’utiliser dans quelques minutes.</translation>
    <translation id="exchange_ACTION_add_account_legal_warning" qtlid="209099">Je reconnais qu'OVH procédera à l’exécution immédiate de la prestation à compter de la validation de ma commande et à ce titre je renonce expressément à exercer mon droit de rétractation conformément aux dispositions de l’article L.121-21-8 du code de la consommation.</translation>
    <translation id="exchange_ACTION_add_account_button" qtlid="21487">Ajouter un compte</translation>
@@ -480,10 +490,6 @@ Exchange : profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync.
    <translation id="exchange_ACTION_add_account_GAL_false" qtlid="34788">Non</translation>
    <translation id="exchange_ACTION_add_account_outlook_true" qtlid="34776">Oui</translation>
    <translation id="exchange_ACTION_add_account_outlook_false" qtlid="136308">Sans</translation>
-   <translation id="exchange_ACTION_add_account_helpwizard_title" qtlid="136854">Création compte Exchange</translation>
-   <translation id="exchange_ACTION_add_account_helpwizard_password_title" qtlid="2270">Mot de passe</translation>
-   <translation id="exchange_ACTION_add_account_helpwizard_password" qtlid="171227">Les mots de passe doivent respecter les exigences minimales suivantes :<br/><br/>- Ne pas contenir tout ou partie du nom du compte de l'utilisateur<br/>- Avoir une longueur d'au moins {0} caractères<br/>- Contenir des caractères de trois des quatre catégories suivantes :<br/><ul><li>Caractères majuscules de l'alphabet (A à Z)<br/></li><li>Caractères minuscules de l'alphabet (a à z)<br/></li><li>Chiffres de la base 10 (0 à 9)<br/></li><li>Caractères non alphabétiques (par exemple: !, $, #, %)<br/></li></ul></translation>
-   <translation id="exchange_ACTION_add_account_helpwizard_password_simple" qtlid="195139">Les mots de passe doivent avoir une longueur d'au moins {0} caractères</translation>
    <translation id="exchange_ACTION_add_no_domains" qtlid="170798">Vous n'avez pas encore ajouté de domaine ou il n'a pas encore été validé. <br/>Vous devez d'abord ajouter un domaine et attendre qu'il soit validé pour créer un compte Exchange.</translation>
    <translation id="exchange_ACTION_add_account_option_fail" qtlid="144045">Une erreur est survenue lors du chargement de vos domaines.</translation>
    <translation id="exchange_ACTION_add_account_error_message" qtlid="136828">Une erreur est survenue lors de la création du compte Exchange.</translation>
@@ -497,8 +503,6 @@ Exchange : profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync.
    <translation id="exchange_ACTION_update_account_step1_display_name_label" qtlid="23515">Nom à afficher</translation>
    <translation id="exchange_ACTION_update_account_step1_password_label" qtlid="2270">Mot de passe</translation>
    <translation id="exchange_ACTION_update_account_step1_password_confirmation_label" qtlid="9983">Confirmation</translation>
-   <translation id="exchange_ACTION_update_account_step1_complex_password_tooltip" qtlid="178822">Minimum {0} caractères alphanumériques, chiffres et signes spéciaux.</translation>
-   <translation id="exchange_ACTION_update_account_step1_simple_password_tooltip" qtlid="137595">Minimum {0} caractères.</translation>
    <translation id="exchange_ACTION_update_account_step1_outlook_label" qtlid="136724">Licence Outlook</translation>
    <translation id="exchange_ACTION_update_account_step1_outlookdel_label" qtlid="397403">(supprimée à sa date d'expiration)</translation>
    <translation id="exchange_ACTION_update_account_step1_quota_label" qtlid="6874">Quota</translation>
@@ -511,7 +515,7 @@ Exchange : profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync.
    <translation id="exchange_ACTION_update_account_step1_security_label" qtlid="136750">Options de sécurité</translation>
    <translation id="exchange_ACTION_update_account_step1_GAL_label" qtlid="191980">Cacher l'adresse dans l'annuaire</translation>
    <translation id="exchange_ACTION_update_account_step1_exchange_guid_label" qtlid="174633">Exchange GUID</translation>
-   <translation id="exchange_ACTION_update_account_step1_exchange_SAMA_label" qtlid="201445">Login Exchange 2010</translation>
+   <translation id="exchange_ACTION_update_account_step1_exchange_SAMA_label">Nom de compte Exchange 2010</translation>
    <translation id="exchange_ACTION_update_account_step1_mandatory_fields" qtlid="137634">Champs obligatoires</translation>
    <translation id="exchange_ACTION_update_account_step2_confirmation_intro" qtlid="136841">Votre compte :</translation>
    <translation id="exchange_ACTION_update_account_step2_email_label" qtlid="137244">Compte e-mail</translation>

@@ -52,8 +52,8 @@
 
             function selectPasswordHintText () {
                 return this.accountCreationOptions.passwordComplexityEnabled ?
-                    this.translator.tr("exchange_ACTION_update_account_step1_complex_password_tooltip", [this.accountCreationOptions.minPasswordLength]) :
-                    this.translator.tr("exchange_ACTION_update_account_step1_simple_password_tooltip", [this.accountCreationOptions.minPasswordLength]);
+                    this.translator.tr("exchange_account_add_password_hint_complex", [this.accountCreationOptions.minPasswordLength]) :
+                    this.translator.tr("exchange_account_add_password_hint_simple", [this.accountCreationOptions.minPasswordLength]);
             }
         }
 
@@ -82,7 +82,7 @@
             if (this.accountCreationOptions.passwordComplexityEnabled) {
                 this.newAccountForm.password.$setValidity("respectsComplexityRules", this.ExchangePassword.passwordComplexityCheck(this.newAccount.password, true, this.accountCreationOptions.minPasswordLength));
                 this.newAccountForm.password.$setValidity("containsDisplayName", this.ExchangePassword.passwordContainsName(this.newAccount.password, this.newAccount.displayName));
-                this.newAccountForm.password.$setValidity("containsSAMAccountName", this.ExchangePassword.passwordContainsName(this.newAccount.password, this.newAccount.samAccountName));
+                this.newAccountForm.password.$setValidity("containsSAMAccountName", _(this.newAccount.password).isString() && !_(this.newAccount.password).isEmpty() && _(this.newAccount.samAccountName).isString() && !_(this.newAccount.samAccountName).isEmpty() && this.newAccount.password.toUpperCase() === this.newAccount.samAccountName.toUpperCase());
             } else {
                 this.newAccountForm.password.$setValidity("respectsComplexityRules", this.ExchangePassword.passwordSimpleCheck(this.newAccount.password, true, this.accountCreationOptions.minPasswordLength));
             }
@@ -93,11 +93,11 @@
         }
 
         switchBetweenPasswordAndTextInput () {
-            const dirtynessStatus = this.newAccountForm.password.$dirty;
+            const touchednessStatus = this.newAccountForm.password.$touched;
             this.shouldDisplayPasswordInput = !this.shouldDisplayPasswordInput;
             this.$timeout(() => {
-                if (dirtynessStatus) {
-                    this.newAccountForm.password.$setDirty();
+                if (touchednessStatus) {
+                    this.newAccountForm.password.$setTouched();
                 }
 
                 this.checkPasswordValidity();
@@ -105,7 +105,11 @@
         }
 
         onPasswordConfirmationChange () {
-            this.newAccountForm.passwordConfirmation.$setValidity("pattern", this.newAccount.password === this.newAccount.passwordConfirmation);
+            if (this.newAccountForm.passwordConfirmation.$error.required) {
+                this.newAccountForm.passwordConfirmation.$setValidity("isDifferentToPassword", true);
+            } else {
+                this.newAccountForm.passwordConfirmation.$setValidity("isDifferentToPassword", this.newAccount.password === this.newAccount.passwordConfirmation);
+            }
         }
 
         sendingNewAccount () {

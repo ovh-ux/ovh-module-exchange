@@ -239,10 +239,12 @@
        <button class="btn btn-block btn-default" type="button"
                data-ng-bind="$ctrl.translator.tr('exchange_ACTION_export_accounts_office_attached_button')"
                data-ng-click="$ctrl.subscribeToOfficeAttach()"
-               data-ng-if="$ctrl.canSubscribeToOfficeAttach">
+               data-ng-if="$ctrl.canSubscribeToOfficeAttach"
+               data-ng-disabled="$ctrl.loading">
        </button>
        <button class="btn btn-block btn-default" type="button"
-               data-ng-click="$ctrl.newAccount()">
+               data-ng-click="$ctrl.newAccount()"
+               data-ng-disabled="$ctrl.loading">
            <span data-ng-bind="$ctrl.translator.tr('exchange_ACTION_order_accounts_button')"
                  data-ng-if="$ctrl.canOrderAccount()"></span>
            <span data-ng-bind="$ctrl.translator.tr('exchange_ACTION_add_account_button')"
