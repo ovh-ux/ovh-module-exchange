@@ -401,9 +401,17 @@ angular
                 });
         }
 
+        /**
+         * Asks the datagrid in each `views` to refresh
+         * @param {string[]} views The views containing the datagrid to refresh
+         */
         refreshViews (...views) {
             views.forEach((view) => {
-                this[`reset${view}`]();
+                const matchingMethod = this[`reset${view}`];
+
+                if (matchingMethod !== undefined) {
+                    matchingMethod();
+                }
             });
         }
 

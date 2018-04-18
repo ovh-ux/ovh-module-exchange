@@ -159,9 +159,10 @@
    <translation id="exchange_tab_ACCOUNTS_state_INTERNAL_MIGRATION">Migration en cours</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Suspendu</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Suspension en cours</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_BLOCK_FOR_SPAM">Bloqué</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_BLOCKED">Bloqué</translation>
    <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_DOING">Tâche planifiée ou en cours d'exécution</translation>
    <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_ERROR">Tâche en erreur</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_UNKNOWN">Inconnu</translation>
 
    <translation id="exchange_tab_ACCOUNTS_menu_edit">Modifier</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_alias">Gérer les alias</translation>
@@ -469,7 +470,7 @@ Exchange : profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync.
    <translation id="exchange_account_add_password_button_hide">Cacher le mot de passe</translation>
    <translation id="exchange_account_add_password_hint_simple">Ce champ doit avoir une longueur d'au moins {0} caractères.</translation>
    <translation id="exchange_account_add_password_hint_complex_1">Pour des raisons de sécurité, ce champ doit respecter ces critères :</translation>
-   <translation id="exchange_account_add_password_hint_complex_1_1">ne pas contenir le nom à afficher ou le nom de compte Exchange 2010 (sans respect de la casse);</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_1">ne pas contenir le nom à afficher ou le nom de compte Exchange 2010 (sans respect de la casse) ;</translation>
    <translation id="exchange_account_add_password_hint_complex_1_2">doit comporter au moins entre {0} caractères ;</translation>
    <translation id="exchange_account_add_password_hint_complex_1_3">doit comporter les éléments de trois des quatre catégories suivantes :</translation>
    <translation id="exchange_account_add_password_hint_complex_1_3_1">des lettres minuscules,</translation>
@@ -511,6 +512,8 @@ Exchange : profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync.
    <translation id="exchange_ACTION_update_account_step1_display_name_label" qtlid="23515">Nom à afficher</translation>
    <translation id="exchange_ACTION_update_account_step1_password_label" qtlid="2270">Mot de passe</translation>
    <translation id="exchange_ACTION_update_account_step1_password_confirmation_label" qtlid="9983">Confirmation</translation>
+   <translation id="exchange_ACTION_update_account_step1_complex_password_tooltip" qtlid="178822">Minimum {0} caractères alphanumériques, chiffres et signes spéciaux.</translation>
+   <translation id="exchange_ACTION_update_account_step1_simple_password_tooltip" qtlid="137595">Minimum {0} caractères.</translation>
    <translation id="exchange_ACTION_update_account_step1_outlook_label" qtlid="136724">Licence Outlook</translation>
    <translation id="exchange_ACTION_update_account_step1_outlookdel_label" qtlid="397403">(supprimée à sa date d'expiration)</translation>
    <translation id="exchange_ACTION_update_account_step1_quota_label" qtlid="6874">Quota</translation>

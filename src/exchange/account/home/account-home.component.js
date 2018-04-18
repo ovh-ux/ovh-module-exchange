@@ -191,14 +191,18 @@
                 }
 
                 if (account.spamDetected) {
-                    return this.translator.tr("exchange_tab_ACCOUNTS_state_BLOCK_FOR_SPAM");
+                    return this.translator.tr("exchange_tab_ACCOUNTS_state_BLOCKED");
+                }
+
+                if (this.exchangeStates.isValidState(account.state)) {
+                    return this.translator.tr(`exchange_tab_ACCOUNTS_state_${_(account.state).snakeCase().toUpperCase()}`);
                 }
 
                 if (_(account.taskPendingId).isNumber() && account.taskPendingId !== 0) {
                     return this.translator.tr("exchange_tab_ACCOUNTS_state_TASK_ON_DOING");
                 }
 
-                return this.translator.tr(`exchange_tab_ACCOUNTS_state_${_(account.state).snakeCase().toUpperCase()}`);
+                return this.translator.tr("exchange_tab_ACCOUNTS_state_UNKNOWN");
             }
         }
 

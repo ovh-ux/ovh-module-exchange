@@ -37,14 +37,16 @@
                         class="oui-icon oui-icon-chevron-down"
                         aria-hidden="true"></span>
                 </label>
-                <span
-                    id="accountTypeDescription"
-                    class="sr-only"
-                    data-ng-bind="$ctrl.translator.tr('exchange_account_add_accountType_tooltip')"></span>
-                <span
-                    class="oui-icon oui-icon-help_circle ml-4 mt-3"
-                    title="{{:: $ctrl.translator.tr('exchange_account_add_accountType_tooltip') }}"
-                    aria-hidden="true"></span>
+                <span data-ng-if="$ctrl.accountTypes.isDedicatedCluster()">
+                    <span
+                        id="accountTypeDescription"
+                        class="sr-only"
+                        data-ng-bind=":: $ctrl.translator.tr('exchange_account_add_accountType_tooltip')"></span>
+                    <span
+                        class="oui-icon oui-icon-help_circle ml-4 mt-3"
+                        title="{{:: $ctrl.translator.tr('exchange_account_add_accountType_tooltip') }}"
+                        aria-hidden="true"></span>
+                </span>
             </div>
         </div>
 
@@ -236,21 +238,21 @@
             <div
                 class="oui-field__helper"
                 data-ng-if="!$ctrl.accountCreationOptions.passwordComplexityEnabled"
-                data-ng-bind="$ctrl.translator.tr('exchange_account_add_password_hint_simple', [$ctrl.accountCreationOptions.minPasswordLength])"></div>
+                data-ng-bind=":: $ctrl.translator.tr('exchange_account_add_password_hint_simple', [$ctrl.accountCreationOptions.minPasswordLength])"></div>
             <div
                 class="oui-field__helper"
                 data-ng-if="$ctrl.accountCreationOptions.passwordComplexityEnabled">
-                <span data-ng-bind="$ctrl.translator.tr('exchange_account_add_password_hint_complex_1')"></span>
+                <span data-ng-bind=":: $ctrl.translator.tr('exchange_account_add_password_hint_complex_1')"></span>
                 <ul>
-                    <li data-ng-bind="$ctrl.translator.tr('exchange_account_add_password_hint_complex_1_1')"></li>
-                    <li data-ng-bind="$ctrl.translator.tr('exchange_account_add_password_hint_complex_1_2', [$ctrl.accountCreationOptions.minPasswordLength])"></li>
+                    <li data-ng-bind=":: $ctrl.translator.tr('exchange_account_add_password_hint_complex_1_1')"></li>
+                    <li data-ng-bind=":: $ctrl.translator.tr('exchange_account_add_password_hint_complex_1_2', [$ctrl.accountCreationOptions.minPasswordLength])"></li>
                     <li>
-                        <span data-ng-bind="$ctrl.translator.tr('exchange_account_add_password_hint_complex_1_3')"></span>
+                        <span data-ng-bind=":: $ctrl.translator.tr('exchange_account_add_password_hint_complex_1_3')"></span>
                         <ul>
-                            <li data-ng-bind="$ctrl.translator.tr('exchange_account_add_password_hint_complex_1_3_1')"></li>
-                            <li data-ng-bind="$ctrl.translator.tr('exchange_account_add_password_hint_complex_1_3_2')"></li>
-                            <li data-ng-bind="$ctrl.translator.tr('exchange_account_add_password_hint_complex_1_3_3')"></li>
-                            <li data-ng-bind="$ctrl.translator.tr('exchange_account_add_password_hint_complex_1_3_4')"></li>
+                            <li data-ng-bind=":: $ctrl.translator.tr('exchange_account_add_password_hint_complex_1_3_1')"></li>
+                            <li data-ng-bind=":: $ctrl.translator.tr('exchange_account_add_password_hint_complex_1_3_2')"></li>
+                            <li data-ng-bind=":: $ctrl.translator.tr('exchange_account_add_password_hint_complex_1_3_3')"></li>
+                            <li data-ng-bind=":: $ctrl.translator.tr('exchange_account_add_password_hint_complex_1_3_4')"></li>
                         </ul>
                     </li>
                 </ul>

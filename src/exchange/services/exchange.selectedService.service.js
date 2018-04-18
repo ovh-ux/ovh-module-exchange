@@ -42,22 +42,25 @@ angular
             };
         }
 
-        hasMoreThanOneAccountTypes () {
-            return (this.accountTypes.isProvider() && this.exchangeVersion.isVersion(2010)) || this.accountTypes.isDedicatedCluster();
-        }
-
         /**
-         * @returns {ExchangeServiceContractTypes}
+         * @returns {ExchangeServiceContractTypes} The contract type the current service is linked to
          */
         getContractType () {
             return this.accountTypes.isHosted() || (this.accountTypes.isProvider() && this.exchangeVersion.isAfter(2010)) ? this.CONTRACT_TYPES.PREPAID : this.CONTRACT_TYPES.PAY_AS_YOU_GO;
         }
 
+        /**
+         * @param {ExchangeServiceContractTypes} contractType
+         * @returns {boolean} True if the current service uses the same contract type as `contractType`
+         */
         isContractType (contractType) {
             return this.getContractType().displayValue === contractType.displayValue;
         }
 
+        /**
+         * @returns {boolean} True if the current service allows accounts to be upgraded to 300 Gb
+         */
         canUpgradeTo300Gb () {
-            return this.accountTypes.isHosted() || this.accountTypes.isProvider();
+            return this.accountTypes.isHosted() || (this.accountTypes.isProvider() && this.exchangeVersion.isAfter(2010));
         }
     });
