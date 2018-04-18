@@ -1,9 +1,10 @@
 {
     class ExchangeAccountAdd {
-        constructor ($scope, $timeout, Exchange, exchangeAccount, ExchangePassword, exchangeVersion, messaging, translator) {
+        constructor ($scope, $timeout, accountTypes, Exchange, exchangeAccount, ExchangePassword, exchangeVersion, messaging, translator) {
             this.$scope = $scope;
             this.$timeout = $timeout;
 
+            this.accountTypes = accountTypes;
             this.Exchange = Exchange;
             this.exchangeAccount = exchangeAccount;
             this.ExchangePassword = ExchangePassword;
@@ -17,7 +18,7 @@
             this.$routerParams = this.Exchange.getParams();
             this.newAccount = {};
             this.shouldDisplayPasswordInput = true;
-            this.isOrderButtonDisabled = false;
+            this.isSendingNewAccount = false;
 
             return this.fetchingAccountCreationOptions();
         }
@@ -29,7 +30,6 @@
                     this.accountCreationOptions = transformAccountTypes.call(this, accountCreationOptions);
                     this.newAccount.accountType = this.accountCreationOptions.availableTypes[0];
                     this.newAccount.domain = this.accountCreationOptions.availableDomains[0];
-                    this.passwordHintText = selectPasswordHintText.call(this);
                 })
                 .catch((error) => {
                     this.messaging.writeError("exchange_ACTION_add_account_error_message", error);
@@ -40,20 +40,14 @@
                 });
 
             function transformAccountTypes (accountCreationOptions) {
-                const accountCreationOptionsa = _(accountCreationOptions).assign({
-                    availableTypes: accountCreationOptions.availableTypes.map((type) => ({
-                        name: type,
-                        displayName: this.translator.tr(`exchange_tab_dedicatedCluster_account_type_${type}`)
+                const transformedAccountCreationOptions = _(accountCreationOptions).assign({
+                    availableTypes: accountCreationOptions.availableTypes.map((accountType) => ({
+                        name: accountType,
+                        displayName: this.accountTypes.isDedicatedCluster() ? this.translator.tr(`exchange_tab_dedicatedCluster_account_type_${accountType}`) : this.translator.tr(`exchange_tab_ACCOUNTS_type_${accountType}`)
                     }))
                 }).value();
 
-                return accountCreationOptionsa;
-            }
-
-            function selectPasswordHintText () {
-                return this.accountCreationOptions.passwordComplexityEnabled ?
-                    this.translator.tr("exchange_account_add_password_hint_complex", [this.accountCreationOptions.minPasswordLength]) :
-                    this.translator.tr("exchange_account_add_password_hint_simple", [this.accountCreationOptions.minPasswordLength]);
+                return transformedAccountCreationOptions;
             }
         }
 
@@ -67,22 +61,27 @@
                 .isEmpty()
                 .value();
 
-            this.newAccountForm.login.$setValidity("emailAddressIsNotTaken", !emailAddressIsAlreadyTaken);
+            this.newAccountForm.login.$setValidity("emailAddressIsAlreadyTaken", !emailAddressIsAlreadyTaken);
         }
 
         checkPasswordValidity () {
             if (this.newAccountForm.password.$error.required) {
                 this.newAccountForm.password.$setValidity("respectsComplexityRules", true);
                 this.newAccountForm.password.$setValidity("containsDisplayName", true);
-                this.newAccountForm.password.$setValidity("containsSAMAccountName", true);
+                this.newAccountForm.password.$setValidity("isSameAsSAMAccountName", true);
                 this.newAccountForm.password.$setValidity("respectsComplexityRules", true);
                 return;
             }
 
             if (this.accountCreationOptions.passwordComplexityEnabled) {
                 this.newAccountForm.password.$setValidity("respectsComplexityRules", this.ExchangePassword.passwordComplexityCheck(this.newAccount.password, true, this.accountCreationOptions.minPasswordLength));
-                this.newAccountForm.password.$setValidity("containsDisplayName", this.ExchangePassword.passwordContainsName(this.newAccount.password, this.newAccount.displayName));
-                this.newAccountForm.password.$setValidity("containsSAMAccountName", _(this.newAccount.password).isString() && !_(this.newAccount.password).isEmpty() && _(this.newAccount.samAccountName).isString() && !_(this.newAccount.samAccountName).isEmpty() && this.newAccount.password.toUpperCase() === this.newAccount.samAccountName.toUpperCase());
+                this.newAccountForm.password.$setValidity("containsDisplayName", !this.ExchangePassword.passwordContainsName(this.newAccount.password, this.newAccount.displayName));
+                this.newAccountForm.password.$setValidity("isSameAsSAMAccountName",
+                                                          _(this.newAccount.samAccountName).isEmpty() ||
+                                                         (_(this.newAccount.password).isString() &&
+                                                            _(this.newAccount.samAccountName).isString() &&
+                                                            this.newAccount.password.toUpperCase() !== this.newAccount.samAccountName.toUpperCase())
+                );
             } else {
                 this.newAccountForm.password.$setValidity("respectsComplexityRules", this.ExchangePassword.passwordSimpleCheck(this.newAccount.password, true, this.accountCreationOptions.minPasswordLength));
             }
@@ -98,6 +97,7 @@
             this.$timeout(() => {
                 if (touchednessStatus) {
                     this.newAccountForm.password.$setTouched();
+                    this.newAccountForm.password.$setDirty(); // It is intentional if the touchness impacts the dirtyness
                 }
 
                 this.checkPasswordValidity();
@@ -113,7 +113,7 @@
         }
 
         sendingNewAccount () {
-            this.isOrderButtonDisabled = true;
+            this.isSendingNewAccount = true;
 
             const formattedAccount = {
                 SAMAccountName: this.newAccount.samAccountName,

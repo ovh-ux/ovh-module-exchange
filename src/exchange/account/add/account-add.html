@@ -97,7 +97,7 @@
             </div>
             <div
                 class="oui-field__error"
-                data-ng-if="$ctrl.newAccountForm.login.$error.emailAddressIsNotTaken">
+                data-ng-if="$ctrl.newAccountForm.login.$error.emailAddressIsAlreadyTaken">
                 <span role="alert">
                     <span
                         class="oui-icon oui-icon-error"
@@ -121,7 +121,8 @@
                 name="samAccountName"
                 maxlength="256"
                 data-ng-model="$ctrl.newAccount.samAccountName"
-                data-ng-change="$ctrl.checkPasswordValidity()">
+                data-ng-change="$ctrl.checkPasswordValidity()"
+                data-ng-model-options="{ updateOn: 'blur' }">
         </oui-field>
 
         <oui-field
@@ -133,7 +134,8 @@
                 id="firstName"
                 name="firstName"
                 maxlength="256"
-                data-ng-model="$ctrl.newAccount.firstName">
+                data-ng-model="$ctrl.newAccount.firstName"
+                data-ng-model-options="{ updateOn: 'blur' }">
         </oui-field>
 
         <oui-field
@@ -145,7 +147,8 @@
                 id="lastName"
                 name="lastName"
                 maxlength="256"
-                data-ng-model="$ctrl.newAccount.lastName">
+                data-ng-model="$ctrl.newAccount.lastName"
+                data-ng-model-options="{ updateOn: 'blur' }">
         </oui-field>
 
         <oui-field
@@ -158,7 +161,8 @@
                 name="displayName"
                 maxlength="256"
                 data-ng-model="$ctrl.newAccount.displayName"
-                data-ng-change="$ctrl.checkPasswordValidity()">
+                data-ng-change="$ctrl.checkPasswordValidity()"
+                data-ng-model-options="{ updateOn: 'blur' }">
         </oui-field>
 
         <div
@@ -226,7 +230,7 @@
             </div>
             <div
                 class="oui-field__error"
-                data-ng-if="$ctrl.newAccountForm.password.$error.respectsComplexityRules">
+                data-ng-if="$ctrl.newAccountForm.password.$error.respectsComplexityRules || $ctrl.newAccountForm.password.$error.containsDisplayName || $ctrl.newAccountForm.password.$error.isSameAsSAMAccountName">
                 <span role="alert">
                     <span
                         class="oui-icon oui-icon-error"
@@ -235,45 +239,23 @@
                 </span>
             </div>
             <div
-                class="oui-field__error"
-                data-ng-if="$ctrl.newAccountForm.login.$error.containsDisplayName">
-                <span role="alert">
-                    <span
-                        class="oui-icon oui-icon-error"
-                        aria-hidden="true"></span>
-                    <span data-ng-bind=":: $ctrl.translator.tr('exchange_account_add_field_error_required')"></span>
-                </span>
-            </div>
-            <div
-                class="oui-field__error"
-                data-ng-if="$ctrl.newAccountForm.login.$error.containsSAMAccountName">
-                <span role="alert">
-                    <span
-                        class="oui-icon oui-icon-error"
-                        aria-hidden="true"></span>
-                    <span data-ng-bind=":: $ctrl.translator.tr('exchange_account_add_field_error_required')"></span>
-                </span>
-            </div>
+                class="oui-field__helper"
+                data-ng-if="!$ctrl.accountCreationOptions.passwordComplexityEnabled"
+                data-ng-bind="$ctrl.translator.tr('exchange_account_add_password_hint_simple', [$ctrl.accountCreationOptions.minPasswordLength])"></div>
             <div
                 class="oui-field__helper"
-                data-ng-if="$ctrl.accountCreationOptions.passwordComplexityEnabled"
-                data-ng-bind="$ctrl.translator.tr('exchange_account_add_password_hint_simple', $ctrl.accountCreationOptions.minPasswordLength)"></div>
-            <div
-                class="oui-field__helper"
-                data-ng-if="!$ctrl.accountCreationOptions.passwordComplexityEnabled">
+                data-ng-if="$ctrl.accountCreationOptions.passwordComplexityEnabled">
                 <span data-ng-bind="$ctrl.translator.tr('exchange_account_add_password_hint_complex_1')"></span>
                 <ul>
                     <li data-ng-bind="$ctrl.translator.tr('exchange_account_add_password_hint_complex_1_1')"></li>
-                    <li data-ng-bind="$ctrl.translator.tr('exchange_account_add_password_hint_complex_1_2')"></li>
-                    <li data-ng-bind="$ctrl.translator.tr('exchange_account_add_password_hint_complex_1_3', $ctrl.accountCreationOptions.minPasswordLength)"></li>
+                    <li data-ng-bind="$ctrl.translator.tr('exchange_account_add_password_hint_complex_1_2', [$ctrl.accountCreationOptions.minPasswordLength])"></li>
                     <li>
-                        <span data-ng-bind="$ctrl.translator.tr('exchange_account_add_password_hint_complex_1_4')"></span>
+                        <span data-ng-bind="$ctrl.translator.tr('exchange_account_add_password_hint_complex_1_3')"></span>
                         <ul>
-                            <li data-ng-bind="$ctrl.translator.tr('exchange_account_add_password_hint_complex_1_4_1')"></li>
-                            <li data-ng-bind="$ctrl.translator.tr('exchange_account_add_password_hint_complex_1_4_2')"></li>
-                            <li data-ng-bind="$ctrl.translator.tr('exchange_account_add_password_hint_complex_1_4_3')"></li>
-                            <li data-ng-bind="$ctrl.translator.tr('exchange_account_add_password_hint_complex_1_4_4')"></li>
-                            <li data-ng-bind="$ctrl.translator.tr('exchange_account_add_password_hint_complex_1_4_5')"></li>
+                            <li data-ng-bind="$ctrl.translator.tr('exchange_account_add_password_hint_complex_1_3_1')"></li>
+                            <li data-ng-bind="$ctrl.translator.tr('exchange_account_add_password_hint_complex_1_3_2')"></li>
+                            <li data-ng-bind="$ctrl.translator.tr('exchange_account_add_password_hint_complex_1_3_3')"></li>
+                            <li data-ng-bind="$ctrl.translator.tr('exchange_account_add_password_hint_complex_1_3_4')"></li>
                         </ul>
                     </li>
                 </ul>
@@ -330,8 +312,8 @@
         <button
             type="submit"
             class="oui-button oui-button_primary"
-            data-ng-disabled="$ctrl.newAccountForm.login.$pristine || $ctrl.newAccountForm.password.$pristine || $ctrl.newAccountForm.$invalid || $ctrl.isOrderButtonDisabled"
+            data-ng-disabled="$ctrl.newAccountForm.login.$pristine || $ctrl.newAccountForm.password.$pristine || $ctrl.newAccountForm.$invalid || $ctrl.isSendingNewAccount"
             data-ng-bind=":: $ctrl.translator.tr('exchange_account_add_order_button')"
             data-ng-click="$ctrl.sendingNewAccount()"></button>
     </form>
-</>
+</div>

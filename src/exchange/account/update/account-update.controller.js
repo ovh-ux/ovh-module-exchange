@@ -1,16 +1,16 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeUpdateAccountCtrl", class ExchangeUpdateAccountCtrl {
-        constructor ($scope, Exchange, ExchangePassword, navigation, messaging, translator, accountTypes, exchangeVersion) {
+        constructor ($scope, accountTypes, Exchange, ExchangePassword, exchangeVersion, messaging, navigation, translator) {
             this.services = {
                 $scope,
+                accountTypes,
                 Exchange,
                 ExchangePassword,
-                navigation,
+                exchangeVersion,
                 messaging,
-                translator,
-                accountTypes,
-                exchangeVersion
+                navigation,
+                translator
             };
 
             this.$routerParams = Exchange.getParams();
@@ -201,7 +201,7 @@ angular
         }
 
         canChangePrimary () {
-            if (this.selectedAccount.is25g) {
+            if (this.services.accountTypes.is25g()) {
                 return this.selectedAccount.primaryEmailAddress.split("@")[1] === "configureme.me";
             }
 

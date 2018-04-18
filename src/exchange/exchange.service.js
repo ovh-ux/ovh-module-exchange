@@ -161,6 +161,11 @@ angular
                 .getValue("WIZARD_HOSTED_CREATION_OPENING_PREFERENCE");
         }
 
+
+        currentUserHasConfigurationRights () {
+            return _(this.value.nicType).some((nicType) => nicType === this.nicAdmin || nicType === this.nicTech);
+        }
+
         /**
          * Get Selected Exchange
          */
@@ -318,6 +323,21 @@ angular
             });
         }
 
+
+        fetchAccounts (organizationName, exchangeService, count = 25, offset = 1, searchValues = [], accountType = "") {
+            return this.services.OvhHttp
+                .get(`/sws/exchange/${organizationName}/${exchangeService}/accounts`, {
+                    rootPath: "2api",
+                    params: {
+                        count,
+                        offset,
+                        searchValues,
+                        configurableOnly: 0,
+                        typeLicence: accountType
+                    }
+                });
+        }
+
         /**
          * Return paginated exchange accounts list
          * @param pageSize - the size of page([10, 20, 40])
@@ -381,7 +401,7 @@ angular
                 });
         }
 
-        refreshViews (views) {
+        refreshViews (...views) {
             views.forEach((view) => {
                 this[`reset${view}`]();
             });
@@ -610,16 +630,10 @@ angular
         /**
          * Get Exchange accounts aliases
          */
-        getAliases (organization, serviceName, account, count = 10, offset = 0) {
-            return this.services
-                .OvhHttp
-                .get("/sws/exchange/{organization}/{exchange}/accounts/{account}/alias", {
+        getAliases (organizationName, exchangeService, account, count = 10, offset = 0) {
+            return this.services.OvhHttp
+                .get(`/sws/exchange/${organizationName}/${exchangeService}/accounts/${account}/alias`, {
                     rootPath: "2api",
-                    urlParams: {
-                        organization,
-                        exchange: serviceName,
-                        account
-                    },
                     params: {
                         count,
                         offset

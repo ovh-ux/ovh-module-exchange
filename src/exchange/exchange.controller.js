@@ -161,7 +161,7 @@ angular
                 .then(() => this.canActivateSharepoint())
                 .then(() => this.services.officeAttach.retrievingIfUserAlreadyHasSubscribed(this.exchange.domain))
                 .then((userHasAlreadySubscribedToOfficeAttach) => {
-                    this.canSubscribeToOfficeAttach = !userHasAlreadySubscribedToOfficeAttach;
+                    this.canUserSubscribeToOfficeAttach = !userHasAlreadySubscribedToOfficeAttach;
 
                     if (!_.isEmpty(this.exchange.messages)) {
                         this.services.messaging.writeError(this.services.translator.tr("exchange_dashboard_loading_error"), this.exchange);

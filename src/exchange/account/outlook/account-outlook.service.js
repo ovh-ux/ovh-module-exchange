@@ -117,27 +117,26 @@ angular
             });
         }
 
-        /**
-         * Remove the Outlook license
-         */
-        removeOutlook (organization, serviceName, account) {
-            const data = {
-                outlookLicense: account.orderedOutlook,
-                primaryEmailAddress: account.primaryEmailAddress
-            };
-
-            if (account.orderedOutlook) {
-                data.deleteOutlookAtExpiration = true;
-            }
-
-            return this.services.OvhHttp.put("/email/exchange/{organization}/service/{exchange}/account/{primaryEmailAddress}", {
+        delete (organizationName, serviceName, primaryEmailAddress) {
+            return this.services.OvhHttp.put(`/email/exchange/${organizationName}/service/${serviceName}/account/${primaryEmailAddress}`, {
                 rootPath: "apiv6",
-                urlParams: {
-                    organization,
-                    exchange: serviceName,
-                    primaryEmailAddress: account.primaryEmailAddress
-                },
-                data
+                data: {
+                    deleteOutlookAtExpiration: true
+                }
+            }).then((response) => {
+                this.services.Exchange.resetAccounts();
+                this.services.Exchange.resetTasks();
+
+                return response;
+            });
+        }
+
+        deactivate (organizationName, serviceName, primaryEmailAddress) {
+            return this.services.OvhHttp.put(`/email/exchange/${organizationName}/service/${serviceName}/account/${primaryEmailAddress}`, {
+                rootPath: "apiv6",
+                data: {
+                    outlookLicense: false
+                }
             }).then((response) => {
                 this.services.Exchange.resetAccounts();
                 this.services.Exchange.resetTasks();

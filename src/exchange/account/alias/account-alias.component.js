@@ -1,62 +1,69 @@
 {
     class ExchangeAccountAlias {
         constructor ($scope, Exchange, exchangeAccount, exchangeStates, navigation, messaging, translator) {
-            this.services = {
-                $scope,
-                Exchange,
-                exchangeAccount,
-                exchangeStates,
-                navigation,
-                messaging,
-                translator
-            };
+            this.$scope = $scope;
+
+            this.Exchange = Exchange;
+            this.exchangeAccount = exchangeAccount;
+            this.exchangeStates = exchangeStates;
+            this.navigation = navigation;
+            this.messaging = messaging;
+            this.translator = translator;
         }
 
         $onInit () {
-            this.$routerParams = this.services.Exchange.getParams();
+            this.$routerParams = this.Exchange.getParams();
             this.aliasesParams = {};
+            this.aliasMaxLimit = this.Exchange.aliasMaxLimit;
 
-            this.aliasMaxLimit = this.services.Exchange.aliasMaxLimit;
-            this.services.$scope.$on(this.services.Exchange.events.accountsChanged, () => this.refreshList());
+            this.$scope.$on(this.Exchange.events.accountsChanged, () => this.refreshList());
         }
 
         getAliases ({ pageSize, offset }) {
             this.aliasesParams.pageSize = pageSize;
             this.aliasesParams.offset = offset;
 
-            return this.services.Exchange.getAliases(this.$routerParams.organization, this.$routerParams.productId, this.account.primaryEmailAddress, pageSize, offset - 1)
-                .then((data) => {
-                    this.aliases = data.list.results;
+            return this.Exchange.getAliases(this.$routerParams.organization, this.$routerParams.productId, this.account.primaryEmailAddress, pageSize, offset - 1)
+                .then((aliases) => {
+                    this.aliases = aliases.list.results;
                     return {
                         data: this.aliases,
                         meta: {
-                            totalCount: data.count
+                            totalCount: aliases.count
                         }
                     };
                 })
-                .catch((err) => this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ALIAS_error_message"), err));
+                .catch((error) => {
+                    this.messaging.writeError(this.translator.tr("exchange_tab_ALIAS_error_message"), error);
+                    this.hide();
+                });
         }
 
         refreshList () {
-            this.services.Exchange.getAliases(this.$routerParams.organization, this.$routerParams.productId, this.account.primaryEmailAddress, this.aliasesParams.pageSize, this.aliasesParams.offset - 1)
-                .then((data) => {
-                    for (let i = 0; i < data.list.results.length; i++) {
-                        this.aliases.splice(i, 1, data.list.results[i]);
+            this.Exchange.getAliases(this.$routerParams.organization, this.$routerParams.productId, this.account.primaryEmailAddress, this.aliasesParams.pageSize, this.aliasesParams.offset - 1)
+                .then((aliases) => {
+                    for (let i = 0; i < aliases.list.results.length; i++) {
+                        this.aliases.splice(i, 1, aliases.list.results[i]);
                     }
-                    for (let i = data.list.results.length; i < this.aliases.length; i++) {
+
+                    for (let i = aliases.list.results.length; i < this.aliases.length; i++) {
                         this.aliases.splice(i, 1);
                     }
                 })
-                .catch((err) => this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ALIAS_error_message"), err));
+                .catch((error) => {
+                    this.messaging.writeError(this.translator.tr("exchange_tab_ALIAS_error_message"), error);
+                    this.hide();
+                });
         }
 
+
         hide () {
-            this.services.$scope.$emit(this.services.exchangeAccount.events.accountSwitch, { action: "hide" });
+            this.$scope.$emit(this.exchangeAccount.events.accountSwitch, { action: "hide" });
         }
 
         deleteAlias (alias) {
-            if (!alias.taskPendingId) {
-                this.services.navigation.setAction("exchange/account/alias/remove/account-alias-remove", {
+            if (_(alias).get("taskPendingId", 0) === 0) {
+                this.navigation.setAction("exchange/account/alias/remove/account-alias-remove", {
                     account: this.account,
                     alias
                 });
@@ -64,18 +71,17 @@
         }
 
         addAccountAlias () {
-            const hasAccountCurrentlySelected = this.account;
-            const doesNotExceedMaxNumber = this.account.aliases <= this.aliasMaxLimit;
-            const accountIsOk = this.services.exchangeStates.constructor.isOk(this.account);
+            const accountHasLessAliasesThanMaxLimit = _(this.aliases).get("length", 0) <= this.aliasMaxLimit;
+            const accountIsOk = this.exchangeStates.constructor.isOk(this.account);
 
-            if (hasAccountCurrentlySelected && doesNotExceedMaxNumber && accountIsOk) {
-                this.services.navigation.setAction("exchange/account/alias/add/account-alias-add", this.account);
+            if (accountHasLessAliasesThanMaxLimit && accountIsOk) {
+                this.navigation.setAction("exchange/account/alias/add/account-alias-add", this.account);
             }
         }
 
         getAddAliasTooltip () {
-            if (this.account && this.account.aliases >= this.aliasMaxLimit) {
-                return this.services.translator.tr("exchange_tab_ALIAS_add_alias_limit_tooltip");
+            if (_(this.aliases).get("length", 0) >= this.aliasMaxLimit) {
+                return this.translator.tr("exchange_tab_ALIAS_add_alias_limit_tooltip");
             }
 
             return null;
