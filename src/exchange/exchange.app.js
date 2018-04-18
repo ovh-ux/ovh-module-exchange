@@ -34,8 +34,8 @@ angular
                 translator
             }
         }, {
-            name: "app.microsoft.exchange.dedicatedcluster",
-            url: "/configuration/exchange_dedicatedcluster/:organization/:productId?tab",
+            name: "app.microsoft.exchange.dedicatedCluster",
+            url: "/configuration/exchange_dedicatedCluster/:organization/:productId?tab",
             templateUrl: "exchange/exchange.html",
             controller: "ExchangeCtrl",
             controllerAs: "ctrl",
@@ -44,7 +44,7 @@ angular
                 tab: null
             },
             resolve: {
-                navigationInformations: getNavigationInformations("exchange_dedicatedcluster"),
+                navigationInformations: getNavigationInformations("exchange_dedicatedCluster"),
                 translator
             }
         }, {

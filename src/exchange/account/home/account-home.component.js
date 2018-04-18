@@ -141,7 +141,7 @@
         }
 
         displayAliases (account) {
-            this.$scope.$emit(this.exchangeAccount.events.accountSwitch, { action: "alias", args: { account: _(account).clone() } });
+            this.$scope.$emit(this.exchangeAccount.EVENTS.CHANGE_STATE, { stateName: "alias", args: { account: _(account).clone() } });
         }
 
         displayDialog (pathToFeature, account) {
@@ -211,7 +211,7 @@
         }
 
         openAddingAccountDialog () {
-            this.$scope.$emit(this.exchangeAccount.events.accountSwitch, { action: "add" });
+            this.$scope.$emit(this.exchangeAccount.EVENTS.CHANGE_STATE, { stateName: "add" });
         }
 
         openOrderingAccountDialog () {

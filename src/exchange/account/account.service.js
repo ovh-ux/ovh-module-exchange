@@ -1,22 +1,20 @@
 angular
     .module("Module.exchange.services")
     .service("exchangeAccount", class ExchangeAccount {
-        constructor (Exchange, exchangeSelectedService, exchangeStates, exchangeVersion, OvhHttp) {
+        constructor (Exchange, exchangeSelectedService, exchangeStates, OvhHttp) {
             this.Exchange = Exchange;
             this.exchangeSelectedService = exchangeSelectedService;
             this.exchangeStates = exchangeStates;
             this.OvhHttp = OvhHttp;
 
-            this.events = {
-                accountSwitch: "exchange.account.switch"
+            this.EVENTS = {
+                CHANGE_STATE: "exchange.account.CHANGE_STATE"
             };
 
             this.ACCOUNT_TYPES = {
                 BASIC: "Basic",
                 STANDARD: "Standard"
             };
-
-            this.placeholderDomainName = "configureme.me";
 
             this.OUTLOOK_STATES = {
                 ALREADY_ORDERED: "alreadyOrdered",
@@ -25,7 +23,7 @@ angular
                 TO_ORDER: "toOrder"
             };
 
-            this.PLACEHOLDER_DOMAIN = "configureme.me";
+            this.PLACEHOLDER_DOMAIN_NAME = "configureme.me";
         }
 
         /**
@@ -58,7 +56,7 @@ angular
         }
 
         isPlaceholder (account) {
-            return account.domain === this.PLACEHOLDER_DOMAIN;
+            return account.domain === this.PLACEHOLDER_DOMAIN_NAME;
         }
 
         hasLicence (account, licenceName) {
@@ -69,7 +67,7 @@ angular
         }
 
         canHaveOutlookLicence (account) {
-            return !this.hasLicence(account, this.ACCOUNT_TYPES.BASIC) && account.domain !== this.placeholderDomainName;
+            return !this.hasLicence(account, this.ACCOUNT_TYPES.BASIC) && !this.isPlaceholder(account);
         }
 
         getOutlookState (account) {

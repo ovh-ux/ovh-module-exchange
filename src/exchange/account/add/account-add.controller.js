@@ -88,7 +88,7 @@
         }
 
         hide () {
-            this.$scope.$emit(this.exchangeAccount.events.accountSwitch, { action: "hide" });
+            this.$scope.$emit(this.exchangeAccount.EVENTS.CHANGE_STATE, { stateName: "hide" });
         }
 
         switchBetweenPasswordAndTextInput () {

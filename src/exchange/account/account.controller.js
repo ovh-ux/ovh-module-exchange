@@ -1,34 +1,44 @@
 angular
     .module("Module.exchange.controllers")
     .controller("exchangeAccountCtlr", class ExchangeAccountCtlr {
-        constructor ($scope, exchangeAccount) {
+        constructor ($scope, exchangeAccount, messaging) {
             this.$scope = $scope;
 
             this.exchangeAccount = exchangeAccount;
+            this.messaging = messaging;
+
+            this.STATES = {
+                HIDE: {
+                    name: "home",
+                    isDefault: true
+                },
+                ALIAS: {
+                    name: "alias"
+                },
+                ADD: {
+                    name: "add"
+                }
+            };
         }
 
         $onInit () {
-            this.currentState = "home";
+            this.currentStateName = "home";
 
-            this.$scope.$on(this.exchangeAccount.events.accountSwitch, (events, args) => this.changeState(args));
+            this.$scope.$on(this.exchangeAccount.EVENTS.CHANGE_STATE, (events, args) => this.changeState(args));
         }
 
-        changeState ({ action, args }) {
-            switch (action.toUpperCase()) {
-            case "HIDE":
-                this.currentState = "home";
-                this.currentAccount = null;
-                break;
-            case "ALIAS":
-                this.currentState = "alias";
-                this.currentAccount = args.account;
-                break;
-            case "ADD":
-                this.currentState = "add";
-                this.currentAccount = null;
-                break;
-            default:
-                this.currentState = action.toLowerCase();
+        changeState ({ stateName, args }) {
+            const formattedStateName = `${stateName}`.toUpperCase();
+            const matchingState = _(this.STATES).get(formattedStateName, getDefaultState.call(this));
+
+            this.currentStateName = matchingState.name;
+            this.stateArgs = args;
+
+            function getDefaultState () {
+                return _(this.STATES).chain()
+                    .keys()
+                    .find((key) => this.STATES[key].isDefault)
+                    .value();
             }
         }
     });

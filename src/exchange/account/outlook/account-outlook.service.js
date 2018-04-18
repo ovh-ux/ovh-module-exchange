@@ -1,147 +1,106 @@
 angular
     .module("Module.exchange.services")
     .service("ExchangeOutlook", class ExchangeOutlook {
-        constructor ($rootScope, Products, $http, $q, Exchange, OvhHttp) {
-            this.services = {
-                $rootScope,
-                Products,
-                $http,
-                $q,
-                Exchange,
-                OvhHttp
-            };
+        constructor (Exchange, OvhHttp) {
+            this.Exchange = Exchange;
+            this.OvhHttp = OvhHttp;
         }
 
-        /**
-         * Generate an Outlook license URL
-         */
-        generateOutlookUrl (organization, serviceName, model) {
-            return this.services.OvhHttp.post("/email/exchange/{organization}/service/{exchange}/account/{primaryEmailAddress}/outlookURL", {
-                rootPath: "apiv6",
-                urlParams: {
-                    organization,
-                    exchange: serviceName,
-                    primaryEmailAddress: model.primaryEmailAddress
-                },
-                data: {
-                    version: model.licenceVersion,
-                    language: model.language.toLowerCase()
-                }
-            }).then((response) => {
-                this.services.Exchange.resetAccounts();
-                this.services.Exchange.resetTasks();
-
-                return response;
-            });
-        }
-
-        /**
-         * Return an Outlook license details
-         */
-        getLicenceDetails (organization, exchange, account) {
-            return this.services
-                .OvhHttp
-                .get("/email/exchange/{organization}/service/{exchange}/account/{account}/outlookURL", {
+        generateOutlookUrl (organizationName, serviceName, model) {
+            return this.OvhHttp
+                .post(`/email/exchange/${organizationName}/service/${serviceName}/account/${model.primaryEmailAddress}/outlookURL`, {
                     rootPath: "apiv6",
-                    urlParams: {
-                        organization,
-                        exchange,
-                        account
+                    data: {
+                        version: model.licenceVersion,
+                        language: model.language.toLowerCase()
                     }
+                }).then((response) => {
+                    this.Exchange.refreshViews("Accounts", "Tasks");
+
+                    return response;
                 });
         }
 
-        /**
-         * Return options for buying an Outlook license
-         */
-        getLicenceOptions (organization, serviceName, account) {
-            return this.services.OvhHttp.get("/sws/exchange/{organization}/{exchange}/{account}/license/options", {
-                rootPath: "2api",
-                urlParams: {
-                    organization,
-                    exchange: serviceName,
-                    account
-                }
-            });
+        getLicenceDetails (organizationName, serviceName, primaryEmailAddress) {
+            return this.OvhHttp
+                .get(`/email/exchange/${organizationName}/service/${serviceName}/account/${primaryEmailAddress}/outlookURL`, {
+                    rootPath: "apiv6"
+                });
         }
 
-        /**
-         * Order an Outlook license
-         */
-        orderOutlook (organization, serviceName, model) {
-            return this.services.OvhHttp.post("/order/email/exchange/{organization}/service/{exchange}/outlook/{duration}", {
-                rootPath: "apiv6",
-                urlParams: {
-                    organization,
-                    exchange: serviceName,
-                    duration: model.duration
-                },
-                data: {
-                    licence: model.licenceVersion,
-                    primaryEmailAddress: model.primaryEmailAddress
-                }
-            }).then((response) => {
-                this.services.Exchange.resetAccounts();
-                this.services.Exchange.resetTasks();
 
-                return response;
-            });
+        getLicenceOptions (organizationName, serviceName, primaryEmailAddress) {
+            return this.OvhHttp
+                .get(`/sws/exchange/${organizationName}/${serviceName}/${primaryEmailAddress}/license/options`, {
+                    rootPath: "2api"
+                });
         }
 
-        /**
-         * Activate Outlook license
-         */
-        activateOutlook (organization, serviceName, account) {
+        orderOutlook (organizationName, serviceName, model) {
+            return this.OvhHttp
+                .post(`/order/email/exchange/${organizationName}/service/${serviceName}/outlook/${model.duration}`, {
+                    rootPath: "apiv6",
+                    data: {
+                        licence: model.licenceVersion,
+                        primaryEmailAddress: model.primaryEmailAddress
+                    }
+                })
+                .then((response) => {
+                    this.Exchange.refreshViews("Accounts", "Tasks");
+
+                    return response;
+                });
+        }
+
+        activateOutlook (organizationName, serviceName, model) {
             const data = {
                 outlookLicense: true,
-                primaryEmailAddress: account.primaryEmailAddress
+                primaryEmailAddress: model.primaryEmailAddress
             };
 
-            if (account.orderedOutlook) {
+            if (model.orderedOutlook) {
                 data.deleteOutlookAtExpiration = false;
             }
 
-            return this.services.OvhHttp.put("/email/exchange/{organization}/service/{exchange}/account/{primaryEmailAddress}", {
-                rootPath: "apiv6",
-                urlParams: {
-                    organization,
-                    exchange: serviceName,
-                    primaryEmailAddress: account.primaryEmailAddress
-                },
-                data
-            }).then((response) => {
-                this.services.Exchange.resetAccounts();
-                this.services.Exchange.resetTasks();
+            return this.OvhHttp
+                .put(`/email/exchange/${organizationName}/service/${serviceName}/account/${model.primaryEmailAddress}`, {
+                    rootPath: "apiv6",
+                    data
+                })
+                .then((response) => {
+                    this.Exchange.refreshViews("Accounts", "Tasks");
 
-                return response;
-            });
+                    return response;
+                });
         }
 
         delete (organizationName, serviceName, primaryEmailAddress) {
-            return this.services.OvhHttp.put(`/email/exchange/${organizationName}/service/${serviceName}/account/${primaryEmailAddress}`, {
-                rootPath: "apiv6",
-                data: {
-                    deleteOutlookAtExpiration: true
-                }
-            }).then((response) => {
-                this.services.Exchange.resetAccounts();
-                this.services.Exchange.resetTasks();
+            return this.OvhHttp
+                .put(`/email/exchange/${organizationName}/service/${serviceName}/account/${primaryEmailAddress}`, {
+                    rootPath: "apiv6",
+                    data: {
+                        deleteOutlookAtExpiration: true
+                    }
+                })
+                .then((response) => {
+                    this.Exchange.refreshViews("Accounts", "Tasks");
 
-                return response;
-            });
+                    return response;
+                });
         }
 
         deactivate (organizationName, serviceName, primaryEmailAddress) {
-            return this.services.OvhHttp.put(`/email/exchange/${organizationName}/service/${serviceName}/account/${primaryEmailAddress}`, {
-                rootPath: "apiv6",
-                data: {
-                    outlookLicense: false
-                }
-            }).then((response) => {
-                this.services.Exchange.resetAccounts();
-                this.services.Exchange.resetTasks();
+            return this.OvhHttp
+                .put(`/email/exchange/${organizationName}/service/${serviceName}/account/${primaryEmailAddress}`, {
+                    rootPath: "apiv6",
+                    data: {
+                        outlookLicense: false
+                    }
+                })
+                .then((response) => {
+                    this.Exchange.refreshViews("Accounts", "Tasks");
 
-                return response;
-            });
+                    return response;
+                });
         }
     });
