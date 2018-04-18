@@ -14,7 +14,6 @@ angular
         $onInit () {
             this.$routerParams = this.Exchange.getParams();
             this.account = this.navigation.currentActionData;
-            this.exchange = this.Exchange.value;
 
             this.$scope.deactivate = () => this.deactivate();
         }

@@ -1,5 +1,5 @@
 {
-    class ExchangeAccountAlias {
+    class ExchangeAccountAliasController {
         constructor ($scope, Exchange, exchangeAccount, exchangeStates, navigation, messaging, translator) {
             this.$scope = $scope;
 
@@ -26,6 +26,7 @@
             return this.Exchange.getAliases(this.$routerParams.organization, this.$routerParams.productId, this.account.primaryEmailAddress, pageSize, offset - 1)
                 .then((aliases) => {
                     this.aliases = aliases.list.results;
+
                     return {
                         data: this.aliases,
                         meta: {
@@ -61,27 +62,20 @@
             this.$scope.$emit(this.exchangeAccount.EVENTS.CHANGE_STATE, { stateName: "hide" });
         }
 
-        deleteAlias (alias) {
-            if (_(alias).get("taskPendingId", 0) === 0) {
-                this.navigation.setAction("exchange/account/alias/remove/account-alias-remove", {
-                    account: this.account,
-                    alias
-                });
-            }
+        openDeletingDialog (alias) {
+            this.navigation.setAction("exchange/account/alias/remove/account-alias-remove", {
+                account: this.account,
+                alias
+            });
         }
 
-        addAccountAlias () {
-            const accountHasLessAliasesThanMaxLimit = _(this.aliases).get("length", 0) <= this.aliasMaxLimit;
-            const accountIsOk = this.exchangeStates.constructor.isOk(this.account);
-
-            if (accountHasLessAliasesThanMaxLimit && accountIsOk) {
-                this.navigation.setAction("exchange/account/alias/add/account-alias-add", this.account);
-            }
+        openAddingDialog () {
+            this.navigation.setAction("exchange/account/alias/add/account-alias-add", this.account);
         }
 
         getAddAliasTooltip () {
             if (_(this.aliases).get("length", 0) >= this.aliasMaxLimit) {
-                return this.translator.tr("exchange_tab_ALIAS_add_alias_limit_tooltip");
+                return this.translator.tr("exchange_tab_ALIAS_add_alias_limit_tooltip", this.aliasMaxLimit);
             }
 
             return null;
@@ -90,7 +84,7 @@
 
     const exchangeAccountAlias = {
         templateUrl: "exchange/account/alias/account-alias.html",
-        controller: ExchangeAccountAlias,
+        controller: ExchangeAccountAliasController,
         bindings: {
             account: "<"
         }

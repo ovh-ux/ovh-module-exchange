@@ -1,6 +1,6 @@
 {
     class ExchangeAccountHomeController {
-        constructor ($scope, accountTypes, Exchange, exchangeAccount, exchangeAccountOutlook, exchangeSelectedService, exchangeStates, exchangeVersion, messaging, navigation, officeAttach, translator) {
+        constructor ($scope, accountTypes, Exchange, exchangeAccount, exchangeAccountOutlook, exchangeSelectedService, exchangeStates, messaging, navigation, officeAttach, translator) {
             this.$scope = $scope;
 
             this.accountTypes = accountTypes;
@@ -9,7 +9,6 @@
             this.exchangeAccountOutlook = exchangeAccountOutlook;
             this.exchangeSelectedService = exchangeSelectedService;
             this.exchangeStates = exchangeStates;
-            this.exchangeVersion = exchangeVersion;
             this.messaging = messaging;
             this.navigation = navigation;
             this.officeAttach = officeAttach;
@@ -17,55 +16,49 @@
         }
 
         $onInit () {
-            this.datagridParameters = {};
-
             this.$routerParams = this.Exchange.getParams();
             this.hostname = this.Exchange.value.hostname;
+
+            this.datagridParameters = {};
             this.linkToSpamTicket = `#/ticket?serviceName=${this.$routerParams.productId}`;
-            this.initialLoading = true;
             this.initialAccountRetrieval = true;
-            this.thereAreAvailableDomains = true;
+            this.atLeastOneDomainIsAssociatedToCurrentExchangeService = true;
 
             this.accountTypeOptions = {
                 operators: ["is"]
             };
 
-            if (this.exchangeSelectedService.isContractType(this.exchangeSelectedService.CONTRACT_TYPES.PREPAID)) {
-                this.accountTypeOptions.values = {
-                    STANDARD: this.getAccountTypeTranslation("STANDARD")
-                };
-            } else {
-                this.accountTypeOptions.values = {
-                    STANDARD: this.getAccountTypeTranslation("STANDARD"),
-                    BASIC: this.getAccountTypeTranslation("BASIC")
-                };
+            this.accountTypeOptions.values = {
+                STANDARD: this.getAccountTypeTranslation("STANDARD")
+            };
+
+            if (this.exchangeSelectedService.isContractType(this.exchangeSelectedService.CONTRACT_TYPES.PAY_AS_YOU_GO)) {
+                this.accountTypeOptions.values.BASIC = this.getAccountTypeTranslation("BASIC");
             }
 
             this.$scope.$on(this.Exchange.events.accountsChanged, () => this.refreshList());
 
-            return this.fetchCanUserSubscribeToOfficeAttach()
+            return this.fetchInitialData();
+        }
+
+        fetchInitialData () {
+            this.initialLoading = true;
+
+            this.fetchCanUserSubscribeToOfficeAttach()
                 .then(() => this.fetchAccountCreationOptions())
                 .finally(() => {
                     this.initialLoading = false;
                 });
         }
 
-        getAccountTypeTranslation (accountType) {
-            if (this.accountTypes.isDedicatedCluster()) {
-                return this.translator.tr(`exchange_tab_dedicatedCluster_account_type_${accountType}`);
-            }
-
-            return this.translator.tr(`exchange_tab_ACCOUNTS_type_${accountType}`);
-        }
-
         fetchCanUserSubscribeToOfficeAttach () {
             return this.officeAttach
                 .retrievingIfUserAlreadyHasSubscribed(this.$routerParams.productId)
                 .then((userHasAlreadySubscribed) => {
-                    this.canUserSubscribeToOfficeAttach = !userHasAlreadySubscribed;
+                    this.userCanSubscribeToOfficeAttach = !userHasAlreadySubscribed;
                 })
                 .catch((error) => {
-                    this.messaging.writeError("exchange_accounts_fetchOfficeAttachError", error);
+                    this.messaging.writeError("exchange_accounts_fetchOfficeAttachError_error", error);
                 });
         }
 
@@ -73,23 +66,28 @@
             return this.Exchange
                 .fetchingAccountCreationOptions(this.$routerParams.organization, this.$routerParams.productId)
                 .then((accountCreationOptions) => {
-                    this.thereAreAvailableDomains = !_(accountCreationOptions).chain()
+                    this.atLeastOneDomainIsAssociatedToCurrentExchangeService = !_(accountCreationOptions).chain()
                         .get("availableDomains")
                         .isEmpty()
                         .value();
                 })
                 .catch((error) => {
-                    this.messaging.writeError("exchange_accounts_fetchAccountCreationOptions", error);
+                    this.messaging.writeError("exchange_accounts_fetchAccountCreationOptions_error", error);
                 });
         }
 
+        getAccountTypeTranslation (accountType) {
+            return this.accountTypes.isDedicatedCluster() ? this.translator.tr(`exchange_tab_dedicatedCluster_account_type_${accountType}`) : this.translator.tr(`exchange_tab_ACCOUNTS_type_${accountType}`);
+        }
+
         refreshList () {
-            return this.Exchange.fetchAccounts(this.$routerParams.organization,
-                                               this.$routerParams.productId,
-                                               this.datagridParameters.pageSize,
-                                               this.datagridParameters.offset - 1,
-                                               this.datagridParameters.searchValues,
-                                               this.datagridParameters.accountTypeFilter)
+            return this.Exchange
+                .fetchAccounts(this.$routerParams.organization,
+                               this.$routerParams.productId,
+                               this.datagridParameters.pageSize,
+                               this.datagridParameters.offset - 1,
+                               this.datagridParameters.searchValues,
+                               this.datagridParameters.accountTypeFilter)
                 .then((accounts) => {
                     const formattedAccounts = this.formatAccountsForDatagrid(accounts);
 
@@ -102,7 +100,7 @@
                     }
                 })
                 .catch((error) => {
-                    this.messaging.writeError(this.translator.tr("exchange_accounts_fetchAccounts"), error);
+                    this.messaging.writeError(this.translator.tr("exchange_accounts_fetchAccounts_error"), error);
                 });
         }
 
@@ -114,12 +112,12 @@
                 .map((criterium) => criterium.value)
                 .value();
 
-            const accountTypesFilters = _(parameters.criteria)
+            const accountTypeFilters = _(parameters.criteria)
                 .filter((criterium) => criterium.property === "accountLicense")
                 .map((criterium) => criterium.value)
                 .value();
 
-            this.datagridParameters.accountTypeFilter = accountTypesFilters.length === 2 ? "" : accountTypesFilters[0];
+            this.datagridParameters.accountTypeFilter = accountTypeFilters.length === 2 ? "" : accountTypeFilters[0];
 
             return this.Exchange
                 .fetchAccounts(this.$routerParams.organization, this.$routerParams.productId, parameters.pageSize, parameters.offset - 1, this.datagridParameters.searchValues, this.datagridParameters.accountTypeFilter)
@@ -134,29 +132,24 @@
                     };
                 })
                 .catch((error) => {
-                    this.messaging.writeError(this.translator.tr("exchange_accounts_fetchAccounts"), error);
+                    this.messaging.writeError(this.translator.tr("exchange_accounts_fetchAccounts_error"), error);
                 })
                 .finally(() => {
                     this.initialAccountRetrieval = false;
                 });
         }
 
-        displayAliases (account) {
-            this.$scope.$emit(this.exchangeAccount.EVENTS.CHANGE_STATE, { stateName: "alias", args: { account: _(account).clone() } });
-        }
-
-        displayDialog (pathToFeature, account) {
-            this.navigation.setAction(pathToFeature, _(account).clone());
-        }
-
         formatAccountsForDatagrid (accounts) {
-            return _(accounts).get("list.results", []).map((account) => _(account).assign({
-                emailAddress: unpunycodeEmailAddress(account.primaryEmailDisplayName),
-                size: transformSizeData.call(this, account),
-                numberOfAliases: account.aliases,
-                outlookStatus: transformOutlook.call(this, account),
-                status: chooseStatusText.call(this, account)
-            }).value());
+            return _(accounts)
+                .get("list.results", [])
+                .map((account) => _(account)
+                    .assign({
+                        emailAddress: unpunycodeEmailAddress(account.primaryEmailDisplayName),
+                        size: transformSizeData.call(this, account),
+                        numberOfAliases: account.aliases,
+                        outlookStatus: transformOutlookStatus.call(this, account),
+                        status: chooseStatusText.call(this, account)
+                    }).value());
 
             function unpunycodeEmailAddress (emailAddress) {
                 const parts = emailAddress.split("@");
@@ -172,21 +165,19 @@
                 };
             }
 
-            function transformOutlook (account) {
-                const accountAlreadyHasLicence = account.outlook;
+            function transformOutlookStatus (account) {
+                const accountOutlookStatus = this.exchangeAccountOutlook.getStatus(account);
 
-                if (!this.exchangeAccountOutlook.canHaveLicense(account)) {
+                if (!this.exchangeAccountOutlook.canHaveLicense(account) || this.exchangeAccountOutlook.hasStatus(account, this.exchangeAccountOutlook.STATES.CANT_ORDER_OR_ACTIVATE_LICENSE)) {
                     return {
-                        displayValue: "",
-                        state: "canHaveOutlookLicence"
+                        state: "",
+                        displayValue: ""
                     };
                 }
 
-                const state = this.exchangeAccountOutlook.getOutlookState(account);
-
                 return {
-                    state,
-                    displayValue: this.translator.tr(`exchange_tab_accounts_table_outlook_${_(state).snakeCase().toUpperCase()}`)
+                    status,
+                    displayValue: this.translator.tr(`exchange_tab_accounts_table_outlook_${accountOutlookStatus}`)
                 };
             }
 
@@ -211,22 +202,32 @@
             }
         }
 
-        openAddingAccountDialog () {
+        displayAliasManagementView (account) {
+            this.messaging.resetMessages();
+            this.$scope.$emit(this.exchangeAccount.EVENTS.CHANGE_STATE, { stateName: "alias", args: { account: _(account).clone() } });
+        }
+
+        displayDialog (pathToFeature, account) {
+            this.navigation.setAction(pathToFeature, _(account).clone());
+        }
+
+        displayAccountAddingView () {
+            this.messaging.resetMessages();
             this.$scope.$emit(this.exchangeAccount.EVENTS.CHANGE_STATE, { stateName: "add" });
         }
 
-        openOrderingAccountDialog () {
-            const numConfigureMeAccount = _(this.accounts).sum((account) => account.domain === "configureme.me");
-            this.navigation.setAction("exchange/account/order/account-order", { numConfigureMeAccount });
+        openAccountOrderingDialog () {
+            const placeholderAccountAmount = _(this.accounts).sum((account) => this.exchangeAccount.isPlaceholder(account));
+            this.navigation.setAction("exchange/account/order/account-order", { placeholderAccountAmount });
         }
     }
 
-    const exchangeAccountHomeComponent = {
+    const exchangeAccountHome = {
         templateUrl: "exchange/account/home/account-home.html",
         controller: ExchangeAccountHomeController
     };
 
     angular
         .module("Module.exchange.components")
-        .component("exchangeAccountHome", exchangeAccountHomeComponent);
+        .component("exchangeAccountHome", exchangeAccountHome);
 }

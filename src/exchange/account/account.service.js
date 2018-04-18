@@ -31,6 +31,11 @@ angular
                 });
         }
 
+        /**
+         * @param {string} organizationName
+         * @param {string} serviceName
+         * @param {object} newAccount
+         */
         sendingNewAccount (organizationName, serviceName, newAccount) {
             return this.OvhHttp
                 .post(`/email/exchange/${organizationName}/service/${serviceName}/account`, {
@@ -44,6 +49,10 @@ angular
                 });
         }
 
+        /**
+         * @param {object} account
+         * @returns {boolean} True if the account can be edited
+         */
         isEditable (account) {
             return this.exchangeStates.constructor.isOk(account) || this.exchangeStates.constructor.isDoing(account) || this.exchangeStates.constructor.isInError(account);
         }

@@ -1,6 +1,6 @@
 angular
     .module("Module.exchange.services")
-    .service("exchangeAccountOutlook", class ExchangeOutlook {
+    .service("exchangeAccountOutlook", class ExchangeAccountOutlook {
         constructor (Exchange, exchangeAccount, exchangeSelectedService, OvhHttp) {
             this.exchangeAccount = exchangeAccount;
             this.Exchange = Exchange;
@@ -8,11 +8,11 @@ angular
             this.OvhHttp = OvhHttp;
 
             this.STATES = {
-                ALREADY_ORDERED: "alreadyOrdered",
-                ALREADY_ACTIVATED: "alreadyActivated",
-                TO_ACTIVATE: "toActivate",
-                TO_ORDER: "toOrder",
-                CANT_ORDER_OR_ACTIVATE_LICENSE: "cantOrderOrActivateLicense"
+                ALREADY_ORDERED: "ALREADY_ORDERED",
+                ALREADY_ACTIVATED: "ALREADY_ACTIVATED",
+                TO_ACTIVATE: "TO_ACTIVATE",
+                TO_ORDER: "TO_ORDER",
+                CANT_ORDER_OR_ACTIVATE_LICENSE: "CANT_ORDER_OR_ACTIVATE_LICENSE"
             };
         }
 
@@ -61,12 +61,10 @@ angular
         }
 
         /**
-         *
          * @param {string} organizationName
          * @param {string} serviceName
          * @param {object} model
          */
-        activateOutl
         orderOutlook (organizationName, serviceName, model) {
             return this.OvhHttp
                 .post(`/order/email/exchange/${organizationName}/service/${serviceName}/outlook/${model.duration}`, {
@@ -84,7 +82,6 @@ angular
         }
 
         /**
-         *
          * @param {string} organizationName
          * @param {string} serviceName
          * @param {object} model
@@ -175,25 +172,24 @@ angular
 
             if (accountAlreadyHasLicence) {
                 if (this.exchangeSelectedService.isContractType(this.exchangeSelectedService.CONTRACT_TYPES.PREPAID)) {
-                    return this.OUTLOOK_STATES.ALREADY_ORDERED;
+                    return this.STATES.ALREADY_ORDERED;
                 }
 
-                return this.OUTLOOK_STATES.ALREADY_ACTIVATED;
+                return this.STATES.ALREADY_ACTIVATED;
             }
 
             if (!this.Exchange.currentUserHasConfigurationRights()) {
-                return this.OUTLOOK_STATES.CANT_ORDER_OR_ACTIVATE_LICENSE;
+                return this.STATES.CANT_ORDER_OR_ACTIVATE_LICENSE;
             }
 
             if (this.exchangeSelectedService.isContractType(this.exchangeSelectedService.CONTRACT_TYPES.PAY_AS_YOU_GO)) {
-                return this.OUTLOOK_STATES.TO_ACTIVATE;
+                return this.STATES.TO_ACTIVATE;
             }
 
-            return this.OUTLOOK_STATES.TO_ORDER;
+            return this.STATES.TO_ORDER;
         }
 
         /**
-         *
          * @param {object} account
          * @param {string} status
          * @returns {boolean} True if the `account` status matches the input `status`

@@ -89,10 +89,10 @@
                 <oui-action-menu-item
                     data-text="{{:: $ctrl.translator.tr('exchange_tab_ACCOUNTS_menu_edit') }}"
                     data-on-click="$ctrl.displayDialog('exchange/account/update/account-update', $row)"
-                    data-disabled="!$ctrl.exchangeAccount.isEditable($row) || !$ctrl.thereAreAvailableDomains"></oui-action-menu-item>
+                    data-disabled="!$ctrl.exchangeAccount.isEditable($row) || !$ctrl.atLeastOneDomainIsAssociatedToCurrentExchangeService"></oui-action-menu-item>
                 <oui-action-menu-item
                     data-text="{{:: $ctrl.translator.tr('exchange_tab_ACCOUNTS_menu_alias') }}"
-                    data-on-click="$ctrl.displayAliases($row)"
+                    data-on-click="$ctrl.displayAliasManagementView($row)"
                     data-ng-if="!$ctrl.accountTypes.is25g()"
                     data-disabled="!$ctrl.exchangeStates.constructor.isOk($row) || $ctrl.exchangeAccount.isPlaceholder($row)"></oui-action-menu-item>
                 <oui-action-menu-item
@@ -164,21 +164,21 @@
             type="button"
             data-ng-bind=":: $ctrl.translator.tr('exchange_ACTION_export_accounts_office_attached_button')"
             data-ng-click="$ctrl.navigation.setAction('exchange/office-attach/dialog/office-attach-dialog')"
-            data-ng-if="$ctrl.canUserSubscribeToOfficeAttach"></button>
+            data-ng-if="$ctrl.userCanSubscribeToOfficeAttach"></button>
         <button
             class="btn btn-block btn-default"
             type="button"
-            data-ng-click="$ctrl.openAddingAccountDialog()"
+            data-ng-click="$ctrl.displayAccountAddingView()"
             data-ng-bind=":: $ctrl.translator.tr('exchange_ACTION_add_account_button')"
             data-ng-if="$ctrl.exchangeSelectedService.isContractType($ctrl.exchangeSelectedService.CONTRACT_TYPES.PAY_AS_YOU_GO)"
-            data-ng-disabled="!$ctrl.thereAreAvailableDomains"></button>
+            data-ng-disabled="!$ctrl.atLeastOneDomainIsAssociatedToCurrentExchangeService"></button>
         <button
             class="btn btn-block btn-default"
             type="button"
-            data-ng-click="$ctrl.openOrderingAccountDialog()"
+            data-ng-click="$ctrl.openAccountOrderingDialog()"
             data-ng-bind=":: $ctrl.translator.tr('exchange_ACTION_order_accounts_button')"
             data-ng-if="$ctrl.exchangeSelectedService.isContractType($ctrl.exchangeSelectedService.CONTRACT_TYPES.PREPAID)"
-            data-ng-disabled="!$ctrl.thereAreAvailableDomains"></button>
+            data-ng-disabled="!$ctrl.atLeastOneDomainIsAssociatedToCurrentExchangeService"></button>
         <button
             class="btn btn-block btn-default"
             type="button"

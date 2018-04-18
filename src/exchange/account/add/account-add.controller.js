@@ -1,5 +1,5 @@
 {
-    class ExchangeAccountAdd {
+    class ExchangeAccountAddController {
         constructor ($scope, $timeout, accountTypes, Exchange, exchangeAccount, ExchangePassword, exchangeVersion, messaging, translator) {
             this.$scope = $scope;
             this.$timeout = $timeout;
@@ -14,8 +14,9 @@
         }
 
         $onInit () {
-            this.isFetchingCreationOptions = true;
             this.$routerParams = this.Exchange.getParams();
+
+            this.isFetchingCreationOptions = true;
             this.newAccount = {};
             this.shouldDisplayPasswordInput = true;
             this.isSendingNewAccount = false;
@@ -27,37 +28,35 @@
             return this.Exchange
                 .fetchingAccountCreationOptions(this.$routerParams.organization, this.$routerParams.productId)
                 .then((accountCreationOptions) => {
-                    this.accountCreationOptions = transformAccountTypes.call(this, accountCreationOptions);
+                    this.accountCreationOptions = _(accountCreationOptions)
+                        .assign({
+                            availableTypes: transformAccountTypes.call(this, accountCreationOptions.availableTypes)
+                        }).value();
+
                     this.newAccount.accountType = this.accountCreationOptions.availableTypes[0];
                     this.newAccount.domain = this.accountCreationOptions.availableDomains[0];
                 })
                 .catch((error) => {
-                    this.messaging.writeError("exchange_ACTION_add_account_error_message", error);
+                    this.messaging.writeError(this.translator.tr("exchange_ACTION_add_account_fetchingAccountCreationOptions_error"), error);
                     this.hide();
                 })
                 .finally(() => {
                     this.isFetchingCreationOptions = false;
                 });
 
-            function transformAccountTypes (accountCreationOptions) {
-                const transformedAccountCreationOptions = _(accountCreationOptions).assign({
-                    availableTypes: accountCreationOptions.availableTypes.map((accountType) => ({
+            function transformAccountTypes (accountTypes) {
+                return _(accountTypes)
+                    .map((accountType) => ({
                         name: accountType,
                         displayName: this.accountTypes.isDedicatedCluster() ? this.translator.tr(`exchange_tab_dedicatedCluster_account_type_${accountType}`) : this.translator.tr(`exchange_tab_ACCOUNTS_type_${accountType}`)
                     }))
-                }).value();
-
-                return transformedAccountCreationOptions;
+                    .value();
             }
-        }
-
-        buildEmailAddress () {
-            return `${this.newAccount.login}@${this.newAccount.domain.name}`;
         }
 
         checkEmailAddressIsAlreadyTaken () {
             const emailAddressIsAlreadyTaken = !_(this.accountCreationOptions.takenEmails).chain()
-                .find((emailAddress) => emailAddress === this.buildEmailAddress())
+                .find((emailAddress) => emailAddress === `${this.newAccount.login}@${this.newAccount.domain.name}`)
                 .isEmpty()
                 .value();
 
@@ -66,15 +65,14 @@
 
         checkPasswordValidity () {
             if (this.newAccountForm.password.$error.required) {
-                this.newAccountForm.password.$setValidity("respectsComplexityRules", true);
+                this.newAccountForm.password.$setValidity("doesntRespectComplexityRules", true);
                 this.newAccountForm.password.$setValidity("containsDisplayName", true);
                 this.newAccountForm.password.$setValidity("isSameAsSAMAccountName", true);
-                this.newAccountForm.password.$setValidity("respectsComplexityRules", true);
                 return;
             }
 
             if (this.accountCreationOptions.passwordComplexityEnabled) {
-                this.newAccountForm.password.$setValidity("respectsComplexityRules", this.ExchangePassword.passwordComplexityCheck(this.newAccount.password, true, this.accountCreationOptions.minPasswordLength));
+                this.newAccountForm.password.$setValidity("doesntRespectComplexityRules", this.ExchangePassword.passwordComplexityCheck(this.newAccount.password, true, this.accountCreationOptions.minPasswordLength));
                 this.newAccountForm.password.$setValidity("containsDisplayName", !this.ExchangePassword.passwordContainsName(this.newAccount.password, this.newAccount.displayName));
                 this.newAccountForm.password.$setValidity("isSameAsSAMAccountName",
                                                           _(this.newAccount.samAccountName).isEmpty() ||
@@ -83,7 +81,7 @@
                                                             this.newAccount.password.toUpperCase() !== this.newAccount.samAccountName.toUpperCase())
                 );
             } else {
-                this.newAccountForm.password.$setValidity("respectsComplexityRules", this.ExchangePassword.passwordSimpleCheck(this.newAccount.password, true, this.accountCreationOptions.minPasswordLength));
+                this.newAccountForm.password.$setValidity("doesntRespectComplexityRules", this.ExchangePassword.passwordSimpleCheck(this.newAccount.password, true, this.accountCreationOptions.minPasswordLength));
             }
         }
 
@@ -151,7 +149,7 @@
 
     const exchangeAccountAdd = {
         templateUrl: "exchange/account/add/account-add.html",
-        controller: ExchangeAccountAdd
+        controller: ExchangeAccountAddController
     };
 
     angular
