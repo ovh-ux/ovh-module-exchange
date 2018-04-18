@@ -16,20 +16,13 @@ angular
                 STANDARD: "Standard"
             };
 
-            this.OUTLOOK_STATES = {
-                ALREADY_ORDERED: "alreadyOrdered",
-                ALREADY_ACTIVATED: "alreadyActivated",
-                TO_ACTIVATE: "toActivate",
-                TO_ORDER: "toOrder"
-            };
-
             this.PLACEHOLDER_DOMAIN_NAME = "configureme.me";
         }
 
         /**
          * Get an array of task id
          * @param  {string} primaryEmailAddress
-         * @return {Promise} [number]
+         * @returns {Promise} [number]
          */
         getTasks (organizationName, serviceName, primaryEmailAddress) {
             return this.OvhHttp
@@ -55,36 +48,36 @@ angular
             return this.exchangeStates.constructor.isOk(account) || this.exchangeStates.constructor.isDoing(account) || this.exchangeStates.constructor.isInError(account);
         }
 
+        /**
+         * @param {object} account
+         * @returns {boolean} True if the `account` can't be used as it is a placeholder and not an actual account
+         */
         isPlaceholder (account) {
-            return account.domain === this.PLACEHOLDER_DOMAIN_NAME;
-        }
+            const inputIsValid = _(account).chain()
+                .get("domain")
+                .isString()
+                .value();
 
-        hasLicence (account, licenceName) {
-            const accountLicence = `${_(account).get("accountLicense", "")}`;
-            const formattedLicenceName = _(`${licenceName}`).snakeCase().toUpperCase();
-
-            return accountLicence.toUpperCase() === this.ACCOUNT_TYPES[formattedLicenceName].toUpperCase();
-        }
-
-        canHaveOutlookLicence (account) {
-            return !this.hasLicence(account, this.ACCOUNT_TYPES.BASIC) && !this.isPlaceholder(account);
-        }
-
-        getOutlookState (account) {
-            const accountAlreadyHasLicence = account.outlook;
-
-            if (accountAlreadyHasLicence && this.exchangeSelectedService.isContractType(this.exchangeSelectedService.CONTRACT_TYPES.PREPAID)) {
-                return this.OUTLOOK_STATES.ALREADY_ORDERED;
+            if (!inputIsValid) {
+                throw "Input is not a valid account";
             }
 
-            if (accountAlreadyHasLicence && this.exchangeSelectedService.isContractType(this.exchangeSelectedService.CONTRACT_TYPES.PAY_AS_YOU_GO)) {
-                return this.OUTLOOK_STATES.ALREADY_ACTIVATED;
+            return account.domain.toUpperCase() === this.PLACEHOLDER_DOMAIN_NAME.toUpperCase();
+        }
+
+        /**
+         * @param {object} account
+         * @param {string} typeName
+         * @returns {boolean} True if the `account` type if the same as `typeName`
+         */
+        isOfType (account, typeName) {
+            const formattedTypeName = _(`${typeName}`).snakeCase().toUpperCase();
+            const matchingType = this.ACCOUNT_TYPES[formattedTypeName];
+
+            if (matchingType === undefined) {
+                throw `${typeName} is not a valid account type name`;
             }
 
-            if (!accountAlreadyHasLicence && this.Exchange.currentUserHasConfigurationRights() && this.exchangeSelectedService.isContractType(this.exchangeSelectedService.CONTRACT_TYPES.PAY_AS_YOU_GO)) {
-                return this.OUTLOOK_STATES.TO_ACTIVATE;
-            }
-
-            return this.OUTLOOK_STATES.TO_ORDER;
+            return `${_(account).get("accountLicense", "")}`.toUpperCase() === matchingType.toUpperCase();
         }
     });

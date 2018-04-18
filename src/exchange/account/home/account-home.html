@@ -113,31 +113,31 @@
                     data-ng-if="$row.spamDetected"
                     data-external
                     data-href="{{:: $ctrl.linkToSpamTicket }}"></oui-action-menu-item>
-                <oui-action-menu-divider data-ng-if="$ctrl.exchangeAccount.canHaveOutlookLicence($row)"></oui-action-menu-divider>
+                <oui-action-menu-divider data-ng-if="$ctrl.exchangeAccountOutlook.canHaveLicense($row)"></oui-action-menu-divider>
                 <oui-action-menu-item
                     data-text="{{:: $ctrl.translator.tr('exchange_tab_ACCOUNTS_menu_outlook_activate') }}"
                     data-on-click="$ctrl.displayDialog('exchange/account/outlook/activate/account-outlook-activate', $row)"
-                    data-ng-if="$row.outlookStatus.state === $ctrl.exchangeAccount.OUTLOOK_STATES.TO_ACTIVATE"
+                    data-ng-if="$ctrl.exchangeAccountOutlook.hasStatus($row, $ctrl.exchangeAccountOutlook.STATES.TO_ACTIVATE)"
                     data-disabled="!$ctrl.exchangeStates.constructor.isOk($row)"></oui-action-menu-item>
                 <oui-action-menu-item
                     data-text="{{:: $ctrl.translator.tr('exchange_tab_ACCOUNTS_menu_outlook_order') }}"
                     data-on-click="$ctrl.displayDialog('exchange/account/outlook/add/account-outlook-add', $row)"
-                    data-ng-if="$row.outlookStatus.state === $ctrl.exchangeAccount.OUTLOOK_STATES.TO_ORDER"
+                    data-ng-if="$ctrl.exchangeAccountOutlook.hasStatus($row, $ctrl.exchangeAccountOutlook.STATES.TO_ORDER)"
                     data-disabled="!$ctrl.exchangeStates.constructor.isOk($row)"></oui-action-menu-item>
                 <oui-action-menu-item
                     data-text="{{:: $ctrl.translator.tr('exchange_tab_ACCOUNTS_menu_outlook_access') }}"
                     data-on-click="$ctrl.displayDialog('exchange/account/outlook/account-outlook', $row)"
-                    data-ng-if="$row.outlookStatus.state === $ctrl.exchangeAccount.OUTLOOK_STATES.ALREADY_ACTIVATED || $row.outlookStatus.state === $ctrl.exchangeAccount.OUTLOOK_STATES.ALREADY_ORDERED"
+                    data-ng-if="$ctrl.exchangeAccountOutlook.hasStatus($row, $ctrl.exchangeAccountOutlook.STATES.ALREADY_ACTIVATED) || $ctrl.exchangeAccountOutlook.hasStatus($row, $ctrl.exchangeAccountOutlook.STATES.ALREADY_ORDERED)"
                     data-disabled="!$ctrl.exchangeStates.constructor.isOk($row)"></oui-action-menu-item>
                 <oui-action-menu-item
                     data-text="{{:: $ctrl.translator.tr('exchange_tab_ACCOUNTS_menu_outlook_deactivate') }}"
                     data-on-click="$ctrl.displayDialog('exchange/account/outlook/deactivate/account-outlook-deactivate', $row)"
-                    data-ng-if="$row.outlookStatus.state === $ctrl.exchangeAccount.OUTLOOK_STATES.ALREADY_ACTIVATED"
+                    data-ng-if="$ctrl.exchangeAccountOutlook.hasStatus($row, $ctrl.exchangeAccountOutlook.STATES.ALREADY_ACTIVATED)"
                     data-disabled="!$ctrl.exchangeStates.constructor.isOk($row)"></oui-action-menu-item>
                 <oui-action-menu-item
                     data-text="{{:: $ctrl.translator.tr('exchange_tab_ACCOUNTS_menu_outlook_delete') }}"
                     data-on-click="$ctrl.displayDialog('exchange/account/outlook/delete/account-outlook-delete', $row)"
-                    data-ng-if="$row.outlookStatus.state === $ctrl.exchangeAccount.OUTLOOK_STATES.ALREADY_ORDERED"
+                    data-ng-if="$ctrl.exchangeAccountOutlook.hasStatus($row, $ctrl.exchangeAccountOutlook.STATES.ALREADY_ORDERED)"
                     data-disabled="!$ctrl.exchangeStates.constructor.isOk($row)"></oui-action-menu-item>
                 <oui-action-menu-divider></oui-action-menu-divider>
                 <oui-action-menu-item

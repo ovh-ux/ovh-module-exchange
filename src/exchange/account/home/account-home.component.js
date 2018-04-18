@@ -1,11 +1,12 @@
 {
     class ExchangeAccountHomeController {
-        constructor ($scope, accountTypes, Exchange, exchangeAccount, exchangeSelectedService, exchangeStates, exchangeVersion, messaging, navigation, officeAttach, translator) {
+        constructor ($scope, accountTypes, Exchange, exchangeAccount, exchangeAccountOutlook, exchangeSelectedService, exchangeStates, exchangeVersion, messaging, navigation, officeAttach, translator) {
             this.$scope = $scope;
 
             this.accountTypes = accountTypes;
             this.Exchange = Exchange;
             this.exchangeAccount = exchangeAccount;
+            this.exchangeAccountOutlook = exchangeAccountOutlook;
             this.exchangeSelectedService = exchangeSelectedService;
             this.exchangeStates = exchangeStates;
             this.exchangeVersion = exchangeVersion;
@@ -174,14 +175,14 @@
             function transformOutlook (account) {
                 const accountAlreadyHasLicence = account.outlook;
 
-                if (!this.exchangeAccount.canHaveOutlookLicence(account)) {
+                if (!this.exchangeAccountOutlook.canHaveLicense(account)) {
                     return {
                         displayValue: "",
                         state: "canHaveOutlookLicence"
                     };
                 }
 
-                const state = this.exchangeAccount.getOutlookState(account);
+                const state = this.exchangeAccountOutlook.getOutlookState(account);
 
                 return {
                     state,

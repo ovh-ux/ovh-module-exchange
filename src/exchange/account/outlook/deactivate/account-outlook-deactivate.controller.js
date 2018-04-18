@@ -1,11 +1,11 @@
 angular
     .module("Module.exchange.controllers")
     .controller("exchangeAccountOutlookDeactivate", class ExchangeAccountOutlookDeactivate {
-        constructor ($scope, Exchange, ExchangeOutlook, messaging, navigation, translator) {
+        constructor ($scope, Exchange, exchangeAccountOutlook, messaging, navigation, translator) {
             this.$scope = $scope;
 
             this.Exchange = Exchange;
-            this.ExchangeOutlook = ExchangeOutlook;
+            this.exchangeAccountOutlook = exchangeAccountOutlook;
             this.messaging = messaging;
             this.navigation = navigation;
             this.translator = translator;
@@ -20,7 +20,7 @@ angular
         }
 
         deactivate () {
-            return this.ExchangeOutlook
+            return this.exchangeAccountOutlook
                 .deactivate(this.$routerParams.organization, this.$routerParams.productId, this.account.primaryEmailAddress)
                 .then(() => {
                     this.messaging.writeSuccess(this.translator.tr("exchange_accounts_outlook_deactivate_success"));
