@@ -410,7 +410,7 @@ angular
                 const matchingMethod = this[`reset${view}`];
 
                 if (matchingMethod !== undefined) {
-                    matchingMethod();
+                    matchingMethod.call(this);
                 }
             });
         }
