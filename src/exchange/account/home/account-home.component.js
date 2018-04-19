@@ -226,12 +226,10 @@
         }
     }
 
-    const exchangeAccountHome = {
-        templateUrl: "exchange/account/home/account-home.html",
-        controller: ExchangeAccountHomeController
-    };
-
     angular
         .module("Module.exchange.components")
-        .component("exchangeAccountHome", exchangeAccountHome);
+        .component("exchangeAccountHome", {
+            templateUrl: "exchange/account/home/account-home.html",
+            controller: ExchangeAccountHomeController
+        });
 }
