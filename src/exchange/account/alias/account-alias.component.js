@@ -82,15 +82,13 @@
         }
     }
 
-    const exchangeAccountAlias = {
-        templateUrl: "exchange/account/alias/account-alias.html",
-        controller: ExchangeAccountAliasController,
-        bindings: {
-            account: "<"
-        }
-    };
-
     angular
         .module("Module.exchange.components")
-        .component("exchangeAccountAlias", exchangeAccountAlias);
+        .component("exchangeAccountAlias", {
+            templateUrl: "exchange/account/alias/account-alias.html",
+            controller: ExchangeAccountAliasController,
+            bindings: {
+                account: "<"
+            }
+        });
 }

@@ -147,12 +147,10 @@
         }
     }
 
-    const exchangeAccountAdd = {
-        templateUrl: "exchange/account/add/account-add.html",
-        controller: ExchangeAccountAddController
-    };
-
     angular
         .module("Module.exchange.components")
-        .component("exchangeAccountAdd", exchangeAccountAdd);
+        .component("exchangeAccountAdd", {
+            templateUrl: "exchange/account/add/account-add.html",
+            controller: ExchangeAccountAddController
+        });
 }
