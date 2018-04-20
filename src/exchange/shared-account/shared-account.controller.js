@@ -1,8 +1,8 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeTabSharedAccountsCtrl", class ExchangeTabSharedAccountsCtrl {
-        constructor ($scope, accountTypes, Exchange, ExchangeSharedAccounts, exchangeVersion, messaging, translator, navigation) {
-            this.services = { $scope, accountTypes, Exchange, ExchangeSharedAccounts, exchangeVersion, messaging, translator, navigation };
+        constructor ($scope, accountTypes, Exchange, exchangeSelectedService, ExchangeSharedAccounts, exchangeVersion, messaging, translator, navigation) {
+            this.services = { $scope, accountTypes, Exchange, exchangeSelectedService, ExchangeSharedAccounts, exchangeVersion, messaging, translator, navigation };
 
             this.$routerParams = Exchange.getParams();
 
@@ -112,7 +112,7 @@ angular
         /* eslint-enable class-methods-use-this */
 
         isSharedAccountAdjustable () {
-            return this.exchange && !((this.services.accountTypes.isDedicated() || this.services.accountTypes.isDedicatedCluster() || this.services.accountTypes.isProvider()) && this.services.exchangeVersion.isExchangeVersion(2010));
+            return this.exchange;
         }
 
         editAccount (account) {
