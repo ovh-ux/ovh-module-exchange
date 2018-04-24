@@ -194,6 +194,10 @@
                     return this.translator.tr("exchange_tab_ACCOUNTS_state_BLOCKED");
                 }
 
+                if (this.exchangeAccount.isPlaceholder(account)) {
+                    return this.translator.tr(`exchange_tab_ACCOUNTS_state_TO_CONFIGURE`);
+                }
+
                 if (this.exchangeStates.isValidState(account.state)) {
                     return this.translator.tr(`exchange_tab_ACCOUNTS_state_${_(account.state).snakeCase().toUpperCase()}`);
                 }

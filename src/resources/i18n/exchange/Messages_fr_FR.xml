@@ -163,6 +163,7 @@
    <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_DOING">Tâche planifiée ou en cours d'exécution</translation>
    <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_ERROR">Tâche en erreur</translation>
    <translation id="exchange_tab_ACCOUNTS_state_UNKNOWN">Inconnu</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_TO_CONFIGURE">À configurer</translation>
 
    <translation id="exchange_tab_ACCOUNTS_menu_edit">Modifier</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_alias">Gérer les alias</translation>
