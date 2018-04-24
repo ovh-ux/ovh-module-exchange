@@ -17,13 +17,6 @@ angular
             this.stateTaskError = "TASK_ON_ERROR";
             this.stateTaskDoing = "TASK_ON_DOING";
 
-            this.exchangeTypeHosted = Exchange.accountTypeHosted;
-            this.exchangeTypeDedicated = Exchange.accountTypeDedicated;
-            this.exchangeTypeProvider = Exchange.accountTypeProvider;
-
-            this.accountTypes = ["ALL", "BASIC", "STANDARD", "ENTERPRISE"];
-            this.filterType = "ALL";
-
             this.loading = false;
             this.accounts = null;
             this.displayAccounts();
