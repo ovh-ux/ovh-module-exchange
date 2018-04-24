@@ -1,64 +1,27 @@
 angular
     .module("Module.exchange.services")
     .service("exchangeKnownledgeBase", class ExchangeKnownledgeBase {
-        constructor () {
-            this.ACCOUNTS = {
-                CREATION_METHODS: {
-                    ADDING: "ADDING",
-                    ORDERING: "ORDERING"
-                },
-                TYPES: {
+        constructor (exchangeInfrastructures, exchangeVersion, translator) {
+            this.exchangeInfrastructures = exchangeInfrastructures;
+            this.exchangeVersion = exchangeVersion;
+            this.translator = translator;
 
-                }
-            };
-
-            this.INFRASTRUCTURES = {
-                HOSTED: {
-                    ACCOUNTS: {
-                        CREATION_METHOD: this.ACCOUNTS.CREATION_METHODS.ORDERING
-                    }
-                },
-                PROVIDER: { // Actual name is Resaller
-                    ACCOUNTS: {
-                        CREATION_METHOD: this.ACCOUNTS.CREATION_METHODS.ORDERING
-                    }
-                },
-                DEDICATED: { // Actual name is Private
-                    ACCOUNTS: {
-                        CREATION_METHOD: this.ACCOUNTS.CREATION_METHODS.ADDING
-                    }
-                },
-                DEDICATED_CLUSTER: { // Actual name is Dedicated
-                    ACCOUNTS: {
-                        CREATION_METHOD: this.ACCOUNTS.CREATION_METHODS.ADDING,
-                        TYPES: {
-                            BASIC: {
-                                displayName: "BASIC"
-                            },
-                            STANDARD: {
-                                displayName: "STANDARD"
-                            }
-                        }
+            this.FEATURES = {
+                ACCOUNTS: {
+                    CREATION_METHODS: {
+                        ADDING: this.exchangeInfrastructures.isHosted() || this.exchangeInfrastructures.isProvider(),
+                        ORDERING: this.exchangeInfrastructures.isDedicated() || this.exchangeInfrastructures.isDedicatedCluter()
                     }
                 }
             };
 
-            this.VERSIONS = {
-                v2010: {
-
-                },
-                v2013: {
-
-                },
-                v2016: {
-
+            this.VALUES = {
+                ACCOUNTS: {
+                    TYPES: () => _(["BASIC", "STANDARD"])
+                        .map((accountType) => [accountType, this.exchangeVersion.is(2010) ? this.translator.tr(`exchange_accounts_types_2010_${accountType}`) : this.translator.tr(`exchange_accounts_types_dedicatedCluster_${accountType}`)])
+                        .zipObject()
+                        .value()
                 }
             };
-        }
-
-        can (feature) {
-            this.a = feature;
-
-            return true;
         }
     });

@@ -24,6 +24,10 @@ angular
             return isMatchingVersion;
         }
 
+        is (versionNumber) {
+            return this.isVersion(2010);
+        }
+
         /**
          * @param {(string|number)} versionNumberToCompareTo - Version to compare current Exchange account to
          */

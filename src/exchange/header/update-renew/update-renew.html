@@ -45,7 +45,7 @@
                         <th scope="col" data-i18n-static="exchange_tab_ACCOUNTS_table_email"></th>
                         <th scope="col" data-i18n-static="exchange_update_billing_expiration_date_label"></th>
                         <th scope="col"
-                            data-ng-if="!(ctrl.services.accountTypes.isProvider() && ctrl.services.exchangeVersion.isVersion(2010))">
+                            data-ng-if="!(ctrl.services.exchangeServiceInfrastructure.isProvider() && ctrl.services.exchangeVersion.isVersion(2010))">
                             <input type="checkbox" class="mr-2"
                                    data-tri-state-checkbox="monthlySelectAll"
                                    data-tsc-ids-all="ctrl.buffer.ids"
@@ -62,7 +62,7 @@
                             <span data-i18n-static="exchange_update_billing_header_1Y"></span>
                         </th>
                         <th scope="col"
-                            data-ng-if="ctrl.services.accountTypes.isHosted() || ctrl.services.accountTypes.isProvider()">
+                            data-ng-if="ctrl.services.exchangeServiceInfrastructure.isHosted() || ctrl.services.exchangeServiceInfrastructure.isProvider()">
                             <input type="checkbox" class="mr-2"
                                    data-tri-state-checkbox="deleteSelectAll"
                                    data-tsc-ids-all="ctrl.buffer.ids"
@@ -99,7 +99,7 @@
                         <td colspan="3" data-ng-if="ctrl.account.partial"></td>
 
                         <td class="text-center"
-                            data-ng-if="!ctrl.account.partial && !(ctrl.services.accountTypes.isProvider() && ctrl.services.exchangeVersion.isVersion(2010))">
+                            data-ng-if="!ctrl.account.partial && !(ctrl.services.exchangeServiceInfrastructure.isProvider() && ctrl.services.exchangeVersion.isVersion(2010))">
                             <label class="mb-0">
                                 <input type="radio" value="MONTHLY"
                                        data-ng-change="ctrl.trackSelected(account.primaryEmailAddress, account.renewPeriod)"
@@ -117,7 +117,7 @@
                         </td>
 
                         <td class="text-center"
-                            data-ng-if="!account.partial && (ctrl.services.accountTypes.isHosted() || ctrl.services.accountTypes.isProvider())">
+                            data-ng-if="!account.partial && (ctrl.services.exchangeServiceInfrastructure.isHosted() || ctrl.services.exchangeServiceInfrastructure.isProvider())">
                             <label class="mb-0">
                                 <input type="radio" value="DELETE_AT_EXPIRATION"
                                        data-ng-change="ctrl.trackSelected(account.primaryEmailAddress, account.renewPeriod);"
@@ -144,7 +144,7 @@
 
             <div class="alert alert-warning mt-5" role="alert"
                  data-i18n-static="exchange_update_billing_periode_delete_warning"
-                 data-ng-if="(ctrl.services.accountTypes.isHosted() || ctrl.services.accountTypes.isProvider()) && ctrl.services.exchangeVersion.isAfter(2010) && !ctrl.account.partial"
+                 data-ng-if="(ctrl.services.exchangeServiceInfrastructure.isHosted() || ctrl.services.exchangeServiceInfrastructure.isProvider()) && ctrl.services.exchangeVersion.isAfter(2010) && !ctrl.account.partial"
                  data-ng-show="ctrl.model.displayDeleteWarning">
             </div>
         </div>

@@ -12,14 +12,14 @@
                 <p data-ng-bind-html="tr('exchange_resilitation_action_intro', [ctrl.exchange.displayName])"></p>
 
                 <dl class="dl-horizontal dl-lg"
-                    data-ng-if="ctrl.services.exchangeVersion.isVersion(2010) || !ctrl.service.accountTypes.isHosted()">
+                    data-ng-if="ctrl.services.exchangeVersion.isVersion(2010) || !ctrl.service.exchangeServiceInfrastructure.isHosted()">
                     <dt data-i18n-static="exchange_resilitation_action_expiration"></dt>
                     <dd data-ng-bind="ctrl.exchange.expiration | date:'mediumDate'"></dd>
                 </dl>
 
                <div class="alert alert-warning" role="alert"
                     data-i18n-static="exchange_resilitation_action_hosted_warning"
-                    data-ng-if="ctrl.services.exchangeVersion.isAfter(2010) || ctrl.service.accountTypes.isHosted()">
+                    data-ng-if="ctrl.services.exchangeVersion.isAfter(2010) || ctrl.service.exchangeServiceInfrastructure.isHosted()">
                </div>
             </div>
 
@@ -27,12 +27,12 @@
                 <p data-ng-bind-html="tr('exchange_resilitation_cancel_action_intro', ['<strong>' + ctrl.exchange.displayName + '</strong>'])"></p>
 
                 <dl class="dl-horizontal dl-lg"
-                    data-ng-if="ctrl.services.exchangeVersion.isVersion(2010) || !ctrl.service.accountTypes.isHosted()">
+                    data-ng-if="ctrl.services.exchangeVersion.isVersion(2010) || !ctrl.service.exchangeServiceInfrastructure.isHosted()">
                     <dt data-i18n-static="exchange_resilitation_action_expiration"></dt>
                     <dd data-ng-bind="ctrl.exchange.expiration | date:'mediumDate'"></dd>
                 </dl>
 
-                <div data-ng-if="ctrl.service.accountTypes.isHosted()">
+                <div data-ng-if="ctrl.service.exchangeServiceInfrastructure.isHosted()">
                     <p data-ng-bind-html="tr('exchange_update_billing_periode_intro')"></p>
                     <form>
                         <label class="oui-label"

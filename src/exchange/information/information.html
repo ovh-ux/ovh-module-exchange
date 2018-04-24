@@ -47,7 +47,7 @@
                                         <button class="btn btn-xs" type="button"
                                                 data-i18n-static="exchange_dashboard_diag_a_label"
                                                 data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isAValid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isAValid}"
-                                                data-ng-if="!ctrl.accountTypes.isProvider()"
+                                                data-ng-if="!ctrl.exchangeServiceInfrastructure.isProvider()"
                                                 data-simplepopover="{{ctrl.exchange.serverDiagnostic.aTooltip}}"
                                                 data-simplepopover-title="{{tr('exchange_dashboard_diag_a_tooltip_title')}}"
                                                 data-simplepopover-placement="bottom"
@@ -56,7 +56,7 @@
                                         <button class="btn btn-xs" type="button"
                                                 data-i18n-static="exchange_dashboard_diag_aaaa_label"
                                                 data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isAaaaValid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isAaaaValid}"
-                                                data-ng-if="ctrl.accountTypes.isDedicated() || ctrl.accountTypes.isDedicatedCluster()"
+                                                data-ng-if="ctrl.exchangeServiceInfrastructure.isDedicated() || ctrl.exchangeServiceInfrastructure.isDedicatedCluster()"
                                                 data-simplepopover="{{ctrl.exchange.serverDiagnostic.aaaaTooltip}}"
                                                 data-simplepopover-title="{{tr('exchange_dashboard_diag_aaaa_tooltip_title')}}"
                                                 data-simplepopover-placement="bottom"
@@ -65,7 +65,7 @@
                                         <button class="btn btn-xs" type="button"
                                                 data-i18n-static="exchange_dashboard_diag_ptr_label"
                                                 data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isPtrValid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isPtrValid}"
-                                                data-ng-if="ctrl.accountTypes.isDedicated() || ctrl.accountTypes.isDedicatedCluster()"
+                                                data-ng-if="ctrl.exchangeServiceInfrastructure.isDedicated() || ctrl.exchangeServiceInfrastructure.isDedicatedCluster()"
                                                 data-simplepopover="{{ctrl.exchange.serverDiagnostic.ptrTooltip}}"
                                                 data-simplepopover-title="{{tr('exchange_dashboard_diag_ptr_tooltip_title')}}"
                                                 data-simplepopover-placement="bottom"
@@ -74,7 +74,7 @@
                                         <button class="btn btn-xs" type="button"
                                                 data-i18n-static="exchange_dashboard_diag_ptrv6_label"
                                                 data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isPtrV6Valid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isPtrV6Valid}"
-                                                data-ng-if="ctrl.accountTypes.isDedicated() || ctrl.accountTypes.isDedicatedCluster()"
+                                                data-ng-if="ctrl.exchangeServiceInfrastructure.isDedicated() || ctrl.exchangeServiceInfrastructure.isDedicatedCluster()"
                                                 data-simplepopover="{{ctrl.exchange.serverDiagnostic.ptrv6Tooltip}}"
                                                 data-simplepopover-title="{{tr('exchange_dashboard_diag_ptrv6_tooltip_title')}}"
                                                 data-simplepopover-placement="bottom"
@@ -172,7 +172,7 @@
                                         <button class="btn btn-block btn-default" type="button"
                                                 data-i18n-static="exchange_action_order_space_disk"
                                                 data-ng-click="ctrl.orderDiskSpace()"
-                                                data-ng-disabled="ctrl.accountTypes.is25g()"
+                                                data-ng-disabled="ctrl.exchangeServiceInfrastructure.is25g()"
                                                 data-ng-if="ctrl.displayOrderDiskSpace()">
                                         </button>
                                     </div>
@@ -189,7 +189,7 @@
                     data-i18n-static="exchange_tab_INFORMATIONS_connexion"></h3>
                 <div class="oui-tile__body">
                     <ul class="list-unstyled">
-                        <li class="oui-tile__item" data-ng-if="ctrl.accountTypes.isHosted()">
+                        <li class="oui-tile__item" data-ng-if="ctrl.exchangeServiceInfrastructure.isHosted()">
                             <div class="oui-tile__definition">
                                 <strong class="d-block"
                                         data-i18n-static="exchange_tab_INFORMATIONS_server"></strong>

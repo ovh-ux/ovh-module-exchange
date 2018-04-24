@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeUpdateDomainCtrl", class ExchangeUpdateDomainCtrl {
-        constructor ($scope, Exchange, $rootScope, ExchangeDomains, Validator, navigation, messaging, translator, exchangeVersion, accountTypes) {
+        constructor ($scope, Exchange, $rootScope, ExchangeDomains, Validator, navigation, messaging, translator, exchangeVersion, exchangeServiceInfrastructure) {
             this.services = {
                 $scope,
                 Exchange,
@@ -12,7 +12,7 @@ angular
                 messaging,
                 translator,
                 exchangeVersion,
-                accountTypes
+                exchangeServiceInfrastructure
             };
 
             this.$routerParams = Exchange.getParams();
@@ -72,7 +72,7 @@ angular
          * @returns {boolean}
          */
         isMxRelayVisible () {
-            return !this.services.accountTypes.isProvider() || !this.services.exchangeVersion.isVersion(2010);
+            return !this.services.exchangeServiceInfrastructure.isProvider() || !this.services.exchangeVersion.isVersion(2010);
         }
 
         /**

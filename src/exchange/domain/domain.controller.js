@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeTabDomainsCtrl", class ExchangeTabDomainsCtrl {
-        constructor ($scope, $http, Exchange, ExchangeDomains, translator, exchangeStates, accountTypes) {
+        constructor ($scope, $http, Exchange, ExchangeDomains, translator, exchangeStates, exchangeServiceInfrastructure) {
             this.services = {
                 $scope,
                 $http,
@@ -9,7 +9,7 @@ angular
                 ExchangeDomains,
                 translator,
                 exchangeStates,
-                accountTypes
+                exchangeServiceInfrastructure
             };
 
             this.$routerParams = Exchange.getParams();
@@ -25,7 +25,7 @@ angular
 
             this.exchange = Exchange.value;
 
-            if (accountTypes.isProvider()) {
+            if (exchangeServiceInfrastructure.isProvider()) {
                 this.cnameRedirection = "ex-mail.biz";
             } else {
                 this.cnameRedirection = "ovh.com";

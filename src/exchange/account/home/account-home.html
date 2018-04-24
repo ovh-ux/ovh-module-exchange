@@ -93,7 +93,7 @@
                 <oui-action-menu-item
                     data-text="{{:: $ctrl.translator.tr('exchange_tab_ACCOUNTS_menu_alias') }}"
                     data-on-click="$ctrl.displayAliasManagementView($row)"
-                    data-ng-if="!$ctrl.accountTypes.is25g()"
+                    data-ng-if="!$ctrl.exchangeServiceInfrastructure.is25g()"
                     data-disabled="!$ctrl.exchangeStates.constructor.isOk($row) || $ctrl.exchangeAccount.isPlaceholder($row)"></oui-action-menu-item>
                 <oui-action-menu-item
                     data-text="{{:: $ctrl.translator.tr('exchange_tab_ACCOUNTS_menu_delegations') }}"

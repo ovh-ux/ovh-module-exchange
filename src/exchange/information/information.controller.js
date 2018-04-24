@@ -1,10 +1,10 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeTabInformationCtrl", class ExchangeTabInformationCtrl {
-        constructor ($rootScope, $scope, accountTypes, Exchange, EXCHANGE_CONFIG, exchangeVersion, messaging, navigation, translator, User) {
+        constructor ($rootScope, $scope, exchangeServiceInfrastructure, Exchange, EXCHANGE_CONFIG, exchangeVersion, messaging, navigation, translator, User) {
             this.$rootScope = $rootScope;
             this.$scope = $scope;
-            this.accountTypes = accountTypes;
+            this.exchangeServiceInfrastructure = exchangeServiceInfrastructure;
             this.exchangeService = Exchange;
             this.EXCHANGE_CONFIG = EXCHANGE_CONFIG;
             this.exchangeVersion = exchangeVersion;
@@ -86,11 +86,11 @@ angular
         }
 
         displayRenewDate () {
-            return this.exchange.expiration && this.exchangeVersion.isAfter(2010) && (this.accountTypes.isDedicated() || this.accountTypes.isDedicatedCluster());
+            return this.exchange.expiration && this.exchangeVersion.isAfter(2010) && (this.exchangeServiceInfrastructure.isDedicated() || this.exchangeServiceInfrastructure.isDedicatedCluster());
         }
 
         shouldDisplayMigration2016 () {
-            const isHostedAccount = this.accountTypes.isHosted();
+            const isHostedAccount = this.exchangeServiceInfrastructure.isHosted();
             const isNicAdmin = _.includes(this.exchange.nicType, "ADMIN");
             const isNicBilling = _.includes(this.exchange.nicType, "BILLING");
 
@@ -108,8 +108,8 @@ angular
             const isAlreadyExpired = now.isAfter(sslExpirationDate);
             const canRenewBeforeExpiration = now.isAfter(aMonthBeforeSSLExpirationDate);
 
-            const isDedicatedAccount = this.accountTypes.isDedicated() || this.accountTypes.isDedicatedCluster();
-            const is2010DedicatedOrProvider = this.exchangeVersion.isVersion(2010) && !this.accountTypes.isHosted();
+            const isDedicatedAccount = this.exchangeServiceInfrastructure.isDedicated() || this.exchangeServiceInfrastructure.isDedicatedCluster();
+            const is2010DedicatedOrProvider = this.exchangeVersion.isVersion(2010) && !this.exchangeServiceInfrastructure.isHosted();
 
             this.shouldDisplaySSLRenewValue = (isDedicatedAccount || is2010DedicatedOrProvider) && (canRenewBeforeExpiration || isAlreadyExpired);
         }
@@ -131,7 +131,7 @@ angular
         }
 
         displayOrderDiskSpace () {
-            return this.exchangeVersion.isVersion(2010) && this.accountTypes.isProvider();
+            return this.exchangeVersion.isVersion(2010) && this.exchangeServiceInfrastructure.isProvider();
         }
 
         orderDiskSpace () {

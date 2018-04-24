@@ -1,10 +1,10 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeUpdateAccountCtrl", class ExchangeUpdateAccountCtrl {
-        constructor ($scope, accountTypes, Exchange, ExchangePassword, exchangeVersion, messaging, navigation, translator) {
+        constructor ($scope, exchangeServiceInfrastructure, Exchange, ExchangePassword, exchangeVersion, messaging, navigation, translator) {
             this.services = {
                 $scope,
-                accountTypes,
+                exchangeServiceInfrastructure,
                 Exchange,
                 ExchangePassword,
                 exchangeVersion,
@@ -74,7 +74,7 @@ angular
         getFeaturesToUpdate (originalValues, modifiedBuffer) {
             const model = this.getModelToUpdate(originalValues, modifiedBuffer);
 
-            if (this.services.accountTypes.isProvider()) {
+            if (this.services.exchangeServiceInfrastructure.isProvider()) {
                 model.quota = originalValues.totalQuota.value && modifiedBuffer.quota !== originalValues.quota ? modifiedBuffer.quota : undefined;
             }
 
@@ -201,7 +201,7 @@ angular
         }
 
         canChangePrimary () {
-            if (this.services.accountTypes.is25g()) {
+            if (this.services.exchangeServiceInfrastructure.is25g()) {
                 return this.selectedAccount.primaryEmailAddress.split("@")[1] === "configureme.me";
             }
 

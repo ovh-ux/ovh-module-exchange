@@ -1,14 +1,14 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeRemoveExchangeCtrl", class ExchangeRemoveExchangeCtrl {
-        constructor ($scope, Exchange, translator, navigation, messaging, accountTypes, exchangeVersion) {
+        constructor ($scope, Exchange, translator, navigation, messaging, exchangeServiceInfrastructure, exchangeVersion) {
             this.services = {
                 $scope,
                 Exchange,
                 translator,
                 navigation,
                 messaging,
-                accountTypes,
+                exchangeServiceInfrastructure,
                 exchangeVersion
             };
 

@@ -1,10 +1,10 @@
 {
     class ExchangeAccountAddController {
-        constructor ($scope, $timeout, accountTypes, Exchange, exchangeAccount, ExchangePassword, exchangeVersion, messaging, translator) {
+        constructor ($scope, $timeout, exchangeInfrastructures, Exchange, exchangeAccount, ExchangePassword, exchangeVersion, messaging, translator) {
             this.$scope = $scope;
             this.$timeout = $timeout;
 
-            this.accountTypes = accountTypes;
+            this.exchangeInfrastructures = exchangeInfrastructures;
             this.Exchange = Exchange;
             this.exchangeAccount = exchangeAccount;
             this.ExchangePassword = ExchangePassword;
@@ -48,7 +48,7 @@
                 return _(accountTypes)
                     .map((accountType) => ({
                         name: accountType,
-                        displayName: this.accountTypes.isDedicatedCluster() ? this.translator.tr(`exchange_tab_dedicatedCluster_account_type_${accountType}`) : this.translator.tr(`exchange_tab_ACCOUNTS_type_${accountType}`)
+                        displayName: this.exchangeInfrastructures.isDedicatedCluster() ? this.translator.tr(`exchange_tab_dedicatedCluster_account_type_${accountType}`) : this.translator.tr(`exchange_tab_ACCOUNTS_type_${accountType}`)
                     }))
                     .value();
             }

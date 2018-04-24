@@ -1,9 +1,9 @@
 {
     class ExchangeAccountHomeController {
-        constructor ($scope, accountTypes, Exchange, exchangeAccount, exchangeAccountOutlook, exchangeSelectedService, exchangeStates, messaging, navigation, officeAttach, translator) {
+        constructor ($scope, exchangeServiceInfrastructure, Exchange, exchangeAccount, exchangeAccountOutlook, exchangeSelectedService, exchangeStates, messaging, navigation, officeAttach, translator) {
             this.$scope = $scope;
 
-            this.accountTypes = accountTypes;
+            this.exchangeServiceInfrastructure = exchangeServiceInfrastructure;
             this.Exchange = Exchange;
             this.exchangeAccount = exchangeAccount;
             this.exchangeAccountOutlook = exchangeAccountOutlook;
@@ -77,7 +77,7 @@
         }
 
         getAccountTypeTranslation (accountType) {
-            return this.accountTypes.isDedicatedCluster() ? this.translator.tr(`exchange_tab_dedicatedCluster_account_type_${accountType}`) : this.translator.tr(`exchange_tab_ACCOUNTS_type_${accountType}`);
+            return this.exchangeServiceInfrastructure.isDedicatedCluster() ? this.translator.tr(`exchange_tab_dedicatedCluster_account_type_${accountType}`) : this.translator.tr(`exchange_tab_ACCOUNTS_type_${accountType}`);
         }
 
         refreshList () {

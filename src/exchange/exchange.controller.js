@@ -1,9 +1,9 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeCtrl", class ExchangeCtrl {
-        constructor (accountTypes, $rootScope, $scope, $timeout, $location, Products, translator, Exchange, APIExchange, User, EXCHANGE_CONFIG, navigation, ovhUserPref, messaging, exchangeVersion, officeAttach) {
+        constructor (exchangeServiceInfrastructure, $rootScope, $scope, $timeout, $location, Products, translator, Exchange, APIExchange, User, EXCHANGE_CONFIG, navigation, ovhUserPref, messaging, exchangeVersion, officeAttach) {
             this.services = {
-                accountTypes,
+                exchangeServiceInfrastructure,
                 $rootScope,
                 $scope,
                 $timeout,
@@ -51,7 +51,7 @@ angular
             });
 
             $scope.$on("exchange.wizard_hosted_creation.display", () => {
-                this.shouldOpenWizard = this.services.accountTypes.isHosted();
+                this.shouldOpenWizard = this.services.exchangeServiceInfrastructure.isHosted();
                 this.hasNoDomain = true;
             });
 
@@ -102,7 +102,7 @@ angular
 
         retrievingWizardPreference () {
             this.isLoading = true;
-            this.shouldOpenWizard = this.services.accountTypes.isHosted();
+            this.shouldOpenWizard = this.services.exchangeServiceInfrastructure.isHosted();
 
             if (!this.shouldOpenWizard) {
                 return false;
@@ -202,12 +202,12 @@ angular
                 .then((sharepoint) => {
                     this.sharepoint = sharepoint;
                     const isAlreadyActivated = sharepoint != null;
-                    const isSupportedExchangeType = this.services.accountTypes.isHosted();
+                    const isSupportedExchangeType = this.services.exchangeServiceInfrastructure.isHosted();
 
                     this.canSubscribeToSharepoint = !isAlreadyActivated && isSupportedExchangeType && this.worldPart === "EU";
                 })
                 .catch(() => {
-                    this.canSubscribeToSharepoint = this.services.accountTypes.isHosted() && this.worldPart === "EU";
+                    this.canSubscribeToSharepoint = this.services.exchangeServiceInfrastructure.isHosted() && this.worldPart === "EU";
                 });
         }
 

@@ -1,8 +1,8 @@
 angular
     .module("Module.exchange.services")
     .service("exchangeSelectedService", class ExchangeSelectedService {
-        constructor (accountTypes, exchangeVersion, translator) {
-            this.accountTypes = accountTypes;
+        constructor (exchangeServiceInfrastructure, exchangeVersion, translator) {
+            this.exchangeServiceInfrastructure = exchangeServiceInfrastructure;
             this.exchangeVersion = exchangeVersion;
             this.translator = translator;
 
@@ -46,7 +46,7 @@ angular
          * @returns {ExchangeServiceContractTypes} The contract type the current service is linked to
          */
         getContractType () {
-            return this.accountTypes.isHosted() || (this.accountTypes.isProvider() && this.exchangeVersion.isAfter(2010)) ? this.CONTRACT_TYPES.PREPAID : this.CONTRACT_TYPES.PAY_AS_YOU_GO;
+            return this.exchangeServiceInfrastructure.isHosted() || (this.exchangeServiceInfrastructure.isProvider() && this.exchangeVersion.isAfter(2010)) ? this.CONTRACT_TYPES.PREPAID : this.CONTRACT_TYPES.PAY_AS_YOU_GO;
         }
 
         /**
@@ -61,6 +61,6 @@ angular
          * @returns {boolean} True if the current service allows accounts to be upgraded to 300 Gb
          */
         canUpgradeTo300Gb () {
-            return this.accountTypes.isHosted() || (this.accountTypes.isProvider() && this.exchangeVersion.isAfter(2010));
+            return this.exchangeServiceInfrastructure.isHosted() || (this.exchangeServiceInfrastructure.isProvider() && this.exchangeVersion.isAfter(2010));
         }
     });

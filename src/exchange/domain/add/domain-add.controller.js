@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeAddDomainController", class ExchangeAddDomainController {
-        constructor ($rootScope, $scope, Exchange, ExchangeDomains, messaging, navigation, ovhUserPref, translator, Validator, exchangeVersion, accountTypes, User) {
+        constructor ($rootScope, $scope, Exchange, ExchangeDomains, messaging, navigation, ovhUserPref, translator, Validator, exchangeVersion, exchangeServiceInfrastructure, User) {
             this.services = {
                 $rootScope,
                 $scope,
@@ -13,7 +13,7 @@ angular
                 translator,
                 Validator,
                 exchangeVersion,
-                accountTypes
+                exchangeServiceInfrastructure
             };
 
             this.OVH_DOMAIN = "ovh-domain";
@@ -83,7 +83,7 @@ angular
                 return;
             }
 
-            const isProviderAccount = this.services.accountTypes.isProvider();
+            const isProviderAccount = this.services.exchangeServiceInfrastructure.isProvider();
 
             if (this.availableMainDomains != null && isProviderAccount && this.services.exchangeVersion.isVersion(2010)) {
                 this.setOrganization2010 = true;

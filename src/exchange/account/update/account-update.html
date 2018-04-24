@@ -151,7 +151,7 @@
                 </div>
 
                 <div class="oui-field mb-4"
-                     data-ng-if="!ctrl.selectedAccount.is25g && ctrl.newAccountOptions && ctrl.services.accountTypes.isProvider()">
+                     data-ng-if="!ctrl.selectedAccount.is25g && ctrl.newAccountOptions && ctrl.services.exchangeServiceInfrastructure.isProvider()">
                     <label class="oui-field__label oui-label" for="selectedAccountQuota"
                            data-i18n-static="exchange_ACTION_update_account_step1_quota_label"></label>
                     <div class="oui-field__content">
@@ -194,7 +194,7 @@
                 </div>
 
                 <div class="mb-4"
-                     data-ng-if="ctrl.services.exchangeVersion.isVersion(2010) && !ctrl.service.accountTypes.isHosted()">
+                     data-ng-if="ctrl.services.exchangeVersion.isVersion(2010) && !ctrl.service.exchangeServiceInfrastructure.isHosted()">
                     <span class="oui-label"
                           data-i18n-static="exchange_ACTION_update_account_step1_exchange_SAMA_label"></span>
                     <span class="form-control-static"
@@ -254,9 +254,9 @@
                     <span data-ng-repeat="x in ctrl.selectedAccount.password track by $index">*</span>
                 </dd>
 
-                <dt data-ng-if="!ctrl.selectedAccount.is25g && ctrl.services.accountTypes.isProvider()"
+                <dt data-ng-if="!ctrl.selectedAccount.is25g && ctrl.services.exchangeServiceInfrastructure.isProvider()"
                     data-i18n-static="exchange_ACTION_update_account_step1_quota_label"></dt>
-                <dd data-ng-if="!ctrl.selectedAccount.is25g && ctrl.services.accountTypes.isProvider()"
+                <dd data-ng-if="!ctrl.selectedAccount.is25g && ctrl.services.exchangeServiceInfrastructure.isProvider()"
                     data-ng-bind="ctrl.selectedAccount.quota + ' ' + tr('unit_size_GB')"></dd>
 
                 <dt data-ng-if="!ctrl.selectedAccount.is25g"

@@ -13,8 +13,8 @@
     <div class="page-header">
         <div class="row">
             <div class="col-sm-9">
-                <strong data-ng-bind="tr('exchange_offer_type_' + ctrl.exchange.offer)" data-ng-if="!ctrl.services.accountTypes.is25g()"></strong>
-                <strong data-ng-bind="tr('exchange_offer_type_25g')" data-ng-if="ctrl.services.accountTypes.is25g()"></strong>
+                <strong data-ng-bind="tr('exchange_offer_type_' + ctrl.exchange.offer)" data-ng-if="!ctrl.services.exchangeServiceInfrastructure.is25g()"></strong>
+                <strong data-ng-bind="tr('exchange_offer_type_25g')" data-ng-if="ctrl.services.exchangeServiceInfrastructure.is25g()"></strong>
                 <div class="mb-3" data-ng-show="!ctrl.editMode">
                     <div class="d-flex">
                         <h1 class="d-inline-block mb-0" data-ng-bind="ctrl.exchange.displayName"></h1>
