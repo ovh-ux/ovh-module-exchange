@@ -1,9 +1,10 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeUpdateAccountCtrl", class ExchangeUpdateAccountCtrl {
-        constructor ($scope, exchangeServiceInfrastructure, Exchange, ExchangePassword, exchangeVersion, messaging, navigation, translator) {
+        constructor ($scope, exchangeAccountTypes, exchangeServiceInfrastructure, Exchange, ExchangePassword, exchangeVersion, messaging, navigation, translator) {
             this.services = {
                 $scope,
+                exchangeAccountTypes,
                 exchangeServiceInfrastructure,
                 Exchange,
                 ExchangePassword,
