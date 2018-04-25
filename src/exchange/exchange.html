@@ -88,7 +88,8 @@
                                     data-ng-click="ctrl.services.navigation.setAction('exchange/office-attach/dialog/office-attach-dialog', ctrl.exchange)">
                             </button>
                         </li>
-                        <li class="dropdown-divider">
+                        <li class="dropdown-divider" data-ng-if="ctrl.canSubscribeToSharepoint || (ctrl.canUserSubscribeToOfficeAttach && ctrl.worldPart === 'EU') || (!ctrl.canUserSubscribeToOfficeAttach && ctrl.worldPart === 'EU')"></li>
+                        <li>
                             <button class="btn btn-link" type="button"
                                     data-i18n-static="exchange_action_license_history_button"
                                     data-ng-click="ctrl.services.navigation.setAction('exchange/header/license/service-license-history', ctrl.exchange)">

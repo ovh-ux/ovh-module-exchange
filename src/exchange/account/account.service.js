@@ -1,22 +1,33 @@
 angular
     .module("Module.exchange.services")
     .service("exchangeAccount", class ExchangeAccount {
-        constructor (Exchange, exchangeSelectedService, exchangeStates, OvhHttp) {
+        constructor (Exchange, exchangeAccountTypes, exchangeServiceInfrastructure, exchangeSelectedService, exchangeStates, exchangeVersion, OvhHttp) {
             this.Exchange = Exchange;
+            this.exchangeAccountTypes = exchangeAccountTypes;
+            this.exchangeServiceInfrastructure = exchangeServiceInfrastructure;
             this.exchangeSelectedService = exchangeSelectedService;
             this.exchangeStates = exchangeStates;
+            this.exchangeVersion = exchangeVersion;
             this.OvhHttp = OvhHttp;
 
             this.EVENTS = {
                 CHANGE_STATE: "exchange.account.CHANGE_STATE"
             };
 
-            this.ACCOUNT_TYPES = {
-                BASIC: "Basic",
-                STANDARD: "Standard"
-            };
-
             this.PLACEHOLDER_DOMAIN_NAME = "configureme.me";
+
+            this.CAN_DO = {
+                CREATION_METHOD: {
+                    ADDING: () => this.exchangeServiceInfrastructure.isDedicated() || this.exchangeServiceInfrastructure.isDedicatedCluster(),
+                    ORDERING: () => this.exchangeServiceInfrastructure.isHosted() || this.exchangeServiceInfrastructure.isProvider()
+                },
+                DESTRUCTION_METHOD: {
+                    DELETING: () => this.exchangeServiceInfrastructure.isDedicated() || this.exchangeServiceInfrastructure.isDedicatedCluster(),
+                    RESETTING: () => this.exchangeServiceInfrastructure.isHosted() || this.exchangeServiceInfrastructure.isProvider()
+                },
+                ALIASES: () => this.exchangeServiceInfrastructure.isProvider() && this.exchangeVersion.isIndividual2010(),
+                UPGRADE_TO_300_GB: () => this.exchangeServiceInfrastructure.isHosted() || (this.exchangeServiceInfrastructure.isProvider() && this.exchangeVersion.isAfter(2010))
+            };
         }
 
         /**
@@ -72,21 +83,5 @@ angular
             }
 
             return account.domain.toUpperCase() === this.PLACEHOLDER_DOMAIN_NAME.toUpperCase();
-        }
-
-        /**
-         * @param {object} account
-         * @param {string} typeName
-         * @returns {boolean} True if the `account` type if the same as `typeName`
-         */
-        isOfType (account, typeName) {
-            const formattedTypeName = _(`${typeName}`).snakeCase().toUpperCase();
-            const matchingType = this.ACCOUNT_TYPES[formattedTypeName];
-
-            if (matchingType === undefined) {
-                throw `${typeName} is not a valid account type name`;
-            }
-
-            return `${_(account).get("accountLicense", "")}`.toUpperCase() === matchingType.toUpperCase();
         }
     });

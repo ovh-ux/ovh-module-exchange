@@ -38,9 +38,9 @@
                 data-title=":: $ctrl.translator.tr('exchange_tab_ACCOUNTS_table_type')"
                 data-property="accountLicense"
                 data-type="options"
-                data-type-options="$ctrl.accountTypeOptions"
+                data-type-options="$ctrl.accountTypeColumnOptions"
                 data-filterable>
-                <span data-ng-bind=":: $ctrl.getAccountTypeTranslation($value)"></span>
+                <span data-ng-bind=":: $ctrl.exchangeAccountTypes.getDisplayValue($value)"></span>
             </oui-column>
             <oui-column
                 data-title=":: $ctrl.translator.tr('exchange_tab_ACCOUNTS_table_size')"
@@ -93,7 +93,7 @@
                 <oui-action-menu-item
                     data-text="{{:: $ctrl.translator.tr('exchange_tab_ACCOUNTS_menu_alias') }}"
                     data-on-click="$ctrl.displayAliasManagementView($row)"
-                    data-ng-if="!$ctrl.exchangeServiceInfrastructure.is25g()"
+                    data-ng-if="!$ctrl.exchangeAccount.CAN_DO.ALIASES()"
                     data-disabled="!$ctrl.exchangeStates.constructor.isOk($row) || $ctrl.exchangeAccount.isPlaceholder($row)"></oui-action-menu-item>
                 <oui-action-menu-item
                     data-text="{{:: $ctrl.translator.tr('exchange_tab_ACCOUNTS_menu_delegations') }}"
@@ -143,12 +143,12 @@
                 <oui-action-menu-item
                     data-text="{{:: $ctrl.translator.tr('exchange_tab_ACCOUNTS_menu_reset') }}"
                     data-on-click="$ctrl.displayDialog('exchange/account/remove/account-remove', $row)"
-                    data-ng-if="$ctrl.exchangeSelectedService.isContractType($ctrl.exchangeSelectedService.CONTRACT_TYPES.PREPAID)"
+                    data-ng-if="$ctrl.exchangeAccount.CAN_DO.DESTRUCTION_METHOD.RESETTING()"
                     data-disabled="!$ctrl.exchangeStates.constructor.isOk($row) || $row.domain === 'configureme.me'"></oui-action-menu-item>
                 <oui-action-menu-item
                     data-text="{{:: $ctrl.translator.tr('exchange_tab_ACCOUNTS_menu_delete') }}"
                     data-on-click="$ctrl.displayDialog('exchange/account/remove/account-remove', $row)"
-                    data-ng-if="$ctrl.exchangeSelectedService.isContractType($ctrl.exchangeSelectedService.CONTRACT_TYPES.PAY_AS_YOU_GO)"
+                    data-ng-if="$ctrl.exchangeAccount.CAN_DO.DESTRUCTION_METHOD.DELETING()"
                     data-disabled="!$ctrl.exchangeStates.constructor.isOk($row)"></oui-action-menu-item>
             </oui-action-menu>
         </oui-datagrid>
@@ -170,14 +170,14 @@
             type="button"
             data-ng-click="$ctrl.displayAccountAddingView()"
             data-ng-bind=":: $ctrl.translator.tr('exchange_ACTION_add_account_button')"
-            data-ng-if="$ctrl.exchangeSelectedService.isContractType($ctrl.exchangeSelectedService.CONTRACT_TYPES.PAY_AS_YOU_GO)"
+            data-ng-if="$ctrl.exchangeAccount.CAN_DO.CREATION_METHOD.ADDING()"
             data-ng-disabled="!$ctrl.atLeastOneDomainIsAssociatedToCurrentExchangeService"></button>
         <button
             class="btn btn-block btn-default"
             type="button"
             data-ng-click="$ctrl.openAccountOrderingDialog()"
             data-ng-bind=":: $ctrl.translator.tr('exchange_ACTION_order_accounts_button')"
-            data-ng-if="$ctrl.exchangeSelectedService.isContractType($ctrl.exchangeSelectedService.CONTRACT_TYPES.PREPAID)"
+            data-ng-if="$ctrl.exchangeAccount.CAN_DO.CREATION_METHOD.ORDERING()"
             data-ng-disabled="!$ctrl.atLeastOneDomainIsAssociatedToCurrentExchangeService"></button>
         <button
             class="btn btn-block btn-default"

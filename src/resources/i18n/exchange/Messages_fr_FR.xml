@@ -137,9 +137,14 @@
    <translation id="exchange_tab_ACCOUNTS_table_status">Statut</translation>
    <translation id="exchange_tab_ACCOUNTS_table_settings" qtlid="4406">Configuration</translation>
    <translation id="exchange_tab_ACCOUNTS_type_ALL" qtlid="69173">Tous</translation>
-   <translation id="exchange_tab_ACCOUNTS_type_BASIC" qtlid="48986">Basic</translation>
+   <translation id="exchange_tab_ACCOUNTS_type_BASIC" qtlid="48986">Basic</translation>Ò
    <translation id="exchange_tab_ACCOUNTS_type_STANDARD" qtlid="48998">Standard</translation>
    <translation id="exchange_tab_ACCOUNTS_type_ENTERPRISE" qtlid="49022">Entreprise</translation>
+   <translation id="exchange_accounts_types_2010_BASIC">Basic</translation>
+   <translation id="exchange_accounts_types_2010_STANDARD">Standard</translation>
+   <translation id="exchange_accounts_types_2010_ENTERPRISE">Entreprise</translation>
+   <translation id="exchange_accounts_types_dedicatedCluster_BASIC">E-mail Pro</translation>
+   <translation id="exchange_accounts_types_dedicatedCluster_STANDARD">Exchange</translation>
 
    <translation id="exchange_tab_dedicatedCluster_account_type_BASIC">E-Mail Pro</translation>
    <translation id="exchange_tab_dedicatedCluster_account_type_STANDARD">Exchange</translation>
@@ -1380,9 +1385,7 @@ Exchange : profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync.
    <translation id="exchange_action_license_history_units" qtlid="113658">Licences</translation>
    <translation id="exchange_action_license_history_date" qtlid="66308">Date :</translation>
    <translation id="exchange_action_license_history_type_outlook" qtlid="193111">Licences Outlook</translation>
-   <translation id="exchange_action_license_history_type_standard" qtlid="193124">Licences standard</translation>
-   <translation id="exchange_action_license_history_type_enterprise" qtlid="193137">Licences enterprise</translation>
-   <translation id="exchange_action_license_history_type_basic" qtlid="193150">Licences basic</translation>
+   <translation id="exchange_action_license_history_label">Licences {0}</translation>
    <translation id="exchange_action_license_history_period_LASTMONTH" qtlid="169680">Le dernier mois</translation>
    <translation id="exchange_action_license_history_period_LAST3MONTHS" qtlid="193163">Les 3 derniers mois</translation>
    <translation id="exchange_action_license_history_period_LASTWEEK" qtlid="169693">Les 7 derniers jours</translation>

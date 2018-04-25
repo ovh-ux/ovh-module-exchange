@@ -1,9 +1,10 @@
 angular
     .module("Module.exchange.services")
     .service("exchangeAccountOutlook", class ExchangeAccountOutlook {
-        constructor (Exchange, exchangeAccount, exchangeSelectedService, OvhHttp) {
-            this.exchangeAccount = exchangeAccount;
+        constructor (Exchange, exchangeAccount, exchangeAccountTypes, exchangeSelectedService, OvhHttp) {
             this.Exchange = Exchange;
+            this.exchangeAccount = exchangeAccount;
+            this.exchangeAccountTypes = exchangeAccountTypes;
             this.exchangeSelectedService = exchangeSelectedService;
             this.OvhHttp = OvhHttp;
 
@@ -150,7 +151,7 @@ angular
          * @returns {boolean} True if the `account` can have an Outlook license
          */
         canHaveLicense (account) {
-            return !this.exchangeAccount.isOfType(account, this.exchangeAccount.ACCOUNT_TYPES.BASIC) && !this.exchangeAccount.isPlaceholder(account);
+            return !this.exchangeAccountTypes.is(account, this.exchangeAccountTypes.TYPES.BASIC) && !this.exchangeAccount.isPlaceholder(account);
         }
 
         /**

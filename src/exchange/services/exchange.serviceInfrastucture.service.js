@@ -18,7 +18,11 @@ angular
                 throw "Can't work with empty input";
             }
 
-            return _(this.Exchange).get("value.offer", "").camelCase().toUpperCase() === _(`${infrastructure}`).camelCase().toUpperCase();
+            return _(this.Exchange).chain()
+                .get("value.offer", "")
+                .camelCase()
+                .value()
+                .toUpperCase() === _(`${infrastructure}`).camelCase().toUpperCase();
         }
 
         is (infrastructure) {

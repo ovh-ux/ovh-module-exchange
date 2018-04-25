@@ -1,11 +1,12 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeLicenseHistoryCtrl", class ExchangeLicenseHistoryCtrl {
-        constructor ($rootScope, $scope, Exchange, translator, messaging, navigation, ChartjsFactory, EXCHANGE_HEADER_LICENSE) {
+        constructor ($rootScope, $scope, Exchange, exchangeAccountTypes, translator, messaging, navigation, ChartjsFactory, EXCHANGE_HEADER_LICENSE) {
             this.services = {
                 $rootScope,
                 $scope,
                 Exchange,
+                exchangeAccountTypes,
                 translator,
                 messaging,
                 navigation
@@ -28,7 +29,7 @@ angular
         }
 
         parseSerie (serie) {
-            serie.name = this.services.translator.tr(`exchange_action_license_history_type_${serie.name}`);
+            serie.name = serie.name === "outlook" ? this.services.translator.tr("exchange_action_license_history_type_outlook") : this.services.translator.tr("exchange_action_license_history_label", [this.services.exchangeAccountTypes.getDisplayValue(serie.name)]);
 
             if (_.has(serie, "data") && serie.data != null) {
                 serie.data = serie.data.map((data) => ExchangeLicenseHistoryCtrl.parseItem(data));
@@ -36,7 +37,7 @@ angular
         }
 
         static parseItem (item) {
-            const date = moment(item.time, "YYYY-MM-DDTHH:mm:dd.SSSZZ").toDate();
+            const date = item.time.toDate();
 
             return [Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()), item.value];
         }
@@ -108,9 +109,10 @@ angular
                     mode: "label",
                     intersect: false,
                     callbacks: {
-                        title (data) {
-                            return moment(_.get(_.first(data), "xLabel")).fromNow();
-                        }
+                        title: (data) => _(data).chain()
+                            .first()
+                            .get("xLabel")
+                            .value()
                     }
                 },
                 scales: {

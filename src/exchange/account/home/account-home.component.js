@@ -1,11 +1,11 @@
 {
     class ExchangeAccountHomeController {
-        constructor ($scope, exchangeServiceInfrastructure, Exchange, exchangeAccount, exchangeAccountOutlook, exchangeSelectedService, exchangeStates, messaging, navigation, officeAttach, translator) {
+        constructor ($scope, Exchange, exchangeAccount, exchangeAccountTypes, exchangeAccountOutlook, exchangeSelectedService, exchangeStates, messaging, navigation, officeAttach, translator) {
             this.$scope = $scope;
 
-            this.exchangeServiceInfrastructure = exchangeServiceInfrastructure;
             this.Exchange = Exchange;
             this.exchangeAccount = exchangeAccount;
+            this.exchangeAccountTypes = exchangeAccountTypes;
             this.exchangeAccountOutlook = exchangeAccountOutlook;
             this.exchangeSelectedService = exchangeSelectedService;
             this.exchangeStates = exchangeStates;
@@ -28,17 +28,27 @@
                 operators: ["is"]
             };
 
-            this.accountTypeOptions.values = {
-                STANDARD: this.getAccountTypeTranslation("STANDARD")
-            };
-
-            if (this.exchangeSelectedService.isContractType(this.exchangeSelectedService.CONTRACT_TYPES.PAY_AS_YOU_GO)) {
-                this.accountTypeOptions.values.BASIC = this.getAccountTypeTranslation("BASIC");
-            }
+            this.buildAccountTypeColumnOptions();
 
             this.$scope.$on(this.Exchange.events.accountsChanged, () => this.refreshList());
 
             return this.fetchInitialData();
+        }
+
+        buildAccountTypeColumnOptions () {
+            this.accountTypeColumnOptions = {
+                values: {
+                    STANDARD: this.exchangeAccountTypes.getDisplayValue(this.exchangeAccountTypes.TYPES.STANDARD)
+                }
+            };
+
+            if (this.exchangeAccountTypes.CAN_DO.BASIC()) {
+                this.accountTypeColumnOptions.values.BASIC = this.exchangeAccountTypes.getDisplayValue(this.exchangeAccountTypes.TYPES.BASIC);
+            }
+
+            if (this.exchangeAccountTypes.CAN_DO.ENTERPRISE()) {
+                this.accountTypeColumnOptions.values.ENTERPRISE = this.exchangeAccountTypes.getDisplayValue(this.exchangeAccountTypes.TYPES.ENTERPRISE);
+            }
         }
 
         fetchInitialData () {
@@ -74,10 +84,6 @@
                 .catch((error) => {
                     this.messaging.writeError("exchange_accounts_fetchAccountCreationOptions_error", error);
                 });
-        }
-
-        getAccountTypeTranslation (accountType) {
-            return this.exchangeServiceInfrastructure.isDedicatedCluster() ? this.translator.tr(`exchange_tab_dedicatedCluster_account_type_${accountType}`) : this.translator.tr(`exchange_tab_ACCOUNTS_type_${accountType}`);
         }
 
         refreshList () {
@@ -183,11 +189,7 @@
 
             function chooseStatusText (account) {
                 if (this.exchangeStates.constructor.isDeleting(account)) {
-                    if (this.exchangeSelectedService.isContractType(this.exchangeSelectedService.CONTRACT_TYPES.PAY_AS_YOU_GO)) {
-                        return this.translator.tr("exchange_tab_ACCOUNTS_state_DELETING");
-                    }
-
-                    return this.translator.tr("exchange_tab_ACCOUNTS_state_RESETTING");
+                    return this.exchangeAccount.CAN_DO.DESTRUCTION_METHOD.DELETING() ? this.translator.tr("exchange_tab_ACCOUNTS_state_DELETING") : this.translator.tr("exchange_tab_ACCOUNTS_state_RESETTING");
                 }
 
                 if (account.spamDetected) {
@@ -195,7 +197,7 @@
                 }
 
                 if (this.exchangeAccount.isPlaceholder(account)) {
-                    return this.translator.tr(`exchange_tab_ACCOUNTS_state_TO_CONFIGURE`);
+                    return this.translator.tr("exchange_tab_ACCOUNTS_state_TO_CONFIGURE");
                 }
 
                 if (this.exchangeStates.isValidState(account.state)) {
