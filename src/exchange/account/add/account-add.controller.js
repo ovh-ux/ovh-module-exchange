@@ -1,14 +1,14 @@
 {
     class ExchangeAccountAddController {
-        constructor ($scope, $timeout, exchangeAccountTypes, exchangeInfrastructures, Exchange, exchangeAccount, ExchangePassword, exchangeVersion, messaging, translator) {
+        constructor ($scope, $timeout, exchangeAccountTypes, Exchange, exchangeAccount, exchangeServiceInfrastructure, ExchangePassword, exchangeVersion, messaging, translator) {
             this.$scope = $scope;
             this.$timeout = $timeout;
 
             this.exchangeAccountTypes = exchangeAccountTypes;
-            this.exchangeInfrastructures = exchangeInfrastructures;
             this.Exchange = Exchange;
             this.exchangeAccount = exchangeAccount;
             this.ExchangePassword = ExchangePassword;
+            this.exchangeServiceInfrastructure = exchangeServiceInfrastructure;
             this.exchangeVersion = exchangeVersion;
             this.messaging = messaging;
             this.translator = translator;

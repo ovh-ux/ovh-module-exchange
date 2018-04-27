@@ -1,141 +1,115 @@
 angular
     .module("Module.exchange.controllers")
-    .controller("ExchangeLicenseHistoryCtrl", class ExchangeLicenseHistoryCtrl {
-        constructor ($rootScope, $scope, Exchange, exchangeAccountTypes, translator, messaging, navigation, ChartjsFactory, EXCHANGE_HEADER_LICENSE) {
-            this.services = {
-                $rootScope,
-                $scope,
-                Exchange,
-                exchangeAccountTypes,
-                translator,
-                messaging,
-                navigation
-            };
+    .controller("exchangeLicenseHistoryCtrl", class ExchangeLicenseHistoryCtrl {
+        constructor ($scope, ChartjsFactory, Exchange, exchangeAccountTypes, exchangeHeaderLicence, messaging, navigation, translator) {
+            this.$scope = $scope;
 
             this.ChartjsFactory = ChartjsFactory;
-            this.constant = {
-                EXCHANGE_HEADER_LICENSE
-            };
-
-            this.$routerParams = Exchange.getParams();
-            this.loading = false;
-            this.selectedPeriod = {
-                period: "LASTMONTH"
-            };
-
-            $scope.getMonitoringData = () => this.licenseHistory;
-            $scope.loadMonitoring = () => this.loadMonitoring();
-            $scope.getLicenseHistory = () => this.licenseHistory;
+            this.Exchange = Exchange;
+            this.exchangeAccountTypes = exchangeAccountTypes;
+            this.exchangeHeaderLicence = exchangeHeaderLicence;
+            this.messaging = messaging;
+            this.navigation = navigation;
+            this.translator = translator;
         }
 
-        parseSerie (serie) {
-            serie.name = serie.name === "outlook" ? this.services.translator.tr("exchange_action_license_history_type_outlook") : this.services.translator.tr("exchange_action_license_history_label", [this.services.exchangeAccountTypes.getDisplayValue(serie.name)]);
+        $onInit () {
+            this.$routerParams = this.Exchange.getParams();
+            this.selectedPeriod = this.exchangeHeaderLicence.PERIODS.LAST_MONTH;
 
-            if (_.has(serie, "data") && serie.data != null) {
-                serie.data = serie.data.map((data) => ExchangeLicenseHistoryCtrl.parseItem(data));
-            }
-        }
-
-        static parseItem (item) {
-            const date = item.time.toDate();
-
-            return [Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()), item.value];
+            this.$scope.loadMonitoring = () => this.loadMonitoring();
         }
 
         loadMonitoring () {
-            const period = this.selectedPeriod.period;
             this.loading = true;
 
-            return this.services
-                .Exchange
-                .getExchangeLicenseHistory(this.$routerParams.organization, this.$routerParams.productId, period)
-                .then((data) => {
-                    if (_.has(data, "series") && data.series != null) {
-                        _.forEach(data.series, (datum) => {
-                            this.parseSerie(datum);
-                        });
+            return this.exchangeHeaderLicence
+                .fetchLicences(this.$routerParams.organization, this.$routerParams.productId, this.selectedPeriod.date)
+                .then((licenses) => {
+                    this.chart = new this.ChartjsFactory({
+                        type: "line",
+                        data: {
+                            datasets: []
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            legend: {
+                                position: "bottom",
+                                display: true
+                            },
+                            elements: {
+                                point: {
+                                    radius: 0
+                                }
+                            },
+                            tooltips: {
+                                mode: "index",
+                                intersect: false,
+                                callbacks: {
+                                    title: (data) => _(data).chain()
+                                        .first()
+                                        .get("xLabel")
+                                        .value()
+                                }
+                            },
+                            scales: {
+                                yAxes: [{
+                                    type: "linear",
+                                    display: true,
+                                    position: "left",
+                                    scaleLabel: {
+                                        display: true
+                                    },
+                                    gridLines: {
+                                        drawBorder: true,
+                                        display: true
+                                    },
+                                    ticks: {
+                                        beginAtZero: true,
+                                        stepSize: 1,
+                                        suggestedMax: licenses.maxValue + 1
+                                    }
+                                }],
+                                xAxes: [{
+                                    type: "time",
+                                    position: "bottom",
+                                    gridLines: {
+                                        drawBorder: true,
+                                        display: false
+                                    }
+                                }]
+                            }
+                        }
+                    });
+
+                    const serieOptions = {
+                        dataset: {
+                            fill: false,
+                            borderWidth: 1
+                        }
+                    };
+
+                    this.chart.addSerie(this.translator.tr("exchange_action_license_history_type_outlook"), licenses.outlook, serieOptions);
+
+                    if (_(licenses.standard).isArray()) {
+                        this.chart.addSerie(this.translator.tr("exchange_action_license_history_label", [this.exchangeAccountTypes.getDisplayValue(this.exchangeAccountTypes.TYPES.STANDARD)]), licenses.standard, serieOptions);
                     }
 
-                    this.licenseHistory = data;
+                    if (_(licenses.basic).isArray()) {
+                        this.chart.addSerie(this.translator.tr("exchange_action_license_history_label", [this.exchangeAccountTypes.getDisplayValue(this.exchangeAccountTypes.TYPES.BASIC)]), licenses.basic, serieOptions);
+                    }
 
-                    this.chart = new this.ChartjsFactory(angular.copy(this.constant.EXCHANGE_HEADER_LICENSE.chart));
-                    this.chart.setAxisOptions("yAxes", {
-                        type: "linear"
-                    });
-                    angular.forEach(data.series, (serie) => {
-                        this.chart.addSerie(
-                            serie.name,
-                            _.map(serie.data, (point) => ({
-                                x: point[0],
-                                y: point[1]
-                            })),
-                            {
-                                dataset: {
-                                    fill: true,
-                                    borderWidth: 1
-                                }
-                            }
-                        );
-                    });
+                    if (_(licenses.enterprise).isArray()) {
+                        this.chart.addSerie(this.translator.tr("exchange_action_license_history_label", [this.exchangeAccountTypes.getDisplayValue(this.exchangeAccountTypes.TYPES.ENTERPRISE)]), licenses.enterprise, serieOptions);
+                    }
                 })
-                .catch((failure) => {
-                    this.services.navigation.resetAction();
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_action_license_history_fail"), failure);
+                .catch((error) => {
+                    this.navigation.resetAction();
+                    this.messaging.writeError(this.translator.tr("exchange_action_license_history_fail"), error);
                 })
                 .finally(() => {
                     this.loading = false;
                 });
-        }
-    })
-    .constant("EXCHANGE_HEADER_LICENSE", {
-        chart: {
-            type: "line",
-            data: {
-                datasets: []
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                legend: {
-                    position: "bottom",
-                    display: true
-                },
-                elements: {
-                    point: {
-                        radius: 0
-                    }
-                },
-                tooltips: {
-                    mode: "label",
-                    intersect: false,
-                    callbacks: {
-                        title: (data) => _(data).chain()
-                            .first()
-                            .get("xLabel")
-                            .value()
-                    }
-                },
-                scales: {
-                    yAxes: [{
-                        display: true,
-                        position: "left",
-                        scaleLabel: {
-                            display: true
-                        },
-                        gridLines: {
-                            drawBorder: true,
-                            display: true
-                        }
-                    }],
-                    xAxes: [{
-                        type: "time",
-                        position: "bottom",
-                        gridLines: {
-                            drawBorder: true,
-                            display: false
-                        }
-                    }]
-                }
-            }
         }
     });

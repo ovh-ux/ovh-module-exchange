@@ -33,13 +33,15 @@
                     ]
                 }"
                 data-searchable
-                data-filterable></oui-column>
+                data-filterable
+                data-sortable="asc"></oui-column>
             <oui-column
                 data-title=":: $ctrl.translator.tr('exchange_tab_ACCOUNTS_table_type')"
                 data-property="accountLicense"
                 data-type="options"
                 data-type-options="$ctrl.accountTypeColumnOptions"
-                data-filterable>
+                data-filterable
+                data-sortable>
                 <span data-ng-bind=":: $ctrl.exchangeAccountTypes.getDisplayValue($value)"></span>
             </oui-column>
             <oui-column
@@ -73,7 +75,8 @@
             <oui-column
                 data-title=":: $ctrl.translator.tr('exchange_tab_ACCOUNTS_table_alias')"
                 data-property="numberOfAliases"
-                data-type="number"></oui-column>
+                data-type="number"
+                data-sortable></oui-column>
             <oui-column
                 data-title=":: $ctrl.translator.tr('exchange_tab_ACCOUNTS_table_outlook')"
                 data-property="outlookStatus"

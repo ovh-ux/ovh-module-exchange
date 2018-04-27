@@ -1,6 +1,7 @@
 {
     class ExchangeAccountHomeController {
-        constructor ($scope, Exchange, exchangeAccount, exchangeAccountTypes, exchangeAccountOutlook, exchangeSelectedService, exchangeStates, messaging, navigation, officeAttach, translator) {
+        constructor ($filter, $scope, Exchange, exchangeAccount, exchangeAccountTypes, exchangeAccountOutlook, exchangeSelectedService, exchangeStates, messaging, navigation, officeAttach, translator) {
+            this.$filter = $filter;
             this.$scope = $scope;
 
             this.Exchange = Exchange;
@@ -128,7 +129,7 @@
             return this.Exchange
                 .fetchAccounts(this.$routerParams.organization, this.$routerParams.productId, parameters.pageSize, parameters.offset - 1, this.datagridParameters.searchValues, this.datagridParameters.accountTypeFilter)
                 .then((accounts) => {
-                    this.accounts = this.formatAccountsForDatagrid(accounts);
+                    this.accounts = this.formatAccountsForDatagrid(accounts, parameters.sort);
 
                     return {
                         data: this.accounts,
@@ -145,8 +146,8 @@
                 });
         }
 
-        formatAccountsForDatagrid (accounts) {
-            return _(accounts)
+        formatAccountsForDatagrid (accounts, sortingOptions) {
+            let formattedAccounts = _(accounts)
                 .get("list.results", [])
                 .map((account) => _(account)
                     .assign({
@@ -156,6 +157,10 @@
                         outlookStatus: transformOutlookStatus.call(this, account),
                         status: chooseStatusText.call(this, account)
                     }).value());
+
+            formattedAccounts = this.$filter("orderBy")(formattedAccounts, sortingOptions.property, sortingOptions.dir < 0);
+
+            return formattedAccounts;
 
             function unpunycodeEmailAddress (emailAddress) {
                 const parts = emailAddress.split("@");
