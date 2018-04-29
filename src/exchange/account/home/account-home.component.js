@@ -69,7 +69,7 @@
                     this.userCanSubscribeToOfficeAttach = !userHasAlreadySubscribed;
                 })
                 .catch((error) => {
-                    this.messaging.writeError("exchange_accounts_fetchOfficeAttachError_error", error);
+                    this.messaging.writeError(this.translator.tr("exchange_accounts_fetchOfficeAttachError_error"), error);
                 });
         }
 
@@ -83,7 +83,7 @@
                         .value();
                 })
                 .catch((error) => {
-                    this.messaging.writeError("exchange_accounts_fetchAccountCreationOptions_error", error);
+                    this.messaging.writeError(this.translator.tr("exchange_accounts_fetchAccountCreationOptions_error"), error);
                 });
         }
 
