@@ -238,7 +238,7 @@
                 <dt data-ng-if="ctrl.newAccountOptions.availableTypes.length > 1"
                     data-i18n-static="exchange_ACTION_update_account_step1_type_label"></dt>
                 <dd data-ng-if="ctrl.newAccountOptions.availableTypes.length > 1"
-                    data-ng-bind="tr('exchange_ACTION_update_account_step1_type_' + ctrl.selectedAccount.accountLicense)"></dd>
+                    data-ng-bind="ctrl.services.exchangeAccountTypes.getDisplayValue(ctrl.selectedAccount.accountLicense)"></dd>
 
                 <dt data-ng-if="ctrl.selectedAccount.firstName"
                     data-i18n-static="exchange_ACTION_update_account_step2_first_name_label"></dt>
@@ -267,9 +267,9 @@
                 <dd data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.services.exchangeServiceInfrastructure.isProvider()"
                     data-ng-bind="ctrl.selectedAccount.quota + ' ' + tr('unit_size_GB')"></dd>
 
-                <dt data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g()"
+                <dt data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.services.exchangeAccountOutlook.canHaveLicense(ctrl.selectedAccount)"
                     data-i18n-static="exchange_ACTION_update_account_step2_outlook_label"></dt>
-                <dd data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g()"
+                <dd data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.services.exchangeAccountOutlook.canHaveLicense(ctrl.selectedAccount)"
                     data-ng-bind="tr('exchange_ACTION_update_account_outlook_' + ctrl.selectedAccount.outlook)"></dd>
 
                 <dt data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g()"
