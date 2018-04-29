@@ -1,9 +1,10 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeUpdateAccountCtrl", class ExchangeUpdateAccountCtrl {
-        constructor ($scope, exchangeAccountTypes, exchangeServiceInfrastructure, Exchange, ExchangePassword, exchangeVersion, messaging, navigation, translator) {
+        constructor ($scope, exchangeAccountOutlook, exchangeAccountTypes, exchangeServiceInfrastructure, Exchange, ExchangePassword, exchangeVersion, messaging, navigation, translator) {
             this.services = {
                 $scope,
+                exchangeAccountOutlook,
                 exchangeAccountTypes,
                 exchangeServiceInfrastructure,
                 Exchange,
@@ -21,7 +22,7 @@ angular
             $scope.loadAccountOptions = () => this.loadAccountOptions();
             $scope.updateExchangeAccount = () => this.updateExchangeAccount();
 
-            this.selectedAccount = navigation.currentActionData;
+            this.selectedAccount = angular.copy(navigation.currentActionData);
             this.selectedAccount.oldOutlook = this.selectedAccount.outlook;
             this.selectedAccount.oldDeleteOutlook = this.selectedAccount.deleteOutlook;
             this.selectedAccount.quota = this.selectedAccount.quota ? this.selectedAccount.quota : this.selectedAccount.totalQuota.value;
