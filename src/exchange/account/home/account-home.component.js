@@ -96,7 +96,7 @@
                                this.datagridParameters.searchValues,
                                this.datagridParameters.accountTypeFilter)
                 .then((accounts) => {
-                    const formattedAccounts = this.formatAccountsForDatagrid(accounts);
+                    const formattedAccounts = this.formatAccountsForDatagrid(accounts, this.datagridParameters.sort);
 
                     for (let i = 0; i < formattedAccounts.length; i++) {
                         this.accounts.splice(i, 1, formattedAccounts[i]);
