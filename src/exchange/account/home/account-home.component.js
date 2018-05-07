@@ -171,7 +171,7 @@
 
             function transformSizeData (account) {
                 return {
-                    usage: Math.round(account.currentUsage / (1024 ** 2) * 100 / account.quota),
+                    usage: Math.round(account.currentUsage / Math.pow(1024, 2) * 100 / account.quota), // eslint-disable-line no-restricted-properties
                     progressionText: `${account.usedQuota.value} ${this.translator.tr(`unit_size_${account.usedQuota.unit}`)} / ${account.totalQuota.value} ${this.translator.tr(`unit_size_${account.totalQuota.unit}`)}`
                 };
             }
