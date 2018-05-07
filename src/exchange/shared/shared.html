@@ -71,9 +71,9 @@
 
                             <td data-ng-bind="folder.path"></td>
                             <td class="text-center"
-                                data-ng-bind="tr('exchange_tab_SHARED_header_access_' + folder.type)"></td>
+                                data-ng-bind="('exchange_tab_SHARED_header_access_' + folder.type) | translate"></td>
                             <td class="text-right"
-                                data-ng-bind="folder.quota.value + ' ' + tr('unit_size_' + folder.quota.unit)"></td>
+                                data-ng-bind="folder.quota.value + ' ' + ('unit_size_' + folder.quota.unit) | translate"></td>
                             <td class="text-center">
                                 <button class="btn btn-danger btn-xs" type="button"
                                         data-ng-bind="folder.permissions"

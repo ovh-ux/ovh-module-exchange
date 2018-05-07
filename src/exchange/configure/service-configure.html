@@ -34,7 +34,7 @@
                     <div id="thresholdErrors"
                          data-ng-repeat="(type, isError) in ctrl.serviceForm.lockoutThreshold.$error track by $index">
                         <small class="help-block"
-                               data-ng-bind="tr('lockoutThreshold_' + type + '_error')"
+                               data-ng-bind="('lockoutThreshold_' + type + '_error') | translate"
                                data-ng-if="isError"></small>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                     <div id="lockoutObservationWindowErrors" data-ng-repeat="(type, isError) in ctrl.serviceForm.lockoutObservationWindow.$error track by $index"
                          data-ng-if="ctrl.service.lockoutThreshold !== 0">
                         <small class="help-block"
-                               data-ng-bind="tr('lockoutObservationWindow_' + type + '_error')"
+                               data-ng-bind="('lockoutObservationWindow_' + type + '_error') | translate"
                                data-ng-if="isError">
                         </small>
                     </div>
@@ -115,7 +115,7 @@
                     <div id="minPasswordAgeErrors"
                          data-ng-repeat="(type, isError) in ctrl.serviceForm.minPasswordAge.$error track by $index">
                         <small class="help-block"
-                               data-ng-bind="tr('minPasswordAge_' + type + '_error')"
+                               data-ng-bind="('minPasswordAge_' + type + '_error') | translate"
                                data-ng-if="isError">
                         </small>
                     </div>
@@ -143,7 +143,7 @@
                     <div id="maxPasswordAgeErrors"
                          data-ng-repeat="(type, isError) in ctrl.serviceForm.maxPasswordAge.$error track by $index">
                         <small class="help-block"
-                               data-ng-bind="tr('maxPasswordAge_' + type + '_error')"
+                               data-ng-bind="('maxPasswordAge_' + type + '_error') | translate"
                                data-ng-if="isError">
                         </small>
                     </div>
@@ -175,7 +175,7 @@
                             data-ng-if="$index < 1">
                             <span data-ng-if="type === 'min'" data-ng-bind="tr('passwordHistoryCount_min_error', [0])"></span>
                             <span data-ng-if="type === 'max'" data-ng-bind="tr('passwordHistoryCount_max_error', [100])"></span>
-                            <span data-ng-if="type !== 'min' && type !== 'max'">{{tr('passwordHistoryCount_' + type + '_error')}}</span>
+                            <span data-ng-if="type !== 'min' && type !== 'max'">{{('passwordHistoryCount_' + type + '_error') | translate}}</span>
                         </li>
                     </ul>
                 </div>
@@ -198,7 +198,7 @@
                     <div id="minPasswordLengthErrors"
                          data-ng-repeat="(type, isError) in ctrl.serviceForm.minPasswordLength.$error track by $index">
                         <small class="help-block"
-                               data-ng-bind="tr('minPasswordLength_' + type + '_error')"
+                               data-ng-bind="('minPasswordLength_' + type + '_error') | translate"
                                data-ng-if="isError">
                         </small>
                     </div>
@@ -295,7 +295,7 @@
                 </dd>
 
                 <dt data-translate="exchange_ACTION_configure_step2_label_complexityEnabled"></dt>
-                <dd data-ng-bind="tr('complexityEnabled_value_' + ctrl.service.complexityEnabled)"></dd>
+                <dd data-ng-bind="('complexityEnabled_value_' + ctrl.service.complexityEnabled) | translate"></dd>
 
                 <dt data-translate="exchange_ACTION_configure_step2_label_minPasswordAge"></dt>
                 <dd>
@@ -339,16 +339,16 @@
                 </dd>
 
                 <dt data-translate="exchange_ACTION_configure_step2_label_dkim"></dt>
-                <dd data-ng-bind="tr('dkim_value_' + ctrl.service.spamAndVirusConfiguration.checkDKIM)"></dd>
+                <dd data-ng-bind="('dkim_value_' + ctrl.service.spamAndVirusConfiguration.checkDKIM) | translate"></dd>
 
                 <dt data-translate="exchange_ACTION_configure_step2_label_spf"></dt>
-                <dd data-ng-bind="tr('spf_value_' + ctrl.service.spamAndVirusConfiguration.checkSPF)"></dd>
+                <dd data-ng-bind="('spf_value_' + ctrl.service.spamAndVirusConfiguration.checkSPF) | translate"></dd>
 
                 <dt data-translate="exchange_ACTION_configure_step2_label_tagSpam"></dt>
-                <dd data-ng-bind="tr('tagSpam_value_' + ctrl.service.spamAndVirusConfiguration.tagSpam)"></dd>
+                <dd data-ng-bind="('tagSpam_value_' + ctrl.service.spamAndVirusConfiguration.tagSpam) | translate"></dd>
 
                 <dt data-translate="exchange_ACTION_configure_step2_label_putInJunk"></dt>
-                <dd data-ng-bind="tr('putInJunk_value_' + ctrl.service.spamAndVirusConfiguration.putInJunk)"></dd>
+                <dd data-ng-bind="('putInJunk_value_' + ctrl.service.spamAndVirusConfiguration.putInJunk) | translate"></dd>
             </dl>
         </div>
     </div>

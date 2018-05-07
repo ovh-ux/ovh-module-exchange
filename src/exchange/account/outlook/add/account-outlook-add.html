@@ -27,7 +27,7 @@
                                    data-ng-value="option.duration.duration">
                             <label class="oui-radio__label-container" for="duration-{{$index}}">
                                 <span class="oui-radio__label"
-                                      data-ng-bind="tr('exchange_ACTION_add_outlook_duration_type_' + option.duration.duration)"></span>
+                                      data-ng-bind="('exchange_ACTION_add_outlook_duration_type_' + option.duration.duration) | translate"></span>
                             </label>
                         </div>
                     </div>
@@ -86,7 +86,7 @@
 
             <dl class="dl-horizontal dl-lg">
                 <dt data-translate="exchange_ACTION_add_outlook_duration_label"></dt>
-                <dd data-ng-bind="tr('exchange_ACTION_add_outlook_duration_type_' + ctrl.model.duration)"></dd>
+                <dd data-ng-bind="('exchange_ACTION_add_outlook_duration_type_' + ctrl.model.duration) | translate"></dd>
 
                 <dt data-ng-if="ctrl.getTarget() === 'EU'"
                     data-translate="exchange_ACTION_add_outlook_price_withoutIVA_label"></dt>

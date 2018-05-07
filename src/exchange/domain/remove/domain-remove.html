@@ -12,7 +12,7 @@
                     data-ng-bind="ctrl.domain.displayName | sliceContent: 150"></dd>
 
                 <dt data-translate="exchange_tab_domain_type"></dt>
-                <dd data-ng-bind="tr('exchange_tab_domain_' + ctrl.domain.type)"></dd>
+                <dd data-ng-bind="('exchange_tab_domain_' + ctrl.domain.type) | translate"></dd>
             </dl>
         </div>
     </div>

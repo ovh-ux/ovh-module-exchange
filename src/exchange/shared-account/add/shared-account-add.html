@@ -51,12 +51,12 @@
                                data-ng-min="ctrl.optionsToCreateNewAccounts.minQuota.value" min="{{ctrl.optionsToCreateNewAccounts.minQuota.value}}"
                                data-ng-max="ctrl.optionsToCreateNewAccounts.maxQuota.value" max="{{ctrl.optionsToCreateNewAccounts.maxQuota.value}}"
                                data-ng-model="ctrl.accountBeingCreated.quota"
-                               data-uib-tooltip="{{tr('exchange_action_SHARED_add_quota_tooltip', [ctrl.optionsToCreateNewAccounts.maxQuota.value, tr('unit_size_' + ctrl.optionsToCreateNewAccounts.maxQuota.unit)])}}">
+                               data-uib-tooltip="{{tr('exchange_action_SHARED_add_quota_tooltip', [ctrl.optionsToCreateNewAccounts.maxQuota.value, ('unit_size_' + ctrl.optionsToCreateNewAccounts.maxQuota.unit) | translate])}}">
                         <span class="input-group-addon"
-                              data-ng-bind="tr('unit_size_' + ctrl.optionsToCreateNewAccounts.maxQuota.unit)"></span>
+                              data-ng-bind="('unit_size_' + ctrl.optionsToCreateNewAccounts.maxQuota.unit) | translate"></span>
                     </div>
                     <small class="help-block" id="quotaDescription"
-                           data-ng-bind-html="tr('exchange_tab_ALIAS_creation_quota_description', [ctrl.optionsToCreateNewAccounts.minQuota.value, tr('unit_size_' + ctrl.optionsToCreateNewAccounts.maxQuota.unit), ctrl.optionsToCreateNewAccounts.maxQuota.value])"></small>
+                           data-ng-bind-html="tr('exchange_tab_ALIAS_creation_quota_description', [ctrl.optionsToCreateNewAccounts.minQuota.value, ('unit_size_' + ctrl.optionsToCreateNewAccounts.maxQuota.unit) | translate, ctrl.optionsToCreateNewAccounts.maxQuota.value])"></small>
                 </div>
 
                 <div class="form-group">
@@ -97,7 +97,7 @@
                 <dd data-ng-bind-template="{{ctrl.localPart.toLowerCase()}}@{{ctrl.domain.name}}"></dd>
 
                 <dt data-translate="exchange_action_SHARED_add_quota_label"></dt>
-                <dd data-ng-bind="ctrl.accountBeingCreated.quota + ' '+ tr('unit_size_' + ctrl.optionsToCreateNewAccounts.maxQuota.unit)"></dd>
+                <dd data-ng-bind="ctrl.accountBeingCreated.quota + ' '+ ('unit_size_' + ctrl.optionsToCreateNewAccounts.maxQuota.unit) | translate"></dd>
 
                 <dt data-ng-if="ctrl.accountBeingCreated.firstName" data-translate="exchange_ACTION_add_account_step2_first_name_label"></dt>
                 <dd data-ng-if="ctrl.accountBeingCreated.firstName" data-ng-bind="ctrl.accountBeingCreated.firstName | sliceContent: 150" class="word-break"></dd>
@@ -109,7 +109,7 @@
                 <dd data-ng-if="ctrl.accountBeingCreated.displayName" data-ng-bind="ctrl.accountBeingCreated.displayName | sliceContent: 150" class="word-break"></dd>
 
                 <dt data-translate="exchange_ACTION_update_account_step2_GAL_label"></dt>
-                <dd data-ng-bind="tr('exchange_ACTION_update_account_GAL_' + ctrl.accountBeingCreated.hiddenFromGAL)"></dd>
+                <dd data-ng-bind="('exchange_ACTION_update_account_GAL_' + ctrl.accountBeingCreated.hiddenFromGAL) | translate"></dd>
             </dl>
         </div>
     </div>

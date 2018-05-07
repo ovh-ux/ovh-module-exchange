@@ -104,7 +104,7 @@
                     data-ng-if="ctrl.model.newAccount.lastName" data-ng-bind="ctrl.model.newAccount.lastName | sliceContent: 150"></dd>
 
                 <dt data-translate="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_GAL_label"></dt>
-                <dd data-ng-bind="tr('exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_GAL_' + ctrl.model.newAccount.hiddenFromGAL)"></dd>
+                <dd data-ng-bind="('exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_GAL_' + ctrl.model.newAccount.hiddenFromGAL) | translate"></dd>
             </dl>
         </div>
     </div>

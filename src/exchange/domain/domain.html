@@ -86,11 +86,11 @@
                                 <span data-ng-if="domain.taskInProgress && !domain.partial && ctrl.services.exchangeStates.constructor.isOk(domain) && domain.type === domainTypeNonAuthoritative"
                                       data-ng-bind="tr('exchange_tab_domain_modify_in_progress', 'exchange_tab_domain_inverse_AUTHORITATIVE' | translate)"></span>
                                 <span data-ng-if="!domain.partial && ctrl.services.exchangeStates.constructor.isDeleting(domain)"
-                                      data-ng-bind="tr('exchange_tab_domain_' + domain.type)"></span>
+                                      data-ng-bind="('exchange_tab_domain_' + domain.type) | translate"></span>
                                 <span data-ng-if="!domain.partial && ctrl.services.exchangeStates.constructor.isCreating(domain)"
-                                      data-ng-bind="tr('exchange_tab_domain_' + domain.type)"></span>
+                                      data-ng-bind="('exchange_tab_domain_' + domain.type) | translate"></span>
                                 <span data-ng-hide="domain.taskInProgress || domain.partial || !ctrl.services.exchangeStates.constructor.isOk(domain)"
-                                      data-ng-bind="tr('exchange_tab_domain_' + domain.type)"></span>
+                                      data-ng-bind="('exchange_tab_domain_' + domain.type) | translate"></span>
                             </td>
 
                             <td class="text-center"

@@ -14,7 +14,7 @@
                     data-ng-bind="ctrl.permission.primaryAddressDisplayName | sliceContent: 150"></dd>
 
                 <dt data-translate="exchange_tab_SHARED_permissions_header_type"></dt>
-                <dd data-ng-bind="tr('exchange_tab_SHARED_permissions_type_' + ctrl.permission.accessRights)"></dd>
+                <dd data-ng-bind="('exchange_tab_SHARED_permissions_type_' + ctrl.permission.accessRights) | translate"></dd>
             </dl>
         </div>
     </div>

@@ -98,7 +98,7 @@
                         <select class="oui-select__input" id="subscription" name="groupToAddSubscribeRestriction" required
                                 data-ng-disabled="ctrl.optionsToCreateANewGroup == null"
                                 data-ng-model="trl.groupToAdd.subscribeRestriction"
-                                data-ng-options="tr('exchange_GROUPS_add_group_retriction_' + restriction) for restriction in ctrl.optionsToCreateANewGroup.availableJoinRestrictions">
+                                data-ng-options="('exchange_GROUPS_add_group_retriction_' + restriction) | translate for restriction in ctrl.optionsToCreateANewGroup.availableJoinRestrictions">
                             <option value="" disabled
                                     data-translate="select_placeholder"></option>
                         </select>
@@ -113,7 +113,7 @@
                         <select class="oui-select__input" id="restriction" name="groupToAddUnsubscribeRestriction" required
                                 data-ng-disabled="ctrl.optionsToCreateANewGroup == null"
                                 data-ng-model="ctrl.groupToAdd.unsubscribeRestriction"
-                                data-ng-options="tr('exchange_GROUPS_add_group_retriction_' + restriction) for restriction in ctrl.optionsToCreateANewGroup.availableDepartRestrictions">
+                                data-ng-options="('exchange_GROUPS_add_group_retriction_' + restriction) | translate for restriction in ctrl.optionsToCreateANewGroup.availableDepartRestrictions">
                         </select>
                         <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
                     </div>
@@ -281,16 +281,16 @@
                 </dd>
 
                 <dt data-translate="exchange_GROUPS_add_group_subscribe_label"></dt>
-                <dd data-ng-bind="tr('exchange_GROUPS_add_group_retriction_' + ctrl.groupToAdd.subscribeRestriction)"></dd>
+                <dd data-ng-bind="('exchange_GROUPS_add_group_retriction_' + ctrl.groupToAdd.subscribeRestriction) | translate"></dd>
 
                 <dt data-translate="exchange_GROUPS_add_group_unsubscribe_label"></dt>
-                <dd data-ng-bind="tr('exchange_GROUPS_add_group_retriction_' + ctrl.groupToAdd.unsubscribeRestriction)"></dd>
+                <dd data-ng-bind="('exchange_GROUPS_add_group_retriction_' + ctrl.groupToAdd.unsubscribeRestriction) | translate"></dd>
 
                 <dt data-translate="exchange_GROUPS_add_group_hide_label"></dt>
-                <dd data-ng-bind="tr('exchange_ACTION_add_account_GAL_' + ctrl.groupToAdd.hiddenFromGAL)"></dd>
+                <dd data-ng-bind="('exchange_ACTION_add_account_GAL_' + ctrl.groupToAdd.hiddenFromGAL) | translate"></dd>
 
                 <dt data-translate="exchange_GROUPS_add_group_confirmation_auth_label"></dt>
-                <dd data-ng-bind="tr('exchange_GROUPS_add_group_auth_' + ctrl.groupToAdd.auth)"></dd>
+                <dd data-ng-bind="('exchange_GROUPS_add_group_auth_' + ctrl.groupToAdd.auth) | translate"></dd>
             </dl>
         </div>
     </div>

@@ -23,7 +23,7 @@
                             <select class="oui-select__input" id="domainType"
                                     data-ng-change="ctrl.checkMxRelay()"
                                     data-ng-model="ctrl.selectedDomain.type"
-                                    data-ng-options="tr('exchange_tab_domain_' + type) for type in ctrl.domainTypes track by type">
+                                    data-ng-options="('exchange_tab_domain_' + type) | translate for type in ctrl.domainTypes track by type">
                             </select>
                             <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
                         </div>
@@ -77,7 +77,7 @@
                     data-ng-bind="ctrl.selectedDomain.mxRelay | sliceContent: 150" class="word-break"></dd>
 
                 <dt data-translate="exchange_tab_domain_type"></dt>
-                <dd data-ng-bind="tr('exchange_tab_domain_' + ctrl.selectedDomain.type)"></dd>
+                <dd data-ng-bind="('exchange_tab_domain_' + ctrl.selectedDomain.type) | translate"></dd>
             </dl>
 
             <p data-ng-bind-html="tr('exchange_tab_domain_modify_domain_tooltip', [ctrl.nonAuthoritativeEmail[0], ctrl.nonAuthoritativeEmail[1], ctrl.nonAuthoritativeEmail[2], ctrl.nonAuthoritativeEmail[3], ctrl.exchange.hostname])"

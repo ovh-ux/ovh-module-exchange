@@ -249,22 +249,22 @@
                 </dd>
 
                 <dt data-translate="exchange_tab_domain_type"></dt>
-                <dd data-ng-bind="tr('exchange_tab_domain_' + ctrl.model.type)"></dd>
+                <dd data-ng-bind="('exchange_tab_domain_' + ctrl.model.type) | translate"></dd>
 
                 <dt data-ng-if="ctrl.model.domainType !== ctrl.nonOvhDomain"
                     data-translate="exchange_tab_domain_add_step3_mx_confirmation"></dt>
                 <dd data-ng-if="ctrl.model.domainType !== ctrl.nonOvhDomain"
-                    data-ng-bind="tr('exchange_tab_domain_add_step3_configuration_' + ctrl.model.mxParam)"></dd>
+                    data-ng-bind="('exchange_tab_domain_add_step3_configuration_' + ctrl.model.mxParam) | translate"></dd>
 
                 <dt data-ng-if="ctrl.model.domainType !== ctrl.nonOvhDomain"
                     data-translate="exchange_tab_domain_add_step3_srv_confirmation"></dt>
                 <dd data-ng-if="ctrl.model.domainType !== ctrl.nonOvhDomain"
-                    data-ng-bind="tr('exchange_tab_domain_add_step3_configuration_' + ctrl.model.srvParam)"></dd>
+                    data-ng-bind="('exchange_tab_domain_add_step3_configuration_' + ctrl.model.srvParam) | translate"></dd>
 
                 <dt data-ng-if="ctrl.setOrganization2010"
                     data-translate="exchange_tab_domain_add_step2_main_domain"></dt>
                 <dd data-ng-if="ctrl.setOrganization2010"
-                    data-ng-bind="tr('exchange_tab_domain_add_step2_main_domain_' + ctrl.model.main)"></dd>
+                    data-ng-bind="('exchange_tab_domain_add_step2_main_domain_' + ctrl.model.main) | translate"></dd>
 
                 <dt data-ng-if="ctrl.setOrganization2010"
                     data-translate="exchange_tab_domain_add_step2_organization"></dt>

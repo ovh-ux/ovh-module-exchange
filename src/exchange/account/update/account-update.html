@@ -189,7 +189,7 @@
                      data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.services.exchangeAccountOutlook.canHaveLicense(ctrl.selectedAccount)">
                     <span class="oui-label"
                           data-translate="exchange_ACTION_update_account_step1_outlook_label"></span>
-                    <span data-ng-bind="tr('exchange_ACTION_add_account_outlook_' + ctrl.selectedAccount.outlook)"></span>
+                    <span data-ng-bind="('exchange_ACTION_add_account_outlook_' + ctrl.selectedAccount.outlook) | translate"></span>
                     <span data-translate="exchange_ACTION_update_account_step1_outlookdel_label"
                           data-ng-if="ctrl.selectedAccount.outlook && ctrl.selectedAccount.deleteOutlook"></span>
                 </div>
@@ -270,12 +270,12 @@
                 <dt data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.services.exchangeAccountOutlook.canHaveLicense(ctrl.selectedAccount)"
                     data-translate="exchange_ACTION_update_account_step2_outlook_label"></dt>
                 <dd data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.services.exchangeAccountOutlook.canHaveLicense(ctrl.selectedAccount)"
-                    data-ng-bind="tr('exchange_ACTION_update_account_outlook_' + ctrl.selectedAccount.outlook)"></dd>
+                    data-ng-bind="('exchange_ACTION_update_account_outlook_' + ctrl.selectedAccount.outlook) | translate"></dd>
 
                 <dt data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g()"
                     data-translate="exchange_ACTION_update_account_step2_GAL_label"></dt>
                 <dd data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g()"
-                    data-ng-bind="tr('exchange_ACTION_update_account_GAL_' + ctrl.selectedAccount.hiddenFromGAL)"></dd>
+                    data-ng-bind="('exchange_ACTION_update_account_GAL_' + ctrl.selectedAccount.hiddenFromGAL) | translate"></dd>
             </dl>
         </div>
     </div>

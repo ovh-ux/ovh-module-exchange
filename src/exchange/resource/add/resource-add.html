@@ -72,7 +72,7 @@
                                data-ng-value="type">
                         <label class="oui-radio__label-container" for="resourceType-{{$index}}">
                             <span class="oui-radio__label"
-                                  data-ng-bind="tr('exchange_tab_RESOURCES_add_resource_type_' + type)"></span>
+                                  data-ng-bind="('exchange_tab_RESOURCES_add_resource_type_' + type) | translate"></span>
                         </label>
                     </div>
                 </div>
@@ -109,7 +109,7 @@
                     data-ng-if="!ctrl.model.allowConflict"></dd>
 
                 <dt data-translate="exchange_tab_RESOURCES_add_resource_type"></dt>
-                <dd data-ng-bind="tr('exchange_tab_RESOURCES_add_resource_type_' + ctrl.model.resourceType)"></dd>
+                <dd data-ng-bind="('exchange_tab_RESOURCES_add_resource_type_' + ctrl.model.resourceType) | translate"></dd>
             </dl>
         </div>
     </div>

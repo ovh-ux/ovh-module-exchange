@@ -26,7 +26,7 @@
                         <div class="oui-select oui-select_inline">
                             <select class="oui-select__input" id="variableSelect"
                                     data-ng-model="ctrl.data.selectedAttribute"
-                                    data-ng-options="tr('exchange_ACTION_add_disclaimer_option_' + variable) for variable in ctrl.availableAttributes">
+                                    data-ng-options="('exchange_ACTION_add_disclaimer_option_' + variable) | translate for variable in ctrl.availableAttributes">
                             </select>
                             <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
                         </div>

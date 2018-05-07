@@ -15,16 +15,16 @@
 
     <oui-datagrid data-rows-loader="ctrl.loadPaginated($config)">
         <oui-column data-title="'exchange_tab_TASKS_table_function' | translate" data-property="function">
-            {{tr('exchange_tab_TASKS_' + $row.function)}}
+            {{('exchange_tab_TASKS_' + $row.function) | translate}}
         </oui-column>
         <oui-column data-title="'exchange_tab_TASKS_table_state' | translate" data-property="status">
-            <span class="fa fa-lg" data-ng-attr-title="{{tr('exchange_tab_TASKS_' + $row.status)}}"
+            <span class="fa fa-lg" data-ng-attr-title="{{('exchange_tab_TASKS_' + $row.status) | translate}}"
                   data-ng-class="{
                                 'fa-hourglass-half text-info': $row.status === ctrl.states.doing || $row.status === ctrl.states.todo,
                                 'fa-times-circle text-danger': $row.status === ctrl.states.error,
                                 'fa-ban text-danger': $row.status === ctrl.states.cancelled}"
                   data-ng-if="$row.status === ctrl.states.doing || $row.status === ctrl.states.todo || $row.status === ctrl.states.error || $row.status === ctrl.states.cancelled"></span>
-            <span data-ng-bind="tr('exchange_tab_TASKS_'+ $row.status)"
+            <span data-ng-bind="('exchange_tab_TASKS_'+ $row.status) | translate"
                   data-ng-if="$row.status === ctrl.states.done"></span>
         </oui-column>
         <oui-column data-title="'exchange_tab_TASKS_table_start_date' | translate" data-property="todoDate">

@@ -13,7 +13,7 @@
                     data-ng-bind="ctrl.shared.path | sliceContent: 150"></dd>
 
                 <dt data-translate="exchange_tab_SHARED_header_type"></dt>
-                <dd data-ng-bind="tr('exchange_tab_SHARED_header_access_' + ctrl.shared.type)"></dd>
+                <dd data-ng-bind="('exchange_tab_SHARED_header_access_' + ctrl.shared.type) | translate"></dd>
 
                 <dt data-translate="exchange_tab_SHARED_header_access"></dt>
                 <dd data-ng-bind="ctrl.shared.permissions"></dd>

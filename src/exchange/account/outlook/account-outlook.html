@@ -40,7 +40,7 @@
                         <select class="oui-select__input" id="addOutlookType" required
                                 data-ng-disabled="ctrl.versionsList === null"
                                 data-ng-model="ctrl.model.licenceVersion"
-                                data-ng-options="version as tr('exchange_ACTION_add_outlook_type_' + (version | uppercase)) for version in ctrl.versionsList track by version">
+                                data-ng-options="version as ('exchange_ACTION_add_outlook_type_' + (version | uppercase) | translate) for version in ctrl.versionsList track by version">
                         </select>
                         <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
                     </div>
@@ -52,7 +52,7 @@
                         <select class="oui-select__input" id="addOutlookLanguage" required
                                 data-ng-disabled="ctrl.languageList === null"
                                 data-ng-model="ctrl.model.languageIndex"
-                                data-ng-options="lang as tr('exchange_ACTION_display_outlook_language_' + (lang | uppercase)) disable when ctrl.isLanguageDisabled(lang) for lang in ctrl.languageList track by lang">
+                                data-ng-options="lang as ('exchange_ACTION_display_outlook_language_' + (lang | uppercase) | translate) disable when ctrl.isLanguageDisabled(lang) for lang in ctrl.languageList track by lang">
                             <option value="" disabled
                                     data-translate="select_placeholder"></option>
                         </select>

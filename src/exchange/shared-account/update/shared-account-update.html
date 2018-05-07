@@ -49,11 +49,11 @@
                                data-ng-min="ctrl.optionsToUpdateAccount.minQuota.value" min="{{ctrl.optionsToUpdateAccount.minQuota.value}}"
                                data-ng-max="ctrl.optionsToUpdateAccount.maxQuota.value" max="{{ctrl.optionsToUpdateAccount.maxQuota.value}}"
                                data-ng-model="ctrl.accountBeingUpdated.quota"
-                               data-uib-tooltip="{{tr('exchange_action_SHARED_add_quota_tooltip', [ctrl.optionsToUpdateAccount.maxQuota.value, tr('unit_size_' + ctrl.optionsToUpdateAccount.maxQuota.unit)])}}">
-                        <span class="input-group-addon" data-ng-bind="tr('unit_size_' + ctrl.optionsToUpdateAccount.maxQuota.unit)"></span>
+                               data-uib-tooltip="{{tr('exchange_action_SHARED_add_quota_tooltip', [ctrl.optionsToUpdateAccount.maxQuota.value, ('unit_size_' + ctrl.optionsToUpdateAccount.maxQuota.unit) | translate])}}">
+                        <span class="input-group-addon" data-ng-bind="('unit_size_' + ctrl.optionsToUpdateAccount.maxQuota.unit) | translate"></span>
                     </div>
                     <small class="help-block" id="quotaDescription"
-                           data-ng-bind-html="tr('exchange_tab_ALIAS_creation_quota_description', [ctrl.optionsToUpdateAccount.minQuota.value, tr('unit_size_' + ctrl.optionsToUpdateAccount.maxQuota.unit), ctrl.optionsToUpdateAccount.maxQuota.value])"></small>
+                           data-ng-bind-html="tr('exchange_tab_ALIAS_creation_quota_description', [ctrl.optionsToUpdateAccount.minQuota.value, ('unit_size_' + ctrl.optionsToUpdateAccount.maxQuota.unit) | translate, ctrl.optionsToUpdateAccount.maxQuota.value])"></small>
                 </div>
 
                 <div class="form-group">
@@ -94,7 +94,7 @@
                 <dd data-ng-bind="ctrl.accountBeingUpdated.sharedEmailAddress"></dd>
 
                 <dt data-translate="exchange_action_SHARED_add_quota_label"></dt>
-                <dd data-ng-bind="ctrl.accountBeingUpdated.quota + ' '+ tr('unit_size_' + ctrl.optionsToUpdateAccount.maxQuota.unit)"></dd>
+                <dd data-ng-bind="ctrl.accountBeingUpdated.quota + ' '+ ('unit_size_' + ctrl.optionsToUpdateAccount.maxQuota.unit) | translate"></dd>
 
                 <dt data-ng-if="ctrl.accountBeingUpdated.firstName" data-translate="exchange_ACTION_add_account_step2_first_name_label"></dt>
                 <dd data-ng-if="ctrl.accountBeingUpdated.firstName" data-ng-bind="ctrl.accountBeingUpdated.firstName | sliceContent: 150" class="word-break"></dd>
@@ -106,7 +106,7 @@
                 <dd data-ng-if="ctrl.accountBeingUpdated.displayName" data-ng-bind="ctrl.accountBeingUpdated.displayName | sliceContent: 150" class="word-break"></dd>
 
                 <dt data-translate="exchange_ACTION_update_account_step2_GAL_label"></dt>
-                <dd data-ng-bind="tr('exchange_ACTION_update_account_GAL_' + ctrl.accountBeingUpdated.hiddenFromGAL)"></dd>
+                <dd data-ng-bind="('exchange_ACTION_update_account_GAL_' + ctrl.accountBeingUpdated.hiddenFromGAL) | translate"></dd>
             </dl>
         </div>
     </div>

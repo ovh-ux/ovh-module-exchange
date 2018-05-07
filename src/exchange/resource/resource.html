@@ -64,7 +64,7 @@
                             data-ng-class="isRowSelected(resource.id)">
                             <td class="word-break"
                                 data-ng-bind-html="resource.displayName | sliceContent: 150"></td>
-                            <td data-ng-bind="tr('exchange_tab_RESOURCES_type_' + resource.resourceType)"></td>
+                            <td data-ng-bind="('exchange_tab_RESOURCES_type_' + resource.resourceType) | translate"></td>
                             <td data-ng-bind="resource.capacity"></td>
                             <td class="word-break"
                                 data-ng-bind="resource.resourceEmailDisplayName | sliceContent: 150"></td>

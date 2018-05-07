@@ -13,7 +13,7 @@
                                     <div class="oui-tile__definition">
                                         <strong class="d-block"
                                                 data-translate="exchange_tab_INFORMATIONS_infrastructure"></strong>
-                                        <span data-ng-bind="tr('exchange_offer_type_' + ctrl.exchange.offer) || ctrl.exchange.offer"></span>
+                                        <span data-ng-bind="('exchange_offer_type_' + ctrl.exchange.offer) | translate || ctrl.exchange.offer"></span>
                                     </div>
                                 </li>
                                 <li class="oui-tile__item">
@@ -22,7 +22,7 @@
                                             <div>
                                                 <strong class="d-block"
                                                         data-translate="exchange_tab_INFORMATIONS_version"></strong>
-                                                <span data-ng-bind="tr('exchange_server_commercial_version' + ctrl.exchange.serverDiagnostic.commercialVersion) || ctrl.exchange.serverDiagnostic.commercialVersion"></span>
+                                                <span data-ng-bind="('exchange_server_commercial_version' + ctrl.exchange.serverDiagnostic.commercialVersion) | translate || ctrl.exchange.serverDiagnostic.commercialVersion"></span>
                                             </div>
                                             <button class="btn btn-default ml-auto my-auto text-wrap" type="button"
                                                     data-translate="exchange_upgrade_button_title"
@@ -166,7 +166,7 @@
                                                 }"
                                                  data-ng-style="{'width': ctrl.exchange.diskPercent + '%'}">
                                                 <span class="oui-progress__label"
-                                                      data-ng-bind="ctrl.exchange.currentDiskUsage.value + ' ' + tr('unit_size_'+ ctrl.exchange.currentDiskUsage.unit) + ' / ' + ctrl.exchange.totalDiskSize.value + ' ' + tr('unit_size_'+ ctrl.exchange.totalDiskSize.unit)"></span>
+                                                      data-ng-bind="ctrl.exchange.currentDiskUsage.value + ' ' + ('unit_size_'+ ctrl.exchange.currentDiskUsage.unit) | translate + ' / ' + ctrl.exchange.totalDiskSize.value + ' ' + ('unit_size_'+ ctrl.exchange.totalDiskSize.unit) | translate"></span>
                                             </div>
                                         </div>
                                         <button class="btn btn-block btn-default" type="button"

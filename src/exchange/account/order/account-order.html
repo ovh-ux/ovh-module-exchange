@@ -45,7 +45,7 @@
                                    data-ng-value="orderAvailable.duration">
                             <label class="oui-radio__label-container" for="payTypeGroup-{{$index}}">
                                 <span class="oui-radio__label">
-                                    <span data-ng-bind-html="tr('exchange_ACTION_order_accounts_step1_pay_type_' + orderAvailable.duration)"></span>
+                                    <span data-ng-bind-html="('exchange_ACTION_order_accounts_step1_pay_type_' + orderAvailable.duration) | translate"></span>
                                     (<span class="text-danger" data-ng-bind="orderAvailable.prices.withTax.text"></span>)
                                 </span>
                             </label>
@@ -90,7 +90,7 @@
                 <p data-translate="exchange_ACTION_order_accounts_step2_intro"></p>
                 <dl class="dl-horizontal dl-lg">
                     <dt data-translate="exchange_ACTION_order_accounts_step2_pay_type"></dt>
-                    <dd data-ng-bind="tr('exchange_ACTION_order_accounts_step1_pay_type_' + ctrl.accountsToAdd.duration)"></dd>
+                    <dd data-ng-bind="('exchange_ACTION_order_accounts_step1_pay_type_' + ctrl.accountsToAdd.duration) | translate"></dd>
 
                     <dt data-translate="exchange_ACTION_order_accounts_step2_number"></dt>
                     <dd data-ng-bind="ctrl.accountsToAdd.accountsNumber"></dd>
