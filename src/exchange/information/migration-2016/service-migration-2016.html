@@ -1,12 +1,12 @@
 <div data-ng-controller="ExchangeMigration2016Ctrl as ctrl">
     <div data-wizard
-         data-wizard-title="i18n.exchange_ACTION_upgrade_title"
+         data-wizard-title="'exchange_ACTION_upgrade_title' | translate"
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="submitting">
 
         <div data-wizard-step
              data-wizard-step-valid="ctrl.agree.value">
-            <p data-i18n-static="exchange_ACTION_upgrade_intro"></p>
+            <p data-translate="exchange_ACTION_upgrade_intro"></p>
 
             <oui-spinner data-ng-if="!ctrl.model.contracts"></oui-spinner>
 

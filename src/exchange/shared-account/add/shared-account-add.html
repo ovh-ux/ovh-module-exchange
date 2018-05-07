@@ -2,7 +2,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="addingAccount"
-         data-wizard-title="i18n.exchange_SHARED_ACCOUNTS_add_action_title">
+         data-wizard-title="'exchange_SHARED_ACCOUNTS_add_action_title' | translate">
 
         <div data-wizard-step
              data-wizard-step-on-load="loadingCreationOptions"
@@ -13,13 +13,13 @@
             <form name="ctrl.sharedAccountForm" data-ng-if="ctrl.optionsToCreateNewAccounts != null">
                 <p>
                     <small class="text-danger">*</small>
-                    <small data-i18n-static="required_fields"></small>
+                    <small data-translate="required_fields"></small>
                 </p>
 
                 <div class="form-group"
                      data-ng-class="{ 'has-error': ctrl.hasEmailAccountFieldErrors() }">
                     <label class="control-label required" for="localPart"
-                           data-i18n-static="exchange_ACTION_add_account_step1_email_label"></label>
+                           data-translate="exchange_ACTION_add_account_step1_email_label"></label>
                     <div class="input-group">
                         <input type="text" class="form-control" id="localPart" maxlength="256" name="localPart" aria-describedby="emailAlreadyTakenError noLocalPartError acceptedCharactersDescription" required
                                data-ng-change="ctrl.emailOnChange()"
@@ -33,35 +33,35 @@
                         </select>
                     </div>
                     <small class="help-block" id="emailAlreadyTakenError"
-                           data-i18n-static="exchange_tab_ALIAS_taken_error_message"
+                           data-translate="exchange_tab_ALIAS_taken_error_message"
                            data-ng-if="ctrl.errors.emailIsAlreadyTaken"></small>
                     <small class="help-block" id="noLocalPartError"
-                           data-i18n-static="exchange_tab_ALIAS_creation_error_no_local_part"
+                           data-translate="exchange_tab_ALIAS_creation_error_no_local_part"
                            data-ng-if="ctrl.errors.emailLocalPartIsEmpty"></small>
                     <small class="help-block" id="acceptedCharactersDescription"
-                           data-ng-bind-html="tr('exchange_tab_ALIAS_creation_error_regex', [ctrl.localPartValidationRegex])"></small>
+                           data-ng-bind-html="'exchange_tab_ALIAS_creation_error_regex' | translate:{ t0: ctrl.localPartValidationRegex }"></small>
                 </div>
 
                 <div class="form-group"
                      data-ng-class="{ 'has-error': ctrl.hasQuotaFieldErrors() }">
                     <label class="control-label" for="quota"
-                           data-i18n-static="exchange_action_SHARED_add_quota_label"></label>
+                           data-translate="exchange_action_SHARED_add_quota_label"></label>
                     <div class="input-group">
                         <input type="number" class="form-control" id="quota" name="quota" aria-describedby="quotaDescription"
                                data-ng-min="ctrl.optionsToCreateNewAccounts.minQuota.value" min="{{ctrl.optionsToCreateNewAccounts.minQuota.value}}"
                                data-ng-max="ctrl.optionsToCreateNewAccounts.maxQuota.value" max="{{ctrl.optionsToCreateNewAccounts.maxQuota.value}}"
                                data-ng-model="ctrl.accountBeingCreated.quota"
-                               data-uib-tooltip="{{tr('exchange_action_SHARED_add_quota_tooltip', [ctrl.optionsToCreateNewAccounts.maxQuota.value, tr('unit_size_' + ctrl.optionsToCreateNewAccounts.maxQuota.unit)])}}">
+                               data-uib-tooltip="{{ 'exchange_action_SHARED_add_quota_tooltip' | translate: { t0: ctrl.optionsToCreateNewAccounts.maxQuota.value, t1: (('unit_size_' + ctrl.optionsToCreateNewAccounts.maxQuota.unit) | translate) } }}">
                         <span class="input-group-addon"
-                              data-ng-bind="tr('unit_size_' + ctrl.optionsToCreateNewAccounts.maxQuota.unit)"></span>
+                              data-ng-bind="('unit_size_' + ctrl.optionsToCreateNewAccounts.maxQuota.unit) | translate"></span>
                     </div>
                     <small class="help-block" id="quotaDescription"
-                           data-ng-bind-html="tr('exchange_tab_ALIAS_creation_quota_description', [ctrl.optionsToCreateNewAccounts.minQuota.value, tr('unit_size_' + ctrl.optionsToCreateNewAccounts.maxQuota.unit), ctrl.optionsToCreateNewAccounts.maxQuota.value])"></small>
+                           data-ng-bind-html="'exchange_tab_ALIAS_creation_quota_description' | translate: { t0: ctrl.optionsToCreateNewAccounts.minQuota.value, t1: (('unit_size_' + ctrl.optionsToCreateNewAccounts.maxQuota.unit) | translate), t2: ctrl.optionsToCreateNewAccounts.maxQuota.value }"></small>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label" for="firstName"
-                           data-i18n-static="exchange_ACTION_add_account_step1_first_name_label"></label>
+                           data-translate="exchange_ACTION_add_account_step1_first_name_label"></label>
                     <input type="text" class="form-control" id="firstName" maxlength="256"
                            data-ng-change="ctrl.buildDisplayName()"
                            data-ng-model="ctrl.accountBeingCreated.firstName">
@@ -69,7 +69,7 @@
 
                 <div class="form-group">
                     <label class="control-label" for="lastName"
-                           data-i18n-static="exchange_ACTION_add_account_step1_last_name_label"></label>
+                           data-translate="exchange_ACTION_add_account_step1_last_name_label"></label>
                     <input type="text" class="form-control" id="lastName" maxlength="256"
                            data-ng-change="ctrl.buildDisplayName()"
                            data-ng-model="ctrl.accountBeingCreated.lastName">
@@ -77,39 +77,39 @@
 
                 <div class="form-group">
                     <label class="control-label" for="displayName"
-                           data-i18n-static="exchange_ACTION_add_account_step1_display_name_label"></label>
+                           data-translate="exchange_ACTION_add_account_step1_display_name_label"></label>
                     <input type="text" class="form-control" id="displayName" maxlength="256"
                            data-ng-model="ctrl.accountBeingCreated.displayName">
                 </div>
 
                 <oui-checkbox id="hiddenFromGAL"
                     data-model="ctrl.accountBeingCreated.hiddenFromGAL"
-                    data-text="{{::i18n.exchange_ACTION_update_account_step1_GAL_label}}">
+                    data-text="{{::'exchange_ACTION_update_account_step1_GAL_label' | translate}}">
                 </oui-checkbox>
             </form>
         </div>
 
         <div data-wizard-step>
-            <p data-i18n-static="exchange_ACTION_add_account_step2_confirmation_intro"></p>
+            <p data-translate="exchange_ACTION_add_account_step2_confirmation_intro"></p>
 
             <dl class="dl-horizontal dl-lg">
-                <dt data-i18n-static="exchange_ACTION_add_account_step2_email_label"></dt>
+                <dt data-translate="exchange_ACTION_add_account_step2_email_label"></dt>
                 <dd data-ng-bind-template="{{ctrl.localPart.toLowerCase()}}@{{ctrl.domain.name}}"></dd>
 
-                <dt data-i18n-static="exchange_action_SHARED_add_quota_label"></dt>
-                <dd data-ng-bind="ctrl.accountBeingCreated.quota + ' '+ tr('unit_size_' + ctrl.optionsToCreateNewAccounts.maxQuota.unit)"></dd>
+                <dt data-translate="exchange_action_SHARED_add_quota_label"></dt>
+                <dd data-ng-bind="ctrl.accountBeingCreated.quota + ' '+ ('unit_size_' + ctrl.optionsToCreateNewAccounts.maxQuota.unit) | translate"></dd>
 
-                <dt data-ng-if="ctrl.accountBeingCreated.firstName" data-i18n-static="exchange_ACTION_add_account_step2_first_name_label"></dt>
+                <dt data-ng-if="ctrl.accountBeingCreated.firstName" data-translate="exchange_ACTION_add_account_step2_first_name_label"></dt>
                 <dd data-ng-if="ctrl.accountBeingCreated.firstName" data-ng-bind="ctrl.accountBeingCreated.firstName | sliceContent: 150" class="word-break"></dd>
 
-                <dt data-ng-if="ctrl.accountBeingCreated.lastName" data-i18n-static="exchange_ACTION_add_account_step2_last_name_label"></dt>
+                <dt data-ng-if="ctrl.accountBeingCreated.lastName" data-translate="exchange_ACTION_add_account_step2_last_name_label"></dt>
                 <dd data-ng-if="ctrl.accountBeingCreated.lastName" data-ng-bind="ctrl.accountBeingCreated.lastName | sliceContent: 150" class="word-break"></dd>
 
-                <dt data-ng-if="ctrl.accountBeingCreated.displayName" data-i18n-static="exchange_ACTION_add_account_step2_display_name_label"></dt>
+                <dt data-ng-if="ctrl.accountBeingCreated.displayName" data-translate="exchange_ACTION_add_account_step2_display_name_label"></dt>
                 <dd data-ng-if="ctrl.accountBeingCreated.displayName" data-ng-bind="ctrl.accountBeingCreated.displayName | sliceContent: 150" class="word-break"></dd>
 
-                <dt data-i18n-static="exchange_ACTION_update_account_step2_GAL_label"></dt>
-                <dd data-ng-bind="tr('exchange_ACTION_update_account_GAL_' + ctrl.accountBeingCreated.hiddenFromGAL)"></dd>
+                <dt data-translate="exchange_ACTION_update_account_step2_GAL_label"></dt>
+                <dd data-ng-bind="('exchange_ACTION_update_account_GAL_' + ctrl.accountBeingCreated.hiddenFromGAL) | translate"></dd>
             </dl>
         </div>
     </div>

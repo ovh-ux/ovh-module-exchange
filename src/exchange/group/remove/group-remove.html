@@ -2,24 +2,24 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="submit"
-         data-wizard-title="i18n.exchange_tab_GROUPS_delete_title">
+         data-wizard-title="'exchange_tab_GROUPS_delete_title' | translate">
 
         <div data-wizard-step>
-            <p data-i18n-static="exchange_tab_GROUPS_delete_question"></p>
+            <p data-translate="exchange_tab_GROUPS_delete_question"></p>
 
             <dl class="dl-horizontal dl-lg">
-                <dt data-i18n-static="exchange_tab_GROUPS_delete_group_label"></dt>
+                <dt data-translate="exchange_tab_GROUPS_delete_group_label"></dt>
                 <dd class="word-break"
                     data-ng-bind="ctrl.ml.mailingListDisplayName | sliceContent: 150"></dd>
 
-                <dt data-i18n-static="exchange_tab_GROUPS_delete_name_label"></dt>
+                <dt data-translate="exchange_tab_GROUPS_delete_name_label"></dt>
                 <dd class="word-break"
                     data-ng-bind="ctrl.ml.displayName | sliceContent: 150"></dd>
 
-                <dt data-i18n-static="exchange_tab_GROUPS_delete_group_manager"></dt>
+                <dt data-translate="exchange_tab_GROUPS_delete_group_manager"></dt>
                 <dd data-ng-bind="ctrl.ml.managers"></dd>
 
-                <dt data-i18n-static="exchange_tab_GROUPS_delete_group_user"></dt>
+                <dt data-translate="exchange_tab_GROUPS_delete_group_user"></dt>
                 <dd data-ng-bind="ctrl.ml.members"></dd>
             </dl>
         </div>

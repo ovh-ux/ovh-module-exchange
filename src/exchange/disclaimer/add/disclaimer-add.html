@@ -2,7 +2,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="saveDisclaimer"
-         data-wizard-title="i18n.exchange_ACTION_add_disclaimer_title">
+         data-wizard-title="'exchange_ACTION_add_disclaimer_title' | translate">
 
         <div data-wizard-step
              data-wizard-step-valid="isStep1Valid()">
@@ -13,7 +13,7 @@
                 <form name="addDisclaimerForm">
                     <div class="form-group">
                         <label class="control-label required" for="completeDomain"
-                               data-i18n-static="exchange_ACTION_disclaimer_associated_domains"></label>
+                               data-translate="exchange_ACTION_disclaimer_associated_domains"></label>
                         <div class="oui-select">
                             <select class="oui-select__input" id="completeDomain" required
                                     data-ng-model="ctrl.data.completeDomain"
@@ -26,12 +26,12 @@
                         <div class="oui-select oui-select_inline">
                             <select class="oui-select__input" id="variableSelect"
                                     data-ng-model="ctrl.data.selectedAttribute"
-                                    data-ng-options="tr('exchange_ACTION_add_disclaimer_option_' + variable) for variable in ctrl.availableAttributes">
+                                    data-ng-options="('exchange_ACTION_add_disclaimer_option_' + variable) | translate for variable in ctrl.availableAttributes">
                             </select>
                             <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
                         </div>
                         <button class="btn btn-default" type="button"
-                                data-i18n-static="exchange_ACTION_disclaimer_insert"
+                                data-translate="exchange_ACTION_disclaimer_insert"
                                 data-ng-click="ctrl.insertAttribute()"
                                 data-ng-disabled="!ctrl.data.selectedAttribute">
                         </button>
@@ -45,19 +45,19 @@
 
                     <oui-checkbox class="mt-4" id="outsideOnly"
                         data-model="ctrl.data.outsideOnly"
-                        data-text="{{::i18n.exchange_ACTION_add_disclaimer_outside}}">
+                        data-text="{{::'exchange_ACTION_add_disclaimer_outside' | translate}}">
                     </oui-checkbox>
                 </form>
 
                 <div class="alert alert-warning" role="alert"
-                     data-i18n-static="exchange_ACTION_update_disclaimer_length_warning"
+                     data-translate="exchange_ACTION_update_disclaimer_length_warning"
                      data-ng-if="ctrl.data.content.length > 5000">
                 </div>
             </div>
 
             <div data-wizard-step-help>
-                <h3 data-i18n-static="exchange_ACTION_add_disclaimer_helpwizard_title"></h3>
-                <p data-ng-bind-html="tr('exchange_ACTION_add_disclaimer_helpwizard_details')"></p>
+                <h3 data-translate="exchange_ACTION_add_disclaimer_helpwizard_title"></h3>
+                <p data-ng-bind-html="'exchange_ACTION_add_disclaimer_helpwizard_details' | translate"></p>
             </div>
         </div>
     </div>

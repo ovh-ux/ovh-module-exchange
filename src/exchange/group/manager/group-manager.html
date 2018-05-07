@@ -2,14 +2,14 @@
     <button class="oui-button oui-button_link oui-button_icon-left" type="button"
             data-ng-click="ctrl.hide()">
         <span class="oui-icon oui-icon-chevron-left" aria-hidden="true"></span>
-        <span data-i18n-static="common_back"></span>
+        <span data-translate="common_back"></span>
     </button>
-    <h2 data-ng-bind-html="tr('exchange_GROUPS_manager_intro', ctrl.services.navigation.selectedGroup.mailingListDisplayName)"></h2>
+    <h2 data-ng-bind-html="'exchange_GROUPS_manager_intro' | translate:{ t0: ctrl.services.navigation.selectedGroup.mailingListDisplayName }"></h2>
 
     <oui-datagrid data-rows-loader="ctrl.getManagersByGroup($config)">
-        <oui-column data-title="tr('exchange_tab_GROUPS_all_table_manager')" data-property="displayAddress"></oui-column>
+        <oui-column data-title="'exchange_tab_GROUPS_all_table_manager' | translate" data-property="displayAddress"></oui-column>
         <oui-action-menu data-align="end" data-compact>
-            <oui-action-menu-item data-text="{{i18n.exchange_tab_account_delete_account}}"
+            <oui-action-menu-item data-text="{{'exchange_tab_account_delete_account' | translate}}"
                                   data-on-click="ctrl.removeManager($row)"></oui-action-menu-item>
         </oui-action-menu>
     </oui-datagrid>

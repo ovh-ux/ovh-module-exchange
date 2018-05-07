@@ -2,17 +2,17 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="submit"
-         data-wizard-title="i18n.exchange_ACTION_delete_disclaimer_title">
+         data-wizard-title="'exchange_ACTION_delete_disclaimer_title' | translate">
 
         <div data-wizard-step>
-            <p data-i18n-static="exchange_ACTION_delete_disclaimer_question"></p>
+            <p data-translate="exchange_ACTION_delete_disclaimer_question"></p>
 
             <dl class="dl-horizontal dl-lg">
-                <dt data-i18n-static="exchange_ACTION_disclaimer_associated_domains"></dt>
+                <dt data-translate="exchange_ACTION_disclaimer_associated_domains"></dt>
                 <dd class="word-break"
                     data-ng-bind="ctrl.disclaimer.domain.displayName | sliceContent: 150"></dd>
 
-                <dt data-i18n-static="exchange_ACTION_add_disclaimer_content"></dt>
+                <dt data-translate="exchange_ACTION_add_disclaimer_content"></dt>
                 <dd class="word-break"
                     data-ng-bind-html="ctrl.disclaimer.content | sliceContent: 150"></dd>
             </dl>

@@ -3,12 +3,12 @@
          data-wizard-on-cancel="resetAction"
          data-wizard-hide-cancel-button="hideCancelButton()"
          data-wizard-on-finish="resetAction"
-         data-wizard-confirm-button-text="i18n.exchange_wizardHostedCreation_lastDialog_closeButton"
-         data-wizard-title="i18n.exchange_wizardHostedCreation_ending_dialog">
+         data-wizard-confirm-button-text="'exchange_wizardHostedCreation_lastDialog_closeButton' | translate"
+         data-wizard-title="'exchange_wizardHostedCreation_ending_dialog' | translate">
         <div data-wizard-step>
-            <span data-ng-bind-html="$ctrl.translator.tr('exchange_wizardHostedCreation_configureDNSZone_auto_explanation1', [$ctrl.domainName])"></span>
+            <span data-ng-bind-html="'exchange_wizardHostedCreation_configureDNSZone_auto_explanation1' | translate:{ t0: $ctrl.domainName }"></span>
             <a data-ng-href="https://{{:: $ctrl.hostname }}" target="_blank" data-ng-bind="'https://' + $ctrl.hostname"></a>
-            <span data-ng-bind-html="$ctrl.translator.tr('exchange_wizardHostedCreation_configureDNSZone_auto_explanation2')"></span>
+            <span data-ng-bind-html="'exchange_wizardHostedCreation_configureDNSZone_auto_explanation2' | translate"></span>
         </div>
     </div>
 </div>

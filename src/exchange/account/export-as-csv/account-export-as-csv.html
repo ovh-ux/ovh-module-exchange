@@ -2,15 +2,15 @@
     <div data-wizard
          data-wizard-on-cancel="cancelExport"
          data-wizard-on-finish="exportAccounts"
-         data-wizard-title="i18n.exchange_ACTION_export_accounts_button">
+         data-wizard-title="'exchange_ACTION_export_accounts_button' | translate">
 
         <div data-wizard-step>
 
             <oui-spinner data-ng-if="ctrl.loading.exportCsv"></oui-spinner>
 
             <div data-ng-if="!ctrl.loading.exportCsv">
-                <p data-i18n-static="exchange_ACTION_export_explain"></p>
-                <p data-i18n-static="exchange_ACTION_export_confirm"></p>
+                <p data-translate="exchange_ACTION_export_explain"></p>
+                <p data-translate="exchange_ACTION_export_confirm"></p>
             </div>
         </div>
     </div>

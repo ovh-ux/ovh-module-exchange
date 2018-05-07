@@ -2,7 +2,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="submitting"
-         data-wizard-title="i18n.exchange_ACTION_renew_ssl_title">
+         data-wizard-title="'exchange_ACTION_renew_ssl_title' | translate">
 
         <div data-wizard-step
              data-wizard-step-valid="ctrl.model.name">
@@ -10,7 +10,7 @@
             <oui-spinner data-ng-if="ctrl.loading"></oui-spinner>
 
             <div data-ng-if="!ctrl.loading">
-                <p data-ng-bind-html="tr('exchange_ACTION_renew_ssl_intro')"></p>
+                <p data-ng-bind-html="'exchange_ACTION_renew_ssl_intro' | translate"></p>
                     <ul class="selectList">
                         <li data-ng-repeat="domain in ctrl.availableDomains | filter:search | orderBy:'formattedName' track by $index"
                             data-ng-bind="domain.displayName"
@@ -18,25 +18,25 @@
                             data-ng-class="{'lineSelected': ctrl.model.name === domain.name}">
                         </li>
                         <li data-ng-if="(ctrl.availableDomains | filter:search).length === 0">
-                            <span data-i18n-static="exchange_tab_domain_add_step1_domain_none"></span>
+                            <span data-translate="exchange_tab_domain_add_step1_domain_none"></span>
                         </li>
                     </ul>
             </div>
         </div>
 
         <div data-wizard-step>
-            <p data-i18n-static="exchange_ACTION_renew_ssl_resume"></p>
+            <p data-translate="exchange_ACTION_renew_ssl_resume"></p>
 
             <dl class="dl-horizontal dl-lg">
-                <dt data-i18n-static="exchange_dashboard_name"></dt>
+                <dt data-translate="exchange_dashboard_name"></dt>
                 <dd class="word-break"
                     data-ng-bind="ctrl.exchange.domain | sliceContent: 150"></dd>
 
-                <dt data-i18n-static="exchange_dashboard_hostname"></dt>
+                <dt data-translate="exchange_dashboard_hostname"></dt>
                 <dd class="word-break"
                     data-ng-bind="ctrl.exchange.hostname | sliceContent: 150"></dd>
 
-                <dt data-i18n-static="exchange_ACTION_renew_ssl_dcv_label"></dt>
+                <dt data-translate="exchange_ACTION_renew_ssl_dcv_label"></dt>
                 <dd class="word-break"
                     data-ng-bind="ctrl.model.displayName | sliceContent: 150"></dd>
             </dl>

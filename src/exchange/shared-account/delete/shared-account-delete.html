@@ -1,15 +1,15 @@
 <div data-ng-controller="ExchangeDeleteSharedAccountCtrl as ctrl">
     <div data-wizard
          data-wizard-bread-crumb
-         data-wizard-title="i18n.exchange_SHARED_ACCOUNTS_delete_title"
+         data-wizard-title="'exchange_SHARED_ACCOUNTS_delete_title' | translate"
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="submitting">
 
         <div data-wizard-step>
-            <p data-ng-bind-html="tr('exchange_tab_account_remove_title')"></p>
+            <p data-ng-bind-html="'exchange_tab_account_remove_title' | translate"></p>
 
             <dl class="dl-horizontal">
-                <dt data-i18n-static="exchange_tab_account_remove_email_label"></dt>
+                <dt data-translate="exchange_tab_account_remove_email_label"></dt>
                 <dd class="word-break"
                     data-ng-bind="ctrl.account.primaryEmailDisplayName | sliceContent: 150"></dd>
             </dl>

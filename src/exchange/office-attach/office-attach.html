@@ -3,16 +3,16 @@
         <div class="alert alert-info" role="note">
             <button class="close"
                     type="button"
-                    aria-label="{{i18n.wizard_close}}"
+                    aria-label="{{'wizard_close' | translate}}"
                     data-dismiss="alert"
                     data-ng-click="$ctrl.officeAttach.savingHidingPreferences()"></button>
 
-            <p data-ng-bind-html="tr('exchange_office_attached_alert_main')"></p>
-            <p data-ng-bind-html="tr('exchange_office_attached_alert_details', [$ctrl.maxNumberOfAccounts])"></p>
+            <p data-ng-bind-html="'exchange_office_attached_alert_main' | translate"></p>
+            <p data-ng-bind-html="'exchange_office_attached_alert_details' | translate:{ t0: $ctrl.maxNumberOfAccounts }"></p>
 
             <button class="btn btn-info mt-3"
                     type="button"
-                    data-i18n-static="exchange_office_attached_alert_button"
+                    data-translate="exchange_office_attached_alert_button"
                     data-ng-click="setAction('exchange/office-attach/dialog/office-attach-dialog')"></button>
         </div>
     </div>

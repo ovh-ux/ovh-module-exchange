@@ -2,47 +2,47 @@
     <span class="ms-Icon ms-Icon--ExchangeLogo pb-0 exchange-icon small-icon" aria-hidden="true"></span>
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            <h1 class="oui-header_6" data-ng-bind-html="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_subtext')"></h1>
+            <h1 class="oui-header_6" data-ng-bind-html="'exchange_wizardHostedCreation_addDomainName_subtext' | translate"></h1>
         </div>
     </div>
 </div>
 
-<h1 class="oui-header_3 oui-header_underline title-underlined mt-5" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_header')"></h1>
+<h1 class="oui-header_3 oui-header_underline title-underlined mt-5" data-ng-bind="'exchange_wizardHostedCreation_addDomainName_header' | translate"></h1>
 
 <oui-spinner data-ng-show="$ctrl.loaders.isInitialRetrievalRunning"></oui-spinner>
 
 <div class="my-5 pb-5" data-ng-show="!$ctrl.loaders.isInitialRetrievalRunning" id="domain-configuration-container">
-    <span data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_ifNoDomain')"></span>
+    <span data-ng-bind="'exchange_wizardHostedCreation_addDomainName_ifNoDomain' | translate"></span>
     <a data-ng-href="{{:: $ctrl.urlToOrderDomains }}"
         target="_blank"
-        title="{{:: $ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_goToOffers') }}">
-        <span data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_goToOffers')"></span>
+        title="{{:: 'exchange_wizardHostedCreation_addDomainName_goToOffers' | translate }}">
+        <span data-ng-bind="'exchange_wizardHostedCreation_addDomainName_goToOffers' | translate"></span>
         <span class="fa fa-external-link" aria-hidden="true"></span>
     </a>
 
     <fieldset data-ng-disabled="$ctrl.homepage.shouldDisabledDomainSelection">
         <fieldset class="m-0 mt-5 p-0">
-            <legend class="styleless mb-0" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_header')"></legend>
+            <legend class="styleless mb-0" data-ng-bind="'exchange_wizardHostedCreation_addDomainName_domainNameSelection_header' | translate"></legend>
             <div class="row m-0 mt-4 p-0">
                 <div class="checkbox">
                     <oui-checkbox id="domainFromAnother"
                         data-model="$ctrl.homepage.domainIsNotManagedByCurrentNIC"
                         data-on-change="$ctrl.onAnotherDomainCheckboxClick()"
-                        data-text="{{::$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_domainNotInList')}}">
+                        data-text="{{::'exchange_wizardHostedCreation_addDomainName_domainNameSelection_domainNotInList' | translate}}">
                     </oui-checkbox>
                     <form name="$ctrl.domainNameForm" data-ng-show="$ctrl.homepage.domainIsNotManagedByCurrentNIC">
                         <div class="oui-field"
                             data-ng-class="{ 'oui-field_error': $ctrl.domainNameForm.$dirty && $ctrl.domainNameForm.$invalid }">
                             <label class="oui-field__label oui-label p-0 m-0 mt-4"
                                 for="foreignDomainName"
-                                data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_inputHeader')"></label>
+                                data-ng-bind="'exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_inputHeader' | translate"></label>
                             <div class="oui-field__content">
                                 <div class="oui-field-control oui-field-control_3">
                                     <input type="text"
                                             class="oui-input"
                                             id="foreignDomainName"
                                             name="foreignDomainName"
-                                            placeholder="{{:: $ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_placeholder') }}"
+                                            placeholder="{{:: 'exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_placeholder' | translate }}"
                                             data-ng-required="$ctrl.homepage.domainIsNotManagedByCurrentNIC"
                                             data-ng-model="$ctrl.homepage.domainName"
                                             data-ng-class="{ 'oui-input_error': $ctrl.domainNameForm.$dirty && $ctrl.domainNameForm.$invalid }"
@@ -51,13 +51,13 @@
                             </div>
 
                             <p class="oui-field-helper ml-0 mb-0 mt-2" role="alert" data-ng-messages="$ctrl.domainNameForm.foreignDomainName.$error" data-ng-show="$ctrl.domainNameForm.$dirty && $ctrl.domainNameForm.foreignDomainName.$invalid">
-                                <span data-ng-message="required" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_add_login_required')"></span>
-                                <span data-ng-message="pattern" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_input_patternError')"></span>
-                                <span data-ng-message="isOVHDomain" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_input_alreadyExists')"></span>
+                                <span data-ng-message="required" data-ng-bind="'exchange_wizardHostedCreation_emailCreation_add_login_required' | translate"></span>
+                                <span data-ng-message="pattern" data-ng-bind="'exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_input_patternError' | translate"></span>
+                                <span data-ng-message="isOVHDomain" data-ng-bind="'exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_input_alreadyExists' | translate"></span>
                             </p>
                         </div>
 
-                        <p data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_example')"></p>
+                        <p data-ng-bind="'exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_example' | translate"></p>
                     </form>
                 </div>
             </div>
@@ -68,7 +68,7 @@
                                 id="domainNameSelection"
                                 data-ng-model="$ctrl.homepage.domainName"
                                 data-ng-change="$ctrl.onDomainNameSelectionChange()">
-                            <option value="" disabled selected data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_placeholder')"></option>
+                            <option value="" disabled selected data-ng-bind="'exchange_wizardHostedCreation_addDomainName_domainNameSelection_placeholder' | translate"></option>
                             <option data-ng-repeat="domainName in $ctrl.availableDomainNames | orderBy: 'toString()' track by domainName" data-ng-value="domainName">{{:: domainName }}</option>
                         </select>
                         <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
@@ -80,7 +80,7 @@
         <div class="mt-5"
             data-ng-show="$ctrl.homepage.domainName != null && $ctrl.homepage.domainName !== '' && $ctrl.domainNameForm.$valid">
             <!-- OVH domain managed by current NIC-->
-            <span data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isDomainOnlyExchange')"></span>
+            <span data-ng-bind="'exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isDomainOnlyExchange' | translate"></span>
             <div class="oui-radio">
                 <input type="radio"
                         class="oui-radio__input"
@@ -91,7 +91,7 @@
                         data-ng-disabled="$ctrl.userHasTriedToAssociatedNonAutoritativeDomain">
 
                 <label class="oui-radio__label-container" for="forExchangeOnlyTrue">
-                    <span class="oui-radio__label" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isExchangeOnly')"></span>
+                    <span class="oui-radio__label" data-ng-bind="'exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isExchangeOnly' | translate"></span>
                 </label>
             </div>
             <div class="oui-radio">
@@ -104,12 +104,12 @@
                         data-ng-disabled="$ctrl.userHasTriedToAssociatedNonAutoritativeDomain">
 
                 <label class="oui-radio__label-container" for="forExchangeOnlyFalse">
-                    <span class="oui-radio__label" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isNotExchangeOnly')"></span>
+                    <span class="oui-radio__label" data-ng-bind="'exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isNotExchangeOnly' | translate"></span>
                 </label>
             </div>
 
             <div class="mt-5" data-ng-show="$ctrl.homepage.domainIsOnlyForExchange === false">
-                <span data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isDomainEmail')"></span>
+                <span data-ng-bind="'exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isDomainEmail' | translate"></span>
                 <div class="oui-radio">
                     <input type="radio"
                             class="oui-radio__input"
@@ -118,7 +118,7 @@
                             data-ng-change="$ctrl.onIsAssociatedToEmailServiceCheckbox(); $ctrl.displayedMXRelay = 'mx1.mail.ovh.net';"
                             data-ng-value="true">
                     <label class="oui-radio__label-container" for="isAssociatedToEmailServiceCheckbox">
-                        <span class="oui-radio__label" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isUsedByMails')"></span>
+                        <span class="oui-radio__label" data-ng-bind="'exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isUsedByMails' | translate"></span>
                     </label>
                 </div>
                 <div class="oui-radio">
@@ -130,7 +130,7 @@
                             data-ng-value="false">
                     <label class="oui-radio__label-container" for="isNotAssociatedToEmailServiceCheckbox">
                         <span class="oui-radio__label">
-                            <span data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isNotUsedByMails')"></span>
+                            <span data-ng-bind="'exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isNotUsedByMails' | translate"></span>
                             <span class="small"
                                 data-uib-tooltip-html="$ctrl.mxRelayTooltip"
                                 data-tooltip-class="text-left">
@@ -144,7 +144,7 @@
                             data-ng-class="{ 'oui-field_error': $ctrl.mxRelayForm.$dirty && $ctrl.mxRelayForm.$invalid }">
                             <label class="mt-3 oui-field__label oui-label"
                                     for="mxRelay"
-                                    data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_header')"></label>
+                                    data-ng-bind="'exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_header' | translate"></label>
                             <div class="oui-field__content">
                                 <div class="oui-field-control oui-field-control_3">
                                     <input type="text"
@@ -159,8 +159,8 @@
                                             data-ng-pattern="/^(?:[a-zA-Z0-9]+(?:[-_][a-zA-Z0-9]+)*)(?:(?:\.|\+)(?:[a-zA-Z0-9]+(?:[-_][a-zA-Z0-9]+)*))*(?:\.[a-zA-Z]{2,})$/" >
                                 </div>
                                 <p class="oui-field-helper" role="alert" data-ng-messages="$ctrl.mxRelayForm.mxRelay.$error" data-ng-show="$ctrl.mxRelayForm.$dirty && $ctrl.mxRelayForm.mxRelay.$invalid">
-                                    <span data-ng-message="pattern" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_input_patternError')"></span>
-                                    <span data-ng-message="required" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_add_login_required')"></span>
+                                    <span data-ng-message="pattern" data-ng-bind="'exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_input_patternError' | translate"></span>
+                                    <span data-ng-message="required" data-ng-bind="'exchange_wizardHostedCreation_emailCreation_add_login_required' | translate"></span>
                                 </p>
                             </div>
                         </form>
@@ -169,7 +169,7 @@
             </div>
 
             <div class="mt-5" data-ng-show="!$ctrl.homepage.domainIsNotManagedByCurrentNIC && ($ctrl.homepage.domainIsOnlyForExchange === true || $ctrl.homepage.domainIsAssociatedToEmailService === true || ($ctrl.homepage.domainIsAssociatedToEmailService === false && $ctrl.mxRelayForm.$valid === true))">
-                <span data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_header')"></span>
+                <span data-ng-bind="'exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_header' | translate"></span>
                 <span class="as-superscript"
                       data-uib-tooltip-html="$ctrl.tooltipText"
                       data-tooltip-class="text-left">
@@ -183,7 +183,7 @@
                         data-ng-change="$ctrl.scrollToBottom()"
                         data-ng-value="true">
                     <label class="oui-radio__label-container" for="automaticConfigurationCheckbox">
-                        <span class="oui-radio__label" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_auto')"></span>
+                        <span class="oui-radio__label" data-ng-bind="'exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_auto' | translate"></span>
                     </label>
                 </div>
                 <div class="oui-radio">
@@ -194,15 +194,15 @@
                         data-ng-change="$ctrl.scrollToBottom()"
                         data-ng-value="false">
                     <label class="oui-radio__label-container" for="manualConfigurationCheckbox">
-                        <span class="oui-radio__label" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_manual')"></span>
+                        <span class="oui-radio__label" data-ng-bind="'exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_manual' | translate"></span>
                         <p class="oui-radio__description">
-                            <span data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_manual_explanation1')"></span>
+                            <span data-ng-bind="'exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_manual_explanation1' | translate"></span>
                             <span class="small as-superscript"
                                 data-uib-tooltip-html="$ctrl.mxAndSRVTooltipText"
                                 data-tooltip-class="text-left">
                                 <span class="fa fa-question-circle" aria-hidden="true"></span>
                             </span>
-                            <span data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_manual_explanation2')"></span>
+                            <span data-ng-bind="'exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_manual_explanation2' | translate"></span>
                         </p>
                     </label>
                 </div>
@@ -216,27 +216,27 @@
                     type="submit"
                     data-ng-disabled="$ctrl.loaders.IsWaitingForDomainAssociation"
                     data-ng-click="$ctrl.addingDomainAndContinuing()"
-                    data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_buttonContinueText')">
+                    data-ng-bind="'exchange_wizardHostedCreation_addDomainName_buttonContinueText' | translate">
             </button>
 
             <button class="oui-button oui-button_link"
                     type="submit"
                     data-ng-disabled="$ctrl.loaders.IsWaitingForDomainAssociation"
                     data-ng-click="$ctrl.addingDomainAndClosing()"
-                    data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_buttonDontContinueText')">
+                    data-ng-bind="'exchange_wizardHostedCreation_addDomainName_buttonDontContinueText' | translate">
             </button>
 
             <div class="text-center mt-5 pt-5" data-ng-show="$ctrl.loaders.IsWaitingForDomainAssociation">
                 <oui-spinner></oui-spinner>
-                <strong data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameValidationDelay')"></strong>
-                <p data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameValidation_explanation')"></p>
+                <strong data-ng-bind="'exchange_wizardHostedCreation_addDomainName_domainNameValidationDelay' | translate"></strong>
+                <p data-ng-bind="'exchange_wizardHostedCreation_addDomainName_domainNameValidation_explanation' | translate"></p>
             </div>
         </div>
 
         <!-- Non OVH domain or OVH domain managed by another NIC-->
         <div data-ng-show="$ctrl.homepage.domainHasBeenAssociated">
             <h1 class="oui-header_3 oui-header_underline mt-3">
-                <span data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_header')"></span>
+                <span data-ng-bind="'exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_header' | translate"></span>
                 <span class="as-superscript small"
                       data-uib-tooltip-html="$ctrl.tooltipText"
                       data-tooltip-class="text-left">
@@ -244,13 +244,13 @@
                 </span>
             </h1>
 
-            <p data-ng-bind-html="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_explanation')"></p>
+            <p data-ng-bind-html="'exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_explanation' | translate"></p>
 
             <oui-spinner data-ng-show="$ctrl.homepage.cnameToCheck == null || $ctrl.homepage.cnameToCheck === ''"></oui-spinner>
 
             <div data-ng-show="$ctrl.homepage.cnameToCheck != null && $ctrl.homepage.cnameToCheck !== ''">
                 <div class="row">
-                    <label class="mt-3" for="cnameToCopy" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_cnameToCopy_header')"></label>
+                    <label class="mt-3" for="cnameToCopy" data-ng-bind="'exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_cnameToCopy_header' | translate"></label>
                     <div class="col-md-4">
                         <div class="input-group">
                             <input type="text" class="oui-input" id="cnameToCopy" data-ng-value="$ctrl.homepage.cnameToCheck" readonly>
@@ -264,7 +264,7 @@
                 </div>
 
                 <div class="row">
-                    <label class="mt-3" for="targetToCopy" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_targetToCopy_header')"></label>
+                    <label class="mt-3" for="targetToCopy" data-ng-bind="'exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_targetToCopy_header' | translate"></label>
                     <div class="col-md-4">
                         <div class="input-group">
                             <input type="text" class="oui-input" id="targetToCopy" value="ovh.com" readonly>
@@ -278,15 +278,15 @@
                 </div>
 
                 <div data-ng-show="$ctrl.loaders.IsWaitingForCNAME">
-                    <p class="mt-3" data-ng-bind-html="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_cnameToCopy_explanation')"></p>
+                    <p class="mt-3" data-ng-bind-html="'exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_cnameToCopy_explanation' | translate"></p>
                     <div class="text-center">
                         <oui-spinner></oui-spinner>
                         <button class="oui-button oui-button_secondary my-3"
                                 type="button"
                                 data-ng-click="$ctrl.closeWizard()">
-                            <span data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_cancelOperation_button')"></span>
+                            <span data-ng-bind="'exchange_wizardHostedCreation_addDomainName_cancelOperation_button' | translate"></span>
                         </button>
-                        <p data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_addDomainName_cancelOperation_details')"></p>
+                        <p data-ng-bind="'exchange_wizardHostedCreation_addDomainName_cancelOperation_details' | translate"></p>
                     </div>
                 </div>
             </div>
