@@ -2,7 +2,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="addingAccount"
-         data-wizard-title="i18n.exchange_SHARED_ACCOUNTS_add_action_title">
+         data-wizard-title="'exchange_SHARED_ACCOUNTS_add_action_title' | translate">
 
         <div data-wizard-step
              data-wizard-step-on-load="loadingCreationOptions"
@@ -84,7 +84,7 @@
 
                 <oui-checkbox id="hiddenFromGAL"
                     data-model="ctrl.accountBeingCreated.hiddenFromGAL"
-                    data-text="{{::i18n.exchange_ACTION_update_account_step1_GAL_label}}">
+                    data-text="{{::'exchange_ACTION_update_account_step1_GAL_label' | translate}}">
                 </oui-checkbox>
             </form>
         </div>

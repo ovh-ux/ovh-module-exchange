@@ -15,13 +15,13 @@
                     <label class="sr-only" for="groupSearch"
                            data-translate="common_search"></label>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="groupSearch" maxlength="256" placeholder="{{::i18n.exchange_tab_GROUPS_all_table_address}}"
+                        <input type="text" class="form-control" id="groupSearch" maxlength="256" placeholder="{{::'exchange_tab_GROUPS_all_table_address' | translate}}"
                                data-ng-change="ctrl.onSearchValueChange()"
                                data-ng-disabled="ctrl.loading"
                                data-ng-model="ctrl.search.value"
                                data-ng-model-options="{ debounce: 800 }">
                         <div class="input-group-btn" data-ng-if="ctrl.search.value">
-                            <button class="btn btn-default" type="button" aria-label="{{i18n.exchange_reset_search_value}}"
+                            <button class="btn btn-default" type="button" aria-label="{{'exchange_reset_search_value' | translate}}"
                                     data-ng-click="ctrl.resetSearch()"
                                     data-ng-disabled="ctrl.loading">
                                 <span class="fa fa-times" aria-hidden="true"></span>
@@ -119,7 +119,7 @@
                                         data-linkedpopover-placement="left"
                                         data-linkedpopover-remote="true"
                                         data-linkedpopover-single="true"
-                                        data-linkedpopover-title="{{i18n.common_actions}}">
+                                        data-linkedpopover-title="{{'common_actions' | translate}}">
                                     <span class="oui-icon oui-icon-gear_line oui-icon_small" aria-hidden="true"></span>
                                 </button>
                             </td>
@@ -129,7 +129,7 @@
                             data-ng-if="ctrl.mailingLists.list.messages.length > 0">
                             <td colspan="7">
                                 <span class="fa fa-exclamation-triangle mr-2" aria-hidden="true"></span>
-                                <span data-ng-bind="ml.id" data-uib-tooltip="{{i18n.exchange_tab_ACCOUNTS_partial_account}}"></span>
+                                <span data-ng-bind="ml.id" data-uib-tooltip="{{'exchange_tab_ACCOUNTS_partial_account' | translate}}"></span>
                             </td>
                         </tr>
                     </tbody>

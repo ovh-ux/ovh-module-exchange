@@ -3,7 +3,7 @@
          data-wizard-bread-crumb
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="addAccountAlias"
-         data-wizard-title="i18n.exchange_tab_ALIAS_add_alias_title">
+         data-wizard-title="'exchange_tab_ALIAS_add_alias_title' | translate">
 
         <div data-wizard-step
              data-wizard-step-valid="aliasIsValid()">
@@ -15,7 +15,7 @@
                 <div class="form-group"
                      data-ng-class="{'has-error': ctrl.takenEmailError}">
                     <div class="input-group">
-                        <input type="text" class="form-control" maxlength="256" name="aliasInput" placeholder="{{i18n.exchange_tab_ALIAS_add_alias_placeholder}}"
+                        <input type="text" class="form-control" maxlength="256" name="aliasInput" placeholder="{{'exchange_tab_ALIAS_add_alias_placeholder' | translate}}"
                                data-ng-change="ctrl.checkTakenEmails()"
                                data-ng-model="ctrl.model.alias"
                                data-ng-pattern="/^[-\w]+((\.|\+)[-\w]+)*$/">

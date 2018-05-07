@@ -46,13 +46,13 @@
                                data-ng-model="ctrl.displayName">
                         <button class="oui-button oui-button_small-width"
                                 type="submit"
-                                aria-label="{{i18n.exchange_dashboard_display_name_save}}"
+                                aria-label="{{'exchange_dashboard_display_name_save' | translate}}"
                                 data-ng-disabled="ctrl.formExchangeDisplayName.displayNameField.$invalid">
                             <span class="oui-icon oui-icon-success oui-icon_small" aria-hidden="true"></span>
                         </button>
                         <button class="oui-button oui-button_small-width"
                                 type="button"
-                                aria-label="{{i18n.common_cancel}}"
+                                aria-label="{{'common_cancel' | translate}}"
                                 data-ng-click="ctrl.resetDisplayName()">
                             <span class="oui-icon oui-icon-error oui-icon_small" aria-hidden="true"></span>
                         </button>

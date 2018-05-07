@@ -1,10 +1,10 @@
 <div data-ng-controller="ExchangeDisplayOutlookCtrl as ctrl">
     <div data-wizard
          data-wizard-bread-crumb
-         data-wizard-confirm-button-text="i18n.exchange_ACTION_display_outlook_step2_close_button"
+         data-wizard-confirm-button-text="'exchange_ACTION_display_outlook_step2_close_button' | translate"
          data-wizard-on-cancel="exitWizard"
          data-wizard-on-finish="exitWizard"
-         data-wizard-title="i18n.exchange_ACTION_display_outlook_title">
+         data-wizard-title="'exchange_ACTION_display_outlook_title' | translate">
 
         <div data-wizard-step
              data-wizard-step-on-load="step1OnLoad"
@@ -63,7 +63,7 @@
                 <oui-spinner data-ng-if="!ctrl.versionsList"></oui-spinner>
 
                 <div class="alert alert-warning mt-5" role="alert"
-                     data-ng-bind-html="i18n.exchange_ACTION_display_outlook_step1_extra_label"
+                     data-ng-bind-html="'exchange_ACTION_display_outlook_step1_extra_label' | translate"
                      data-ng-if="ctrl.versionsList">
                 </div>
             </div>

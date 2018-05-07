@@ -1,7 +1,7 @@
 <div data-ng-controller="ExchangeAddDomainController as ctrl">
     <div data-wizard
          data-wizard-bread-crumb
-         data-wizard-title="i18n.exchange_tab_domain_add_domain"
+         data-wizard-title="'exchange_tab_domain_add_domain' | translate"
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="addDomain">
 
@@ -34,7 +34,7 @@
                         <div data-ng-if="ctrl.model.domainType === ctrl.ovhDomain">
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" maxlength="256" placeholder="{{i18n.exchange_tab_domain_search}}"
+                                    <input type="text" class="form-control" maxlength="256" placeholder="{{'exchange_tab_domain_search' | translate}}"
                                            data-ng-change="ctrl.onSearchValueChange()"
                                            data-ng-model="ctrl.search.value">
                                     <div class="input-group-btn" data-ng-if="ctrl.search.value">
@@ -83,7 +83,7 @@
                         <div class="form-group"
                              data-ng-class="{'has-error': ctrl.exchangeAddDomainStep1Form.nonOvhDomain.$dirty && !ctrl.isNonOvhDomainValid()}"
                              data-ng-if="ctrl.model.domainType === ctrl.nonOvhDomain">
-                            <input type="text" class="form-control" maxlength="256" name="nonOvhDomain" placeholder="{{i18n.exchange_tab_domain_domain}}" aria-labelledby="nonOvhDomain"
+                            <input type="text" class="form-control" maxlength="256" name="nonOvhDomain" placeholder="{{'exchange_tab_domain_domain' | translate}}" aria-labelledby="nonOvhDomain"
                                    data-ng-change="ctrl.changeName()"
                                    data-ng-model="ctrl.model.displayName">
                             <small class="help-block"
@@ -99,7 +99,7 @@
                          data-ng-if="!ctrl.availableDomainsBuffer || ctrl.availableDomainsBuffer.length === 0">
                         <label class="control-label" for="noDomainDisplayName"
                                data-translate="exchange_tab_domain_add_step1_user_owned_option"></label>
-                        <input type="text" class="form-control" id="noDomainDisplayName" maxlength="256" name="noDomainDisplayName" placeholder="{{i18n.exchange_tab_domain_domain}}"
+                        <input type="text" class="form-control" id="noDomainDisplayName" maxlength="256" name="noDomainDisplayName" placeholder="{{'exchange_tab_domain_domain' | translate}}"
                                data-ng-change="ctrl.changeName()"
                                data-ng-model="ctrl.model.displayName">
                         <small class="help-block"
@@ -185,11 +185,11 @@
                 <div data-ng-if="ctrl.model.domainType !== ctrl.nonOvhDomain">
                     <oui-checkbox id="srvParam" name="srvParam"
                         data-model="ctrl.model.srvParam"
-                        data-text="{{::i18n.exchange_tab_domain_add_step2_srv_checkbox}}">
+                        data-text="{{::'exchange_tab_domain_add_step2_srv_checkbox' | translate}}">
                     </oui-checkbox>
                     <oui-checkbox id="mxParam" name="mxParam"
                         data-model="ctrl.model.mxParam"
-                        data-text="{{::i18n.exchange_tab_domain_add_step2_mx_checkbox}}">
+                        data-text="{{::'exchange_tab_domain_add_step2_mx_checkbox' | translate}}">
                     </oui-checkbox>
                 </div>
 

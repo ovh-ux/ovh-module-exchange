@@ -43,7 +43,7 @@
                             data-ng-bind="permission.primaryAddressDisplayName"></th>
                         <td data-ng-bind="('exchange_tab_SHARED_permissions_type_' + permission.accessRights) | translate"></td>
                         <td class="text-center">
-                            <button class="btn btn-icon" type="button" title="{{i18n.exchange_tab_SHARED_permissions_delete_tooltip}}"
+                            <button class="btn btn-icon" type="button" title="{{'exchange_tab_SHARED_permissions_delete_tooltip' | translate}}"
                                     data-ng-click="ctrl.removePermission(permission)">
                                 <span class="oui-icon oui-icon-trash_line oui-icon_small" aria-hidden="true"></span>
                             </button>

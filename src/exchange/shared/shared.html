@@ -6,12 +6,12 @@
                     <label class="sr-only" for="groupSearch"
                            data-translate="common_search"></label>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="groupSearch" maxlength="256" placeholder="{{i18n.exchange_tab_SHARED_header_path}}"
+                        <input type="text" class="form-control" id="groupSearch" maxlength="256" placeholder="{{'exchange_tab_SHARED_header_path' | translate}}"
                                data-ng-change="ctrl.onSearch()"
                                data-ng-disabled="ctrl.loading"
                                data-ng-model="ctrl.search.value">
                         <div class="input-group-btn" data-ng-if="ctrl.search.value">
-                            <button class="btn btn-default" type="button" aria-label="{{i18n.common_cancel}}"
+                            <button class="btn btn-default" type="button" aria-label="{{'common_cancel' | translate}}"
                                     data-ng-click="ctrl.resetSearch()"
                                     data-ng-disabled="ctrl.loading">
                                 <span class="fa fa-times" aria-hidden="true"></span>
@@ -95,12 +95,12 @@
                                 </span>
                             </td>
                             <td class="text-center">
-                                <button class="btn btn-icon" type="button" title="{{i18n.exchange_tab_ACCOUNTS_menu_account_tooltip}}"
+                                <button class="btn btn-icon" type="button" title="{{'exchange_tab_ACCOUNTS_menu_account_tooltip' | translate}}"
                                         data-linkedpopover="exchange/shared/popover/shared-popover.html"
                                         data-linkedpopover-placement="left"
                                         data-linkedpopover-single="true"
                                         data-linkedpopover-remote="true"
-                                        data-linkedpopover-title="{{i18n.common_actions}}">
+                                        data-linkedpopover-title="{{'common_actions' | translate}}">
                                     <span class="oui-icon oui-icon-gear_line oui-icon_small" aria-hidden="true"></span>
                                 </button>
                             </td>
@@ -111,7 +111,7 @@
                             <td colspan="6">
                                 <span class="fa fa-exclamation-triangle mr-2" aria-hidden="true"></span>
                                 <span data-ng-bind="folder.id"
-                                      data-uib-tooltip="{{i18n.exchange_tab_ACCOUNTS_partial_account}}"></span>
+                                      data-uib-tooltip="{{'exchange_tab_ACCOUNTS_partial_account' | translate}}"></span>
                             </td>
                         </tr>
                     </tbody>

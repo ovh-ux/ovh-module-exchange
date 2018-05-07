@@ -1,9 +1,9 @@
 <div data-ng-controller="ExchangeAddOutlookCtrl as ctrl">
     <div data-wizard
-         data-wizard-confirm-button-text="i18n.wizard_pay"
+         data-wizard-confirm-button-text="'wizard_pay' | translate"
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="displayOutlookOrder"
-         data-wizard-title="i18n.exchange_ACTION_add_outlook_title">
+         data-wizard-title="'exchange_ACTION_add_outlook_title' | translate">
 
         <div data-wizard-step
              data-wizard-step-valid="isStep1Valid()"
@@ -60,7 +60,7 @@
                                data-translate="exchange_ACTION_add_outlook_contracts_label"></label>
                         <oui-checkbox id="contractsValidated"
                             data-model="ctrl.selectedOption.contractsValidated"
-                            data-text="{{::i18n.exchange_ACTION_add_outlook_contracts__checkbox}}">
+                            data-text="{{::'exchange_ACTION_add_outlook_contracts__checkbox' | translate}}">
                         </oui-checkbox>
 
                         <ul>

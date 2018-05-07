@@ -2,7 +2,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="updateExchangeAccount"
-         data-wizard-title="i18n.exchange_ACTION_update_account_title">
+         data-wizard-title="'exchange_ACTION_update_account_title' | translate">
 
         <div data-wizard-step
              data-wizard-step-valid="needsUpdate()"
@@ -182,7 +182,7 @@
                 <oui-checkbox class="mb-4"  id="hiddenFromGAL" name="selectedAccountHiddenFromGAL"
                     data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.selectedAccount.canBeConfigured"
                     data-model="ctrl.selectedAccount.hiddenFromGAL"
-                    data-text="{{::i18n.exchange_ACTION_update_account_step1_GAL_label}}">
+                    data-text="{{::'exchange_ACTION_update_account_step1_GAL_label' | translate}}">
                 </oui-checkbox>
 
                 <div class="mb-4"

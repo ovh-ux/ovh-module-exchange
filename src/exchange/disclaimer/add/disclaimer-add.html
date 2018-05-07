@@ -2,7 +2,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="saveDisclaimer"
-         data-wizard-title="i18n.exchange_ACTION_add_disclaimer_title">
+         data-wizard-title="'exchange_ACTION_add_disclaimer_title' | translate">
 
         <div data-wizard-step
              data-wizard-step-valid="isStep1Valid()">
@@ -45,7 +45,7 @@
 
                     <oui-checkbox class="mt-4" id="outsideOnly"
                         data-model="ctrl.data.outsideOnly"
-                        data-text="{{::i18n.exchange_ACTION_add_disclaimer_outside}}">
+                        data-text="{{::'exchange_ACTION_add_disclaimer_outside' | translate}}">
                     </oui-checkbox>
                 </form>
 

@@ -1,10 +1,10 @@
 <div data-ng-controller="ExchangeOrderAccountCtrl as ctrl">
     <div data-wizard
          data-wizard-bread-crumb
-         data-wizard-confirm-button-text="i18n.wizard_pay"
+         data-wizard-confirm-button-text="'wizard_pay' | translate"
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="addExchangeAccount"
-         data-wizard-title="i18n.exchange_ACTION_order_accounts_title">
+         data-wizard-title="'exchange_ACTION_order_accounts_title' | translate">
 
         <div data-wizard-step
              data-wizard-step-valid="isValid()">
@@ -62,7 +62,7 @@
                                data-ng-max="100" max="100"
                                data-ng-model="ctrl.accountsToAdd.accountsNumber"
                                data-ng-pattern="/^\d+$/"
-                               data-uib-tooltip="{{i18n.exchange_ACTION_order_accounts_step1_number_tooltip}}">
+                               data-uib-tooltip="{{'exchange_ACTION_order_accounts_step1_number_tooltip' | translate}}">
                         <small class="help-block"
                                data-translate="exchange_ACTION_order_accounts_step1_number_not_valid"
                                data-ng-if="ctrl.orderAccountForm.accountNumber.$invalid"></small>

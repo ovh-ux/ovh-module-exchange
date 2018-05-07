@@ -3,7 +3,7 @@
          data-wizard-bread-crumb
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="addGroupAlias"
-         data-wizard-title="i18n.exchange_tab_GROUPS_add_alias_title">
+         data-wizard-title="'exchange_tab_GROUPS_add_alias_title' | translate">
 
         <div data-wizard-step
              data-wizard-step-on-load="loadDomainData"
@@ -18,7 +18,7 @@
                     <div class="form-group"
                          data-ng-class="{'has-error': ctrl.exchangeAddGroupAliasForm.aliasInput.$dirty && (ctrl.exchangeAddGroupAliasForm.aliasInput.$invalid || ctrl.takenEmailError)}">
                         <div class="input-group">
-                            <input type="text" class="form-control" maxlength="256" name="aliasInput" placeholder="{{i18n.exchange_tab_GROUPS_add_alias_placeholder}}" required
+                            <input type="text" class="form-control" maxlength="256" name="aliasInput" placeholder="{{'exchange_tab_GROUPS_add_alias_placeholder' | translate}}" required
                                    data-ng-change="ctrl.checkTakenEmails()"
                                    data-ng-model="ctrl.model.alias"
                                    data-ng-pattern="/^[-_a-zA-Z0-9]+((\.|\+)[-_a-z0-9]+)*$/">

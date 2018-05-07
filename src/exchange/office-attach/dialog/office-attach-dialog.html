@@ -2,7 +2,7 @@
     <div data-wizard
          data-wizard-on-cancel="onWizardCancel"
          data-wizard-on-finish="onWizardFinish"
-         data-wizard-title="i18n.exchange_office_attached_alert_modale_title">
+         data-wizard-title="'exchange_office_attached_alert_modale_title' | translate">
 
         <div data-wizard-step
              data-wizard-step-on-load="onWizardLoad"
@@ -32,11 +32,11 @@
                         <label class="sr-only" for="officeAttachSearchFormInput"
                                data-translate="exchange_office_attached_alert_modale_search_form"></label>
                         <div class="input-group">
-                            <input type="text" class="form-control" id="officeAttachSearchFormInput" maxlength="256" placeholder="{{i18n.exchange_tab_ACCOUNTS_table_email}}"
+                            <input type="text" class="form-control" id="officeAttachSearchFormInput" maxlength="256" placeholder="{{'exchange_tab_ACCOUNTS_table_email' | translate}}"
                                    data-ng-change="$ctrl.onSearchValueChange()"
                                    data-ng-model="$ctrl.searchValue">
                             <div class="input-group-btn" data-ng-if="$ctrl.searchValue">
-                                <button class="btn btn-default" type="button" aria-label="{{i18n.common_cancel}}"
+                                <button class="btn btn-default" type="button" aria-label="{{'common_cancel' | translate}}"
                                         data-ng-click="$ctrl.resetSearch()">
                                     <span class="fa fa-times" aria-hidden="true"></span>
                                 </button>
@@ -122,7 +122,7 @@
 
                 <oui-checkbox id="confirmationCheckbox"
                     data-model="$ctrl.confirmationCheckbox"
-                    data-text="{{::i18n.exchange_office_attached_alert_modale_confirmation_checkbox}}">
+                    data-text="{{::'exchange_office_attached_alert_modale_confirmation_checkbox' | translate}}">
                 </oui-checkbox>
             </div>
         </div>

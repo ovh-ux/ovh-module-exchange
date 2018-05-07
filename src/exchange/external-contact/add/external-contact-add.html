@@ -3,7 +3,7 @@
          data-wizard-bread-crumb
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="addContact"
-         data-wizard-title="i18n.exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_title">
+         data-wizard-title="'exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_title' | translate">
 
         <div data-wizard-step
              data-wizard-step-on-load="getData()"
@@ -68,7 +68,7 @@
 
                 <oui-checkbox id="hiddenFromGAL"
                     data-model="ctrl.model.newAccount.hiddenFromGAL"
-                    data-text="{{::i18n.exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_GAL_label}}">
+                    data-text="{{::'exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_GAL_label' | translate}}">
                 </oui-checkbox>
             </form>
 

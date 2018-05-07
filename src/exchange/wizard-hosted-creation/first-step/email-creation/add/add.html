@@ -4,11 +4,11 @@
          data-wizard-hide-cancel-button="hideCancelButton()"
          data-wizard-hide-confirm-button="hideConfirmButton()"
          data-wizard-on-finish="tryingToCustomizeEmailAddress"
-         data-wizard-confirm-button-text="i18n.exchange_wizardHostedCreation_emailCreation_addButton_title"
-         data-wizard-title="i18n.exchange_wizardHostedCreation_emailCreation_add_firstName_title">
+         data-wizard-confirm-button-text="'exchange_wizardHostedCreation_emailCreation_addButton_title' | translate"
+         data-wizard-title="'exchange_wizardHostedCreation_emailCreation_add_firstName_title' | translate">
 
         <div data-wizard-step
-             data-wizard-next-button-text="i18n.exchange_wizardHostedCreation_emailCreation_nextButton_title"
+             data-wizard-next-button-text="'exchange_wizardHostedCreation_emailCreation_nextButton_title' | translate"
              data-wizard-step-valid="$ctrl.addForm.login.$dirty && $ctrl.addForm.password.$dirty && $ctrl.addForm.passwordConfirmation.$dirty && $ctrl.addForm.$valid">
 
             <oui-spinner data-ng-if="$ctrl.isLoading"></oui-spinner>

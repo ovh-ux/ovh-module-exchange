@@ -1,10 +1,10 @@
 <div data-ng-controller="ExchangeAddResourceController as ctrl">
     <div data-wizard
          data-wizard-bread-crumb
-         data-wizard-confirm-button-text="i18n.exchange_tab_RESOURCES_add_resource_confirm"
+         data-wizard-confirm-button-text="'exchange_tab_RESOURCES_add_resource_confirm' | translate"
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="addResource"
-         data-wizard-title="i18n.exchange_tab_RESOURCES_add_resource">
+         data-wizard-title="'exchange_tab_RESOURCES_add_resource' | translate">
 
         <div data-wizard-step
              data-wizard-step-on-load="loadResourceData"
@@ -52,7 +52,7 @@
                            data-ng-min="0" min="0"
                            data-ng-max="1024" max="1024"
                            data-ng-model="ctrl.model.capacity"
-                           data-uib-tooltip="{{i18n.exchange_tab_RESOURCES_add_resource_capacity_tooltip}}">
+                           data-uib-tooltip="{{'exchange_tab_RESOURCES_add_resource_capacity_tooltip' | translate}}">
                     <small class="help-block"
                            data-translate="exchange_tab_RESOURCES_add_resource_capacity_warning"
                            data-ng-if="ctrl.addResourceForm.resourceCapacity.$dirty && ctrl.addResourceForm.resourceCapacity.$invalid"></small>
@@ -60,7 +60,7 @@
 
                 <oui-checkbox id="allowConflict"
                     data-model="ctrl.model.allowConflict"
-                    data-text="{{::i18n.exchange_tab_RESOURCES_add_resource_allow_conflict}}">
+                    data-text="{{::'exchange_tab_RESOURCES_add_resource_allow_conflict' | translate}}">
                 </oui-checkbox>
 
                 <div class="form-group">
