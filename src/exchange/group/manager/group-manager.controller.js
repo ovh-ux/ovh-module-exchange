@@ -1,13 +1,13 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeTabManagersByGroupsCtrl", class ExchangeTabManagersByGroupsCtrl {
-        constructor ($scope, Exchange, navigation, messaging, translator, group) {
+        constructor ($scope, Exchange, navigation, messaging, $translate, group) {
             this.services = {
                 $scope,
                 Exchange,
                 navigation,
                 messaging,
-                translator,
+                $translate,
                 group
             };
 
@@ -39,7 +39,7 @@ angular
                         }
                     };
                 })
-                .catch((failure) => this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ACCOUNTS_error_message"), failure));
+                .catch((failure) => this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_ACCOUNTS_error_message"), failure));
         }
 
         refreshList () {
@@ -53,7 +53,7 @@ angular
                         this.managersList.splice(i, 1);
                     }
                 })
-                .catch((failure) => this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ACCOUNTS_error_message"), failure));
+                .catch((failure) => this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_ACCOUNTS_error_message"), failure));
         }
 
         removeManager (manager) {

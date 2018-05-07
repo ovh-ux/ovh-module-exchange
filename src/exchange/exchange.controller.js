@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeCtrl", class ExchangeCtrl {
-        constructor (exchangeServiceInfrastructure, $rootScope, $scope, $timeout, $location, Products, translator, Exchange, APIExchange, User, EXCHANGE_CONFIG, navigation, ovhUserPref, messaging, exchangeVersion, officeAttach) {
+        constructor (exchangeServiceInfrastructure, $rootScope, $scope, $timeout, $location, Products, $translate, Exchange, APIExchange, User, EXCHANGE_CONFIG, navigation, ovhUserPref, messaging, exchangeVersion, officeAttach) {
             this.services = {
                 exchangeServiceInfrastructure,
                 $rootScope,
@@ -9,7 +9,7 @@ angular
                 $timeout,
                 $location,
                 Products,
-                translator,
+                $translate,
                 Exchange,
                 APIExchange,
                 User,
@@ -90,10 +90,10 @@ angular
                 .then(() => {
                     this.exchange.displayName = this.displayName;
                     this.services.$rootScope.$broadcast("change.displayName", [this.exchange.domain, this.displayName]);
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_ACTION_configure_success"));
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_ACTION_configure_success"));
                 })
                 .catch((reason) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_configure_error"), reason);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_configure_error"), reason);
                 })
                 .finally(() => {
                     this.editMode = false;
@@ -164,7 +164,7 @@ angular
                     this.canUserSubscribeToOfficeAttach = !userHasAlreadySubscribedToOfficeAttach;
 
                     if (!_.isEmpty(this.exchange.messages)) {
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_dashboard_loading_error"), this.exchange);
+                        this.services.messaging.writeError(this.services.$translate.instant("exchange_dashboard_loading_error"), this.exchange);
                     }
                 })
                 .then(() => this.services.Exchange.updateValue())
@@ -182,9 +182,9 @@ angular
                         };
 
                         if (response.code === 460 || response.status === 460) {
-                            this.services.messaging.writeError(this.services.translator.tr("common_service_expired", [response.id]), data);
+                            this.services.messaging.writeError(this.services.$translate.instant("common_service_expired", { t0: response.id }), data);
                         } else {
-                            this.services.messaging.writeError(this.services.translator.tr("exchange_dashboard_loading_error"), data);
+                            this.services.messaging.writeError(this.services.$translate.instant("exchange_dashboard_loading_error"), data);
                         }
                     } else {
                         this.loadingExchangeError = true;
@@ -233,7 +233,7 @@ angular
             this.editMode = false;
 
             if (this.formExchangeDisplayName.displayNameField.$invalid) {
-                this.services.messaging.writeError(this.services.translator.tr("exchange_dashboard_display_name_min"));
+                this.services.messaging.writeError(this.services.$translate.instant("exchange_dashboard_display_name_min"));
             }
         }
     });

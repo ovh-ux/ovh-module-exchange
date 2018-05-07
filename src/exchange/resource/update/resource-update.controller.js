@@ -1,8 +1,8 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeUpdateResourceController", class ExchangeUpdateResourceController {
-        constructor ($scope, Exchange, ExchangeResources, $filter, translator, messaging, navigation) {
-            this.services = { $scope, Exchange, ExchangeResources, $filter, translator, messaging, navigation };
+        constructor ($scope, Exchange, ExchangeResources, $filter, $translate, messaging, navigation) {
+            this.services = { $scope, Exchange, ExchangeResources, $filter, $translate, messaging, navigation };
 
             this.$routerParams = Exchange.getParams();
             this.model = navigation.currentActionData;
@@ -12,16 +12,16 @@ angular
         }
 
         updateResource () {
-            this.services.messaging.writeSuccess(this.services.translator.tr("exchange_dashboard_action_doing"));
+            this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_dashboard_action_doing"));
 
             this.services
                 .ExchangeResources
                 .updateResource(this.$routerParams.organization, this.$routerParams.productId, this.model)
                 .then((data) => {
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_tab_RESOURCES_edit_resource_success"), data);
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_tab_RESOURCES_edit_resource_success"), data);
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_RESOURCES_edit_resource_error"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_RESOURCES_edit_resource_error"), failure);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();

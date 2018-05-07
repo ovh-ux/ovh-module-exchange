@@ -1,8 +1,8 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeTabSharedAccountsCtrl", class ExchangeTabSharedAccountsCtrl {
-        constructor ($scope, Exchange, exchangeSelectedService, ExchangeSharedAccounts, exchangeVersion, messaging, translator, navigation) {
-            this.services = { $scope, Exchange, exchangeSelectedService, ExchangeSharedAccounts, exchangeVersion, messaging, translator, navigation };
+        constructor ($scope, Exchange, exchangeSelectedService, ExchangeSharedAccounts, exchangeVersion, messaging, $translate, navigation) {
+            this.services = { $scope, Exchange, exchangeSelectedService, ExchangeSharedAccounts, exchangeVersion, messaging, $translate, navigation };
 
             this.$routerParams = Exchange.getParams();
 
@@ -44,7 +44,7 @@ angular
                     this.canDisplayQuota = true;
                 })
                 .catch((err) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ACCOUNTS_error_message"), err);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_ACCOUNTS_error_message"), err);
                     this.canDisplayQuota = false;
                 });
 
@@ -83,7 +83,7 @@ angular
                     this.accounts = accounts;
                 })
                 .catch((err) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ACCOUNTS_error_message"), err);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_ACCOUNTS_error_message"), err);
                 })
                 .finally(() => {
                     this.loading = false;

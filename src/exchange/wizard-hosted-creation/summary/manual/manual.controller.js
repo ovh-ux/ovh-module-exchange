@@ -1,10 +1,10 @@
 angular
     .module("Module.exchange.controllers")
     .controller("exchangeWizardHostedCreationManualController", class ExchangeWizardHostedCreationManualController {
-        constructor (navigation, $scope, translator) {
+        constructor (navigation, $scope, $translate) {
             this.navigation = navigation;
             this.$scope = $scope;
-            this.translator = translator;
+            this.$translate = $translate;
         }
 
         $onInit () {

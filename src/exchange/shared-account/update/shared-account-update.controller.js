@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeUpdateSharedAccountCtrl", class ExchangeUpdateSharedAccountCtrl {
-        constructor ($scope, Exchange, ExchangeSharedAccounts, Alerter, navigation, messaging, translator, formValidation) {
+        constructor ($scope, Exchange, ExchangeSharedAccounts, Alerter, navigation, messaging, $translate, formValidation) {
             this.services = {
                 $scope,
                 Exchange,
@@ -9,7 +9,7 @@ angular
                 Alerter,
                 navigation,
                 messaging,
-                translator,
+                $translate,
                 formValidation
             };
 
@@ -93,7 +93,7 @@ angular
                     }
 
                     if (_.isEmpty(data.availableDomains)) {
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_add_no_domains"));
+                        this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_add_no_domains"));
                         this.services.navigation.resetAction();
                     } else {
                         _.forEach(data.availableDomains, (domain) => {
@@ -105,7 +105,7 @@ angular
                 })
                 .catch((failure) => {
                     this.services.navigation.resetAction();
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_add_account_option_fail"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_add_account_option_fail"), failure);
                 })
                 .finally(() => {
                     this.isLoading = true;
@@ -121,10 +121,10 @@ angular
                 .ExchangeSharedAccounts
                 .updatingSharedAccount(this.$routerParams.organization, this.$routerParams.productId, this.originalSharedEmailAddress, this.accountBeingUpdated)
                 .then(() => {
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_SHARED_ACCOUNTS_update_success_message"));
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_SHARED_ACCOUNTS_update_success_message"));
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_add_account_error_message"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_add_account_error_message"), failure);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();

@@ -1,13 +1,13 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeExportToCsvAccountsCtrl", class ExchangeExportToCsvAccountsCtrl {
-        constructor ($scope, $q, Exchange, messaging, translator, navigation) {
+        constructor ($scope, $q, Exchange, messaging, $translate, navigation) {
             this.services = {
                 $scope,
                 $q,
                 Exchange,
                 messaging,
-                translator,
+                $translate,
                 navigation
             };
 
@@ -102,9 +102,9 @@ angular
                             }
                         }
 
-                        this.services.messaging.writeSuccess(this.services.translator.tr("exchange_ACTION_export_success"));
+                        this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_ACTION_export_success"));
                     } else if (datas != null || _.isEmpty(datas)) {
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_export_error"));
+                        this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_export_error"));
                     }
 
                     this.timeoutObject = null;

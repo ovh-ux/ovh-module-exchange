@@ -1,8 +1,8 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeAddPublicFolderCtrl", class ExchangeAddPublicFolderCtrl {
-        constructor ($scope, Exchange, ExchangePublicFolders, $window, messaging, translator, navigation) {
-            this.services = { $scope, Exchange, ExchangePublicFolders, $window, messaging, translator, navigation };
+        constructor ($scope, Exchange, ExchangePublicFolders, $window, messaging, $translate, navigation) {
+            this.services = { $scope, Exchange, ExchangePublicFolders, $window, messaging, $translate, navigation };
 
             this.$routerParams = Exchange.getParams();
 
@@ -29,20 +29,20 @@ angular
                 .then((data) => {
                     this.publicFoldersOptions = data;
 
-                    this.quotaUnitTranslation = this.services.translator.tr(`unit_size_${data.maxQuota.unit}`);
+                    this.quotaUnitTranslation = this.services.$translate.instant(`unit_size_${data.maxQuota.unit}`);
                     this.folderToAdd.type = data.types[0];
                     this.folderToAdd.defaultPermission = data.defaultPermissions[0];
                     this.folderToAdd.anonymousPermission = data.anonymousPermissions[0];
                     this.folderToAdd.quota = Math.min(100, data.maxQuota.value);
 
                     if (data.maxQuota.value === 0) {
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_tab_SHARED_max_quota_error_message"));
+                        this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_SHARED_max_quota_error_message"));
                         this.services.navigation.resetAction();
                     }
 
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_SHARED_all_error_message"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_SHARED_all_error_message"), failure);
                     this.services.navigation.resetAction();
                 })
                 .finally(() => {
@@ -126,16 +126,16 @@ angular
         }
 
         submitting () {
-            this.services.messaging.writeSuccess(this.services.translator.tr("exchange_dashboard_action_doing"));
+            this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_dashboard_action_doing"));
 
             return this.services
                 .ExchangePublicFolders
                 .addingPublicFolder(this.$routerParams.organization, this.$routerParams.productId, this.folderToAdd)
                 .then((success) => {
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_action_SHARED_add_success_message"), success);
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_action_SHARED_add_success_message"), success);
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_action_SHARED_add_fail_message"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_action_SHARED_add_fail_message"), failure);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();

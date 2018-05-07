@@ -1,13 +1,13 @@
 angular
     .module("Module.exchange.controllers")
     .controller("exchangeWizardHostedCreationEmailCreationDeleteController", class ExchangeWizardHostedCreationEmailCreationDeleteController {
-        constructor (Exchange, messaging, navigation, $rootScope, $scope, translator) {
+        constructor (Exchange, messaging, navigation, $rootScope, $scope, $translate) {
             this.Exchange = Exchange;
             this.messaging = messaging;
             this.navigation = navigation;
             this.$rootScope = $rootScope;
             this.$scope = $scope;
-            this.translator = translator;
+            this.$translate = $translate;
         }
 
         $onInit () {
@@ -21,7 +21,7 @@ angular
             return this.Exchange
                 .removingAccount(this.$routerParams.organization, this.$routerParams.productId, this.account.primaryEmailAddress)
                 .catch((error) => {
-                    this.messaging.writeError(this.translator.tr("exchange_tab_account_remove_failure"), error);
+                    this.messaging.writeError(this.$translate.instant("exchange_tab_account_remove_failure"), error);
                 })
                 .finally(() => {
                     this.$rootScope.$broadcast("exchange.wizard.request.done");

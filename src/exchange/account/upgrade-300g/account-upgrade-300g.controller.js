@@ -1,14 +1,14 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeUpgrade300GCtrl", class ExchangeUpgrade300GCtrl {
-        constructor ($scope, Exchange, $window, navigation, messaging, translator) {
+        constructor ($scope, Exchange, $window, navigation, messaging, $translate) {
             this.services = {
                 $scope,
                 Exchange,
                 $window,
                 navigation,
                 messaging,
-                translator
+                $translate
             };
 
             $scope.getDuration = () => this.duration.value;
@@ -42,7 +42,7 @@ angular
                     this.price1M = data.prices;
                 })
                 .catch((error) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_order_upgrade_300G_error_options_message"), error);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_order_upgrade_300G_error_options_message"), error);
                     this.services.navigation.resetAction();
                 });
 
@@ -57,7 +57,7 @@ angular
                     this.price12M = data.prices;
                 })
                 .catch((error) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_order_upgrade_300G_error_options_message"), error);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_order_upgrade_300G_error_options_message"), error);
                     this.services.navigation.resetAction();
                 });
         }
@@ -77,9 +77,9 @@ angular
                 .Exchange
                 .orderAccountUpgrade(this.$routerParams.organization, this.$routerParams.productId, params)
                 .then((result) => {
-                    const confirmationMessage = this.services.translator.tr("exchange_ACTION_order_upgrade_300G_success_confirmation");
-                    const successMessage = this.services.translator.tr("exchange_ACTION_order_upgrade_300G_success_bc");
-                    const detailMessage = this.services.translator.tr("exchange_ACTION_order_upgrade_300G_success_details");
+                    const confirmationMessage = this.services.$translate.instant("exchange_ACTION_order_upgrade_300G_success_confirmation");
+                    const successMessage = this.services.$translate.instant("exchange_ACTION_order_upgrade_300G_success_bc");
+                    const detailMessage = this.services.$translate.instant("exchange_ACTION_order_upgrade_300G_success_details");
                     const link = `<a href="${result.url}" target="_blank">${successMessage}</a>`;
 
                     this.services.$window.open(result.url, "_blank"); // Won't work as link was retrieved from ajax query
@@ -87,7 +87,7 @@ angular
                     this.services.messaging.writeSuccess(`${confirmationMessage} ${link}<br />${detailMessage}`);
                 })
                 .catch((error) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_order_upgrade_300G_error_message"), error);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_order_upgrade_300G_error_message"), error);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();

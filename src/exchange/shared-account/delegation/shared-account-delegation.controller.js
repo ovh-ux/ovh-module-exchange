@@ -1,14 +1,14 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeSharedAccountDelegationCtrl", class ExchangeSharedAccountDelegationCtrl {
-        constructor ($scope, Exchange, $timeout, ExchangeSharedAccounts, messaging, translator, navigation) {
+        constructor ($scope, Exchange, $timeout, ExchangeSharedAccounts, messaging, $translate, navigation) {
             this.services = {
                 $scope,
                 Exchange,
                 $timeout,
                 ExchangeSharedAccounts,
                 messaging,
-                translator,
+                $translate,
                 navigation
             };
 
@@ -82,7 +82,7 @@ angular
                     }
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ACCOUNTS_error_message"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_ACCOUNTS_error_message"), failure);
                 })
                 .finally(() => {
                     this.isLoading = false;
@@ -90,7 +90,7 @@ angular
         }
 
         updatingDelegationRight () {
-            this.services.messaging.writeSuccess(this.services.translator.tr("exchange_ACTION_delegation_doing_message"));
+            this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_ACTION_delegation_doing_message"));
 
             const model = {
                 primaryEmail: this.primaryEmailAddress,
@@ -119,9 +119,9 @@ angular
                 .updatingSharedAccountDelegations(this.$routerParams.organization, this.$routerParams.productId, model)
                 .then((data) => {
                     const mainMessage = {
-                        OK: this.services.translator.tr("exchange_ACTION_delegation_success_message"),
-                        PARTIAL: this.services.translator.tr("exchange_ACTION_delegation_partial_message"),
-                        ERROR: this.services.translator.tr("exchange_ACTION_delegation_error_message")
+                        OK: this.services.$translate.instant("exchange_ACTION_delegation_success_message"),
+                        PARTIAL: this.services.$translate.instant("exchange_ACTION_delegation_partial_message"),
+                        ERROR: this.services.$translate.instant("exchange_ACTION_delegation_error_message")
                     };
 
                     this.services.messaging.setMessage(mainMessage, {
@@ -130,7 +130,7 @@ angular
                     });
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_delegation_error_message"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_delegation_error_message"), failure);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();

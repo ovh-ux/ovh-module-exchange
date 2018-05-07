@@ -1,13 +1,13 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeAddAccountAliasCtrl", class ExchangeAddAccountAliasCtrl {
-        constructor ($scope, Exchange, navigation, messaging, translator) {
+        constructor ($scope, Exchange, navigation, messaging, $translate) {
             this.services = {
                 $scope,
                 Exchange,
                 navigation,
                 messaging,
-                translator
+                $translate
             };
 
             this.$routerParams = Exchange.getParams();
@@ -27,7 +27,7 @@ angular
                 .getNewAliasOptions(this.$routerParams.organization, this.$routerParams.productId, this.selectedAccount.primaryEmailAddress, "ACCOUNT")
                 .then((data) => {
                     if (_.isEmpty(data.availableDomains)) {
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ALIAS_add_no_domains"));
+                        this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_ALIAS_add_no_domains"));
                         this.services.navigation.resetAction();
                     } else {
                         this.availableDomains = data.availableDomains;
@@ -36,7 +36,7 @@ angular
                     }
                 })
                 .catch((err) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ALIAS_domain_loading_failure"), err);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_ALIAS_domain_loading_failure"), err);
                     this.services.navigation.resetAction();
                 });
         }
@@ -58,10 +58,10 @@ angular
             return this.services.Exchange
                 .addAlias(this.$routerParams.organization, this.$routerParams.productId, this.selectedAccount.primaryEmailAddress, this.model)
                 .then((data) => {
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_tab_ALIAS_add_alias_success_message"));
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_tab_ALIAS_add_alias_success_message"));
                 })
                 .catch((err) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ALIAS_add_alias_error_message"), err);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_ALIAS_add_alias_error_message"), err);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();

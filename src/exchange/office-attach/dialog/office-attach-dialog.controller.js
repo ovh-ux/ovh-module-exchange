@@ -1,14 +1,14 @@
 angular
     .module("Module.exchange.controllers")
     .controller("officeAttachDialogCtrl", class OfficeAttachDialogCtrl {
-        constructor (Exchange, exchangeVersion, messaging, navigation, ovhUserPref, $scope, translator, User, $window) {
+        constructor (Exchange, exchangeVersion, messaging, navigation, ovhUserPref, $scope, $translate, User, $window) {
             this.Exchange = Exchange;
             this.exchangeVersion = exchangeVersion;
             this.messaging = messaging;
             this.navigation = navigation;
             this.ovhUserPref = ovhUserPref;
             this.$scope = $scope;
-            this.translator = translator;
+            this.$translate = $translate;
             this.User = User;
             this.$window = $window;
         }
@@ -187,7 +187,7 @@ angular
                     this.updateAccounts(accounts);
                 })
                 .catch((failure) => {
-                    this.messaging.writeError(this.tr("exchange_tab_ACCOUNTS_error_message"), failure);
+                    this.messaging.writeError(this.$translate.instant("exchange_tab_ACCOUNTS_error_message"), failure);
                 })
                 .finally(() => {
                     this.loading.step1.table = false;

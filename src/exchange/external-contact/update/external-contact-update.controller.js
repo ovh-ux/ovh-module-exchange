@@ -1,8 +1,8 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeExternalContactsModifyCtrl", class ExchangeExternalContactsModifyCtrl {
-        constructor ($scope, Exchange, ExchangeExternalContacts, navigation, messaging, translator) {
-            this.services = { $scope, Exchange, ExchangeExternalContacts, navigation, messaging, translator };
+        constructor ($scope, Exchange, ExchangeExternalContacts, navigation, messaging, $translate) {
+            this.services = { $scope, Exchange, ExchangeExternalContacts, navigation, messaging, $translate };
 
             this.$routerParams = Exchange.getParams();
 
@@ -25,10 +25,10 @@ angular
                 .ExchangeExternalContacts
                 .modifyingContact(this.$routerParams.organization, this.$routerParams.productId, this.model.currentAccount.externalEmailAddress, this.model.newAccount)
                 .then(() => {
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_success"));
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_success"));
                 })
                 .catch((err) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_fail"), err);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_fail"), err);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();

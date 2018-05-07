@@ -1,13 +1,13 @@
 {
     class controller {
-        constructor (constants, Exchange, ExchangeDomains, EXCHANGE_MX_CONFIG, messaging, navigation, translator, $rootScope, wizardHostedCreationEmailCreation) {
+        constructor (constants, Exchange, ExchangeDomains, EXCHANGE_MX_CONFIG, messaging, navigation, $translate, $rootScope, wizardHostedCreationEmailCreation) {
             this.constants = constants;
             this.Exchange = Exchange;
             this.ExchangeDomains = ExchangeDomains;
             this.EXCHANGE_MX_CONFIG = EXCHANGE_MX_CONFIG;
             this.messaging = messaging;
             this.navigation = navigation;
-            this.translator = translator;
+            this.$translate = $translate;
             this.$rootScope = $rootScope;
             this.wizardHostedCreationEmailCreation = wizardHostedCreationEmailCreation;
         }
@@ -19,8 +19,8 @@
                 this.retrievingEmailAccounts();
             });
 
-            const mxAndSRVTooltipFirstSentence = this.translator.tr("exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_1");
-            const mxAndSRVTooltipSecondSentence = this.translator.tr("exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_2");
+            const mxAndSRVTooltipFirstSentence = this.$translate.instant("exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_1");
+            const mxAndSRVTooltipSecondSentence = this.$translate.instant("exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_2");
             this.tooltipText = `${mxAndSRVTooltipFirstSentence}<br /><br />${mxAndSRVTooltipSecondSentence}`;
 
             this.isLoading = true;
@@ -68,7 +68,7 @@
                 })
                 .catch((failure) => {
                     this.navigation.resetAction();
-                    this.messaging.writeError(this.translator.tr("exchange_tab_domain_diagnostic_add_field_failure"), failure);
+                    this.messaging.writeError(this.$translate.instant("exchange_tab_domain_diagnostic_add_field_failure"), failure);
                 });
         }
 
@@ -90,7 +90,7 @@
                     this.hasEmailAddresses = angular.isArray(this.homepage.emailAccounts.list.results) && this.homepage.emailAccounts.count > 0;
                 })
                 .catch((error) => {
-                    this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_configureDNSZone_availableAccountsRetrieval_error"), error);
+                    this.messaging.writeError(this.$translate.instant("exchange_wizardHostedCreation_configureDNSZone_availableAccountsRetrieval_error"), error);
                 });
         }
     }

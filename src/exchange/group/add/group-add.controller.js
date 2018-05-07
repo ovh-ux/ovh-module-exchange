@@ -1,13 +1,13 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeAddGroupCtrl", class ExchangeAddGroupCtrl {
-        constructor ($scope, Exchange, navigation, messaging, translator, group) {
+        constructor ($scope, Exchange, navigation, messaging, $translate, group) {
             this.services = {
                 $scope,
                 Exchange,
                 navigation,
                 messaging,
-                translator,
+                $translate,
                 group
             };
 
@@ -137,7 +137,7 @@ angular
                     this.optionsToCreateANewGroup = data;
 
                     if (_.isEmpty(data.availableDomains)) {
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_add_no_domains"));
+                        this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_add_no_domains"));
                         this.services.navigation.resetAction();
                     } else {
                         this.groupToAdd.completeDomain = data.availableDomains[0];
@@ -148,7 +148,7 @@ angular
                 })
                 .catch((failure) => {
                     this.services.navigation.resetAction();
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_add_account_option_fail"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_add_account_option_fail"), failure);
                 });
         }
 
@@ -187,7 +187,7 @@ angular
 
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ACCOUNTS_error_message"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_ACCOUNTS_error_message"), failure);
                 })
                 .finally(() => {
                     this.loading = false;
@@ -196,7 +196,7 @@ angular
         }
 
         addExchangeGroup () {
-            this.services.messaging.writeSuccess(this.services.translator.tr("exchange_dashboard_action_doing"));
+            this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_dashboard_action_doing"));
 
             this.prepareModel();
             this.services
@@ -204,15 +204,15 @@ angular
                 .addExchangeGroup(this.$routerParams.organization, this.$routerParams.productId, this.model)
                 .then((data) => {
                     const addGroupMessages = {
-                        OK: this.services.translator.tr("exchange_GROUPS_add_group_success"),
-                        PARTIAL: this.services.translator.tr("exchange_GROUPS_add_group_partial"),
-                        ERROR: this.services.translator.tr("exchange_GROUPS_add_group_fail")
+                        OK: this.services.$translate.instant("exchange_GROUPS_add_group_success"),
+                        PARTIAL: this.services.$translate.instant("exchange_GROUPS_add_group_partial"),
+                        ERROR: this.services.$translate.instant("exchange_GROUPS_add_group_fail")
                     };
 
                     this.services.messaging.setMessage(addGroupMessages, data);
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_GROUPS_add_group_fail"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_GROUPS_add_group_fail"), failure);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();

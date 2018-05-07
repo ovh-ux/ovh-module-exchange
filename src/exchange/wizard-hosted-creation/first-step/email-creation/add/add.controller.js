@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("exchangeWizardHostedCreationEmailCreationAddController", class ExchangeWizardHostedCreationEmailCreationAddController {
-        constructor (Exchange, ExchangePassword, messaging, navigation, $rootScope, $scope, $timeout, translator, wizardHostedCreationEmailCreation) {
+        constructor (Exchange, ExchangePassword, messaging, navigation, $rootScope, $scope, $timeout, $translate, wizardHostedCreationEmailCreation) {
             this.Exchange = Exchange;
             this.ExchangePassword = ExchangePassword;
             this.messaging = messaging;
@@ -9,7 +9,7 @@ angular
             this.$rootScope = $rootScope;
             this.$scope = $scope;
             this.$timeout = $timeout;
-            this.translator = translator;
+            this.$translate = $translate;
             this.wizardHostedCreationEmailCreation = wizardHostedCreationEmailCreation;
         }
 
@@ -46,7 +46,7 @@ angular
                     };
                 })
                 .catch((error) => {
-                    this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_emailCreation_add_serviceParametersRetrieval_error"), error);
+                    this.messaging.writeError(this.$translate.instant("exchange_wizardHostedCreation_emailCreation_add_serviceParametersRetrieval_error"), error);
                 })
                 .finally(() => {
                     this.isLoading = false;
@@ -141,7 +141,9 @@ angular
         }
 
         writeAndFocusOnError (message, error) {
-            this.messaging.writeError(this.translator.tr(message, error));
+            this.messaging.writeError(this.$translate.instant(message, {
+                t0: error
+            }));
             this.navigation.resetAction();
             this.scrollToTop();
         }
@@ -177,7 +179,7 @@ angular
                     this.scrollToBottom();
                 })
                 .catch((error) => {
-                    this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_emailCreation_add_migration_error"), error);
+                    this.messaging.writeError(this.$translate.instant("exchange_wizardHostedCreation_emailCreation_add_migration_error"), error);
                     this.scrollToTop();
                 })
                 .finally(() => {

@@ -1,13 +1,13 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeMigration2016Ctrl", class ExchangeMigration2016Ctrl {
-        constructor ($scope, Exchange, navigation, messaging, translator, $window) {
+        constructor ($scope, Exchange, navigation, messaging, $translate, $window) {
             this.services = {
                 $scope,
                 Exchange,
                 navigation,
                 messaging,
-                translator,
+                $translate,
                 $window
             };
         }
@@ -34,7 +34,7 @@ angular
                     this.model.contracts = data.contracts;
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_upgrade_get_contracts_error"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_upgrade_get_contracts_error"), failure);
                     this.services.navigation.resetAction();
                 });
         }
@@ -44,11 +44,14 @@ angular
                 .Exchange
                 .upgradeExchange(this.curExchange)
                 .then((order) => {
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_ACTION_order_upgrade_success", [order.url, order.orderId]));
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_ACTION_order_upgrade_success", {
+                        t0: order.url,
+                        t1: order.orderId
+                    }));
                     this.services.$window.open(order.url, "_blank");
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_order_upgrade_error"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_order_upgrade_error"), failure);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();

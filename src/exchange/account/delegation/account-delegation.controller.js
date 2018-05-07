@@ -1,14 +1,14 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeAccountDelegationCtrl", class ExchangeAccountDelegationCtrl {
-        constructor ($scope, Exchange, $timeout, navigation, messaging, translator) {
+        constructor ($scope, Exchange, $timeout, navigation, messaging, $translate) {
             this.services = {
                 $scope,
                 Exchange,
                 $timeout,
                 navigation,
                 messaging,
-                translator
+                $translate
             };
         }
 
@@ -74,9 +74,9 @@ angular
 
         constructResult (data) {
             const mainMessage = {
-                OK: this.services.translator.tr("exchange_ACTION_delegation_success_message"),
-                PARTIAL: this.services.translator.tr("exchange_ACTION_delegation_partial_message"),
-                ERROR: this.services.translator.tr("exchange_ACTION_delegation_error_message")
+                OK: this.services.$translate.instant("exchange_ACTION_delegation_success_message"),
+                PARTIAL: this.services.$translate.instant("exchange_ACTION_delegation_partial_message"),
+                ERROR: this.services.$translate.instant("exchange_ACTION_delegation_error_message")
             };
 
             let state = "OK";
@@ -99,7 +99,7 @@ angular
                     shouldContinue = false;
                     return false;
                 } else if (datum.status === "ERROR") {
-                    datum.message = this.services.translator.tr(`exchange_tab_TASKS_${datum.function}`);
+                    datum.message = this.services.$translate.instant(`exchange_tab_TASKS_${datum.function}`);
                     datum.type = "ERROR";
                     state = "PARTIAL";
                     numberOfErrors++;
@@ -177,7 +177,7 @@ angular
                 })
                 .catch((failure) => {
                     this.services.navigation.resetAction();
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ACCOUNTS_error_message"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_ACCOUNTS_error_message"), failure);
                 })
                 .finally(() => {
                     this.loading = false;
@@ -191,11 +191,11 @@ angular
                 .Exchange
                 .updatingAccountDelegationRights(this.$routerParams.organization, this.$routerParams.productId, changes)
                 .then((data) => {
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_ACTION_delegation_doing_message"));
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_ACTION_delegation_doing_message"));
                     this.constructResult(data);
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_delegation_error_message"), failure.data);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_delegation_error_message"), failure.data);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();

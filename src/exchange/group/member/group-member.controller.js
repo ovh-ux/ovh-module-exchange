@@ -1,14 +1,14 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeTabMembersByGroupsCtrl", class ExchangeTabMembersByGroupsCtrl {
-        constructor ($scope, Exchange, $timeout, navigation, messaging, translator, group) {
+        constructor ($scope, Exchange, $timeout, navigation, messaging, $translate, group) {
             this.services = {
                 $scope,
                 Exchange,
                 $timeout,
                 navigation,
                 messaging,
-                translator,
+                $translate,
                 group
             };
 
@@ -36,7 +36,7 @@ angular
                         }
                     };
                 })
-                .catch((failure) => this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ACCOUNTS_error_message"), failure));
+                .catch((failure) => this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_ACCOUNTS_error_message"), failure));
         }
 
         refreshList () {
@@ -50,7 +50,7 @@ angular
                         this.membersList.splice(i, 1);
                     }
                 })
-                .catch((failure) => this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ACCOUNTS_error_message"), failure));
+                .catch((failure) => this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_ACCOUNTS_error_message"), failure));
         }
 
         hide () {

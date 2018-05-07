@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeAddDomainController", class ExchangeAddDomainController {
-        constructor ($rootScope, $scope, Exchange, ExchangeDomains, messaging, navigation, ovhUserPref, translator, Validator, exchangeVersion, exchangeServiceInfrastructure, User) {
+        constructor ($rootScope, $scope, Exchange, ExchangeDomains, messaging, navigation, ovhUserPref, $translate, Validator, exchangeVersion, exchangeServiceInfrastructure, User) {
             this.services = {
                 $rootScope,
                 $scope,
@@ -10,7 +10,7 @@ angular
                 messaging,
                 navigation,
                 ovhUserPref,
-                translator,
+                $translate,
                 Validator,
                 exchangeVersion,
                 exchangeServiceInfrastructure
@@ -156,7 +156,7 @@ angular
                 })
                 .catch((failure) => {
                     this.services.navigation.resetAction();
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_domain_add_failure"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_domain_add_failure"), failure);
                 });
         }
 
@@ -172,10 +172,10 @@ angular
                 .ExchangeDomains
                 .addingDomain(this.model)
                 .then(() => {
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_tab_domain_add_success"));
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_tab_domain_add_success"));
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_domain_add_failure"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_domain_add_failure"), failure);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();

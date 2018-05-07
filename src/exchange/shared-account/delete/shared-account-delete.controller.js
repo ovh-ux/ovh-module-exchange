@@ -1,14 +1,14 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeDeleteSharedAccountCtrl", class ExchangeDeleteSharedAccountCtrl {
-        constructor ($scope, Exchange, ExchangeSharedAccounts, navigation, messaging, translator) {
+        constructor ($scope, Exchange, ExchangeSharedAccounts, navigation, messaging, $translate) {
             this.services = {
                 $scope,
                 Exchange,
                 ExchangeSharedAccounts,
                 navigation,
                 messaging,
-                translator
+                $translate
             };
 
             this.$routerParams = Exchange.getParams();
@@ -18,16 +18,16 @@ angular
         }
 
         submitting () {
-            this.services.messaging.writeSuccess(this.services.translator.tr("exchange_dashboard_action_doing"));
+            this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_dashboard_action_doing"));
 
             return this.services
                 .ExchangeSharedAccounts
                 .deletingSharedAccount(this.$routerParams.organization, this.$routerParams.productId, this.account.primaryEmailAddress)
                 .then((success) => {
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_tab_account_remove_success"), success);
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_tab_account_remove_success"), success);
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_account_remove_failure"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_account_remove_failure"), failure);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();
