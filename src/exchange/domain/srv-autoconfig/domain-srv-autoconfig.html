@@ -18,7 +18,13 @@
 
                 <dl class="dl-horizontal">
                     <dt data-translate="exchange_tab_domain_diagnostic_srv_label_champ"></dt>
-                    <dd data-ng-bind-html="tr('exchange_tab_domain_diagnostic_srv_config', [ctrl.domainDiag.srv.subDomain, ctrl.domainDiag.srv.priority, ctrl.domainDiag.srv.weight, ctrl.domainDiag.srv.port, ctrl.domainDiag.srv.target])"></dd>
+                    <dd data-ng-bind-html="'exchange_tab_domain_diagnostic_srv_config' | translate:{
+                        t0: ctrl.domainDiag.srv.subDomain,
+                        t1: ctrl.domainDiag.srv.priority,
+                        t2: ctrl.domainDiag.srv.weight,
+                        t3: ctrl.domainDiag.srv.port,
+                        t4: ctrl.domainDiag.srv.target
+                    }"></dd>
                 </dl>
             </div>
         </div>
@@ -32,7 +38,13 @@
                     data-ng-bind="ctrl.domain.displayName | sliceContent: 150"></dd>
 
                 <dt data-translate="exchange_tab_domain_diagnostic_srv_label_champ"></dt>
-                <dd data-ng-bind-html="tr('exchange_tab_domain_diagnostic_srv_config', [ctrl.domainDiag.srv.subDomain, ctrl.domainDiag.srv.priority, ctrl.domainDiag.srv.weight, ctrl.domainDiag.srv.port, ctrl.domainDiag.srv.target])"></dd>
+                <dd data-ng-bind-html="'exchange_tab_domain_diagnostic_srv_config' | translate:{
+                    t0: ctrl.domainDiag.srv.subDomain,
+                    t1: ctrl.domainDiag.srv.priority,
+                    t2: ctrl.domainDiag.srv.weight,
+                    t3: ctrl.domainDiag.srv.port,
+                    t4: ctrl.domainDiag.srv.target
+                }"></dd>
             </dl>
         </div>
     </div>

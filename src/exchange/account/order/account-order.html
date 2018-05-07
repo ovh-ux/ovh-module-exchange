@@ -10,7 +10,7 @@
              data-wizard-step-valid="isValid()">
 
             <oui-spinner data-ng-if="!ctrl.ordersList"></oui-spinner>
-           
+
             <div class="oui-message oui-message_info" role="alert" data-ng-if="ctrl.numConfigureMeAccount">
                 <i class="oui-icon oui-icon-info_circle oui-icon_bicolor" aria-hidden="true"></i>
                 <p class="oui-message__body" data-translate="exchange_ACTION_order_accounts_step1_not_configured_account_message"></p>
@@ -97,7 +97,11 @@
 
                     <dt data-translate="exchange_ACTION_order_accounts_step2_total"></dt>
                     <dd class="text-danger"
-                        data-ng-bind="tr('exchange_ACTION_order_accounts_step2_price', [ctrl.previewOrder.prices.withoutTax.text, ctrl.previewOrder.prices.withTax.text])"></dd>
+                        data-translate="'exchange_ACTION_order_accounts_step2_price'"
+                        data-translate-values="{
+                            t0: ctrl.previewOrder.prices.withoutTax.text,
+                            t1: ctrl.previewOrder.prices.withTax.text
+                        }"></dd>
                 </dl>
             </div>
         </div>

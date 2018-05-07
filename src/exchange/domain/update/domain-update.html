@@ -53,7 +53,13 @@
                 </div>
             </form>
 
-            <p data-ng-bind-html="tr('exchange_tab_domain_modify_domain_tooltip', [ctrl.nonAuthoritativeEmail[0], ctrl.nonAuthoritativeEmail[1], ctrl.nonAuthoritativeEmail[2], ctrl.nonAuthoritativeEmail[3], ctrl.exchange.hostname])"
+            <p data-ng-bind-html="'exchange_tab_domain_modify_domain_tooltip' | translate:{
+                t0: ctrl.nonAuthoritativeEmail[0],
+                t1: ctrl.nonAuthoritativeEmail[1],
+                t2: ctrl.nonAuthoritativeEmail[2],
+                t3: ctrl.nonAuthoritativeEmail[3],
+                t4: ctrl.exchange.hostname
+            }"
                data-ng-if="ctrl.selectedDomain.type === 'NON_AUTHORITATIVE'"></p>
 
             <div data-wizard-step-help>
@@ -80,7 +86,13 @@
                 <dd data-ng-bind="('exchange_tab_domain_' + ctrl.selectedDomain.type) | translate"></dd>
             </dl>
 
-            <p data-ng-bind-html="tr('exchange_tab_domain_modify_domain_tooltip', [ctrl.nonAuthoritativeEmail[0], ctrl.nonAuthoritativeEmail[1], ctrl.nonAuthoritativeEmail[2], ctrl.nonAuthoritativeEmail[3], ctrl.exchange.hostname])"
+            <p data-ng-bind-html="'exchange_tab_domain_modify_domain_tooltip' | translate:{
+                t0: ctrl.nonAuthoritativeEmail[0],
+                t1: ctrl.nonAuthoritativeEmail[1],
+                t2: ctrl.nonAuthoritativeEmail[2],
+                t3: ctrl.nonAuthoritativeEmail[3],
+                t4: ctrl.exchange.hostname
+            }"
                data-ng-if="ctrl.selectedDomain.type === 'NON_AUTHORITATIVE'"></p>
         </div>
     </div>

@@ -41,7 +41,7 @@
                   data-tooltip-class="text-left">
                 <span class="fa fa-question-circle" aria-hidden="true"></span>
             </span>
-            <span data-ng-bind-html="$ctrl.translator.tr('exchange_wizardHostedCreation_configureDNSZone_manual_explanation_part_2', $ctrl.homepage.domainName)"></span>
+            <span data-ng-bind-html="'exchange_wizardHostedCreation_configureDNSZone_manual_explanation_part_2' | translate:{ t0: $ctrl.homepage.domainName }"></span>
         </p>
 
         <div class="table-responsive">
@@ -58,18 +58,28 @@
                         <th scope="row" data-ng-bind-html="'exchange_wizardHostedCreation_configureDNSZone_manual_table_mx' | translate"></th>
                         <td>
                             <span data-ng-bind-html="
-                                $ctrl.translator.tr('exchange_tab_domain_diagnostic_mx_antispam_config', [
-                                    $ctrl.domainDiagnostic.mx.spam[0].priority, $ctrl.domainDiagnostic.mx.spam[0].target,
-                                    $ctrl.domainDiagnostic.mx.spam[1].priority, $ctrl.domainDiagnostic.mx.spam[1].target,
-                                    $ctrl.domainDiagnostic.mx.spam[2].priority, $ctrl.domainDiagnostic.mx.spam[2].target,
-                                    $ctrl.domainDiagnostic.mx.spam[3].priority, $ctrl.domainDiagnostic.mx.spam[3].target
-                                ])"></span>
+                                'exchange_tab_domain_diagnostic_mx_antispam_config' | translate: {
+                                    t0: $ctrl.domainDiagnostic.mx.spam[0].priority,
+                                    t1: $ctrl.domainDiagnostic.mx.spam[0].target,
+                                    t2: $ctrl.domainDiagnostic.mx.spam[1].priority,
+                                    t3: $ctrl.domainDiagnostic.mx.spam[1].target,
+                                    t4: $ctrl.domainDiagnostic.mx.spam[2].priority,
+                                    t5: $ctrl.domainDiagnostic.mx.spam[2].target,
+                                    t6: $ctrl.domainDiagnostic.mx.spam[3].priority,
+                                    t7: $ctrl.domainDiagnostic.mx.spam[3].target
+                                }"></span>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row" data-ng-bind-html="'exchange_wizardHostedCreation_configureDNSZone_manual_table_srv' | translate"></th>
                         <td>
-                            <span data-ng-bind-html="$ctrl.translator.tr('exchange_tab_domain_diagnostic_srv_config', [$ctrl.domainDiagnostic.srv.subDomain, $ctrl.domainDiagnostic.srv.priority, $ctrl.domainDiagnostic.srv.weight, $ctrl.domainDiagnostic.srv.port, $ctrl.domainDiagnostic.srv.target])"></span>
+                            <span data-ng-bind-html="'exchange_tab_domain_diagnostic_srv_config' | translate:{
+                                t0: $ctrl.domainDiagnostic.srv.subDomain,
+                                t1: $ctrl.domainDiagnostic.srv.priority,
+                                t2: $ctrl.domainDiagnostic.srv.weight,
+                                t3: $ctrl.domainDiagnostic.srv.port,
+                                t4: $ctrl.domainDiagnostic.srv.target
+                            }"></span>
                         </td>
                     </tr>
                 </tbody>
