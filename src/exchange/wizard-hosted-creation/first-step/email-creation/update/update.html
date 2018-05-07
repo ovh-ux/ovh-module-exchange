@@ -17,8 +17,8 @@
                 <fieldset data-ng-disabled="$ctrl.dataHasBeenSubmitted">
                     <div class="oui-input-formfield mb-4"  data-ng-class="{ 'oui-field_error': $ctrl.addForm.login.$dirty && $ctrl.addForm.login.$invalid }">
                         <p class="oui-field-helper ml-0 mb-0 mt-2" role="alert" data-ng-messages="$ctrl.addForm.login.$error" data-ng-if="$ctrl.addForm.login.$dirty && $ctrl.addForm.login.$invalid">
-                            <span data-ng-message="pattern" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_add_login_pattern')"></span>
-                            <span data-ng-message="required" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_add_login_required')"></span>
+                            <span data-ng-message="pattern" data-ng-bind="'exchange_wizardHostedCreation_emailCreation_add_login_pattern' | translate"></span>
+                            <span data-ng-message="required" data-ng-bind="'exchange_wizardHostedCreation_emailCreation_add_login_required' | translate"></span>
                         </p>
                         <div class="oui-input-group mb-0">
                             <input type="text"
@@ -34,7 +34,7 @@
                         </div>
                         <label class="oui-label"
                                 for="login"
-                                data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_add_login_header')"></label>
+                                data-ng-bind="'exchange_wizardHostedCreation_emailCreation_add_login_header' | translate"></label>
                     </div>
 
                     <div class="oui-input-formfield mb-4">
@@ -47,7 +47,7 @@
                                 data-ng-change="$ctrl.updateDisplayName()">
                         <label class="oui-label"
                                 for="firstName"
-                                data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_add_firstName_header') + $ctrl.translator.tr('optional_form_field')"></label>
+                                data-ng-bind="'exchange_wizardHostedCreation_emailCreation_add_firstName_header' | translate + 'optional_form_field' | translate"></label>
                     </div>
 
                     <div class="oui-input-formfield mb-4">
@@ -60,7 +60,7 @@
                                 data-ng-change="$ctrl.updateDisplayName()">
                         <label class="oui-label"
                                 for="lastName"
-                                data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_add_name_header') + $ctrl.translator.tr('optional_form_field')"></label>
+                                data-ng-bind="'exchange_wizardHostedCreation_emailCreation_add_name_header' | translate + 'optional_form_field' | translate"></label>
                     </div>
 
                     <div class="oui-input-formfield mb-4">
@@ -72,13 +72,13 @@
                                 data-ng-model="$ctrl.model.displayName">
                         <label class="oui-label"
                                 for="displayName"
-                                data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_add_displayName_header') + $ctrl.translator.tr('optional_form_field')"></label>
+                                data-ng-bind="'exchange_wizardHostedCreation_emailCreation_add_displayName_header' | translate + 'optional_form_field' | translate"></label>
                     </div>
 
                     <div class="oui-input-formfield mb-1">
                         <oui-checkbox id="changePasswordCheckbox" name="changePasswordCheckbox"
                             data-model="$ctrl.changePassword"
-                            data-text="{{::$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_update_changePassword_checkbox')}}">
+                            data-text="{{::'exchange_wizardHostedCreation_emailCreation_update_changePassword_checkbox' | translate}}">
                         </oui-checkbox>
                     </div>
 
@@ -86,12 +86,12 @@
                         data-ng-class="{ 'oui-field_error': $ctrl.addForm.password.$dirty && $ctrl.addForm.password.$invalid }"
                         data-ng-if="$ctrl.changePassword">
                         <p class="oui-field-helper ml-0 mb-0 mt-2" role="alert" data-ng-messages="$ctrl.addForm.password.$error" data-ng-if="$ctrl.addForm.passwordConfirmation.$dirty && $ctrl.addForm.password.$dirty && $ctrl.addForm.password.$invalid">
-                            <span data-ng-message="passwordEquality" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_add_password_error_confirmation')"></span>
+                            <span data-ng-message="passwordEquality" data-ng-bind="'exchange_wizardHostedCreation_emailCreation_add_password_error_confirmation' | translate"></span>
                         </p>
                         <p class="oui-field-helper ml-0 mb-0 mt-2" role="alert" data-ng-messages="$ctrl.addForm.password.$error" data-ng-if="$ctrl.addForm.password.$dirty && $ctrl.addForm.password.$invalid">
-                            <span data-ng-message="required" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_add_login_required')"></span>
+                            <span data-ng-message="required" data-ng-bind="'exchange_wizardHostedCreation_emailCreation_add_login_required' | translate"></span>
                             <span data-ng-message="passwordLength" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_add_password_error_short', [$ctrl.serviceParameters.minPasswordLength])"></span>
-                            <span data-ng-message="passwordComplexity" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_add_password_error_exchangePreferences')"></span>
+                            <span data-ng-message="passwordComplexity" data-ng-bind="'exchange_wizardHostedCreation_emailCreation_add_password_error_exchangePreferences' | translate"></span>
                         </p>
 
                         <input type="password"
@@ -105,7 +105,7 @@
                                 data-ng-change="$ctrl.validatePassword()">
                         <label class="oui-label"
                                 for="password"
-                                data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_add_password_header')"></label>
+                                data-ng-bind="'exchange_wizardHostedCreation_emailCreation_add_password_header' | translate"></label>
                     </div>
 
                     <div class="oui-input-formfield mb-4"
@@ -113,7 +113,7 @@
                             data-ng-if="$ctrl.changePassword">
                             <p class="oui-field-helper ml-0 mb-0 mt-2"
                                 data-ng-if="$ctrl.addForm.password.$dirty && $ctrl.addForm.passwordConfirmation.$dirty && $ctrl.addForm.passwordConfirmation.$error.required"
-                                data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_add_login_required')">
+                                data-ng-bind="'exchange_wizardHostedCreation_emailCreation_add_login_required' | translate">
                             </p>
                         <input type="password"
                                 class="oui-input"
@@ -126,7 +126,7 @@
                                 data-ng-change="$ctrl.validatePassword()">
                         <label class="oui-label"
                                 for="passwordConfirmation"
-                                data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_add_passwordConfirmation_header')"></label>
+                                data-ng-bind="'exchange_wizardHostedCreation_emailCreation_add_passwordConfirmation_header' | translate"></label>
                     </div>
                 </fieldset>
             </form>
@@ -134,9 +134,9 @@
             <oui-spinner data-ng-if="!$ctrl.canMigrate && $ctrl.dataHasBeenSubmitted"></oui-spinner>
 
             <div data-ng-if="$ctrl.canMigrate">
-                <p data-ng-bind-html="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_add_migration_question_1')"></p>
-                <p data-ng-bind-html="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_add_migration_question_2')"></p>
-                <p role="alert" class="alert alert-warning" data-ng-bind-html="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_add_migration_warning')"></p>
+                <p data-ng-bind-html="'exchange_wizardHostedCreation_emailCreation_add_migration_question_1' | translate"></p>
+                <p data-ng-bind-html="'exchange_wizardHostedCreation_emailCreation_add_migration_question_2' | translate"></p>
+                <p role="alert" class="alert alert-warning" data-ng-bind-html="'exchange_wizardHostedCreation_emailCreation_add_migration_warning' | translate"></p>
             </div>
         </div>
     </div>

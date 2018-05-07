@@ -6,20 +6,20 @@
 
         <oui-datagrid data-rows-loader="$ctrl.getAliases($config)">
             <oui-column
-                data-title="$ctrl.translator.tr('exchange_tab_ALIAS_header')"
+                data-title="'exchange_tab_ALIAS_header' | translate"
                 data-property="displayName"></oui-column>
             <oui-column
-                data-title="$ctrl.translator.tr('exchange_tab_ACCOUNTS_table_status')"
+                data-title="'exchange_tab_ACCOUNTS_table_status' | translate"
                 data-property="taskPendingId">
                 <span
-                    data-ng-bind="$ctrl.translator.tr('exchange_status_task_planned_or_executing')"
+                    data-ng-bind="'exchange_status_task_planned_or_executing' | translate"
                     data-ng-if="$value !== 0"></span>
             </oui-column>
             <oui-action-menu
                 data-align="end"
                 data-compact>
                 <oui-action-menu-item
-                    data-text="{{:: $ctrl.translator.tr('exchange_tab_ALIAS_delete_tooltip') }}"
+                    data-text="{{:: 'exchange_tab_ALIAS_delete_tooltip' | translate }}"
                     data-on-click="$ctrl.openDeletingDialog($row)"
                     data-disabled="$row.taskPendingId !== 0"></oui-action-menu-item>
             </oui-action-menu>
@@ -31,7 +31,7 @@
             <button
                 class="btn btn-block btn-default"
                 type="button"
-                data-ng-bind="$ctrl.translator.tr('exchange_tab_ALIAS_add_button')"
+                data-ng-bind="'exchange_tab_ALIAS_add_button' | translate"
                 data-ng-click="$ctrl.openAddingDialog()"
                 data-ng-disabled="$ctrl.aliases.length >= $ctrl.aliasMaxLimit || !$ctrl.exchangeStates.constructor.isOk($ctrl.account)"></button>
         </div>
