@@ -10,7 +10,7 @@
             <oui-spinner data-ng-if="ctrl.loading"></oui-spinner>
 
             <div data-ng-if="!ctrl.loading">
-                <p data-ng-bind-html="tr('exchange_ACTION_renew_ssl_intro')"></p>
+                <p data-ng-bind-html="'exchange_ACTION_renew_ssl_intro' | translate"></p>
                     <ul class="selectList">
                         <li data-ng-repeat="domain in ctrl.availableDomains | filter:search | orderBy:'formattedName' track by $index"
                             data-ng-bind="domain.displayName"

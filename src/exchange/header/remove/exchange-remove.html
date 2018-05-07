@@ -33,7 +33,7 @@
                 </dl>
 
                 <div data-ng-if="ctrl.service.exchangeServiceInfrastructure.isHosted()">
-                    <p data-ng-bind-html="tr('exchange_update_billing_periode_intro')"></p>
+                    <p data-ng-bind-html="'exchange_update_billing_periode_intro' | translate"></p>
                     <form>
                         <label class="oui-label"
                                data-translate="exchange_update_billing_periode_label"></label>
@@ -43,7 +43,7 @@
                                    data-ng-value="'MONTHLY'">
                             <label class="oui-radio__label-container" for="renewGroup-monthly">
                                 <span class="oui-radio__label"
-                                      data-ng-bind="tr('exchange_ACTION_order_accounts_step2_pay_type_monthly')"></span>
+                                      data-ng-bind="'exchange_ACTION_order_accounts_step2_pay_type_monthly' | translate"></span>
                             </label>
                         </div>
                         <div class="oui-radio oui-radio_inline">
@@ -52,7 +52,7 @@
                                    data-ng-value="'YEARLY'">
                             <label class="oui-radio__label-container" for="renewGroup-yearly">
                                 <span class="oui-radio__label"
-                                      data-ng-bind="tr('exchange_ACTION_order_accounts_step2_pay_type_yearly')"></span>
+                                      data-ng-bind="'exchange_ACTION_order_accounts_step2_pay_type_yearly' | translate"></span>
                             </label>
                         </div>
                     </form>

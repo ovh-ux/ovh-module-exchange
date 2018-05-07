@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-sm-9">
                 <strong data-ng-bind="tr('exchange_offer_type_' + ctrl.exchange.offer)" data-ng-if="!ctrl.services.exchangeServiceInfrastructure.is25g()"></strong>
-                <strong data-ng-bind="tr('exchange_offer_type_25g')" data-ng-if="ctrl.services.exchangeServiceInfrastructure.is25g()"></strong>
+                <strong data-ng-bind="'exchange_offer_type_25g' | translate" data-ng-if="ctrl.services.exchangeServiceInfrastructure.is25g()"></strong>
                 <div class="mb-3" data-ng-show="!ctrl.editMode">
                     <div class="d-flex">
                         <h1 class="d-inline-block mb-0" data-ng-bind="ctrl.exchange.displayName"></h1>
@@ -135,7 +135,7 @@
                      data-ng-if="ctrl.services.messaging.message">
                     <button class="close"
                             type="button"
-                            aria-label="tr('wizard_close')"
+                            aria-label="'wizard_close' | translate"
                             data-dismiss="alert"
                             data-ng-click="resetMessages()">
                     </button>
@@ -162,7 +162,7 @@
         <div class="container-fluid px-5"
             data-ng-if="ctrl.exchange.serverDiagnostic.individual2010">
             <div class="alert alert-warning" role="alert">
-                <a data-ng-href="http://migrationstatus.mail.ovh.net" target="_blank" title="{{tr('exchange_dashboard_2016_migration')}} ({{tr('exchange_dashboard_new_window')}})">
+                <a data-ng-href="http://migrationstatus.mail.ovh.net" target="_blank" title="{{'exchange_dashboard_2016_migration' | translate}} ({{'exchange_dashboard_new_window' | translate}})">
                     <span data-translate="exchange_dashboard_2016_migration"></span>
                     <span class="fa fa-external-link" aria-hidden="true"></span>
                 </a>

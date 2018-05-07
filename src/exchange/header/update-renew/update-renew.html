@@ -7,7 +7,7 @@
         <div data-wizard-step
              data-wizard-step-valid="hasChanged()">
 
-            <p data-ng-bind-html="tr('exchange_update_billing_periode_intro')"></p>
+            <p data-ng-bind-html="'exchange_update_billing_periode_intro' | translate"></p>
 
             <div class="alert alert-warning" role="alert"
                  data-ng-if="!ctrl.loading && ctrl.bufferedAccounts && ctrl.bufferedAccounts.list.messages.length > 0">

@@ -14,10 +14,10 @@
     </div>
 
     <oui-datagrid data-rows-loader="ctrl.loadPaginated($config)">
-        <oui-column data-title="tr('exchange_tab_TASKS_table_function')" data-property="function">
+        <oui-column data-title="'exchange_tab_TASKS_table_function' | translate" data-property="function">
             {{tr('exchange_tab_TASKS_' + $row.function)}}
         </oui-column>
-        <oui-column data-title="tr('exchange_tab_TASKS_table_state')" data-property="status">
+        <oui-column data-title="'exchange_tab_TASKS_table_state' | translate" data-property="status">
             <span class="fa fa-lg" data-ng-attr-title="{{tr('exchange_tab_TASKS_' + $row.status)}}"
                   data-ng-class="{
                                 'fa-hourglass-half text-info': $row.status === ctrl.states.doing || $row.status === ctrl.states.todo,
@@ -27,10 +27,10 @@
             <span data-ng-bind="tr('exchange_tab_TASKS_'+ $row.status)"
                   data-ng-if="$row.status === ctrl.states.done"></span>
         </oui-column>
-        <oui-column data-title="tr('exchange_tab_TASKS_table_start_date')" data-property="todoDate">
+        <oui-column data-title="'exchange_tab_TASKS_table_start_date' | translate" data-property="todoDate">
             <span data-ng-bind="::$row.todoDate | date:'short'"></span>
         </oui-column>
-        <oui-column data-title="tr('exchange_tab_TASKS_table_finish_date')" data-property="finishDate">
+        <oui-column data-title="'exchange_tab_TASKS_table_finish_date' | translate" data-property="finishDate">
             <span data-ng-bind="::$row.finishDate | date:'short'"></span>
         </oui-column>
     </oui-datagrid>

@@ -49,7 +49,7 @@
                                                 data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isAValid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isAValid}"
                                                 data-ng-if="!ctrl.exchangeServiceInfrastructure.isProvider()"
                                                 data-simplepopover="{{ctrl.exchange.serverDiagnostic.aTooltip}}"
-                                                data-simplepopover-title="{{tr('exchange_dashboard_diag_a_tooltip_title')}}"
+                                                data-simplepopover-title="{{'exchange_dashboard_diag_a_tooltip_title' | translate}}"
                                                 data-simplepopover-placement="bottom"
                                                 data-simplepopover-single="true">
                                         </button>
@@ -58,7 +58,7 @@
                                                 data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isAaaaValid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isAaaaValid}"
                                                 data-ng-if="ctrl.exchangeServiceInfrastructure.isDedicated() || ctrl.exchangeServiceInfrastructure.isDedicatedCluster()"
                                                 data-simplepopover="{{ctrl.exchange.serverDiagnostic.aaaaTooltip}}"
-                                                data-simplepopover-title="{{tr('exchange_dashboard_diag_aaaa_tooltip_title')}}"
+                                                data-simplepopover-title="{{'exchange_dashboard_diag_aaaa_tooltip_title' | translate}}"
                                                 data-simplepopover-placement="bottom"
                                                 data-simplepopover-single="true">
                                         </button>
@@ -67,7 +67,7 @@
                                                 data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isPtrValid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isPtrValid}"
                                                 data-ng-if="ctrl.exchangeServiceInfrastructure.isDedicated() || ctrl.exchangeServiceInfrastructure.isDedicatedCluster()"
                                                 data-simplepopover="{{ctrl.exchange.serverDiagnostic.ptrTooltip}}"
-                                                data-simplepopover-title="{{tr('exchange_dashboard_diag_ptr_tooltip_title')}}"
+                                                data-simplepopover-title="{{'exchange_dashboard_diag_ptr_tooltip_title' | translate}}"
                                                 data-simplepopover-placement="bottom"
                                                 data-simplepopover-single="true">
                                         </button>
@@ -76,7 +76,7 @@
                                                 data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isPtrV6Valid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isPtrV6Valid}"
                                                 data-ng-if="ctrl.exchangeServiceInfrastructure.isDedicated() || ctrl.exchangeServiceInfrastructure.isDedicatedCluster()"
                                                 data-simplepopover="{{ctrl.exchange.serverDiagnostic.ptrv6Tooltip}}"
-                                                data-simplepopover-title="{{tr('exchange_dashboard_diag_ptrv6_tooltip_title')}}"
+                                                data-simplepopover-title="{{'exchange_dashboard_diag_ptrv6_tooltip_title' | translate}}"
                                                 data-simplepopover-placement="bottom"
                                                 data-simplepopover-single="true">
                                         </button>
@@ -149,7 +149,7 @@
                                         <div>
                                             <strong class="d-inline-block mr-2" data-translate="exchange_dashboard_disk_usage"></strong>
                                             <span class="fa fa-question-circle" aria-hidden="true"
-                                                  data-uib-tooltip="{{tr('exchange_action_order_space_disk_tooltip')}}"
+                                                  data-uib-tooltip="{{'exchange_action_order_space_disk_tooltip' | translate}}"
                                                   data-tooltip-append-to-body="true"></span>
                                         </div>
                                         <div class="oui-progress"

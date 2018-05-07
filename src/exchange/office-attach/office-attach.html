@@ -7,7 +7,7 @@
                     data-dismiss="alert"
                     data-ng-click="$ctrl.officeAttach.savingHidingPreferences()"></button>
 
-            <p data-ng-bind-html="tr('exchange_office_attached_alert_main')"></p>
+            <p data-ng-bind-html="'exchange_office_attached_alert_main' | translate"></p>
             <p data-ng-bind-html="tr('exchange_office_attached_alert_details', [$ctrl.maxNumberOfAccounts])"></p>
 
             <button class="btn btn-info mt-3"

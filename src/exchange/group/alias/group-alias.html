@@ -13,8 +13,8 @@
         </div>
 
         <oui-datagrid data-rows-loader="ctrl.getAliases($config)">
-            <oui-column data-title="tr('exchange_tab_ALIAS_header')" data-property="displayName"></oui-column>
-            <oui-column data-title="tr('exchange_tab_ACCOUNTS_table_status')">
+            <oui-column data-title="'exchange_tab_ALIAS_header' | translate" data-property="displayName"></oui-column>
+            <oui-column data-title="'exchange_tab_ACCOUNTS_table_status' | translate">
                 <span class="label label-info"
                           data-translate="exchange_tab_ALIAS_state_TASK_ON_DOING"
                           data-ng-if="$row.taskPendingId"

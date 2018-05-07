@@ -213,7 +213,7 @@
 
             <div data-wizard-step-help>
                 <h3 data-translate="exchange_ACTION_update_account_helpwizard_title"></h3>
-                <p data-ng-bind-html="tr('exchange_ACTION_update_account_helpwizard_intro')"></p>
+                <p data-ng-bind-html="'exchange_ACTION_update_account_helpwizard_intro' | translate"></p>
                 <h4 data-translate="exchange_ACTION_update_account_helpwizard_password_title"></h4>
                 <p data-ng-bind-html="tr('exchange_ACTION_update_account_helpwizard_password', [ctrl.newAccountOptions.minPasswordLength])"
                    data-ng-if="ctrl.newAccountOptions.passwordComplexityEnabled"></p>
@@ -221,10 +221,10 @@
                    data-ng-if="!ctrl.newAccountOptions.passwordComplexityEnabled"></p>
                 <div data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.selectedAccount.canBeConfigured">
                     <h4 data-translate="exchange_ACTION_update_account_helpwizard_hide_directory_title"></h4>
-                    <p data-ng-bind-html="tr('exchange_ACTION_update_account_helpwizard_hide_directory')"></p>
+                    <p data-ng-bind-html="'exchange_ACTION_update_account_helpwizard_hide_directory' | translate"></p>
                 </div>
                 <h4 data-translate="exchange_ACTION_update_account_helpwizard_guid_title"></h4>
-                <p data-ng-bind-html="tr('exchange_ACTION_update_account_helpwizard_guid')"></p>
+                <p data-ng-bind-html="'exchange_ACTION_update_account_helpwizard_guid' | translate"></p>
             </div>
         </div>
 
@@ -265,7 +265,7 @@
                 <dt data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.services.exchangeServiceInfrastructure.isProvider()"
                     data-translate="exchange_ACTION_update_account_step1_quota_label"></dt>
                 <dd data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.services.exchangeServiceInfrastructure.isProvider()"
-                    data-ng-bind="ctrl.selectedAccount.quota + ' ' + tr('unit_size_GB')"></dd>
+                    data-ng-bind="ctrl.selectedAccount.quota + ' ' + 'unit_size_GB' | translate"></dd>
 
                 <dt data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.services.exchangeAccountOutlook.canHaveLicense(ctrl.selectedAccount)"
                     data-translate="exchange_ACTION_update_account_step2_outlook_label"></dt>

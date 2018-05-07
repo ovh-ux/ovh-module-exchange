@@ -14,7 +14,7 @@
 
             <div data-ng-if="!ctrl.loading">
                 <div class="alert alert-info" role="alert"
-                     data-ng-bind-html="tr('exchange_tab_domain_no_domain_attached')"
+                     data-ng-bind-html="'exchange_tab_domain_no_domain_attached' | translate"
                      data-ng-if="ctrl.noDomainAttached">
                 </div>
 
@@ -112,7 +112,7 @@
 
                 <div class="resize-half center-image image-container" data-ng-if="ctrl.isFrenchLanguage()">
                     <a href="https://docs.ovh.com/fr/fr/web/microsoft-collaborative-solutions/premiere-configuration-exchange/#guide-video" target="_blank">
-                        <img class="image" src="https://www.ovh.com/fr/images/videos/guides/exchange/premiere-conf-exchange.jpg" alt="tr('exchange_tab_domain_add_step3_domain_none')"/>
+                        <img class="image" src="https://www.ovh.com/fr/images/videos/guides/exchange/premiere-conf-exchange.jpg" alt="'exchange_tab_domain_add_step3_domain_none' | translate"/>
                         <div class="middle overlay-transition">
                             <span class="fa fa-play" aria-hidden="true"></span>
                         </div>
@@ -123,7 +123,7 @@
                     <button class="btn btn-primary"
                             type="button"
                             data-ng-click="ctrl.openingWizard()"
-                            data-ng-bind-html="tr('exchange_tab_domain_add_goToWizardButton')">
+                            data-ng-bind-html="'exchange_tab_domain_add_goToWizardButton' | translate">
                     </button>
                 </div>
             </div>
@@ -131,7 +131,7 @@
             <div data-wizard-step-help>
                 <h3 data-translate="exchange_tab_TASKS_ADD_DOMAIN"></h3>
                 <h4 data-translate="exchange_tab_domain_step1_helpwizard_subdomain_title"></h4>
-                <p data-ng-bind-html="tr('exchange_tab_domain_step1_helpwizard_subdomain')"></p>
+                <p data-ng-bind-html="'exchange_tab_domain_step1_helpwizard_subdomain' | translate"></p>
             </div>
         </div>
 

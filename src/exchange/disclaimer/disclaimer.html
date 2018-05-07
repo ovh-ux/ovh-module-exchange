@@ -6,11 +6,11 @@
     </div>
 
     <oui-datagrid data-rows-loader="ctrlDisclaimer.loadPaginated($config)">
-        <oui-column data-title="tr('exchange_tab_DISCLAIMER_associated_domains')" data-property="domain.displayName"></oui-column>
-        <oui-column data-title="tr('exchange_tab_DISCLAIMER_disclaimer_content')" data-property="strippedContent">
+        <oui-column data-title="'exchange_tab_DISCLAIMER_associated_domains' | translate" data-property="domain.displayName"></oui-column>
+        <oui-column data-title="'exchange_tab_DISCLAIMER_disclaimer_content' | translate" data-property="strippedContent">
             <span data-ng-bind="$row.strippedContent | sliceContent:20"></span>
         </oui-column>
-        <oui-column data-title="tr('exchange_tab_DISCLAIMER_disclaimer_outside_only')" data-property="outsideOnly">
+        <oui-column data-title="'exchange_tab_DISCLAIMER_disclaimer_outside_only' | translate" data-property="outsideOnly">
             <span data-ng-if="$row.outsideOnly"
                   data-translate="exchange_tab_DISCLAIMER_disclaimer_outside_only_true"
                   data-uib-tooltip="{{i18n.exchange_tab_DISCLAIMER_disclaimer_outside_only_tooltip}}"></span>
@@ -18,7 +18,7 @@
                   data-translate="exchange_tab_DISCLAIMER_disclaimer_outside_only_false"
                   data-uib-tooltip="{{i18n.exchange_tab_DISCLAIMER_disclaimer_outside_only_tooltip}}"></span>
         </oui-column>
-        <oui-column data-title="tr('exchange_tab_DISCLAIMER_state_header')">
+        <oui-column data-title="'exchange_tab_DISCLAIMER_state_header' | translate">
             <span class="label label-success"
                   data-translate="exchange_tab_DISCLAIMER_state_doing_tooltip"
                   data-ng-if="$row.taskPendingId && $row.taskPendingId !== 0"></span>
@@ -32,15 +32,15 @@
 
         <oui-action-menu data-align="end" data-compact>
             <oui-action-menu-item
-                data-text="{{tr('exchange_tab_DISCLAIMER_menu_settings')}}"
+                data-text="{{'exchange_tab_DISCLAIMER_menu_settings' | translate}}"
                 data-ng-click="ctrlDisclaimer.updateDisclaimer($row)"
                 data-ng-if="!$row.taskPendingId && $row.emptySlotFlag === false"></oui-action-menu-item>
             <oui-action-menu-item
-                data-text="{{tr('exchange_tab_DISCLAIMER_menu_delete')}}"
+                data-text="{{'exchange_tab_DISCLAIMER_menu_delete' | translate}}"
                 data-ng-click="ctrlDisclaimer.deleteDisclaimer($row)"
                 data-ng-if="!$row.taskPendingId && $row.emptySlotFlag === false"></oui-action-menu-item>
             <oui-action-menu-item
-                data-text="{{tr('common_configure')}}"
+                data-text="{{'common_configure' | translate}}"
                 data-ng-click="ctrlDisclaimer.addDisclaimer($row)"
                 data-ng-if="!$row.taskPendingId && $row.emptySlotFlag"></oui-action-menu-item>
         </oui-action-menu>
