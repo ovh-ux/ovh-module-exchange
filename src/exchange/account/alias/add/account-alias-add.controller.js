@@ -55,8 +55,7 @@ angular
         }
 
         addAccountAlias () {
-            this.services
-                .Exchange
+            return this.services.Exchange
                 .addAlias(this.$routerParams.organization, this.$routerParams.productId, this.selectedAccount.primaryEmailAddress, this.model)
                 .then((data) => {
                     this.services.messaging.writeSuccess(this.services.translator.tr("exchange_tab_ALIAS_add_alias_success_message"));

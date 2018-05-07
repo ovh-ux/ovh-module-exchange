@@ -1,11 +1,11 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeAddOutlookCtrl", class ExchangeAddOutlookCtrl {
-        constructor ($scope, Exchange, ExchangeOutlook, constants, $window, navigation, messaging, translator) {
+        constructor ($scope, Exchange, exchangeAccountOutlook, constants, $window, navigation, messaging, translator) {
             this.services = {
                 $scope,
                 Exchange,
-                ExchangeOutlook,
+                exchangeAccountOutlook,
                 constants,
                 $window,
                 navigation,
@@ -38,7 +38,7 @@ angular
 
         loadOptionsList () {
             this.services
-                .ExchangeOutlook
+                .exchangeAccountOutlook
                 .getLicenceOptions(this.$routerParams.organization, this.$routerParams.productId, this.selectedAccount.primaryEmailAddress)
                 .then((data) => {
                     this.optionsList = data;
@@ -77,7 +77,7 @@ angular
 
         orderOutlook () {
             this.services
-                .ExchangeOutlook
+                .exchangeAccountOutlook
                 .orderOutlook(this.$routerParams.organization, this.$routerParams.productId, this.model)
                 .then((data) => {
                     this.previewOrder = data;

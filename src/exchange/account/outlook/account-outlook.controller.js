@@ -1,11 +1,11 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeDisplayOutlookCtrl", class ExchangeDisplayOutlookCtrl {
-        constructor ($scope, Exchange, ExchangeOutlook, $timeout, translator, APIExchange, navigation, messaging) {
+        constructor ($scope, Exchange, exchangeAccountOutlook, $timeout, translator, APIExchange, navigation, messaging) {
             this.services = {
                 $scope,
                 Exchange,
-                ExchangeOutlook,
+                exchangeAccountOutlook,
                 $timeout,
                 translator,
                 APIExchange,
@@ -35,7 +35,7 @@ angular
 
         step1OnLoad () {
             return this.services
-                .ExchangeOutlook
+                .exchangeAccountOutlook
                 .getLicenceDetails(this.$routerParams.organization, this.$routerParams.productId, this.selectedAccount.primaryEmailAddress)
                 .then((data) => {
                     this.outlook = data;
@@ -64,7 +64,7 @@ angular
 
         orderOutlook () {
             this.services
-                .ExchangeOutlook.orderOutlook(this.$routerParams.organization, this.$routerParams.productId, this.model)
+                .exchangeAccountOutlook.orderOutlook(this.$routerParams.organization, this.$routerParams.productId, this.model)
                 .then((data) => {
                     this.previewOrder = data;
                 })
@@ -81,7 +81,7 @@ angular
 
         getOutlookDetails () {
             this.services
-                .ExchangeOutlook
+                .exchangeAccountOutlook
                 .getLicenceDetails(this.$routerParams.organization, this.$routerParams.productId, this.selectedAccount.primaryEmailAddress)
                 .then((data) => {
                     this.outlook = data;
@@ -152,7 +152,7 @@ angular
             delete this.model.languageIndex; // clean up the model
 
             this.services
-                .ExchangeOutlook
+                .exchangeAccountOutlook
                 .generateOutlookUrl(this.$routerParams.organization, this.$routerParams.productId, this.model)
                 .then((data) => {
                     if (data.status !== "ERROR" && this.retryFlag--) {

@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeOrderAccountCtrl", class ExchangeOrderAccountCtrl {
-        constructor ($scope, Exchange, $window, messaging, translator, navigation, accountTypes) {
+        constructor ($scope, Exchange, $window, messaging, translator, navigation, exchangeServiceInfrastructure) {
             this.services = {
                 $scope,
                 Exchange,
@@ -9,7 +9,7 @@ angular
                 messaging,
                 translator,
                 navigation,
-                accountTypes
+                exchangeServiceInfrastructure
             };
 
             this.$routerParams = Exchange.getParams();

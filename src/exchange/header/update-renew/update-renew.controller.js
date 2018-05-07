@@ -3,7 +3,7 @@
  */
 angular.module("Module.exchange.controllers")
     .controller("ExchangeUpdateRenewCtrl", class ExchangeUpdateRenewCtrl {
-        constructor ($scope, Exchange, $location, navigation, translator, messaging, accountTypes, exchangeVersion) {
+        constructor ($scope, Exchange, $location, navigation, translator, messaging, exchangeServiceInfrastructure, exchangeVersion) {
             this.services = {
                 $scope,
                 Exchange,
@@ -11,7 +11,7 @@ angular.module("Module.exchange.controllers")
                 navigation,
                 translator,
                 messaging,
-                accountTypes,
+                exchangeServiceInfrastructure,
                 exchangeVersion
             };
 
@@ -204,7 +204,7 @@ angular.module("Module.exchange.controllers")
 
             if (_.has(this.buffer, "changes") && this.buffer.changes != null) {
                 _.forEach(this.buffer.changes, (change) => {
-                    change.is25g = this.services.accountTypes.is25g();
+                    change.is25g = this.services.exchangeServiceInfrastructure.is25g();
                 });
             }
 

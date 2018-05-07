@@ -34,6 +34,20 @@ angular
                 translator
             }
         }, {
+            name: "app.microsoft.exchange.dedicatedCluster",
+            url: "/configuration/exchange_dedicatedCluster/:organization/:productId?tab",
+            templateUrl: "exchange/exchange.html",
+            controller: "ExchangeCtrl",
+            controllerAs: "ctrl",
+            reloadOnSearch: false,
+            params: {
+                tab: null
+            },
+            resolve: {
+                navigationInformations: getNavigationInformations("exchange_dedicatedCluster"),
+                translator
+            }
+        }, {
             name: "app.microsoft.exchange.hosted",
             url: "/configuration/exchange_hosted/:organization/:productId?tab",
             templateUrl: "exchange/exchange.html",

@@ -139,7 +139,7 @@
             <button class="btn btn-block btn-default" type="button"
                     data-i18n-static="exchange_SHARED_ACCOUNTS_add_button_label"
                     data-ng-click="ctrl.newSharedAccount()"
-                    data-ng-disabled="!ctrl.isSharedAccountAdjustable()">
+                    data-ng-if="ctrl.isSharedAccountAdjustable()">
             </button>
         </div>
     </div>

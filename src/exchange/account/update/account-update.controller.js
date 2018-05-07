@@ -1,16 +1,18 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeUpdateAccountCtrl", class ExchangeUpdateAccountCtrl {
-        constructor ($scope, Exchange, ExchangePassword, navigation, messaging, translator, accountTypes, exchangeVersion) {
+        constructor ($scope, exchangeAccountOutlook, exchangeAccountTypes, exchangeServiceInfrastructure, Exchange, ExchangePassword, exchangeVersion, messaging, navigation, translator) {
             this.services = {
                 $scope,
+                exchangeAccountOutlook,
+                exchangeAccountTypes,
+                exchangeServiceInfrastructure,
                 Exchange,
                 ExchangePassword,
-                navigation,
+                exchangeVersion,
                 messaging,
-                translator,
-                accountTypes,
-                exchangeVersion
+                navigation,
+                translator
             };
 
             this.$routerParams = Exchange.getParams();
@@ -20,7 +22,7 @@ angular
             $scope.loadAccountOptions = () => this.loadAccountOptions();
             $scope.updateExchangeAccount = () => this.updateExchangeAccount();
 
-            this.selectedAccount = navigation.currentActionData;
+            this.selectedAccount = angular.copy(navigation.currentActionData);
             this.selectedAccount.oldOutlook = this.selectedAccount.outlook;
             this.selectedAccount.oldDeleteOutlook = this.selectedAccount.deleteOutlook;
             this.selectedAccount.quota = this.selectedAccount.quota ? this.selectedAccount.quota : this.selectedAccount.totalQuota.value;
@@ -74,7 +76,7 @@ angular
         getFeaturesToUpdate (originalValues, modifiedBuffer) {
             const model = this.getModelToUpdate(originalValues, modifiedBuffer);
 
-            if (this.services.accountTypes.isProvider()) {
+            if (this.services.exchangeServiceInfrastructure.isProvider()) {
                 model.quota = originalValues.totalQuota.value && modifiedBuffer.quota !== originalValues.quota ? modifiedBuffer.quota : undefined;
             }
 
@@ -201,7 +203,7 @@ angular
         }
 
         canChangePrimary () {
-            if (this.selectedAccount.is25g) {
+            if (this.services.exchangeServiceInfrastructure.is25g()) {
                 return this.selectedAccount.primaryEmailAddress.split("@")[1] === "configureme.me";
             }
 
@@ -234,7 +236,7 @@ angular
             this.noDomainMessage = null;
             this.services
                 .Exchange
-                .getNewAccountOptions(this.$routerParams.organization, this.$routerParams.productId)
+                .fetchingAccountCreationOptions(this.$routerParams.organization, this.$routerParams.productId)
                 .then((data) => {
                     this.newAccountOptions = data;
 

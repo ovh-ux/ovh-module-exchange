@@ -24,7 +24,7 @@
                 <div class="form-group"
                      data-ng-class="{'has-error': ctrl.updateAccountForm.selectedAccountAddress.$dirty && (ctrl.updateAccountForm.selectedAccountAddress.$invalid || ctrl.takenEmailError)}">
                     <label class="control-label required" for="selectedAccountAddress"
-                           data-i18n-static="exchange_ACTION_add_account_step1_email_label"></label>
+                           data-i18n-static="exchange_ACTION_update_account_step1_email_label"></label>
                     <div class="input-group">
                         <input type="text" class="form-control" id="selectedAccountAddress" maxlength="256" name="selectedAccountAddress" required
                                data-ng-change="ctrl.checkTakenEmails()"
@@ -45,20 +45,28 @@
                 </div>
 
                 <div class="oui-field mb-4"
-                     data-ng-if="!ctrl.selectedAccount.is25g && ctrl.newAccountOptions.availableTypes.length > 1">
+                     data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.newAccountOptions.availableTypes.length > 1">
                     <label class="oui-field__label oui-label required" for="selectedAccountType"
                            data-i18n-static="exchange_ACTION_update_account_step1_type_label"></label>
                     <div class="oui-field__content">
                         <div class="oui-field-control oui-field-control_3">
                             <div class="oui-select">
-                                <select class="oui-select__input" id="selectedAccountType" name="selectedAccountType" required
-                                        data-ng-model="ctrl.selectedAccount.accountLicense"
-                                        data-ng-options="tr('exchange_ACTION_update_account_step1_type_' + type) for type in ctrl.newAccountOptions.availableTypes track by type">
-                                </select>
+                                <select
+                                    class="oui-select__input"
+                                    id="selectedAccountType"
+                                    name="selectedAccountType"
+                                    required
+                                    data-ng-model="ctrl.selectedAccount.accountLicense"
+                                    data-ng-options="ctrl.services.exchangeAccountTypes.getDisplayValue(type) for type in ctrl.newAccountOptions.availableTypes track by type"
+                                    data-ng-disabled="ctrl.selectedAccount.outlook"></select>
                                 <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
                             </div>
                         </div>
                     </div>
+                    <small
+                        class="help-block"
+                        data-i18n-static="exchange_ACTION_update_account_step1_type_cant_change"
+                        data-ng-if="ctrl.selectedAccount.outlook"></small>
                 </div>
 
                 <div class="oui-field mb-4">
@@ -151,7 +159,7 @@
                 </div>
 
                 <div class="oui-field mb-4"
-                     data-ng-if="!ctrl.selectedAccount.is25g && ctrl.newAccountOptions && ctrl.services.accountTypes.isProvider()">
+                     data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.newAccountOptions && ctrl.services.exchangeServiceInfrastructure.isProvider()">
                     <label class="oui-field__label oui-label" for="selectedAccountQuota"
                            data-i18n-static="exchange_ACTION_update_account_step1_quota_label"></label>
                     <div class="oui-field__content">
@@ -172,18 +180,18 @@
                 </div>
 
                 <oui-checkbox class="mb-4"  id="hiddenFromGAL" name="selectedAccountHiddenFromGAL"
-                    data-ng-if="!ctrl.selectedAccount.is25g && ctrl.selectedAccount.canBeConfigured"
+                    data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.selectedAccount.canBeConfigured"
                     data-model="ctrl.selectedAccount.hiddenFromGAL"
                     data-text="{{::i18n.exchange_ACTION_update_account_step1_GAL_label}}">
                 </oui-checkbox>
 
                 <div class="mb-4"
-                     data-ng-if="!ctrl.selectedAccount.is25g">
+                     data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.services.exchangeAccountOutlook.canHaveLicense(ctrl.selectedAccount)">
                     <span class="oui-label"
                           data-i18n-static="exchange_ACTION_update_account_step1_outlook_label"></span>
                     <span data-ng-bind="tr('exchange_ACTION_add_account_outlook_' + ctrl.selectedAccount.outlook)"></span>
                     <span data-i18n-static="exchange_ACTION_update_account_step1_outlookdel_label"
-                          data-ng-if="selectedAccount.outlook && selectedAccount.deleteOutlook"></span>
+                          data-ng-if="ctrl.selectedAccount.outlook && ctrl.selectedAccount.deleteOutlook"></span>
                 </div>
 
                 <div class="mb-4"
@@ -194,7 +202,7 @@
                 </div>
 
                 <div class="mb-4"
-                     data-ng-if="ctrl.services.exchangeVersion.isVersion(2010) && !ctrl.service.accountTypes.isHosted()">
+                     data-ng-if="ctrl.services.exchangeVersion.isVersion(2010) && !ctrl.service.exchangeServiceInfrastructure.isHosted()">
                     <span class="oui-label"
                           data-i18n-static="exchange_ACTION_update_account_step1_exchange_SAMA_label"></span>
                     <span class="form-control-static"
@@ -211,7 +219,7 @@
                    data-ng-if="ctrl.newAccountOptions.passwordComplexityEnabled"></p>
                 <p data-ng-bind-html="tr('exchange_ACTION_update_account_helpwizard_password_simple', [ctrl.newAccountOptions.minPasswordLength])"
                    data-ng-if="!ctrl.newAccountOptions.passwordComplexityEnabled"></p>
-                <div data-ng-if="!ctrl.selectedAccount.is25g && ctrl.selectedAccount.canBeConfigured">
+                <div data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.selectedAccount.canBeConfigured">
                     <h4 data-i18n-static="exchange_ACTION_update_account_helpwizard_hide_directory_title"></h4>
                     <p data-ng-bind-html="tr('exchange_ACTION_update_account_helpwizard_hide_directory')"></p>
                 </div>
@@ -230,7 +238,7 @@
                 <dt data-ng-if="ctrl.newAccountOptions.availableTypes.length > 1"
                     data-i18n-static="exchange_ACTION_update_account_step1_type_label"></dt>
                 <dd data-ng-if="ctrl.newAccountOptions.availableTypes.length > 1"
-                    data-ng-bind="tr('exchange_ACTION_update_account_step1_type_' + ctrl.selectedAccount.accountLicense)"></dd>
+                    data-ng-bind="ctrl.services.exchangeAccountTypes.getDisplayValue(ctrl.selectedAccount.accountLicense)"></dd>
 
                 <dt data-ng-if="ctrl.selectedAccount.firstName"
                     data-i18n-static="exchange_ACTION_update_account_step2_first_name_label"></dt>
@@ -254,19 +262,19 @@
                     <span data-ng-repeat="x in ctrl.selectedAccount.password track by $index">*</span>
                 </dd>
 
-                <dt data-ng-if="!ctrl.selectedAccount.is25g && ctrl.services.accountTypes.isProvider()"
+                <dt data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.services.exchangeServiceInfrastructure.isProvider()"
                     data-i18n-static="exchange_ACTION_update_account_step1_quota_label"></dt>
-                <dd data-ng-if="!ctrl.selectedAccount.is25g && ctrl.services.accountTypes.isProvider()"
+                <dd data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.services.exchangeServiceInfrastructure.isProvider()"
                     data-ng-bind="ctrl.selectedAccount.quota + ' ' + tr('unit_size_GB')"></dd>
 
-                <dt data-ng-if="!ctrl.selectedAccount.is25g"
+                <dt data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.services.exchangeAccountOutlook.canHaveLicense(ctrl.selectedAccount)"
                     data-i18n-static="exchange_ACTION_update_account_step2_outlook_label"></dt>
-                <dd data-ng-if="!ctrl.selectedAccount.is25g"
+                <dd data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.services.exchangeAccountOutlook.canHaveLicense(ctrl.selectedAccount)"
                     data-ng-bind="tr('exchange_ACTION_update_account_outlook_' + ctrl.selectedAccount.outlook)"></dd>
 
-                <dt data-ng-if="!ctrl.selectedAccount.is25g"
+                <dt data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g()"
                     data-i18n-static="exchange_ACTION_update_account_step2_GAL_label"></dt>
-                <dd data-ng-if="!ctrl.selectedAccount.is25g"
+                <dd data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g()"
                     data-ng-bind="tr('exchange_ACTION_update_account_GAL_' + ctrl.selectedAccount.hiddenFromGAL)"></dd>
             </dl>
         </div>

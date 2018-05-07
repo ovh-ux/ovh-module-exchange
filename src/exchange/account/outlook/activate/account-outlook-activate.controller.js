@@ -1,11 +1,11 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeActivateOutlookCtrl", class ExchangeActivateOutlookCtrl {
-        constructor ($scope, Exchange, ExchangeOutlook, navigation, messaging, translator) {
+        constructor ($scope, Exchange, exchangeAccountOutlook, navigation, messaging, translator) {
             this.services = {
                 $scope,
                 Exchange,
-                ExchangeOutlook,
+                exchangeAccountOutlook,
                 navigation,
                 messaging,
                 translator
@@ -19,7 +19,7 @@ angular
 
         activateOutlookExchangeAccount () {
             this.services
-                .ExchangeOutlook
+                .exchangeAccountOutlook
                 .activateOutlook(this.$routerParams.organization, this.$routerParams.productId, {
                     primaryEmailAddress: this.account.primaryEmailAddress
                 })

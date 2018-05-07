@@ -1,8 +1,8 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeAddExternalContactCtrl", class ExchangeAddExternalContactCtrl {
-        constructor ($scope, Exchange, ExchangeExternalContacts, navigation, translator, messaging, exchangeVersion, accountTypes) {
-            this.services = { $scope, Exchange, ExchangeExternalContacts, navigation, translator, messaging, exchangeVersion, accountTypes };
+        constructor ($scope, Exchange, ExchangeExternalContacts, navigation, translator, messaging, exchangeVersion, exchangeServiceInfrastructure) {
+            this.services = { $scope, Exchange, ExchangeExternalContacts, navigation, translator, messaging, exchangeVersion, exchangeServiceInfrastructure };
 
             this.$routerParams = Exchange.getParams();
             this.model = {
@@ -28,7 +28,7 @@ angular
         getData () {
             this.loaders.step1 = true;
 
-            if (this.services.exchangeVersion.isVersion(2010) && this.services.accountTypes.isProvider()) {
+            if (this.services.exchangeVersion.isVersion(2010) && this.services.exchangeServiceInfrastructure.isProvider()) {
                 this.services
                     .ExchangeExternalContacts
                     .gettingContactOptions(this.$routerParams.organization, this.$routerParams.productId)

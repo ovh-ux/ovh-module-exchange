@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeToolboxDomainsCtrl", class ExchangeToolboxDomainsCtrl {
-        constructor ($scope, Exchange, navigation, translator, messaging, exchangeVersion, exchangeStates, accountTypes) {
+        constructor ($scope, Exchange, navigation, translator, messaging, exchangeVersion, exchangeStates, exchangeServiceInfrastructure) {
             this.services = {
                 $scope,
                 Exchange,
@@ -10,12 +10,12 @@ angular
                 messaging,
                 exchangeVersion,
                 exchangeStates,
-                accountTypes
+                exchangeServiceInfrastructure
             };
         }
 
         isReseller2010AuthInvalidMx () {
-            return this.services.accountTypes.isProvider() && this.services.exchangeVersion.isVersion(2010);
+            return this.services.exchangeServiceInfrastructure.isProvider() && this.services.exchangeVersion.isVersion(2010);
         }
 
         isUpdateDisabled (domain) {

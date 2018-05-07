@@ -13,8 +13,8 @@
     <div class="page-header">
         <div class="row">
             <div class="col-sm-9">
-                <strong data-ng-bind="tr('exchange_offer_type_' + ctrl.exchange.offer)" data-ng-if="!ctrl.services.accountTypes.is25g()"></strong>
-                <strong data-ng-bind="tr('exchange_offer_type_25g')" data-ng-if="ctrl.services.accountTypes.is25g()"></strong>
+                <strong data-ng-bind="tr('exchange_offer_type_' + ctrl.exchange.offer)" data-ng-if="!ctrl.services.exchangeServiceInfrastructure.is25g()"></strong>
+                <strong data-ng-bind="tr('exchange_offer_type_25g')" data-ng-if="ctrl.services.exchangeServiceInfrastructure.is25g()"></strong>
                 <div class="mb-3" data-ng-show="!ctrl.editMode">
                     <div class="d-flex">
                         <h1 class="d-inline-block mb-0" data-ng-bind="ctrl.exchange.displayName"></h1>
@@ -76,19 +76,20 @@
                                data-i18n-static="exchange_tab_INFORMATIONS_order_sharepoint">
                             </a>
                         </li>
-                        <li data-ng-if="!ctrl.canSubscribeToOfficeAttach && ctrl.worldPart === 'EU'">
+                        <li data-ng-if="!ctrl.canUserSubscribeToOfficeAttach && ctrl.worldPart === 'EU'">
                             <i class="ovh-font ovh-font-cart" aria-hidden="true"></i>
                             <a href="#/configuration/microsoft/office/license/order"
                                data-i18n-static="exchange_tab_INFORMATIONS_order_office">
                             </a>
                         </li>
-                        <li data-ng-if="ctrl.canSubscribeToOfficeAttach && ctrl.worldPart === 'EU'">
+                        <li data-ng-if="ctrl.canUserSubscribeToOfficeAttach && ctrl.worldPart === 'EU'">
                             <button class="btn btn-link" type="button"
                                     data-i18n-static="exchange_ACTION_export_accounts_office_attached_button"
                                     data-ng-click="ctrl.services.navigation.setAction('exchange/office-attach/dialog/office-attach-dialog', ctrl.exchange)">
                             </button>
                         </li>
-                        <li class="dropdown-divider">
+                        <li class="dropdown-divider" data-ng-if="ctrl.canSubscribeToSharepoint || (ctrl.canUserSubscribeToOfficeAttach && ctrl.worldPart === 'EU') || (!ctrl.canUserSubscribeToOfficeAttach && ctrl.worldPart === 'EU')"></li>
+                        <li>
                             <button class="btn btn-link" type="button"
                                     data-i18n-static="exchange_action_license_history_button"
                                     data-ng-click="ctrl.services.navigation.setAction('exchange/header/license/service-license-history', ctrl.exchange)">

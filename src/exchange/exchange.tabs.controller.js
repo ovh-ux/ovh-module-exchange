@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeTabsCtrl", class ExchangeTabsCtrl {
-        constructor ($scope, $location, Exchange, translator, messaging, navigation, exchangeVersion, accountTypes) {
+        constructor ($scope, $location, Exchange, translator, messaging, navigation, exchangeVersion, exchangeServiceInfrastructure) {
             this.services = {
                 $scope,
                 $location,
@@ -10,7 +10,7 @@ angular
                 messaging,
                 navigation,
                 exchangeVersion,
-                accountTypes
+                exchangeServiceInfrastructure
             };
 
             const $routerParams = Exchange.getParams();
@@ -57,7 +57,7 @@ angular
                             ]
                         };
 
-                        if (this.services.accountTypes.isDedicated() && this.services.exchangeVersion.isVersion(2010)) {
+                        if ((this.services.exchangeServiceInfrastructure.isDedicated() || this.services.exchangeServiceInfrastructure.isDedicatedCluster()) && this.services.exchangeVersion.isVersion(2010)) {
                             this.dropdownMenuItems.items.push({
                                 label: translator.tr("exchange_tab_SHARED"),
                                 target: "SHARED",
@@ -77,7 +77,7 @@ angular
                             fn: () => {
                                 navigation.setAction("exchange/configure/service-configure");
                             },
-                            disabled: this.services.accountTypes.is25g()
+                            disabled: this.services.exchangeServiceInfrastructure.is25g()
                         });
                     }
 
