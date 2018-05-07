@@ -106,6 +106,7 @@
 
    <translation id="exchange_tab_INFORMATIONS_summary" qtlid="4082">Résumé</translation>
    <translation id="exchange_tab_INFORMATIONS_stats" qtlid="26671">Statistiques</translation>
+   <translation id="exchange_tab_INFORMATIONS_server">Serveur</translation>
    <translation id="exchange_tab_INFORMATIONS_connexion" qtlid="55925">Connexion</translation>
    <translation id="exchange_tab_INFORMATIONS_sharepoint" qtlid="319401">SharePoint associé</translation>
    <translation id="exchange_tab_INFORMATIONS_sharepoint_url" qtlid="297930">URL consultation</translation>
