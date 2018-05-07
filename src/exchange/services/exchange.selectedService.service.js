@@ -1,10 +1,10 @@
 angular
     .module("Module.exchange.services")
     .service("exchangeSelectedService", class ExchangeSelectedService {
-        constructor (exchangeServiceInfrastructure, exchangeVersion, translator) {
+        constructor (exchangeServiceInfrastructure, exchangeVersion, $translate) {
             this.exchangeServiceInfrastructure = exchangeServiceInfrastructure;
             this.exchangeVersion = exchangeVersion;
-            this.translator = translator;
+            this.$translate = $translate;
 
             /**
              * Enum for account creation methods
@@ -13,8 +13,8 @@ angular
              * @typedef {object} ExchangeAccountCreationMethods
              */
             this.ACCOUNT_CREATION_METHODS = {
-                ADDING: this.translator.tr("exchange_accountCreationMethods_adding"),
-                ORDERING: this.translator.tr("exchange_accountCreationMethods_ordering")
+                ADDING: this.$translate.instant("exchange_accountCreationMethods_adding"),
+                ORDERING: this.$translate.instant("exchange_accountCreationMethods_ordering")
             };
 
             /**
@@ -28,7 +28,7 @@ angular
                  * Prepaid contract services can order new empty (configureme.me) accounts
                  */
                 PREPAID: {
-                    displayValue: this.translator.tr("exchange_contractTypes_prepaid"),
+                    displayValue: this.$translate.instant("exchange_contractTypes_prepaid"),
                     accountCreationMethod: this.ACCOUNT_CREATION_METHODS.ADDING
                 },
 
@@ -36,7 +36,7 @@ angular
                  * Pay as you go services can add new functionnal (not configureme.me) accounts
                  */
                 PAY_AS_YOU_GO: {
-                    displayValue: this.translator.tr("exchange_contractTypes_payAsYouGo"),
+                    displayValue: this.$translate.instant("exchange_contractTypes_payAsYouGo"),
                     accountCreationMethod: this.ACCOUNT_CREATION_METHODS.ORDERING
                 }
             };

@@ -40,7 +40,7 @@ angular
                     this.contacts = contacts;
                 })
                 .catch((data) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_EXTERNAL_CONTACTS_configuration_contact_delete_fail"), data);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_EXTERNAL_CONTACTS_configuration_contact_delete_fail"), data);
                 })
                 .finally(() => {
                     this.contactsLoading = false;

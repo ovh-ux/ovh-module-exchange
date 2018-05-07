@@ -2,14 +2,14 @@
     const PREFERENCE_CHECKPOINT = "WIZARD_HOSTED_CREATION_CHECKPOINT";
 
     class controller {
-        constructor (Exchange, messaging, navigation, ovhUserPref, $rootScope, $timeout, translator, wizardHostedCreationDomainConfiguration) {
+        constructor (Exchange, messaging, navigation, ovhUserPref, $rootScope, $timeout, $translate, wizardHostedCreationDomainConfiguration) {
             this.Exchange = Exchange;
             this.messaging = messaging;
             this.navigation = navigation;
             this.ovhUserPref = ovhUserPref;
             this.$rootScope = $rootScope;
             this.$timeout = $timeout;
-            this.translator = translator;
+            this.$translate = $translate;
             this.wizardHostedCreationDomainConfiguration = wizardHostedCreationDomainConfiguration;
         }
 

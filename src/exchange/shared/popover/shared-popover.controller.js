@@ -1,13 +1,13 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeToolboxSharedCtrl", class ExchangeToolboxSharedCtrl {
-        constructor ($scope, Exchange, messaging, navigation, translator, exchangeStates) {
+        constructor ($scope, Exchange, messaging, navigation, $translate, exchangeStates) {
             this.services = {
                 $scope,
                 Exchange,
                 messaging,
                 navigation,
-                translator,
+                $translate,
                 exchangeStates
             };
         }

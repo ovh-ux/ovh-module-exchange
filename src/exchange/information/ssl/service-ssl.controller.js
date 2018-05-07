@@ -1,13 +1,13 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeSslRenewCtrl", class ExchangeSslRenewCtrl {
-        constructor ($scope, Exchange, messaging, navigation, translator) {
+        constructor ($scope, Exchange, messaging, navigation, $translate) {
             this.services = {
                 $scope,
                 Exchange,
                 messaging,
                 navigation,
-                translator
+                $translate
             };
         }
 
@@ -36,7 +36,7 @@ angular
                 })
                 .catch((failure) => {
                     this.services.navigation.resetAction();
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_renew_ssl_dcv_failure"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_renew_ssl_dcv_failure"), failure);
                 });
         }
 
@@ -45,10 +45,10 @@ angular
                 .Exchange
                 .renewSsl(this.$routerParams.organization, this.$routerParams.productId, this.model.name)
                 .then((data) => {
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_ACTION_renew_ssl_success", [this.model.displayName]), data);
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_ACTION_renew_ssl_success", { t0: this.model.displayName }), data);
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_renew_ssl_failure"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_renew_ssl_failure"), failure);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();

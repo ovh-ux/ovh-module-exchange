@@ -1,13 +1,13 @@
 angular.module("Module.exchange.controllers")
     .controller("ExchangeTabPublicFolderPermissionsCtrl", class ExchangeTabPublicFolderPermissionsCtrl {
-        constructor ($scope, Exchange, ExchangePublicFolders, messaging, navigation, translator) {
+        constructor ($scope, Exchange, ExchangePublicFolders, messaging, navigation, $translate) {
             this.services = {
                 $scope,
                 Exchange,
                 ExchangePublicFolders,
                 messaging,
                 navigation,
-                translator
+                $translate
             };
 
             this.$routerParams = Exchange.getParams();
@@ -43,7 +43,7 @@ angular.module("Module.exchange.controllers")
                 .then((accounts) => {
                     this.permissionsList = accounts;
                 }).catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ACCOUNTS_error_message"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_ACCOUNTS_error_message"), failure);
                     this.permissionsError = true;
                 })
                 .finally(() => {

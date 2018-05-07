@@ -1,13 +1,13 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeTabGroupAliasCtrl", class ExchangeTabGroupAliasCtrl {
-        constructor ($scope, Exchange, navigation, messaging, translator, exchangeStates) {
+        constructor ($scope, Exchange, navigation, messaging, $translate, exchangeStates) {
             this.services = {
                 $scope,
                 Exchange,
                 navigation,
                 messaging,
-                translator,
+                $translate,
                 exchangeStates
             };
 
@@ -36,7 +36,7 @@ angular
                     };
                     return this.aliasesParams.results;
                 })
-                .catch((err) => this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ALIAS_error_message"), err));
+                .catch((err) => this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_ALIAS_error_message"), err));
         }
 
         refreshList () {
@@ -51,7 +51,7 @@ angular
                         this.aliases.splice(i, 1);
                     }
                 })
-                .catch((err) => this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ALIAS_error_message"), err));
+                .catch((err) => this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_ALIAS_error_message"), err));
         }
 
         hide () {
@@ -75,7 +75,7 @@ angular
 
         getAddAliasTooltip () {
             if (_.has(this.services.navigation.selectedGroup, "aliases") && this.services.navigation.selectedGroup.aliases >= this.aliasMaxLimit) {
-                return this.services.translator.tr("exchange_tab_ALIAS_add_alias_limit_tooltip");
+                return this.services.$translate.instant("exchange_tab_ALIAS_add_alias_limit_tooltip");
             }
 
             return null;

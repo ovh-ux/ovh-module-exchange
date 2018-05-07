@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeResourceDelegationCtrl", class ExchangeResourceDelegationCtrl {
-        constructor ($scope, Exchange, ExchangeResources, $timeout, messaging, navigation, translator) {
+        constructor ($scope, Exchange, ExchangeResources, $timeout, messaging, navigation, $translate) {
             this.services = {
                 $scope,
                 Exchange,
@@ -9,7 +9,7 @@ angular
                 $timeout,
                 messaging,
                 navigation,
-                translator
+                $translate
             };
 
             this.$routerParams = Exchange.getParams();
@@ -126,16 +126,16 @@ angular
         }
 
         updateDelegationRight () {
-            this.services.messaging.writeSuccess(this.services.translator.tr("exchange_RESOURCES_delegation_doing_message"));
+            this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_RESOURCES_delegation_doing_message"));
 
             this.services
                 .ExchangeResources
                 .updateResourceDelegation(this.$routerParams.organization, this.$routerParams.productId, this.resource.resourceEmailAddress, this.getChanges())
                 .then((data) => {
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_RESOURCES_delegation_success_message"), data);
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_RESOURCES_delegation_success_message"), data);
                 })
                 .catch((err) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_RESOURCES_delegation_error_message"), err);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_RESOURCES_delegation_error_message"), err);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();
@@ -166,7 +166,7 @@ angular
                     }
                 })
                 .catch((err) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_RESOURCES_delegation_loading_error_message"), err);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_RESOURCES_delegation_loading_error_message"), err);
                 })
                 .finally(() => {
                     this.loading = false;

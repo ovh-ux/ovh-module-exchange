@@ -1,14 +1,14 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeActivateOutlookCtrl", class ExchangeActivateOutlookCtrl {
-        constructor ($scope, Exchange, exchangeAccountOutlook, navigation, messaging, translator) {
+        constructor ($scope, Exchange, exchangeAccountOutlook, navigation, messaging, $translate) {
             this.services = {
                 $scope,
                 Exchange,
                 exchangeAccountOutlook,
                 navigation,
                 messaging,
-                translator
+                $translate
             };
 
             this.$routerParams = Exchange.getParams();
@@ -24,10 +24,10 @@ angular
                     primaryEmailAddress: this.account.primaryEmailAddress
                 })
                 .then(() => {
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_ACTION_update_account_success_message"));
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_ACTION_update_account_success_message"));
                 })
                 .catch((error) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_common_error"), error);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_common_error"), error);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();

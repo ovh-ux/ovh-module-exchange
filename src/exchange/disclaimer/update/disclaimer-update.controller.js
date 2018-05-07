@@ -1,13 +1,13 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeUpdateDisclaimerCtrl", class ExchangeUpdateDisclaimerCtrl {
-        constructor ($scope, Exchange, navigation, messaging, translator) {
+        constructor ($scope, Exchange, navigation, messaging, $translate) {
             this.services = {
                 $scope,
                 Exchange,
                 navigation,
                 messaging,
-                translator
+                $translate
             };
 
             this.$routerParams = Exchange.getParams();
@@ -54,16 +54,16 @@ angular
                 content: this.data.content
             };
 
-            this.services.messaging.writeSuccess(this.services.translator.tr("exchange_dashboard_action_doing"));
+            this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_dashboard_action_doing"));
 
             this.services
                 .Exchange
                 .updateDisclaimer(this.$routerParams.organization, this.$routerParams.productId, model)
                 .then((data) => {
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_ACTION_update_disclaimer_success_message"), data);
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_ACTION_update_disclaimer_success_message"), data);
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_update_disclaimer_error_message"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_update_disclaimer_error_message"), failure);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();

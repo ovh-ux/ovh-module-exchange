@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeUpdatePublicFolderPermissionCtrl", class ExchangeUpdatePublicFolderPermissionCtrl {
-        constructor ($scope, Exchange, ExchangePublicFolders, $timeout, navigation, messaging, translator, exchangeStates) {
+        constructor ($scope, Exchange, ExchangePublicFolders, $timeout, navigation, messaging, $translate, exchangeStates) {
             this.services = {
                 $scope,
                 Exchange,
@@ -9,7 +9,7 @@ angular
                 $timeout,
                 navigation,
                 messaging,
-                translator,
+                $translate,
                 exchangeStates
             };
 
@@ -60,7 +60,7 @@ angular
                 })
                 .catch((failure) => {
                     this.services.navigation.resetAction();
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_SHARED_all_error_message"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_SHARED_all_error_message"), failure);
                 })
                 .finally(() => {
                     this.isLoading = false;
@@ -195,7 +195,7 @@ angular
 
         updatingPermissions () {
             this.services.navigation.resetAction();
-            this.services.messaging.writeSuccess(this.services.translator.tr("exchange_dashboard_action_doing"));
+            this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_dashboard_action_doing"));
 
             const model = [];
 
@@ -216,15 +216,23 @@ angular
                 .updatingPublicFolderPermissions(this.$routerParams.organization, this.$routerParams.productId, this.folder.path, model)
                 .then((data) => {
                     const updatePermissionsMessages = {
-                        OK: this.services.translator.tr("exchange_action_SHARED_permissions_update_success_message", this.folder.path),
-                        PARTIAL: this.services.translator.tr("exchange_action_SHARED_permissions_update_partial_message", this.folder.path),
-                        ERROR: this.services.translator.tr("exchange_action_SHARED_permissions_update_error_message", this.folder.path)
+                        OK: this.services.$translate.instant("exchange_action_SHARED_permissions_update_success_message", {
+                            t0: this.folder.path
+                        }),
+                        PARTIAL: this.services.$translate.instant("exchange_action_SHARED_permissions_update_partial_message", {
+                            t0: this.folder.path
+                        }),
+                        ERROR: this.services.$translate.instant("exchange_action_SHARED_permissions_update_error_message", {
+                            t0: this.folder.path
+                        })
                     };
 
                     this.services.messaging.setMessage(updatePermissionsMessages, data);
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_action_SHARED_permissions_update_error_message", this.folder.path), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_action_SHARED_permissions_update_error_message", {
+                        t0: this.folder.path
+                    }), failure);
                 });
         }
     });

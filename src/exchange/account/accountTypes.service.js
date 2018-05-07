@@ -1,10 +1,10 @@
 angular
     .module("Module.exchange.services")
     .service("exchangeAccountTypes", class ExchangeAccountTypes {
-        constructor (exchangeServiceInfrastructure, exchangeVersion, translator) {
+        constructor (exchangeServiceInfrastructure, exchangeVersion, $translate) {
             this.exchangeServiceInfrastructure = exchangeServiceInfrastructure;
             this.exchangeVersion = exchangeVersion;
-            this.translator = translator;
+            this.$translate = $translate;
 
             this.TYPES = {
                 BASIC: "BASIC",
@@ -27,13 +27,13 @@ angular
                     throw "Current service doesn't allow Basic account types";
                 }
 
-                return this.exchangeServiceInfrastructure.isDedicatedCluster() ? this.translator.tr("exchange_accounts_types_dedicatedCluster_BASIC") : this.translator.tr("exchange_accounts_types_2010_BASIC");
+                return this.exchangeServiceInfrastructure.isDedicatedCluster() ? this.$translate.instant("exchange_accounts_types_dedicatedCluster_BASIC") : this.$translate.instant("exchange_accounts_types_2010_BASIC");
 
             case this.TYPES.STANDARD:
-                return this.exchangeServiceInfrastructure.isDedicatedCluster() ? this.translator.tr("exchange_accounts_types_dedicatedCluster_STANDARD") : this.translator.tr("exchange_accounts_types_2010_STANDARD");
+                return this.exchangeServiceInfrastructure.isDedicatedCluster() ? this.$translate.instant("exchange_accounts_types_dedicatedCluster_STANDARD") : this.$translate.instant("exchange_accounts_types_2010_STANDARD");
 
             case this.TYPES.ENTERPRISE:
-                return this.translator.tr("exchange_accounts_types_2010_ENTERPRISE");
+                return this.$translate.instant("exchange_accounts_types_2010_ENTERPRISE");
 
             default:
                 throw `Unknown account type ${accountType}`;

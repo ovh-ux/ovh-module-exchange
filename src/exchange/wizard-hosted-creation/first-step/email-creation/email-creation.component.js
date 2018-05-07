@@ -1,11 +1,11 @@
 {
     class controller {
-        constructor (Exchange, exchangeStates, messaging, navigation, translator, $rootScope, $scope, $timeout, wizardHostedCreationDomainConfiguration, wizardHostedCreationEmailCreation) {
+        constructor (Exchange, exchangeStates, messaging, navigation, $translate, $rootScope, $scope, $timeout, wizardHostedCreationDomainConfiguration, wizardHostedCreationEmailCreation) {
             this.Exchange = Exchange;
             this.exchangeStates = exchangeStates;
             this.messaging = messaging;
             this.navigation = navigation;
-            this.translator = translator;
+            this.$translate = $translate;
             this.$rootScope = $rootScope;
             this.$scope = $scope;
             this.$timeout = $timeout;
@@ -59,7 +59,7 @@
                     this.homepage.numberOfAvailableAccounts = this.homepage.availableAccounts.length;
                 })
                 .catch((error) => {
-                    this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_configureDNSZone_availableAccountsRetrieval_error"), error);
+                    this.messaging.writeError(this.$translate.instant("exchange_wizardHostedCreation_configureDNSZone_availableAccountsRetrieval_error"), error);
                 });
         }
 
@@ -74,7 +74,7 @@
                     return this.retrievingAvailableEmailAccounts();
                 })
                 .catch((error) => {
-                    this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_configureDNSZone_availableAccountsRetrieval_error"), error);
+                    this.messaging.writeError(this.$translate.instant("exchange_wizardHostedCreation_configureDNSZone_availableAccountsRetrieval_error"), error);
                 })
                 .finally(() => {
                     this.isLoading = false;

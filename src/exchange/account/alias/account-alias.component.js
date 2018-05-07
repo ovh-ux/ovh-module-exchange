@@ -1,6 +1,6 @@
 {
     class ExchangeAccountAliasController {
-        constructor ($scope, Exchange, exchangeAccount, exchangeStates, navigation, messaging, translator) {
+        constructor ($scope, Exchange, exchangeAccount, exchangeStates, navigation, messaging, $translate) {
             this.$scope = $scope;
 
             this.Exchange = Exchange;
@@ -8,7 +8,7 @@
             this.exchangeStates = exchangeStates;
             this.navigation = navigation;
             this.messaging = messaging;
-            this.translator = translator;
+            this.$translate = $translate;
         }
 
         $onInit () {
@@ -35,7 +35,7 @@
                     };
                 })
                 .catch((error) => {
-                    this.messaging.writeError(this.translator.tr("exchange_tab_ALIAS_error_message"), error);
+                    this.messaging.writeError(this.$translate.instant("exchange_tab_ALIAS_error_message"), error);
                     this.hide();
                 });
         }
@@ -52,7 +52,7 @@
                     }
                 })
                 .catch((error) => {
-                    this.messaging.writeError(this.translator.tr("exchange_tab_ALIAS_error_message"), error);
+                    this.messaging.writeError(this.$translate.instant("exchange_tab_ALIAS_error_message"), error);
                     this.hide();
                 });
         }
@@ -75,7 +75,9 @@
 
         getAddAliasTooltip () {
             if (_(this.aliases).get("length", 0) >= this.aliasMaxLimit) {
-                return this.translator.tr("exchange_tab_ALIAS_add_alias_limit_tooltip", this.aliasMaxLimit);
+                return this.$translate.instant("exchange_tab_ALIAS_add_alias_limit_tooltip", {
+                    t0: this.aliasMaxLimit
+                });
             }
 
             return null;

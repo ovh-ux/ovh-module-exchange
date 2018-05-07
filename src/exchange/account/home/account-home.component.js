@@ -1,6 +1,6 @@
 {
     class ExchangeAccountHomeController {
-        constructor ($filter, $scope, Exchange, exchangeAccount, exchangeAccountTypes, exchangeAccountOutlook, exchangeSelectedService, exchangeStates, messaging, navigation, officeAttach, translator) {
+        constructor ($filter, $scope, Exchange, exchangeAccount, exchangeAccountTypes, exchangeAccountOutlook, exchangeSelectedService, exchangeStates, messaging, navigation, officeAttach, $translate) {
             this.$filter = $filter;
             this.$scope = $scope;
 
@@ -13,7 +13,7 @@
             this.messaging = messaging;
             this.navigation = navigation;
             this.officeAttach = officeAttach;
-            this.translator = translator;
+            this.$translate = $translate;
         }
 
         $onInit () {
@@ -69,7 +69,7 @@
                     this.userCanSubscribeToOfficeAttach = !userHasAlreadySubscribed;
                 })
                 .catch((error) => {
-                    this.messaging.writeError(this.translator.tr("exchange_accounts_fetchOfficeAttachError_error"), error);
+                    this.messaging.writeError(this.$translate.instant("exchange_accounts_fetchOfficeAttachError_error"), error);
                 });
         }
 
@@ -83,7 +83,7 @@
                         .value();
                 })
                 .catch((error) => {
-                    this.messaging.writeError(this.translator.tr("exchange_accounts_fetchAccountCreationOptions_error"), error);
+                    this.messaging.writeError(this.$translate.instant("exchange_accounts_fetchAccountCreationOptions_error"), error);
                 });
         }
 
@@ -107,7 +107,7 @@
                     }
                 })
                 .catch((error) => {
-                    this.messaging.writeError(this.translator.tr("exchange_accounts_fetchAccounts_error"), error);
+                    this.messaging.writeError(this.$translate.instant("exchange_accounts_fetchAccounts_error"), error);
                 });
         }
 
@@ -139,7 +139,7 @@
                     };
                 })
                 .catch((error) => {
-                    this.messaging.writeError(this.translator.tr("exchange_accounts_fetchAccounts_error"), error);
+                    this.messaging.writeError(this.$translate.instant("exchange_accounts_fetchAccounts_error"), error);
                 })
                 .finally(() => {
                     this.initialAccountRetrieval = false;
@@ -172,7 +172,7 @@
             function transformSizeData (account) {
                 return {
                     usage: Math.round(account.currentUsage / Math.pow(1024, 2) * 100 / account.quota), // eslint-disable-line no-restricted-properties
-                    progressionText: `${account.usedQuota.value} ${this.translator.tr(`unit_size_${account.usedQuota.unit}`)} / ${account.totalQuota.value} ${this.translator.tr(`unit_size_${account.totalQuota.unit}`)}`
+                    progressionText: `${account.usedQuota.value} ${this.$translate.instant(`unit_size_${account.usedQuota.unit}`)} / ${account.totalQuota.value} ${this.$translate.instant(`unit_size_${account.totalQuota.unit}`)}`
                 };
             }
 
@@ -188,32 +188,32 @@
 
                 return {
                     status,
-                    displayValue: this.translator.tr(`exchange_tab_accounts_table_outlook_${accountOutlookStatus}`)
+                    displayValue: this.$translate.instant(`exchange_tab_accounts_table_outlook_${accountOutlookStatus}`)
                 };
             }
 
             function chooseStatusText (account) {
                 if (this.exchangeStates.constructor.isDeleting(account)) {
-                    return this.exchangeAccount.CAN_DO.DESTRUCTION_METHOD.DELETING() ? this.translator.tr("exchange_tab_ACCOUNTS_state_DELETING") : this.translator.tr("exchange_tab_ACCOUNTS_state_RESETTING");
+                    return this.exchangeAccount.CAN_DO.DESTRUCTION_METHOD.DELETING() ? this.$translate.instant("exchange_tab_ACCOUNTS_state_DELETING") : this.$translate.instant("exchange_tab_ACCOUNTS_state_RESETTING");
                 }
 
                 if (account.spamDetected) {
-                    return this.translator.tr("exchange_tab_ACCOUNTS_state_BLOCKED");
+                    return this.$translate.instant("exchange_tab_ACCOUNTS_state_BLOCKED");
                 }
 
                 if (this.exchangeAccount.isPlaceholder(account)) {
-                    return this.translator.tr("exchange_tab_ACCOUNTS_state_TO_CONFIGURE");
+                    return this.$translate.instant("exchange_tab_ACCOUNTS_state_TO_CONFIGURE");
                 }
 
                 if (this.exchangeStates.isValidState(account.state)) {
-                    return this.translator.tr(`exchange_tab_ACCOUNTS_state_${_(account.state).snakeCase().toUpperCase()}`);
+                    return this.$translate.instant(`exchange_tab_ACCOUNTS_state_${_(account.state).snakeCase().toUpperCase()}`);
                 }
 
                 if (_(account.taskPendingId).isNumber() && account.taskPendingId !== 0) {
-                    return this.translator.tr("exchange_tab_ACCOUNTS_state_TASK_ON_DOING");
+                    return this.$translate.instant("exchange_tab_ACCOUNTS_state_TASK_ON_DOING");
                 }
 
-                return this.translator.tr("exchange_tab_ACCOUNTS_state_UNKNOWN");
+                return this.$translate.instant("exchange_tab_ACCOUNTS_state_UNKNOWN");
             }
         }
 

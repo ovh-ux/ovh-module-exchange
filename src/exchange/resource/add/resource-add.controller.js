@@ -1,13 +1,13 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeAddResourceController", class ExchangeAddResourceController {
-        constructor ($scope, Exchange, ExchangeResources, navigation, translator, messaging) {
+        constructor ($scope, Exchange, ExchangeResources, navigation, $translate, messaging) {
             this.services = {
                 $scope,
                 Exchange,
                 ExchangeResources,
                 navigation,
-                translator,
+                $translate,
                 messaging
             };
 
@@ -44,27 +44,27 @@ angular
                         this.model.resourceEmailDomain = this.availableDomains[0];
                     } else {
                         this.services.navigation.resetAction();
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_tab_RESOURCES_no_domain_warning"), data);
+                        this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_RESOURCES_no_domain_warning"), data);
                     }
                 })
                 .catch((failure) => {
                     this.services.navigation.resetAction();
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_RESOURCES_add_resource_failure"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_RESOURCES_add_resource_failure"), failure);
                 });
         }
 
         addResource () {
-            this.services.messaging.writeSuccess(this.services.translator.tr("exchange_dashboard_action_doing"));
+            this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_dashboard_action_doing"));
             this.prepareModel();
 
             return this.services
                 .ExchangeResources
                 .addResource(this.$routerParams.organization, this.$routerParams.productId, this.model)
                 .then((data) => {
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_tab_RESOURCES_add_resource_success"), data);
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_tab_RESOURCES_add_resource_success"), data);
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_RESOURCES_add_resource_failure"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_RESOURCES_add_resource_failure"), failure);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();

@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeUpdateAccountCtrl", class ExchangeUpdateAccountCtrl {
-        constructor ($scope, exchangeAccountOutlook, exchangeAccountTypes, exchangeServiceInfrastructure, Exchange, ExchangePassword, exchangeVersion, messaging, navigation, translator) {
+        constructor ($scope, exchangeAccountOutlook, exchangeAccountTypes, exchangeServiceInfrastructure, Exchange, ExchangePassword, exchangeVersion, messaging, navigation, $translate) {
             this.services = {
                 $scope,
                 exchangeAccountOutlook,
@@ -12,7 +12,7 @@ angular
                 exchangeVersion,
                 messaging,
                 navigation,
-                translator
+                $translate
             };
 
             this.$routerParams = Exchange.getParams();
@@ -94,21 +94,21 @@ angular
 
             if (messages.length === 1) {
                 if (messages[0].type === "INFO") {
-                    updateAccountMessages.OK = this.services.translator.tr("exchange_ACTION_update_account_success_message");
+                    updateAccountMessages.OK = this.services.$translate.instant("exchange_ACTION_update_account_success_message");
                 } else if (messages[0].type === "ERROR") {
-                    updateAccountMessages.ERROR = this.services.translator.tr("exchange_ACTION_update_account_error_message");
+                    updateAccountMessages.ERROR = this.services.$translate.instant("exchange_ACTION_update_account_error_message");
                 }
             } else if (messages.length === 2) {
                 if (messages[0].type === messages[1].type) {
                     if (messages[0].type === "INFO") {
-                        updateAccountMessages.OK = this.services.translator.tr("exchange_ACTION_update_account_success_message");
+                        updateAccountMessages.OK = this.services.$translate.instant("exchange_ACTION_update_account_success_message");
                     } else if (messages[0].type === "ERROR") {
-                        updateAccountMessages.ERROR = this.services.translator.tr("exchange_ACTION_update_account_error_message");
+                        updateAccountMessages.ERROR = this.services.$translate.instant("exchange_ACTION_update_account_error_message");
                     }
                 } else if (messages[0].message === this.services.Exchange.updateAccountAction) {
-                    updateAccountMessages.PARTIAL = `${this.services.translator.tr("exchange_ACTION_update_account_success_message")} ${this.services.translator.tr("exchange_ACTION_change_password_account_error_message_linked")}`;
+                    updateAccountMessages.PARTIAL = `${this.services.$translate.instant("exchange_ACTION_update_account_success_message")} ${this.services.$translate.instant("exchange_ACTION_change_password_account_error_message_linked")}`;
                 } else {
-                    updateAccountMessages.PARTIAL = `${this.services.translator.tr("exchange_ACTION_change_password_account_success_message")} ${this.services.translator.tr("exchange_ACTION_update_account_error_message_linked")}`;
+                    updateAccountMessages.PARTIAL = `${this.services.$translate.instant("exchange_ACTION_change_password_account_success_message")} ${this.services.$translate.instant("exchange_ACTION_update_account_error_message_linked")}`;
                 }
             }
 
@@ -162,7 +162,7 @@ angular
 
                     if (selectedAccount.samaccountName && _.includes(selectedAccount.password, selectedAccount.samaccountName)) {
                         if (!this.containsSamAccountNameLabel) {
-                            this.containsSamAccountNameLabel = this.services.translator.tr("exchange_ACTION_update_account_step1_password_contains_samaccount_name", [selectedAccount.samaccountName]);
+                            this.containsSamAccountNameLabel = this.services.$translate.instant("exchange_ACTION_update_account_step1_password_contains_samaccount_name", { t0: selectedAccount.samaccountName });
                         }
 
                         this.containsSamAccountNameFlag = true;
@@ -211,7 +211,7 @@ angular
         }
 
         getPasswordPlaceholder () {
-            return this.selectedAccount.canBeConfigured ? this.services.translator.tr("exchange_ACTION_update_account_step1_password_placeholder") : " ";
+            return this.selectedAccount.canBeConfigured ? this.services.$translate.instant("exchange_ACTION_update_account_step1_password_placeholder") : " ";
         }
 
         shouldDisplaySharepointPasswordWarning () {
@@ -244,9 +244,9 @@ angular
                     this.takenEmails = data.takenEmails;
 
                     if (_.isEmpty(data.availableDomains)) {
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_add_no_domains"));
+                        this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_add_no_domains"));
                         this.services.navigation.resetAction();
-                        this.noDomainMessage = this.services.translator.tr("exchange_ACTION_add_no_domains");
+                        this.noDomainMessage = this.services.$translate.instant("exchange_ACTION_add_no_domains");
 
                         this.error = true;
                     } else {
@@ -255,12 +255,12 @@ angular
                     }
 
                     this.passwordTooltip = this.newAccountOptions.passwordComplexityEnabled ?
-                        this.services.translator.tr("exchange_ACTION_update_account_step1_complex_password_tooltip", [this.newAccountOptions.minPasswordLength]) :
-                        this.services.translator.tr("exchange_ACTION_update_account_step1_simple_password_tooltip", [this.newAccountOptions.minPasswordLength]);
+                        this.services.$translate.instant("exchange_ACTION_update_account_step1_complex_password_tooltip", { t0: this.newAccountOptions.minPasswordLength }) :
+                        this.services.$translate.instant("exchange_ACTION_update_account_step1_simple_password_tooltip", { t0: this.newAccountOptions.minPasswordLength });
 
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_add_account_option_fail"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_add_account_option_fail"), failure);
                     this.services.navigation.resetAction();
                 });
         }
@@ -274,7 +274,7 @@ angular
                         this.services.messaging.setMessage(this.getActionMessage(data.messages), data);
                     })
                     .catch((failure) => {
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_common_error"), failure);
+                        this.services.messaging.writeError(this.services.$translate.instant("exchange_common_error"), failure);
                     })
                     .finally(() => {
                         this.services.navigation.resetAction();

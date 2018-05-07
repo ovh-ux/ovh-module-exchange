@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("exchangeLicenseHistoryCtrl", class ExchangeLicenseHistoryCtrl {
-        constructor ($scope, ChartjsFactory, Exchange, exchangeAccountTypes, exchangeHeaderLicence, messaging, navigation, translator) {
+        constructor ($scope, ChartjsFactory, Exchange, exchangeAccountTypes, exchangeHeaderLicence, messaging, navigation, $translate) {
             this.$scope = $scope;
 
             this.ChartjsFactory = ChartjsFactory;
@@ -10,7 +10,7 @@ angular
             this.exchangeHeaderLicence = exchangeHeaderLicence;
             this.messaging = messaging;
             this.navigation = navigation;
-            this.translator = translator;
+            this.$translate = $translate;
         }
 
         $onInit () {
@@ -90,23 +90,29 @@ angular
                         }
                     };
 
-                    this.chart.addSerie(this.translator.tr("exchange_action_license_history_type_outlook"), licenses.outlook, serieOptions);
+                    this.chart.addSerie(this.$translate.instant("exchange_action_license_history_type_outlook"), licenses.outlook, serieOptions);
 
                     if (_(licenses.standard).isArray()) {
-                        this.chart.addSerie(this.translator.tr("exchange_action_license_history_label", [this.exchangeAccountTypes.getDisplayValue(this.exchangeAccountTypes.TYPES.STANDARD)]), licenses.standard, serieOptions);
+                        this.chart.addSerie(this.$translate.instant("exchange_action_license_history_label", {
+                            t0: this.exchangeAccountTypes.getDisplayValue(this.exchangeAccountTypes.TYPES.STANDARD)
+                        }), licenses.standard, serieOptions);
                     }
 
                     if (_(licenses.basic).isArray()) {
-                        this.chart.addSerie(this.translator.tr("exchange_action_license_history_label", [this.exchangeAccountTypes.getDisplayValue(this.exchangeAccountTypes.TYPES.BASIC)]), licenses.basic, serieOptions);
+                        this.chart.addSerie(this.$translate.instant("exchange_action_license_history_label", {
+                            t0: this.exchangeAccountTypes.getDisplayValue(this.exchangeAccountTypes.TYPES.BASIC)
+                        }), licenses.basic, serieOptions);
                     }
 
                     if (_(licenses.enterprise).isArray()) {
-                        this.chart.addSerie(this.translator.tr("exchange_action_license_history_label", [this.exchangeAccountTypes.getDisplayValue(this.exchangeAccountTypes.TYPES.ENTERPRISE)]), licenses.enterprise, serieOptions);
+                        this.chart.addSerie(this.$translate.instant("exchange_action_license_history_label", {
+                            t0: this.exchangeAccountTypes.getDisplayValue(this.exchangeAccountTypes.TYPES.ENTERPRISE)
+                        }), licenses.enterprise, serieOptions);
                     }
                 })
                 .catch((error) => {
                     this.navigation.resetAction();
-                    this.messaging.writeError(this.translator.tr("exchange_action_license_history_fail"), error);
+                    this.messaging.writeError(this.$translate.instant("exchange_action_license_history_fail"), error);
                 })
                 .finally(() => {
                     this.loading = false;

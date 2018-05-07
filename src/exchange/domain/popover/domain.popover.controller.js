@@ -1,12 +1,12 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeToolboxDomainsCtrl", class ExchangeToolboxDomainsCtrl {
-        constructor ($scope, Exchange, navigation, translator, messaging, exchangeVersion, exchangeStates, exchangeServiceInfrastructure) {
+        constructor ($scope, Exchange, navigation, $translate, messaging, exchangeVersion, exchangeStates, exchangeServiceInfrastructure) {
             this.services = {
                 $scope,
                 Exchange,
                 navigation,
-                translator,
+                $translate,
                 messaging,
                 exchangeVersion,
                 exchangeStates,
@@ -27,6 +27,6 @@ angular
         }
 
         getDeleteTooltip (domain) {
-            return this.isDeleteDisabled(domain) ? this.services.translator.tr("exchange_tab_domain_delete_domain_accounts_warning") : "";
+            return this.isDeleteDisabled(domain) ? this.services.$translate.instant("exchange_tab_domain_delete_domain_accounts_warning") : "";
         }
     });

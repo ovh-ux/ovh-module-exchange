@@ -1,26 +1,26 @@
 angular
     .module("Module.exchange.services")
     .service("exchangeHeaderLicence", class ExchangeHeaderLicence {
-        constructor (exchangeAccountTypes, OvhHttp, translator) {
+        constructor (exchangeAccountTypes, OvhHttp, $translate) {
             this.exchangeAccountTypes = exchangeAccountTypes;
             this.OvhHttp = OvhHttp;
-            this.translator = translator;
+            this.$translate = $translate;
 
             this.PERIODS = {
                 LAST_WEEK: {
-                    displayValue: translator.tr("exchange_action_license_history_period_LASTWEEK"),
+                    displayValue: $translate.instant("exchange_action_license_history_period_LASTWEEK"),
                     date: moment().subtract(1, "weeks").utc().format()
                 },
                 LAST_MONTH: {
-                    displayValue: translator.tr("exchange_action_license_history_period_LASTMONTH"),
+                    displayValue: $translate.instant("exchange_action_license_history_period_LASTMONTH"),
                     date: moment().subtract(1, "months").utc().format()
                 },
                 LAST_3_MONTHS: {
-                    displayValue: translator.tr("exchange_action_license_history_period_LAST3MONTHS"),
+                    displayValue: $translate.instant("exchange_action_license_history_period_LAST3MONTHS"),
                     date: moment().subtract(3, "months").utc().format()
                 },
                 LAST_YEAR: {
-                    displayValue: translator.tr("exchange_action_license_history_period_LASTYEAR"),
+                    displayValue: $translate.instant("exchange_action_license_history_period_LASTYEAR"),
                     date: moment().subtract(1, "years").utc().format()
                 }
             };
