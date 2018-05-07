@@ -147,7 +147,7 @@
                         <td colspan="3" >
                             <span class="a fa-exclamation-triangle mr-2" aria-hidden="true"></span>
                             <span data-ng-bind="account.id"
-                                  data-uib-tooltip="{{tr('exchange_GROUPS_partial_account', [account.message])}}"></span>
+                                  data-uib-tooltip="{{ 'exchange_GROUPS_partial_account' | translate: { t0: account.message } }}"></span>
                         </td>
                     </tr>
                 </tbody>

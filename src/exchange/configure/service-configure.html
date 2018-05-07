@@ -82,7 +82,7 @@
                          data-ng-repeat="(type, isError) in ctrl.serviceForm.lockoutDuration.$error track by $index"
                          data-ng-if="ctrl.service.lockoutThreshold !== 0">
                         <small class="help-block"
-                               data-ng-bind="tr('lockoutDuration_' + type + '_error', [service.lockoutObservationWindow])"
+                               data-ng-bind="('lockoutDuration_' + type + '_error') | translate: { t0: service.lockoutObservationWindow })"
                                data-ng-if="isError">
                         </small>
                     </div>

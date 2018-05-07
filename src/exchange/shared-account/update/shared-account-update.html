@@ -49,11 +49,11 @@
                                data-ng-min="ctrl.optionsToUpdateAccount.minQuota.value" min="{{ctrl.optionsToUpdateAccount.minQuota.value}}"
                                data-ng-max="ctrl.optionsToUpdateAccount.maxQuota.value" max="{{ctrl.optionsToUpdateAccount.maxQuota.value}}"
                                data-ng-model="ctrl.accountBeingUpdated.quota"
-                               data-uib-tooltip="{{tr('exchange_action_SHARED_add_quota_tooltip', [ctrl.optionsToUpdateAccount.maxQuota.value, ('unit_size_' + ctrl.optionsToUpdateAccount.maxQuota.unit) | translate])}}">
+                               data-uib-tooltip="{{ 'exchange_action_SHARED_add_quota_tooltip' | translate: { t0: ctrl.optionsToUpdateAccount.maxQuota.value, t1: (('unit_size_' + ctrl.optionsToUpdateAccount.maxQuota.unit) | translate) } }}">
                         <span class="input-group-addon" data-ng-bind="('unit_size_' + ctrl.optionsToUpdateAccount.maxQuota.unit) | translate"></span>
                     </div>
                     <small class="help-block" id="quotaDescription"
-                           data-ng-bind-html="tr('exchange_tab_ALIAS_creation_quota_description', [ctrl.optionsToUpdateAccount.minQuota.value, ('unit_size_' + ctrl.optionsToUpdateAccount.maxQuota.unit) | translate, ctrl.optionsToUpdateAccount.maxQuota.value])"></small>
+                           data-ng-bind-html="'exchange_tab_ALIAS_creation_quota_description' | translate: { t0: ctrl.optionsToUpdateAccount.minQuota.value, t1: (('unit_size_' + ctrl.optionsToUpdateAccount.maxQuota.unit) | translate), t2: ctrl.optionsToUpdateAccount.maxQuota.value }"></small>
                 </div>
 
                 <div class="form-group">

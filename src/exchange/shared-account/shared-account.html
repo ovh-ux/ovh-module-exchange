@@ -2,7 +2,7 @@
     <div class="row" data-ng-if="ctrl.showAccounts">
         <div class="col-md-9">
             <div data-ng-if="!loading && canDisplayQuota"
-                 data-ng-bind-html="tr('exchange_SHARED_ACCOUNTS_quota_recap', [ctrl.quotaLimit, quotaRemaining, quoteRemainingPercent])"></div>
+                 data-ng-bind-html="'exchange_SHARED_ACCOUNTS_quota_recap' | translation: { t0: ctrl.quotaLimit, t1: quotaRemaining, t2: quoteRemainingPercent }"></div>
 
             <p class="alert alert-info" role="alert"
                data-ng-if="ctrl.accounts.list.messages.length > 0 && !ctrl.loading">
