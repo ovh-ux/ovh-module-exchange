@@ -164,7 +164,7 @@
                     <tr data-ng-repeat="account in (ctrl.bufferedAccounts.list.results | orderBy:'primaryEmailAddress':false) track by $index">
                         <td data-ng-bind="account.primaryEmailDisplayName"></td>
                         <td class="text-center"
-                            data-ng-bind="tr('exchange_update_billing_periode_value_'+ [account.renewPeriod])"></td>
+                            data-ng-bind="('exchange_update_billing_periode_value_' + account.renewPeriod) | translate"></td>
                     </tr>
                 </tbody>
             </table>

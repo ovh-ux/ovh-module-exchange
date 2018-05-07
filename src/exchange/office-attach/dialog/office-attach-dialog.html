@@ -90,7 +90,10 @@
                     </tbody>
                 </table>
 
-                <p data-ng-bind-html="tr('exchange_office_attached_alert_modale_selected_accounts', [$ctrl.numberOfSelectedCheckboxes, $ctrl.maxNumberOfAccounts])"
+                <p data-ng-bind-html="'exchange_office_attached_alert_modale_selected_accounts' | translate:{
+                    t0: $ctrl.numberOfSelectedCheckboxes,
+                    t1: $ctrl.maxNumberOfAccounts
+                }"
                    data-ng-if="!$ctrl.loading.step1.table && ($ctrl.accounts.list.results.length > 0 || $ctrl.accounts.list.messages.length > 0)">
                 </p>
 
@@ -110,7 +113,7 @@
             <oui-spinner data-ng-if="$ctrl.loading.step2.general"></oui-spinner>
 
             <div data-ng-if="!$ctrl.loading.step2.general">
-                <p data-ng-bind-html="tr('exchange_office_attached_alert_modale_confirmation_header', ['<strong>' + $ctrl.numberOfSelectedCheckboxes + '</strong>'])"></p>
+                <p data-ng-bind-html="'exchange_office_attached_alert_modale_confirmation_header' | translate:{ t0: '<strong>' + $ctrl.numberOfSelectedCheckboxes + '</strong>' }"></p>
 
                 <ul>
                     <li data-ng-repeat="account in $ctrl.loadSelectedAccounts() track by $index"
