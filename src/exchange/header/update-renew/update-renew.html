@@ -12,14 +12,14 @@
             <div class="alert alert-warning" role="alert"
                  data-ng-if="!ctrl.loading && ctrl.bufferedAccounts && ctrl.bufferedAccounts.list.messages.length > 0">
                 <div>
-                    <strong data-i18n-static="exchange_tab_ACCOUNTS_warning"></strong>
-                    <span data-i18n-static="exchange_tab_ACCOUNTS_partial"></span>
+                    <strong data-translate="exchange_tab_ACCOUNTS_warning"></strong>
+                    <span data-translate="exchange_tab_ACCOUNTS_partial"></span>
                 </div>
             </div>
 
             <form class="form-inline d-md-flex justify-content-md-end mb-3" name="searchAccountForm">
                 <label class="sr-only" for="accountSearch"
-                       data-i18n-static="common_search"></label>
+                       data-translate="common_search"></label>
                 <div class="input-group">
                     <input type="text" class="form-control" id="accountSearch" maxlength="256" name="accountSearch" placeholder="{{::i18n.exchange_tab_ACCOUNTS_table_email}}"
                            data-ng-change="ctrl.onSearchValueChange()"
@@ -42,8 +42,8 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col" data-i18n-static="exchange_tab_ACCOUNTS_table_email"></th>
-                        <th scope="col" data-i18n-static="exchange_update_billing_expiration_date_label"></th>
+                        <th scope="col" data-translate="exchange_tab_ACCOUNTS_table_email"></th>
+                        <th scope="col" data-translate="exchange_update_billing_expiration_date_label"></th>
                         <th scope="col"
                             data-ng-if="!(ctrl.services.exchangeServiceInfrastructure.isProvider() && ctrl.services.exchangeVersion.isVersion(2010))">
                             <input type="checkbox" class="mr-2"
@@ -51,7 +51,7 @@
                                    data-tsc-ids-all="ctrl.buffer.ids"
                                    data-tsc-ids-selected="ctrl.buffer.selectedMonthly"
                                    data-tsc-on-click="ctrl.checkboxStateChange('MONTHLY')">
-                            <span data-i18n-static="exchange_update_billing_header_1M"></span>
+                            <span data-translate="exchange_update_billing_header_1M"></span>
                         </th>
                         <th scope="col">
                             <input type="checkbox" class="mr-2"
@@ -59,7 +59,7 @@
                                    data-tsc-ids-all="ctrl.buffer.ids"
                                    data-tsc-ids-selected="ctrl.buffer.selectedYearly"
                                    data-tsc-on-click="ctrl.checkboxStateChange('YEARLY')">
-                            <span data-i18n-static="exchange_update_billing_header_1Y"></span>
+                            <span data-translate="exchange_update_billing_header_1Y"></span>
                         </th>
                         <th scope="col"
                             data-ng-if="ctrl.services.exchangeServiceInfrastructure.isHosted() || ctrl.services.exchangeServiceInfrastructure.isProvider()">
@@ -82,9 +82,9 @@
                 <tbody data-ng-if="!ctrl.loading && ctrl.bufferedAccounts.list.results.length === 0 && ctrl.bufferedAccounts.list.messages.length === 0">
                     <tr>
                         <td class="text-center" colspan="5">
-                            <span data-i18n-static="exchange_tab_ACCOUNTS_table_empty"
+                            <span data-translate="exchange_tab_ACCOUNTS_table_empty"
                                   data-ng-if="!ctrl.search.value"></span>
-                            <span data-i18n-static="exchange_tab_ACCOUNTS_table_empty_search"
+                            <span data-translate="exchange_tab_ACCOUNTS_table_empty_search"
                                   data-ng-if="ctrl.search.value"></span>
                         </td>
                     </tr>
@@ -143,20 +143,20 @@
             </div>
 
             <div class="alert alert-warning mt-5" role="alert"
-                 data-i18n-static="exchange_update_billing_periode_delete_warning"
+                 data-translate="exchange_update_billing_periode_delete_warning"
                  data-ng-if="(ctrl.services.exchangeServiceInfrastructure.isHosted() || ctrl.services.exchangeServiceInfrastructure.isProvider()) && ctrl.services.exchangeVersion.isAfter(2010) && !ctrl.account.partial"
                  data-ng-show="ctrl.model.displayDeleteWarning">
             </div>
         </div>
 
         <div data-wizard-step>
-            <p data-i18n-static="exchange_update_billing_periode_resume"></p>
+            <p data-translate="exchange_update_billing_periode_resume"></p>
 
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col" data-i18n-static="exchange_tab_ACCOUNTS_table_email"></th>
-                        <th class="text-center" scope="col" data-i18n-static="exchange_update_billing_header_new_periode"></th>
+                        <th scope="col" data-translate="exchange_tab_ACCOUNTS_table_email"></th>
+                        <th class="text-center" scope="col" data-translate="exchange_update_billing_header_new_periode"></th>
                     </tr>
                 </thead>
 
@@ -170,7 +170,7 @@
             </table>
 
             <div class="alert alert-warning" role="alert"
-                 data-i18n-static="exchange_update_billing_periode_delete_warning"
+                 data-translate="exchange_update_billing_periode_delete_warning"
                  data-ng-if="ctrl.model.displayDeleteWarning">
             </div>
         </div>

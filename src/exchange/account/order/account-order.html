@@ -13,18 +13,18 @@
            
             <div class="oui-message oui-message_info" role="alert" data-ng-if="ctrl.numConfigureMeAccount">
                 <i class="oui-icon oui-icon-info_circle oui-icon_bicolor" aria-hidden="true"></i>
-                <p class="oui-message__body" data-i18n-static="exchange_ACTION_order_accounts_step1_not_configured_account_message"></p>
+                <p class="oui-message__body" data-translate="exchange_ACTION_order_accounts_step1_not_configured_account_message"></p>
             </div>
 
             <div data-ng-if="ctrl.ordersList">
-                <p data-i18n-static="exchange_ACTION_order_accounts_step1_intro"></p>
+                <p data-translate="exchange_ACTION_order_accounts_step1_intro"></p>
 
                 <form name="ctrl.orderAccountForm">
 
                     <div class="form-group"
                          data-ng-if="ctrl.services.exchangeServiceInfrastructure.isHosted() || ctrl.services.exchangeServiceInfrastructure.isProvider()">
                         <label for="orderAccountAccountType"
-                               data-i18n-static="exchange_ACTION_order_accounts_step1_account_type"></label>
+                               data-translate="exchange_ACTION_order_accounts_step1_account_type"></label>
                         <div class="oui-select oui-select_inline">
                             <select class="oui-select__input" id="orderAccountAccountType" name="orderAccountAccountType"
                                     data-ng-change="ctrl.loadOrderList(ctrl.selectedAccountType.value)"
@@ -36,7 +36,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label data-i18n-static="exchange_ACTION_order_accounts_step1_pay_type"></label>
+                        <label data-translate="exchange_ACTION_order_accounts_step1_pay_type"></label>
                         <oui-spinner data-ng-if="!ctrl.ordersList.length"></oui-spinner>
                         <div class="oui-radio"
                              data-ng-repeat="orderAvailable in (ctrl.ordersList | orderBy:'duration') track by $index">
@@ -55,7 +55,7 @@
                     <div class="form-group"
                          data-ng-class="{'has-error oui-field_error': ctrl.orderAccountForm.accountNumber.$invalid}">
                         <label class="oui-label required" for="accountNumber"
-                               data-i18n-static="exchange_ACTION_order_accounts_step1_number"></label>
+                               data-translate="exchange_ACTION_order_accounts_step1_number"></label>
                         <input type="number" class="oui-input oui-input_inline" id="accountNumber" name="accountNumber" required
                                data-ng-class="{'oui-input_error': ctrl.orderAccountForm.accountNumber.$invalid}"
                                data-ng-min="1" min="1"
@@ -64,7 +64,7 @@
                                data-ng-pattern="/^\d+$/"
                                data-uib-tooltip="{{i18n.exchange_ACTION_order_accounts_step1_number_tooltip}}">
                         <small class="help-block"
-                               data-i18n-static="exchange_ACTION_order_accounts_step1_number_not_valid"
+                               data-translate="exchange_ACTION_order_accounts_step1_number_not_valid"
                                data-ng-if="ctrl.orderAccountForm.accountNumber.$invalid"></small>
                     </div>
 
@@ -83,19 +83,19 @@
 
             <div class="text-center" data-ng-if="!ctrl.previewOrder">
                 <oui-spinner></oui-spinner>
-                <span data-i18n-static="exchange_ACTION_order_accounts_step2_loader"></span>
+                <span data-translate="exchange_ACTION_order_accounts_step2_loader"></span>
             </div>
 
             <div data-ng-if="ctrl.previewOrder">
-                <p data-i18n-static="exchange_ACTION_order_accounts_step2_intro"></p>
+                <p data-translate="exchange_ACTION_order_accounts_step2_intro"></p>
                 <dl class="dl-horizontal dl-lg">
-                    <dt data-i18n-static="exchange_ACTION_order_accounts_step2_pay_type"></dt>
+                    <dt data-translate="exchange_ACTION_order_accounts_step2_pay_type"></dt>
                     <dd data-ng-bind="tr('exchange_ACTION_order_accounts_step1_pay_type_' + ctrl.accountsToAdd.duration)"></dd>
 
-                    <dt data-i18n-static="exchange_ACTION_order_accounts_step2_number"></dt>
+                    <dt data-translate="exchange_ACTION_order_accounts_step2_number"></dt>
                     <dd data-ng-bind="ctrl.accountsToAdd.accountsNumber"></dd>
 
-                    <dt data-i18n-static="exchange_ACTION_order_accounts_step2_total"></dt>
+                    <dt data-translate="exchange_ACTION_order_accounts_step2_total"></dt>
                     <dd class="text-danger"
                         data-ng-bind="tr('exchange_ACTION_order_accounts_step2_price', [ctrl.previewOrder.prices.withoutTax.text, ctrl.previewOrder.prices.withTax.text])"></dd>
                 </dl>
@@ -107,16 +107,16 @@
 
             <div class="text-center" data-ng-if="!ctrl.url">
                 <oui-spinner></oui-spinner>
-                <span data-i18n-static="exchange_ACTION_order_accounts_step3_generation_bc"></span>
+                <span data-translate="exchange_ACTION_order_accounts_step3_generation_bc"></span>
             </div>
 
             <div data-ng-if="ctrl.url">
-                <p data-i18n-static="exchange_ACTION_order_accounts_step3_bc"></p>
+                <p data-translate="exchange_ACTION_order_accounts_step3_bc"></p>
                 <p class="font-weight-bold"
-                   data-i18n-static="exchange_ACTION_order_accounts_step3_continue"></p>
-                <p data-i18n-static="exchange_ACTION_order_accounts_step3_explication2"></p>
+                   data-translate="exchange_ACTION_order_accounts_step3_continue"></p>
+                <p data-translate="exchange_ACTION_order_accounts_step3_explication2"></p>
                 <div class="alert alert-info" role="alert"
-                     data-i18n-static="exchange_ACTION_order_accounts_step3_explication">
+                     data-translate="exchange_ACTION_order_accounts_step3_explication">
                 </div>
             </div>
         </div>

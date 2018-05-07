@@ -4,7 +4,7 @@
             <form class="form-inline d-md-flex justify-content-md-end mb-3">
                 <div class="form-group">
                     <label class="sr-only" for="groupSearch"
-                           data-i18n-static="common_search"></label>
+                           data-translate="common_search"></label>
                     <div class="input-group">
                         <input type="text" class="form-control" id="groupSearch" maxlength="256" placeholder="{{i18n.exchange_tab_SHARED_header_path}}"
                                data-ng-change="ctrl.onSearch()"
@@ -28,8 +28,8 @@
             <div class="alert alert-info" role="alert"
                  data-ng-if="ctrl.publicFoldersList.list.messages.length > 0 && !ctrl.loading">
                 <div>
-                    <strong data-i18n-static="exchange_tab_ACCOUNTS_warning"></strong>
-                    <span data-i18n-static="exchange_tab_ACCOUNTS_partial"></span>
+                    <strong data-translate="exchange_tab_ACCOUNTS_warning"></strong>
+                    <span data-translate="exchange_tab_ACCOUNTS_partial"></span>
                 </div>
             </div>
 
@@ -37,11 +37,11 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th scope="col" data-i18n-static="exchange_tab_SHARED_header_path"></th>
-                            <th class="text-center" scope="col" data-i18n-static="exchange_tab_SHARED_header_type"></th>
-                            <th class="text-right" scope="col" data-i18n-static="exchange_tab_SHARED_permissions_header_quota"></th>
-                            <th class="text-center" scope="col" data-i18n-static="exchange_tab_SHARED_header_access"></th>
-                            <th class="text-center" scope="col" data-i18n-static="exchange_tab_GROUPS_all_table_status"></th>
+                            <th scope="col" data-translate="exchange_tab_SHARED_header_path"></th>
+                            <th class="text-center" scope="col" data-translate="exchange_tab_SHARED_header_type"></th>
+                            <th class="text-right" scope="col" data-translate="exchange_tab_SHARED_permissions_header_quota"></th>
+                            <th class="text-center" scope="col" data-translate="exchange_tab_SHARED_header_access"></th>
+                            <th class="text-center" scope="col" data-translate="exchange_tab_GROUPS_all_table_status"></th>
                             <th class="min-width" scope="col"></th>
                         </tr>
                     </thead>
@@ -55,14 +55,14 @@
                     <tbody data-ng-if="ctrl.publicFoldersList.list.results.length === 0 && ctrl.publicFoldersList.list.messages.length === 0 && !ctrl.loading && ctrl.search.value == null">
                         <tr>
                             <td colspan="6"
-                                data-i18n-static="exchange_tab_SHARED_table_empty"></td>
+                                data-translate="exchange_tab_SHARED_table_empty"></td>
                         </tr>
                     </tbody>
 
                     <tbody data-ng-if="ctrl.publicFoldersList.list.results.length === 0 && ctrl.publicFoldersList.list.messages.length === 0 && !ctrl.loading && ctrl.search.value != null">
                         <tr>
                             <td colspan="6"
-                                data-i18n-static="exchange_tab_SHARED_table_empty_search"></td>
+                                data-translate="exchange_tab_SHARED_table_empty_search"></td>
                         </tr>
                     </tbody>
 
@@ -82,11 +82,11 @@
                             </td>
                             <td class="text-center">
                                 <span class="label label-info"
-                                      data-i18n-static="exchange_tab_ACCOUNTS_state_CREATING"
+                                      data-translate="exchange_tab_ACCOUNTS_state_CREATING"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isCreating(folder)">
                                 </span>
                                 <span class="label label-danger"
-                                      data-i18n-static="exchange_tab_ACCOUNTS_state_DELETING"
+                                      data-translate="exchange_tab_ACCOUNTS_state_DELETING"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isDeleting(folder)">
                                 </span>
                                 <span class="fa fa-hourglass-half"
@@ -128,7 +128,7 @@
 
         <div class="col-md-3 mt-5 mt-lg-0">
             <button class="btn btn-block btn-default" type="button"
-                    data-i18n-static="exchange_tab_SHARED_button_add"
+                    data-translate="exchange_tab_SHARED_button_add"
                     data-ng-click="ctrl.newShared()">
             </button>
         </div>

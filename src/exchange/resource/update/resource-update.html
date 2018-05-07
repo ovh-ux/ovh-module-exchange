@@ -15,7 +15,7 @@
                 <div class="form-group"
                      data-ng-class="{'has-error': ctrl.updateResourceForm.displayName.$dirty && ctrl.updateResourceForm.displayName.$invalid}">
                     <label class="control-label required" for="displayName"
-                           data-i18n-static="exchange_tab_RESOURCES_add_resource_name"></label>
+                           data-translate="exchange_tab_RESOURCES_add_resource_name"></label>
                     <input type="text" class="form-control" id="displayName" maxlength="256" name="displayName" required
                            data-ng-model="ctrl.model.displayName">
                 </div>
@@ -23,14 +23,14 @@
                 <div class="form-group"
                      data-ng-class="{'has-error': ctrl.updateResourceForm.resourceCapacity.$dirty && ctrl.updateResourceForm.resourceCapacity.$invalid}">
                     <label class="control-label required" for="resourceCapacity"
-                           data-i18n-static="exchange_tab_RESOURCES_add_resource_capacity"></label>
+                           data-translate="exchange_tab_RESOURCES_add_resource_capacity"></label>
                     <input type="number" class="form-control" id="resourceCapacity" name="resourceCapacity" required
                            data-ng-min="0" min="0"
                            data-ng-max="1024" max="1024"
                            data-ng-model="ctrl.model.capacity"
                            data-uib-tooltip="{{i18n.exchange_tab_RESOURCES_add_resource_capacity_tooltip}}">
                     <small class="help-block"
-                           data-i18n-static="exchange_tab_RESOURCES_add_resource_capacity_warning"
+                           data-translate="exchange_tab_RESOURCES_add_resource_capacity_warning"
                            data-ng-if="ctrl.updateResourceForm.resourceCapacity.$dirty && ctrl.updateResourceForm.resourceCapacity.$invalid"></small>
                 </div>
 
@@ -44,16 +44,16 @@
         <div data-wizard-step>
             <p data-ng-bind="tr('exchange_tab_RESOURCES_edit_resource_step2_title', [ctrl.model.slicedEmail])"></p>
             <dl class="dl-horizontal dl-lg">
-                <dt data-ng-if="ctrl.model.displayName" data-i18n-static="exchange_tab_RESOURCES_add_resource_name"></dt>
+                <dt data-ng-if="ctrl.model.displayName" data-translate="exchange_tab_RESOURCES_add_resource_name"></dt>
                 <dd class="word-break"
                     data-ng-if="ctrl.model.displayName" data-ng-bind-html="ctrl.model.displayName | sliceContent: 150"></dd>
 
-                <dt data-i18n-static="exchange_tab_RESOURCES_add_resource_capacity"></dt>
+                <dt data-translate="exchange_tab_RESOURCES_add_resource_capacity"></dt>
                 <dd data-ng-bind="ctrl.model.capacity"></dd>
 
-                <dt data-i18n-static="exchange_tab_RESOURCES_add_resource_allow_conflict"></dt>
-                <dd data-ng-if="ctrl.model.allowConflict" data-i18n-static="exchange_tab_RESOURCES_allow_conflicts_true"></dd>
-                <dd data-ng-if="!ctrl.model.allowConflict" data-i18n-static="exchange_tab_RESOURCES_allow_conflicts_false"></dd>
+                <dt data-translate="exchange_tab_RESOURCES_add_resource_allow_conflict"></dt>
+                <dd data-ng-if="ctrl.model.allowConflict" data-translate="exchange_tab_RESOURCES_allow_conflicts_true"></dd>
+                <dd data-ng-if="!ctrl.model.allowConflict" data-translate="exchange_tab_RESOURCES_allow_conflicts_false"></dd>
             </dl>
         </div>
     </div>

@@ -17,7 +17,7 @@
                     <div class="form-group mr-md-2"
                          data-ng-if="$ctrl.exchangeVersion.isVersion(2010)">
                         <label class="sr-only" for="officeAttachTypeFormInput"
-                               data-i18n-static="exchange_office_attached_alert_modale_account_types"></label>
+                               data-translate="exchange_office_attached_alert_modale_account_types"></label>
                         <div class="oui-select d-md-inline-block align-middle m-0">
                             <select class="oui-select__input" id="officeAttachTypeFormInput"
                                     data-ng-change="$ctrl.setFilter()"
@@ -30,7 +30,7 @@
 
                     <div class="form-group">
                         <label class="sr-only" for="officeAttachSearchFormInput"
-                               data-i18n-static="exchange_office_attached_alert_modale_search_form"></label>
+                               data-translate="exchange_office_attached_alert_modale_search_form"></label>
                         <div class="input-group">
                             <input type="text" class="form-control" id="officeAttachSearchFormInput" maxlength="256" placeholder="{{i18n.exchange_tab_ACCOUNTS_table_email}}"
                                    data-ng-change="$ctrl.onSearchValueChange()"
@@ -52,7 +52,7 @@
                     <thead>
                         <tr>
                             <th class="min-width" scope="col"></th>
-                            <th scope="col" data-i18n-static="exchange_tab_ACCOUNT"></th>
+                            <th scope="col" data-translate="exchange_tab_ACCOUNT"></th>
                         </tr>
                     </thead>
 
@@ -65,11 +65,11 @@
                     <tbody data-ng-if="!$ctrl.loading.step1.table && $ctrl.accounts.list.results.length === 0 && $ctrl.accounts.list.messages.length === 0">
                         <tr>
                             <td class="text-center" colspan="2">
-                                <span data-i18n-static="exchange_tab_ACCOUNTS_table_empty"
+                                <span data-translate="exchange_tab_ACCOUNTS_table_empty"
                                       data-ng-if="!$ctrl.searchValue && (!$ctrl.filterType || $ctrl.filterType === 'ALL')"></span>
                                 <span data-ng-bind="tr('exchange_tab_ACCOUNTS_table_empty_type_' + $ctrl.filterType)"
                                       data-ng-if="!$ctrl.searchValue && $ctrl.filterType && $ctrl.filterType !== 'ALL'"></span>
-                                <span data-i18n-static="exchange_tab_ACCOUNTS_table_empty_search"
+                                <span data-translate="exchange_tab_ACCOUNTS_table_empty_search"
                                       data-ng-if="$ctrl.searchValue"></span>
                             </td>
                         </tr>

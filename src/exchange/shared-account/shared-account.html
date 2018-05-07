@@ -6,8 +6,8 @@
 
             <p class="alert alert-info" role="alert"
                data-ng-if="ctrl.accounts.list.messages.length > 0 && !ctrl.loading">
-                <strong data-i18n-static="exchange_tab_ACCOUNTS_warning"></strong>
-                <span data-i18n-static="exchange_tab_ACCOUNTS_partial"></span>
+                <strong data-translate="exchange_tab_ACCOUNTS_warning"></strong>
+                <span data-translate="exchange_tab_ACCOUNTS_partial"></span>
             </p>
 
             <form class="mb-3 form-inline d-md-flex justify-content-md-end">
@@ -38,9 +38,9 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th scope="col" data-i18n-static="exchange_tab_ACCOUNTS_table_email"></th>
-                            <th class="text-center" scope="col" data-i18n-static="exchange_tab_ACCOUNTS_table_size"></th>
-                            <th class="text-center min-width" scope="col" data-i18n-static="exchange_tab_ACCOUNTS_table_status"></th>
+                            <th scope="col" data-translate="exchange_tab_ACCOUNTS_table_email"></th>
+                            <th class="text-center" scope="col" data-translate="exchange_tab_ACCOUNTS_table_size"></th>
+                            <th class="text-center min-width" scope="col" data-translate="exchange_tab_ACCOUNTS_table_status"></th>
                             <th class="min-width" scope="col"></th>
                         </tr>
                     </thead>
@@ -54,14 +54,14 @@
                     <tbody data-ng-if="ctrl.accounts.list.results.length === 0 && ctrl.accounts.list.messages.length === 0 && !ctrl.loading && ctrl.search.value == null">
                         <tr>
                             <td class="text-center" colspan="4"
-                                data-i18n-static="exchange_tab_ACCOUNTS_table_empty"></td>
+                                data-translate="exchange_tab_ACCOUNTS_table_empty"></td>
                         </tr>
                     </tbody>
 
                     <tbody data-ng-if="ctrl.accounts.list.results.length === 0 && ctrl.accounts.list.messages.length === 0 && !ctrl.loading && ctrl.search.value != null">
                         <tr>
                             <td class="text-center" colspan="4"
-                                data-i18n-static="exchange_tab_ACCOUNTS_table_empty_search"></td>
+                                data-translate="exchange_tab_ACCOUNTS_table_empty_search"></td>
                         </tr>
                     </tbody>
 
@@ -80,22 +80,22 @@
                                       data-uib-tooltip="{{tr('exchange_tab_ACCOUNTS_state_TASK_ON_DOING')}}"></span>
                                 <span class="label label-success"
                                       data-ng-if="account.state == ctrl.stateOk"
-                                      data-i18n-static="exchange_tab_ACCOUNTS_state_OK"></span>
+                                      data-translate="exchange_tab_ACCOUNTS_state_OK"></span>
                                 <span class="label label-info"
                                       data-ng-if="account.state === ctrl.stateCreating"
-                                      data-i18n-static="exchange_tab_ACCOUNTS_state_CREATING"></span>
+                                      data-translate="exchange_tab_ACCOUNTS_state_CREATING"></span>
                                 <span class="label label-info"
                                       data-ng-if="account.state === ctrl.stateDeleting"
-                                      data-i18n-static="exchange_tab_ACCOUNTS_state_DELETING"></span>
+                                      data-translate="exchange_tab_ACCOUNTS_state_DELETING"></span>
                                 <span class="label label-info"
                                       data-ng-if="account.info === ctrl.stateSuspended"
-                                      data-i18n-static="exchange_tab_ACCOUNTS_state_SUSPENDED"></span>
+                                      data-translate="exchange_tab_ACCOUNTS_state_SUSPENDED"></span>
                                 <span class="label label-info"
                                       data-ng-if="account.state === ctrl.stateSuspending"
-                                      data-i18n-static="exchange_tab_ACCOUNTS_state_SUSPENDING"></span>
+                                      data-translate="exchange_tab_ACCOUNTS_state_SUSPENDING"></span>
                                 <span class="label label-info"
                                       data-ng-if="account.state === ctrl.stateReopening"
-                                      data-i18n-static="exchange_tab_ACCOUNTS_state_REOPENING"></span>
+                                      data-translate="exchange_tab_ACCOUNTS_state_REOPENING"></span>
                             </td>
 
                             <td class="text-center text-nowrap">
@@ -137,7 +137,7 @@
 
         <div class="col-md-3 mt-5 mt-lg-0">
             <button class="btn btn-block btn-default" type="button"
-                    data-i18n-static="exchange_SHARED_ACCOUNTS_add_button_label"
+                    data-translate="exchange_SHARED_ACCOUNTS_add_button_label"
                     data-ng-click="ctrl.newSharedAccount()"
                     data-ng-if="ctrl.isSharedAccountAdjustable()">
             </button>

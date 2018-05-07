@@ -24,7 +24,7 @@
                 <div class="form-group"
                      data-ng-class="{'has-error': ctrl.updateAccountForm.selectedAccountAddress.$dirty && (ctrl.updateAccountForm.selectedAccountAddress.$invalid || ctrl.takenEmailError)}">
                     <label class="control-label required" for="selectedAccountAddress"
-                           data-i18n-static="exchange_ACTION_update_account_step1_email_label"></label>
+                           data-translate="exchange_ACTION_update_account_step1_email_label"></label>
                     <div class="input-group">
                         <input type="text" class="form-control" id="selectedAccountAddress" maxlength="256" name="selectedAccountAddress" required
                                data-ng-change="ctrl.checkTakenEmails()"
@@ -40,14 +40,14 @@
                         </select>
                     </div>
                     <small class="help-block"
-                           data-i18n-static="exchange_tab_ALIAS_taken_error_message"
+                           data-translate="exchange_tab_ALIAS_taken_error_message"
                            data-ng-if="ctrl.takenEmailError"></small>
                 </div>
 
                 <div class="oui-field mb-4"
                      data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.newAccountOptions.availableTypes.length > 1">
                     <label class="oui-field__label oui-label required" for="selectedAccountType"
-                           data-i18n-static="exchange_ACTION_update_account_step1_type_label"></label>
+                           data-translate="exchange_ACTION_update_account_step1_type_label"></label>
                     <div class="oui-field__content">
                         <div class="oui-field-control oui-field-control_3">
                             <div class="oui-select">
@@ -65,13 +65,13 @@
                     </div>
                     <small
                         class="help-block"
-                        data-i18n-static="exchange_ACTION_update_account_step1_type_cant_change"
+                        data-translate="exchange_ACTION_update_account_step1_type_cant_change"
                         data-ng-if="ctrl.selectedAccount.outlook"></small>
                 </div>
 
                 <div class="oui-field mb-4">
                     <label class="oui-field__label oui-label" for="selectedAccountFirstName"
-                           data-i18n-static="exchange_ACTION_update_account_step1_first_name_label"></label>
+                           data-translate="exchange_ACTION_update_account_step1_first_name_label"></label>
                     <div class="oui-field__content">
                         <div class="oui-field-control">
                             <input type="text" class="oui-input" id="selectedAccountFirstName" maxlength="256" name="selectedAccountFirstName"
@@ -83,7 +83,7 @@
 
                 <div class="oui-field mb-4">
                     <label class="oui-field__label oui-label" for="selectedAccountLastName"
-                           data-i18n-static="exchange_ACTION_update_account_step1_last_name_label"></label>
+                           data-translate="exchange_ACTION_update_account_step1_last_name_label"></label>
                     <div class="oui-field__content">
                         <div class="oui-field-control">
                             <input type="text" class="oui-input" id="selectedAccountLastName" maxlength="256" name="selectedAccountLastName"
@@ -95,7 +95,7 @@
 
                 <div class="oui-field mb-4">
                     <label class="oui-field__label oui-label" for="selectedAccountDisplayName"
-                           data-i18n-static="exchange_ACTION_update_account_step1_display_name_label"></label>
+                           data-translate="exchange_ACTION_update_account_step1_display_name_label"></label>
                     <div class="oui-field__content">
                         <div class="oui-field-control">
                             <input type="text" class="oui-input" id="selectedAccountDisplayName" maxlength="256" name="selectedAccountDisplayName"
@@ -108,7 +108,7 @@
                 <div class="oui-field mb-4"
                      data-ng-class="{'oui-field_error has-error': ctrl.simplePasswordFlag || ctrl.containsNameFlag || ctrl.containsSamAccountNameFlag || ctrl.containsWhitespaces}">
                     <label class="oui-field__label oui-label" for="selectedAccountPassword"
-                           data-i18n-static="exchange_ACTION_update_account_step1_password_label"
+                           data-translate="exchange_ACTION_update_account_step1_password_label"
                            data-ng-class="{'required': !ctrl.selectedAccount.canBeConfigured}"></label>
                     <div class="oui-field__content">
                         <div class="oui-field-control oui-field-control_3">
@@ -119,16 +119,16 @@
                                    data-ng-required="!ctrl.selectedAccount.canBeConfigured"
                                    data-uib-tooltip="{{ctrl.passwordTooltip}}">
                             <small class="help-block"
-                                   data-i18n-static="exchange_ACTION_update_account_step1_password_weak"
+                                   data-translate="exchange_ACTION_update_account_step1_password_weak"
                                    data-ng-if="ctrl.simplePasswordFlag"></small>
                             <small class="help-block"
-                                   data-i18n-static="exchange_ACTION_update_account_step1_password_contains_name"
+                                   data-translate="exchange_ACTION_update_account_step1_password_contains_name"
                                    data-ng-if="ctrl.containsNameFlag"></small>
                             <small class="help-block"
                                    data-ng-bind="ctrl.containsSamAccountNameLabel"
                                    data-ng-if="ctrl.containsSamAccountNameFlag"></small>
                             <small class="help-block"
-                                   data-i18n-static="exchange_ACTION_update_account_step1_password_whitespace"
+                                   data-translate="exchange_ACTION_update_account_step1_password_whitespace"
                                    data-ng-if="ctrl.containsWhitespaces"></small>
                         </div>
                     </div>
@@ -137,7 +137,7 @@
                 <div class="oui-field mb-4"
                      data-ng-class="{'oui-field_error has-error': ctrl.selectedAccount.passwordConfirmation && ctrl.differentPasswordFlag}">
                     <label class="oui-field__label oui-label" for="selectedAccountPasswordConfirmation"
-                           data-i18n-static="exchange_ACTION_update_account_step1_password_confirmation_label"
+                           data-translate="exchange_ACTION_update_account_step1_password_confirmation_label"
                            data-ng-class="{'required': !ctrl.selectedAccount.canBeConfigured}"></label>
                     <div class="oui-field__content">
                         <div class="oui-field-control oui-field-control_3">
@@ -147,21 +147,21 @@
                                    data-ng-model="ctrl.selectedAccount.passwordConfirmation"
                                    data-uib-tooltip="{{ctrl.passwordTooltip}}">
                             <small class="help-block"
-                                   data-i18n-static="exchange_ACTION_update_account_step1_password_different"
+                                   data-translate="exchange_ACTION_update_account_step1_password_different"
                                    data-ng-if="ctrl.selectedAccount.passwordConfirmation && ctrl.differentPasswordFlag"></small>
                         </div>
                     </div>
                 </div>
 
                 <div class="alert alert-warning" role="alert"
-                     data-i18n-static="exchange_ACTION_update_account_shared_password_warning"
+                     data-translate="exchange_ACTION_update_account_shared_password_warning"
                      data-ng-if="ctrl.shouldDisplaySharepointPasswordWarning()">
                 </div>
 
                 <div class="oui-field mb-4"
                      data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.newAccountOptions && ctrl.services.exchangeServiceInfrastructure.isProvider()">
                     <label class="oui-field__label oui-label" for="selectedAccountQuota"
-                           data-i18n-static="exchange_ACTION_update_account_step1_quota_label"></label>
+                           data-translate="exchange_ACTION_update_account_step1_quota_label"></label>
                     <div class="oui-field__content">
                         <div class="oui-field-control text-nowrap">
                             <div class="oui-select oui-select_inline">
@@ -174,7 +174,7 @@
                                 <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
                             </div>
                             <span class="d-inline-block form-control-static ml-2"
-                                  data-i18n-static="unit_size_GB"></span>
+                                  data-translate="unit_size_GB"></span>
                         </div>
                     </div>
                 </div>
@@ -188,23 +188,23 @@
                 <div class="mb-4"
                      data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.services.exchangeAccountOutlook.canHaveLicense(ctrl.selectedAccount)">
                     <span class="oui-label"
-                          data-i18n-static="exchange_ACTION_update_account_step1_outlook_label"></span>
+                          data-translate="exchange_ACTION_update_account_step1_outlook_label"></span>
                     <span data-ng-bind="tr('exchange_ACTION_add_account_outlook_' + ctrl.selectedAccount.outlook)"></span>
-                    <span data-i18n-static="exchange_ACTION_update_account_step1_outlookdel_label"
+                    <span data-translate="exchange_ACTION_update_account_step1_outlookdel_label"
                           data-ng-if="ctrl.selectedAccount.outlook && ctrl.selectedAccount.deleteOutlook"></span>
                 </div>
 
                 <div class="mb-4"
                      data-ng-if="ctrl.selectedAccount.exchangeGuid != null">
                     <span class="oui-label"
-                          data-i18n-static="exchange_ACTION_update_account_step1_exchange_guid_label"></span>
+                          data-translate="exchange_ACTION_update_account_step1_exchange_guid_label"></span>
                     <span data-ng-bind="ctrl.selectedAccount.exchangeGuid"></span>
                 </div>
 
                 <div class="mb-4"
                      data-ng-if="ctrl.services.exchangeVersion.isVersion(2010) && !ctrl.service.exchangeServiceInfrastructure.isHosted()">
                     <span class="oui-label"
-                          data-i18n-static="exchange_ACTION_update_account_step1_exchange_SAMA_label"></span>
+                          data-translate="exchange_ACTION_update_account_step1_exchange_SAMA_label"></span>
                     <span class="form-control-static"
                           data-ng-bind="ctrl.selectedAccount.samaccountName"
                           data-ng-if="ctrl.selectedAccount.samaccountName"></span>
@@ -212,68 +212,68 @@
             </form>
 
             <div data-wizard-step-help>
-                <h3 data-i18n-static="exchange_ACTION_update_account_helpwizard_title"></h3>
+                <h3 data-translate="exchange_ACTION_update_account_helpwizard_title"></h3>
                 <p data-ng-bind-html="tr('exchange_ACTION_update_account_helpwizard_intro')"></p>
-                <h4 data-i18n-static="exchange_ACTION_update_account_helpwizard_password_title"></h4>
+                <h4 data-translate="exchange_ACTION_update_account_helpwizard_password_title"></h4>
                 <p data-ng-bind-html="tr('exchange_ACTION_update_account_helpwizard_password', [ctrl.newAccountOptions.minPasswordLength])"
                    data-ng-if="ctrl.newAccountOptions.passwordComplexityEnabled"></p>
                 <p data-ng-bind-html="tr('exchange_ACTION_update_account_helpwizard_password_simple', [ctrl.newAccountOptions.minPasswordLength])"
                    data-ng-if="!ctrl.newAccountOptions.passwordComplexityEnabled"></p>
                 <div data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.selectedAccount.canBeConfigured">
-                    <h4 data-i18n-static="exchange_ACTION_update_account_helpwizard_hide_directory_title"></h4>
+                    <h4 data-translate="exchange_ACTION_update_account_helpwizard_hide_directory_title"></h4>
                     <p data-ng-bind-html="tr('exchange_ACTION_update_account_helpwizard_hide_directory')"></p>
                 </div>
-                <h4 data-i18n-static="exchange_ACTION_update_account_helpwizard_guid_title"></h4>
+                <h4 data-translate="exchange_ACTION_update_account_helpwizard_guid_title"></h4>
                 <p data-ng-bind-html="tr('exchange_ACTION_update_account_helpwizard_guid')"></p>
             </div>
         </div>
 
         <div data-wizard-step>
-            <p data-i18n-static="exchange_ACTION_update_account_step2_confirmation_intro"></p>
+            <p data-translate="exchange_ACTION_update_account_step2_confirmation_intro"></p>
             <dl class="dl-horizontal dl-lg">
-                <dt data-i18n-static="exchange_ACTION_update_account_step2_email_label"></dt>
+                <dt data-translate="exchange_ACTION_update_account_step2_email_label"></dt>
                 <dd class="word-break"
                     data-ng-bind="ctrl.selectedAccount.login + '@' + ctrl.selectedAccount.completeDomain.displayName | sliceContent: 150"></dd>
 
                 <dt data-ng-if="ctrl.newAccountOptions.availableTypes.length > 1"
-                    data-i18n-static="exchange_ACTION_update_account_step1_type_label"></dt>
+                    data-translate="exchange_ACTION_update_account_step1_type_label"></dt>
                 <dd data-ng-if="ctrl.newAccountOptions.availableTypes.length > 1"
                     data-ng-bind="ctrl.services.exchangeAccountTypes.getDisplayValue(ctrl.selectedAccount.accountLicense)"></dd>
 
                 <dt data-ng-if="ctrl.selectedAccount.firstName"
-                    data-i18n-static="exchange_ACTION_update_account_step2_first_name_label"></dt>
+                    data-translate="exchange_ACTION_update_account_step2_first_name_label"></dt>
                 <dd class="word-break"
                     data-ng-if="ctrl.selectedAccount.firstName"
                     data-ng-bind="ctrl.selectedAccount.firstName | sliceContent: 150"></dd>
 
                 <dt data-ng-if="ctrl.selectedAccount.lastName"
-                    data-i18n-static="exchange_ACTION_update_account_step2_last_name_label"></dt>
+                    data-translate="exchange_ACTION_update_account_step2_last_name_label"></dt>
                 <dd class="word-break"
                     data-ng-if="ctrl.selectedAccount.lastName"
                     data-ng-bind="ctrl.selectedAccount.lastName | sliceContent: 150"></dd>
 
                 <dt data-ng-if="ctrl.selectedAccount.displayName"
-                    data-i18n-static="exchange_ACTION_update_account_step2_display_name_label"></dt>
+                    data-translate="exchange_ACTION_update_account_step2_display_name_label"></dt>
                 <dd class="word-break"
                     data-ng-if="ctrl.selectedAccount.displayName" data-ng-bind="ctrl.selectedAccount.displayName | sliceContent: 150"></dd>
 
-                <dt data-ng-if="ctrl.selectedAccount.password" data-i18n-static="exchange_ACTION_update_account_step2_password_label"></dt>
+                <dt data-ng-if="ctrl.selectedAccount.password" data-translate="exchange_ACTION_update_account_step2_password_label"></dt>
                 <dd data-ng-if="ctrl.selectedAccount.password">
                     <span data-ng-repeat="x in ctrl.selectedAccount.password track by $index">*</span>
                 </dd>
 
                 <dt data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.services.exchangeServiceInfrastructure.isProvider()"
-                    data-i18n-static="exchange_ACTION_update_account_step1_quota_label"></dt>
+                    data-translate="exchange_ACTION_update_account_step1_quota_label"></dt>
                 <dd data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.services.exchangeServiceInfrastructure.isProvider()"
                     data-ng-bind="ctrl.selectedAccount.quota + ' ' + tr('unit_size_GB')"></dd>
 
                 <dt data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.services.exchangeAccountOutlook.canHaveLicense(ctrl.selectedAccount)"
-                    data-i18n-static="exchange_ACTION_update_account_step2_outlook_label"></dt>
+                    data-translate="exchange_ACTION_update_account_step2_outlook_label"></dt>
                 <dd data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.services.exchangeAccountOutlook.canHaveLicense(ctrl.selectedAccount)"
                     data-ng-bind="tr('exchange_ACTION_update_account_outlook_' + ctrl.selectedAccount.outlook)"></dd>
 
                 <dt data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g()"
-                    data-i18n-static="exchange_ACTION_update_account_step2_GAL_label"></dt>
+                    data-translate="exchange_ACTION_update_account_step2_GAL_label"></dt>
                 <dd data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g()"
                     data-ng-bind="tr('exchange_ACTION_update_account_GAL_' + ctrl.selectedAccount.hiddenFromGAL)"></dd>
             </dl>

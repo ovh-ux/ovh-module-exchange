@@ -5,7 +5,7 @@
             <form class="form-inline d-md-flex justify-content-md-end mb-3" name="searchExternalContactForm">
                 <div class="form-group">
                     <label class="sr-only" for="externalContactSearch"
-                           data-i18n-static="common_search"></label>
+                           data-translate="common_search"></label>
                     <div class="input-group">
                         <input type="text" class="form-control" id="externalContactSearch" maxlength="256" name="externalContactSearch" placeholder="{{::i18n.exchange_tab_EXTERNAL_CONTACTS_search_placeholder}}"
                                data-ng-change="ctrl.onSearchValueChange()"
@@ -30,11 +30,11 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th scope="col" data-i18n-static="exchange_tab_EXTERNAL_CONTACTS_table_headers_externalEmailAddress"></th>
-                            <th scope="col" data-i18n-static="exchange_tab_EXTERNAL_CONTACTS_table_headers_displayName"></th>
-                            <th class="text-center" scope="col" data-i18n-static="exchange_tab_EXTERNAL_CONTACTS_table_headers_creationDate"></th>
-                            <th class="text-center" scope="col" data-i18n-static="exchange_tab_EXTERNAL_CONTACTS_table_headers_hiddenFromGAL"></th>
-                            <th class="text-center" scope="col" data-i18n-static="exchange_tab_EXTERNAL_CONTACTS_table_headers_state"></th>
+                            <th scope="col" data-translate="exchange_tab_EXTERNAL_CONTACTS_table_headers_externalEmailAddress"></th>
+                            <th scope="col" data-translate="exchange_tab_EXTERNAL_CONTACTS_table_headers_displayName"></th>
+                            <th class="text-center" scope="col" data-translate="exchange_tab_EXTERNAL_CONTACTS_table_headers_creationDate"></th>
+                            <th class="text-center" scope="col" data-translate="exchange_tab_EXTERNAL_CONTACTS_table_headers_hiddenFromGAL"></th>
+                            <th class="text-center" scope="col" data-translate="exchange_tab_EXTERNAL_CONTACTS_table_headers_state"></th>
                             <th class="min-width text-center"></th>
                         </tr>
                     </thead>
@@ -48,7 +48,7 @@
                     <tbody data-ng-if="!ctrl.contactsLoading && ctrl.contacts.list.results.length === 0">
                         <tr>
                             <td class="text-center" colspan="6"
-                                data-i18n-static="exchange_tab_EXTERNAL_CONTACTS_table_empty"></td>
+                                data-translate="exchange_tab_EXTERNAL_CONTACTS_table_empty"></td>
                         </tr>
                     </tbody>
 
@@ -69,25 +69,25 @@
 
                             <td class="text-center">
                                 <span class="label label-info"
-                                      data-i18n-static="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_MODIFYING"
+                                      data-translate="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_MODIFYING"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isOk(element) && element.taskPendingId !== 0"></span>
                                 <span class="label label-info"
-                                      data-i18n-static="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_CREATING"
+                                      data-translate="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_CREATING"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isCreating(element)"></span>
                                 <span class="label label-info"
-                                      data-i18n-static="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_DELETING"
+                                      data-translate="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_DELETING"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isDeleting(element)"></span>
                                 <span class="label label-warning"
-                                      data-i18n-static="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_SUSPENDED"
+                                      data-translate="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_SUSPENDED"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isSuspended(element)"></span>
                                 <span class="label label-warning"
-                                      data-i18n-static="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_SUSPENDING"
+                                      data-translate="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_SUSPENDING"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isSuspending(element)"></span>
                                 <span class="label label-info"
-                                      data-i18n-static="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_REOPENING"
+                                      data-translate="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_REOPENING"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isReopening(element)"></span>
                                 <span class="label label-success"
-                                      data-i18n-static="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_OK"
+                                      data-translate="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_OK"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isOk(element) && element.taskPendingId === 0"></span>
                             </td>
 
@@ -116,7 +116,7 @@
         </div>
         <div class="col-md-3 mt-5 mt-lg-0">
             <button class="btn btn-block btn-default" type="button"
-                    data-i18n-static="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_title_button"
+                    data-translate="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_title_button"
                     data-ng-click="setAction('exchange/external-contact/add/external-contact-add')">
             </button>
         </div>

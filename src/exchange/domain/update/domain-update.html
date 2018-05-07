@@ -10,14 +10,14 @@
 
             <form class="form-horizontal">
                 <div class="form-group">
-                    <label class="control-label col-md-4" data-i18n-static="exchange_tab_domain_domain"></label>
+                    <label class="control-label col-md-4" data-translate="exchange_tab_domain_domain"></label>
                     <div class="col-md-8">
                         <span class="d-block form-control-static" data-ng-bind="ctrl.originalValue.displayName"></span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-4" for="domainType"
-                           data-i18n-static="exchange_tab_domain_type"></label>
+                           data-translate="exchange_tab_domain_type"></label>
                     <div class="col-md-6">
                         <div class="oui-select">
                             <select class="oui-select__input" id="domainType"
@@ -34,20 +34,20 @@
                      data-ng-class="{'has-error': !ctrl.isValidMxRelay() || ctrl.checkLoopWarning() || ctrl.checkLengthWarning()}"
                      data-ng-if="ctrl.isMxRelayVisible() && ctrl.selectedDomain.type === 'NON_AUTHORITATIVE'">
                     <label class="control-label col-md-4 required" for="selectedDomain"
-                           data-i18n-static="exchange_tab_domain_add_step2_mx_replay"></label>
+                           data-translate="exchange_tab_domain_add_step2_mx_replay"></label>
                     <div class="col-md-6">
                         <input type="text" class="form-control" id="selectedDomain" maxlength="256"
                                data-ng-model="ctrl.selectedDomain.mxRelay"
                                data-ng-pattern="/^([-a-zA-Z0-9\.])+$/"
                                data-uib-tooltip="{{i18n.exchange_tab_domain_add_step2_mx_replay_tooltip}}">
                         <small class="help-block"
-                               data-i18n-static="exchange_tab_domain_modify_domain_warning"
+                               data-translate="exchange_tab_domain_modify_domain_warning"
                                data-ng-if="!ctrl.isValidMxRelay()"></small>
                         <small class="help-block"
-                               data-i18n-static="exchange_tab_domain_modify_loop_warning"
+                               data-translate="exchange_tab_domain_modify_loop_warning"
                                data-ng-if="ctrl.checkLoopWarning()"></small>
                         <small class="help-block"
-                               data-i18n-static="exchange_tab_domain_modify_length_warning"
+                               data-translate="exchange_tab_domain_modify_length_warning"
                                data-ng-if="ctrl.checkLengthWarning()"></small>
                     </div>
                 </div>
@@ -57,26 +57,26 @@
                data-ng-if="ctrl.selectedDomain.type === 'NON_AUTHORITATIVE'"></p>
 
             <div data-wizard-step-help>
-                <h3 data-i18n-static="exchange_tab_domain_modify_domain"></h3>
-                <h4 data-i18n-static="exchange_tab_domain_modify_wizard_subtitle"></h4>
+                <h3 data-translate="exchange_tab_domain_modify_domain"></h3>
+                <h4 data-translate="exchange_tab_domain_modify_wizard_subtitle"></h4>
                 <p data-ng-bind-html="tr('exchange_tab_domain_modify_wizard_text')"></p>
             </div>
         </div>
 
         <div data-wizard-step>
-            <p data-i18n-static="exchange_tab_domain_modify_title"></p>
+            <p data-translate="exchange_tab_domain_modify_title"></p>
 
             <dl class="dl-horizontal dl-lg">
-                <dt data-i18n-static="exchange_tab_domain_domain"></dt>
+                <dt data-translate="exchange_tab_domain_domain"></dt>
                 <dd class="word-break"
                     data-ng-bind="ctrl.originalValue.displayName | sliceContent: 150"></dd>
 
                 <dt data-ng-if="ctrl.isMxRelayVisible() && ctrl.selectedDomain.type === 'NON_AUTHORITATIVE' && ctrl.selectedDomain.mxRelay"
-                    data-i18n-static="exchange_tab_domain_add_step2_mx_replay"></dt>
+                    data-translate="exchange_tab_domain_add_step2_mx_replay"></dt>
                 <dd data-ng-if="ctrl.isMxRelayVisible() && ctrl.selectedDomain.type === 'NON_AUTHORITATIVE' && ctrl.selectedDomain.mxRelay"
                     data-ng-bind="ctrl.selectedDomain.mxRelay | sliceContent: 150" class="word-break"></dd>
 
-                <dt data-i18n-static="exchange_tab_domain_type"></dt>
+                <dt data-translate="exchange_tab_domain_type"></dt>
                 <dd data-ng-bind="tr('exchange_tab_domain_' + ctrl.selectedDomain.type)"></dd>
             </dl>
 

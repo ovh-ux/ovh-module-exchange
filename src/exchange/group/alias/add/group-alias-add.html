@@ -30,28 +30,28 @@
                             </select>
                         </div>
                         <small class="help-block"
-                               data-i18n-static="exchange_tab_GROUPS_add_alias_max_error"
+                               data-translate="exchange_tab_GROUPS_add_alias_max_error"
                                data-ng-if="ctrl.exchangeAddGroupAliasForm.aliasInput.$error.maxlength"></small>
                         <small class="help-block"
-                               data-i18n-static="exchange_tab_ALIAS_taken_error_message"
+                               data-translate="exchange_tab_ALIAS_taken_error_message"
                                data-ng-if="ctrl.takenEmailError"></small>
                     </div>
                 </form>
 
                 <div class="alert alert-info" role="alert"
-                     data-i18n-static="exchange_tab_GROUPS_add_alias_valid">
+                     data-translate="exchange_tab_GROUPS_add_alias_valid">
                 </div>
             </div>
         </div>
 
         <div data-wizard-step>
-            <p data-i18n-static="exchange_tab_GROUPS_add_alias_step2_intro"></p>
+            <p data-translate="exchange_tab_GROUPS_add_alias_step2_intro"></p>
             <dl class="dl-horizontal dl-lg">
-                <dt data-i18n-static="exchange_tab_GROUPS_add_alias_step2_alias_label"></dt>
+                <dt data-translate="exchange_tab_GROUPS_add_alias_step2_alias_label"></dt>
                 <dd class="word-break"
                     data-ng-bind-template="{{ctrl.model.alias}}@{{ctrl.model.domain.displayName}}"></dd>
 
-                <dt data-i18n-static="exchange_tab_GROUPS_add_alias_step2_account_label"></dt>
+                <dt data-translate="exchange_tab_GROUPS_add_alias_step2_account_label"></dt>
                 <dd class="word-break"
                     data-ng-bind="ctrl.selectedMailingList.mailingListDisplayName | sliceContent: 150"></dd>
             </dl>

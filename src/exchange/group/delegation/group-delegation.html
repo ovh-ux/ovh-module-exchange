@@ -14,15 +14,15 @@
             <div class="alert alert-warning" role="alert"
                  data-ng-if="!ctrl.loading && ctrl.delegationList && ctrl.delegationList.list.messages.length > 0">
                 <div>
-                    <strong data-i18n-static="exchange_tab_ACCOUNTS_warning"></strong>
-                    <span data-i18n-static="exchange_tab_ACCOUNTS_partial"></span>
+                    <strong data-translate="exchange_tab_ACCOUNTS_warning"></strong>
+                    <span data-translate="exchange_tab_ACCOUNTS_partial"></span>
                 </div>
             </div>
 
             <form class="form-inline d-md-flex justify-content-md-end mb-3">
                 <div class="form-group">
                     <label class="sr-only" for="delegationSearch"
-                           data-i18n-static="common_search"></label>
+                           data-translate="common_search"></label>
                     <div class="input-group">
                         <input type="text" class="form-control" id="delegationSearch" maxlength="256" name="delegationSearch" placeholder="{{i18n.exchange_tab_ACCOUNTS_table_email}}"
                                data-ng-change="ctrl.onSearchValueChange()"
@@ -46,11 +46,11 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col" data-i18n-static="exchange_GROUPS_delegation_step1_email_header"></th>
+                        <th scope="col" data-translate="exchange_GROUPS_delegation_step1_email_header"></th>
                         <th class="text-center text-wrap" scope="col"
-                            data-i18n-static="exchange_GROUPS_delegation_step1_send_header"></th>
+                            data-translate="exchange_GROUPS_delegation_step1_send_header"></th>
                         <th class="text-center text-wrap" scope="col"
-                            data-i18n-static="exchange_ACTION_delegation_step1_sendOnBehalfTo_header"></th>
+                            data-translate="exchange_ACTION_delegation_step1_sendOnBehalfTo_header"></th>
                     </tr>
                 </thead>
 
@@ -63,9 +63,9 @@
                 <tbody data-ng-if="!ctrl.loading && ctrl.delegationList.list.results.length === 0 && ctrl.delegationList.list.messages.length === 0">
                     <tr>
                         <td class="text-center" colspan="3">
-                            <span data-i18n-static="exchange_ACTION_delegation_table_empty"
+                            <span data-translate="exchange_ACTION_delegation_table_empty"
                                   data-ng-if="!ctrl.form.search"></span>
-                            <span data-i18n-static="exchange_ACTION_delegation_table_empty_search"
+                            <span data-translate="exchange_ACTION_delegation_table_empty_search"
                                   data-ng-if="ctrl.form.search"></span>
                         </td>
                     </tr>
@@ -167,11 +167,11 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col" data-i18n-static="exchange_GROUPS_delegation_step2_email_header"></th>
+                        <th scope="col" data-translate="exchange_GROUPS_delegation_step2_email_header"></th>
                         <th class="text-center text-wrap" scope="col"
-                            data-i18n-static="exchange_GROUPS_delegation_step2_send_header"></th>
+                            data-translate="exchange_GROUPS_delegation_step2_send_header"></th>
                         <th class="text-center text-wrap" scope="col"
-                            data-i18n-static="exchange_ACTION_delegation_step1_sendOnBehalfTo_header"></th>
+                            data-translate="exchange_ACTION_delegation_step1_sendOnBehalfTo_header"></th>
                     </tr>
                 </thead>
 
@@ -180,12 +180,12 @@
                         <th scope="row" data-ng-bind="account.primaryEmailDisplayName"></th>
                         <td class="text-center">
                             <span data-ng-if="account.newSendAsValue"
-                                  data-i18n-static="exchange_ACTION_delegation_step2_right_true"></span>
+                                  data-translate="exchange_ACTION_delegation_step2_right_true"></span>
                             <span data-ng-if="!account.newSendAsValue">-</span>
                         </td>
                         <td class="text-center">
                             <span data-ng-if="account.newSendOnBehalfToValue"
-                                  data-i18n-static="exchange_ACTION_delegation_step2_right_true"></span>
+                                  data-translate="exchange_ACTION_delegation_step2_right_true"></span>
                             <span data-ng-if="!account.newSendOnBehalfToValue">-</span>
                         </td>
                     </tr>

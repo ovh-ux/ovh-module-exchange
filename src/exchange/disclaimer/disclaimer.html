@@ -1,7 +1,7 @@
 <div class="container-fluid px-0" data-ng-controller="ExchangeDisclaimerCtrl as ctrlDisclaimer">
 
     <div class="alert alert-info" role="alert"
-         data-i18n-static="exchange_tab_DISCLAIMER_table_no_domain"
+         data-translate="exchange_tab_DISCLAIMER_table_no_domain"
          data-ng-if="ctrlDisclaimer.addDomainMessageFlag">
     </div>
 
@@ -12,21 +12,21 @@
         </oui-column>
         <oui-column data-title="tr('exchange_tab_DISCLAIMER_disclaimer_outside_only')" data-property="outsideOnly">
             <span data-ng-if="$row.outsideOnly"
-                  data-i18n-static="exchange_tab_DISCLAIMER_disclaimer_outside_only_true"
+                  data-translate="exchange_tab_DISCLAIMER_disclaimer_outside_only_true"
                   data-uib-tooltip="{{i18n.exchange_tab_DISCLAIMER_disclaimer_outside_only_tooltip}}"></span>
             <span data-ng-if="!$row.outsideOnly"
-                  data-i18n-static="exchange_tab_DISCLAIMER_disclaimer_outside_only_false"
+                  data-translate="exchange_tab_DISCLAIMER_disclaimer_outside_only_false"
                   data-uib-tooltip="{{i18n.exchange_tab_DISCLAIMER_disclaimer_outside_only_tooltip}}"></span>
         </oui-column>
         <oui-column data-title="tr('exchange_tab_DISCLAIMER_state_header')">
             <span class="label label-success"
-                  data-i18n-static="exchange_tab_DISCLAIMER_state_doing_tooltip"
+                  data-translate="exchange_tab_DISCLAIMER_state_doing_tooltip"
                   data-ng-if="$row.taskPendingId && $row.taskPendingId !== 0"></span>
             <span class="label label-success"
-                  data-i18n-static="exchange_tab_ACCOUNTS_state_ok"
+                  data-translate="exchange_tab_ACCOUNTS_state_ok"
                   data-ng-if="$row.taskPendingId === 0"></span>
             <span class="label label-warning"
-                  data-i18n-static="common_not_configurated"
+                  data-translate="common_not_configurated"
                   data-ng-if="$row.emptySlotFlag"></span>
         </oui-column>
 

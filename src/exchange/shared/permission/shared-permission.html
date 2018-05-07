@@ -5,21 +5,21 @@
                 <button class="btn btn-default" type="button"
                         data-ng-click="displayPublicFolders()">
                     <span class="fa fa-chevron-left mr-2" aria-hidden="true"></span>
-                    <span data-i18n-static="exchange_GROUPS_manager_back_button"></span>
+                    <span data-translate="exchange_GROUPS_manager_back_button"></span>
                 </button>
                 <span class="ml-4" data-ng-bind-html="tr('exchange_tab_SHARED_permissions_intro', ctrl.selectedFolder.path)"></span>
             </div>
 
             <div class="alert alert-info" role="alert"
-                 data-i18n-static="exchange_tab_SHARED_permissions_table_empty"
+                 data-translate="exchange_tab_SHARED_permissions_table_empty"
                  data-ng-if="!ctrl.search.value && ctrl.permissionsList.list.results.length === 0">
             </div>
 
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col" data-i18n-static="exchange_tab_SHARED_permissions_header_email"></th>
-                        <th scope="col" data-i18n-static="exchange_tab_SHARED_permissions_header_type"></th>
+                        <th scope="col" data-translate="exchange_tab_SHARED_permissions_header_email"></th>
+                        <th scope="col" data-translate="exchange_tab_SHARED_permissions_header_type"></th>
                         <th scope="col" class="min-width"></th>
                     </tr>
                 </thead>
@@ -33,7 +33,7 @@
                 <tbody data-ng-if="!ctrl.permissionsLoading && ctrl.permissionsList.list.results.length === 0">
                     <tr>
                         <td colspan="3" class="text-center"
-                            data-i18n-static="exchange_tab_SHARED_permissions_table_empty_search"></td>
+                            data-translate="exchange_tab_SHARED_permissions_table_empty_search"></td>
                     </tr>
                 </tbody>
 

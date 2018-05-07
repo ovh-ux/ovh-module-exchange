@@ -3,12 +3,12 @@
         <button class="oui-button oui-button_link oui-button_icon-left" type="button"
                 data-ng-click="ctrl.hide()">
             <span class="oui-icon oui-icon-chevron-left" aria-hidden="true"></span>
-            <span data-i18n-static="common_back"></span>
+            <span data-translate="common_back"></span>
         </button>
         <h2 data-ng-bind-html="tr('exchange_tab_ALIAS_GROUP_intro', ctrl.services.navigation.selectedGroup.mailingListDisplayName)"></h2>
 
         <div class="alert alert-info" role="alert"
-             data-i18n-static="exchange_tab_ALIAS_GROUP_table_empty"
+             data-translate="exchange_tab_ALIAS_GROUP_table_empty"
              data-ng-if="ctrl.aliases && ctrl.aliases.list.results.length === 0">
         </div>
 
@@ -16,7 +16,7 @@
             <oui-column data-title="tr('exchange_tab_ALIAS_header')" data-property="displayName"></oui-column>
             <oui-column data-title="tr('exchange_tab_ACCOUNTS_table_status')">
                 <span class="label label-info"
-                          data-i18n-static="exchange_tab_ALIAS_state_TASK_ON_DOING"
+                          data-translate="exchange_tab_ALIAS_state_TASK_ON_DOING"
                           data-ng-if="$row.taskPendingId"
                           data-uib-tooltip="{{i18n.exchange_tab_ALIAS_state_TASK_ON_DOING_tooltip}}"></span>
             </oui-column>
@@ -31,7 +31,7 @@
         <span data-uib-tooltip="{{ctrl.getAddAliasTooltip()}}"
               data-tooltip-append-to-body="true">
             <button class="btn btn-block btn-default" type="button"
-                    data-i18n-static="exchange_tab_ALIAS_add_button"
+                    data-translate="exchange_tab_ALIAS_add_button"
                     data-ng-click="ctrl.addGroupAlias()"
                     data-ng-disabled="ctrl.services.navigation.selectedGroup.aliases >= ctrl.aliasMaxLimit || ctrl.services.navigation.selectedGroup.state !== 'OK'">
             </button>
