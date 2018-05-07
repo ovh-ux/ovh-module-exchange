@@ -111,31 +111,25 @@ angular
                                                                                             this.formerEmailAccount.primaryEmailAddress);
                         }
 
-                        this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_emailCreation_add_accountCreation_error"), error);
-                        this.navigation.resetAction();
-                        this.scrollToTop();
+                        this.writeAndFocusOnError("exchange_wizardHostedCreation_emailCreation_add_accountCreation_error", error);
                         return null;
                     })
                     .then((data) => {
                         if (data == null) {
                             this.navigation.resetAction();
                         } else if (_(data.error).isArray() && !_(data.error).isEmpty()) {
-                            this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_emailCreation_add_migrationChecking_error"));
-                            this.navigation.resetAction();
-                            this.scrollToTop();
+                            this.writeAndFocusOnError("exchange_wizardHostedCreation_emailCreation_add_migrationChecking_error");
                             return null;
                         } else {
                             this.hideConfirmButton = false;
                             this.canMigrate = true;
+                            this.scrollToBottom();
                         }
 
-                        this.scrollToBottom();
                         return null;
                     })
                     .catch((error) => {
-                        this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_emailCreation_add_migrationChecking_mxPlanTechContact"), error);
-                        this.navigation.resetAction();
-                        this.scrollToTop();
+                        this.writeAndFocusOnError("exchange_wizardHostedCreation_emailCreation_add_migrationChecking_mxPlanTechContact");
                     })
                     .finally(() => {
                         this.dataHasBeenSubmitted = false;
@@ -144,6 +138,12 @@ angular
             }
 
             return this.migratingEmailAddress();
+        }
+
+        writeAndFocusOnError (message, error) {
+            this.messaging.writeError(this.translator.tr(message, error));
+            this.navigation.resetAction();
+            this.scrollToTop();
         }
 
         scrollToBottom () {
