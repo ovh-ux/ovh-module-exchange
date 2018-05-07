@@ -18,7 +18,8 @@ angular
         const exchangeStates = [{
             "abstract": true,
             name: "app.microsoft.exchange",
-            template: "<div ui-view></div>"
+            template: "<div ui-view></div>",
+            translations: ["exchange"]
         }, {
             name: "app.microsoft.exchange.dedicated",
             url: "/configuration/exchange_dedicated/:organization/:productId?tab",
