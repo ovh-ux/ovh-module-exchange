@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeTabDiagnosticsCtrl", class ExchangeTabDiagnosticsCtrl {
-        constructor ($scope, $q, diagnostic, OtrsPopupService, User, EXCHANGE_CONFIG, translator, navigation, messaging, Exchange, $timeout) {
+        constructor ($scope, $q, diagnostic, OtrsPopupService, User, EXCHANGE_CONFIG, $translate, navigation, messaging, Exchange, $timeout) {
             this.services = {
                 $scope,
                 $q,
@@ -9,7 +9,7 @@ angular
                 OtrsPopupService,
                 User,
                 EXCHANGE_CONFIG,
-                translator,
+                $translate,
                 navigation,
                 messaging,
                 Exchange,
@@ -80,7 +80,7 @@ angular
 
         writeErrorMessage (errorMessage) {
             this.loaders.diagnosticInProgress = false;
-            this.services.messaging.writeError(this.services.translator.tr("exchange_DIAGNOSTIC_launch_diagnostic_failure"), errorMessage);
+            this.services.messaging.writeError(this.services.$translate.instant("exchange_DIAGNOSTIC_launch_diagnostic_failure"), errorMessage);
         }
 
         pollDiagnosticTask (task) {
@@ -119,7 +119,7 @@ angular
                     }
                 })
                 .catch((error) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_DIAGNOSTIC_launch_diagnostic_failure"), error);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_DIAGNOSTIC_launch_diagnostic_failure"), error);
                     this.loaders.diagnosticInProgress = false;
                 });
         }
@@ -133,7 +133,7 @@ angular
                 .launchingDiagnostic(this.email, this.password)
                 .then((task) => this.pollDiagnosticTask(task))
                 .catch((error) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_DIAGNOSTIC_launch_diagnostic_failure"), error);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_DIAGNOSTIC_launch_diagnostic_failure"), error);
                     this.loaders.diagnosticInProgress = false;
                 });
         }
@@ -163,7 +163,7 @@ angular
                     this.services.diagnostic.cacheLastDiagnosticResult(diagnostic);
                 })
                 .catch((error) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_DIAGNOSTIC_get_diagnostic_result_failure"), error);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_DIAGNOSTIC_get_diagnostic_result_failure"), error);
                 })
                 .finally(() => {
                     this.loaders.diagnosticInProgress = false;
@@ -185,7 +185,7 @@ angular
 
             this.services.$timeout(() => {
                 const body = this.makingSupportTicketBody();
-                const subject = this.services.translator.tr("exchange_DIAGNOSTICS_status_support_ticket_subject");
+                const subject = this.services.$translate.instant("exchange_DIAGNOSTICS_status_support_ticket_subject");
                 this.services.OtrsPopupService.changeTicket({
                     subject,
                     body
@@ -204,7 +204,7 @@ angular
             const apiUrl = `GET ${diagnosticUrl}`;
             const diagnosticJson = angular.toJson(this.diagnostic, true);
 
-            return `${this.services.translator.tr("exchange_DIAGNOSTICS_status_support_ticket_body")}
+            return `${this.services.$translate.instant("exchange_DIAGNOSTICS_status_support_ticket_body")}
 
 ${apiUrl}
 ${diagnosticJson}`;
@@ -236,7 +236,7 @@ ${diagnosticJson}`;
         statusMessage (status) {
             const suffix = this.isOK(status) ? "_ok" : "_not_ok";
 
-            return this.services.translator.tr(`exchange_DIAGNOSTICS_status_${status}${suffix}`);
+            return this.services.$translate.instant(`exchange_DIAGNOSTICS_status_${status}${suffix}`);
         }
 
         /* eslint-disable class-methods-use-this */

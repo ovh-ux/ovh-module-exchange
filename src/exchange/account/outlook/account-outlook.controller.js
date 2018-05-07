@@ -1,13 +1,13 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeDisplayOutlookCtrl", class ExchangeDisplayOutlookCtrl {
-        constructor ($scope, Exchange, exchangeAccountOutlook, $timeout, translator, APIExchange, navigation, messaging) {
+        constructor ($scope, Exchange, exchangeAccountOutlook, $timeout, $translate, APIExchange, navigation, messaging) {
             this.services = {
                 $scope,
                 Exchange,
                 exchangeAccountOutlook,
                 $timeout,
-                translator,
+                $translate,
                 APIExchange,
                 navigation,
                 messaging
@@ -16,7 +16,7 @@ angular
             this.selectedAccount = navigation.currentActionData;
             this.model = {
                 primaryEmailAddress: this.selectedAccount.primaryEmailAddress,
-                language: translator.getSelectedAvailableLanguage().value.split("_")[1]
+                language: $translate.getSelectedAvailableLanguage().value.split("_")[1]
             };
 
             this.exchange = Exchange.value;
@@ -41,7 +41,7 @@ angular
                     this.outlook = data;
 
                     if (this.NO_SERIAL === this.outlook.serial) {
-                        this.outlook.serial = this.services.translator.tr("exchange_ACTION_display_outlook_serial_not_required");
+                        this.outlook.serial = this.services.$translate.instant("exchange_ACTION_display_outlook_serial_not_required");
                     }
 
                     this.displayWaitMessage = true;
@@ -69,7 +69,7 @@ angular
                     this.previewOrder = data;
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_add_outlook_step2_error_message"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_add_outlook_step2_error_message"), failure);
                     this.services.navigation.resetAction();
                 });
         }
@@ -87,7 +87,7 @@ angular
                     this.outlook = data;
 
                     if (this.NO_SERIAL === this.outlook.serial) {
-                        this.outlook.serial = this.services.translator.tr("exchange_ACTION_display_outlook_serial_not_required");
+                        this.outlook.serial = this.services.$translate.instant("exchange_ACTION_display_outlook_serial_not_required");
                     }
                 })
                 .catch(() => {
@@ -141,7 +141,7 @@ angular
                     this.languageList = _.uniq(this.availableLicences.map((item) => item.outlookLanguage));
                     this.model.licenceVersion = this.versionsList[0];
                 }).catch((fail) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_display_outlook_error_message"), fail);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_display_outlook_error_message"), fail);
                     this.services.navigation.resetAction();
                 });
         }
@@ -158,14 +158,14 @@ angular
                     if (data.status !== "ERROR" && this.retryFlag--) {
                         this.startTimeout();
                     } else {
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_display_outlook_error_message"), data);
+                        this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_display_outlook_error_message"), data);
                         this.services.navigation.resetAction();
                     }
                 }).catch((fail) => {
                     if (ExchangeDisplayOutlookCtrl.checkForNoLanguageSpecificApiError(fail.message) !== null) {
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_display_outlook_language_error_message"), fail);
+                        this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_display_outlook_language_error_message"), fail);
                     } else {
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_display_outlook_error_message"), fail);
+                        this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_display_outlook_error_message"), fail);
                     }
 
                     this.services.navigation.resetAction();

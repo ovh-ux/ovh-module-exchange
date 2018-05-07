@@ -1,14 +1,14 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeOrderDiskSpaceCtrl", class ExchangeOrderDiskSpaceCtrl {
-        constructor ($rootScope, $scope, Exchange, messaging, navigation, translator, $window) {
+        constructor ($rootScope, $scope, Exchange, messaging, navigation, $translate, $window) {
             this.services = {
                 $rootScope,
                 $scope,
                 Exchange,
                 messaging,
                 navigation,
-                translator,
+                $translate,
                 $window
             };
         }
@@ -40,7 +40,7 @@ angular
                 })
                 .catch((failure) => {
                     this.services.navigation.resetAction();
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_renew_ssl_dcv_failure"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_renew_ssl_dcv_failure"), failure);
                 });
         }
 
@@ -59,7 +59,7 @@ angular
         }
 
         getResumePrice (price) {
-            return price.value === 0 ? this.services.translator.tr("price_free") : this.services.translator.tr("price_ht_label", [price.text]);
+            return price.value === 0 ? this.services.$translate.instant("price_free") : this.services.$translate.instant("price_ht_label", { t0: price.text });
         }
 
         submitting () {
@@ -67,11 +67,16 @@ angular
                 .Exchange
                 .orderDiskSpace(this.$routerParams.organization, this.$routerParams.productId)
                 .then((order) => {
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_action_order_space_disk_success", [order.url, order.orderId]));
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_action_order_space_disk_success", {
+                        t0: order.url,
+                        t1: order.orderId
+                    }));
                     this.services.$window.open(order.url, "_blank");
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_action_order_space_disk_failure", failure));
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_action_order_space_disk_failure", {
+                        t0: failure
+                    }));
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();

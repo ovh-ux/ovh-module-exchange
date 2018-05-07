@@ -1,13 +1,13 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeAddDisclaimerCtrl", class ExchangeAddDisclaimerCtrl {
-        constructor ($scope, Exchange, navigation, messaging, translator) {
+        constructor ($scope, Exchange, navigation, messaging, $translate) {
             this.services = {
                 $scope,
                 Exchange,
                 navigation,
                 messaging,
-                translator
+                $translate
             };
 
             this.mceId = "add-disclaimer-editor";
@@ -46,7 +46,7 @@ angular
                         this.availableAttributes = data.availableAttributes;
                     } else {
                         this.services.navigation.resetAction();
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_add_disclaimer_no_domains"));
+                        this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_add_disclaimer_no_domains"));
                     }
                 });
         }
@@ -71,16 +71,16 @@ angular
                 content: this.data.content
             };
 
-            this.services.messaging.writeSuccess(this.services.translator.tr("exchange_dashboard_action_doing"));
+            this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_dashboard_action_doing"));
 
             this.services
                 .Exchange
                 .saveDisclaimer(this.$routerParams.organization, this.$routerParams.productId, model)
                 .then((data) => {
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_ACTION_add_disclaimer_success_message"), data);
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_ACTION_add_disclaimer_success_message"), data);
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_add_disclaimer_error_message"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_add_disclaimer_error_message"), failure);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();

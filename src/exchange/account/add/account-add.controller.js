@@ -1,6 +1,6 @@
 {
     class ExchangeAccountAddController {
-        constructor ($scope, $timeout, exchangeAccountTypes, Exchange, exchangeAccount, exchangeServiceInfrastructure, ExchangePassword, exchangeVersion, messaging, translator) {
+        constructor ($scope, $timeout, exchangeAccountTypes, Exchange, exchangeAccount, exchangeServiceInfrastructure, ExchangePassword, exchangeVersion, messaging, $translate) {
             this.$scope = $scope;
             this.$timeout = $timeout;
 
@@ -11,7 +11,7 @@
             this.exchangeServiceInfrastructure = exchangeServiceInfrastructure;
             this.exchangeVersion = exchangeVersion;
             this.messaging = messaging;
-            this.translator = translator;
+            this.$translate = $translate;
         }
 
         $onInit () {
@@ -38,7 +38,7 @@
                     this.newAccount.domain = this.accountCreationOptions.availableDomains[0];
                 })
                 .catch((error) => {
-                    this.messaging.writeError(this.translator.tr("exchange_ACTION_add_account_fetchingAccountCreationOptions_error"), error);
+                    this.messaging.writeError(this.$translate.instant("exchange_ACTION_add_account_fetchingAccountCreationOptions_error"), error);
                     this.hide();
                 })
                 .finally(() => {
@@ -137,10 +137,12 @@
             return this.exchangeAccount
                 .sendingNewAccount(this.$routerParams.organization, this.$routerParams.productId, formattedAccount)
                 .then((data) => {
-                    this.messaging.writeSuccess(this.translator.tr("exchange_account_add_submit_success", `${formattedAccount.login}@${formattedAccount.domain}`), data);
+                    this.messaging.writeSuccess(this.$translate.instant("exchange_account_add_submit_success", {
+                        t0: `${formattedAccount.login}@${formattedAccount.domain}`
+                    }), data);
                 })
                 .catch((error) => {
-                    this.messaging.writeError(this.translator.tr("exchange_ACTION_add_account_error_message"), error);
+                    this.messaging.writeError(this.$translate.instant("exchange_ACTION_add_account_error_message"), error);
                 })
                 .finally(() => {
                     this.hide();

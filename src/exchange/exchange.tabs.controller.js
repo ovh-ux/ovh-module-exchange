@@ -1,12 +1,12 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeTabsCtrl", class ExchangeTabsCtrl {
-        constructor ($scope, $location, Exchange, translator, messaging, navigation, exchangeVersion, exchangeServiceInfrastructure) {
+        constructor ($scope, $location, Exchange, $translate, messaging, navigation, exchangeVersion, exchangeServiceInfrastructure) {
             this.services = {
                 $scope,
                 $location,
                 Exchange,
-                translator,
+                $translate,
                 messaging,
                 navigation,
                 exchangeVersion,
@@ -43,14 +43,14 @@ angular
                         this.tabs.push("DIAGNOSTIC");
                         this.selectedTab = "INFORMATION";
                         this.dropdownMenuItems = {
-                            title: translator.tr("navigation_more"),
+                            title: $translate.instant("navigation_more"),
                             items: [{
-                                label: translator.tr("exchange_tab_RESOURCES"),
+                                label: $translate.instant("exchange_tab_RESOURCES"),
                                 target: "RESOURCE",
                                 type: "SWITCH_TABS"
                             },
                             {
-                                label: translator.tr("exchange_tab_DISCLAIMER"),
+                                label: $translate.instant("exchange_tab_DISCLAIMER"),
                                 target: "DISCLAIMER",
                                 type: "SWITCH_TABS"
                             }
@@ -59,20 +59,20 @@ angular
 
                         if ((this.services.exchangeServiceInfrastructure.isDedicated() || this.services.exchangeServiceInfrastructure.isDedicatedCluster()) && this.services.exchangeVersion.isVersion(2010)) {
                             this.dropdownMenuItems.items.push({
-                                label: translator.tr("exchange_tab_SHARED"),
+                                label: $translate.instant("exchange_tab_SHARED"),
                                 target: "SHARED",
                                 type: "SWITCH_TABS"
                             });
                         }
 
                         this.dropdownMenuItems.items.push({
-                            label: translator.tr("exchange_tab_TASKS"),
+                            label: $translate.instant("exchange_tab_TASKS"),
                             target: "TASK",
                             type: "SWITCH_TABS"
                         }, {
                             type: "SEPARATOR"
                         }, {
-                            label: translator.tr("exchange_action_configuration"),
+                            label: $translate.instant("exchange_action_configuration"),
                             type: "ACTION",
                             fn: () => {
                                 navigation.setAction("exchange/configure/service-configure");

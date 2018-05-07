@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeAddOutlookCtrl", class ExchangeAddOutlookCtrl {
-        constructor ($scope, Exchange, exchangeAccountOutlook, constants, $window, navigation, messaging, translator) {
+        constructor ($scope, Exchange, exchangeAccountOutlook, constants, $window, navigation, messaging, $translate) {
             this.services = {
                 $scope,
                 Exchange,
@@ -10,7 +10,7 @@ angular
                 $window,
                 navigation,
                 messaging,
-                translator
+                $translate
             };
 
             this.$routerParams = Exchange.getParams();
@@ -45,7 +45,7 @@ angular
                     this.selectVersion(data[0]);
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_add_outlook_step2_error_message"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_add_outlook_step2_error_message"), failure);
                     this.services.navigation.resetAction();
                 });
         }
@@ -83,7 +83,7 @@ angular
                     this.previewOrder = data;
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_add_outlook_step2_error_message"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_add_outlook_step2_error_message"), failure);
                     this.services.navigation.resetAction();
                 });
         }

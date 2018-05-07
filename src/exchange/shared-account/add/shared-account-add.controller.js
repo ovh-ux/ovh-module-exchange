@@ -1,14 +1,14 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeAddSharedAccountCtrl", class ExchangeAddSharedAccountCtrl {
-        constructor ($scope, Exchange, ExchangeSharedAccounts, messaging, navigation, translator, formValidation) {
+        constructor ($scope, Exchange, ExchangeSharedAccounts, messaging, navigation, $translate, formValidation) {
             this.services = {
                 $scope,
                 Exchange,
                 ExchangeSharedAccounts,
                 messaging,
                 navigation,
-                translator,
+                $translate,
                 formValidation
             };
 
@@ -73,10 +73,10 @@ angular
                     this.alreadyTakenEmails = data.takenEmails;
 
                     if (_.isEmpty(data.availableDomains)) {
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_add_no_domains"));
+                        this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_add_no_domains"));
                         this.services.navigation.resetAction();
                     } else if (this.optionsToCreateNewAccounts.maxQuota.value < this.optionsToCreateNewAccounts.minQuota.value) {
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_SHARED_ACCOUNTS_total_quota_error_message"));
+                        this.services.messaging.writeError(this.services.$translate.instant("exchange_SHARED_ACCOUNTS_total_quota_error_message"));
                         this.services.navigation.resetAction();
                     } else {
                         this.domain = data.availableDomains[0];
@@ -94,16 +94,16 @@ angular
         }
 
         addingAccount () {
-            this.services.messaging.writeSuccess(this.services.translator.tr("exchange_dashboard_action_doing"));
+            this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_dashboard_action_doing"));
 
             return this.services
                 .ExchangeSharedAccounts
                 .addingSharedAccount(this.$routerParams.organization, this.$routerParams.productId, this.accountBeingCreated)
                 .then((data) => {
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_SHARED_ACCOUNTS_add_success_message"), data);
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_SHARED_ACCOUNTS_add_success_message"), data);
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_add_account_error_message"), failure.data);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_add_account_error_message"), failure.data);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();

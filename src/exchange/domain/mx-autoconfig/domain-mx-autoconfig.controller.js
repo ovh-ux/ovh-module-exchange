@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeDomainMxAutoconfigCtrl", class ExchangeDomainMxAutoconfigCtrl {
-        constructor ($scope, Exchange, ExchangeDomains, EXCHANGE_MX_CONFIG, constants, messaging, navigation, translator, exchangeStates) {
+        constructor ($scope, Exchange, ExchangeDomains, EXCHANGE_MX_CONFIG, constants, messaging, navigation, $translate, exchangeStates) {
             this.services = {
                 $scope,
                 Exchange,
@@ -10,7 +10,7 @@ angular
                 constants,
                 messaging,
                 navigation,
-                translator,
+                $translate,
                 exchangeStates
             };
 
@@ -36,7 +36,7 @@ angular
                     }
                 }).catch((failure) => {
                     navigation.resetAction();
-                    messaging.writeError(translator.tr("exchange_tab_domain_diagnostic_add_field_failure"), failure);
+                    messaging.writeError($translate.instant("exchange_tab_domain_diagnostic_add_field_failure"), failure);
                 });
 
             $scope.configMX = () => this.configMX();
@@ -61,13 +61,13 @@ angular
                 .addingZoneDnsField(this.$routerParams.organization, this.$routerParams.productId, this.prepareModel())
                 .then((data) => {
                     if (this.services.exchangeStates.constructor.isOk(data)) {
-                        this.services.messaging.writeSuccess(this.services.translator.tr("exchange_tab_domain_diagnostic_add_field_success"));
+                        this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_tab_domain_diagnostic_add_field_success"));
                     } else {
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_tab_domain_diagnostic_add_field_failure"), data);
+                        this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_domain_diagnostic_add_field_failure"), data);
                     }
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_domain_diagnostic_add_field_failure"), {
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_domain_diagnostic_add_field_failure"), {
                         code: this.domain.name,
                         message: failure.message
                     });

@@ -1,9 +1,9 @@
 {
     class controller {
-        constructor (ovhUserPref, $rootScope, translator) {
+        constructor (ovhUserPref, $rootScope, $translate) {
             this.ovhUserPref = ovhUserPref;
             this.$rootScope = $rootScope;
-            this.translator = translator;
+            this.$translate = $translate;
         }
 
         hideSelfAndDisplayDomainConfiguration () {

@@ -1,12 +1,12 @@
 angular
     .module("App")
     .controller("ExchangeServicesConfigureCtrl", class ExchangeServicesConfigureCtrl {
-        constructor ($scope, APIExchange, Exchange, translator, navigation, messaging) {
+        constructor ($scope, APIExchange, Exchange, $translate, navigation, messaging) {
             this.services = {
                 $scope,
                 APIExchange,
                 Exchange,
-                translator,
+                $translate,
                 navigation,
                 messaging
             };
@@ -75,10 +75,10 @@ angular
                 .Exchange.setConfiguration(this.exchange.organization, this.exchange.domain, dataToSend)
                 .then(() => {
                     this.services.Exchange.resetAccounts();
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_ACTION_configure_success"));
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_ACTION_configure_success"));
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_configure_error"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_configure_error"), failure);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();

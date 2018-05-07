@@ -1,13 +1,13 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeTabGroupsCtrl", class ExchangeTabGroupsCtrl {
-        constructor ($scope, Exchange, navigation, messaging, translator, exchangeStates) {
+        constructor ($scope, Exchange, navigation, messaging, $translate, exchangeStates) {
             this.services = {
                 $scope,
                 Exchange,
                 navigation,
                 messaging,
-                translator,
+                $translate,
                 exchangeStates
             };
 
@@ -99,7 +99,7 @@ angular
                     this.mailingLists = data;
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_GROUPS_all_error_message"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_GROUPS_all_error_message"), failure);
                 })
                 .finally(() => {
                     this.services.$scope.$broadcast("paginationServerSide.loadPage", 1, "groupsTable");

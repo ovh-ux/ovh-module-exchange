@@ -1,13 +1,13 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeExternalContactsDeleteCtrl", class ExchangeExternalContactsDeleteCtrl {
-        constructor ($scope, Exchange, ExchangeExternalContacts, navigation, translator, messaging) {
+        constructor ($scope, Exchange, ExchangeExternalContacts, navigation, $translate, messaging) {
             this.services = {
                 $scope,
                 Exchange,
                 ExchangeExternalContacts,
                 navigation,
-                translator,
+                $translate,
                 messaging
             };
 
@@ -24,10 +24,10 @@ angular
                 .ExchangeExternalContacts
                 .removingContact(this.$routerParams.organization, this.$routerParams.productId, this.model.externalEmailAddress)
                 .then((data) => {
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_tab_EXTERNAL_CONTACTS_configuration_contact_delete_success"), data);
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_tab_EXTERNAL_CONTACTS_configuration_contact_delete_success"), data);
                 })
                 .catch((error) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_EXTERNAL_CONTACTS_configuration_contact_delete_fail"), error);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_EXTERNAL_CONTACTS_configuration_contact_delete_fail"), error);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();

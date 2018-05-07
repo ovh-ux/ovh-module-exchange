@@ -1,14 +1,14 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeUpdateGroupCtrl", class ExchangeUpdateGroupCtrl {
-        constructor ($scope, Exchange, group, navigation, messaging, translator) {
+        constructor ($scope, Exchange, group, navigation, messaging, $translate) {
             this.services = {
                 $scope,
                 Exchange,
                 group,
                 navigation,
                 messaging,
-                translator
+                $translate
             };
 
             this.$routerParams = Exchange.getParams();
@@ -73,7 +73,7 @@ angular
                     this.groupOptions = data;
 
                     if (_.isEmpty(data.availableDomains)) {
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_add_no_domains"));
+                        this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_add_no_domains"));
 
                         this.services.navigation.resetAction();
                     } else {
@@ -84,12 +84,12 @@ angular
                 })
                 .catch((failure) => {
                     this.services.navigation.resetAction();
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_add_account_option_fail"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_add_account_option_fail"), failure);
                 });
         }
 
         updateExchangeGroup () {
-            this.services.messaging.writeSuccess(this.services.translator.tr("exchange_dashboard_action_doing"));
+            this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_dashboard_action_doing"));
             this.prepareModel();
 
             this.services
@@ -97,19 +97,29 @@ angular
                 .updateGroup(this.$routerParams.organization, this.$routerParams.productId, this.selectedGroup.mailingListAddress, this.model)
                 .then((data) => {
                     const addGroupMessages = {
-                        OK: this.services.translator.tr("exchange_GROUPS_settings_success_message", this.selectedGroup.mailingListDisplayName),
-                        PARTIAL: this.services.translator.tr("exchange_GROUPS_settings_partial_message", this.selectedGroup.mailingListDisplayName),
-                        ERROR: this.services.translator.tr("exchange_GROUPS_settings_error_message", this.selectedGroup.mailingListDisplayName)
+                        OK: this.services.$translate.instant("exchange_GROUPS_settings_success_message", {
+                            t0: this.selectedGroup.mailingListDisplayName
+                        }),
+                        PARTIAL: this.services.$translate.instant("exchange_GROUPS_settings_partial_message", {
+                            t0: this.selectedGroup.mailingListDisplayName
+                        }),
+                        ERROR: this.services.$translate.instant("exchange_GROUPS_settings_error_message", {
+                            t0: this.selectedGroup.mailingListDisplayName
+                        })
                     };
 
                     if (data == null) {
-                        this.services.messaging.writeSuccess(this.services.translator.tr("exchange_GROUPS_settings_success_message", this.selectedGroup.mailingListDisplayName));
+                        this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_GROUPS_settings_success_message", {
+                            t0: this.selectedGroup.mailingListDisplayName
+                        }));
                     } else {
                         this.services.messaging.setMessage(addGroupMessages, data);
                     }
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_GROUPS_settings_error_message", this.selectedGroup.mailingListDisplayName), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_GROUPS_settings_error_message", {
+                        t0: this.selectedGroup.mailingListDisplayName
+                    }), failure);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();

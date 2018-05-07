@@ -1,12 +1,12 @@
 angular.module("Module.exchange.controllers")
     .controller("ExchangeGroupAccountsCtrl", class ExchangeGroupAccountsCtrl {
-        constructor ($scope, Exchange, messaging, navigation, translator) {
+        constructor ($scope, Exchange, messaging, navigation, $translate) {
             this.services = {
                 $scope,
                 Exchange,
                 messaging,
                 navigation,
-                translator
+                $translate
             };
 
             this.$routerParams = Exchange.getParams();
@@ -87,7 +87,7 @@ angular.module("Module.exchange.controllers")
                     this.accountsList = angular.copy(accounts);
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ACCOUNTS_error_message"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_ACCOUNTS_error_message"), failure);
                 })
                 .finally(() => {
                     this.loading = false;
@@ -96,7 +96,7 @@ angular.module("Module.exchange.controllers")
         }
 
         updateAccounts () {
-            this.services.messaging.writeSuccess(this.services.translator.tr("exchange_dashboard_action_doing"));
+            this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_dashboard_action_doing"));
             this.saveSelection();
 
             this.services
@@ -104,19 +104,29 @@ angular.module("Module.exchange.controllers")
                 .updateGroups(this.$routerParams.organization, this.$routerParams.productId, this.selectedGroup.mailingListAddress, this.model)
                 .then((data) => {
                     const addGroupMessages = {
-                        OK: this.services.translator.tr("exchange_GROUPS_settings_success_message", this.selectedGroup.mailingListDisplayName),
-                        PARTIAL: this.services.translator.tr("exchange_GROUPS_settings_partial_message", this.selectedGroup.mailingListDisplayName),
-                        ERROR: this.services.translator.tr("exchange_GROUPS_settings_error_message", this.selectedGroup.mailingListDisplayName)
+                        OK: this.services.$translate.instant("exchange_GROUPS_settings_success_message", {
+                            t0: this.selectedGroup.mailingListDisplayName
+                        }),
+                        PARTIAL: this.services.$translate.instant("exchange_GROUPS_settings_partial_message", {
+                            t0: this.selectedGroup.mailingListDisplayName
+                        }),
+                        ERROR: this.services.$translate.instant("exchange_GROUPS_settings_error_message", {
+                            t0: this.selectedGroup.mailingListDisplayName
+                        })
                     };
 
                     if (data == null) {
-                        this.services.messaging.writeSuccess(this.services.translator.tr("exchange_GROUPS_settings_success_message", this.selectedGroup.mailingListDisplayName));
+                        this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_GROUPS_settings_success_message", {
+                            t0: this.selectedGroup.mailingListDisplayName
+                        }));
                     } else {
                         this.services.messaging.setMessage(addGroupMessages, data);
                     }
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_GROUPS_settings_error_message", this.selectedGroup.mailingListDisplayName), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_GROUPS_settings_error_message", {
+                        t0: this.selectedGroup.mailingListDisplayName
+                    }), failure);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();

@@ -1,14 +1,14 @@
 angular
     .module("Module.exchange.controllers")
     .controller("exchangeAccountOutlookDelete", class ExchangeAccountOutlookDelete {
-        constructor ($scope, Exchange, exchangeAccountOutlook, messaging, navigation, translator) {
+        constructor ($scope, Exchange, exchangeAccountOutlook, messaging, navigation, $translate) {
             this.$scope = $scope;
 
             this.Exchange = Exchange;
             this.exchangeAccountOutlook = exchangeAccountOutlook;
             this.messaging = messaging;
             this.navigation = navigation;
-            this.translator = translator;
+            this.$translate = $translate;
         }
 
         $onInit () {
@@ -22,10 +22,10 @@ angular
             return this.exchangeAccountOutlook
                 .delete(this.$routerParams.organization, this.$routerParams.productId, this.account.primaryEmailAddress)
                 .then(() => {
-                    this.messaging.writeSuccess(this.translator.tr("exchange_accounts_outlook_delete_success"));
+                    this.messaging.writeSuccess(this.$translate.instant("exchange_accounts_outlook_delete_success"));
                 })
                 .catch((error) => {
-                    this.messaging.writeError(this.translator.tr("exchange_accounts_outlook_delete_error"), error);
+                    this.messaging.writeError(this.$translate.instant("exchange_accounts_outlook_delete_error"), error);
                 })
                 .finally(() => {
                     this.navigation.resetAction();

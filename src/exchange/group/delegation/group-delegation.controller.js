@@ -1,14 +1,14 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeMailingListDelegationCtrl", class ExchangeMailingListDelegationCtrl {
-        constructor ($scope, Exchange, $timeout, messaging, navigation, translator) {
+        constructor ($scope, Exchange, $timeout, messaging, navigation, $translate) {
             this.services = {
                 $scope,
                 Exchange,
                 $timeout,
                 messaging,
                 navigation,
-                translator
+                $translate
             };
 
             this.$routerParams = Exchange.getParams();
@@ -101,7 +101,7 @@ angular
                     }
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_GROUPS_error_message"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_GROUPS_error_message"), failure);
                 })
                 .finally(() => {
                     this.loading = false;
@@ -110,16 +110,16 @@ angular
         }
 
         updateDelegationRight () {
-            this.services.messaging.writeSuccess(this.services.translator.tr("exchange_GROUPS_delegation_doing_message"));
+            this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_GROUPS_delegation_doing_message"));
 
             this.services
                 .Exchange
                 .updateMailingListDelegationRights(this.$routerParams.organization, this.$routerParams.productId, this.getChanges())
                 .then((data) => {
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_GROUPS_delegation_success_message"), data);
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_GROUPS_delegation_success_message"), data);
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_GROUPS_delegation_error_message"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_GROUPS_delegation_error_message"), failure);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();
