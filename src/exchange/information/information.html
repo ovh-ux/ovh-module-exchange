@@ -13,7 +13,7 @@
                                     <div class="oui-tile__definition">
                                         <strong class="d-block"
                                                 data-translate="exchange_tab_INFORMATIONS_infrastructure"></strong>
-                                        <span data-ng-bind="('exchange_offer_type_' + ctrl.exchange.offer) | translate || ctrl.exchange.offer"></span>
+                                        <span data-ng-bind="(('exchange_offer_type_' + ctrl.exchange.offer) | translate) || ctrl.exchange.offer"></span>
                                     </div>
                                 </li>
                                 <li class="oui-tile__item">
@@ -22,7 +22,7 @@
                                             <div>
                                                 <strong class="d-block"
                                                         data-translate="exchange_tab_INFORMATIONS_version"></strong>
-                                                <span data-ng-bind="('exchange_server_commercial_version' + ctrl.exchange.serverDiagnostic.commercialVersion) | translate || ctrl.exchange.serverDiagnostic.commercialVersion"></span>
+                                                <span data-ng-bind="(('exchange_server_commercial_version' + ctrl.exchange.serverDiagnostic.commercialVersion) | translate) || ctrl.exchange.serverDiagnostic.commercialVersion"></span>
                                             </div>
                                             <button class="btn btn-default ml-auto my-auto text-wrap" type="button"
                                                     data-translate="exchange_upgrade_button_title"
