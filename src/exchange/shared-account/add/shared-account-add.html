@@ -39,7 +39,7 @@
                            data-translate="exchange_tab_ALIAS_creation_error_no_local_part"
                            data-ng-if="ctrl.errors.emailLocalPartIsEmpty"></small>
                     <small class="help-block" id="acceptedCharactersDescription"
-                           data-ng-bind-html="tr('exchange_tab_ALIAS_creation_error_regex', [ctrl.localPartValidationRegex])"></small>
+                           data-ng-bind-html="'exchange_tab_ALIAS_creation_error_regex' | translate:{ t0: ctrl.localPartValidationRegex }"></small>
                 </div>
 
                 <div class="form-group"

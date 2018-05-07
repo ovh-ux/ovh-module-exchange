@@ -9,7 +9,7 @@
              data-wizard-step-on-load="getDelegationRight"
              data-wizard-step-valid="hasChanged()">
 
-            <p data-ng-bind-html="tr('exchange_GROUPS_delegation_step1_intro', [ctrl.selectedGroup.mailingListDisplayName])"></p>
+            <p data-ng-bind-html="'exchange_GROUPS_delegation_step1_intro' | translate:{ t0: ctrl.selectedGroup.mailingListDisplayName }"></p>
 
             <div class="alert alert-warning" role="alert"
                  data-ng-if="!ctrl.loading && ctrl.delegationList && ctrl.delegationList.list.messages.length > 0">
@@ -162,7 +162,7 @@
         </div>
 
         <div data-wizard-step>
-            <p data-ng-bind-html="tr('exchange_GROUPS_delegation_step2_intro', [ctrl.selectedGroup.mailingListDisplayName])"></p>
+            <p data-ng-bind-html="'exchange_GROUPS_delegation_step2_intro' | translate:{ t0: ctrl.selectedGroup.mailingListDisplayName }"></p>
 
             <table class="table table-hover">
                 <thead>

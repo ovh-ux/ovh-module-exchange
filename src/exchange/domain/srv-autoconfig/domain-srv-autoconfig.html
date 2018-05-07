@@ -11,7 +11,7 @@
             <oui-spinner data-ng-if="!ctrl.domainDiag"></oui-spinner>
 
             <div data-ng-if="ctrl.domainDiag">
-                <p data-ng-bind="tr('exchange_tab_domain_diagnostic_srv_intro_ovh', ctrl.domain.displayName)"
+                <p data-translate="exchange_tab_domain_diagnostic_srv_intro_ovh" data-translate-values="{ t0: ctrl.domain.displayName}"
                    data-ng-if="ctrl.domainDiag.isOvhDomain"></p>
                 <p data-ng-bind="'exchange_tab_domain_diagnostic_srv_no_ovh' | translate"
                    data-ng-if="!ctrl.domainDiag.isOvhDomain"></p>
@@ -24,7 +24,7 @@
         </div>
 
         <div data-wizard-step>
-            <p data-ng-bind-html="tr('exchange_tab_domain_diagnostic_srv_recap', ctrl.domainDiag.srv.subDomain)"></p>
+            <p data-ng-bind-html="'exchange_tab_domain_diagnostic_srv_recap' | translate:{ t0: ctrl.domainDiag.srv.subDomain }"></p>
 
             <dl class="dl-horizontal">
                 <dt data-translate="exchange_tab_domain_domain"></dt>

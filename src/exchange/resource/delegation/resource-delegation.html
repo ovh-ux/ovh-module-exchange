@@ -9,7 +9,7 @@
              data-wizard-step-on-load="retrieveDelegationRights"
              data-wizard-step-valid="hasChanged()">
 
-            <p data-ng-bind-html="tr('exchange_RESOURCES_delegation_step1_intro', [ctrl.resource.resourceEmailAddress])"></p>
+            <p data-ng-bind-html="'exchange_RESOURCES_delegation_step1_intro' | translate:{ t0: ctrl.resource.resourceEmailAddress }"></p>
 
             <div class="alert alert-warning" role="alert"
                  data-ng-if="!ctrl.loading && ctrl.delegationList && ctrl.delegationList.list.messages.length > 0">

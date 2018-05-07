@@ -6,7 +6,7 @@
          data-wizard-confirm-button-text="i18n.exchange_wizardHostedCreation_lastDialog_closeButton"
          data-wizard-title="i18n.exchange_wizardHostedCreation_ending_dialog">
         <div data-wizard-step>
-            <span data-ng-bind-html="$ctrl.translator.tr('exchange_wizardHostedCreation_configureDNSZone_auto_explanation1', [$ctrl.domainName])"></span>
+            <span data-ng-bind-html="'exchange_wizardHostedCreation_configureDNSZone_auto_explanation1' | translate:{ t0: $ctrl.domainName }"></span>
             <a data-ng-href="https://{{:: $ctrl.hostname }}" target="_blank" data-ng-bind="'https://' + $ctrl.hostname"></a>
             <span data-ng-bind-html="'exchange_wizardHostedCreation_configureDNSZone_auto_explanation2' | translate"></span>
         </div>

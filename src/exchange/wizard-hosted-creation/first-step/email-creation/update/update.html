@@ -90,7 +90,7 @@
                         </p>
                         <p class="oui-field-helper ml-0 mb-0 mt-2" role="alert" data-ng-messages="$ctrl.addForm.password.$error" data-ng-if="$ctrl.addForm.password.$dirty && $ctrl.addForm.password.$invalid">
                             <span data-ng-message="required" data-ng-bind="'exchange_wizardHostedCreation_emailCreation_add_login_required' | translate"></span>
-                            <span data-ng-message="passwordLength" data-ng-bind="$ctrl.translator.tr('exchange_wizardHostedCreation_emailCreation_add_password_error_short', [$ctrl.serviceParameters.minPasswordLength])"></span>
+                            <span data-ng-message="passwordLength" data-translate="exchange_wizardHostedCreation_emailCreation_add_password_error_short" data-translate-values="{ t0: $ctrl.serviceParameters.minPasswordLength }"></span>
                             <span data-ng-message="passwordComplexity" data-ng-bind="'exchange_wizardHostedCreation_emailCreation_add_password_error_exchangePreferences' | translate"></span>
                         </p>
 

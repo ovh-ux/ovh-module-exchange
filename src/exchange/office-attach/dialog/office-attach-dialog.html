@@ -11,7 +11,7 @@
             <oui-spinner data-ng-if="$ctrl.loading.step1.general"></oui-spinner>
 
             <div data-ng-show="!$ctrl.loading.step1.general">
-                <p data-ng-bind-html="tr('exchange_office_attached_alert_modale_header', [$ctrl.maxNumberOfAccounts])"></p>
+                <p data-ng-bind-html="'exchange_office_attached_alert_modale_header' | translate:{ t0: $ctrl.maxNumberOfAccounts }"></p>
 
                 <form class="form-inline d-md-flex justify-content-md-end mb-3">
                     <div class="form-group mr-md-2"
