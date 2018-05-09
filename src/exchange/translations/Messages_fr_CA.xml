@@ -5,19 +5,19 @@
    <translation id="optional_form_field" qtlid="356264">(facultatif)</translation>
    <translation id="exchange_reset_search_value" qtlid="433719">Réinitialiser la recherche</translation>
    <translation id="exchange_search_value" qtlid="55493">Recherche</translation>
-   <translation id="exchange_status_task_planned_or_executing" qtlid="485632">Tâche planifiée ou en cours d'exécution</translation>
-   <translation id="exchange_common_new_tab" qtlid="485645">Ouvre le lien dans un nouvel onglet</translation>
-   <translation id="exchange_contractTypes_prepaid" qtlid="485658">Prépayé</translation>
-   <translation id="exchange_contractTypes_payAsYouGo" qtlid="485671">Paiement à la consommation</translation>
-   <translation id="exchange_accountCreationMethods_adding" qtlid="47781">Ajout</translation>
-   <translation id="exchange_accountCreationMethods_ordering" qtlid="8302">Commande</translation>
+   <translation id="exchange_status_task_planned_or_executing">Tâche planifiée ou en cours d'exécution</translation>
+   <translation id="exchange_common_new_tab">Ouvre le lien dans un nouvel onglet</translation>
+   <translation id="exchange_contractTypes_prepaid">Prépayé</translation>
+   <translation id="exchange_contractTypes_payAsYouGo">Paiement à la consommation</translation>
+   <translation id="exchange_accountCreationMethods_adding">Ajout</translation>
+   <translation id="exchange_accountCreationMethods_ordering">Commande</translation>
 
 <!-- ########################################## -->
 <!-- DASHBOARD -->
    <translation id="exchange_common_error" qtlid="299384">Une erreur est survenue :</translation>
-   <translation id="exchange_offer_type_DEDICATED_CLUSTER" qtlid="485684">Dedicated Exchange</translation>
-   <translation id="exchange_offer_type_DEDICATED" qtlid="137218">Private Exchange</translation>
-   <translation id="exchange_offer_type_HOSTED" qtlid="137231">Hosted Exchange</translation>
+   <translation id="exchange_offer_type_DEDICATED_CLUSTER">Dedicated Exchange</translation>
+   <translation id="exchange_offer_type_DEDICATED" qtlid="137218">Exchange Privé </translation>
+   <translation id="exchange_offer_type_HOSTED" qtlid="137231">Exchange Hébergé </translation>
    <translation id="exchange_offer_type_PROVIDER" qtlid="136152">Exchange revendeur</translation>
    <translation id="exchange_offer_type_25g" qtlid="264042">Exchange individuel</translation>
    <translation id="exchange_dashboard_loading_error" qtlid="168120">Une erreur s'est produite lors du chargement des informations.</translation>
@@ -34,7 +34,7 @@
    <translation id="exchange_dashboard_accounts" qtlid="136204">Comptes Exchange</translation>
    <translation id="exchange_dashboard_tasks" qtlid="136217">Tâches récentes</translation>
    <translation id="exchange_dashboard_diag" qtlid="136230">Diagnostic serveur</translation>
-   <translation id="exchange_dashboard_guides" qtlid="366359">Besoin d'aide pour configurer votre service Exchange ?</translation>
+   <translation id="exchange_dashboard_guides" qtlid="366359">Besoin d'aide pour configurer votre service Exchange?</translation>
    <translation id="exchange_dashboard_guides_url" qtlid="156732">Consultez nos guides en ligne.</translation>
    <translation id="exchange_diagnostic_guide" qtlid="297891">Le diagnostic a décelé des erreurs. Pour plus d'information sur chacune d'entre elles</translation>
    <translation id="exchange_diagnostic_guides_url" qtlid="297904">consultez notre guide en ligne.</translation>
@@ -84,7 +84,7 @@
    <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Obtenez un mois gratuit d'Office 365 Business sur un maximum de {0} comptes Exchange de votre choix</translation>
    <translation id="exchange_office_attached_alert_modale_selected_accounts" qtlid="404265">{0} comptes sélectionnés pour un maximum de {1}</translation>
    <translation id="exchange_office_attached_alert_modale_account_types" qtlid="404278">Types de comptes à utiliser dans les recherches</translation>
-   <translation id="exchange_office_attached_alert_modale_search_form" qtlid="404291">Rechercher des comptes emails à utiliser</translation>
+   <translation id="exchange_office_attached_alert_modale_search_form" qtlid="404291">Rechercher des comptes de messagerie électronique à utiliser</translation>
    <translation id="exchange_office_attached_alert_modale_confirmation_header" qtlid="404304">Vous allez activer l'offre Office 365 sur les {0} comptes suivants :</translation>
    <translation id="exchange_office_attached_alert_modale_confirmation_checkbox" qtlid="404317">En cochant cette case, je confirme vouloir souscrire à l'offre pour les comptes ci-dessus et je confirme avoir compris que l'offre sera reconduite automatiquement si je ne l'annule pas.</translation>
 
@@ -92,7 +92,7 @@
 <!-- TABS -->
    <translation id="exchange_tab_INFORMATION" qtlid="27115">Informations générales</translation>
    <translation id="exchange_tab_DOMAIN" qtlid="276311">Domaines associés</translation>
-   <translation id="exchange_tab_ACCOUNT" qtlid="74273">Comptes e-mail</translation>
+   <translation id="exchange_tab_ACCOUNT" qtlid="74273">Comptes courriel</translation>
    <translation id="exchange_tab_SHARED_ACCOUNT" qtlid="215195">Comptes partagés</translation>
    <translation id="exchange_tab_GROUP" qtlid="32962">Groupes</translation>
    <translation id="exchange_tab_RESOURCES" qtlid="201237">Ressources</translation>
@@ -106,7 +106,7 @@
 
    <translation id="exchange_tab_INFORMATIONS_summary" qtlid="4082">Résumé</translation>
    <translation id="exchange_tab_INFORMATIONS_stats" qtlid="26671">Statistiques</translation>
-   <translation id="exchange_tab_INFORMATIONS_server" qtlid="8290">Serveur</translation>
+   <translation id="exchange_tab_INFORMATIONS_server">Serveur</translation>
    <translation id="exchange_tab_INFORMATIONS_connexion" qtlid="55925">Connexion</translation>
    <translation id="exchange_tab_INFORMATIONS_sharepoint" qtlid="319401">SharePoint associé</translation>
    <translation id="exchange_tab_INFORMATIONS_sharepoint_url" qtlid="297930">URL consultation</translation>
@@ -115,7 +115,7 @@
    <translation id="exchange_tab_INFORMATIONS_go_far" qtlid="276337">Aller plus loin</translation>
    <translation id="exchange_tab_INFORMATIONS_infrastructure" qtlid="125552">Infrastructure</translation>
    <translation id="exchange_tab_INFORMATIONS_version" qtlid="276350">Version Exchange</translation>
-   <translation id="exchange_tab_INFORMATIONS_webmail" qtlid="485697">Webmail :</translation>
+   <translation id="exchange_tab_INFORMATIONS_webmail">Webmail :</translation>
    <translation id="exchange_tab_INFORMATIONS_messaging" qtlid="276363">Client de messagerie</translation>
    <translation id="exchange_tab_INFORMATIONS_order_office" qtlid="276376">Commander Office 365</translation>
    <translation id="exchange_tab_INFORMATIONS_order_sharepoint" qtlid="319427">Commander SharePoint</translation>
@@ -129,70 +129,70 @@
    <translation id="exchange_tab_ACCOUNTS_table_empty_type_STANDARD" qtlid="190823">Vous n'avez pas de compte de type Standard</translation>
    <translation id="exchange_tab_ACCOUNTS_table_empty_type_ENTERPRISE" qtlid="190836">Vous n'avez pas de compte de type Entreprise</translation>
    <translation id="exchange_tab_ACCOUNTS_table_empty_search" qtlid="149813">Vous n'avez pas de compte correspondant au terme recherché</translation>
-   <translation id="exchange_tab_ACCOUNTS_table_email" qtlid="137244">Compte e-mail</translation>
+   <translation id="exchange_tab_ACCOUNTS_table_email" qtlid="137244">Compte courriel</translation>
    <translation id="exchange_tab_ACCOUNTS_table_type" qtlid="2642">Type</translation>
    <translation id="exchange_tab_ACCOUNTS_table_size" qtlid="7726">Taille</translation>
    <translation id="exchange_tab_ACCOUNTS_table_alias" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ACCOUNTS_table_group" qtlid="59507">Groupe</translation>
    <translation id="exchange_tab_ACCOUNTS_table_outlook" qtlid="24427">Outlook</translation>
-   <translation id="exchange_tab_ACCOUNTS_table_status" qtlid="26443">Statut</translation>
+   <translation id="exchange_tab_ACCOUNTS_table_status">Statut</translation>
    <translation id="exchange_tab_ACCOUNTS_table_settings" qtlid="4406">Configuration</translation>
    <translation id="exchange_tab_ACCOUNTS_type_ALL" qtlid="69173">Tous</translation>
    <translation id="exchange_tab_ACCOUNTS_type_BASIC" qtlid="48986">Basic</translation>
    <translation id="exchange_tab_ACCOUNTS_type_STANDARD" qtlid="48998">Standard</translation>
    <translation id="exchange_tab_ACCOUNTS_type_ENTERPRISE" qtlid="49022">Entreprise</translation>
-   <translation id="exchange_accounts_types_2010_BASIC" qtlid="48986">Basic</translation>
-   <translation id="exchange_accounts_types_2010_STANDARD" qtlid="48998">Standard</translation>
-   <translation id="exchange_accounts_types_2010_ENTERPRISE" qtlid="49022">Entreprise</translation>
-   <translation id="exchange_accounts_types_dedicatedCluster_BASIC" qtlid="374893">E-mail Pro</translation>
-   <translation id="exchange_accounts_types_dedicatedCluster_STANDARD" qtlid="80430">Exchange</translation>
+   <translation id="exchange_accounts_types_2010_BASIC">Basic</translation>
+   <translation id="exchange_accounts_types_2010_STANDARD">Standard</translation>
+   <translation id="exchange_accounts_types_2010_ENTERPRISE">Entreprise</translation>
+   <translation id="exchange_accounts_types_dedicatedCluster_BASIC">E-mail Pro</translation>
+   <translation id="exchange_accounts_types_dedicatedCluster_STANDARD">Exchange</translation>
 
-   <translation id="exchange_tab_dedicatedCluster_account_type_BASIC" qtlid="485710">E-Mail Pro</translation>
-   <translation id="exchange_tab_dedicatedCluster_account_type_STANDARD" qtlid="80430">Exchange</translation>
+   <translation id="exchange_tab_dedicatedCluster_account_type_BASIC">E-Mail Pro</translation>
+   <translation id="exchange_tab_dedicatedCluster_account_type_STANDARD">Exchange</translation>
 
-   <translation id="exchange_tab_accounts_table_outlook_ALREADY_ORDERED" qtlid="485723">Commandé</translation>
-   <translation id="exchange_tab_accounts_table_outlook_ALREADY_ACTIVATED" qtlid="30250">Activé</translation>
-   <translation id="exchange_tab_accounts_table_outlook_TO_ORDER" qtlid="485736">À commander</translation>
-   <translation id="exchange_tab_accounts_table_outlook_TO_ACTIVATE" qtlid="485749">À activer</translation>
+   <translation id="exchange_tab_accounts_table_outlook_ALREADY_ORDERED">Commandé</translation>
+   <translation id="exchange_tab_accounts_table_outlook_ALREADY_ACTIVATED">Activé</translation>
+   <translation id="exchange_tab_accounts_table_outlook_TO_ORDER">À commander</translation>
+   <translation id="exchange_tab_accounts_table_outlook_TO_ACTIVATE">À activer</translation>
 
    <translation id="exchange_tab_ACCOUNTS_action_add_exchange" qtlid="139169">Commander des comptes</translation>
    <translation id="exchange_tab_ACCOUNTS_action_add_extern" qtlid="136334">Ajouter un contact externe</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_OK" qtlid="424155">Opérationnel</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_CREATING" qtlid="146632">Création en cours</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_DELETING" qtlid="146645">Suppression en cours</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_RESETTING" qtlid="485762">Réinitialisation en cours</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="485775">Réactivation en cours</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_INTERNAL_MIGRATION" qtlid="186713">Migration en cours</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_OK">Opérationnel</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_CREATING">Création en cours</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_DELETING">Suppression en cours</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_RESETTING" qtlid="447898">Réinitialisation</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_REOPENING">Réactivation en cours</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_INTERNAL_MIGRATION">Migration en cours</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Suspendu</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Suspension en cours</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_BLOCKED" qtlid="108901">Bloqué</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_DOING" qtlid="485632">Tâche planifiée ou en cours d'exécution</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_ERROR" qtlid="485788">Tâche en erreur</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_UNKNOWN" qtlid="77142">Inconnu</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_TO_CONFIGURE" qtlid="424142">À configurer</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_BLOCKED">Bloqué</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_DOING">Tâche planifiée ou en cours d'exécution</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_ERROR">Tâche en erreur</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_UNKNOWN">Inconnu</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_TO_CONFIGURE">À configurer</translation>
 
-   <translation id="exchange_tab_ACCOUNTS_menu_edit" qtlid="37875">Modifier</translation>
-   <translation id="exchange_tab_ACCOUNTS_menu_alias" qtlid="485801">Gérer les alias</translation>
-   <translation id="exchange_tab_ACCOUNTS_menu_delegations" qtlid="288782">Gérer les délégations</translation>
-   <translation id="exchange_tab_ACCOUNTS_menu_exportToPST" qtlid="485814">Exporter au format PST</translation>
-   <translation id="exchange_tab_ACCOUNTS_menu_upgradeTo300Gb" qtlid="485827">Augmenter la capacité à 300 {0}</translation>
-   <translation id="exchange_tab_ACCOUNTS_menu_contactSupportForSpam" qtlid="61824">Débloquer</translation>
-   <translation id="exchange_tab_ACCOUNTS_menu_outlook_activate" qtlid="397416">Activer la licence Outlook</translation>
-   <translation id="exchange_tab_ACCOUNTS_menu_outlook_order" qtlid="485840">Commander une licence Outlook</translation>
-   <translation id="exchange_tab_ACCOUNTS_menu_outlook_access" qtlid="485853">Utiliser la licence Outlook</translation>
-   <translation id="exchange_tab_ACCOUNTS_menu_outlook_deactivate" qtlid="485866">Désactiver la licence Outlook</translation>
-   <translation id="exchange_tab_ACCOUNTS_menu_outlook_delete" qtlid="397377">Supprimer la licence Outlook</translation>
-   <translation id="exchange_tab_ACCOUNTS_menu_reset" qtlid="169654">Réinitialiser</translation>
-   <translation id="exchange_tab_ACCOUNTS_menu_delete" qtlid="2414">Supprimer</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_edit">Modifier</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_alias">Gérer les alias</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_delegations">Gérer les délégations</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_exportToPST">Exporter au format PST</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_upgradeTo300Gb">Augmenter la capacité à 300 {0}</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_contactSupportForSpam">Débloquer</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_outlook_activate">Activer la licence Outlook</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_outlook_order">Commander une licence Outlook</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_outlook_access">Utiliser la licence Outlook</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_outlook_deactivate">Désactiver la licence Outlook</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_outlook_delete">Supprimer la licence Outlook</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_reset">Réinitialiser</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_delete">Supprimer</translation>
 
    <translation id="exchange_tab_ACCOUNTS_edit_account_tooltip" qtlid="4406">Configuration</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_account_tooltip" qtlid="19075">Plus d'actions</translation>
    <translation id="exchange_tab_domain_no_domain_attached" qtlid="271361">Votre service Exchange est presque prêt. Vous devez attacher un domaine à votre service. Si vous n'en avez pas, <a href="https://www.ovh.com/fr/cgi-bin/newOrder/order.cgi" target="_blank">cliquez ici</a> pour en acheter un.</translation>
-   <translation id="exchange_tab_ACCOUNTS_warning" qtlid="108456">Attention !</translation>
+   <translation id="exchange_tab_ACCOUNTS_warning" qtlid="108456">Attention!</translation>
    <translation id="exchange_tab_ACCOUNTS_partial" qtlid="143889">Certains comptes n'ont pu être chargés correctement. Veuillez rafraîchir la page afin de résoudre le problème.</translation>
    <translation id="exchange_tab_ACCOUNTS_partial_account" qtlid="139208">Ce compte n'a pas été chargé correctement.</translation>
    <translation id="exchange_tab_ACCOUNTS_billing_nic_info_err" qtlid="181357">Vous devez être administrateur ou contact technique pour pouvoir ajouter un compte.</translation>
-   <translation id="exchange_tab_ACCOUNTS_billing_nic_info" qtlid="267396">Veuillez contacter l'assistance client par email ou par téléphone au 1007 pour commander des comptes e-mail hosted-ovh-tel.</translation>
+   <translation id="exchange_tab_ACCOUNTS_billing_nic_info" qtlid="267396">Veuillez contacter l'assistance client par courriel ou par téléphone au 1007 pour commander des comptes de messagerie électronique hosted-ovh-tel.</translation>
    <translation id="exchange_tab_ACCOUNTS_pwderror" qtlid="137296">Confirmation incorrecte</translation>
    <translation id="exchange_tab_ACCOUNTS_popover_alias" qtlid="21499">Configurer les alias</translation>
    <translation id="exchange_tab_ACCOUNTS_popover_delegation" qtlid="143434">Configurer les délégations</translation>
@@ -210,7 +210,7 @@
 
 <!-- ########################################## -->
 <!-- ALIAS -->
-   <translation id="exchange_tab_ALIAS_back_button" qtlid="485879">Gestion des alias pour {0}</translation>
+   <translation id="exchange_tab_ALIAS_back_button" qtlid="4118">Retour</translation>
    <translation id="exchange_tab_ALIAS_header" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_delete_tooltip" qtlid="178848">Supprimer cet alias</translation>
    <translation id="exchange_tab_ALIAS_GROUP_intro" qtlid="434525">Liste des alias créés pour le groupe <strong>{0}</strong></translation>
@@ -227,13 +227,13 @@
    <translation id="exchange_tab_ALIAS_delete_success_message" qtlid="143564">Votre alias va être supprimé.</translation>
    <translation id="exchange_tab_ALIAS_delete_error_message" qtlid="143577">Une erreur est survenue lors de la suppression de votre alias.</translation>
    <translation id="exchange_tab_ALIAS_remove_alias_title" qtlid="9550">Supprimer un alias</translation>
-   <translation id="exchange_tab_ALIAS_remove_alias_intro" qtlid="143993">Voulez-vous réellement supprimer l’alias suivant de votre service Exchange ?</translation>
+   <translation id="exchange_tab_ALIAS_remove_alias_intro" qtlid="143993">Voulez-vous réellement supprimer l’alias suivant de votre service Exchange?</translation>
    <translation id="exchange_tab_ALIAS_remove_alias_label" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_remove_account_label" qtlid="143603">Compte attaché</translation>
    <translation id="exchange_tab_ALIAS_add_alias_title" qtlid="143616">Créer un alias</translation>
    <translation id="exchange_tab_ALIAS_add_alias_intro" qtlid="416579">Créer un alias pour le compte <span class="bold">{0}</span></translation>
    <translation id="exchange_tab_ALIAS_add_alias_placeholder" qtlid="9466">Alias</translation>
-   <translation id="exchange_tab_ALIAS_add_alias_step2_intro" qtlid="144006">Etes-vous sûr de vouloir ajouter l’alias ci-dessous ?</translation>
+   <translation id="exchange_tab_ALIAS_add_alias_step2_intro" qtlid="144006">Etes-vous sûr de vouloir ajouter l’alias ci-dessous?</translation>
    <translation id="exchange_tab_ALIAS_add_alias_step2_alias_label" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_add_alias_step2_account_label" qtlid="143603">Compte attaché</translation>
    <translation id="exchange_tab_ALIAS_add_alias_valid" qtlid="171747">Attention, certains caractères spéciaux ne sont pas acceptés dans le nom d'un alias, par exemple + ? / () [] ;</translation>
@@ -241,7 +241,7 @@
    <translation id="exchange_tab_ALIAS_add_alias_error_message" qtlid="143681">Une erreur est survenue lors de la création de votre alias.</translation>
    <translation id="exchange_tab_ALIAS_add_no_domains" qtlid="170746">Vous n'avez pas encore ajouté de domaine ou il n'a pas encore été validé. <br/>Vous devez d'abord ajouter un domaine et attendre qu'il soit validé pour créer un alias à votre compte Exchange.</translation>
    <translation id="exchange_tab_ALIAS_domain_loading_failure" qtlid="144045">Une erreur est survenue lors du chargement de vos domaines.</translation>
-   <translation id="exchange_tab_ALIAS_add_alias_limit_tooltip" qtlid="485892">Vous avez atteint la limite de {0} alias par compte Exchange.</translation>
+   <translation id="exchange_tab_ALIAS_add_alias_limit_tooltip">Vous avez atteint la limite de {0} alias par compte Exchange.</translation>
 
 <!-- ########################################## -->
 <!-- TASKS -->
@@ -370,7 +370,7 @@
 
 <!-- ########################################## -->
 <!-- DOMAIN -->
-   <translation id="exchange_tab_domain_no_domains_1" qtlid="137439">Ajoutez un domaine afin de créer des comptes e-mail Exchange. Cliquez</translation>
+   <translation id="exchange_tab_domain_no_domains_1" qtlid="137439">Ajoutez un domaine afin de créer des comptes courriel Exchange. Cliquez</translation>
    <translation id="exchange_tab_domain_no_domains_2" qtlid="137452">ici</translation>
    <translation id="exchange_tab_domain_no_domains_3" qtlid="137465">pour ajouter un nouveau domaine.</translation>
    <translation id="exchange_tab_domain_table_empty_search" qtlid="150034">Vous n'avez pas de domaine correspondant au terme recherché</translation>
@@ -406,7 +406,7 @@
    <translation id="exchange_tab_domain_diagnostic_srv_toolbox_ok" qtlid="137491">Configuration automatique effectuée</translation>
    <translation id="exchange_tab_domain_error_message" qtlid="144045">Une erreur est survenue lors du chargement de vos domaines.</translation>
    <translation id="exchange_tab_domain_diagnostic_cname" qtlid="129847">CNAME</translation>
-   <translation id="exchange_tab_domain_status" qtlid="26443">Statut</translation>
+   <translation id="exchange_tab_domain_status">Statut</translation>
    <translation id="exchange_tab_domain_task_in_progress" qtlid="2690">Tâche en cours</translation>
    <translation id="exchange_tab_domain_validation" qtlid="33802">Validation</translation>
    <translation id="exchange_tab_domain_validation_doing" qtlid="136646">Validation de domaine en cours</translation>
@@ -427,26 +427,26 @@
    <translation id="exchange_ACTION_order_accounts_button" qtlid="139169">Commander des comptes</translation>
    <translation id="exchange_ACTION_order_accounts_title" qtlid="139299">Commander des comptes Exchange</translation>
    <translation id="exchange_ACTION_order_accounts_step1_intro" qtlid="139312">Veuillez choisir le type de paiement puis le nombre de comptes Exchange à commander.</translation>
-<translation id="exchange_ACTION_order_accounts_step1_not_configured_account_message" qtlid="471951">Attention, vous avez au moins un compte non configuré sur cette plateforme.</translation>
+<translation id="exchange_ACTION_order_accounts_step1_not_configured_account_message">Attention, vous avez au moins un compte non configuré sur cette plateforme.</translation>
    <translation id="exchange_ACTION_order_accounts_step1_account_type" qtlid="368050">Type de compte :</translation>
    <translation id="exchange_ACTION_order_accounts_step1_account_type_50G" qtlid="368063">50 Gio</translation>
    <translation id="exchange_ACTION_order_accounts_step1_account_type_300G" qtlid="368076">300 Gio</translation>
-   <translation id="exchange_ACTION_order_accounts_step1_pay_type" qtlid="139325">Type de paiement :</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_pay_type" qtlid="139325">Type de paiement:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_01" qtlid="79530">mensuel</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_12" qtlid="79542">annuel</translation>
-   <translation id="exchange_ACTION_order_accounts_step1_number" qtlid="139338">Nombre de comptes :</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_number" qtlid="139338">Nombre de comptes:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_tooltip" qtlid="144110">Entrez un nombre entre 1 et 100</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_not_valid" qtlid="144123">Entrez un nombre valide</translation>
    <translation id="exchange_ACTION_order_accounts_step1_loading_error" qtlid="135294">Une erreur est survenue lors du chargement des informations.</translation>
    <translation id="exchange_ACTION_order_accounts_step2_loader" qtlid="139377">Vérification des paramètres de la commande en cours</translation>
    <translation id="exchange_ACTION_order_accounts_step2_check_error" qtlid="144136">Votre commande n'a pas pu être vérifiée, veuillez essayer ultérieurement.</translation>
    <translation id="exchange_ACTION_order_accounts_step2_intro" qtlid="139403">Resumé de votre commande</translation>
-   <translation id="exchange_ACTION_order_accounts_step2_pay_type" qtlid="139325">Type de paiement :</translation>
+   <translation id="exchange_ACTION_order_accounts_step2_pay_type" qtlid="139325">Type de paiement:</translation>
    <translation id="exchange_ACTION_order_accounts_step2_pay_type_monthly" qtlid="79530">mensuel</translation>
    <translation id="exchange_ACTION_order_accounts_step2_pay_type_yearly" qtlid="79542">annuel</translation>
-   <translation id="exchange_ACTION_order_accounts_step2_number" qtlid="139338">Nombre de comptes :</translation>
+   <translation id="exchange_ACTION_order_accounts_step2_number" qtlid="139338">Nombre de comptes:</translation>
    <translation id="exchange_ACTION_order_accounts_step2_price" qtlid="139416">{0} HT ({1} TTC)</translation>
-   <translation id="exchange_ACTION_order_accounts_step2_total" qtlid="139429">Total facturé :</translation>
+   <translation id="exchange_ACTION_order_accounts_step2_total" qtlid="139429">Total facturé:</translation>
    <translation id="exchange_ACTION_order_accounts_step2_doing_message" qtlid="144149">Commande de comptes Exchange en cours...</translation>
    <translation id="exchange_ACTION_order_accounts_step2_success_message" qtlid="171214">Les comptes vont être créés dès le règlement du bon de commande : <br /><a href="{0}">{0}</a></translation>
    <translation id="exchange_ACTION_order_accounts_step2_error_message" qtlid="139468">Une erreur est survenue lors de la commande.</translation>
@@ -457,51 +457,51 @@
    <translation id="exchange_ACTION_order_accounts_step3_explication2" qtlid="144175">Un nouvel onglet s'ouvrira et vous serez automatiquement redirigé vers l'interface de paiement OVH.</translation>
 
 <!-- ACCOUNT - ADD -->
-   <translation id="exchange_account_add_back_button" qtlid="485905">Ajout d'un compte</translation>
-   <translation id="exchange_account_add_header" qtlid="485918">Vous pouvez commander un compte E-mail Pro ou Exchange à ajouter à votre offre Dedicated Exchange. Il sera ajouté à votre facture mensuelle.</translation>
-   <translation id="exchange_account_add_accountType_label" qtlid="48938">Type de compte</translation>
-<translation id="exchange_account_add_accountType_tooltip" qtlid="485931">E-mail pro&#160;: profitez de 10 Go de stockage, des protocoles POP, IMAP et SMTP.
+   <translation id="exchange_account_add_back_button">Ajout d'un compte</translation>
+   <translation id="exchange_account_add_header">Vous pouvez commander un compte E-mail Pro ou Exchange à ajouter à votre offre Dedicated Exchange. Il sera ajouté à votre facture mensuelle.</translation>
+   <translation id="exchange_account_add_accountType_label">Type de compte</translation>
+<translation id="exchange_account_add_accountType_tooltip">E-mail pro&#160;: profitez de 10 Go de stockage, des protocoles POP, IMAP et SMTP.
 Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync.
 </translation>
-   <translation id="exchange_account_add_emailAddress_label" qtlid="11315">Adresse e-mail</translation>
-<translation id="exchange_account_add_emailAddress_hint" qtlid="485944">La partie locale de votre adresse e-mail (le texte situé avant le «&#160;@&#160;») doit respecter ces indications&#160;:<ul>
-<li qtlid="485957">elle doit débuter et se terminer par une lettre ou un chiffre&#160;;</li>
-<li qtlid="485970">les caractères spéciaux&#160;autorisés sont «&#160;.&#160;», «&#160;+&#160;», «&#160;- » et «&#160;_&#160;» ;</li>
-<li qtlid="485983">il est impossible de mettre côte à côte des caractères spéciaux.</li>
+   <translation id="exchange_account_add_emailAddress_label">Adresse e-mail</translation>
+<translation id="exchange_account_add_emailAddress_hint">La partie locale de votre adresse e-mail (le texte situé avant le «&#160;@&#160;») doit respecter ces indications&#160;:<ul>
+<li>elle doit débuter et se terminer par une lettre ou un chiffre&#160;;</li>
+<li>les caractères spéciaux&#160;autorisés sont «&#160;.&#160;», «&#160;+&#160;», «&#160;- » et «&#160;_&#160;» ;</li>
+<li>il est impossible de mettre côte à côte des caractères spéciaux.</li>
 </ul></translation>
-   <translation id="exchange_account_add_emailAddress_error_emailAddressIsAlreadyTaken" qtlid="485996">Cette adresse e-mail existe déjà.</translation>
-   <translation id="exchange_account_add_samAccountName_label" qtlid="486009">Nom de compte Exchange 2010 (optionnel)</translation>
-   <translation id="exchange_account_add_firstName_label" qtlid="486022">Prénom (optionnel)</translation>
-   <translation id="exchange_account_add_lastName_label" qtlid="486035">Nom (optionnel)</translation>
-   <translation id="exchange_account_add_displayName_label" qtlid="486048">Nom à afficher (optionnel)</translation>
-   <translation id="exchange_account_add_password_label" qtlid="2270">Mot de passe</translation>
-   <translation id="exchange_account_add_password_button_show" qtlid="486061">Montrer le mot de passe</translation>
-   <translation id="exchange_account_add_password_button_hide" qtlid="486074">Cacher le mot de passe</translation>
-   <translation id="exchange_account_add_password_hint_simple" qtlid="486087">Ce champ doit avoir une longueur d'au moins {0} caractères.</translation>
-   <translation id="exchange_account_add_password_hint_complex_1" qtlid="486100">Pour des raisons de sécurité, ce champ doit respecter ces critères :</translation>
-   <translation id="exchange_account_add_password_hint_complex_1_1" qtlid="486113">ne pas contenir le nom à afficher ou le nom de compte Exchange 2010 (sans respect de la casse) ;</translation>
-   <translation id="exchange_account_add_password_hint_complex_1_2" qtlid="486126">doit comporter au moins entre {0} caractères ;</translation>
-   <translation id="exchange_account_add_password_hint_complex_1_3" qtlid="486139">doit comporter les éléments de trois des quatre catégories suivantes :</translation>
-   <translation id="exchange_account_add_password_hint_complex_1_3_1" qtlid="486152">des lettres minuscules,</translation>
-   <translation id="exchange_account_add_password_hint_complex_1_3_2" qtlid="486165">des lettres majuscules,</translation>
-   <translation id="exchange_account_add_password_hint_complex_1_3_3" qtlid="486178">des chiffres entre 0 et 9,</translation>
-   <translation id="exchange_account_add_password_hint_complex_1_3_4" qtlid="486191">des caractères spéciaux.</translation>
-   <translation id="exchange_account_add_passwordConfirmation_label" qtlid="9983">Confirmation</translation>
-   <translation id="exchange_account_add_order_button" qtlid="43558">Commander</translation>
-   <translation id="exchange_account_add_field_error_required" qtlid="472294">Veuillez compléter ce champ.</translation>
-   <translation id="exchange_account_add_field_error_doesntRespectComplexityRules" qtlid="486204">Ce champ ne respecte pas les règles de complexité.</translation>
-   <translation id="exchange_account_add_field_error_passwordConfirmation" qtlid="139637">Mots de passe différents.</translation>
-   <translation id="exchange_account_add_field_error_pattern" qtlid="472385">Veuillez saisir un format valide.</translation>
-   <translation id="exchange_account_add_submit_success" qtlid="486217">La création du compte {0} a été effectuée. Vous pourrez l’utiliser dans quelques minutes.</translation>
+   <translation id="exchange_account_add_emailAddress_error_emailAddressIsAlreadyTaken">Cette adresse e-mail existe déjà.</translation>
+   <translation id="exchange_account_add_samAccountName_label">Nom de compte Exchange 2010 (optionnel)</translation>
+   <translation id="exchange_account_add_firstName_label">Prénom (optionnel)</translation>
+   <translation id="exchange_account_add_lastName_label">Nom (optionnel)</translation>
+   <translation id="exchange_account_add_displayName_label">Nom à afficher (optionnel)</translation>
+   <translation id="exchange_account_add_password_label">Mot de passe</translation>
+   <translation id="exchange_account_add_password_button_show">Montrer le mot de passe</translation>
+   <translation id="exchange_account_add_password_button_hide">Cacher le mot de passe</translation>
+   <translation id="exchange_account_add_password_hint_simple">Ce champ doit avoir une longueur d'au moins {0} caractères.</translation>
+   <translation id="exchange_account_add_password_hint_complex_1">Pour des raisons de sécurité, ce champ doit respecter ces critères :</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_1">ne pas contenir le nom à afficher ou le nom de compte Exchange 2010 (sans respect de la casse) ;</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_2">doit comporter au moins entre {0} caractères ;</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_3">doit comporter les éléments de trois des quatre catégories suivantes :</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_3_1">des lettres minuscules,</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_3_2">des lettres majuscules,</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_3_3">des chiffres entre 0 et 9,</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_3_4">des caractères spéciaux.</translation>
+   <translation id="exchange_account_add_passwordConfirmation_label">Confirmation</translation>
+   <translation id="exchange_account_add_order_button">Commander</translation>
+   <translation id="exchange_account_add_field_error_required">Veuillez compléter ce champ.</translation>
+   <translation id="exchange_account_add_field_error_doesntRespectComplexityRules">Ce champ ne respecte pas les règles de complexité.</translation>
+   <translation id="exchange_account_add_field_error_passwordConfirmation">Mots de passe différents.</translation>
+   <translation id="exchange_account_add_field_error_pattern">Veuillez saisir un format valide.</translation>
+   <translation id="exchange_account_add_submit_success">La création du compte {0} a été effectuée. Vous pourrez l’utiliser dans quelques minutes.</translation>
    <translation id="exchange_ACTION_add_account_legal_warning" qtlid="209099">Je reconnais qu'OVH procédera à l’exécution immédiate de la prestation à compter de la validation de ma commande et à ce titre je renonce expressément à exercer mon droit de rétractation conformément aux dispositions de l’article L.121-21-8 du code de la consommation.</translation>
    <translation id="exchange_ACTION_add_account_title" qtlid="143225">Ajouter un compte Exchange</translation>
-   <translation id="exchange_ACTION_add_account_step1_email_label" qtlid="137244">Compte e-mail</translation>
+   <translation id="exchange_ACTION_add_account_step1_email_label" qtlid="137244">Compte courriel</translation>
    <translation id="exchange_ACTION_add_account_button" qtlid="21487">Ajouter un compte</translation>
    <translation id="exchange_ACTION_add_account_step1_first_name_label" qtlid="23323">Prénom</translation>
    <translation id="exchange_ACTION_add_account_step1_last_name_label" qtlid="3818">Nom</translation>
    <translation id="exchange_ACTION_add_account_step1_display_name_label" qtlid="23515">Nom à afficher</translation>
-   <translation id="exchange_ACTION_add_account_step2_confirmation_intro" qtlid="136841">Votre compte :</translation>
-   <translation id="exchange_ACTION_add_account_step2_email_label" qtlid="137244">Compte e-mail</translation>
+   <translation id="exchange_ACTION_add_account_step2_confirmation_intro" qtlid="136841">Votre compte:</translation>
+   <translation id="exchange_ACTION_add_account_step2_email_label" qtlid="137244">Compte courriel</translation>
    <translation id="exchange_ACTION_add_account_step2_first_name_label" qtlid="23323">Prénom</translation>
    <translation id="exchange_ACTION_add_account_step2_last_name_label" qtlid="3818">Nom</translation>
    <translation id="exchange_ACTION_add_account_step2_display_name_label" qtlid="23515">Nom à afficher</translation>
@@ -511,14 +511,14 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_ACTION_add_account_outlook_false" qtlid="136308">Sans</translation>
    <translation id="exchange_ACTION_add_no_domains" qtlid="170798">Vous n'avez pas encore ajouté de domaine ou il n'a pas encore été validé. <br/>Vous devez d'abord ajouter un domaine et attendre qu'il soit validé pour créer un compte Exchange.</translation>
    <translation id="exchange_ACTION_add_account_option_fail" qtlid="144045">Une erreur est survenue lors du chargement de vos domaines.</translation>
-   <translation id="exchange_ACTION_add_account_fetchingAccountCreationOptions_error" qtlid="486230">Une erreur est survenue lors de la récupération des options de création d'un compte Exchange.</translation>
+   <translation id="exchange_ACTION_add_account_fetchingAccountCreationOptions_error">Une erreur est survenue lors de la récupération des options de création d'un compte Exchange.</translation>
    <translation id="exchange_ACTION_add_account_error_message" qtlid="136828">Une erreur est survenue lors de la création du compte Exchange.</translation>
-   <translation id="exchange_ACTION_update_account_step1_email_label" qtlid="137244">Compte e-mail</translation>
+   <translation id="exchange_ACTION_update_account_step1_email_label" qtlid="137244">Compte courriel</translation>
    <translation id="exchange_ACTION_update_account_step1_type_label" qtlid="191057">Type compte</translation>
    <translation id="exchange_ACTION_update_account_step1_type_STANDARD" qtlid="48998">Standard</translation>
    <translation id="exchange_ACTION_update_account_step1_type_BASIC" qtlid="48986">Basic</translation>
    <translation id="exchange_ACTION_update_account_step1_type_ENTERPRISE" qtlid="49022">Entreprise</translation>
-   <translation id="exchange_ACTION_update_account_step1_type_cant_change" qtlid="486243">Le type de compte ne peut être changé tant qu'une licence Outlook est associée à ce compte.</translation>
+   <translation id="exchange_ACTION_update_account_step1_type_cant_change">Le type de compte ne peut être changé tant qu'une licence Outlook est associée à ce compte.</translation>
    <translation id="exchange_ACTION_update_account_step1_first_name_label" qtlid="23323">Prénom</translation>
    <translation id="exchange_ACTION_update_account_step1_last_name_label" qtlid="3818">Nom</translation>
    <translation id="exchange_ACTION_update_account_step1_display_name_label" qtlid="23515">Nom à afficher</translation>
@@ -538,10 +538,10 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_ACTION_update_account_step1_security_label" qtlid="136750">Options de sécurité</translation>
    <translation id="exchange_ACTION_update_account_step1_GAL_label" qtlid="191980">Cacher l'adresse dans l'annuaire</translation>
    <translation id="exchange_ACTION_update_account_step1_exchange_guid_label" qtlid="174633">Exchange GUID</translation>
-   <translation id="exchange_ACTION_update_account_step1_exchange_SAMA_label" qtlid="486256">Nom de compte Exchange 2010</translation>
+   <translation id="exchange_ACTION_update_account_step1_exchange_SAMA_label">Nom de compte Exchange 2010</translation>
    <translation id="exchange_ACTION_update_account_step1_mandatory_fields" qtlid="137634">Champs obligatoires</translation>
-   <translation id="exchange_ACTION_update_account_step2_confirmation_intro" qtlid="136841">Votre compte :</translation>
-   <translation id="exchange_ACTION_update_account_step2_email_label" qtlid="137244">Compte e-mail</translation>
+   <translation id="exchange_ACTION_update_account_step2_confirmation_intro" qtlid="136841">Votre compte:</translation>
+   <translation id="exchange_ACTION_update_account_step2_email_label" qtlid="137244">Compte courriel</translation>
    <translation id="exchange_ACTION_update_account_step2_first_name_label" qtlid="23323">Prénom</translation>
    <translation id="exchange_ACTION_update_account_step2_last_name_label" qtlid="3818">Nom</translation>
    <translation id="exchange_ACTION_update_account_step2_display_name_label" qtlid="23515">Nom à afficher</translation>
@@ -561,12 +561,12 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_ACTION_update_account_helpwizard_password" qtlid="171240">Les mots de passe doivent respecter les exigences minimales suivantes :<br/><br/>- Ne pas contenir tout ou partie du nom du compte de l'utilisateur<br/>- Avoir une longueur d'au moins {0} caractères<br/>- Contenir des caractères de trois des quatre catégories suivantes :<br/><ul><li>Caractères majuscules de l'alphabet (A à Z)<br/></li><li>Caractères minuscules de l'alphabet (a à z)<br/></li><li>Chiffres de la base 10 (0 à 9)<br/></li><li>Caractères non alphabétiques (par exemple: !, $, #, %)<br/></li></ul></translation>
    <translation id="exchange_ACTION_update_account_helpwizard_password_simple" qtlid="195139">Les mots de passe doivent avoir une longueur d'au moins {0} caractères</translation>
    <translation id="exchange_ACTION_update_account_helpwizard_hide_directory_title" qtlid="191980">Cacher l'adresse dans l'annuaire</translation>
-   <translation id="exchange_ACTION_update_account_helpwizard_hide_directory" qtlid="324886">Cette option permet de cacher l'adresse e-mail dans l'annuaire Exchange global, visible de tous les utilisateurs de la plateforme par défaut. Cela peut entrainer l'impossibilité de créer un partage (calendrier, contact). L'auto complétion peut aussi être affectée par cette option.</translation>
+   <translation id="exchange_ACTION_update_account_helpwizard_hide_directory" qtlid="324886">Cette option permet de cacher l'adresse courriel dans l'annuaire Exchange global, visible de tous les utilisateurs de la plateforme par défaut. Cela peut entrainer l'impossibilité de créer un partage (calendrier, contact). La saisie semi-automatique peut aussi être affectée par cette option.</translation>
    <translation id="exchange_ACTION_update_account_helpwizard_guid_title" qtlid="174633">Exchange GUID</translation>
    <translation id="exchange_ACTION_update_account_helpwizard_guid" qtlid="178900">L'Exchange GUID est l'identifiant unique interne de votre boîte aux lettres</translation>
    <translation id="exchange_ACTION_update_account_doing_message" qtlid="144201">Modification du compte en cours.</translation>
    <translation id="exchange_ACTION_update_account_success_message" qtlid="157395">La configuration du compte Exchange va être modifiée.</translation>
-   <translation id="exchange_ACTION_update_account_error_message" qtlid="363414">L'adresse e-mail Exchange n'a pas pu être personnalisée. Il est possible qu'une configuration mutualisée (mail, redirection, répondeur) existe avec le même nom.</translation>
+   <translation id="exchange_ACTION_update_account_error_message" qtlid="363414">L'adresse courriel Exchange n'a pas pu être personnalisée. Il est possible qu'une configuration mutualisée (mail, redirection, répondeur) existe avec le même nom.</translation>
    <translation id="exchange_ACTION_update_account_error_message_linked" qtlid="157421">Cependant, une erreur est survenue lors de la configuration d'autres paramètres du compte.</translation>
    <translation id="exchange_ACTION_change_password_account_success_message" qtlid="157434">Le mot de passe du compte Exchange va être modifié.</translation>
    <translation id="exchange_ACTION_change_password_account_error_message" qtlid="157447">Une erreur est survenue lors du changement de mot de passe.</translation>
@@ -581,7 +581,7 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_tab_account_reset_failure" qtlid="376076">Une erreur est survenue lors de la réinitialisation du compte de votre service Exchange.</translation>
    <translation id="exchange_tab_account_remove_account" qtlid="137725">Supprimer un compte</translation>
    <translation id="exchange_tab_account_remove_email_label" qtlid="33862">Compte</translation>
-   <translation id="exchange_tab_account_remove_title" qtlid="137738">Voulez-vous réellement supprimer le compte suivant de votre service Exchange ?</translation>
+   <translation id="exchange_tab_account_remove_title" qtlid="137738">Voulez-vous réellement supprimer le compte suivant de votre service Exchange?</translation>
    <translation id="exchange_tab_account_remove_success" qtlid="137751">Le compte va être supprimé de votre service Exchange.</translation>
    <translation id="exchange_tab_account_remove_failure" qtlid="137764">Une erreur est survenue lors de la suppression du compte de votre service Exchange.</translation>
    <translation id="exchange_tab_account_delete_account" qtlid="2414">Supprimer</translation>
@@ -604,7 +604,7 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_tab_domain_add_step2_organization" qtlid="32278">Organisation</translation>
    <translation id="exchange_tab_domain_add_step2_main_domain_true" qtlid="34776">Oui</translation>
    <translation id="exchange_tab_domain_add_step2_main_domain_false" qtlid="34788">Non</translation>
-   <translation id="exchange_tab_domain_add_step2_mx_replay" qtlid="316931">Serveur e-mail cible</translation>
+   <translation id="exchange_tab_domain_add_step2_mx_replay" qtlid="316931">Serveur courriel cible</translation>
    <translation id="exchange_tab_domain_add_step2_mx_replay_tooltip" qtlid="210293">Les e-mails avec destinataires non trouvés seront redirigés vers ce serveur</translation>
    <translation id="exchange_tab_domain_add_step1_attach_organization_intro" qtlid="191135">Le domaine va être inclus dans l'organisation suivante :</translation>
 
@@ -615,21 +615,21 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_tab_domain_add_step1_order_domain_desc2" qtlid="144175">Un nouvel onglet s'ouvrira et vous serez automatiquement redirigé vers l'interface de paiement OVH.</translation>
    <translation id="exchange_tab_domain_step1_helpwizard_subdomain_title" qtlid="137881">Utiliser un sous-domaine</translation>
    <translation id="exchange_tab_domain_step1_helpwizard_subdomain" qtlid="397559">Pour ajouter un sous-domaine d'un de vos domaines OVH, vous pouvez cocher "Saisir un nom de domaine non géré par votre compte OVH" et le saisir dans le champ correspondant.</translation>
-   <translation id="exchange_tab_domain_add_step2_which_domain_type" qtlid="137998">De quel type de domaine <span class="italic">{0}</span> s'agit-il ?</translation>
+   <translation id="exchange_tab_domain_add_step2_which_domain_type" qtlid="137998">De quel type de domaine <span class="italic">{0}</span> s'agit-il?</translation>
    <translation id="exchange_tab_domain_add_step2_auth_intro" qtlid="140859">Votre domaine <span class="italic">{0}</span> va être configuré en mode autoritatif.</translation>
    <translation id="exchange_tab_domain_add_step2_non_auth_intro" qtlid="447729">Votre domaine <span class="italic">{0}</span> va être configuré en mode non-autoritatif.</translation>
    <translation id="exchange_tab_domain_add_step2bis_intro" qtlid="316944">Sélectionnez le mode de votre domaine :</translation>
 
    <translation id="exchange_tab_domain_add_step2_srv_checkbox" qtlid="138011">Configurer automatiquement le SRV (autodiscover)</translation>
-   <translation id="exchange_tab_domain_add_step2_mx_checkbox" qtlid="139585">Configurer automatiquement le MX (réception des e-mails)</translation>
-   <translation id="exchange_tab_domain_add_step2_mx_tooltip" qtlid="140209">Attention, configurer automatiquement le MX peut impacter la réception des e-mails préalablement configurés sur ce nom de domaine.</translation>
+   <translation id="exchange_tab_domain_add_step2_mx_checkbox" qtlid="139585">Configurer automatiquement le MX (réception des courriels)</translation>
+   <translation id="exchange_tab_domain_add_step2_mx_tooltip" qtlid="140209">Attention, configurer automatiquement le MX peut impacter la réception des courriels préalablement configurés sur ce nom de domaine.</translation>
    <translation id="exchange_tab_domain_add_step2_srv_tooltip" qtlid="447742">Cette option permettra à votre client de messagerie, comme par exemple Outlook ou Mail, de découvrir automatiquement vos paramètres de connexion.</translation>
    <translation id="exchange_tab_domain_add_step3_srv_confirmation" qtlid="137816">Configuration SRV</translation>
    <translation id="exchange_tab_domain_add_step3_mx_confirmation" qtlid="137829">Configuration MX</translation>
-   <translation id="exchange_tab_domain_add_step3_mx_replay" qtlid="316957">Serveur e-mail cible</translation>
+   <translation id="exchange_tab_domain_add_step3_mx_replay" qtlid="316957">Serveur courriel cible</translation>
    <translation id="exchange_tab_domain_add_step3_configuration_true" qtlid="137842">Automatiquement</translation>
    <translation id="exchange_tab_domain_add_step3_configuration_false" qtlid="34788">Non</translation>
-   <translation id="exchange_tab_domain_add_step3_confirmation" qtlid="137855">Etes-vous sûr de vouloir ajouter le domaine ci-dessous au serveur exchange ?</translation>
+   <translation id="exchange_tab_domain_add_step3_confirmation" qtlid="137855">Etes-vous sûr de vouloir ajouter le domaine ci-dessous au serveur exchange?</translation>
    <translation id="exchange_tab_domain_add_success" qtlid="137868">L'ajout du domaine à votre serveur exchange va être effectué.</translation>
    <translation id="exchange_tab_domain_add_failure" qtlid="137049">Une erreur est survenue lors de l'ajout du domaine à votre serveur exchange.</translation>
    <translation id="exchange_tab_domain_modify_success" qtlid="137907">La mise à jour du domaine va être effectuée.</translation>
@@ -640,20 +640,20 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_tab_domain_mode_AUTHORITATIVE" qtlid="316970">Autoritatif (Exchange uniquement)</translation>
    <translation id="exchange_tab_domain_mode_NON_AUTHORITATIVE" qtlid="447768">Non-autoritatif (Exchange + autre service de messagerie)</translation>
    <translation id="exchange_tab_domain_AUTHORITATIVE_info" qtlid="324847">Le mode autoritatif ne permet pas l'usage d'un autre système de messagerie avec des comptes Exchange. Ce mode permet l'activation de l'antispam Vade Secure.</translation>
-   <translation id="exchange_tab_domain_NON_AUTHORITATIVE_info" qtlid="447781">Le mode non-autoritatif permet une cohabitation entre Exchange et un autre service de messagerie. L'antispam Vade Secure est compatible si les comptes pop/imap sont hébergés chez OVH (mxplan ou offre mutualisée), il faut indiquer dans ce cas mx1.mail.ovh.net en serveur e-mail cible.</translation>
-   <translation id="exchange_tab_domain_target_mail_server_label" qtlid="316957">Serveur e-mail cible</translation>
+   <translation id="exchange_tab_domain_NON_AUTHORITATIVE_info" qtlid="447781">Le mode non-autoritatif permet une cohabitation entre Exchange et un autre service de messagerie. L'antispam Vade Secure est compatible si les comptes pop/imap sont hébergés chez OVH (mxplan ou offre mutualisée), il faut indiquer dans ce cas mx1.mail.ovh.net en serveur de courriel cible.</translation>
+   <translation id="exchange_tab_domain_target_mail_server_label" qtlid="316957">Serveur courriel cible</translation>
    <translation id="exchange_tab_domain_noovh_mx_info" qtlid="317126">Les modifications MX et SRV seront à réaliser manuellement dans votre zone DNS. Vous pouvez retrouver les informations nécessaires dans la section domaines associés, une fois la validation CNAME effectuée.</translation>
    <translation id="exchange_tab_domain_modify_domain" qtlid="137101">Configuration domaine</translation>
-   <translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="444667">L'antispam Vade Secure est compatible avec le mode non-autoritatif (uniquement si vos comptes POP/IMAP sont hébergés par OVH). Dans ce cas, il est conseillé d'utiliser : <strong>{0}</strong>, <strong>{1}</strong>, <strong>{2}</strong> et <strong>{3}</strong><br/><br/> Si vous utilisez le mode non-autoritatif avec des comptes e-mail non hébergés par OVH, vous devez utiliser : <strong>{4}</strong> (voir section domaines associés)</translation>
-   <translation id="exchange_tab_domain_modify_title" qtlid="137920">Etes-vous sûr de vouloir modifier le domaine suivant de votre service Exchange ?</translation>
+   <translation id="exchange_tab_domain_modify_domain_tooltip" qtlid="444667">L'antispam Vade Secure est compatible avec le mode non-autoritatif (uniquement si vos comptes POP/IMAP sont hébergés par OVH). Dans ce cas, il est conseillé d'utiliser : <strong>{0}</strong>, <strong>{1}</strong>, <strong>{2}</strong> et <strong>{3}</strong><br/><br/> Si vous utilisez le mode non-autoritatif avec des comptes de messagerie électronique non hébergés par OVH, vous devez utiliser : <strong>{4}</strong> (voir section domaines associés)</translation>
+   <translation id="exchange_tab_domain_modify_title" qtlid="137920">Etes-vous sûr de vouloir modifier le domaine suivant de votre service Exchange?</translation>
    <translation id="exchange_tab_domain_modify_loop_warning" qtlid="210319">Attention, boucle infinie !</translation>
    <translation id="exchange_tab_domain_modify_domain_warning" qtlid="210332">Domaine invalide.</translation>
    <translation id="exchange_tab_domain_modify_length_warning" qtlid="210345">Attention, maximum 255 caractères !</translation>
    <translation id="exchange_tab_domain_modify_wizard_subtitle" qtlid="210358">Autoritatif / Non-autoritatif : Que dois-je choisir ?</translation>
-   <translation id="exchange_tab_domain_modify_wizard_text" qtlid="370018">Par défaut, lorsque vous ajoutez votre domaine sur le serveur Exchange, il se trouve en mode autoritatif. C'est-à-dire que lorsque vous envoyez un e-mail à l'adresse du domaine géré sur le serveur, ce dernier va regarder exclusivement sur le serveur Exchange si l'adresse est présente. <br /><br /> En revanche, si vous basculez le domaine en mode non-autoritatif, lors de l'envoi du e-mail, nous allons vérifier dans un premier temps si l'adresse e-mail est présente sur le serveur Exchange, et si ce n'est pas le cas, ce dernier relayera votre message sur le serveur MX que vous avez défini. <br /><br />Le domaine en mode non-autoritatif peut être utilisé si vous souhaitez, par exemple, gérer une partie de vos e-mails sur Exchange et une autre partie sur un serveur externe. <br /><br />Attention, si vous souhaitez utiliser le service Exchange et le service e-mail mutualisé OVH, vous devez dans le champ "Serveur e-mail cible" du formulaire de gauche renseigner cette valeur : <strong>mx1.mail.ovh.net.</strong></translation>
+   <translation id="exchange_tab_domain_modify_wizard_text" qtlid="370018">Par défaut, lorsque vous ajoutez votre domaine sur le serveur Exchange, il se trouve en mode autoritatif. C'est-à-dire que lorsque vous envoyez un courriel à l'adresse du domaine géré sur le serveur, ce dernier va regarder exclusivement sur le serveur Exchange si l'adresse est présente. <br /><br /> En revanche, si vous basculez le domaine en mode non-autoritatif, lors de l'envoi du courriel, nous allons vérifier dans un premier temps si l'adresse e-mail est présente sur le serveur Exchange, et si ce n'est pas le cas, ce dernier relayera votre message sur le serveur MX que vous avez défini. <br /><br />Le domaine en mode non-autoritatif peut être utilisé si vous souhaitez, par exemple, gérer une partie de vos courriels sur Exchange et une autre partie sur un serveur externe. <br /><br />Attention, si vous souhaitez utiliser le service Exchange et le service de messagerie partagé OVH, vous devez dans le champ "Serveur courriel cible" du formulaire de gauche entrer cette valeur : <strong>mx1.mail.ovh.net.</strong></translation>
 
    <translation id="exchange_tab_domain_remove_domain" qtlid="137933">Supprimer un domaine</translation>
-   <translation id="exchange_tab_domain_remove_title" qtlid="137946">Etes-vous sûr de vouloir réellement supprimer le domaine suivant de votre service Exchange ?</translation>
+   <translation id="exchange_tab_domain_remove_title" qtlid="137946">Etes-vous sûr de vouloir réellement supprimer le domaine suivant de votre service Exchange?</translation>
    <translation id="exchange_tab_domain_remove_success" qtlid="137959">Le domaine va être supprimé de votre service Exchange.</translation>
    <translation id="exchange_tab_domain_remove_failure" qtlid="137972">Une erreur est survenue lors de la suppression du domaine de votre service Exchange.</translation>
 
@@ -663,13 +663,13 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_ACTION_delegation_step1_intro" qtlid="434551">Une délégation permet à d'autres comptes Exchange d'avoir certains droits sur le compte <strong>{0}</strong></translation>
    <translation id="exchange_ACTION_delegation_table_empty" qtlid="150047">Vous n'avez pas de comptes disponibles</translation>
    <translation id="exchange_ACTION_delegation_table_empty_search" qtlid="150060">Vous n'avez pas de compte correspondant au terme de recherche</translation>
-   <translation id="exchange_ACTION_delegation_step1_email_header" qtlid="137244">Compte e-mail</translation>
+   <translation id="exchange_ACTION_delegation_step1_email_header" qtlid="137244">Compte courriel</translation>
    <translation id="exchange_ACTION_delegation_step1_send_header" qtlid="181474">Droit d'envoi</translation>
    <translation id="exchange_ACTION_delegation_step1_sendOnBehalfTo_header" qtlid="181487">Droit d'envoyer de la part</translation>
    <translation id="exchange_ACTION_delegation_step1_full_header" qtlid="181500">Droit d'accès</translation>
    <translation id="exchange_ACTION_delegation_step1_task_on_doing" qtlid="201458">Tâche en cours</translation>
    <translation id="exchange_ACTION_delegation_step2_intro" qtlid="434564">Les droits de délégation afférents au compte <strong>{0}</strong> :</translation>
-   <translation id="exchange_ACTION_delegation_step2_email_header" qtlid="137244">Compte e-mail</translation>
+   <translation id="exchange_ACTION_delegation_step2_email_header" qtlid="137244">Compte courriel</translation>
    <translation id="exchange_ACTION_delegation_step2_send_header" qtlid="143798">Droit d'envoi</translation>
    <translation id="exchange_ACTION_delegation_step2_sendOnBehalfTo_header" qtlid="181487">Droit d'envoyer de la part</translation>
    <translation id="exchange_ACTION_delegation_step2_full_header" qtlid="144253">Droit d'accès</translation>
@@ -689,7 +689,7 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_tab_DISCLAIMER_table_empty" qtlid="152258">Vous n'avez pas de signature.</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_content" qtlid="152271">Contenu</translation>
    <translation id="exchange_tab_DISCLAIMER_associated_domains" qtlid="133110">Domaine associé</translation>
-   <translation id="exchange_tab_DISCLAIMER_state_header" qtlid="26443">Statut</translation>
+   <translation id="exchange_tab_DISCLAIMER_state_header">Statut</translation>
    <translation id="exchange_tab_DISCLAIMER_state_doing_tooltip" qtlid="143863">Une tâche est planifiée ou en cours d'exécution</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_outside_only" qtlid="152284">Externe uniquement</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_outside_only_tooltip" qtlid="152297">Signature utilisée uniquement pour les envois vers l'extérieur</translation>
@@ -707,29 +707,29 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_ACTION_add_disclaimer_content" qtlid="152271">Contenu</translation>
    <translation id="exchange_ACTION_add_disclaimer_outside" qtlid="152349">Activer la signature uniquement pour les envois vers l'extérieur</translation>
    <translation id="exchange_ACTION_add_disclaimer_success_message" qtlid="152362">La création de la signature va être effectuée.</translation>
-   <translation id="exchange_ACTION_add_disclaimer_error_message" qtlid="152375">Une erreur est survenue lors de la création de la signature .</translation>
+   <translation id="exchange_ACTION_add_disclaimer_error_message" qtlid="152375">Une erreur est survenue lors de la création de la signature.</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_City" qtlid="33310">Ville</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Company" qtlid="49022">Entreprise</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Country" qtlid="25171">Pays</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Department" qtlid="30706">Département</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_DisplayName" qtlid="80922">Nom affiché</translation>
-   <translation id="exchange_ACTION_add_disclaimer_option_Email" qtlid="69509">E-mail</translation>
-   <translation id="exchange_ACTION_add_disclaimer_option_FaxNumber" qtlid="152388">Numéro de fax</translation>
+   <translation id="exchange_ACTION_add_disclaimer_option_Email" qtlid="69509">Courriel</translation>
+   <translation id="exchange_ACTION_add_disclaimer_option_FaxNumber" qtlid="152388">Numéro de télécopieur</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_FirstName" qtlid="23323">Prénom</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_HomePhoneNumber" qtlid="152401">Numéro de téléphone du domicile</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Initials" qtlid="152414">Initiales</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_LastName" qtlid="3818">Nom</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Manager" qtlid="152427">Responsable</translation>
-   <translation id="exchange_ACTION_add_disclaimer_option_MobileNumber" qtlid="152440">Numéro de mobile</translation>
+   <translation id="exchange_ACTION_add_disclaimer_option_MobileNumber" qtlid="152440">Numéro de cellulaire</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Name" qtlid="109614">Nom complet</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Notes" qtlid="69389">Notes</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Office" qtlid="59555">Bureau</translation>
-   <translation id="exchange_ACTION_add_disclaimer_option_OtherFaxNumber" qtlid="152453">Fax 2</translation>
+   <translation id="exchange_ACTION_add_disclaimer_option_OtherFaxNumber" qtlid="152453">Télécopieur 2</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_OtherHomePhoneNumber" qtlid="152466">Domicile 2</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_OtherPhoneNumber" qtlid="152479">Téléphone 2</translation>
-   <translation id="exchange_ACTION_add_disclaimer_option_PagerNumber" qtlid="152492">Numéro de pager</translation>
+   <translation id="exchange_ACTION_add_disclaimer_option_PagerNumber" qtlid="152492">Numéro de téléavertisseur</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_PhoneNumber" qtlid="152505">Numéro de téléphone</translation>
-   <translation id="exchange_ACTION_add_disclaimer_option_State" qtlid="32434">Région</translation>
+   <translation id="exchange_ACTION_add_disclaimer_option_State">Région</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Street" qtlid="152518">Rue</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Title" qtlid="16469">Titre</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_UserLogonName" qtlid="46792">Identifiant</translation>
@@ -738,14 +738,14 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_ACTION_add_disclaimer_helpwizard_details" qtlid="170837"><br />Vous pouvez créer une signature par domaine validé.<br /><br />Utilisez les outils à votre disposition pour personnaliser et mettre en forme votre signature.<br /> Cette signature sera intégrée automatiquement au bas de chaque message envoyé depuis les adresses associées à votre domaine Exchange. <br /><br />Des variables sont aussi disponibles pour personnaliser la signature générique avec les coordonnées des différents collaborateurs. <br /><br /> Pour ajouter une image ou un logo, utilisez son URL en l'insérant après avoir cliquer sur le bouton "image".</translation>
    <translation id="exchange_ACTION_add_disclaimer_no_domains" qtlid="155274">Vous ne pouvez créer qu'une signature par domaine validé. Actuellement tous vos domaines valides ont déjà une signature.</translation>
    <translation id="exchange_ACTION_delete_disclaimer_title" qtlid="152219">Supprimer une signature</translation>
-   <translation id="exchange_ACTION_delete_disclaimer_question" qtlid="152557">Etes-vous sûr de vouloir supprimer la signature suivante de votre service Exchange ?</translation>
+   <translation id="exchange_ACTION_delete_disclaimer_question" qtlid="152557">Etes-vous sûr de vouloir supprimer la signature suivante de votre service Exchange?</translation>
    <translation id="exchange_ACTION_delete_disclaimer_success" qtlid="152570">La signature va être supprimée.</translation>
-   <translation id="exchange_ACTION_delete_disclaimer_failure" qtlid="152583">Une erreur est survenue lors de la suppression de la signature .</translation>
+   <translation id="exchange_ACTION_delete_disclaimer_failure" qtlid="152583">Une erreur est survenue lors de la suppression de la signature.</translation>
    <translation id="exchange_ACTION_update_disclaimer_title" qtlid="152596">Configurer une signature</translation>
    <translation id="exchange_ACTION_update_disclaimer_info" qtlid="152609">Modifier la signature associée au domaine {0}</translation>
    <translation id="exchange_ACTION_update_disclaimer_success" qtlid="152622">La signature va être modifiée.</translation>
    <translation id="exchange_ACTION_update_disclaimer_failure" qtlid="155431">Une erreur est survenue lors de la modification de la signature.</translation>
-   <translation id="exchange_ACTION_update_disclaimer_error_message" qtlid="152635">Une erreur est survenue lors de la modification de la signature .</translation>
+   <translation id="exchange_ACTION_update_disclaimer_error_message" qtlid="152635">Une erreur est survenue lors de la modification de la signature.</translation>
    <translation id="exchange_ACTION_update_disclaimer_success_message" qtlid="152622">La signature va être modifiée.</translation>
    <translation id="exchange_ACTION_update_disclaimer_length_warning" qtlid="152648">Le contenu de la signature ne doit pas dépasser 5000 caractères ou contenir d'image locale.</translation>
 
@@ -755,25 +755,25 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_tab_RESOURCES_edit_resource" qtlid="156173">Modifier un compte de ressource</translation>
    <translation id="exchange_tab_RESOURCES_add_resource_confirm" qtlid="39226">Créer</translation>
    <translation id="exchange_tab_RESOURCES_add_resource_name" qtlid="156186">Nom de la ressource</translation>
-   <translation id="exchange_tab_RESOURCES_add_resource_email" qtlid="156199">Email de la ressource</translation>
+   <translation id="exchange_tab_RESOURCES_add_resource_email" qtlid="156199">Courriel de la ressource</translation>
    <translation id="exchange_tab_RESOURCES_add_resource_capacity" qtlid="4334">Capacité</translation>
-   <translation id="exchange_tab_RESOURCES_add_resource_capacity_tooltip" qtlid="156212">Valeur maximale : 1024</translation>
+   <translation id="exchange_tab_RESOURCES_add_resource_capacity_tooltip" qtlid="156212">Valeur maximale: 1024</translation>
    <translation id="exchange_tab_RESOURCES_add_resource_capacity_warning" qtlid="156225">Valeur incorrecte</translation>
    <translation id="exchange_tab_RESOURCES_add_resource_allow_conflict" qtlid="156238">Permettre les conflits</translation>
    <translation id="exchange_tab_RESOURCES_add_resource_type" qtlid="63734">Type de ressource</translation>
    <translation id="exchange_tab_RESOURCES_add_resource_type_EQUIPMENT" qtlid="82063">Équipement</translation>
    <translation id="exchange_tab_RESOURCES_add_resource_type_ROOM" qtlid="63746">Salle</translation>
-   <translation id="exchange_tab_RESOURCES_add_resource_taken_email_warning" qtlid="156251">L'adresse e-mail choisie existe déjà.</translation>
-   <translation id="exchange_tab_RESOURCES_add_resource_step2_title" qtlid="156264">Etes-vous sûr de vouloir ajouter le compte de ressource ci-dessous au serveur Exchange ?</translation>
+   <translation id="exchange_tab_RESOURCES_add_resource_taken_email_warning" qtlid="156251">L'adresse courriel choisie existe déjà.</translation>
+   <translation id="exchange_tab_RESOURCES_add_resource_step2_title" qtlid="156264">Etes-vous sûr de vouloir ajouter le compte de ressource ci-dessous au serveur Exchange?</translation>
    <translation id="exchange_tab_RESOURCES_add_resource_success" qtlid="156277">L'ajout du compte de ressource va être effectuée.</translation>
-   <translation id="exchange_tab_RESOURCES_edit_resource_step2_title" qtlid="156290">Etes-vous sûr de vouloir modifier la ressource {0} ?</translation>
+   <translation id="exchange_tab_RESOURCES_edit_resource_step2_title" qtlid="156290">Etes-vous sûr de vouloir modifier la ressource {0}?</translation>
    <translation id="exchange_tab_RESOURCES_edit_resource_confirm" qtlid="37875">Modifier</translation>
    <translation id="exchange_tab_RESOURCES_edit_resource_success" qtlid="156303">La modification du compte de ressource va être effectué.</translation>
    <translation id="exchange_tab_RESOURCES_edit_resource_error" qtlid="155574">Une erreur est survenue lors de la modification du compte de ressource.</translation>
    <translation id="exchange_tab_RESOURCES_no_domain_warning" qtlid="171253">Vous n'avez pas encore ajouté de domaine ou il n'a pas encore été validé. <br/>Vous devez d'abord ajouter un domaine et attendre qu'il soit validé pour créer un compte Exchange.</translation>
    <translation id="exchange_tab_RESOURCES_add_resource_failure" qtlid="156316">Une erreur est survenue lors de l'ajout du compte de ressource.</translation>
    <translation id="exchange_tab_RESOURCES_remove_resource" qtlid="156329">Supprimer un compte de ressource</translation>
-   <translation id="exchange_tab_RESOURCES_remove_resource_title" qtlid="156342">Voulez-vous supprimer le compte de ressource suivant de votre service Exchange ?</translation>
+   <translation id="exchange_tab_RESOURCES_remove_resource_title" qtlid="156342">Voulez-vous supprimer le compte de ressource suivant de votre service Exchange?</translation>
    <translation id="exchange_tab_RESOURCES_remove_resource_confirm" qtlid="2414">Supprimer</translation>
    <translation id="exchange_tab_RESOURCES_remove_resource_success" qtlid="156355">Le compte de ressource va être supprimé de votre service Exchange.</translation>
    <translation id="exchange_tab_RESOURCES_remove_resource_failure" qtlid="156368">Une erreur est survenue lors de la suppression du compte de ressource.</translation>
@@ -783,8 +783,8 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_tab_RESOURCES_table_type" qtlid="2642">Type</translation>
    <translation id="exchange_tab_RESOURCES_table_capacity" qtlid="4334">Capacité</translation>
    <translation id="exchange_tab_RESOURCES_table_allow_conflicts" qtlid="156407">Conflit autorisé</translation>
-   <translation id="exchange_tab_RESOURCES_table_email" qtlid="69509">E-mail</translation>
-   <translation id="exchange_tab_RESOURCES_table_state" qtlid="26443">Statut</translation>
+   <translation id="exchange_tab_RESOURCES_table_email" qtlid="69509">Courriel</translation>
+   <translation id="exchange_tab_RESOURCES_table_state">Statut</translation>
    <translation id="exchange_tab_RESOURCES_table_state_task" qtlid="156420">Tâche en cours</translation>
    <translation id="exchange_tab_RESOURCES_action_add_resource_account" qtlid="63710">Ajouter un compte de ressource</translation>
    <translation id="exchange_tab_RESOURCES_type_EQUIPMENT" qtlid="82063">Équipement</translation>
@@ -807,7 +807,7 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_RESOURCES_delegation_wizard_text" qtlid="209138">Définir un délégué sur une boîte aux lettres de ressources permet de contrôler les options de planifications de cette boîte aux lettres de ressources, et transférer toutes les demandes au délégué(s) pour qu'il les valident. <br /><br /> Cela permet également de visualiser tous les détails dans le calendrier de ressources.</translation>
    <translation id="exchange_RESOURCES_description" qtlid="283825">Vous pouvez ici créer, gérer, supprimer vos ressources (équipement(s)/salle(s))</translation>
    <translation id="exchange_RESOURCES_guide" qtlid="283838">Pour plus d'informations, consultez notre guide</translation>
-   <translation id="exchange_DIAGNOSTICS_description" qtlid="297982">Le diagnostic d'un compte email permet de valider plusieurs éléments à savoir si le compte est bloqué, la validité de l'enregistrement MX et SRV et de l'abonnement au compte, l'authentification au webmail ainsi que l'envoi et la réception par ce compte. À noter que le processus de diagnostic peut prendre entre 3 et 10 minutes.</translation>
+   <translation id="exchange_DIAGNOSTICS_description" qtlid="297982">Le diagnostic d'un compte de messagerie électronique permet de valider plusieurs éléments à savoir si le compte est bloqué, la validité de l'enregistrement MX et SRV et de l'abonnement au compte, l'authentification au webmail ainsi que l'envoi et la réception par ce compte. À noter que le processus de diagnostic peut prendre entre 3 et 10 minutes.</translation>
    <translation id="exchange_DIAGNOSTICS_stay_on_page_while_diagnostic_is_running" qtlid="324899">Si vous quittez la section web de l'espace client, le résultat du diagnostic ne pourra pas être conservé.</translation>
    <translation id="exchange_DIAGNOSTICS_input_email" qtlid="291344">Compte email à diagnostiquer</translation>
    <translation id="exchange_DIAGNOSTICS_input_password" qtlid="2270">Mot de passe</translation>
@@ -820,8 +820,8 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_DIAGNOSTICS_status_isSpammer_ok" qtlid="291435">Le compte n'est pas bloqué pour envoi de spam</translation>
    <translation id="exchange_DIAGNOSTICS_status_isSpammer_not_ok" qtlid="291448">ATTENTION : Le compte est bloqué pour envoi de spam</translation>
    <translation id="exchange_DIAGNOSTICS_status_isSpammer_help1" qtlid="319440">Cela signifie que les envois à partir de votre compte sont temporairement désactivés.</translation>
-   <translation id="exchange_DIAGNOSTICS_status_isSpammer_help2" qtlid="319453">La réception n'est pas impactée. Lorsque votre compte est bloqué pour spam, celui-ci est visible depuis votre service Exchange section compte e-mail. Un tag SPAM est indiqué. Vous pouvez cliquer dessus afin d'être redirigé vers l'e-mail reçu suite au blocage.</translation>
-   <translation id="exchange_DIAGNOSTICS_status_isSpammer_help3" qtlid="319466">Il est nécessaire de répondre à cet e-mail afin de réaliser le déblocage du compte.</translation>
+   <translation id="exchange_DIAGNOSTICS_status_isSpammer_help2" qtlid="319453">La réception n'est pas impactée. Lorsque votre compte est bloqué pour spam, celui-ci est visible depuis votre service Exchange section compte de messagerie électronique. Un marqueur SPAM est indiqué. Vous pouvez cliquer dessus afin d'être redirigé vers le courriel reçu suite au blocage.</translation>
+   <translation id="exchange_DIAGNOSTICS_status_isSpammer_help3" qtlid="319466">Il est nécessaire de répondre à ce courriel afin de réaliser le déblocage du compte.</translation>
    <translation id="exchange_DIAGNOSTICS_status_isSuspended_ok" qtlid="291461">L'abonnement au compte est valide</translation>
    <translation id="exchange_DIAGNOSTICS_status_isSuspended_not_ok" qtlid="291474">ATTENTION : L'abonnement au compte est expiré</translation>
    <translation id="exchange_DIAGNOSTICS_status_isSuspended_help" qtlid="319479">Dans ce cas votre abonnement n'est plus actif, la réception et l'envoi sont désactivés. Il est nécessaire de contacter notre support Exchange au <strong>1007</strong> afin de réactiver votre service.</translation>
@@ -833,17 +833,17 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_DIAGNOSTICS_status_connectiveOWA_ok" qtlid="291513">L'authentification au webmail a réussie</translation>
    <translation id="exchange_DIAGNOSTICS_status_connectiveOWA_not_ok" qtlid="291526">ATTENTION : L'authentification au webmail a échoué</translation>
    <translation id="exchange_DIAGNOSTICS_status_connectiveOWA_help1" qtlid="319531">Cela peut provenir d'un mot de passe erroné saisi pour la réalisation du diagnostic, dans ce cas vous pouvez relancer un diagnostic.</translation>
-   <translation id="exchange_DIAGNOSTICS_status_connectiveOWA_help2" qtlid="319544">Vous pouvez aussi mettre à jour le mot de passe depuis votre service Exchange, onglet compte e-mail puis relancer votre diagnostic et si le souci persiste vous pouvez créer une demande d’assistance.</translation>
+   <translation id="exchange_DIAGNOSTICS_status_connectiveOWA_help2" qtlid="319544">Vous pouvez aussi mettre à jour le mot de passe depuis votre service Exchange, onglet compte de messagerie électronique, puis relancer votre diagnostic et si le souci persiste vous pouvez créer une demande d’assistance.</translation>
    <translation id="exchange_DIAGNOSTICS_status_isMxValid_ok" qtlid="291539">L'enregistrement MX du domaine est valide</translation>
    <translation id="exchange_DIAGNOSTICS_status_isMxValid_not_ok" qtlid="291552">ATTENTION : L'enregistrement MX du domaine n'est pas valide</translation>
-   <translation id="exchange_DIAGNOSTICS_status_isMxValid_help1" qtlid="319557">Cette erreur indique une impossibilité de réception d'e-mail et sera aussi liée à cette erreur : <strong>ATTENTION : L'email de test n'a pas été reçu.</strong></translation>
+   <translation id="exchange_DIAGNOSTICS_status_isMxValid_help1" qtlid="319557">Cette erreur indique une impossibilité de réception de courriels et sera aussi liée à cette erreur : <strong>ATTENTION : Le courriel de test n'a pas été reçu.</strong></translation>
    <translation id="exchange_DIAGNOSTICS_status_isMxValid_help2" qtlid="319570">Voici les serveurs MX valides pour l'offre Exchange :</translation>
    <translation id="exchange_DIAGNOSTICS_status_isMxValid_help_li1" qtlid="319583">Exchange seul : mx1.mail.ovh.net</translation>
    <translation id="exchange_DIAGNOSTICS_status_isMxValid_help_li2" qtlid="319596">Exchange + E-mail pop/imap hébergé par OVH : mx1.mail.ovh.net</translation>
    <translation id="exchange_DIAGNOSTICS_status_isMxValid_help_li3" qtlid="319609">Exchange + E-mail pop/imap non hébergé par OVH : ex.mail.ovh.net ou ex2.mail.ovh.net</translation>
    <translation id="exchange_DIAGNOSTICS_status_canReceiveEmail_ok" qtlid="291565">L'email de test a été reçu</translation>
    <translation id="exchange_DIAGNOSTICS_status_canReceiveEmail_not_ok" qtlid="291578">ATTENTION : L'email de test n'a pas été reçu</translation>
-   <translation id="exchange_DIAGNOSTICS_status_canReceiveEmail_help1" qtlid="319622">Cette erreur indique une impossibilité de réception d'e-mail et sera aussi liée à cette erreur : <strong>ATTENTION : L'enregistrement MX du domaine n'est pas valide.</strong></translation>
+   <translation id="exchange_DIAGNOSTICS_status_canReceiveEmail_help1" qtlid="319622">Cette erreur indique une impossibilité de réception de courriels et sera aussi liée à cette erreur : <strong>ATTENTION : L'enregistrement MX du domaine n'est pas valide.</strong></translation>
    <translation id="exchange_DIAGNOSTICS_status_canReceiveEmail_help2" qtlid="319570">Voici les serveurs MX valides pour l'offre Exchange :</translation>
    <translation id="exchange_DIAGNOSTICS_status_canReceiveEmail_help_li1" qtlid="319583">Exchange seul : mx1.mail.ovh.net</translation>
    <translation id="exchange_DIAGNOSTICS_status_canReceiveEmail_help_li2" qtlid="319596">Exchange + E-mail pop/imap hébergé par OVH : mx1.mail.ovh.net</translation>
@@ -859,9 +859,9 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_DIAGNOSTICS_status_isSrvValid_help_table4" qtlid="319713">La cible offre Hosted</translation>
    <translation id="exchange_DIAGNOSTICS_status_isSrvValid_help_table5" qtlid="319726">La cible offre Private</translation>
    <translation id="exchange_DIAGNOSTICS_status_isSrvValid_help_tableValue5" qtlid="319739">Votre-nom-d-hôte</translation>
-   <translation id="exchange_DIAGNOSTICS_status_canSendEmail_ok" qtlid="291617">L'email de test a été envoyé à partir du compte</translation>
-   <translation id="exchange_DIAGNOSTICS_status_canSendEmail_not_ok" qtlid="291630">ATTENTION : L'email de test n'a pas pu être envoyé à partir du compte</translation>
-   <translation id="exchange_DIAGNOSTICS_status_canSendEmail_help1" qtlid="319752">Cette erreur indique une impossibilité d'envoyer un e-mail depuis votre compte.</translation>
+   <translation id="exchange_DIAGNOSTICS_status_canSendEmail_ok" qtlid="291617">Le courriel de test a été envoyé à partir du compte</translation>
+   <translation id="exchange_DIAGNOSTICS_status_canSendEmail_not_ok" qtlid="291630">ATTENTION : Le courriel de test n'a pas pu être envoyé à partir du compte</translation>
+   <translation id="exchange_DIAGNOSTICS_status_canSendEmail_help1" qtlid="319752">Cette erreur indique une impossibilité d'envoyer un courriel à partir de votre compte.</translation>
    <translation id="exchange_DIAGNOSTICS_status_canSendEmail_help2" qtlid="319765">Cela peut avoir plusieurs causes :</translation>
    <translation id="exchange_DIAGNOSTICS_status_canSendEmail_help_li1" qtlid="319778">Votre compte est suspendu</translation>
    <translation id="exchange_DIAGNOSTICS_status_canSendEmail_help_li2" qtlid="319791">Le mot de passe indiqué n'est pas correct</translation>
@@ -887,14 +887,14 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_tab_GROUPS_delete_success_message" qtlid="150151">Votre groupe va être supprimé.</translation>
    <translation id="exchange_tab_GROUPS_delete_error_message" qtlid="150164">Une erreur est survenue lors de la suppression de votre groupe.</translation>
    <translation id="exchange_tab_GROUPS_remove_alias_title" qtlid="150177">Supprimer un groupe</translation>
-   <translation id="exchange_tab_GROUPS_remove_alias_intro" qtlid="150307">Voulez-vous réellement supprimer le compte {0} du groupe {1} ?</translation>
+   <translation id="exchange_tab_GROUPS_remove_alias_intro" qtlid="150307">Voulez-vous réellement supprimer le compte {0} du groupe {1}?</translation>
    <translation id="exchange_tab_GROUPS_remove_alias_label" qtlid="59507">Groupe</translation>
    <translation id="exchange_tab_GROUPS_remove_account_label" qtlid="143603">Compte attaché</translation>
    <translation id="exchange_tab_GROUPS_add_alias_title" qtlid="143616">Créer un alias</translation>
    <translation id="exchange_tab_GROUPS_add_alias_intro" qtlid="155886">Créer un alias pour le groupe <span class="bold">{0}</span></translation>
    <translation id="exchange_tab_GROUPS_add_alias_max_error" qtlid="178913">Maximum 64 caractères</translation>
    <translation id="exchange_tab_GROUPS_add_alias_placeholder" qtlid="9466">Alias</translation>
-   <translation id="exchange_tab_GROUPS_add_alias_step2_intro" qtlid="144006">Etes-vous sûr de vouloir ajouter l’alias ci-dessous ?</translation>
+   <translation id="exchange_tab_GROUPS_add_alias_step2_intro" qtlid="144006">Etes-vous sûr de vouloir ajouter l’alias ci-dessous?</translation>
    <translation id="exchange_tab_GROUPS_add_alias_step2_alias_label" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_GROUPS_add_alias_step2_account_label" qtlid="150216">Groupe attaché</translation>
    <translation id="exchange_tab_GROUPS_add_alias_valid" qtlid="171786">Attention, certains caractères spéciaux ne sont pas acceptés dans le nom d'un alias, par exemple + ? / () [] ;</translation>
@@ -911,10 +911,10 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_tab_GROUPS_remove_success_message" qtlid="150320">Le compte va être supprimé du groupe.</translation>
    <translation id="exchange_tab_GROUPS_remove_error_message" qtlid="150333">Une erreur est survenue...</translation>
    <translation id="exchange_tab_GROUPS_all_table_name" qtlid="43936">Nom du groupe</translation>
-   <translation id="exchange_tab_GROUPS_all_table_address" qtlid="11315">Adresse e-mail</translation>
+   <translation id="exchange_tab_GROUPS_all_table_address" qtlid="11315">Adresse courriel</translation>
    <translation id="exchange_tab_GROUPS_all_table_manager" qtlid="81487">Administrateurs</translation>
    <translation id="exchange_tab_GROUPS_all_table_user" qtlid="32206">Contacts</translation>
-   <translation id="exchange_tab_GROUPS_all_table_status" qtlid="26443">Statut</translation>
+   <translation id="exchange_tab_GROUPS_all_table_status">Statut</translation>
    <translation id="exchange_tab_GROUPS_all_table_empty" qtlid="150346">Vous n'avez pas de groupe</translation>
    <translation id="exchange_tab_GROUPS_all_error_message" qtlid="150359">Une erreur est survenue lors du chargement de votre liste de groupes.</translation>
    <translation id="exchange_tab_GROUPS_all_add_ml_button" qtlid="150372">Créer un groupe de contact</translation>
@@ -925,7 +925,7 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_tab_GROUPS_menu_delegation" qtlid="143434">Configurer les délégations</translation>
    <translation id="exchange_tab_GROUPS_menu_delete" qtlid="69929">Supprimer le groupe</translation>
    <translation id="exchange_tab_GROUPS_delete_title" qtlid="150177">Supprimer un groupe</translation>
-   <translation id="exchange_tab_GROUPS_delete_question" qtlid="150190">Voulez-vous réellement supprimer le groupe suivant ?</translation>
+   <translation id="exchange_tab_GROUPS_delete_question" qtlid="150190">Voulez-vous réellement supprimer le groupe suivant?</translation>
    <translation id="exchange_tab_GROUPS_delete_group_label" qtlid="59507">Groupe</translation>
    <translation id="exchange_tab_GROUPS_delete_name_label" qtlid="43936">Nom du groupe</translation>
    <translation id="exchange_tab_GROUPS_delete_group_manager" qtlid="81487">Administrateurs</translation>
@@ -934,11 +934,11 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_tab_GROUPS_delete_group_error" qtlid="150164">Une erreur est survenue lors de la suppression de votre groupe.</translation>
    <translation id="exchange_GROUPS_delegation_title" qtlid="150398">Configuration de la délégation</translation>
    <translation id="exchange_GROUPS_delegation_step1_intro" qtlid="434577">Une délégation permet à d'autres comptes Exchange d'avoir certains droits sur le groupe <strong>{0}</strong></translation>
-   <translation id="exchange_GROUPS_delegation_step1_email_header" qtlid="137244">Compte e-mail</translation>
+   <translation id="exchange_GROUPS_delegation_step1_email_header" qtlid="137244">Compte courriel</translation>
    <translation id="exchange_GROUPS_delegation_step1_send_header" qtlid="143759">Donner le droit d'envoi</translation>
    <translation id="exchange_GROUPS_delegation_step1_full_header" qtlid="144240">Donner le droit d'accès</translation>
    <translation id="exchange_GROUPS_delegation_step2_intro" qtlid="150424">Les droits de délégation du groupe {0} :</translation>
-   <translation id="exchange_GROUPS_delegation_step2_email_header" qtlid="137244">Compte e-mail</translation>
+   <translation id="exchange_GROUPS_delegation_step2_email_header" qtlid="137244">Compte courriel</translation>
    <translation id="exchange_GROUPS_delegation_step2_send_header" qtlid="143798">Droit d'envoi</translation>
    <translation id="exchange_GROUPS_delegation_step2_full_header" qtlid="144253">Droit d'accès</translation>
    <translation id="exchange_GROUPS_delegation_step2_right_true" qtlid="34776">Oui</translation>
@@ -947,7 +947,7 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_GROUPS_delegation_error_message" qtlid="144279">Une erreur est survenue lors de la mise à jour des droits de délégation.</translation>
    <translation id="exchange_GROUPS_add_group_title" qtlid="150437">Créer un nouveau groupe de contacts</translation>
    <translation id="exchange_GROUPS_add_group_name_label" qtlid="43936">Nom du groupe</translation>
-   <translation id="exchange_GROUPS_add_group_email_label" qtlid="11315">Adresse e-mail</translation>
+   <translation id="exchange_GROUPS_add_group_email_label" qtlid="11315">Adresse courriel</translation>
    <translation id="exchange_GROUPS_add_group_receive_size_label" qtlid="150450">Taille max entrante</translation>
    <translation id="exchange_GROUPS_add_group_receive_size_tooltip" qtlid="151074">Taille maximale des messages entrants (entre 1 et 100 Mo)</translation>
    <translation id="exchange_GROUPS_add_group_sent_size_label" qtlid="150476">Taille max sortante</translation>
@@ -1013,7 +1013,7 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
 <!-- OUTLOOK -->
    <translation id="exchange_ACTION_add_outlook_title" qtlid="156771">Commander des licences Outlook</translation>
    <translation id="exchange_ACTION_add_outlook_into_label" qtlid="256321">Veuillez choisir la durée de validité de la licence Outlook pour votre compte {0}.</translation>
-   <translation id="exchange_ACTION_add_outlook_type_label" qtlid="156797">Version :</translation>
+   <translation id="exchange_ACTION_add_outlook_type_label" qtlid="156797">Version:</translation>
    <translation id="exchange_ACTION_add_outlook_type_MAC_X86_2011" qtlid="156810">MAC OS 64bits (2011)</translation>
    <translation id="exchange_ACTION_add_outlook_type_MAC_X86_2016" qtlid="271897">MAC OS 64bits (2016)</translation>
    <translation id="exchange_ACTION_add_outlook_type_WINDOWS_X64_2010" qtlid="156823">Windows 64bits (2010)</translation>
@@ -1024,10 +1024,10 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_ACTION_add_outlook_type_WINDOWS_X86_2016" qtlid="271923">Windows 32bits (2016)</translation>
    <translation id="exchange_ACTION_add_outlook_wizard_help_title" qtlid="136724">Licence Outlook</translation>
    <translation id="exchange_ACTION_add_outlook_wizard_help" qtlid="184893">Une licence Outlook vous permet d'installer le client de messagerie de Microsoft. A l'issue de la commande, un lien vous est fourni pour télécharger le logiciel, et une clef de licence vous est communiquée afin de procéder à son installation.</translation>
-   <translation id="exchange_ACTION_add_outlook_duration_label" qtlid="156875">Période :</translation>
-   <translation id="exchange_ACTION_add_outlook_price_withoutIVA_label" qtlid="169238">Prix HT :</translation>
-   <translation id="exchange_ACTION_add_outlook_price_withIVA_label" qtlid="169251">Prix TTC :</translation>
-   <translation id="exchange_ACTION_add_outlook_price_label" qtlid="181084">Prix :</translation>
+   <translation id="exchange_ACTION_add_outlook_duration_label" qtlid="156875">Période:</translation>
+   <translation id="exchange_ACTION_add_outlook_price_withoutIVA_label" qtlid="169238">Prix:</translation>
+   <translation id="exchange_ACTION_add_outlook_price_withIVA_label" qtlid="169251">Prix:</translation>
+   <translation id="exchange_ACTION_add_outlook_price_label" qtlid="181084">Prix:</translation>
    <translation id="exchange_ACTION_add_outlook_contracts_label" qtlid="169472">Afin de confirmer votre demande, veuillez accepter les conditions d'utilisation et cliquer sur le bouton "Suivant" ci-dessous.</translation>
    <translation id="exchange_ACTION_add_outlook_contracts__checkbox" qtlid="170070">Je reconnais avoir bien pris connaissance des éléments suivants :</translation>
    <translation id="exchange_ACTION_add_outlook_intro_step2_label" qtlid="156888">Récapitulatif de commande de licence Outlook pour {0}</translation>
@@ -1040,26 +1040,26 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_ACTION_add_outlook_order_step2_explication" qtlid="169225">Veuillez noter qu'un délai d'environ 2 heures à compter de l'acceptation de votre paiement est nécessaire pour que l'activation de l'option soit prise en compte dans votre Espace Client Web.</translation>
    <translation id="exchange_ACTION_add_outlook_order_step2_explication2" qtlid="167886">Un nouvel onglet s'ouvrira et vous serez automatiquement redirigé(e) vers l'interface de paiement OVH.</translation>
    <translation id="exchange_ACTION_activate_outlook_title" qtlid="397416">Activer la licence Outlook</translation>
-   <translation id="exchange_ACTION_activate_outlook_intro_label" qtlid="397429">Souhaitez-vous activer la licence Outlook sur le compte Exchange ?</translation>
+   <translation id="exchange_ACTION_activate_outlook_intro_label" qtlid="397429">Souhaitez-vous activer la licence Outlook sur le compte Exchange?</translation>
 
-   <translation id="exchange_accounts_fetchOfficeAttachError_error" qtlid="486269">Une erreur est survenue lors de la récupération des préférences liées à Office Attach</translation>
-   <translation id="exchange_accounts_fetchAccountCreationOptions_error" qtlid="486282">Une erreur est survenue lors de la récupération des options de créations de comptes</translation>
-   <translation id="exchange_accounts_fetchAccounts_error" qtlid="486295">Une erreur est survenue lors de la récupération des comptes</translation>
+   <translation id="exchange_accounts_fetchOfficeAttachError_error">Une erreur est survenue lors de la récupération des préférences liées à Office Attach</translation>
+   <translation id="exchange_accounts_fetchAccountCreationOptions_error">Une erreur est survenue lors de la récupération des options de créations de comptes</translation>
+   <translation id="exchange_accounts_fetchAccounts_error">Une erreur est survenue lors de la récupération des comptes</translation>
 
-   <translation id="exchange_accounts_outlook_deactivate_title" qtlid="485866">Désactiver la licence Outlook</translation>
-   <translation id="exchange_accounts_outlook_deactivate_intro" qtlid="486308">Souhaitez-vous désactiver votre licence Outlook ?</translation>
-   <translation id="exchange_accounts_outlook_deactivate_success" qtlid="486321">La désaction du compte Outlook a été effectuée avec succès.</translation>
-   <translation id="exchange_accounts_outlook_deactivate_error" qtlid="486334">La désaction du compte Outlook a rencontré une erreur.</translation>
+   <translation id="exchange_accounts_outlook_deactivate_title">Désactiver la licence Outlook</translation>
+   <translation id="exchange_accounts_outlook_deactivate_intro">Souhaitez-vous désactiver votre licence Outlook ?</translation>
+   <translation id="exchange_accounts_outlook_deactivate_success">La désaction du compte Outlook a été effectuée avec succès.</translation>
+   <translation id="exchange_accounts_outlook_deactivate_error">La désaction du compte Outlook a rencontré une erreur.</translation>
 
-   <translation id="exchange_accounts_outlook_delete_title" qtlid="397377">Supprimer la licence Outlook</translation>
-   <translation id="exchange_accounts_outlook_delete_intro" qtlid="397442">Souhaitez-vous supprimer votre licence Outlook ?</translation>
-   <translation id="exchange_accounts_outlook_delete_note" qtlid="397455">Veuillez prendre note que la suppression de la licence Outlook sera effective à sa date d'expiration.</translation>
-   <translation id="exchange_accounts_outlook_delete_success" qtlid="486347">La suppression du compte Outlook a été effectuée avec succès. Elle sera effective à sa date d'expiration.</translation>
-   <translation id="exchange_accounts_outlook_delete_error" qtlid="486360">La suppression du compte Outlook a rencontré une erreur.</translation>
+   <translation id="exchange_accounts_outlook_delete_title">Supprimer la licence Outlook</translation>
+   <translation id="exchange_accounts_outlook_delete_intro">Souhaitez-vous supprimer votre licence Outlook ?</translation>
+   <translation id="exchange_accounts_outlook_delete_note">Veuillez prendre note que la suppression de la licence Outlook sera effective à sa date d'expiration.</translation>
+   <translation id="exchange_accounts_outlook_delete_success">La suppression du compte Outlook a été effectuée avec succès. Elle sera effective à sa date d'expiration.</translation>
+   <translation id="exchange_accounts_outlook_delete_error">La suppression du compte Outlook a rencontré une erreur.</translation>
 
    <translation id="exchange_ACTION_display_outlook_title" qtlid="136724">Licence Outlook</translation>
    <translation id="exchange_ACTION_display_outlook_step1_wait_label" qtlid="170941">Actuellement, un lien de téléchargement Outlook est actif. Veuillez attendre qu'il arrive à expiration (5 minutes maximum) avant de procéder à la génération d'une nouvelle clef de licence.</translation>
-   <translation id="exchange_ACTION_display_outlook_step1_intro_label" qtlid="156927">Veuillez choisir le type de la licence Outlook à utiliser :</translation>
+   <translation id="exchange_ACTION_display_outlook_step1_intro_label" qtlid="156927">Veuillez choisir le type de la licence Outlook à utiliser:</translation>
    <translation id="exchange_ACTION_display_outlook_step1_extra_label" qtlid="170954"><strong>Attention</strong> : vous pouvez générer plusieurs fois votre clef de licence, et ce pour différentes versions d'Outlook. Cependant, une seule clef peut être utilisée par licence. <br />La génération et l'activation d'un produit avec une nouvelle clef rendra invalide l'installation précédente.</translation>
    <translation id="exchange_ACTION_display_outlook_step1_language_label" qtlid="168874">Langue :</translation>
    <translation id="exchange_ACTION_display_outlook_language_DE" qtlid="31618">Allemand</translation>
@@ -1104,11 +1104,11 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_ACTION_display_outlook_language_MS" qtlid="271962">Malais</translation>
    <translation id="exchange_ACTION_display_outlook_language_VI" qtlid="271975">Vietnamien</translation>
    <translation id="exchange_ACTION_display_outlook_step2_intro_label" qtlid="157252">Détails concernant votre licence Outlook pour le compte {0} :</translation>
-   <translation id="exchange_ACTION_display_outlook_account_label" qtlid="157265">Compte :</translation>
-   <translation id="exchange_ACTION_display_outlook_serial_label" qtlid="157278">Serial :</translation>
+   <translation id="exchange_ACTION_display_outlook_account_label" qtlid="157265">Compte:</translation>
+   <translation id="exchange_ACTION_display_outlook_serial_label" qtlid="157278">Série:</translation>
    <translation id="exchange_ACTION_display_outlook_serial_not_required" qtlid="42370">-</translation>
-   <translation id="exchange_ACTION_display_outlook_url_label" qtlid="157291">URL :</translation>
-   <translation id="exchange_ACTION_display_outlook_date_label" qtlid="157304">Date expiration :</translation>
+   <translation id="exchange_ACTION_display_outlook_url_label" qtlid="157291">URL:</translation>
+   <translation id="exchange_ACTION_display_outlook_date_label" qtlid="157304">Date d'échéance:</translation>
    <translation id="exchange_ACTION_display_outlook_step2_loading_label" qtlid="157317">Génération d’un lien Outlook en cours...</translation>
    <translation id="exchange_ACTION_display_outlook_step2_close_button" qtlid="4670">Fermer</translation>
    <translation id="exchange_ACTION_display_outlook_step2_extra_label" qtlid="170967">La clef générée aura une validité de 5 minutes. Si cet intervalle ne vous a pas permis d'activer votre produit, vous pourrez réitérer l'opération afin d'obtenir une nouvelle clef.</translation>
@@ -1122,7 +1122,7 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_externalEmailAddress" qtlid="30430">Adresse</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_displayName" qtlid="80922">Nom affiché</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_creationDate" qtlid="4358">Créé le</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state" qtlid="26443">Statut</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state">Statut</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_CREATING" qtlid="26227">En création</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_DELETING" qtlid="133929">En suppression</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_REOPENING" qtlid="171279">En réouverture</translation>
@@ -1140,7 +1140,7 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_title" qtlid="136334">Ajouter un contact externe</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_title_button" qtlid="136334">Ajouter un contact externe</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_question" qtlid="171357">Vous allez créer un contact externe</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_email_label" qtlid="137244">Compte e-mail</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_email_label" qtlid="137244">Compte courriel</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_email_invalid" qtlid="171370">L'adresse email entrée est invalide</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_organization2010_label" qtlid="32278">Organisation</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_first_name_label" qtlid="23323">Prénom</translation>
@@ -1152,7 +1152,7 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_wizardhelp_requirements_title" qtlid="171383">Conditions sur les contacts externes</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_wizardhelp_requirements_content" qtlid="174659">Les contacts externes doivent respecter les exigences suivantes :<br/><br/>- Le prénom et le nom doivent comporter au plus 64 caractères.<br/>- Le nom à afficher doit comporter au plus 255 caractères.</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_question" qtlid="171435">Souhaitez-vous réellement ajouter le contact externe suivant ?</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_email_label" qtlid="137244">Compte e-mail</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_email_label" qtlid="137244">Compte courriel</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_first_name_label" qtlid="23323">Prénom</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_last_name_label" qtlid="3818">Nom</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_display_name_label" qtlid="23515">Nom à afficher</translation>
@@ -1164,7 +1164,7 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
 
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_title" qtlid="171474">Modifier un contact externe</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_question" qtlid="171487">Vous allez modifier un contact externe</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_email_label" qtlid="137244">Compte e-mail</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_email_label" qtlid="137244">Compte courriel</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_email_invalid" qtlid="171370">L'adresse email entrée est invalide</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_first_name_label" qtlid="23323">Prénom</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_last_name_label" qtlid="3818">Nom</translation>
@@ -1174,7 +1174,7 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_wizardhelp_requirements_title" qtlid="171383">Conditions sur les contacts externes</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_wizardhelp_requirements_content" qtlid="174659">Les contacts externes doivent respecter les exigences suivantes :<br/><br/>- Le prénom et le nom doivent comporter au plus 64 caractères.<br/>- Le nom à afficher doit comporter au plus 255 caractères.</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_question" qtlid="171500">Souhaitez-vous réellement modifier le contact externe suivant ?</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_email_label" qtlid="137244">Compte e-mail</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_email_label" qtlid="137244">Compte courriel</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_first_name_label" qtlid="23323">Prénom</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_last_name_label" qtlid="3818">Nom</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_display_name_label" qtlid="23515">Nom à afficher</translation>
@@ -1214,8 +1214,8 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_ACTION_configure_services_label_minPasswordLength" qtlid="174828">Longueur minimale du mot de passe</translation>
    <translation id="exchange_ACTION_configure_services_label_complexityEnabled" qtlid="178003">Exigences de complexité</translation>
    <translation id="exchange_ACTION_configure_services_label_incoming_messages" qtlid="81871">Messages entrants</translation>
-   <translation id="exchange_ACTION_configure_services_label_spf" qtlid="471964">Activer la vérification de la protection SPF</translation>
-   <translation id="exchange_ACTION_configure_services_label_dkim" qtlid="471977">Activer la vérification de la signature DKIM</translation>
+   <translation id="exchange_ACTION_configure_services_label_spf">Activer la vérification de la protection SPF</translation>
+   <translation id="exchange_ACTION_configure_services_label_dkim">Activer la vérification de la signature DKIM</translation>
    <translation id="exchange_ACTION_configure_services_label_spam" qtlid="402425">Messages indésirables</translation>
    <translation id="exchange_ACTION_configure_services_label_tag_spam" qtlid="402438">Identifier les messages indésirables.</translation>
    <translation id="exchange_ACTION_configure_services_label_putinjunk" qtlid="402451">Déplacer les messages indésirables dans la corbeille.</translation>
@@ -1286,7 +1286,7 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_ACTION_configure_step2_label_putInJunk" qtlid="402490">Déplacement automatique des messages indésirables vers la corbeille :</translation>
    <translation id="putInJunk_value_true" qtlid="30250">Activé</translation>
    <translation id="putInJunk_value_false" qtlid="24967">Désactivé</translation>
-   <translation id="exchange_ACTION_configure_step2_label_tagSpam" qtlid="402503">Tag des messages indésirables (SPAM) :</translation>
+   <translation id="exchange_ACTION_configure_step2_label_tagSpam" qtlid="402503">Marqueur (tag) des messages indésirables (SPAM) :</translation>
    <translation id="tagSpam_value_true" qtlid="30250">Activé</translation>
    <translation id="tagSpam_value_false" qtlid="24967">Désactivé</translation>
    <translation id="complexityEnabled_value_true" qtlid="178406">Activées</translation>
@@ -1341,13 +1341,13 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_ACTION_configure_help_minPasswordLength_title" qtlid="174828">Longueur minimale du mot de passe</translation>
    <translation id="exchange_ACTION_configure_help_minPasswordLength_text" qtlid="178757">Ce paramètre de sécurité détermine le nombre minimal de caractères que peut contenir un mot de passe pour un compte d'utilisateur. Vous pouvez définir une valeur comprise entre 3 et 14 caractères ou bien vous pouvez indiquer qu'un mot de passe n'est pas requis en définissant ce nombre de caractères à 0.</translation>
    <translation id="exchange_ACTION_configure_help_spf_title" qtlid="402516">SPF :</translation>
-   <translation id="exchange_ACTION_configure_help_spf_text" qtlid="402529">Le SPF vise à réduire les possibilités d'usurpation en publiant dans la zone DNS, un enregistrement indiquant quelles adresses IP sont autorisées ou non à envoyer des e-mails. En activant cette option un tag SPAM serra mis sur les e-mails provenant de domaine avec un SPF incorrecte.</translation>
+   <translation id="exchange_ACTION_configure_help_spf_text" qtlid="402529">Le SPF vise à réduire les possibilités d'usurpation en publiant dans la zone DNS, un enregistrement indiquant quelles adresses IP sont autorisées ou non à envoyer des courriels. En activant cette option un marqueur SPAM sera mis sur les courriels provenant de domaine avec un SPF incorrecte.</translation>
    <translation id="exchange_ACTION_configure_help_dkim_title" qtlid="402542">DKIM :</translation>
    <translation id="exchange_ACTION_configure_help_dkim_text" qtlid="402555">Une signature DKIM vérifie l'authenticité du domaine expéditeur et garantit l'intégrité du message grâce à une clé publiée dans la zone DNS. En activant cette option un tag SPAM serra mis sur les e-mails provenant de domaine avec un DKIM incorrecte.</translation>
    <translation id="exchange_ACTION_configure_help_spam_title" qtlid="402568">Tag Spam :</translation>
-   <translation id="exchange_ACTION_configure_help_spam_text" qtlid="402581">Applique un tag sur un e-mail détecté comme SPAM, ce qui vous permet ensuite de créer une règle de messagerie afin de le supprimer ou de le déplacer dans un dossier spécifique.</translation>
+   <translation id="exchange_ACTION_configure_help_spam_text" qtlid="402581">Applique un tag sur un courriel détecté comme SPAM, ce qui vous permet ensuite de créer une règle de messagerie afin de le supprimer ou de le déplacer dans un dossier spécifique.</translation>
    <translation id="exchange_ACTION_configure_help_putinjunk_title" qtlid="402594">Déplacer les messages indésirables :</translation>
-   <translation id="exchange_ACTION_configure_help_putinjunk_text" qtlid="402607">Déplace automatiquement les e-mails détectés comme SPAM dans la corbeille.</translation>
+   <translation id="exchange_ACTION_configure_help_putinjunk_text" qtlid="402607">Déplace automatiquement les courriels détectés comme SPAM dans la corbeille.</translation>
 
 <!-- ########################################## -->
 <!-- EXPORT PST -->
@@ -1363,8 +1363,8 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_ACTION_display_pst_close" qtlid="4670">Fermer</translation>
    <translation id="exchange_ACTION_display_pst_retry" qtlid="191200">Réessayer maintenant</translation>
    <translation id="exchange_ACTION_display_pst_error" qtlid="191213">L'export vers un fichier .pst a échoué. Veuillez réessayer.</translation>
-   <translation id="exchange_ACTION_display_pst_already_exist" qtlid="416514">Un fichier .pst est déjà existant pour ce compte email :</translation>
-   <translation id="exchange_ACTION_display_pst_ask_generate_new" qtlid="416527">Désirez-vous créer une nouvelle exportation en .pst ?</translation>
+   <translation id="exchange_ACTION_display_pst_already_exist" qtlid="416514">Un fichier .pst est déjà existant pour ce compte de messagerie électronique :</translation>
+   <translation id="exchange_ACTION_display_pst_ask_generate_new" qtlid="416527">Désirez-vous créer une nouvelle exportation en .pst?</translation>
    <translation id="exchange_ACTION_display_pst_warning_erase" qtlid="416540">Attention, cette action remplacera le fichier déjà existant.</translation>
    <translation id="exchange_ACTION_add_pst_title" qtlid="191226">Exporter en .pst</translation>
 
@@ -1373,8 +1373,8 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
 <!-- ORDER DISK SPACE -->
    <translation id="exchange_action_order_space_disk_title" qtlid="191668">Commander de l'espace additionnel</translation>
    <translation id="exchange_action_order_space_disk_intro" qtlid="191785">Vous pouvez commander un espace disque additionnel</translation>
-   <translation id="exchange_action_order_space_disk_price" qtlid="146177">Prix total HT :</translation>
-   <translation id="exchange_action_order_space_disk_price_iva" qtlid="146190">Prix total TTC :</translation>
+   <translation id="exchange_action_order_space_disk_price" qtlid="146177">Sous-total:</translation>
+   <translation id="exchange_action_order_space_disk_price_iva" qtlid="146190">Prix total:</translation>
    <translation id="exchange_action_order_space_disk_contracts_intro" qtlid="191798">Contracts et conditions générales liés au service :</translation>
    <translation id="exchange_action_order_space_disk_summary" qtlid="177496">Résumé de votre commande</translation>
    <translation id="exchange_action_order_space_disk_final_txt" qtlid="181240">Cliquez sur le bouton "Valider" afin de confirmer votre commande.</translation>
@@ -1391,7 +1391,7 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_action_license_history_units" qtlid="113658">Licences</translation>
    <translation id="exchange_action_license_history_date" qtlid="66308">Date :</translation>
    <translation id="exchange_action_license_history_type_outlook" qtlid="193111">Licences Outlook</translation>
-   <translation id="exchange_action_license_history_label" qtlid="486373">Licences {0}</translation>
+   <translation id="exchange_action_license_history_label">Licences {0}</translation>
    <translation id="exchange_action_license_history_period_LASTMONTH" qtlid="169680">Le dernier mois</translation>
    <translation id="exchange_action_license_history_period_LAST3MONTHS" qtlid="193163">Les 3 derniers mois</translation>
    <translation id="exchange_action_license_history_period_LASTWEEK" qtlid="169693">Les 7 derniers jours</translation>
@@ -1415,7 +1415,7 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_tab_SHARED_table_empty_search" qtlid="201588">Vous n'avez pas de partage correspondant au terme recherché</translation>
 
    <translation id="exchange_tab_SHARED_permissions_intro" qtlid="201601">Liste des comptes avec permission d'accès du partage <strong>{0}</strong></translation>
-   <translation id="exchange_tab_SHARED_permissions_header_email" qtlid="69509">E-mail</translation>
+   <translation id="exchange_tab_SHARED_permissions_header_email" qtlid="69509">Courriel</translation>
    <translation id="exchange_tab_SHARED_permissions_header_quota" qtlid="6874">Quota</translation>
    <translation id="exchange_tab_SHARED_permissions_header_type" qtlid="144253">Droit d'accès</translation>
    <translation id="exchange_tab_SHARED_permissions_type_EDITOR" qtlid="17321">Ecriture</translation>
@@ -1521,7 +1521,7 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_ACTION_order_upgrade_300G_menu_item" qtlid="368089">Augmenter la capacité à 300Gio</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_title_label" qtlid="368102">Augmenter la capacité</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_question_intro" qtlid="368115">Êtes-vous certain de vouloir augmenter la capacité de votre compte Exchange à 300Gio ?</translation>
-   <translation id="exchange_ACTION_order_upgrade_300G_price_label" qtlid="139325">Type de paiement :</translation>
+   <translation id="exchange_ACTION_order_upgrade_300G_price_label" qtlid="139325">Type de paiement:</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_price_monthly_label" qtlid="79530">mensuel</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_price_yearly_label" qtlid="79542">annuel</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_button_label" qtlid="26047">Valider</translation>
@@ -1541,10 +1541,10 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
 
 <!-- Wizard -->
    <translation id="exchange_wizardHostedCreation_welcome_progressBar_addDomainName" qtlid="449401">Configuration du domaine</translation>
-   <translation id="exchange_wizardHostedCreation_welcome_progressBar_createEmailAddresses" qtlid="449414">Personnalisation d'adresses e-mails</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_progressBar_createEmailAddresses" qtlid="449414">Personnalisation d'adresses courriel</translation>
    <translation id="exchange_wizardHostedCreation_welcome_progressBar_summary" qtlid="82725">Récapitulatif</translation>
    <translation id="exchange_wizardHostedCreation_welcome_header" qtlid="449427">Votre service Microsoft Exchange<br/> n'est pas encore configuré</translation>
-   <translation id="exchange_wizardHostedCreation_welcome_subtext" qtlid="449440">Configurez votre service en quelques minutes pour recevoir vos e-mails.</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_subtext" qtlid="449440">Configurez votre service en quelques minutes pour recevoir vos courriels.</translation>
    <translation id="exchange_wizardHostedCreation_welcome_startButton" qtlid="449453">Commencer</translation>
    <translation id="exchange_wizardHostedCreation_welcome_standardConfiguratorButton" qtlid="449466">Je préfère utiliser le configurateur standard</translation>
    <translation id="exchange_wizardHostedCreation_welcome_closeButton" qtlid="4670">Fermer</translation>
@@ -1565,8 +1565,8 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
 
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_header" qtlid="4406">Configuration</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isDomainOnlyExchange" qtlid="449622">Allez-vous utiliser uniquement l'offre Exchange OVH avec ce domaine ?</translation>
-   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isDomainEmail" qtlid="449635">S'agit-il d'un service e-mail mutualisé OVH (hébergement web ou MX Plan) ou d'un service E-mail Pro OVH ?</translation>
-   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_domainConfigurationAlert" qtlid="449648">Votre domaine utilise actuellement comme serveur de réception <strong>{0}</strong>.<br />Les e-mails à destination d'adresses non-OVH lui seront renvoyés.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isDomainEmail" qtlid="449635">S'agit-il d'un service de messsagerie partagé OVH (hébergement web ou MX Plan) ou d'un service de messagerie Pro OVH?</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_domainConfigurationAlert" qtlid="449648">Votre domaine utilise actuellement comme serveur de réception <strong>{0}</strong>.<br />Les courriels à destination d'adresses non-OVH lui seront renvoyés.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isExchangeOnly" qtlid="34776">Oui</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isNotExchangeOnly" qtlid="34788">Non</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isUsedByMails" qtlid="34776">Oui</translation>
@@ -1574,19 +1574,19 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_isEmailService" qtlid="449674">Votre domaine utilisera comme serveur de réception <strong>mx1.mail.ovh.net</strong>.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_header" qtlid="449687">Serveur relais (SMTP)</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_title" qtlid="449700">Configuration de votre zone DNS</translation>
-   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_tooltip" qtlid="449713">La zone DNS permet de gérer différents services liés au nom de domaine.<br /><br />Exemple : un enregistrement MX permet d'indiquer quel serveur e-mail est attaché au nom de domaine.</translation>
-   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip_1" qtlid="449726">Le serveur relais intervient en cas de réception d’e-mails adressés à des comptes non hébergés sur votre service Exchange OVH.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_tooltip" qtlid="449713">La zone DNS permet de gérer différents services liés au nom de domaine.<br /><br />Exemple : un enregistrement MX permet d'indiquer quel serveur courriel est attaché au nom de domaine.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip_1" qtlid="449726">Le serveur relais intervient en cas de réception de courriels adressés à des comptes non hébergés sur votre service Exchange OVH.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip_2" qtlid="449739">Ceux-ci seront automatiquement transmis au serveur relais.</translation>
-   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_header" qtlid="449752">Comment souhaitez-vous configurer votre zone DNS ?</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_header" qtlid="449752">Comment souhaitez-vous configurer votre zone DNS?</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_auto" qtlid="273319">Configuration automatique</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_manual" qtlid="273332">Configuration manuelle</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_manual_explanation1" qtlid="449765">Je souhaite configurer moi-même les champs MX et SRV</translation>
-   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_manual_explanation2" qtlid="449778">et la réception des e-mails commencera quand je le souhaite.</translation>
-   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_nonAuthoritative" qtlid="449791">Veuillez saisir le service relais, les e-mails à destination des services non-OVH lui seront renvoyés.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_manual_explanation2" qtlid="449778">et la réception des courriels commencera quand je le souhaite.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_nonAuthoritative" qtlid="449791">Veuillez saisir le service relais, les courriels à destination des services non-OVH lui seront renvoyés.</translation>
 
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_header" qtlid="449804">Configuration de la zone DNS</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_explanation" qtlid="449817">Votre nom de domaine étant géré par un autre identifiant client ou un autre prestataire, la mise à jour du champ CNAME dans votre zone DNS est à effectuer manuellement. Vous aurez besoin pour cela des informations ci-dessous pour procéder à l'ajout de ce champ.<br /><br />L'enregistrement CNAME rend possible la validation de votre nom de domaine externe dans la plateforme OVH. Cet enregistrement n'aura aucun impact sur la configuration actuelle de votre domaine.</translation>
-   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_dnsZone_explanation" qtlid="449830">La zone DNS permet de gérer différents services liés à un nom de domaine. Il est par exemple possible de le lier à un hébergement web via l'enregistrement de type Aet le service e-mail via l'enregistrement MX.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_dnsZone_explanation" qtlid="449830">La zone DNS permet de gérer différents services liés à un nom de domaine. Il est par exemple possible de le lier à un hébergement web via l'enregistrement de type A et le service de messagerie via l'enregistrement MX.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_inputHeader" qtlid="449843">Saisir le nom de domaine</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_example" qtlid="449856">Exemple : nomdedomaine1.com</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_domainNameSelection_nonOvhDomain_placeholder" qtlid="66428">Nom de domaine</translation>
@@ -1605,16 +1605,16 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_wizardHostedCreation_addDomainName_cancelOperation_button" qtlid="449999">Quitter le processus d’installation</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_cancelOperation_details" qtlid="450012">Vous pourrez reprendre la configuration de votre service en cliquant sur l’onglet « Domaines associés » puis sur le bouton « Ajouter un domaine ».</translation>
 
-   <translation id="exchange_wizardHostedCreation_emailCreation_header" qtlid="450025">Personnalisez vos comptes e-mail Exchange</translation>
-   <translation id="exchange_wizardHostedCreation_emailCreation_introduction_1" qtlid="450038">Vous pouvez ajouter jusqu'à {0} comptes e-mail grâce à votre offre Exchange.</translation>
-   <translation id="exchange_wizardHostedCreation_emailCreation_introduction_2" qtlid="450051">Si vous avez besoin de plus de comptes, vous pourrez en commander ultérieurement depuis la rubrique <strong>Comptes e-mail</strong> de votre service Hosted Exchange.</translation>
-   <translation id="exchange_wizardHostedCreation_emailCreation_header_email" qtlid="11315">Adresse e-mail</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_header" qtlid="450025">Personnalisez vos comptes de messagerie électronique Exchange</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_introduction_1" qtlid="450038">Vous pouvez ajouter jusqu'à {0} comptes de messagerie électronique  grâce à votre offre Exchange.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_introduction_2" qtlid="450051">Si vous avez besoin de plus de comptes, vous pourrez en commander ultérieurement depuis la rubrique <strong>Comptes de messagerie électronique</strong> de votre service Hosted Exchange.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_header_email" qtlid="11315">Adresse courriel</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_header_displayName" qtlid="23515">Nom à afficher</translation>
-   <translation id="exchange_wizardHostedCreation_emailCreation_header_state" qtlid="26443">Statut</translation>
-   <translation id="exchange_wizardHostedCreation_emailCreation_operationInProgress" qtlid="450064">Vous pourrez à nouveau personnaliser des comptes e-mails une fois les opérations en cours terminées.</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_header_state">Statut</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_operationInProgress" qtlid="450064">Vous pourrez à nouveau personnaliser des comptes de messagerie électronique une fois les opérations en cours terminées.</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_personnalizeButton" qtlid="450077">Personnaliser un compte</translation>
 
-   <translation id="exchange_wizardHostedCreation_emailCreation_add_login_header" qtlid="11315">Adresse e-mail</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_login_header" qtlid="11315">Adresse courriel</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_add_login_required" qtlid="450090">Champ obligatoire.</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_add_login_pattern" qtlid="450103">La partie locale (avant le @) ne peut contenir que des lettres, des chiffres, des points (.) ou des tirets (- ou _).</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_add_firstName_title" qtlid="450116">Personnaliser un compte e-mail</translation>
@@ -1654,26 +1654,26 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_wizardHostedCreation_configureDNSZone_authoritative" qtlid="450363">Utilise uniquement le service Exchange</translation>
    <translation id="exchange_wizardHostedCreation_configureDNSZone_authoritative_yes" qtlid="34776">Oui</translation>
    <translation id="exchange_wizardHostedCreation_configureDNSZone_authoritative_no" qtlid="34788">Non</translation>
-   <translation id="exchange_wizardHostedCreation_configureDNSZone_emailAdresses" qtlid="450376">Compte(s) e-mail ajouté(s)</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_emailAdresses" qtlid="450376">Compte(s) de messagerie électronique ajouté(s)</translation>
    <translation id="exchange_wizardHostedCreation_configureDNSZone_emailAdresses_non" qtlid="30646">Aucun</translation>
    <translation id="exchange_wizardHostedCreation_configureDNSZone_auto_header" qtlid="450389">La configuration de votre zone DNS s'effectuera en mode <strong>automatique</strong>.</translation>
-   <translation id="exchange_wizardHostedCreation_configureDNSZone_auto_explanation1" qtlid="450402">Votre service Hosted Exchange pour le domaine <strong>{0}</strong> est maintenant configuré. Une fois le diagnostic MX validé et passé à la couleur verte, la réception de vos e-mails commencera. L’activation de votre service peut nécessiter un délai de 4 à 24 heures pour être opérationnelle. Retrouvez vos emails en cliquant sur ce lien</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_auto_explanation1" qtlid="450402">Votre service Exchange Hébergé pour le domaine <strong>{0}</strong> est maintenant configuré. Une fois le diagnostic MX validé et passé à la couleur verte, la réception de vos e-mails commencera. L’activation de votre service peut nécessiter un délai de 4 à 24 heures pour être opérationnelle. Retrouvez vos courriels en cliquant sur ce lien</translation>
    <translation id="exchange_wizardHostedCreation_configureDNSZone_auto_explanation2" qtlid="450415">ou dans votre onglet <strong>Informations générales</strong> dans la section <strong>Connexion → Webmail</strong>.</translation>
    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_header" qtlid="450428">La configuration de votre zone DNS s'effectuera en mode <strong>manuel</strong>.</translation>
    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_part_1" qtlid="450441">En configurant les champs MX et SRV</translation>
-   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_part_2" qtlid="450480">, vous paramétrerez votre nom de domaine pour pouvoir recevoir vos e-mails. Leur réception effective tient compte de la propagation DNS et peut prendre entre 4 à 24 heures.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_part_2" qtlid="450480">, vous paramétrerez votre nom de domaine pour pouvoir recevoir vos courriels. Leur réception effective tient compte de la propagation DNS et peut prendre entre 4 à 24 heures.</translation>
    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_1" qtlid="450454">Le champ MX OVH associe un nom de domaine à un serveur de messagerie.</translation>
-   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_2" qtlid="450467">Le champ SRV vous permettra de configurer automatiquement votre adresse e-mail dans votre logiciel de messagerie (par exemple : Outlook).</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_2" qtlid="450467">Le champ SRV vous permettra de configurer automatiquement votre adresse courriel dans votre logiciel de messagerie (par exemple : Outlook).</translation>
    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_table_headers_fieldType" qtlid="129171">Type de champ</translation>
    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_table_headers_data" qtlid="26551">Informations</translation>
    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_table_mx" qtlid="23779">MX</translation>
    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_table_srv" qtlid="130003">SRV</translation>
    <translation id="exchange_wizardHostedCreation_configureDNSZone_returnButton" qtlid="4118">Retour</translation>
    <translation id="exchange_wizardHostedCreation_configureDNSZone_closeButton" qtlid="4070">Continuer</translation>
-   <translation id="exchange_wizardHostedCreation_configureDNSZone_availableAccountsRetrieval_error" qtlid="450493">Une erreur est survenue au moment de la récupération des comptes e-mails associés à votre domaine.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_availableAccountsRetrieval_error" qtlid="450493">Une erreur est survenue au moment de la récupération des comptes de messagerie électronique associés à votre domaine.</translation>
    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_dialog_explanation1" qtlid="450506">Il vous suffit maintenant de configurer vos champs MX et SRV dans votre zone DNS pour ce domaine.</translation>
    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_dialog_explanation2" qtlid="450519">Si votre nom de domaine est enregistré chez OVH, rendez-vous dans votre espace client : Web → Domaines → Zone DNS.<br /><br />Dans le cas contraire, référez-vous à la documentation du fournisseur de votre nom de domaine.</translation>
-   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_dialog_explanation3" qtlid="450532">Si vous avez déjà effectué cette action, patientez ou rafraîchissez votre page. Une fois le diagnostic MX validé et passé à la couleur verte, la réception de vos e-mails commencera. L’activation de votre service peut nécessiter un délai de 4 à 24 heures pour être opérationnelle.</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_dialog_explanation3" qtlid="450532">Si vous avez déjà effectué cette action, patientez ou rafraîchissez votre page. Une fois le diagnostic MX validé et passé à la couleur verte, la réception de vos courriels commencera. L’activation de votre service peut nécessiter un délai de 4 à 24 heures pour être opérationnelle.</translation>
 
    <translation id="exchange_wizardHostedCreation_ending_dialog" qtlid="450545">Dernière étape</translation>
    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_dialog_warning" qtlid="5066">Attention</translation>
