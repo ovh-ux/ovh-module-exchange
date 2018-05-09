@@ -182,7 +182,7 @@ angular
                         };
 
                         if (response.code === 460 || response.status === 460) {
-                            this.services.messaging.writeError(this.services.$translate.instant("common_service_expired", { t0: response.id }), data);
+                            this.services.messaging.writeError(this.services.$translate.instant("common_service_expired", { t0: response.id }), data);
                         } else {
                             this.services.messaging.writeError(this.services.$translate.instant("exchange_dashboard_loading_error"), data);
                         }

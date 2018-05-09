@@ -45,7 +45,7 @@ angular
                 .Exchange
                 .renewSsl(this.$routerParams.organization, this.$routerParams.productId, this.model.name)
                 .then((data) => {
-                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_ACTION_renew_ssl_success", { t0: this.model.displayName }), data);
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_ACTION_renew_ssl_success", { t0: this.model.displayName }), data);
                 })
                 .catch((failure) => {
                     this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_renew_ssl_failure"), failure);

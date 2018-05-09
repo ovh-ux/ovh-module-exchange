@@ -69,7 +69,7 @@ angular
                 .then((result) => {
                     if (result.percentComplete !== 100) {
                         this.exportStep = 3;
-                        this.progress = this.services.$translate.instant("exchange_ACTION_display_pst_progress", { t0: result.percentComplete });
+                        this.progress = this.services.$translate.instant("exchange_ACTION_display_pst_progress", { t0: result.percentComplete });
 
                         this.timer = this.services.$timeout(() => {
                             this.getExportDetails();
@@ -102,7 +102,7 @@ angular
                     }
                 })
                 .then(() => {
-                    this.progress = this.services.$translate.instant("exchange_ACTION_display_pst_progress", { t0: 0 });
+                    this.progress = this.services.$translate.instant("exchange_ACTION_display_pst_progress", { t0: 0 });
                     this.exportStep = 3;
                     this.getExportDetails();
                 })
