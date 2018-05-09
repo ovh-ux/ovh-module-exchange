@@ -1,13 +1,13 @@
 <div data-ng-controller="ExchangeOrderDiskSpaceCtrl as ctrl">
     <div data-wizard
          data-wizard-bread-crumb="true"
-         data-wizard-confirm-button-text="i18n.exchange_action_order_space_disk_button"
+         data-wizard-confirm-button-text="'exchange_action_order_space_disk_button' | translate"
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="submitting"
-         data-wizard-title="i18n.exchange_action_order_space_disk_title">
+         data-wizard-title="'exchange_action_order_space_disk_title' | translate">
 
         <div data-wizard-step>
-            <p data-ng-bind-html="tr('exchange_action_order_space_disk_intro')"></p>
+            <p data-ng-bind-html="'exchange_action_order_space_disk_intro' | translate"></p>
 
             <oui-spinner data-ng-if="ctrl.loading"></oui-spinner>
 
@@ -24,13 +24,13 @@
                     <tfoot>
                         <tr>
                             <th class="text-right" scope="row"
-                                data-i18n-static="exchange_action_order_space_disk_price"></th>
+                                data-translate="exchange_action_order_space_disk_price"></th>
                             <td class="font-weight-bold text-right"
                                 data-ng-bind="ctrl.order.prices.withoutTax.text"></td>
                         </tr>
                         <tr>
                             <th class="text-right" scope="row"
-                                data-i18n-static="exchange_action_order_space_disk_price_iva"></th>
+                                data-translate="exchange_action_order_space_disk_price_iva"></th>
                             <td class="font-weight-bold text-right"
                                 data-ng-bind="ctrl.order.prices.withTax.text"></td>
                         </tr>
@@ -52,7 +52,7 @@
         <!-- Step 3: Resume -->
         <div data-wizard-step
              data-wizard-step-on-previous="backToContracts">
-            <p data-i18n-static="exchange_action_order_space_disk_summary"></p>
+            <p data-translate="exchange_action_order_space_disk_summary"></p>
 
             <table class="table table-condensed">
                 <tbody>
@@ -66,22 +66,22 @@
                 <tfoot>
                     <tr>
                         <th class="text-right" scope="row"
-                            data-i18n-static="exchange_action_order_space_disk_price"></th>
+                            data-translate="exchange_action_order_space_disk_price"></th>
                         <td class="font-weight-bold text-right"
                             data-ng-bind="ctrl.order.prices.withoutTax.text"></td>
                     </tr>
                     <tr>
                         <th class="text-right" scope="row"
-                            data-i18n-static="exchange_action_order_space_disk_price_iva"></th>
+                            data-translate="exchange_action_order_space_disk_price_iva"></th>
                         <td class="font-weight-bold text-right"
                             data-ng-bind="ctrl.order.prices.withTax.text"></td>
                     </tr>
                 </tfoot>
             </table>
 
-            <p data-i18n-static="exchange_action_order_space_disk_final_txt"></p>
+            <p data-translate="exchange_action_order_space_disk_final_txt"></p>
             <div class="alert alert-info" role="alert"
-                 data-i18n-static="exchange_action_order_space_disk_final_txt2">
+                 data-translate="exchange_action_order_space_disk_final_txt2">
             </div>
         </div>
 

@@ -6,15 +6,15 @@
      role="alert"
      data-ng-if="ctrl.loadingExchangeError">
     <span class="oui-message_l-icon" aria-hidden="true"></span>
-    <h1 class="oui-message__title" data-i18n-static="exchange_dashboard_loading_error"></h1>
+    <h1 class="oui-message__title" data-translate="exchange_dashboard_loading_error"></h1>
 </div>
 
 <div data-ng-if="!ctrl.isLoading && !ctrl.loadingExchangeError">
     <div class="page-header">
         <div class="row">
             <div class="col-sm-9">
-                <strong data-ng-bind="tr('exchange_offer_type_' + ctrl.exchange.offer)" data-ng-if="!ctrl.services.accountTypes.is25g()"></strong>
-                <strong data-ng-bind="tr('exchange_offer_type_25g')" data-ng-if="ctrl.services.accountTypes.is25g()"></strong>
+                <strong data-ng-bind="('exchange_offer_type_' + ctrl.exchange.offer) | translate" data-ng-if="!ctrl.services.exchangeServiceInfrastructure.is25g()"></strong>
+                <strong data-ng-bind="'exchange_offer_type_25g' | translate" data-ng-if="ctrl.services.exchangeServiceInfrastructure.is25g()"></strong>
                 <div class="mb-3" data-ng-show="!ctrl.editMode">
                     <div class="d-flex">
                         <h1 class="d-inline-block mb-0" data-ng-bind="ctrl.exchange.displayName"></h1>
@@ -22,7 +22,7 @@
                                 type="button"
                                 data-ng-click="ctrl.editDisplayName()">
                             <span class="oui-icon oui-icon-pen_line oui-icon_small" aria-hidden="true"></span>
-                            <span class="sr-only" data-i18n-static="exchange_dashboard_display_name_edit"></span>
+                            <span class="sr-only" data-translate="exchange_dashboard_display_name_edit"></span>
                         </button>
                     </div>
                     <span class="font-italic"
@@ -46,13 +46,13 @@
                                data-ng-model="ctrl.displayName">
                         <button class="oui-button oui-button_small-width"
                                 type="submit"
-                                aria-label="{{i18n.exchange_dashboard_display_name_save}}"
+                                aria-label="{{'exchange_dashboard_display_name_save' | translate}}"
                                 data-ng-disabled="ctrl.formExchangeDisplayName.displayNameField.$invalid">
                             <span class="oui-icon oui-icon-success oui-icon_small" aria-hidden="true"></span>
                         </button>
                         <button class="oui-button oui-button_small-width"
                                 type="button"
-                                aria-label="{{i18n.common_cancel}}"
+                                aria-label="{{'common_cancel' | translate}}"
                                 data-ng-click="ctrl.resetDisplayName()">
                             <span class="oui-icon oui-icon-error oui-icon_small" aria-hidden="true"></span>
                         </button>
@@ -66,38 +66,39 @@
                             aria-haspopup="true"
                             aria-expanded="false"
                             data-toggle="dropdown">
-                        <span data-i18n-static="common_actions"></span>
+                        <span data-translate="common_actions"></span>
                         <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right">
                         <li data-ng-if="ctrl.canSubscribeToSharepoint">
                             <i class="ovh-font ovh-font-cart" aria-hidden="true"></i>
                             <a data-ng-href="#/configuration/sharepoint/activate/{{ctrl.exchange.organization}}/{{ctrl.exchange.domain}}"
-                               data-i18n-static="exchange_tab_INFORMATIONS_order_sharepoint">
+                               data-translate="exchange_tab_INFORMATIONS_order_sharepoint">
                             </a>
                         </li>
-                        <li data-ng-if="!ctrl.canSubscribeToOfficeAttach && ctrl.worldPart === 'EU'">
+                        <li data-ng-if="!ctrl.canUserSubscribeToOfficeAttach && ctrl.worldPart === 'EU'">
                             <i class="ovh-font ovh-font-cart" aria-hidden="true"></i>
                             <a href="#/configuration/microsoft/office/license/order"
-                               data-i18n-static="exchange_tab_INFORMATIONS_order_office">
+                               data-translate="exchange_tab_INFORMATIONS_order_office">
                             </a>
                         </li>
-                        <li data-ng-if="ctrl.canSubscribeToOfficeAttach && ctrl.worldPart === 'EU'">
+                        <li data-ng-if="ctrl.canUserSubscribeToOfficeAttach && ctrl.worldPart === 'EU'">
                             <button class="btn btn-link" type="button"
-                                    data-i18n-static="exchange_ACTION_export_accounts_office_attached_button"
+                                    data-translate="exchange_ACTION_export_accounts_office_attached_button"
                                     data-ng-click="ctrl.services.navigation.setAction('exchange/office-attach/dialog/office-attach-dialog', ctrl.exchange)">
                             </button>
                         </li>
-                        <li class="dropdown-divider">
+                        <li class="dropdown-divider" data-ng-if="ctrl.canSubscribeToSharepoint || (ctrl.canUserSubscribeToOfficeAttach && ctrl.worldPart === 'EU') || (!ctrl.canUserSubscribeToOfficeAttach && ctrl.worldPart === 'EU')"></li>
+                        <li>
                             <button class="btn btn-link" type="button"
-                                    data-i18n-static="exchange_action_license_history_button"
+                                    data-translate="exchange_action_license_history_button"
                                     data-ng-click="ctrl.services.navigation.setAction('exchange/header/license/service-license-history', ctrl.exchange)">
                             </button>
                         </li>
                         <li data-ng-if="ctrl.exchange.renewOptionAvailable">
                             <button class="btn btn-link"
                                     type="button"
-                                    data-i18n-static="exchange_update_billing_button_title"
+                                    data-translate="exchange_update_billing_button_title"
                                     data-ng-click="ctrl.services.navigation.setAction('exchange/header/update-renew/update-renew', ctrl.exchange)">
                             </button>
                         </li>
@@ -105,10 +106,10 @@
                             <i class="oui-icon oui-icon-error_circle" aria-hidden="true"></i>
                             <button class="btn btn-link" type="button"
                                     data-ng-click="ctrl.services.navigation.setAction('exchange/header/remove/exchange-remove', ctrl.exchange)">
-                                <span data-i18n-static="exchange_resilitation_action_button"
+                                <span data-translate="exchange_resilitation_action_button"
                                       data-ng-if="!ctrl.exchange.renewType.deleteAtExpiration">
                                 </span>
-                                <span data-i18n-static="exchange_resilitation_action_button_cancel"
+                                <span data-translate="exchange_resilitation_action_button_cancel"
                                       data-ng-if="ctrl.exchange.renewType.deleteAtExpiration">
                                 </span>
                             </button>
@@ -134,7 +135,7 @@
                      data-ng-if="ctrl.services.messaging.message">
                     <button class="close"
                             type="button"
-                            aria-label="tr('wizard_close')"
+                            aria-label="'wizard_close' | translate"
                             data-dismiss="alert"
                             data-ng-click="resetMessages()">
                     </button>
@@ -147,7 +148,7 @@
                          data-linkedpopover-remote="true"
                          data-linkedpopover-single="false">
                         <strong class="pointer underline"
-                                data-i18n-static="exchange_dashboard_message_see_more"
+                                data-translate="exchange_dashboard_message_see_more"
                                 data-ng-if="ctrl.services.messaging.messageDetails.length > 0">
                         </strong>
                     </div>
@@ -161,8 +162,8 @@
         <div class="container-fluid px-5"
             data-ng-if="ctrl.exchange.serverDiagnostic.individual2010">
             <div class="alert alert-warning" role="alert">
-                <a data-ng-href="http://migrationstatus.mail.ovh.net" target="_blank" title="{{tr('exchange_dashboard_2016_migration')}} ({{tr('exchange_dashboard_new_window')}})">
-                    <span data-i18n-static="exchange_dashboard_2016_migration"></span>
+                <a data-ng-href="http://migrationstatus.mail.ovh.net" target="_blank" title="{{'exchange_dashboard_2016_migration' | translate}} ({{'exchange_dashboard_new_window' | translate}})">
+                    <span data-translate="exchange_dashboard_2016_migration"></span>
                     <span class="fa fa-external-link" aria-hidden="true"></span>
                 </a>
             </div>

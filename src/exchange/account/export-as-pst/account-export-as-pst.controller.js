@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeExportAsPstCtrl", class ExchangeExportAsPstCtrl {
-        constructor ($scope, $timeout, Exchange, APIExchange, navigation, messaging, translator, ExchangeAccount) {
+        constructor ($scope, $timeout, Exchange, APIExchange, navigation, messaging, $translate, exchangeAccount) {
             this.services = {
                 $scope,
                 $timeout,
@@ -9,8 +9,8 @@ angular
                 APIExchange,
                 navigation,
                 messaging,
-                translator,
-                ExchangeAccount
+                $translate,
+                exchangeAccount
             };
 
             this.selectedAccount = navigation.currentActionData;
@@ -33,7 +33,7 @@ angular
 
         getSelected () {
             return this.services
-                .ExchangeAccount
+                .exchangeAccount
                 .getTasks(this.$routerParams.organization, this.$routerParams.productId, this.selectedAccount.primaryEmailAddress)
                 .then((tasksId) => {
                     if (!_.isEmpty(tasksId)) {
@@ -51,7 +51,7 @@ angular
                     }
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_display_pst_error"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_display_pst_error"), failure);
                     this.services.navigation.resetAction();
                 });
         }
@@ -69,7 +69,7 @@ angular
                 .then((result) => {
                     if (result.percentComplete !== 100) {
                         this.exportStep = 3;
-                        this.progress = this.services.translator.tr("exchange_ACTION_display_pst_progress", [result.percentComplete]);
+                        this.progress = this.services.$translate.instant("exchange_ACTION_display_pst_progress", { t0: result.percentComplete });
 
                         this.timer = this.services.$timeout(() => {
                             this.getExportDetails();
@@ -102,12 +102,12 @@ angular
                     }
                 })
                 .then(() => {
-                    this.progress = this.services.translator.tr("exchange_ACTION_display_pst_progress", [0]);
+                    this.progress = this.services.$translate.instant("exchange_ACTION_display_pst_progress", { t0: 0 });
                     this.exportStep = 3;
                     this.getExportDetails();
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_display_pst_error"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_display_pst_error"), failure);
                     this.services.navigation.resetAction();
                 });
         }
@@ -143,7 +143,7 @@ angular
                 })
                 .then((data) => this.checkExportUrlTask(exchange, data.id))
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_display_pst_error"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_display_pst_error"), failure);
                     this.services.navigation.resetAction();
                 });
         }
@@ -163,7 +163,7 @@ angular
                     this.checkExportDetailTask(task);
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_display_pst_error"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_display_pst_error"), failure);
                     this.services.navigation.resetAction();
                 });
         }
@@ -181,7 +181,7 @@ angular
                     }
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_display_pst_error"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_display_pst_error"), failure);
                     this.services.navigation.resetAction();
                 });
         }
@@ -205,7 +205,7 @@ angular
                     }
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_display_pst_error"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_display_pst_error"), failure);
                     this.services.navigation.resetAction();
                 });
         }
@@ -241,15 +241,15 @@ angular
         confirmBtnTitle () {
             switch (this.exportStep) {
             case 2:
-                return this.services.translator.tr("exchange_ACTION_display_pst_start");
+                return this.services.$translate.instant("exchange_ACTION_display_pst_start");
             case 4:
-                return this.services.translator.tr("exchange_ACTION_display_pst_genlink");
+                return this.services.$translate.instant("exchange_ACTION_display_pst_genlink");
             case 6:
-                return this.services.translator.tr("exchange_ACTION_display_pst_start");
+                return this.services.$translate.instant("exchange_ACTION_display_pst_start");
             case -1:
-                return this.services.translator.tr("exchange_ACTION_display_pst_retry");
+                return this.services.$translate.instant("exchange_ACTION_display_pst_retry");
             default:
-                return this.services.translator.tr("exchange_ACTION_display_pst_close");
+                return this.services.$translate.instant("exchange_ACTION_display_pst_close");
             }
         }
 

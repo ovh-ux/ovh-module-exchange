@@ -1,13 +1,13 @@
 {
     class controller {
-        constructor (Exchange, ExchangeDomains, exchangeStates, messaging, $rootScope, $timeout, translator, User, wizardHostedCreationDomainConfiguration) {
+        constructor (Exchange, ExchangeDomains, exchangeStates, messaging, $rootScope, $timeout, $translate, User, wizardHostedCreationDomainConfiguration) {
             this.Exchange = Exchange;
             this.ExchangeDomains = ExchangeDomains;
             this.exchangeStates = exchangeStates;
             this.messaging = messaging;
             this.$rootScope = $rootScope;
             this.$timeout = $timeout;
-            this.translator = translator;
+            this.$translate = $translate;
             this.User = User;
             this.wizardHostedCreationDomainConfiguration = wizardHostedCreationDomainConfiguration;
         }
@@ -31,12 +31,12 @@
 
             this.userHasTriedToAssociatedNonAutoritativeDomain = false;
 
-            this.tooltipText = this.translator.tr("exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_tooltip");
-            const firstSentenceTooltip = this.translator.tr("exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip_1");
-            const secondSentenceTooltip = this.translator.tr("exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip_2");
+            this.tooltipText = this.$translate.instant("exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_dnsZone_tooltip");
+            const firstSentenceTooltip = this.$translate.instant("exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip_1");
+            const secondSentenceTooltip = this.$translate.instant("exchange_wizardHostedCreation_addDomainName_domainNameSelection_ovhDomain_mxRelay_tooltip_2");
             this.mxRelayTooltip = `${firstSentenceTooltip}<br /><br />${secondSentenceTooltip}`;
-            const mxAndSRVTooltipFirstSentence = this.translator.tr("exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_1");
-            const mxAndSRVTooltipSecondSentence = this.translator.tr("exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_2");
+            const mxAndSRVTooltipFirstSentence = this.$translate.instant("exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_1");
+            const mxAndSRVTooltipSecondSentence = this.$translate.instant("exchange_wizardHostedCreation_configureDNSZone_manual_explanation_tooltip_2");
             this.mxAndSRVTooltipText = `${mxAndSRVTooltipFirstSentence}<br /><br />${mxAndSRVTooltipSecondSentence}`;
 
             return this.retrieveURLToOrderDomains()
@@ -59,7 +59,7 @@
                     return null;
                 })
                 .catch((error) => {
-                    this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_addDomainName_retrieval_error"), error);
+                    this.messaging.writeError(this.$translate.instant("exchange_wizardHostedCreation_addDomainName_retrieval_error"), error);
                     this.scrollToTop();
                 })
                 .finally(() => {
@@ -87,7 +87,7 @@
                     this.availableDomainNames = domainData.availableDomains.map((domain) => domain.name);
                 })
                 .catch((error) => {
-                    this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_addDomainName_retrieval_error"), error);
+                    this.messaging.writeError(this.$translate.instant("exchange_wizardHostedCreation_addDomainName_retrieval_error"), error);
                     this.scrollToTop();
                 })
                 .finally(() => {
@@ -297,17 +297,17 @@
 
                     if (error.message === "Authoritative domain detected") {
                         if (domainIsOnlyForExchange) {
-                            this.messaging.writeInfo(this.translator.tr("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyNonAuthoritativeEmailPro"));
+                            this.messaging.writeInfo(this.$translate.instant("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyNonAuthoritativeEmailPro"));
                             this.homepage.domainIsOnlyForExchange = false;
                             this.userHasTriedToAssociatedNonAutoritativeDomain = true;
                         } else {
-                            this.messaging.writeWarning(this.translator.tr("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAuthoritativeEmailPro"));
+                            this.messaging.writeWarning(this.$translate.instant("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAuthoritativeEmailPro"));
                         }
                     } else if (_(error.message).startsWith("UPN suffix")) {
-                        this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAssociated_error", [formattedDomainName]));
+                        this.messaging.writeError(this.$translate.instant("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAssociated_error", { t0: formattedDomainName }));
                         this.homepage.domainName = "";
                     } else {
-                        this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_addDomainName_OVHDomain_error"), error);
+                        this.messaging.writeError(this.$translate.instant("exchange_wizardHostedCreation_addDomainName_OVHDomain_error"), error);
                     }
 
                     this.loaders.IsWaitingForDomainAssociation = false;
@@ -329,17 +329,17 @@
 
                     if (error.message === "Authoritative domain detected") {
                         if (domainIsOnlyForExchange) {
-                            this.messaging.writeInfo(this.translator.tr("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyNonAuthoritativeEmailPro"));
+                            this.messaging.writeInfo(this.$translate.instant("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyNonAuthoritativeEmailPro"));
                             this.homepage.domainIsOnlyForExchange = false;
                             this.userHasTriedToAssociatedNonAutoritativeDomain = true;
                         } else {
-                            this.messaging.writeWarning(this.translator.tr("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAuthoritativeEmailPro"));
+                            this.messaging.writeWarning(this.$translate.instant("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAuthoritativeEmailPro"));
                         }
                     } else if (_(error.message).startsWith("UPN suffix")) {
-                        this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAssociated_error", [formattedDomainName]));
+                        this.messaging.writeError(this.$translate.instant("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAssociated_error", { t0: formattedDomainName }));
                         this.homepage.domainName = "";
                     } else {
-                        this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_addDomainName_OVHDomain_error"), error);
+                        this.messaging.writeError(this.$translate.instant("exchange_wizardHostedCreation_addDomainName_OVHDomain_error"), error);
                     }
 
                     this.loaders.IsWaitingForDomainAssociation = false;

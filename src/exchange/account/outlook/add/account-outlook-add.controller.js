@@ -1,16 +1,16 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeAddOutlookCtrl", class ExchangeAddOutlookCtrl {
-        constructor ($scope, Exchange, ExchangeOutlook, constants, $window, navigation, messaging, translator) {
+        constructor ($scope, Exchange, exchangeAccountOutlook, constants, $window, navigation, messaging, $translate) {
             this.services = {
                 $scope,
                 Exchange,
-                ExchangeOutlook,
+                exchangeAccountOutlook,
                 constants,
                 $window,
                 navigation,
                 messaging,
-                translator
+                $translate
             };
 
             this.$routerParams = Exchange.getParams();
@@ -38,14 +38,14 @@ angular
 
         loadOptionsList () {
             this.services
-                .ExchangeOutlook
+                .exchangeAccountOutlook
                 .getLicenceOptions(this.$routerParams.organization, this.$routerParams.productId, this.selectedAccount.primaryEmailAddress)
                 .then((data) => {
                     this.optionsList = data;
                     this.selectVersion(data[0]);
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_add_outlook_step2_error_message"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_add_outlook_step2_error_message"), failure);
                     this.services.navigation.resetAction();
                 });
         }
@@ -77,13 +77,13 @@ angular
 
         orderOutlook () {
             this.services
-                .ExchangeOutlook
+                .exchangeAccountOutlook
                 .orderOutlook(this.$routerParams.organization, this.$routerParams.productId, this.model)
                 .then((data) => {
                     this.previewOrder = data;
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_add_outlook_step2_error_message"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_add_outlook_step2_error_message"), failure);
                     this.services.navigation.resetAction();
                 });
         }

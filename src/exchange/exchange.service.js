@@ -162,6 +162,11 @@ angular
                 .getValue("WIZARD_HOSTED_CREATION_OPENING_PREFERENCE");
         }
 
+
+        currentUserHasConfigurationRights () {
+            return _(this.value.nicType).some((nicType) => nicType === this.nicAdmin || nicType === this.nicTech);
+        }
+
         /**
          * Get Selected Exchange
          */
@@ -319,6 +324,21 @@ angular
             });
         }
 
+
+        fetchAccounts (organizationName, exchangeService, count = 25, offset = 1, searchValues = [], accountType = "") {
+            return this.services.OvhHttp
+                .get(`/sws/exchange/${organizationName}/${exchangeService}/accounts`, {
+                    rootPath: "2api",
+                    params: {
+                        count,
+                        offset,
+                        searchValues,
+                        configurableOnly: 0,
+                        typeLicence: accountType
+                    }
+                });
+        }
+
         /**
          * Return paginated exchange accounts list
          * @param pageSize - the size of page([10, 20, 40])
@@ -347,16 +367,8 @@ angular
         /**
          * Data necessary for new account creation
          */
-        getNewAccountOptions (organization, serviceName) {
-            return this.services
-                .OvhHttp
-                .get("/sws/exchange/{organization}/{exchange}/accounts/options", {
-                    rootPath: "2api",
-                    urlParams: {
-                        organization,
-                        exchange: serviceName
-                    }
-                });
+        fetchingAccountCreationOptions (organization, serviceName) {
+            return this.services.OvhHttp.get(`/sws/exchange/${organization}/${serviceName}/accounts/options`, { rootPath: "2api" });
         }
 
         /**
@@ -388,6 +400,20 @@ angular
 
                     return receivedData;
                 });
+        }
+
+        /**
+         * Asks the datagrid in each `views` to refresh
+         * @param {string[]} views The views containing the datagrid to refresh
+         */
+        refreshViews (...views) {
+            views.forEach((view) => {
+                const matchingMethod = this[`reset${view}`];
+
+                if (matchingMethod !== undefined) {
+                    matchingMethod.call(this);
+                }
+            });
         }
 
         getAccountsOptions (organization, serviceName, params) {
@@ -561,9 +587,9 @@ angular
          * Remove account if dedicated or provider 2010 is true, else reset it
          */
         removeAccountInsteadOfReset (exchange) {
-            const isDedicated = this.value.offer.toUpperCase() === "DEDICATED";
+            const isDedicatedOrCluster = this.value.offer.toUpperCase() === "DEDICATED" || this.value.offer.toUpperCase() === "DEDICATED_CLUSTER";
             const isProvider = this.value.offer.toUpperCase() === "PROVIDER";
-            return isDedicated || (isProvider && _(this.value.serverDiagnostic.commercialVersion).includes(2010));
+            return isDedicatedOrCluster || (isProvider && _(this.value.serverDiagnostic.commercialVersion).includes(2010));
         }
 
         retrieveAccountDelegationRight (organization, exchange, account, count = 10, offset = 0, search = "") {
@@ -613,16 +639,10 @@ angular
         /**
          * Get Exchange accounts aliases
          */
-        getAliases (organization, serviceName, account, count = 10, offset = 0) {
-            return this.services
-                .OvhHttp
-                .get("/sws/exchange/{organization}/{exchange}/accounts/{account}/alias", {
+        getAliases (organizationName, exchangeService, account, count = 10, offset = 0) {
+            return this.services.OvhHttp
+                .get(`/sws/exchange/${organizationName}/${exchangeService}/accounts/${account}/alias`, {
                     rootPath: "2api",
-                    urlParams: {
-                        organization,
-                        exchange: serviceName,
-                        account
-                    },
                     params: {
                         count,
                         offset
@@ -1206,97 +1226,6 @@ angular
                     this.resetTasks();
 
                     return data;
-                });
-        }
-
-        getExchangeLicenseHistory (organization, serviceName, period) {
-            let fromDate = moment();
-            switch (period) {
-            case "LASTWEEK":
-                fromDate = moment().subtract(1, "weeks");
-                break;
-            case "LASTMONTH":
-                fromDate = moment().subtract(1, "months");
-                break;
-            case "LAST3MONTHS":
-                fromDate = moment().subtract(3, "months");
-                break;
-            case "LASTYEAR":
-                fromDate = moment().subtract(1, "year");
-                break;
-            default:
-                break;
-            }
-
-            return this.services
-                .OvhHttp
-                .get("/email/exchange/{organization}/service/{exchange}/license", {
-                    rootPath: "apiv6",
-                    urlParams: {
-                        organization,
-                        exchange: serviceName
-                    },
-                    params: {
-                        fromDate: fromDate.utc().format(),
-                        toDate: moment().utc().format()
-                    }
-                }).then((data) => {
-                    const series = [];
-                    const outlookSerie = {
-                        name: "outlook",
-                        data: []
-                    };
-
-                    data.forEach((d) => {
-                        outlookSerie.data.push({
-                            value: d.outlookQuantity,
-                            time: moment(d.date)
-                        });
-                    });
-
-                    outlookSerie.max = _.max(_.map(outlookSerie.data, "value"));
-                    series.push(outlookSerie);
-
-                    ["basic", "entreprise", "standard"].forEach((currentLicense) => {
-                        data.forEach((d) => {
-                            const time = moment(d.date);
-                            let license = _.find(series, {
-                                name: currentLicense
-                            });
-                            let exists = true;
-                            if (!license) {
-                                license = {
-                                    name: currentLicense,
-                                    typeee: currentLicense,
-                                    max: 0,
-                                    data: []
-                                };
-                                exists = false;
-                            }
-
-                            d.accountLicense.forEach((accountLicense) => {
-                                if (accountLicense.license === currentLicense) {
-                                    license.data.push({
-                                        value: accountLicense.licenseQuantity,
-                                        time
-                                    });
-                                }
-                            });
-
-                            license.max = _.max(_.map(license.data, "value"));
-
-                            if (license.max > 0 && !exists) {
-                                series.push(license);
-                            }
-                        });
-                    });
-
-                    const stats = {
-                        periods: ["LASTWEEK", "LASTMONTH", "LAST3MONTHS", "LASTYEAR"],
-                        series
-                    };
-
-                    return stats;
                 });
         }
 

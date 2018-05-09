@@ -1,12 +1,12 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeDisclaimerCtrl", class ExchangeDisclaimerCtrl {
-        constructor ($scope, Exchange, navigation, translator, exchangeStates) {
+        constructor ($scope, Exchange, navigation, $translate, exchangeStates) {
             this.services = {
                 $scope,
                 Exchange,
                 navigation,
-                translator,
+                $translate,
                 exchangeStates
             };
         }
@@ -44,7 +44,7 @@ angular
                     this.setMessagesFlags(this.disclaimers);
                 })
                 .catch((err) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_DISCLAIMER_error_message"), err);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_DISCLAIMER_error_message"), err);
                 });
         }
 
@@ -65,7 +65,7 @@ angular
                     };
                 })
                 .catch((err) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_DISCLAIMER_error_message"), err);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_DISCLAIMER_error_message"), err);
                 });
         }
 

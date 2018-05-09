@@ -1,12 +1,12 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeRemoveGroupAliasCtrl", class ExchangeRemoveGroupAliasCtrl {
-        constructor ($scope, Exchange, navigation, translator, messaging) {
+        constructor ($scope, Exchange, navigation, $translate, messaging) {
             this.services = {
                 $scope,
                 Exchange,
                 navigation,
-                translator,
+                $translate,
                 messaging
             };
 
@@ -25,10 +25,10 @@ angular
                 .Exchange
                 .deleteGroupAlias(this.$routerParams.organization, this.$routerParams.productId, this.selectedGroup.mailingListAddress, this.alias.alias)
                 .then((success) => {
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_tab_ALIAS_delete_success_message"), success);
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_tab_ALIAS_delete_success_message"), success);
                 })
                 .catch((err) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ALIAS_delete_error_message"), err);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_ALIAS_delete_error_message"), err);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();

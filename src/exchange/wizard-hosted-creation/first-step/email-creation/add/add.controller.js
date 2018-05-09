@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("exchangeWizardHostedCreationEmailCreationAddController", class ExchangeWizardHostedCreationEmailCreationAddController {
-        constructor (Exchange, ExchangePassword, messaging, navigation, $rootScope, $scope, $timeout, translator, wizardHostedCreationEmailCreation) {
+        constructor (Exchange, ExchangePassword, messaging, navigation, $rootScope, $scope, $timeout, $translate, wizardHostedCreationEmailCreation) {
             this.Exchange = Exchange;
             this.ExchangePassword = ExchangePassword;
             this.messaging = messaging;
@@ -9,7 +9,7 @@ angular
             this.$rootScope = $rootScope;
             this.$scope = $scope;
             this.$timeout = $timeout;
-            this.translator = translator;
+            this.$translate = $translate;
             this.wizardHostedCreationEmailCreation = wizardHostedCreationEmailCreation;
         }
 
@@ -46,7 +46,7 @@ angular
                     };
                 })
                 .catch((error) => {
-                    this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_emailCreation_add_serviceParametersRetrieval_error"), error);
+                    this.messaging.writeError(this.$translate.instant("exchange_wizardHostedCreation_emailCreation_add_serviceParametersRetrieval_error"), error);
                 })
                 .finally(() => {
                     this.isLoading = false;
@@ -111,31 +111,25 @@ angular
                                                                                             this.formerEmailAccount.primaryEmailAddress);
                         }
 
-                        this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_emailCreation_add_accountCreation_error"), error);
-                        this.navigation.resetAction();
-                        this.scrollToTop();
+                        this.writeAndFocusOnError("exchange_wizardHostedCreation_emailCreation_add_accountCreation_error", error);
                         return null;
                     })
                     .then((data) => {
                         if (data == null) {
                             this.navigation.resetAction();
                         } else if (_(data.error).isArray() && !_(data.error).isEmpty()) {
-                            this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_emailCreation_add_migrationChecking_error"));
-                            this.navigation.resetAction();
-                            this.scrollToTop();
+                            this.writeAndFocusOnError("exchange_wizardHostedCreation_emailCreation_add_migrationChecking_error");
                             return null;
                         } else {
                             this.hideConfirmButton = false;
                             this.canMigrate = true;
+                            this.scrollToBottom();
                         }
 
-                        this.scrollToBottom();
                         return null;
                     })
                     .catch((error) => {
-                        this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_emailCreation_add_migrationChecking_mxPlanTechContact"), error);
-                        this.navigation.resetAction();
-                        this.scrollToTop();
+                        this.writeAndFocusOnError("exchange_wizardHostedCreation_emailCreation_add_migrationChecking_mxPlanTechContact");
                     })
                     .finally(() => {
                         this.dataHasBeenSubmitted = false;
@@ -144,6 +138,14 @@ angular
             }
 
             return this.migratingEmailAddress();
+        }
+
+        writeAndFocusOnError (message, error) {
+            this.messaging.writeError(this.$translate.instant(message, {
+                t0: error
+            }));
+            this.navigation.resetAction();
+            this.scrollToTop();
         }
 
         scrollToBottom () {
@@ -177,7 +179,7 @@ angular
                     this.scrollToBottom();
                 })
                 .catch((error) => {
-                    this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_emailCreation_add_migration_error"), error);
+                    this.messaging.writeError(this.$translate.instant("exchange_wizardHostedCreation_emailCreation_add_migration_error"), error);
                     this.scrollToTop();
                 })
                 .finally(() => {

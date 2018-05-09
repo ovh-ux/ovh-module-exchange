@@ -1,8 +1,8 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeTabSharedAccountsCtrl", class ExchangeTabSharedAccountsCtrl {
-        constructor ($scope, Exchange, ExchangeSharedAccounts, exchangeVersion, messaging, translator, navigation) {
-            this.services = { $scope, Exchange, ExchangeSharedAccounts, exchangeVersion, messaging, translator, navigation };
+        constructor ($scope, Exchange, exchangeSelectedService, ExchangeSharedAccounts, exchangeVersion, messaging, $translate, navigation) {
+            this.services = { $scope, Exchange, exchangeSelectedService, ExchangeSharedAccounts, exchangeVersion, messaging, $translate, navigation };
 
             this.$routerParams = Exchange.getParams();
 
@@ -17,13 +17,6 @@ angular
             this.stateTaskError = "TASK_ON_ERROR";
             this.stateTaskDoing = "TASK_ON_DOING";
 
-            this.exchangeTypeHosted = Exchange.accountTypeHosted;
-            this.exchangeTypeDedicated = Exchange.accountTypeDedicated;
-            this.exchangeTypeProvider = Exchange.accountTypeProvider;
-
-            this.accountTypes = ["ALL", "BASIC", "STANDARD", "ENTERPRISE"];
-            this.filterType = "ALL";
-
             this.loading = false;
             this.accounts = null;
             this.displayAccounts();
@@ -34,7 +27,7 @@ angular
             this.noDomainFlag = true;
             this.exchange = Exchange.value;
 
-            Exchange.getNewAccountOptions(this.$routerParams.organization, this.$routerParams.productId)
+            Exchange.fetchingAccountCreationOptions(this.$routerParams.organization, this.$routerParams.productId)
                 .then((data) => {
                     this.noDomainFlag = data.availableDomains.length === 0;
                 });
@@ -51,7 +44,7 @@ angular
                     this.canDisplayQuota = true;
                 })
                 .catch((err) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ACCOUNTS_error_message"), err);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_ACCOUNTS_error_message"), err);
                     this.canDisplayQuota = false;
                 });
 
@@ -90,7 +83,7 @@ angular
                     this.accounts = accounts;
                 })
                 .catch((err) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ACCOUNTS_error_message"), err);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_ACCOUNTS_error_message"), err);
                 })
                 .finally(() => {
                     this.loading = false;
@@ -112,7 +105,7 @@ angular
         /* eslint-enable class-methods-use-this */
 
         isSharedAccountAdjustable () {
-            return this.exchange && !((this.exchange.offer === this.services.Exchange.accountTypeDedicated || this.exchange.offer === this.services.Exchange.accountTypeProvider) && this.services.exchangeVersion.isExchangeVersion(2010));
+            return this.exchange;
         }
 
         editAccount (account) {

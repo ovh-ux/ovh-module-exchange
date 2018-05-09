@@ -1,14 +1,14 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeTabPublicFolderCtrl", class ExchangeTabPublicFolderCtrl {
-        constructor ($scope, Exchange, $timeout, ExchangePublicFolders, messaging, translator, navigation, exchangeStates) {
+        constructor ($scope, Exchange, $timeout, ExchangePublicFolders, messaging, $translate, navigation, exchangeStates) {
             this.services = {
                 $scope,
                 Exchange,
                 $timeout,
                 ExchangePublicFolders,
                 messaging,
-                translator,
+                $translate,
                 navigation,
                 exchangeStates
             };
@@ -49,7 +49,7 @@ angular
                     this.publicFoldersList = data;
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_SHARED_all_error_message"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_SHARED_all_error_message"), failure);
                 })
                 .finally(() => {
                     this.loading = false;

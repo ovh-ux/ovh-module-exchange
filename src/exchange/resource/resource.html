@@ -1,11 +1,11 @@
 <div class="container-fluid px-0" data-ng-controller="ExchangeTabResourcesCtrl as ctrl">
     <div class="row">
         <div class="col-md-9">
-            <p data-i18n-static="exchange_RESOURCES_description"></p>
+            <p data-translate="exchange_RESOURCES_description"></p>
             <p data-ng-if="ctrl.urls.guides.resources">
                 <span class="fa fa-life-ring mr-2" aria-hidden="true"></span>
                 <a data-ng-href="{{ ctrl.urls.guides.resources }}" target="_blank" title="{{::i18n['exchange_RESOURCES_guide']}} ({{::i18n['exchange_dashboard_new_window']}})">
-                    <span data-i18n-static="exchange_RESOURCES_guide"></span>
+                    <span data-translate="exchange_RESOURCES_guide"></span>
                     <span class="fa fa-external-link" aria-hidden="true"></span>
                 </a>
             </p>
@@ -13,14 +13,14 @@
             <form class="form-inline d-md-flex justify-content-md-end mb-3" name="searchResourceForm">
                 <div class="form-group">
                     <label class="sr-only" for="searchResourceSearch"
-                           data-ng-bind="::i18n.common_search"></label>
+                           data-ng-bind="::'common_search' | translate"></label>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="searchResourceSearch" name="searchResourceSearch" placeholder="{{::i18n.exchange_tab_ACCOUNTS_table_email}}"
+                        <input type="text" class="form-control" id="searchResourceSearch" name="searchResourceSearch" placeholder="{{::'exchange_tab_ACCOUNTS_table_email' | translate}}"
                                data-ng-change="ctrl.onSearchValueChanged()"
                                data-ng-disabled="ctrl.loading"
                                data-ng-model="ctrl.searchValue">
                         <div class="input-group-btn" data-ng-if="ctrl.searchValue">
-                            <button class="btn btn-default" type="button" aria-label="{{i18n.common_cancel}}"
+                            <button class="btn btn-default" type="button" aria-label="{{'common_cancel' | translate}}"
                                     data-ng-click="ctrl.resetSearch()"
                                     data-ng-disabled="ctrl.loading">
                                 <span class="fa fa-times" aria-hidden="true"></span>
@@ -37,11 +37,11 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th scope="col" data-i18n-static="exchange_tab_RESOURCES_table_account"></th>
-                            <th scope="col" data-i18n-static="exchange_tab_RESOURCES_table_type"></th>
-                            <th scope="col" data-i18n-static="exchange_tab_RESOURCES_table_capacity"></th>
-                            <th scope="col" data-i18n-static="exchange_tab_RESOURCES_table_email"></th>
-                            <th scope="col" data-i18n-static="exchange_tab_RESOURCES_table_state" class="text-center"></th>
+                            <th scope="col" data-translate="exchange_tab_RESOURCES_table_account"></th>
+                            <th scope="col" data-translate="exchange_tab_RESOURCES_table_type"></th>
+                            <th scope="col" data-translate="exchange_tab_RESOURCES_table_capacity"></th>
+                            <th scope="col" data-translate="exchange_tab_RESOURCES_table_email"></th>
+                            <th scope="col" data-translate="exchange_tab_RESOURCES_table_state" class="text-center"></th>
                             <th scope="col" class="min-width"></th>
                         </tr>
                     </thead>
@@ -55,7 +55,7 @@
                     <tbody data-ng-if="!ctrl.loading && ctrl.resources.list.results.length === 0 && ctrl.resources.list.messages.length === 0">
                         <tr>
                             <td class="text-center" colspan="6"
-                                data-i18n-static="exchange_tab_RESOURCES_table_empty"></td>
+                                data-translate="exchange_tab_RESOURCES_table_empty"></td>
                         </tr>
                     </tbody>
 
@@ -64,34 +64,34 @@
                             data-ng-class="isRowSelected(resource.id)">
                             <td class="word-break"
                                 data-ng-bind-html="resource.displayName | sliceContent: 150"></td>
-                            <td data-ng-bind="tr('exchange_tab_RESOURCES_type_' + resource.resourceType)"></td>
+                            <td data-ng-bind="('exchange_tab_RESOURCES_type_' + resource.resourceType) | translate"></td>
                             <td data-ng-bind="resource.capacity"></td>
                             <td class="word-break"
                                 data-ng-bind="resource.resourceEmailDisplayName | sliceContent: 150"></td>
                             <td class="text-center">
                                 <span class="label label-danger"
-                                      data-i18n-static="exchange_tab_ACCOUNTS_state_TASK_ON_ERROR"
+                                      data-translate="exchange_tab_ACCOUNTS_state_TASK_ON_ERROR"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isInError(resource)"></span>
                                 <span class="label label-info"
-                                      data-i18n-static="exchange_tab_ACCOUNTS_state_TASK_ON_DOING"
+                                      data-translate="exchange_tab_ACCOUNTS_state_TASK_ON_DOING"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isDoing(resource) || resource.taskPendingId !== 0"></span>
                                 <span class="label label-info"
-                                      data-i18n-static="exchange_tab_ACCOUNTS_state_CREATING"
+                                      data-translate="exchange_tab_ACCOUNTS_state_CREATING"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isCreating(resource)"></span>
                                 <span class="label label-info"
-                                      data-i18n-static="exchange_tab_ACCOUNTS_state_DELETING"
+                                      data-translate="exchange_tab_ACCOUNTS_state_DELETING"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isDeleting(resource)"></span>
                                 <span class="label label-warning"
-                                      data-i18n-static="exchange_tab_ACCOUNTS_state_SUSPENDED"
+                                      data-translate="exchange_tab_ACCOUNTS_state_SUSPENDED"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isSuspended(resource)"></span>
                                 <span class="label label-warning"
-                                      data-i18n-static="exchange_tab_ACCOUNTS_state_SUSPENDING"
+                                      data-translate="exchange_tab_ACCOUNTS_state_SUSPENDING"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isSuspending(resource)"></span>
                                 <span class="label label-info"
-                                      data-i18n-static="exchange_tab_ACCOUNTS_state_REOPENING"
+                                      data-translate="exchange_tab_ACCOUNTS_state_REOPENING"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isReopening(resource)"></span>
                                 <span class="label label-success"
-                                      data-i18n-static="exchange_tab_ACCOUNTS_state_ok"
+                                      data-translate="exchange_tab_ACCOUNTS_state_OK"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isOk(resource) && resource.taskPendingId === 0"></span>
                             </td>
                             <td>
@@ -101,14 +101,14 @@
                                         data-linkedpopover-placement="left"
                                         data-linkedpopover-remote="true"
                                         data-linkedpopover-single="true"
-                                        data-linkedpopover-title="{{i18n.common_actions}}">
+                                        data-linkedpopover-title="{{'common_actions' | translate}}">
                                     <span class="oui-icon oui-icon-gear_line oui-icon_small" aria-hidden="true"></span>
                                 </button>
                             </td>
                         </tr>
                         <tr data-ng-repeat="resource in (ctrl.resources.list.messages | orderBy:'id':false) track by $index">
                             <td colspan="6">
-                                <div data-uib-tooltip="{{i18n.exchange_tab_ACCOUNTS_partial_account}}">
+                                <div data-uib-tooltip="{{'exchange_tab_ACCOUNTS_partial_account' | translate}}">
                                     <span class="fa fa-exclamation-triangle mr-2" aria-hidden="true"></span>
                                     <span data-ng-bind="resource.id"></span>
                                 </div>
@@ -129,7 +129,7 @@
 
         <div class="col-md-3 mt-5 mt-lg-0">
             <button class="btn btn-block btn-default" type="button"
-                    data-i18n-static="exchange_tab_RESOURCES_action_add_resource_account"
+                    data-translate="exchange_tab_RESOURCES_action_add_resource_account"
                     data-ng-click="ctrl.addResource()">
             </button>
         </div>

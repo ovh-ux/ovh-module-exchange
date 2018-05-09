@@ -3,15 +3,15 @@
  */
 angular.module("Module.exchange.controllers")
     .controller("ExchangeUpdateRenewCtrl", class ExchangeUpdateRenewCtrl {
-        constructor ($scope, Exchange, $location, navigation, translator, messaging, accountTypes, exchangeVersion) {
+        constructor ($scope, Exchange, $location, navigation, $translate, messaging, exchangeServiceInfrastructure, exchangeVersion) {
             this.services = {
                 $scope,
                 Exchange,
                 $location,
                 navigation,
-                translator,
+                $translate,
                 messaging,
-                accountTypes,
+                exchangeServiceInfrastructure,
                 exchangeVersion
             };
 
@@ -146,7 +146,7 @@ angular.module("Module.exchange.controllers")
                     }
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_ACCOUNTS_error_message"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_ACCOUNTS_error_message"), failure);
                     this.services.navigation.resetAction();
                 })
                 .finally(() => {
@@ -200,11 +200,11 @@ angular.module("Module.exchange.controllers")
 
         submit () {
             this.services.$location.search("action", null);
-            this.services.messaging.writeSuccess(this.services.translator.tr("exchange_dashboard_action_doing"));
+            this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_dashboard_action_doing"));
 
             if (_.has(this.buffer, "changes") && this.buffer.changes != null) {
                 _.forEach(this.buffer.changes, (change) => {
-                    change.is25g = this.services.accountTypes.is25g();
+                    change.is25g = this.services.exchangeServiceInfrastructure.is25g();
                 });
             }
 
@@ -213,15 +213,15 @@ angular.module("Module.exchange.controllers")
                 .updateRenew(this.$routerParams.organization, this.$routerParams.productId, this.buffer.changes)
                 .then((data) => {
                     const updateRenewMessages = {
-                        OK: this.services.translator.tr("exchange_update_billing_periode_success"),
-                        PARTIAL: this.services.translator.tr("exchange_update_billing_periode_partial"),
-                        ERROR: this.services.translator.tr("exchange_update_billing_periode_failure")
+                        OK: this.services.$translate.instant("exchange_update_billing_periode_success"),
+                        PARTIAL: this.services.$translate.instant("exchange_update_billing_periode_partial"),
+                        ERROR: this.services.$translate.instant("exchange_update_billing_periode_failure")
                     };
 
                     this.services.messaging.setMessage(updateRenewMessages, data);
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_update_billing_periode_failure"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_update_billing_periode_failure"), failure);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();

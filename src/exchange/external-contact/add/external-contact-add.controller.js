@@ -1,8 +1,8 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeAddExternalContactCtrl", class ExchangeAddExternalContactCtrl {
-        constructor ($scope, Exchange, ExchangeExternalContacts, navigation, translator, messaging, exchangeVersion, accountTypes) {
-            this.services = { $scope, Exchange, ExchangeExternalContacts, navigation, translator, messaging, exchangeVersion, accountTypes };
+        constructor ($scope, Exchange, ExchangeExternalContacts, navigation, $translate, messaging, exchangeVersion, exchangeServiceInfrastructure) {
+            this.services = { $scope, Exchange, ExchangeExternalContacts, navigation, $translate, messaging, exchangeVersion, exchangeServiceInfrastructure };
 
             this.$routerParams = Exchange.getParams();
             this.model = {
@@ -28,7 +28,7 @@ angular
         getData () {
             this.loaders.step1 = true;
 
-            if (this.services.exchangeVersion.isVersion(2010) && this.services.accountTypes.isProvider()) {
+            if (this.services.exchangeVersion.isVersion(2010) && this.services.exchangeServiceInfrastructure.isProvider()) {
                 this.services
                     .ExchangeExternalContacts
                     .gettingContactOptions(this.$routerParams.organization, this.$routerParams.productId)
@@ -39,7 +39,7 @@ angular
                     })
                     .catch((failure) => {
                         this.services.navigation.resetAction();
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_fail"), failure);
+                        this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_fail"), failure);
                     });
             }
         }
@@ -57,10 +57,10 @@ angular
                 .ExchangeExternalContacts
                 .addingContact(this.$routerParams.organization, this.$routerParams.productId, this.model.newAccount)
                 .then(() => {
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_success"));
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_success"));
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_fail"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_fail"), failure);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();

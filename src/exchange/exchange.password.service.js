@@ -184,11 +184,11 @@
              *
              * included either "erin" or "hagens" as a substring anywhere in the password.
              * @param password
-             * @param displayName
+             * @param name
              */
-            passwordContainsName (password, displayName) {
-                const passwordStr = !_.isString(password) ? String(password) : password;
-                const displayNameStr = !_.isString(displayName) ? String(displayName) : displayName;
+            passwordContainsName (password, name) {
+                const passwordStr = !_.isString(password) ? `${password}` : password;
+                const displayNameStr = !_.isString(name) ? `${name}` : name;
 
                 /* Microsoft documentation update: "Both checks are not case sensitive." */
                 const lowerCasePassword = passwordStr.toLowerCase();

@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("exchangeWizardHostedCreationEmailCreationUpdateController", class ExchangeWizardHostedCreationEmailCreationUpdateController {
-        constructor (Exchange, ExchangePassword, messaging, navigation, $rootScope, $scope, $timeout, translator, wizardHostedCreationEmailCreation) {
+        constructor (Exchange, ExchangePassword, messaging, navigation, $rootScope, $scope, $timeout, $translate, wizardHostedCreationEmailCreation) {
             this.Exchange = Exchange;
             this.ExchangePassword = ExchangePassword;
             this.messaging = messaging;
@@ -9,7 +9,7 @@ angular
             this.$rootScope = $rootScope;
             this.$scope = $scope;
             this.$timeout = $timeout;
-            this.translator = translator;
+            this.$translate = $translate;
             this.wizardHostedCreationEmailCreation = wizardHostedCreationEmailCreation;
         }
 
@@ -54,7 +54,7 @@ angular
                     };
                 })
                 .catch((error) => {
-                    this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_emailCreation_add_serviceParametersRetrieval_error"), error);
+                    this.messaging.writeError(this.$translate.instant("exchange_wizardHostedCreation_emailCreation_add_serviceParametersRetrieval_error"), error);
                 })
                 .finally(() => {
                     this.isLoading = false;
@@ -146,9 +146,11 @@ angular
                 })
                 .catch((error) => {
                     if (error.message === "Email address is already used.") {
-                        this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_emailCreation_add_accountCreation_alreadyExist_error", [`${this.model.login}@${this.model.domain}`]), error);
+                        this.messaging.writeError(this.$translate.instant("exchange_wizardHostedCreation_emailCreation_add_accountCreation_alreadyExist_error", {
+                            t0: `${this.model.login}@${this.model.domain}`
+                        }), error);
                     } else {
-                        this.messaging.writeError(this.translator.tr("exchange_wizardHostedCreation_emailCreation_add_accountCreation_error"), error);
+                        this.messaging.writeError(this.$translate.instant("exchange_wizardHostedCreation_emailCreation_add_accountCreation_error"), error);
                     }
 
                     this.scrollToTop();

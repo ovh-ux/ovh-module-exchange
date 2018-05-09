@@ -1,15 +1,15 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeCtrl", class ExchangeCtrl {
-        constructor (accountTypes, $rootScope, $scope, $timeout, $location, Products, translator, Exchange, APIExchange, User, EXCHANGE_CONFIG, navigation, ovhUserPref, messaging, exchangeVersion, officeAttach) {
+        constructor (exchangeServiceInfrastructure, $rootScope, $scope, $timeout, $location, Products, $translate, Exchange, APIExchange, User, EXCHANGE_CONFIG, navigation, ovhUserPref, messaging, exchangeVersion, officeAttach) {
             this.services = {
-                accountTypes,
+                exchangeServiceInfrastructure,
                 $rootScope,
                 $scope,
                 $timeout,
                 $location,
                 Products,
-                translator,
+                $translate,
                 Exchange,
                 APIExchange,
                 User,
@@ -51,7 +51,7 @@ angular
             });
 
             $scope.$on("exchange.wizard_hosted_creation.display", () => {
-                this.shouldOpenWizard = this.services.accountTypes.isHosted();
+                this.shouldOpenWizard = this.services.exchangeServiceInfrastructure.isHosted();
                 this.hasNoDomain = true;
             });
 
@@ -90,10 +90,10 @@ angular
                 .then(() => {
                     this.exchange.displayName = this.displayName;
                     this.services.$rootScope.$broadcast("change.displayName", [this.exchange.domain, this.displayName]);
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_ACTION_configure_success"));
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_ACTION_configure_success"));
                 })
                 .catch((reason) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_configure_error"), reason);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_configure_error"), reason);
                 })
                 .finally(() => {
                     this.editMode = false;
@@ -102,7 +102,7 @@ angular
 
         retrievingWizardPreference () {
             this.isLoading = true;
-            this.shouldOpenWizard = this.services.accountTypes.isHosted();
+            this.shouldOpenWizard = this.services.exchangeServiceInfrastructure.isHosted();
 
             if (!this.shouldOpenWizard) {
                 return false;
@@ -161,10 +161,10 @@ angular
                 .then(() => this.canActivateSharepoint())
                 .then(() => this.services.officeAttach.retrievingIfUserAlreadyHasSubscribed(this.exchange.domain))
                 .then((userHasAlreadySubscribedToOfficeAttach) => {
-                    this.canSubscribeToOfficeAttach = !userHasAlreadySubscribedToOfficeAttach;
+                    this.canUserSubscribeToOfficeAttach = !userHasAlreadySubscribedToOfficeAttach;
 
                     if (!_.isEmpty(this.exchange.messages)) {
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_dashboard_loading_error"), this.exchange);
+                        this.services.messaging.writeError(this.services.$translate.instant("exchange_dashboard_loading_error"), this.exchange);
                     }
                 })
                 .then(() => this.services.Exchange.updateValue())
@@ -182,9 +182,9 @@ angular
                         };
 
                         if (response.code === 460 || response.status === 460) {
-                            this.services.messaging.writeError(this.services.translator.tr("common_service_expired", [response.id]), data);
+                            this.services.messaging.writeError(this.services.$translate.instant("common_service_expired", { t0: response.id }), data);
                         } else {
-                            this.services.messaging.writeError(this.services.translator.tr("exchange_dashboard_loading_error"), data);
+                            this.services.messaging.writeError(this.services.$translate.instant("exchange_dashboard_loading_error"), data);
                         }
                     } else {
                         this.loadingExchangeError = true;
@@ -202,12 +202,12 @@ angular
                 .then((sharepoint) => {
                     this.sharepoint = sharepoint;
                     const isAlreadyActivated = sharepoint != null;
-                    const isSupportedExchangeType = this.services.accountTypes.isHosted();
+                    const isSupportedExchangeType = this.services.exchangeServiceInfrastructure.isHosted();
 
                     this.canSubscribeToSharepoint = !isAlreadyActivated && isSupportedExchangeType && this.worldPart === "EU";
                 })
                 .catch(() => {
-                    this.canSubscribeToSharepoint = this.services.accountTypes.isHosted() && this.worldPart === "EU";
+                    this.canSubscribeToSharepoint = this.services.exchangeServiceInfrastructure.isHosted() && this.worldPart === "EU";
                 });
         }
 
@@ -233,7 +233,7 @@ angular
             this.editMode = false;
 
             if (this.formExchangeDisplayName.displayNameField.$invalid) {
-                this.services.messaging.writeError(this.services.translator.tr("exchange_dashboard_display_name_min"));
+                this.services.messaging.writeError(this.services.$translate.instant("exchange_dashboard_display_name_min"));
             }
         }
     });

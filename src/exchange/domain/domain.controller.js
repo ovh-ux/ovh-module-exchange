@@ -1,15 +1,15 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeTabDomainsCtrl", class ExchangeTabDomainsCtrl {
-        constructor ($scope, $http, Exchange, ExchangeDomains, translator, exchangeStates, accountTypes) {
+        constructor ($scope, $http, Exchange, ExchangeDomains, $translate, exchangeStates, exchangeServiceInfrastructure) {
             this.services = {
                 $scope,
                 $http,
                 Exchange,
                 ExchangeDomains,
-                translator,
+                $translate,
                 exchangeStates,
-                accountTypes
+                exchangeServiceInfrastructure
             };
 
             this.$routerParams = Exchange.getParams();
@@ -25,7 +25,7 @@ angular
 
             this.exchange = Exchange.value;
 
-            if (accountTypes.isProvider()) {
+            if (exchangeServiceInfrastructure.isProvider()) {
                 this.cnameRedirection = "ex-mail.biz";
             } else {
                 this.cnameRedirection = "ovh.com";
@@ -78,17 +78,17 @@ angular
 
         setMxTooltip (domain) {
             if (domain.mxValid) {
-                domain.mxTooltip = this.services.translator.tr("exchange_tab_domain_diagnostic_mx_toolbox_ok");
+                domain.mxTooltip = this.services.$translate.instant("exchange_tab_domain_diagnostic_mx_toolbox_ok");
             } else {
-                domain.mxTooltip = this.services.translator.tr("exchange_tab_domain_diagnostic_mx_toolbox", [this.exchange.hostname]);
+                domain.mxTooltip = this.services.$translate.instant("exchange_tab_domain_diagnostic_mx_toolbox", { t0: this.exchange.hostname });
             }
         }
 
         setSrvTooltip (domain) {
             if (domain.srvValid) {
-                domain.srvTooltip = this.services.translator.tr("exchange_tab_domain_diagnostic_srv_toolbox_ok");
+                domain.srvTooltip = this.services.$translate.instant("exchange_tab_domain_diagnostic_srv_toolbox_ok");
             } else {
-                domain.srvTooltip = this.services.translator.tr("exchange_tab_domain_diagnostic_srv_toolbox", [this.exchange.hostname]);
+                domain.srvTooltip = this.services.$translate.instant("exchange_tab_domain_diagnostic_srv_toolbox", { t0: this.exchange.hostname });
             }
         }
 

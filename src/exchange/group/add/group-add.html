@@ -2,7 +2,7 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="addExchangeGroup"
-         data-wizard-title="i18n.exchange_GROUPS_add_group_title">
+         data-wizard-title="'exchange_GROUPS_add_group_title' | translate">
 
         <div data-wizard-step
              data-wizard-step-on-load="retrievingOptionsToCreateNewGroup"
@@ -13,13 +13,13 @@
             <form name="ctrl.addGroupForm" data-ng-if="ctrl.optionsToCreateANewGroup">
                 <p>
                     <small class="text-danger">*</small>
-                    <small data-i18n-static="required_fields"></small>
+                    <small data-translate="required_fields"></small>
                 </p>
 
                 <div class="form-group"
                      data-ng-class="{'has-error': ctrl.addGroupForm.groupToAddAddress.$dirty && (ctrl.addGroupForm.groupToAddAddress.$invalid || ctrl.takenEmailError)}">
                     <label class="control-label required" for="groupToAddAddress"
-                           data-i18n-static="exchange_GROUPS_add_group_email_label"></label>
+                           data-translate="exchange_GROUPS_add_group_email_label"></label>
                     <div class="input-group">
                         <input type="text"
                                class="form-control"
@@ -39,68 +39,68 @@
                         </select>
                     </div>
                     <small class="help-block"
-                           data-i18n-static="exchange_tab_ALIAS_taken_error_message"
+                           data-translate="exchange_tab_ALIAS_taken_error_message"
                            data-ng-if="ctrl.takenEmailError"></small>
                 </div>
 
 
                 <div class="form-group">
                     <label class="control-label" for="displayName"
-                           data-i18n-static="exchange_GROUPS_add_group_name_label"></label>
+                           data-translate="exchange_GROUPS_add_group_name_label"></label>
                     <input type="text" class="form-control" maxlength="256" name="groupToAddDisplayName" id="displayName"
                            data-ng-model="ctrl.groupToAdd.displayName">
                 </div>
 
                 <div class="form-group">
                     <label class="control-label" for="maxInSize"
-                           data-i18n-static="exchange_GROUPS_add_group_receive_size_label"></label>
+                           data-translate="exchange_GROUPS_add_group_receive_size_label"></label>
                     <div class="input-group mb-3">
                         <input type="number" class="form-control" id="maxInSize" name="maxInSize"
                                data-ng-disabled="ctrl.groupToAdd.receiveSizeUnlimited"
                                data-ng-min="0" min="0"
                                data-ng-max="100" max="100"
                                data-ng-model="ctrl.groupToAdd.maxReceiveSize"
-                               data-uib-tooltip="{{i18n.exchange_GROUPS_add_group_receive_size_tooltip}}">
-                        <span class="input-group-addon" data-i18n-static="unit_size_MB"></span>
+                               data-uib-tooltip="{{'exchange_GROUPS_add_group_receive_size_tooltip' | translate}}">
+                        <span class="input-group-addon" data-translate="unit_size_MB"></span>
                     </div>
 
                     <oui-checkbox id="receiveSizeUnlimited"
                         data-model="ctrl.groupToAdd.receiveSizeUnlimited"
                         data-on-change="ctrl.onReceiveSizeChange()"
-                        data-text="{{::i18n.exchange_GROUPS_add_group_size_unlimited}}">
+                        data-text="{{::'exchange_GROUPS_add_group_size_unlimited' | translate}}">
                     </oui-checkbox>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label" for="maxOutSize"
-                           data-i18n-static="exchange_GROUPS_add_group_sent_size_label"></label>
+                           data-translate="exchange_GROUPS_add_group_sent_size_label"></label>
                     <div class="input-group mb-3">
                         <input type="number" class="form-control" id="maxOutSize" name="maxOutSize"
                                data-ng-disabled="ctrl.groupToAdd.sentSizeUnlimited"
                                data-ng-min="0" min="0"
                                data-ng-max="100" max="100"
                                data-ng-model="ctrl.groupToAdd.maxSendSize"
-                               data-uib-tooltip="{{i18n.exchange_GROUPS_add_group_sent_size_tooltip}}">
-                        <span class="input-group-addon" data-i18n-static="unit_size_MB"></span>
+                               data-uib-tooltip="{{'exchange_GROUPS_add_group_sent_size_tooltip' | translate}}">
+                        <span class="input-group-addon" data-translate="unit_size_MB"></span>
                     </div>
 
                     <oui-checkbox id="sentSizeUnlimited"
                         data-model="ctrl.groupToAdd.sentSizeUnlimited"
                         data-on-change="ctrl.onSentSizeChange()"
-                        data-text="{{::i18n.exchange_GROUPS_add_group_size_unlimited}}">
+                        data-text="{{::'exchange_GROUPS_add_group_size_unlimited' | translate}}">
                     </oui-checkbox>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label" for="subscription"
-                           data-i18n-static="exchange_GROUPS_add_group_subscribe_label"></label>
+                           data-translate="exchange_GROUPS_add_group_subscribe_label"></label>
                     <div class="oui-select">
                         <select class="oui-select__input" id="subscription" name="groupToAddSubscribeRestriction" required
                                 data-ng-disabled="ctrl.optionsToCreateANewGroup == null"
                                 data-ng-model="trl.groupToAdd.subscribeRestriction"
-                                data-ng-options="tr('exchange_GROUPS_add_group_retriction_' + restriction) for restriction in ctrl.optionsToCreateANewGroup.availableJoinRestrictions">
+                                data-ng-options="('exchange_GROUPS_add_group_retriction_' + restriction) | translate for restriction in ctrl.optionsToCreateANewGroup.availableJoinRestrictions">
                             <option value="" disabled
-                                    data-i18n-static="select_placeholder"></option>
+                                    data-translate="select_placeholder"></option>
                         </select>
                         <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
                     </div>
@@ -108,12 +108,12 @@
 
                 <div class="form-group">
                     <label class="control-label" for="restriction"
-                           data-i18n-static="exchange_GROUPS_add_group_unsubscribe_label"></label>
+                           data-translate="exchange_GROUPS_add_group_unsubscribe_label"></label>
                     <div class="oui-select">
                         <select class="oui-select__input" id="restriction" name="groupToAddUnsubscribeRestriction" required
                                 data-ng-disabled="ctrl.optionsToCreateANewGroup == null"
                                 data-ng-model="ctrl.groupToAdd.unsubscribeRestriction"
-                                data-ng-options="tr('exchange_GROUPS_add_group_retriction_' + restriction) for restriction in ctrl.optionsToCreateANewGroup.availableDepartRestrictions">
+                                data-ng-options="('exchange_GROUPS_add_group_retriction_' + restriction) | translate for restriction in ctrl.optionsToCreateANewGroup.availableDepartRestrictions">
                         </select>
                         <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
                     </div>
@@ -121,26 +121,26 @@
 
                 <oui-checkbox id="hiddenFromGAL"
                     data-model="ctrl.groupToAdd.hiddenFromGAL"
-                    data-text="{{::i18n.exchange_GROUPS_add_group_hide_label}}">
+                    data-text="{{::'exchange_GROUPS_add_group_hide_label' | translate}}">
                 </oui-checkbox>
 
                 <oui-checkbox id="senderAuthentification"
                     data-model="ctrl.groupToAdd.auth"
-                    data-text="{{::i18n.exchange_GROUPS_add_group_auth_label}}">
+                    data-text="{{::'exchange_GROUPS_add_group_auth_label' | translate}}">
                 </oui-checkbox>
             </form>
 
             <div data-wizard-step-help>
-                <h3 data-i18n-static="exchange_GROUPS_add_group_title"></h3>
-                <p data-ng-bind-html="tr('exchange_GROUPS_add_group_help_intro')"></p>
-                <h4 data-i18n-static="exchange_GROUPS_add_group_help_size_header"></h4>
-                <p data-ng-bind-html="tr('exchange_GROUPS_add_group_help_size_text')"></p>
-                <h4 data-i18n-static="exchange_GROUPS_add_group_help_subscription_header"></h4>
-                <p data-ng-bind-html="tr('exchange_GROUPS_add_group_help_subscription_text')"></p>
-                <h4 data-i18n-static="exchange_GROUPS_add_group_help_directory_header"></h4>
-                <p data-ng-bind-html="tr('exchange_GROUPS_add_group_help_directory_text')"></p>
-                <h4 data-i18n-static="exchange_GROUPS_add_group_help_security_header"></h4>
-                <p data-ng-bind-html="tr('exchange_GROUPS_add_group_help_security_text')"></p>
+                <h3 data-translate="exchange_GROUPS_add_group_title"></h3>
+                <p data-ng-bind-html="'exchange_GROUPS_add_group_help_intro' | translate"></p>
+                <h4 data-translate="exchange_GROUPS_add_group_help_size_header"></h4>
+                <p data-ng-bind-html="'exchange_GROUPS_add_group_help_size_text' | translate"></p>
+                <h4 data-translate="exchange_GROUPS_add_group_help_subscription_header"></h4>
+                <p data-ng-bind-html="'exchange_GROUPS_add_group_help_subscription_text' | translate"></p>
+                <h4 data-translate="exchange_GROUPS_add_group_help_directory_header"></h4>
+                <p data-ng-bind-html="'exchange_GROUPS_add_group_help_directory_text' | translate"></p>
+                <h4 data-translate="exchange_GROUPS_add_group_help_security_header"></h4>
+                <p data-ng-bind-html="'exchange_GROUPS_add_group_help_security_text' | translate"></p>
             </div>
         </div>
 
@@ -148,19 +148,19 @@
         <div data-wizard-step
              data-wizard-step-on-load="getAccounts">
 
-            <p data-ng-bind-html="tr('exchange_GROUPS_add_group_step2_intro')"></p>
+            <p data-ng-bind-html="'exchange_GROUPS_add_group_step2_intro' | translate"></p>
 
             <form class="form-inline d-md-flex justify-content-md-end mb-3">
                 <div class="form-group">
                     <label class="sr-only" for="groupSearch"
-                           data-i18n-static="common_search"></label>
+                           data-translate="common_search"></label>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="groupSearch" maxlength="256" placeholder="{{i18n.exchange_tab_ACCOUNTS_table_email}}"
+                        <input type="text" class="form-control" id="groupSearch" maxlength="256" placeholder="{{'exchange_tab_ACCOUNTS_table_email' | translate}}"
                                data-ng-change="ctrl.onSearchValueChange()"
                                data-ng-disabled="ctrl.loading"
                                data-ng-model="ctrl.search.value">
                         <div class="input-group-btn" data-ng-if="ctrl.search.value">
-                            <button class="btn btn-default" type="button" aria-label="{{i18n.exchange_reset_search_value}}"
+                            <button class="btn btn-default" type="button" aria-label="{{'exchange_reset_search_value' | translate}}"
                                     data-ng-click="ctrl.resetSearch()"
                                     data-ng-disabled="ctrl.loading">
                                 <span class="fa fa-times" aria-hidden="true"></span>
@@ -176,17 +176,17 @@
             <div class="alert alert-warning" role="alert"
                  data-ng-if="!ctrl.loading && ctrl.accountsList != null && ctrl.accountsList.list.messages.length > 0">
                 <div>
-                    <strong data-i18n-static="exchange_tab_ACCOUNTS_warning"></strong>
-                    <span data-i18n-static="exchange_tab_ACCOUNTS_partial"></span>
+                    <strong data-translate="exchange_tab_ACCOUNTS_warning"></strong>
+                    <span data-translate="exchange_tab_ACCOUNTS_partial"></span>
                 </div>
             </div>
 
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col" data-i18n-static="exchange_GROUPS_delegation_step1_email_header"></th>
-                        <th class="min-width" scope="col" data-i18n-static="exchange_tab_GROUPS_all_table_manager"></th>
-                        <th class="min-width" scope="col" data-i18n-static="exchange_tab_GROUPS_all_table_user"></th>
+                        <th scope="col" data-translate="exchange_GROUPS_delegation_step1_email_header"></th>
+                        <th class="min-width" scope="col" data-translate="exchange_tab_GROUPS_all_table_manager"></th>
+                        <th class="min-width" scope="col" data-translate="exchange_tab_GROUPS_all_table_user"></th>
                     </tr>
                 </thead>
 
@@ -199,9 +199,9 @@
                 <tbody data-ng-if="!ctrl.loading && ctrl.accountsList.list.results.length === 0 && ctrl.accountsList.list.messages.length === 0">
                     <tr>
                         <td class="text-center" colspan="3">
-                            <span data-i18n-static="exchange_tab_GROUPS_table_empty"
+                            <span data-translate="exchange_tab_GROUPS_table_empty"
                                   data-ng-if="!ctrl.search.value"></span>
-                            <span data-i18n-static="exchange_tab_GROUPS_table_empty_search"
+                            <span data-translate="exchange_tab_GROUPS_table_empty_search"
                                   data-ng-if="ctrl.search.value"></span>
                         </td>
                     </tr>
@@ -217,7 +217,7 @@
                                        data-ng-model="account.manager">
                             </label>
 
-                            <div data-uib-tooltip="{{i18n.exchange_GROUPS_add_group_contact_as_manager_info}}"
+                            <div data-uib-tooltip="{{'exchange_GROUPS_add_group_contact_as_manager_info' | translate}}"
                                  data-ng-if="account.type === 'CONTACT'">
                                 <label>
                                     <input type="checkbox" disabled>
@@ -233,7 +233,7 @@
                     </tr>
 
                     <tr data-ng-repeat="account in ctrl.accountsList.list.messages | orderBy:'id': false track by $index">
-                        <td colspan="3" data-uib-tooltip="{{i18n.exchange_tab_ACCOUNTS_partial_account}}">
+                        <td colspan="3" data-uib-tooltip="{{'exchange_tab_ACCOUNTS_partial_account' | translate}}">
                             <span class="fa fa-exclamation-triangle mr-2" aria-hidden="true"></span>
                             <span data-ng-bind="account.id"></span>
                         </td>
@@ -249,48 +249,48 @@
             </div>
 
             <div class="alert alert-info mt-5" role="alert"
-                 data-i18n-static="exchange_GROUPS_add_group_contact_as_manager_info"></div>
+                 data-translate="exchange_GROUPS_add_group_contact_as_manager_info"></div>
         </div>
 
         <div data-wizard-step>
             <dl class="dl-horizontal dl-lg">
-                <dt data-i18n-static="exchange_GROUPS_add_group_email_label"></dt>
+                <dt data-translate="exchange_GROUPS_add_group_email_label"></dt>
                 <dd class="word-break"
                     data-ng-bind-template="{{ctrl.groupToAdd.address}}@{{ctrl.groupToAdd.completeDomain.displayName}}"></dd>
 
                 <dt data-ng-if="ctrl.groupToAdd.displayName"
-                    data-i18n-static="exchange_GROUPS_add_group_name_label"></dt>
+                    data-translate="exchange_GROUPS_add_group_name_label"></dt>
                 <dd class="word-break"
                     data-ng-if="ctrl.groupToAdd.displayName"
                     data-ng-bind="ctrl.groupToAdd.displayName | sliceContent: 150"></dd>
 
-                <dt data-i18n-static="exchange_GROUPS_add_group_receive_size_label"></dt>
+                <dt data-translate="exchange_GROUPS_add_group_receive_size_label"></dt>
                 <dd>
                     <span data-ng-if="!ctrl.groupToAdd.receiveSizeUnlimited"
                           data-ng-bind="ctrl.groupToAdd.maxReceiveSize"></span>
                     <span data-ng-if="ctrl.groupToAdd.receiveSizeUnlimited"
-                          data-i18n-static="exchange_GROUPS_add_group_size_unlimited"></span>
+                          data-translate="exchange_GROUPS_add_group_size_unlimited"></span>
                 </dd>
 
-                <dt data-i18n-static="exchange_GROUPS_add_group_sent_size_label"></dt>
+                <dt data-translate="exchange_GROUPS_add_group_sent_size_label"></dt>
                 <dd>
                     <span data-ng-if="!ctrl.groupToAdd.sentSizeUnlimited"
                           data-ng-bind="ctrl.groupToAdd.maxSendSize"></span>
                     <span data-ng-if="ctrl.groupToAdd.sentSizeUnlimited"
-                          data-i18n-static="exchange_GROUPS_add_group_size_unlimited"></span>
+                          data-translate="exchange_GROUPS_add_group_size_unlimited"></span>
                 </dd>
 
-                <dt data-i18n-static="exchange_GROUPS_add_group_subscribe_label"></dt>
-                <dd data-ng-bind="tr('exchange_GROUPS_add_group_retriction_' + ctrl.groupToAdd.subscribeRestriction)"></dd>
+                <dt data-translate="exchange_GROUPS_add_group_subscribe_label"></dt>
+                <dd data-ng-bind="('exchange_GROUPS_add_group_retriction_' + ctrl.groupToAdd.subscribeRestriction) | translate"></dd>
 
-                <dt data-i18n-static="exchange_GROUPS_add_group_unsubscribe_label"></dt>
-                <dd data-ng-bind="tr('exchange_GROUPS_add_group_retriction_' + ctrl.groupToAdd.unsubscribeRestriction)"></dd>
+                <dt data-translate="exchange_GROUPS_add_group_unsubscribe_label"></dt>
+                <dd data-ng-bind="('exchange_GROUPS_add_group_retriction_' + ctrl.groupToAdd.unsubscribeRestriction) | translate"></dd>
 
-                <dt data-i18n-static="exchange_GROUPS_add_group_hide_label"></dt>
-                <dd data-ng-bind="tr('exchange_ACTION_add_account_GAL_' + ctrl.groupToAdd.hiddenFromGAL)"></dd>
+                <dt data-translate="exchange_GROUPS_add_group_hide_label"></dt>
+                <dd data-ng-bind="('exchange_ACTION_add_account_GAL_' + ctrl.groupToAdd.hiddenFromGAL) | translate"></dd>
 
-                <dt data-i18n-static="exchange_GROUPS_add_group_confirmation_auth_label"></dt>
-                <dd data-ng-bind="tr('exchange_GROUPS_add_group_auth_' + ctrl.groupToAdd.auth)"></dd>
+                <dt data-translate="exchange_GROUPS_add_group_confirmation_auth_label"></dt>
+                <dd data-ng-bind="('exchange_GROUPS_add_group_auth_' + ctrl.groupToAdd.auth) | translate"></dd>
             </dl>
         </div>
     </div>

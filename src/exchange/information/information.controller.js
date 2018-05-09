@@ -1,16 +1,16 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeTabInformationCtrl", class ExchangeTabInformationCtrl {
-        constructor ($rootScope, $scope, accountTypes, Exchange, EXCHANGE_CONFIG, exchangeVersion, messaging, navigation, translator, User) {
+        constructor ($rootScope, $scope, exchangeServiceInfrastructure, Exchange, EXCHANGE_CONFIG, exchangeVersion, messaging, navigation, $translate, User) {
             this.$rootScope = $rootScope;
             this.$scope = $scope;
-            this.accountTypes = accountTypes;
+            this.exchangeServiceInfrastructure = exchangeServiceInfrastructure;
             this.exchangeService = Exchange;
             this.EXCHANGE_CONFIG = EXCHANGE_CONFIG;
             this.exchangeVersion = exchangeVersion;
             this.messaging = messaging;
             this.navigation = navigation;
-            this.translator = translator;
+            this.$translate = $translate;
             this.User = User;
         }
 
@@ -86,11 +86,11 @@ angular
         }
 
         displayRenewDate () {
-            return this.exchange.expiration && this.exchangeVersion.isAfter(2010) && this.accountTypes.isDedicated();
+            return this.exchange.expiration && this.exchangeVersion.isAfter(2010) && (this.exchangeServiceInfrastructure.isDedicated() || this.exchangeServiceInfrastructure.isDedicatedCluster());
         }
 
         shouldDisplayMigration2016 () {
-            const isHostedAccount = this.accountTypes.isHosted();
+            const isHostedAccount = this.exchangeServiceInfrastructure.isHosted();
             const isNicAdmin = _.includes(this.exchange.nicType, "ADMIN");
             const isNicBilling = _.includes(this.exchange.nicType, "BILLING");
 
@@ -108,8 +108,8 @@ angular
             const isAlreadyExpired = now.isAfter(sslExpirationDate);
             const canRenewBeforeExpiration = now.isAfter(aMonthBeforeSSLExpirationDate);
 
-            const isDedicatedAccount = this.accountTypes.isDedicated();
-            const is2010DedicatedOrProvider = this.exchangeVersion.isVersion(2010) && !this.accountTypes.isHosted();
+            const isDedicatedAccount = this.exchangeServiceInfrastructure.isDedicated() || this.exchangeServiceInfrastructure.isDedicatedCluster();
+            const is2010DedicatedOrProvider = this.exchangeVersion.isVersion(2010) && !this.exchangeServiceInfrastructure.isHosted();
 
             this.shouldDisplaySSLRenewValue = (isDedicatedAccount || is2010DedicatedOrProvider) && (canRenewBeforeExpiration || isAlreadyExpired);
         }
@@ -120,18 +120,20 @@ angular
             const aMonthBeforeSSLExpirationDate = moment(this.exchange.sslExpirationDate).subtract(1, "months");
 
             if (this.hasSSLTask) {
-                this.messageSSL = this.translator.tr("exchange_action_renew_ssl_info");
+                this.messageSSL = this.$translate.instant("exchange_action_renew_ssl_info");
             } else if (now.isAfter(sslExpirationDate)) {
-                this.messageSSL = this.translator.tr("exchange_action_renew_ssl_info_expired");
+                this.messageSSL = this.$translate.instant("exchange_action_renew_ssl_info_expired");
             } else if (now.isAfter(aMonthBeforeSSLExpirationDate)) {
-                this.messageSSL = this.translator.tr("exchange_action_renew_ssl_info_next", [sslExpirationDate.format("L")]);
+                this.messageSSL = this.$translate.instant("exchange_action_renew_ssl_info_next", {
+                    t0: sslExpirationDate.format("L")
+                });
             } else {
                 this.messageSSL = null;
             }
         }
 
         displayOrderDiskSpace () {
-            return this.exchangeVersion.isVersion(2010) && this.accountTypes.isProvider();
+            return this.exchangeVersion.isVersion(2010) && this.exchangeServiceInfrastructure.isProvider();
         }
 
         orderDiskSpace () {
@@ -143,34 +145,40 @@ angular
         loadATooltip () {
             const ipv4 = _.get(this.exchange, "serverDiagnostic.ip", "");
             if (!_.isEmpty(ipv4) && _.get(this.exchange, "serverDiagnostic.isAValid", false)) {
-                this.exchange.serverDiagnostic.aTooltip = this.translator.tr("exchange_dashboard_diag_a_tooltip_ok");
+                this.exchange.serverDiagnostic.aTooltip = this.$translate.instant("exchange_dashboard_diag_a_tooltip_ok");
             } else {
-                this.exchange.serverDiagnostic.aTooltip = this.translator.tr("exchange_dashboard_diag_a_tooltip_error", [this.exchange.hostname, ipv4]);
+                this.exchange.serverDiagnostic.aTooltip = this.$translate.instant("exchange_dashboard_diag_a_tooltip_error", {
+                    t0: this.exchange.hostname,
+                    t1: ipv4
+                });
             }
         }
 
         loadAaaaTooltip () {
             const ipv6 = _.get(this.exchange, "serverDiagnostic.ipV6", "");
             if (!_.isEmpty(ipv6) && _.get(this.exchange, "serverDiagnostic.isAaaaValid", false)) {
-                this.exchange.serverDiagnostic.aaaaTooltip = this.translator.tr("exchange_dashboard_diag_aaaa_tooltip_ok");
+                this.exchange.serverDiagnostic.aaaaTooltip = this.$translate.instant("exchange_dashboard_diag_aaaa_tooltip_ok");
             } else {
-                this.exchange.serverDiagnostic.aaaaTooltip = this.translator.tr("exchange_dashboard_diag_aaaa_tooltip_error", [this.exchange.hostname, ipv6]);
+                this.exchange.serverDiagnostic.aaaaTooltip = this.$translate.instant("exchange_dashboard_diag_aaaa_tooltip_error", {
+                    t0: this.exchange.hostname,
+                    t1: ipv6
+                });
             }
         }
 
         loadPtrTooltip () {
             if (_.get(this.exchange, "serverDiagnostic.isPtrValid", false)) {
-                this.exchange.serverDiagnostic.ptrTooltip = this.translator.tr("exchange_dashboard_diag_ptr_tooltip_ok");
+                this.exchange.serverDiagnostic.ptrTooltip = this.$translate.instant("exchange_dashboard_diag_ptr_tooltip_ok");
             } else {
-                this.exchange.serverDiagnostic.ptrTooltip = this.translator.tr("exchange_dashboard_diag_ptr_tooltip_error");
+                this.exchange.serverDiagnostic.ptrTooltip = this.$translate.instant("exchange_dashboard_diag_ptr_tooltip_error");
             }
         }
 
         loadPtrv6Tooltip () {
             if (_.get(this.exchange, "serverDiagnostic.isPtrV6Valid", false)) {
-                this.exchange.serverDiagnostic.ptrv6Tooltip = this.translator.tr("exchange_dashboard_diag_ptrv6_tooltip_ok");
+                this.exchange.serverDiagnostic.ptrv6Tooltip = this.$translate.instant("exchange_dashboard_diag_ptrv6_tooltip_ok");
             } else {
-                this.exchange.serverDiagnostic.ptrv6Tooltip = this.translator.tr("exchange_dashboard_diag_ptrv6_tooltip_error");
+                this.exchange.serverDiagnostic.ptrv6Tooltip = this.$translate.instant("exchange_dashboard_diag_ptrv6_tooltip_error");
             }
         }
     });

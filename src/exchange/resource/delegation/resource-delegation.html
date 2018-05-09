@@ -3,28 +3,28 @@
          data-wizard-bread-crumb
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="updateDelegationRight"
-         data-wizard-title="i18n.exchange_GROUPS_delegation_title">
+         data-wizard-title="'exchange_GROUPS_delegation_title' | translate">
 
         <div data-wizard-step
              data-wizard-step-on-load="retrieveDelegationRights"
              data-wizard-step-valid="hasChanged()">
 
-            <p data-ng-bind-html="tr('exchange_RESOURCES_delegation_step1_intro', [ctrl.resource.resourceEmailAddress])"></p>
+            <p data-ng-bind-html="'exchange_RESOURCES_delegation_step1_intro' | translate:{ t0: ctrl.resource.resourceEmailAddress }"></p>
 
             <div class="alert alert-warning" role="alert"
                  data-ng-if="!ctrl.loading && ctrl.delegationList && ctrl.delegationList.list.messages.length > 0">
                 <div>
-                    <strong data-i18n-static="exchange_tab_ACCOUNTS_warning"></strong>
-                    <span data-i18n-static="exchange_tab_ACCOUNTS_partial"></span>
+                    <strong data-translate="exchange_tab_ACCOUNTS_warning"></strong>
+                    <span data-translate="exchange_tab_ACCOUNTS_partial"></span>
                 </div>
             </div>
 
             <form class="form-inline d-md-flex justify-content-md-end mb-3">
                 <div class="form-group">
                     <label class="sr-only" for="searchDelegationSearch"
-                           data-i18n-static="common_search"></label>
+                           data-translate="common_search"></label>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="searchDelegationSearch" placeholder="{{i18n.exchange_tab_ACCOUNTS_table_email}}"
+                        <input type="text" class="form-control" id="searchDelegationSearch" placeholder="{{'exchange_tab_ACCOUNTS_table_email' | translate}}"
                                data-ng-change="ctrl.onSearch()"
                                data-ng-disabled="ctrl.loading"
                                data-ng-model="ctrl.form.search">
@@ -45,7 +45,7 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col" data-i18n-static="exchange_GROUPS_delegation_step1_email_header"></th>
+                        <th scope="col" data-translate="exchange_GROUPS_delegation_step1_email_header"></th>
                         <th class="text-center" scope="col">
                             <input type="checkbox"
                                    data-tri-state-checkbox
@@ -65,9 +65,9 @@
                 <tbody data-ng-if="!ctrl.loading && ctrl.delegationList.list.results.length === 0 && ctrl.delegationList.list.messages.length === 0">
                     <tr>
                         <td class="text-center" colspan="2">
-                            <span data-i18n-static="exchange_ACTION_delegation_table_empty"
+                            <span data-translate="exchange_ACTION_delegation_table_empty"
                                   data-ng-if="!ctrl.form.search"></span>
-                            <span data-i18n-static="exchange_ACTION_delegation_table_empty_search"
+                            <span data-translate="exchange_ACTION_delegation_table_empty_search"
                                   data-ng-if="ctrl.form.search"></span>
                         </td>
                     </tr>
@@ -88,7 +88,7 @@
 
                     <tr data-ng-repeat="account in (ctrl.delegationList.list.messages | orderBy:'id':false) track by $index">
                         <td colspan="2">
-                            <div data-uib-tooltip="{{tr('exchange_GROUPS_partial_account', [account.message])}}">
+                            <div data-uib-tooltip="{{ 'exchange_GROUPS_partial_account' | translate:{ t0: account.message } }}">
                                 <span class="fa fa-exclamation-triangle mr-2" aria-hidden="true"></span>
                                 <span data-ng-bind="account.id"></span>
                             </div>
@@ -105,19 +105,19 @@
             </div>
 
             <div data-wizard-step-help>
-                <h3 data-i18n-static="exchange_RESOURCES_delegation_step2_delegation_header"></h3>
-                <p data-ng-bind-html="tr('exchange_RESOURCES_delegation_wizard_text')"></p>
+                <h3 data-translate="exchange_RESOURCES_delegation_step2_delegation_header"></h3>
+                <p data-ng-bind-html="'exchange_RESOURCES_delegation_wizard_text' | translate"></p>
             </div>
         </div>
 
         <div data-wizard-step>
-            <p data-ng-bind-html-unsafe="tr('exchange_RESOURCES_delegation_step2_intro', [ctrl.resource.resourceEmailAddress])"></p>
+            <p data-ng-bind-html-unsafe="'exchange_RESOURCES_delegation_step2_intro' | translate:{ t0: ctrl.resource.resourceEmailAddress }"></p>
 
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col" data-i18n-static="exchange_GROUPS_delegation_step2_email_header"></th>
-                        <th class="text-center" scope="col" data-i18n-static="exchange_RESOURCES_delegation_step2_delegation_header"></th>
+                        <th scope="col" data-translate="exchange_GROUPS_delegation_step2_email_header"></th>
+                        <th class="text-center" scope="col" data-translate="exchange_RESOURCES_delegation_step2_delegation_header"></th>
                     </tr>
                 </thead>
 
@@ -125,10 +125,10 @@
                     <tr data-ng-repeat="account in (ctrl.delegationList.list.results | orderBy:'displayAddress':false) track by $index">
                         <td data-ng-bind="account.displayAddress"></td>
                         <td class="text-center">
-                            <span data-i18n-static="exchange_ACTION_delegation_step2_right_true"
+                            <span data-translate="exchange_ACTION_delegation_step2_right_true"
                                   data-ng-class="ctrl.hasChangedClass(account.id)"
                                   data-ng-if="account.newDelegationValue"></span>
-                            <span data-i18n-static="exchange_RESOURCES_delegation_step2_delegation_no_value"
+                            <span data-translate="exchange_RESOURCES_delegation_step2_delegation_no_value"
                                   data-ng-class="ctrl.hasChangedClass(account.id)"
                                   data-ng-if="!account.newDelegationValue"></span>
                         </td>
@@ -144,8 +144,8 @@
             </div>
 
             <div data-wizard-step-help>
-                <h3 data-i18n-static="exchange_RESOURCES_delegation_step2_delegation_header"></h3>
-                <p data-ng-bind-html="tr('exchange_RESOURCES_delegation_wizard_text')"></p>
+                <h3 data-translate="exchange_RESOURCES_delegation_step2_delegation_header"></h3>
+                <p data-ng-bind-html="'exchange_RESOURCES_delegation_wizard_text' | translate"></p>
             </div>
         </div>
     </div>

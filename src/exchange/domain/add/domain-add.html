@@ -1,7 +1,7 @@
 <div data-ng-controller="ExchangeAddDomainController as ctrl">
     <div data-wizard
          data-wizard-bread-crumb
-         data-wizard-title="i18n.exchange_tab_domain_add_domain"
+         data-wizard-title="'exchange_tab_domain_add_domain' | translate"
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="addDomain">
 
@@ -14,7 +14,7 @@
 
             <div data-ng-if="!ctrl.loading">
                 <div class="alert alert-info" role="alert"
-                     data-ng-bind-html="tr('exchange_tab_domain_no_domain_attached')"
+                     data-ng-bind-html="'exchange_tab_domain_no_domain_attached' | translate"
                      data-ng-if="ctrl.noDomainAttached">
                 </div>
 
@@ -27,14 +27,14 @@
                                    data-ng-value="ctrl.ovhDomain">
                             <label class="oui-radio__label-container" for="domainType-ovh">
                                 <span class="oui-radio__label"
-                                      data-i18n-static="exchange_tab_domain_add_step1_select_domain_option"></span>
+                                      data-translate="exchange_tab_domain_add_step1_select_domain_option"></span>
                             </label>
                         </div>
 
                         <div data-ng-if="ctrl.model.domainType === ctrl.ovhDomain">
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" maxlength="256" placeholder="{{i18n.exchange_tab_domain_search}}"
+                                    <input type="text" class="form-control" maxlength="256" placeholder="{{'exchange_tab_domain_search' | translate}}"
                                            data-ng-change="ctrl.onSearchValueChange()"
                                            data-ng-model="ctrl.search.value">
                                     <div class="input-group-btn" data-ng-if="ctrl.search.value">
@@ -50,7 +50,7 @@
                             </div>
 
                             <p class="alert alert-info" role="alert"
-                               data-i18n-static="exchange_tab_domain_add_step1_domain_none"
+                               data-translate="exchange_tab_domain_add_step1_domain_none"
                                data-ng-if="ctrl.availableDomains.length === 0 && ctrl.search.value"></p>
 
                             <ul class="list-unstyled pre-scrollable table-bordered"
@@ -76,21 +76,21 @@
                                    data-ng-value="ctrl.nonOvhDomain">
                             <label class="oui-radio__label-container" for="domainType-nonovh">
                                 <span class="oui-radio__label" id="nonOvhDomain"
-                                      data-i18n-static="exchange_tab_domain_add_step1_user_owned_option"></span>
+                                      data-translate="exchange_tab_domain_add_step1_user_owned_option"></span>
                             </label>
                         </div>
 
                         <div class="form-group"
                              data-ng-class="{'has-error': ctrl.exchangeAddDomainStep1Form.nonOvhDomain.$dirty && !ctrl.isNonOvhDomainValid()}"
                              data-ng-if="ctrl.model.domainType === ctrl.nonOvhDomain">
-                            <input type="text" class="form-control" maxlength="256" name="nonOvhDomain" placeholder="{{i18n.exchange_tab_domain_domain}}" aria-labelledby="nonOvhDomain"
+                            <input type="text" class="form-control" maxlength="256" name="nonOvhDomain" placeholder="{{'exchange_tab_domain_domain' | translate}}" aria-labelledby="nonOvhDomain"
                                    data-ng-change="ctrl.changeName()"
                                    data-ng-model="ctrl.model.displayName">
                             <small class="help-block"
-                                   data-i18n-static="emailpro_ACTION_add_domain_invalid_domain"
+                                   data-translate="emailpro_ACTION_add_domain_invalid_domain"
                                    data-ng-if="ctrl.exchangeAddDomainStep1Form.nonOvhDomain.$dirty && !ctrl.isNonOvhDomainValid()"></small>
                             <div class="alert alert-warning mt-3" role="alert"
-                                 data-i18n-static="exchange_tab_domain_add_step1_user_owned_info"></div>
+                                 data-translate="exchange_tab_domain_add_step1_user_owned_info"></div>
                         </div>
                     </div>
 
@@ -98,47 +98,47 @@
                          data-ng-class="{'has-error': ctrl.exchangeAddDomainStep1Form.noDomainDisplayName.$dirty && !ctrl.isNonOvhDomainValid()}"
                          data-ng-if="!ctrl.availableDomainsBuffer || ctrl.availableDomainsBuffer.length === 0">
                         <label class="control-label" for="noDomainDisplayName"
-                               data-i18n-static="exchange_tab_domain_add_step1_user_owned_option"></label>
-                        <input type="text" class="form-control" id="noDomainDisplayName" maxlength="256" name="noDomainDisplayName" placeholder="{{i18n.exchange_tab_domain_domain}}"
+                               data-translate="exchange_tab_domain_add_step1_user_owned_option"></label>
+                        <input type="text" class="form-control" id="noDomainDisplayName" maxlength="256" name="noDomainDisplayName" placeholder="{{'exchange_tab_domain_domain' | translate}}"
                                data-ng-change="ctrl.changeName()"
                                data-ng-model="ctrl.model.displayName">
                         <small class="help-block"
-                               data-i18n-static="emailpro_ACTION_add_domain_invalid_domain"
+                               data-translate="emailpro_ACTION_add_domain_invalid_domain"
                                data-ng-if="ctrl.exchangeAddDomainStep1Form.noDomainDisplayName.$dirty && !ctrl.isNonOvhDomainValid()"></small>
                         <div class="alert alert-warning mt-3" role="alert"
-                             data-i18n-static="exchange_tab_domain_add_step1_user_owned_info"></div>
+                             data-translate="exchange_tab_domain_add_step1_user_owned_info"></div>
                     </div>
                 </form>
 
                 <div class="resize-half center-image image-container" data-ng-if="ctrl.isFrenchLanguage()">
                     <a href="https://docs.ovh.com/fr/fr/web/microsoft-collaborative-solutions/premiere-configuration-exchange/#guide-video" target="_blank">
-                        <img class="image" src="https://www.ovh.com/fr/images/videos/guides/exchange/premiere-conf-exchange.jpg" alt="tr('exchange_tab_domain_add_step3_domain_none')"/>
+                        <img class="w-100 image" src="https://www.ovh.com/fr/images/videos/guides/exchange/premiere-conf-exchange.jpg" alt="'exchange_tab_domain_add_step3_domain_none' | translate"/>
                         <div class="middle overlay-transition">
                             <span class="fa fa-play" aria-hidden="true"></span>
                         </div>
                     </a>
                 </div>
 
-                <div class="text-center mt-5" data-ng-if="ctrl.noDomainAttached && ctrl.services.accountTypes.isHosted() && ctrl.canOpenWizard">
+                <div class="text-center mt-5" data-ng-if="ctrl.noDomainAttached && ctrl.services.exchangeServiceInfrastructure.isHosted() && ctrl.canOpenWizard">
                     <button class="btn btn-primary"
                             type="button"
                             data-ng-click="ctrl.openingWizard()"
-                            data-ng-bind-html="tr('exchange_tab_domain_add_goToWizardButton')">
+                            data-ng-bind-html="'exchange_tab_domain_add_goToWizardButton' | translate">
                     </button>
                 </div>
             </div>
 
             <div data-wizard-step-help>
-                <h3 data-i18n-static="exchange_tab_TASKS_ADD_DOMAIN"></h3>
-                <h4 data-i18n-static="exchange_tab_domain_step1_helpwizard_subdomain_title"></h4>
-                <p data-ng-bind-html="tr('exchange_tab_domain_step1_helpwizard_subdomain')"></p>
+                <h3 data-translate="exchange_tab_TASKS_ADD_DOMAIN"></h3>
+                <h4 data-translate="exchange_tab_domain_step1_helpwizard_subdomain_title"></h4>
+                <p data-ng-bind-html="'exchange_tab_domain_step1_helpwizard_subdomain' | translate"></p>
             </div>
         </div>
 
         <div data-wizard-step
              data-wizard-step-valid="isStep2Valid()">
 
-            <p data-i18n-static="exchange_tab_domain_add_step2bis_intro"></p>
+            <p data-translate="exchange_tab_domain_add_step2bis_intro"></p>
 
             <form name="exchangeAddDomainStep2Form">
                 <div class="oui-radio mb-4">
@@ -146,9 +146,9 @@
                            data-ng-model="ctrl.model.type">
                     <label class="oui-radio__label-container" for="domainType-autoritative">
                         <span class="oui-radio__label"
-                              data-i18n-static="exchange_tab_domain_mode_AUTHORITATIVE"></span>
+                              data-translate="exchange_tab_domain_mode_AUTHORITATIVE"></span>
                         <span class="oui-radio__description" id="domainAuthoritativeHelp"
-                              data-i18n-static="exchange_tab_domain_AUTHORITATIVE_info"></span>
+                              data-translate="exchange_tab_domain_AUTHORITATIVE_info"></span>
                     </label>
                 </div>
 
@@ -157,14 +157,14 @@
                            data-ng-model="ctrl.model.type">
                     <label class="oui-radio__label-container" for="domainType-nonautoritative">
                         <span class="oui-radio__label"
-                              data-i18n-static="exchange_tab_domain_mode_NON_AUTHORITATIVE"></span>
+                              data-translate="exchange_tab_domain_mode_NON_AUTHORITATIVE"></span>
                         <span class="oui-radio__description" id="domainNonAuthoritativeHelp"
-                              data-i18n-static="exchange_tab_domain_NON_AUTHORITATIVE_info"></span>
+                              data-translate="exchange_tab_domain_NON_AUTHORITATIVE_info"></span>
                     </label>
                     <div class="oui-radio__description"
                          data-ng-if="ctrl.model.type !== 'AUTHORITATIVE'">
                         <label class="oui-label required" for="targetMailServer"
-                               data-i18n-static="exchange_tab_domain_target_mail_server_label"></label>
+                               data-translate="exchange_tab_domain_target_mail_server_label"></label>
                         <input type="text" class="oui-input" id="targetMailServer" maxlength="256" name="targetMailServer"
                                data-ng-model="ctrl.model.mxRelay">
                     </div>
@@ -176,28 +176,28 @@
              data-wizard-step-on-previous="checkDomainType"
              data-wizard-step-valid="isStep3Valid()">
 
-            <p data-ng-bind-html="tr('exchange_tab_domain_add_step2_auth_intro', ctrl.model.displayName)"
+            <p data-ng-bind-html="'exchange_tab_domain_add_step2_auth_intro' | translate:{ t0: ctrl.model.displayName }"
                data-ng-if="ctrl.model.type === 'AUTHORITATIVE'"></p>
-            <p data-ng-bind-html="tr('exchange_tab_domain_add_step2_non_auth_intro', ctrl.model.displayName)"
+            <p data-ng-bind-html="'exchange_tab_domain_add_step2_non_auth_intro' | translate:{ t0: ctrl.model.displayName }"
                data-ng-if="ctrl.model.type === 'NON_AUTHORITATIVE'"></p>
 
             <form name="exchangeAddDomainStep3Form">
                 <div data-ng-if="ctrl.model.domainType !== ctrl.nonOvhDomain">
                     <oui-checkbox id="srvParam" name="srvParam"
                         data-model="ctrl.model.srvParam"
-                        data-text="{{::i18n.exchange_tab_domain_add_step2_srv_checkbox}}">
+                        data-text="{{::'exchange_tab_domain_add_step2_srv_checkbox' | translate}}">
                     </oui-checkbox>
                     <oui-checkbox id="mxParam" name="mxParam"
                         data-model="ctrl.model.mxParam"
-                        data-text="{{::i18n.exchange_tab_domain_add_step2_mx_checkbox}}">
+                        data-text="{{::'exchange_tab_domain_add_step2_mx_checkbox' | translate}}">
                     </oui-checkbox>
                 </div>
 
                 <div class="alert alert-warning" role="alert"
                      data-ng-if="ctrl.model.domainType === ctrl.nonOvhDomain">
                     <div>
-                        <span data-i18n-static="exchange_tab_domain_noovh_mx_info"></span>
-                        <p data-i18n-static="exchange_tab_domain_add_step2_mx_tooltip"></p>
+                        <span data-translate="exchange_tab_domain_noovh_mx_info"></span>
+                        <p data-translate="exchange_tab_domain_add_step2_mx_tooltip"></p>
                     </div>
                 </div>
 
@@ -207,7 +207,7 @@
                                data-ng-model="ctrl.model.main">
                         <label class="oui-checkbox__label-container" for="mainDomain">
                             <span class="oui-checkbox__label">
-                                <span data-i18n-static="exchange_tab_domain_add_step1_main_domain"></span>
+                                <span data-translate="exchange_tab_domain_add_step1_main_domain"></span>
                                 <span class="oui-checkbox__icon">
                                     <span class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></span>
                                     <span class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></span>
@@ -219,7 +219,7 @@
                         <div class="oui-checkbox__description"
                              data-ng-if="!ctrl.model.main">
                             <label class="oui-label required" for="mainDomainAttached"
-                                   data-i18n-static="exchange_tab_domain_add_step1_attach_organization_intro"></label>
+                                   data-translate="exchange_tab_domain_add_step1_attach_organization_intro"></label>
                             <div class="oui-select">
                                 <select class="oui-select__input" id="mainDomainAttached" name="mainDomainAttached" required
                                         data-ng-model="ctrl.model.attachOrganization2010"
@@ -229,7 +229,7 @@
                             </div>
                         </div>
                         <p class="oui-checkbox__description"
-                           data-ng-bind-html="tr('exchange_tab_domain_add_step1_new_organization_intro', [ctrl.model.displayName])"
+                           data-ng-bind-html="'exchange_tab_domain_add_step1_new_organization_intro' | translate:{ t0: ctrl.model.displayName }"
                            data-ng-if="ctrl.model.main"></p>
                     </div>
                 </div>
@@ -237,10 +237,10 @@
         </div>
 
         <div data-wizard-step>
-            <p data-i18n-static="exchange_tab_domain_add_step3_confirmation"></p>
+            <p data-translate="exchange_tab_domain_add_step3_confirmation"></p>
 
             <dl class="dl-horizontal dl-lg">
-                <dt data-i18n-static="exchange_tab_domain_domain"></dt>
+                <dt data-translate="exchange_tab_domain_domain"></dt>
                 <dd>
                     <span class="word-break"
                           data-ng-bind="ctrl.model.displayName | sliceContent: 150"></span>
@@ -248,26 +248,26 @@
                           data-ng-bind="'(' + ctrl.model.name + ')'"></span>
                 </dd>
 
-                <dt data-i18n-static="exchange_tab_domain_type"></dt>
-                <dd data-ng-bind="tr('exchange_tab_domain_' + ctrl.model.type)"></dd>
+                <dt data-translate="exchange_tab_domain_type"></dt>
+                <dd data-ng-bind="('exchange_tab_domain_' + ctrl.model.type) | translate"></dd>
 
                 <dt data-ng-if="ctrl.model.domainType !== ctrl.nonOvhDomain"
-                    data-i18n-static="exchange_tab_domain_add_step3_mx_confirmation"></dt>
+                    data-translate="exchange_tab_domain_add_step3_mx_confirmation"></dt>
                 <dd data-ng-if="ctrl.model.domainType !== ctrl.nonOvhDomain"
-                    data-ng-bind="tr('exchange_tab_domain_add_step3_configuration_' + ctrl.model.mxParam)"></dd>
+                    data-ng-bind="('exchange_tab_domain_add_step3_configuration_' + ctrl.model.mxParam) | translate"></dd>
 
                 <dt data-ng-if="ctrl.model.domainType !== ctrl.nonOvhDomain"
-                    data-i18n-static="exchange_tab_domain_add_step3_srv_confirmation"></dt>
+                    data-translate="exchange_tab_domain_add_step3_srv_confirmation"></dt>
                 <dd data-ng-if="ctrl.model.domainType !== ctrl.nonOvhDomain"
-                    data-ng-bind="tr('exchange_tab_domain_add_step3_configuration_' + ctrl.model.srvParam)"></dd>
+                    data-ng-bind="('exchange_tab_domain_add_step3_configuration_' + ctrl.model.srvParam) | translate"></dd>
 
                 <dt data-ng-if="ctrl.setOrganization2010"
-                    data-i18n-static="exchange_tab_domain_add_step2_main_domain"></dt>
+                    data-translate="exchange_tab_domain_add_step2_main_domain"></dt>
                 <dd data-ng-if="ctrl.setOrganization2010"
-                    data-ng-bind="tr('exchange_tab_domain_add_step2_main_domain_' + ctrl.model.main)"></dd>
+                    data-ng-bind="('exchange_tab_domain_add_step2_main_domain_' + ctrl.model.main) | translate"></dd>
 
                 <dt data-ng-if="ctrl.setOrganization2010"
-                    data-i18n-static="exchange_tab_domain_add_step2_organization"></dt>
+                    data-translate="exchange_tab_domain_add_step2_organization"></dt>
                 <dd data-ng-if="ctrl.setOrganization2010 && ctrl.model.main && ctrl.model.organization2010"
                     data-ng-bind="ctrl.model.organization2010"></dd>
                 <dd class="word-break"

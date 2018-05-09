@@ -2,17 +2,17 @@
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="submit"
-         data-wizard-title="i18n.exchange_GROUPS_remove_member_title">
+         data-wizard-title="'exchange_GROUPS_remove_member_title' | translate">
 
         <div data-wizard-step>
-            <p data-i18n-static="exchange_GROUPS_remove_member_question"></p>
+            <p data-translate="exchange_GROUPS_remove_member_question"></p>
 
             <dl class="dl-horizontal dl-lg">
-                <dt data-i18n-static="exchange_GROUPS_remove_member_group_label"></dt>
+                <dt data-translate="exchange_GROUPS_remove_member_group_label"></dt>
                 <dd class="word-break"
                     data-ng-bind="ctrl.group.mailingListDisplayName | sliceContent: 150"></dd>
 
-                <dt data-i18n-static="exchange_GROUPS_remove_member_member_label"></dt>
+                <dt data-translate="exchange_GROUPS_remove_member_member_label"></dt>
                 <dd class="word-break"
                     data-ng-bind="ctrl.member.primaryEmailAddress | sliceContent: 150"></dd>
             </dl>

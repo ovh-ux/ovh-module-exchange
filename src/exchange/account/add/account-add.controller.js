@@ -1,197 +1,159 @@
-angular
-    .module("Module.exchange.controllers")
-    .controller("ExchangeAddAccountCtrl", class ExchangeAddAccountCtrl {
-        constructor ($scope, Exchange, ExchangePassword, navigation, messaging, translator, accountTypes, exchangeVersion) {
-            this.services = {
-                $scope,
-                Exchange,
-                ExchangePassword,
-                navigation,
-                messaging,
-                translator,
-                accountTypes,
-                exchangeVersion
-            };
+{
+    class ExchangeAccountAddController {
+        constructor ($scope, $timeout, exchangeAccountTypes, Exchange, exchangeAccount, exchangeServiceInfrastructure, ExchangePassword, exchangeVersion, messaging, $translate) {
+            this.$scope = $scope;
+            this.$timeout = $timeout;
 
-            this.$routerParams = Exchange.getParams();
-            this.valid = {
-                legalWarning: false
-            };
-
-            this.loaders = {
-                accountOptions: false
-            };
-
-            this.newAccountOptions = null;
-            this.passwordTooltip = null;
-            this.exchange = null;
-            this.accountToAdd = {
-                outlook: false,
-                hiddenFromGAL: false,
-                displayName: "",
-                firstName: "",
-                lastName: "",
-                login: "",
-                domain: "",
-                completeDomain: {
-                    name: ""
-                }
-            };
-
-            this.differentPasswordFlag = false;
-            this.simplePasswordFlag = false;
-            this.containsNameFlag = false;
-            this.containsSameAccountNameFlag = false;
-            this.takenEmailError = false;
-            this.exchange = Exchange.value;
-
-            this.loadAccountOptions();
-
-            $scope.accountIsValid = () => this.accountIsValid();
-            $scope.addExchangeAccount = () => this.addExchangeAccount();
-            $scope.getNewAccountOptions = () => this.newAccountOptions;
+            this.exchangeAccountTypes = exchangeAccountTypes;
+            this.Exchange = Exchange;
+            this.exchangeAccount = exchangeAccount;
+            this.ExchangePassword = ExchangePassword;
+            this.exchangeServiceInfrastructure = exchangeServiceInfrastructure;
+            this.exchangeVersion = exchangeVersion;
+            this.messaging = messaging;
+            this.$translate = $translate;
         }
 
-        makeDisplayName () {
-            const firstName = _.get(this.accountToAdd, "firstName", "");
-            const lastName = _.get(this.accountToAdd, "lastName", "");
-            const completeName = `${firstName} ${lastName}`;
-            this.accountToAdd.displayName = completeName.trim(); // handles case where either firstName or lastName is empty
+        $onInit () {
+            this.$routerParams = this.Exchange.getParams();
+
+            this.isFetchingCreationOptions = true;
+            this.newAccount = {};
+            this.shouldDisplayPasswordInput = true;
+            this.isSendingNewAccount = false;
+
+            return this.fetchingAccountCreationOptions();
         }
 
-        setPasswordsFlag (selectedAccount) {
-            this.differentPasswordFlag = false;
-            this.simplePasswordFlag = false;
-            this.containsNameFlag = false;
-            this.containsSameAccountNameFlag = false;
+        fetchingAccountCreationOptions () {
+            return this.Exchange
+                .fetchingAccountCreationOptions(this.$routerParams.organization, this.$routerParams.productId)
+                .then((accountCreationOptions) => {
+                    this.accountCreationOptions = _(accountCreationOptions)
+                        .assign({
+                            availableTypes: transformAccountTypes.call(this, accountCreationOptions.availableTypes)
+                        }).value();
 
-            const hasPassword = _.has(selectedAccount, "password") && !_.isEmpty(selectedAccount.password);
-            const hasConfirmation = _.has(selectedAccount, "passwordConfirmation") && !_.isEmpty(selectedAccount.passwordConfirmation);
-            const hasMinLength = _.has(this.newAccountOptions, "minPasswordLength") && this.newAccountOptions.minPasswordLength != null;
-            const hasComplexityEnabled = _.has(this.newAccountOptions, "passwordComplexityEnabled") && this.newAccountOptions.passwordComplexityEnabled != null;
-
-            if (!hasPassword || !hasConfirmation || !hasMinLength || !hasComplexityEnabled) {
-                return;
-            }
-
-            selectedAccount.password = selectedAccount.password.toString();
-            selectedAccount.passwordConfirmation = selectedAccount.passwordConfirmation.toString();
-
-            this.simplePasswordFlag = !this.services.ExchangePassword.passwordSimpleCheck(selectedAccount.password, true, this.newAccountOptions.minPasswordLength);
-
-            if (!this.simplePasswordFlag && selectedAccount.password !== selectedAccount.passwordConfirmation) {
-                this.differentPasswordFlag = true;
-            }
-
-            /**
-             * See https://technet.microsoft.com/en-us/library/hh994562%28v=ws.10%29.aspx for further information
-             */
-            if (this.newAccountOptions.passwordComplexityEnabled) {
-                this.simplePasswordFlag = this.simplePasswordFlag || !this.services.ExchangePassword.passwordComplexityCheck(selectedAccount.password);
-
-                if (_.isEmpty(selectedAccount.displayName)) {
-                    this.containsNameFlag = this.services.ExchangePassword.passwordContainsName(selectedAccount.password, selectedAccount.displayName);
-                }
-
-                if (!this.containsNameFlag && !_.isEmpty(selectedAccount.login)) {
-                    if (~selectedAccount.password.indexOf(selectedAccount.login)) {
-                        this.containsNameFlag = true;
-                    }
-                }
-
-                this.containsSamAccountNameFlag = !_.isEmpty(selectedAccount.samaccountName) && ~selectedAccount.password.indexOf(selectedAccount.samaccountName);
-
-                if (this.containsSamAccountNameFlag && _.isEmpty(this.containsSamAccountNameLabel)) {
-                    this.containsSamAccountNameLabel = this.services.translator.tr("exchange_ACTION_update_account_step1_password_contains_samaccount_name", [selectedAccount.samaccountName]);
-                }
-            }
-        }
-
-        getPasswordTooltip () {
-            if (!_.has(this.newAccountOptions, "passwordComplexityEnabled", "minPasswordLength")) {
-                return null;
-            }
-
-            return this.newAccountOptions.passwordComplexityEnabled ?
-                this.services.translator.tr("exchange_ACTION_update_account_step1_complex_password_tooltip", [this.newAccountOptions.minPasswordLength]) :
-                this.services.translator.tr("exchange_ACTION_update_account_step1_simple_password_tooltip", [this.newAccountOptions.minPasswordLength]);
-        }
-
-        checkTakenEmails () {
-            this.takenEmailError = false;
-
-            if (_.isEmpty(this.takenEmails) || !_.has(this.accountToAdd, "login") || _.isEmpty(this.accountToAdd.login) || !_.isString(this.accountToAdd.login)) {
-                return;
-            }
-
-            const foundMatch = _.find(this.takenEmails, (value) => _.isString(value) && `${this.accountToAdd.login.toLowerCase()}@${this.accountToAdd.completeDomain.name}` === value.toLowerCase());
-
-            this.takenEmailError = !_.isEmpty(foundMatch);
-        }
-
-        loadAccountOptions () {
-            this.loaders.accountOptions = true;
-
-            this.services.Exchange
-                .getNewAccountOptions(this.$routerParams.organization, this.$routerParams.productId)
-                .then((data) => {
-                    this.newAccountOptions = data;
-                    this.takenEmails = data.takenEmails;
-
-                    if (_.isEmpty(data.availableDomains) || _.isEmpty(data.availableTypes)) {
-                        this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_add_no_domains"));
-                        this.services.navigation.resetAction();
-                    } else {
-                        this.accountToAdd.completeDomain = data.availableDomains[0];
-                        this.accountToAdd.accountLicense = data.availableTypes[0];
-                        this.accountIsValid();
-                    }
-
-                    this.passwordTooltip = this.newAccountOptions.passwordComplexityEnabled ?
-                        this.services.translator.tr("exchange_ACTION_update_account_step1_complex_password_tooltip", [this.newAccountOptions.minPasswordLength]) :
-                        this.services.translator.tr("exchange_ACTION_update_account_step1_simple_password_tooltip", [this.newAccountOptions.minPasswordLength]);
-                }).catch((failure) => {
-                    this.services.navigation.resetAction();
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_add_account_option_fail"), failure);
-                }).finally(() => {
-                    this.loaders.accountOptions = false;
-                });
-        }
-
-        accountIsValid () {
-            if (!this.valid.legalWarning) {
-                return false;
-            } else if (this.simplePasswordFlag || this.differentPasswordFlag || this.containsNameFlag) {
-                return false;
-            } else if (!_.has(this.accountToAdd, "completeDomain.name") || _.isEmpty(this.accountToAdd.completeDomain.name)) {
-                return false;
-            } else if (_.isEmpty(this.accountToAdd.login)) {
-                return false;
-            } else if (_.isEmpty(this.accountToAdd.password) || ~this.accountToAdd.password.indexOf(" ") || this.accountToAdd.password !== this.accountToAdd.passwordConfirmation) {
-                return false;
-            }
-            return this.services.ExchangePassword.passwordSimpleCheck(this.accountToAdd.password, false, this.newAccountOptions.minPasswordLength);
-
-        }
-
-        addExchangeAccount () {
-            // cleanup the model
-            this.accountToAdd.domain = _.get(this.accountToAdd, "completeDomain.name", "");
-            this.accountToAdd.completeDomain = undefined;
-
-            const login = _.get(this.accountToAdd, "login", "").toString();
-            this.accountToAdd.login = login.toLowerCase();
-
-            this.services.Exchange
-                .addExchangeAccount(this.$routerParams.organization, this.$routerParams.productId, this.accountToAdd)
-                .then((data) => {
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_ACTION_add_account_success_message"), data);
+                    this.newAccount.accountType = this.accountCreationOptions.availableTypes[0];
+                    this.newAccount.domain = this.accountCreationOptions.availableDomains[0];
                 })
-                .catch((err) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_add_account_error_message"), err);
+                .catch((error) => {
+                    this.messaging.writeError(this.$translate.instant("exchange_ACTION_add_account_fetchingAccountCreationOptions_error"), error);
+                    this.hide();
                 })
                 .finally(() => {
-                    this.services.navigation.resetAction();
+                    this.isFetchingCreationOptions = false;
+                });
+
+            function transformAccountTypes (accountTypes) {
+                return _(accountTypes)
+                    .map((accountType) => ({
+                        name: accountType,
+                        displayName: this.exchangeAccountTypes.getDisplayValue(accountType)
+                    }))
+                    .value();
+            }
+        }
+
+        checkEmailAddressIsAlreadyTaken () {
+            const emailAddressIsAlreadyTaken = !_(this.accountCreationOptions.takenEmails).chain()
+                .find((emailAddress) => emailAddress === `${this.newAccount.login}@${this.newAccount.domain.name}`)
+                .isEmpty()
+                .value();
+
+            this.newAccountForm.login.$setValidity("emailAddressIsAlreadyTaken", !emailAddressIsAlreadyTaken);
+        }
+
+        checkPasswordValidity () {
+            if (this.newAccountForm.password.$error.required) {
+                this.newAccountForm.password.$setValidity("doesntRespectComplexityRules", true);
+                this.newAccountForm.password.$setValidity("containsDisplayName", true);
+                this.newAccountForm.password.$setValidity("isSameAsSAMAccountName", true);
+                return;
+            }
+
+            if (this.accountCreationOptions.passwordComplexityEnabled) {
+                this.newAccountForm.password.$setValidity("doesntRespectComplexityRules", this.ExchangePassword.passwordComplexityCheck(this.newAccount.password, true, this.accountCreationOptions.minPasswordLength));
+                this.newAccountForm.password.$setValidity("containsDisplayName", !this.ExchangePassword.passwordContainsName(this.newAccount.password, this.newAccount.displayName));
+                this.newAccountForm.password.$setValidity("isSameAsSAMAccountName",
+                                                          _(this.newAccount.samAccountName).isEmpty() ||
+                                                         (_(this.newAccount.password).isString() &&
+                                                            _(this.newAccount.samAccountName).isString() &&
+                                                            this.newAccount.password.toUpperCase() !== this.newAccount.samAccountName.toUpperCase())
+                );
+            } else {
+                this.newAccountForm.password.$setValidity("doesntRespectComplexityRules", this.ExchangePassword.passwordSimpleCheck(this.newAccount.password, true, this.accountCreationOptions.minPasswordLength));
+            }
+        }
+
+        hide () {
+            this.$scope.$emit(this.exchangeAccount.EVENTS.CHANGE_STATE, { stateName: "hide" });
+        }
+
+        switchBetweenPasswordAndTextInput () {
+            const touchednessStatus = this.newAccountForm.password.$touched;
+            this.shouldDisplayPasswordInput = !this.shouldDisplayPasswordInput;
+            this.$timeout(() => {
+                if (touchednessStatus) {
+                    this.newAccountForm.password.$setTouched();
+                    this.newAccountForm.password.$setDirty(); // It is intentional if the touchness impacts the dirtyness
+                }
+
+                this.checkPasswordValidity();
+            });
+        }
+
+        onPasswordConfirmationChange () {
+            if (this.newAccountForm.passwordConfirmation.$error.required) {
+                this.newAccountForm.passwordConfirmation.$setValidity("isDifferentToPassword", true);
+            } else {
+                this.newAccountForm.passwordConfirmation.$setValidity("isDifferentToPassword", this.newAccount.password === this.newAccount.passwordConfirmation);
+            }
+        }
+
+        sendingNewAccount () {
+            this.isSendingNewAccount = true;
+
+            const formattedAccount = {
+                SAMAccountName: this.newAccount.samAccountName,
+                displayName: this.newAccount.displayName,
+                domain: this.newAccount.domain.name,
+                firstName: this.newAccount.firstName,
+                lastName: this.newAccount.lastName,
+                license: this.newAccount.accountType.name.toLowerCase(),
+                login: this.newAccount.login,
+                password: this.newAccount.password,
+                spamAndVirusConfiguration: {
+                    checkDKIM: false,
+                    putInJunk: false,
+                    deleteSpam: false,
+                    tagSpam: false,
+                    checkSPF: false,
+                    tagVirus: false,
+                    deleteVirus: true
+                }
+            };
+
+            return this.exchangeAccount
+                .sendingNewAccount(this.$routerParams.organization, this.$routerParams.productId, formattedAccount)
+                .then((data) => {
+                    this.messaging.writeSuccess(this.$translate.instant("exchange_account_add_submit_success", {
+                        t0: `${formattedAccount.login}@${formattedAccount.domain}`
+                    }), data);
+                })
+                .catch((error) => {
+                    this.messaging.writeError(this.$translate.instant("exchange_ACTION_add_account_error_message"), error);
+                })
+                .finally(() => {
+                    this.hide();
                 });
         }
-    });
+    }
+
+    angular
+        .module("Module.exchange.components")
+        .component("exchangeAccountAdd", {
+            templateUrl: "exchange/account/add/account-add.html",
+            controller: ExchangeAccountAddController
+        });
+}

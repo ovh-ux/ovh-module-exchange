@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeUpdateDomainCtrl", class ExchangeUpdateDomainCtrl {
-        constructor ($scope, Exchange, $rootScope, ExchangeDomains, Validator, navigation, messaging, translator, exchangeVersion, accountTypes) {
+        constructor ($scope, Exchange, $rootScope, ExchangeDomains, Validator, navigation, messaging, $translate, exchangeVersion, exchangeServiceInfrastructure) {
             this.services = {
                 $scope,
                 Exchange,
@@ -10,9 +10,9 @@ angular
                 Validator,
                 navigation,
                 messaging,
-                translator,
+                $translate,
                 exchangeVersion,
-                accountTypes
+                exchangeServiceInfrastructure
             };
 
             this.$routerParams = Exchange.getParams();
@@ -72,7 +72,7 @@ angular
          * @returns {boolean}
          */
         isMxRelayVisible () {
-            return !this.services.accountTypes.isProvider() || !this.services.exchangeVersion.isVersion(2010);
+            return !this.services.exchangeServiceInfrastructure.isProvider() || !this.services.exchangeVersion.isVersion(2010);
         }
 
         /**
@@ -134,11 +134,11 @@ angular
                 .ExchangeDomains
                 .updatingDomain(this.$routerParams.organization, this.$routerParams.productId, this.selectedDomain.name, data)
                 .then(() => {
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_tab_domain_modify_success"), "true");
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_tab_domain_modify_success"), "true");
                 })
                 .catch((failure) => {
                     // Make sure the type in the select widget is reset to its initial value
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_domain_modify_failure"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_domain_modify_failure"), failure);
                 })
                 .finally(() => {
                     this.services.$rootScope.$broadcast(this.services.Exchange.events.domainsChanged);

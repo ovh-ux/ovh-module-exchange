@@ -2,7 +2,7 @@
     <div data-wizard
          data-wizard-on-cancel="onWizardCancel"
          data-wizard-on-finish="onWizardFinish"
-         data-wizard-title="i18n.exchange_office_attached_alert_modale_title">
+         data-wizard-title="'exchange_office_attached_alert_modale_title' | translate">
 
         <div data-wizard-step
              data-wizard-step-on-load="onWizardLoad"
@@ -11,18 +11,18 @@
             <oui-spinner data-ng-if="$ctrl.loading.step1.general"></oui-spinner>
 
             <div data-ng-show="!$ctrl.loading.step1.general">
-                <p data-ng-bind-html="tr('exchange_office_attached_alert_modale_header', [$ctrl.maxNumberOfAccounts])"></p>
+                <p data-ng-bind-html="'exchange_office_attached_alert_modale_header' | translate:{ t0: $ctrl.maxNumberOfAccounts }"></p>
 
                 <form class="form-inline d-md-flex justify-content-md-end mb-3">
                     <div class="form-group mr-md-2"
                          data-ng-if="$ctrl.exchangeVersion.isVersion(2010)">
                         <label class="sr-only" for="officeAttachTypeFormInput"
-                               data-i18n-static="exchange_office_attached_alert_modale_account_types"></label>
+                               data-translate="exchange_office_attached_alert_modale_account_types"></label>
                         <div class="oui-select d-md-inline-block align-middle m-0">
                             <select class="oui-select__input" id="officeAttachTypeFormInput"
                                     data-ng-change="$ctrl.setFilter()"
                                     data-ng-model="$ctrl.filterType"
-                                    data-ng-options="tr('exchange_tab_ACCOUNTS_type_' + type) for type in $ctrl.accountTypes">
+                                    data-ng-options="('exchange_tab_ACCOUNTS_type_' + type) | translate for type in $ctrl.accountTypes">
                             </select>
                             <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
                         </div>
@@ -30,13 +30,13 @@
 
                     <div class="form-group">
                         <label class="sr-only" for="officeAttachSearchFormInput"
-                               data-i18n-static="exchange_office_attached_alert_modale_search_form"></label>
+                               data-translate="exchange_office_attached_alert_modale_search_form"></label>
                         <div class="input-group">
-                            <input type="text" class="form-control" id="officeAttachSearchFormInput" maxlength="256" placeholder="{{i18n.exchange_tab_ACCOUNTS_table_email}}"
+                            <input type="text" class="form-control" id="officeAttachSearchFormInput" maxlength="256" placeholder="{{'exchange_tab_ACCOUNTS_table_email' | translate}}"
                                    data-ng-change="$ctrl.onSearchValueChange()"
                                    data-ng-model="$ctrl.searchValue">
                             <div class="input-group-btn" data-ng-if="$ctrl.searchValue">
-                                <button class="btn btn-default" type="button" aria-label="{{i18n.common_cancel}}"
+                                <button class="btn btn-default" type="button" aria-label="{{'common_cancel' | translate}}"
                                         data-ng-click="$ctrl.resetSearch()">
                                     <span class="fa fa-times" aria-hidden="true"></span>
                                 </button>
@@ -52,7 +52,7 @@
                     <thead>
                         <tr>
                             <th class="min-width" scope="col"></th>
-                            <th scope="col" data-i18n-static="exchange_tab_ACCOUNT"></th>
+                            <th scope="col" data-translate="exchange_tab_ACCOUNT"></th>
                         </tr>
                     </thead>
 
@@ -65,11 +65,11 @@
                     <tbody data-ng-if="!$ctrl.loading.step1.table && $ctrl.accounts.list.results.length === 0 && $ctrl.accounts.list.messages.length === 0">
                         <tr>
                             <td class="text-center" colspan="2">
-                                <span data-i18n-static="exchange_tab_ACCOUNTS_table_empty"
+                                <span data-translate="exchange_tab_ACCOUNTS_table_empty"
                                       data-ng-if="!$ctrl.searchValue && (!$ctrl.filterType || $ctrl.filterType === 'ALL')"></span>
-                                <span data-ng-bind="tr('exchange_tab_ACCOUNTS_table_empty_type_' + $ctrl.filterType)"
+                                <span data-ng-bind="('exchange_tab_ACCOUNTS_table_empty_type_' + $ctrl.filterType) | translate"
                                       data-ng-if="!$ctrl.searchValue && $ctrl.filterType && $ctrl.filterType !== 'ALL'"></span>
-                                <span data-i18n-static="exchange_tab_ACCOUNTS_table_empty_search"
+                                <span data-translate="exchange_tab_ACCOUNTS_table_empty_search"
                                       data-ng-if="$ctrl.searchValue"></span>
                             </td>
                         </tr>
@@ -90,7 +90,10 @@
                     </tbody>
                 </table>
 
-                <p data-ng-bind-html="tr('exchange_office_attached_alert_modale_selected_accounts', [$ctrl.numberOfSelectedCheckboxes, $ctrl.maxNumberOfAccounts])"
+                <p data-ng-bind-html="'exchange_office_attached_alert_modale_selected_accounts' | translate:{
+                    t0: $ctrl.numberOfSelectedCheckboxes,
+                    t1: $ctrl.maxNumberOfAccounts
+                }"
                    data-ng-if="!$ctrl.loading.step1.table && ($ctrl.accounts.list.results.length > 0 || $ctrl.accounts.list.messages.length > 0)">
                 </p>
 
@@ -110,7 +113,7 @@
             <oui-spinner data-ng-if="$ctrl.loading.step2.general"></oui-spinner>
 
             <div data-ng-if="!$ctrl.loading.step2.general">
-                <p data-ng-bind-html="tr('exchange_office_attached_alert_modale_confirmation_header', ['<strong>' + $ctrl.numberOfSelectedCheckboxes + '</strong>'])"></p>
+                <p data-ng-bind-html="'exchange_office_attached_alert_modale_confirmation_header' | translate:{ t0: '<strong>' + $ctrl.numberOfSelectedCheckboxes + '</strong>' }"></p>
 
                 <ul>
                     <li data-ng-repeat="account in $ctrl.loadSelectedAccounts() track by $index"
@@ -119,7 +122,7 @@
 
                 <oui-checkbox id="confirmationCheckbox"
                     data-model="$ctrl.confirmationCheckbox"
-                    data-text="{{::i18n.exchange_office_attached_alert_modale_confirmation_checkbox}}">
+                    data-text="{{::'exchange_office_attached_alert_modale_confirmation_checkbox' | translate}}">
                 </oui-checkbox>
             </div>
         </div>

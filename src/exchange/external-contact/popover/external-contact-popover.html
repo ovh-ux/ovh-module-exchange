@@ -1,11 +1,11 @@
 <div data-ng-controller="ExchangeExternalContactPopoverCtrl as ctrl" class="popover-menu">
     <button class="btn btn-link" type="button"
-            data-i18n-static="exchange_tab_EXTERNAL_CONTACTS_table_actions_menu_modify"
+            data-translate="exchange_tab_EXTERNAL_CONTACTS_table_actions_menu_modify"
             data-ng-click="setAction('exchange/external-contact/update/external-contact-update', element)"
             data-ng-disabled="ctrl.getIsDisabled(element)">
     </button>
     <button class="btn btn-link" type="button"
-            data-i18n-static="exchange_tab_EXTERNAL_CONTACTS_table_actions_menu_delete"
+            data-translate="exchange_tab_EXTERNAL_CONTACTS_table_actions_menu_delete"
             data-ng-click="setAction('exchange/external-contact/remove/external-contact-remove', element.externalEmailAddress)"
             data-ng-disabled="ctrl.getIsDisabled(element)">
     </button>

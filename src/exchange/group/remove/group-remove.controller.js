@@ -1,12 +1,12 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeRemoveGroupCtrl", class ExchangeRemoveGroupCtrl {
-        constructor ($scope, Exchange, navigation, translator, messaging) {
+        constructor ($scope, Exchange, navigation, $translate, messaging) {
             this.services = {
                 $scope,
                 Exchange,
                 navigation,
-                translator,
+                $translate,
                 messaging
             };
         }
@@ -24,10 +24,10 @@ angular
             this.services.Exchange
                 .deleteGroup(this.$routerParams.organization, this.$routerParams.productId, this.ml.mailingListName)
                 .then((success) => {
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_tab_GROUPS_delete_group_success"), success);
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_tab_GROUPS_delete_group_success"), success);
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_GROUPS_delete_group_error"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_GROUPS_delete_group_error"), failure);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();

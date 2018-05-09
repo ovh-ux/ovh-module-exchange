@@ -1,15 +1,15 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeOrderAccountCtrl", class ExchangeOrderAccountCtrl {
-        constructor ($scope, Exchange, $window, messaging, translator, navigation, accountTypes) {
+        constructor ($scope, Exchange, $window, messaging, $translate, navigation, exchangeServiceInfrastructure) {
             this.services = {
                 $scope,
                 Exchange,
                 $window,
                 messaging,
-                translator,
+                $translate,
                 navigation,
-                accountTypes
+                exchangeServiceInfrastructure
             };
 
             this.$routerParams = Exchange.getParams();
@@ -22,11 +22,11 @@ angular
             };
 
             this.accountsTypes = [{
-                label: translator.tr("exchange_ACTION_order_accounts_step1_account_type_50G"),
+                label: $translate.instant("exchange_ACTION_order_accounts_step1_account_type_50G"),
                 reference: "exchange_hosted_account",
                 storageQuota: "50"
             }, {
-                label: translator.tr("exchange_ACTION_order_accounts_step1_account_type_300G"),
+                label: $translate.instant("exchange_ACTION_order_accounts_step1_account_type_300G"),
                 reference: "exchange_hosted_account_300g",
                 storageQuota: "300"
             }];
@@ -76,7 +76,7 @@ angular
                     this.previewOrder = data;
                     this.url = data.url;
                 }).catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_order_accounts_step2_error_message"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_order_accounts_step2_error_message"), failure);
                     this.services.navigation.resetAction();
                 });
         }
@@ -93,7 +93,7 @@ angular
                     data.duration = "01";
                     this.ordersList.push(data);
                 }).catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_order_accounts_step1_loading_error"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_order_accounts_step1_loading_error"), failure);
                     this.services.navigation.resetAction();
                 });
 
@@ -105,7 +105,7 @@ angular
                     data.duration = "12";
                     this.ordersList.push(data);
                 }).catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_ACTION_order_accounts_step1_loading_error"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_order_accounts_step1_loading_error"), failure);
                     this.services.navigation.resetAction();
                 });
         }

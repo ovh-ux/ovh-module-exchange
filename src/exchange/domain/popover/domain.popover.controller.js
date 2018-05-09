@@ -1,21 +1,21 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeToolboxDomainsCtrl", class ExchangeToolboxDomainsCtrl {
-        constructor ($scope, Exchange, navigation, translator, messaging, exchangeVersion, exchangeStates, accountTypes) {
+        constructor ($scope, Exchange, navigation, $translate, messaging, exchangeVersion, exchangeStates, exchangeServiceInfrastructure) {
             this.services = {
                 $scope,
                 Exchange,
                 navigation,
-                translator,
+                $translate,
                 messaging,
                 exchangeVersion,
                 exchangeStates,
-                accountTypes
+                exchangeServiceInfrastructure
             };
         }
 
         isReseller2010AuthInvalidMx () {
-            return this.services.accountTypes.isProvider() && this.services.exchangeVersion.isVersion(2010);
+            return this.services.exchangeServiceInfrastructure.isProvider() && this.services.exchangeVersion.isVersion(2010);
         }
 
         isUpdateDisabled (domain) {
@@ -27,6 +27,6 @@ angular
         }
 
         getDeleteTooltip (domain) {
-            return this.isDeleteDisabled(domain) ? this.services.translator.tr("exchange_tab_domain_delete_domain_accounts_warning") : "";
+            return this.isDeleteDisabled(domain) ? this.services.$translate.instant("exchange_tab_domain_delete_domain_accounts_warning") : "";
         }
     });

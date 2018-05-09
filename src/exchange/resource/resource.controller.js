@@ -1,8 +1,8 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeTabResourcesCtrl", class ExchangeTabResourcesCtrl {
-        constructor ($scope, Exchange, ExchangeResources, EXCHANGE_CONFIG, User, navigation, messaging, translator, exchangeStates) {
-            this.services = { $scope, Exchange, ExchangeResources, EXCHANGE_CONFIG, User, navigation, messaging, translator, exchangeStates };
+        constructor ($scope, Exchange, ExchangeResources, EXCHANGE_CONFIG, User, navigation, messaging, $translate, exchangeStates) {
+            this.services = { $scope, Exchange, ExchangeResources, EXCHANGE_CONFIG, User, navigation, messaging, $translate, exchangeStates };
 
             this.$routerParams = Exchange.getParams();
             this.loading = false;
@@ -52,7 +52,7 @@ angular
                     this.resources = resources;
                 })
                 .catch((err) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_RESOURCES_error_message"), err);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_RESOURCES_error_message"), err);
                 })
                 .finally(() => {
                     this.loading = false;

@@ -13,12 +13,11 @@ angular
             });
         }];
 
-        const translator = ["translator", (trans) => trans.load(["exchange"]).then(() => trans)];
-
         const exchangeStates = [{
             "abstract": true,
             name: "app.microsoft.exchange",
-            template: "<div ui-view></div>"
+            template: "<div ui-view></div>",
+            translations: ["exchange"]
         }, {
             name: "app.microsoft.exchange.dedicated",
             url: "/configuration/exchange_dedicated/:organization/:productId?tab",
@@ -30,8 +29,20 @@ angular
                 tab: null
             },
             resolve: {
-                navigationInformations: getNavigationInformations("exchange_dedicated"),
-                translator
+                navigationInformations: getNavigationInformations("exchange_dedicated")
+            }
+        }, {
+            name: "app.microsoft.exchange.dedicatedCluster",
+            url: "/configuration/exchange_dedicatedCluster/:organization/:productId?tab",
+            templateUrl: "exchange/exchange.html",
+            controller: "ExchangeCtrl",
+            controllerAs: "ctrl",
+            reloadOnSearch: false,
+            params: {
+                tab: null
+            },
+            resolve: {
+                navigationInformations: getNavigationInformations("exchange_dedicatedCluster")
             }
         }, {
             name: "app.microsoft.exchange.hosted",
@@ -44,8 +55,7 @@ angular
                 tab: null
             },
             resolve: {
-                navigationInformations: getNavigationInformations("exchange_hosted"),
-                translator
+                navigationInformations: getNavigationInformations("exchange_hosted")
             }
         },
         {
@@ -59,8 +69,7 @@ angular
                 tab: null
             },
             resolve: {
-                navigationInformations: getNavigationInformations("exchange_provider"),
-                translator
+                navigationInformations: getNavigationInformations("exchange_provider")
             }
         },
         {
@@ -71,8 +80,7 @@ angular
             controllerAs: "ctrl",
             reloadOnSearch: false,
             resolve: {
-                navigationInformations: getNavigationInformations("exchange_order"),
-                translator
+                navigationInformations: getNavigationInformations("exchange_order")
             }
         }];
 
@@ -196,8 +204,4 @@ angular
                 }
             }
         }
-    })
-    .run(["translator", (translator) => {
-        "use strict";
-        translator.load(["exchange"]);
-    }]);
+    });

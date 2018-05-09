@@ -1,12 +1,12 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeTabTasksCtrl", class ExchangeTabTasksCtrl {
-        constructor ($scope, Exchange, messaging, translator) {
+        constructor ($scope, Exchange, messaging, $translate) {
             this.services = {
                 $scope,
                 Exchange,
                 messaging,
-                translator
+                $translate
             };
         }
 
@@ -47,7 +47,7 @@ angular
                     };
                 })
                 .catch((error) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_TASKS_error_message"), error);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_TASKS_error_message"), error);
                 });
         }
 
@@ -64,7 +64,7 @@ angular
                     }
                 })
                 .catch((error) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_TASKS_error_message"), error);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_TASKS_error_message"), error);
                 });
         }
     });

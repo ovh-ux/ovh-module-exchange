@@ -1,13 +1,13 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeRemoveAccountCtrl", class ExchangeRemoveAccountCtrl {
-        constructor ($scope, Exchange, navigation, messaging, translator) {
+        constructor ($scope, Exchange, navigation, messaging, $translate) {
             this.services = {
                 $scope,
                 Exchange,
                 navigation,
                 messaging,
-                translator
+                $translate
             };
 
             $scope.submit = () => this.submit();
@@ -20,7 +20,7 @@ angular
         }
 
         getTitle () {
-            return this.removeAccountInsteadOfReset ? this.services.translator.tr("exchange_tab_account_remove_account") : this.services.translator.tr("exchange_tab_account_reset_account");
+            return this.removeAccountInsteadOfReset ? this.services.$translate.instant("exchange_tab_account_remove_account") : this.services.$translate.instant("exchange_tab_account_reset_account");
         }
 
         submit () {
@@ -28,10 +28,10 @@ angular
                 .Exchange
                 .removingAccount(this.$routerParams.organization, this.$routerParams.productId, this.account.primaryEmailAddress)
                 .then((success) => {
-                    this.services.messaging.writeSuccess(this.removeAccountInsteadOfReset ? this.services.translator.tr("exchange_tab_account_remove_success") : this.services.translator.tr("exchange_tab_account_reset_success"), success);
+                    this.services.messaging.writeSuccess(this.removeAccountInsteadOfReset ? this.services.$translate.instant("exchange_tab_account_remove_success") : this.services.$translate.instant("exchange_tab_account_reset_success"), success);
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.removeAccountInsteadOfReset ? this.services.translator.tr("exchange_tab_account_remove_failure") : this.services.translator.tr("exchange_tab_account_reset_failure"), failure);
+                    this.services.messaging.writeError(this.removeAccountInsteadOfReset ? this.services.$translate.instant("exchange_tab_account_remove_failure") : this.services.$translate.instant("exchange_tab_account_reset_failure"), failure);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();

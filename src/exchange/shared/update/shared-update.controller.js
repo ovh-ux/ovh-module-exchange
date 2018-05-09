@@ -1,14 +1,14 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeUpdatePublicFolderCtrl", class ExchangeUpdatePublicFolderCtrl {
-        constructor ($scope, Exchange, ExchangePublicFolders, messaging, navigation, translator) {
+        constructor ($scope, Exchange, ExchangePublicFolders, messaging, navigation, $translate) {
             this.services = {
                 $scope,
                 Exchange,
                 ExchangePublicFolders,
                 messaging,
                 navigation,
-                translator
+                $translate
             };
 
             this.$routerParams = Exchange.getParams();
@@ -35,11 +35,11 @@ angular
                 .retrievingPublicFolderOptions(this.$routerParams.organization, this.$routerParams.productId)
                 .then((data) => {
                     this.publicFoldersOptions = data;
-                    this.quotaUnitTranslation = this.services.translator.tr(`unit_size_${this.publicFoldersOptions.maxQuota.unit}`);
+                    this.quotaUnitTranslation = this.services.$translate.instant(`unit_size_${this.publicFoldersOptions.maxQuota.unit}`);
                     this.publicFoldersOptions.maxQuota.value = this.publicFoldersOptions.maxQuota.value + this.folderToUpdate.quota.value;
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_tab_SHARED_all_error_message"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_tab_SHARED_all_error_message"), failure);
                 })
                 .finally(() => {
                     this.loading = false;
@@ -64,17 +64,17 @@ angular
         }
 
         submitting () {
-            this.services.messaging.writeSuccess(this.services.translator.tr("exchange_dashboard_action_doing"));
+            this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_dashboard_action_doing"));
             this.folderToUpdate.quota = this.folderToUpdate.quota.value;
 
             return this.services
                 .ExchangePublicFolders
                 .updatingPublicFolder(this.$routerParams.organization, this.$routerParams.productId, this.folderToUpdate)
                 .then((success) => {
-                    this.services.messaging.writeSuccess(this.services.translator.tr("exchange_action_SHARED_update_success_message"), success);
+                    this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_action_SHARED_update_success_message"), success);
                 })
                 .catch((failure) => {
-                    this.services.messaging.writeError(this.services.translator.tr("exchange_action_SHARED_update_fail_message"), failure);
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_action_SHARED_update_fail_message"), failure);
                 })
                 .finally(() => {
                     this.services.navigation.resetAction();
