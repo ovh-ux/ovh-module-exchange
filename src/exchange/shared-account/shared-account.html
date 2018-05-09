@@ -69,8 +69,10 @@
                         <tr data-ng-repeat="account in ctrl.accounts.list.results | orderBy:'primaryEmailAddress':false track by $index">
                             <th class="word-break" scope="row"
                                 data-ng-bind="account.primaryEmailDisplayName"></th>
-                            <td class="text-center"
-                                data-ng-bind="account.quota.value + ' ' + ('unit_size_' + account.quota.unit) | translate"></td>
+                            <td class="text-center">
+                                <span data-ng-bind="account.quota.value"></span>
+                                <span>{{ ('unit_size_' + account.quota.unit) | translate }}</span>
+                            </td>
                             <td class="text-center">
                                 <span class="label label-danger"
                                       data-ng-if="account.state === ctrl.stateTaskError"

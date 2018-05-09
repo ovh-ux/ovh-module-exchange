@@ -216,6 +216,8 @@
    <translation id="exchange_tab_ALIAS_GROUP_intro" qtlid="434525">Liste des alias créés pour le groupe <strong>{0}</strong></translation>
    <translation id="exchange_tab_ALIAS_table_empty" qtlid="143954">Vous n'avez pas d'alias pour ce compte</translation>
    <translation id="exchange_tab_ALIAS_GROUP_table_empty" qtlid="178874">Vous n'avez pas d'alias pour ce groupe</translation>
+   <translation id="exchange_tab_ALIAS_state_TASK_ON_DOING" qtlid="26383">En cours</translation>
+   <translation id="exchange_tab_ALIAS_state_TASK_ON_DOING_tooltip" qtlid="143967">Une tâche concernant cet alias est planifiée ou en cours d'exécution</translation>
    <translation id="exchange_tab_ALIAS_add_button" qtlid="143538">Ajouter un alias</translation>
    <translation id="exchange_tab_ALIAS_creation_quota_description" qtlid="433784">Le quota doit être compris entre <strong>{0} {1}</strong> et <strong>{2} {1}</strong>.</translation>
    <translation id="exchange_tab_ALIAS_creation_error_no_local_part" qtlid="433797">Veuillez indiquer une partie locale à l'adresse email (avant l'arobase).</translation>
@@ -492,6 +494,8 @@ Exchange : profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync.
    <translation id="exchange_account_add_field_error_pattern">Veuillez saisir un format valide.</translation>
    <translation id="exchange_account_add_submit_success">La création du compte {0} a été effectuée. Vous pourrez l’utiliser dans quelques minutes.</translation>
    <translation id="exchange_ACTION_add_account_legal_warning" qtlid="209099">Je reconnais qu'OVH procédera à l’exécution immédiate de la prestation à compter de la validation de ma commande et à ce titre je renonce expressément à exercer mon droit de rétractation conformément aux dispositions de l’article L.121-21-8 du code de la consommation.</translation>
+   <translation id="exchange_ACTION_add_account_title" qtlid="143225">Ajouter un compte Exchange</translation>
+   <translation id="exchange_ACTION_add_account_step1_email_label" qtlid="137244">Compte e-mail</translation>
    <translation id="exchange_ACTION_add_account_button" qtlid="21487">Ajouter un compte</translation>
    <translation id="exchange_ACTION_add_account_step1_first_name_label" qtlid="23323">Prénom</translation>
    <translation id="exchange_ACTION_add_account_step1_last_name_label" qtlid="3818">Nom</translation>
