@@ -427,7 +427,7 @@
    <translation id="exchange_ACTION_order_accounts_button" qtlid="139169">Commander des comptes</translation>
    <translation id="exchange_ACTION_order_accounts_title" qtlid="139299">Commander des comptes Exchange</translation>
    <translation id="exchange_ACTION_order_accounts_step1_intro" qtlid="139312">Veuillez choisir le type de paiement puis le nombre de comptes Exchange à commander.</translation>
-<translation id="exchange_ACTION_order_accounts_step1_not_configured_account_message" qtlid="471951">Attention, vous avez au moins un compte non configuré sur cette plateforme.</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_not_configured_account_message" qtlid="471951">Attention, vous avez au moins un compte non configuré sur cette plateforme.</translation>
    <translation id="exchange_ACTION_order_accounts_step1_account_type" qtlid="368050">Type de compte :</translation>
    <translation id="exchange_ACTION_order_accounts_step1_account_type_50G" qtlid="368063">50 Gio</translation>
    <translation id="exchange_ACTION_order_accounts_step1_account_type_300G" qtlid="368076">300 Gio</translation>
@@ -1678,4 +1678,6 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_wizardHostedCreation_ending_dialog" qtlid="450545">Dernière étape</translation>
    <translation id="exchange_wizardHostedCreation_configureDNSZone_manual_dialog_warning" qtlid="5066">Attention</translation>
    <translation id="exchange_wizardHostedCreation_lastDialog_closeButton" qtlid="450558">Finaliser</translation>
+
+   <translation id="exchange_table_manage_entry" qtlid="404395">: gérer</translation>
 </translations>
