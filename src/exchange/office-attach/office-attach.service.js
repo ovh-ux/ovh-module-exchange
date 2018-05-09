@@ -1,14 +1,17 @@
 angular
     .module("Module.exchange.services")
     .service("officeAttach", class OfficeAttach {
-        constructor (Exchange, OvhHttp, ovhUserPref, $q) {
+        constructor (Exchange, OvhHttp, ovhUserPref, $q, constants) {
             this.Exchange = Exchange;
             this.OvhHttp = OvhHttp;
             this.ovhUserPref = ovhUserPref;
             this.$q = $q;
+            this.constants = constants;
         }
 
         retrievingServiceName (serviceName) {
+            if (this.constants.target !== "EU") { return this.$q.when(null); }
+
             return this.OvhHttp
                 .get(`/msServices/${serviceName}`, { rootPath: "apiv6" })
                 .then((service) => service.officeTenantServiceName);

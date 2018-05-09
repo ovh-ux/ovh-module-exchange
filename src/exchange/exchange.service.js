@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.services")
     .service("Exchange", class Exchange {
-        constructor ($cacheFactory, $rootScope, ovhUserPref, Products, $http, $q, OvhHttp, APIExchange, $injector) {
+        constructor ($cacheFactory, $rootScope, ovhUserPref, Products, $http, $q, OvhHttp, APIExchange, $injector, constants) {
             this.services = {
                 $cacheFactory,
                 $rootScope,
@@ -11,7 +11,8 @@ angular
                 $q,
                 OvhHttp,
                 APIExchange,
-                $injector
+                $injector,
+                constants
             };
 
             this.requests = {
@@ -1378,6 +1379,8 @@ angular
         }
 
         getSharepointServiceForExchange (exchange) {
+            if (this.services.constants.target !== "EU") { return this.services.$q.when(null); }
+
             return this.services
                 .OvhHttp
                 .get("/msServices/{serviceName}/sharepoint", {
