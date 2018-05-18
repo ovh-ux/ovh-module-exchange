@@ -455,7 +455,7 @@
 
    <!-- ACCOUNT - ADD -->
    <translation id="exchange_account_add_back_button">Ajout d'un compte</translation>
-   <translation id="exchange_account_add_header">Vous pouvez commander un compte E-mail Pro ou Exchange à ajouter à votre offre Dedicated Exchange. Il sera ajouté à votre facture mensuelle.</translation>
+   <translation id="exchange_account_add_header">Vous pouvez ajouter un compte e-mail à votre offre. Il sera pris en compte dans votre facture mensuelle.</translation>
    <translation id="exchange_account_add_accountType_label">Type de compte</translation>
    <translation id="exchange_account_add_accountType_tooltip">E-mail pro : profitez de 10 Go de stockage, des protocoles POP, IMAP et SMTP.
 Exchange : profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync.
@@ -484,7 +484,7 @@ Exchange : profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync.
    <translation id="exchange_account_add_password_hint_complex_1_3_3">des chiffres entre 0 et 9,</translation>
    <translation id="exchange_account_add_password_hint_complex_1_3_4">des caractères spéciaux.</translation>
    <translation id="exchange_account_add_passwordConfirmation_label">Confirmation</translation>
-   <translation id="exchange_account_add_order_button">Commander</translation>
+   <translation id="exchange_account_add_confirm_button">Ajouter</translation>
    <translation id="exchange_account_add_field_error_required">Veuillez compléter ce champ.</translation>
    <translation id="exchange_account_add_field_error_doesntRespectComplexityRules">Ce champ ne respecte pas les règles de complexité.</translation>
    <translation id="exchange_account_add_field_error_passwordConfirmation">Mots de passe différents.</translation>
