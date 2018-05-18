@@ -18,14 +18,14 @@ angular
 
             this.CAN_DO = {
                 CREATION_METHOD: {
-                    ADDING: () => this.exchangeServiceInfrastructure.isDedicated() || this.exchangeServiceInfrastructure.isDedicatedCluster(),
-                    ORDERING: () => this.exchangeServiceInfrastructure.isHosted() || this.exchangeServiceInfrastructure.isProvider()
+                    ADDING: () => this.exchangeServiceInfrastructure.isDedicated() || this.exchangeServiceInfrastructure.isDedicatedCluster() || (this.exchangeServiceInfrastructure.isProvider() && this.exchangeVersion.is(2010)),
+                    ORDERING: () => this.exchangeServiceInfrastructure.isHosted() || (this.exchangeServiceInfrastructure.isProvider() && !this.exchangeVersion.is(2010))
                 },
                 DESTRUCTION_METHOD: {
-                    DELETING: () => this.exchangeServiceInfrastructure.isDedicated() || this.exchangeServiceInfrastructure.isDedicatedCluster(),
-                    RESETTING: () => this.exchangeServiceInfrastructure.isHosted() || this.exchangeServiceInfrastructure.isProvider()
+                    DELETING: () => this.exchangeServiceInfrastructure.isDedicated() || this.exchangeServiceInfrastructure.isDedicatedCluster() || (this.exchangeServiceInfrastructure.isProvider() && this.exchangeVersion.is(2010)),
+                    RESETTING: () => this.exchangeServiceInfrastructure.isHosted() || (this.exchangeServiceInfrastructure.isProvider() && !this.exchangeVersion.is(2010))
                 },
-                ALIASES: () => this.exchangeServiceInfrastructure.isProvider() && this.exchangeVersion.isIndividual2010(),
+                ALIASES: () => !(this.exchangeServiceInfrastructure.isProvider() && this.exchangeVersion.isIndividual2010()),
                 UPGRADE_TO_300_GB: () => this.exchangeServiceInfrastructure.isHosted() || (this.exchangeServiceInfrastructure.isProvider() && this.exchangeVersion.isAfter(2010))
             };
         }
