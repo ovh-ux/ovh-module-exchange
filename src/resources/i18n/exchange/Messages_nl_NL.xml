@@ -5,10 +5,17 @@
    <translation id="optional_form_field" qtlid="356264">(optioneel)</translation>
    <translation id="exchange_reset_search_value" qtlid="433719">Opnieuw zoeken</translation>
    <translation id="exchange_search_value" qtlid="55493">Zoeken</translation>
+   <translation id="exchange_status_task_planned_or_executing">Tâche planifiée ou en cours d'exécution</translation>
+   <translation id="exchange_common_new_tab">Ouvre le lien dans un nouvel onglet</translation>
+   <translation id="exchange_contractTypes_prepaid">Prépayé</translation>
+   <translation id="exchange_contractTypes_payAsYouGo">Paiement à la consommation</translation>
+   <translation id="exchange_accountCreationMethods_adding">Ajout</translation>
+   <translation id="exchange_accountCreationMethods_ordering">Commande</translation>
 
 <!-- ########################################## -->
 <!-- DASHBOARD -->
    <translation id="exchange_common_error" qtlid="299384">Er is een fout opgetreden: </translation>
+   <translation id="exchange_offer_type_DEDICATED_CLUSTER">Dedicated Exchange</translation>
    <translation id="exchange_offer_type_DEDICATED" qtlid="137218">Private Exchange</translation>
    <translation id="exchange_offer_type_HOSTED" qtlid="137231">Hosted Exchange</translation>
    <translation id="exchange_offer_type_PROVIDER" qtlid="136152">Exchange reseller</translation>
@@ -107,7 +114,7 @@
    <translation id="exchange_tab_INFORMATIONS_go_far" qtlid="276337">Verdergaan</translation>
    <translation id="exchange_tab_INFORMATIONS_infrastructure" qtlid="125552">Infrastructuur</translation>
    <translation id="exchange_tab_INFORMATIONS_version" qtlid="276350">Exchange versie</translation>
-   <translation id="exchange_tab_INFORMATIONS_webmail" qtlid="15473">Webmail</translation>
+   <translation id="exchange_tab_INFORMATIONS_webmail">Webmail :</translation>
    <translation id="exchange_tab_INFORMATIONS_messaging" qtlid="276363">E-mailprogramma</translation>
    <translation id="exchange_tab_INFORMATIONS_order_office" qtlid="276376">Bestel Office 365</translation>
    <translation id="exchange_tab_INFORMATIONS_order_sharepoint" qtlid="319427">Bestel SharePoint</translation>
@@ -127,44 +134,58 @@
    <translation id="exchange_tab_ACCOUNTS_table_alias" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ACCOUNTS_table_group" qtlid="59507">Groep</translation>
    <translation id="exchange_tab_ACCOUNTS_table_outlook" qtlid="24427">Outlook</translation>
-   <translation id="exchange_tab_ACCOUNTS_table_status" qtlid="447625">Status</translation>
+   <translation id="exchange_tab_ACCOUNTS_table_status">Statut</translation>
    <translation id="exchange_tab_ACCOUNTS_table_settings" qtlid="4406">Configuratie</translation>
    <translation id="exchange_tab_ACCOUNTS_type_ALL" qtlid="69173">Alle</translation>
    <translation id="exchange_tab_ACCOUNTS_type_BASIC" qtlid="48986">Basis</translation>
    <translation id="exchange_tab_ACCOUNTS_type_STANDARD" qtlid="48998">Standard</translation>
    <translation id="exchange_tab_ACCOUNTS_type_ENTERPRISE" qtlid="49022">Bedrijf</translation>
+   <translation id="exchange_accounts_types_2010_BASIC">Basic</translation>
+   <translation id="exchange_accounts_types_2010_STANDARD">Standard</translation>
+   <translation id="exchange_accounts_types_2010_ENTERPRISE">Entreprise</translation>
+   <translation id="exchange_accounts_types_dedicatedCluster_BASIC">E-mail Pro</translation>
+   <translation id="exchange_accounts_types_dedicatedCluster_STANDARD">Exchange</translation>
 
-   <translation id="exchange_tab_ACCOUNTS_type_basic" qtlid="48986">Basis</translation>
-   <translation id="exchange_tab_ACCOUNTS_type_standard" qtlid="48998">Standard</translation>
-   <translation id="exchange_tab_ACCOUNTS_type_enterprise" qtlid="49022">Bedrijf</translation>
+   <translation id="exchange_tab_dedicatedCluster_account_type_BASIC">E-Mail Pro</translation>
+   <translation id="exchange_tab_dedicatedCluster_account_type_STANDARD">Exchange</translation>
 
-   <translation id="exchange_tab_ACCOUNTS_outlook_true" qtlid="34776">Ja</translation>
-   <translation id="exchange_tab_ACCOUNTS_outlook_false" qtlid="136308">Zonder</translation>
+   <translation id="exchange_tab_accounts_table_outlook_ALREADY_ORDERED">Commandé</translation>
+   <translation id="exchange_tab_accounts_table_outlook_ALREADY_ACTIVATED">Activé</translation>
+   <translation id="exchange_tab_accounts_table_outlook_TO_ORDER">À commander</translation>
+   <translation id="exchange_tab_accounts_table_outlook_TO_ACTIVATE">À activer</translation>
+
    <translation id="exchange_tab_ACCOUNTS_action_add_exchange" qtlid="139169">Accounts bestellen</translation>
    <translation id="exchange_tab_ACCOUNTS_action_add_extern" qtlid="136334">Een extern contactpersoon toevoegen</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_OK" qtlid="447638">Ok</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_CREATING" qtlid="168185">Het aanmaken</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_DELETING" qtlid="59699">Verwijdering</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_OK">Opérationnel</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_CREATING">Création en cours</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_DELETING">Suppression en cours</translation>
    <translation id="exchange_tab_ACCOUNTS_state_RESETTING" qtlid="447898">Reset</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="171188">Opening wordt uitgevoerd</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="449375">Interne migratie</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_REOPENING">Réactivation en cours</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_INTERNAL_MIGRATION">Migration en cours</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Vervallen</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Schorsing wordt uitgevoerd</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_MIGRATING" qtlid="186713">Migratie wordt uitgevoerd</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_SPAM" qtlid="70409">Spam</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_BLOCKED">Bloqué</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_DOING">Tâche planifiée ou en cours d'exécution</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_ERROR">Tâche en erreur</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_UNKNOWN">Inconnu</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_TO_CONFIGURE">À configurer</translation>
 
-   <translation id="exchange_tab_ACCOUNTS_state_ok" qtlid="447651">Ok</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_creating" qtlid="168185">Het aanmaken</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_deleting" qtlid="59699">Verwijdering</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_reopening" qtlid="171188">Opening wordt uitgevoerd</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_suspended" qtlid="136100">Vervallen</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_suspending" qtlid="171201">Schorsing wordt uitgevoerd</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_edit">Modifier</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_alias">Gérer les alias</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_delegations">Gérer les délégations</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_exportToPST">Exporter au format PST</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_upgradeTo300Gb">Augmenter la capacité à 300 {0}</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_contactSupportForSpam">Débloquer</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_outlook_activate">Activer la licence Outlook</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_outlook_order">Commander une licence Outlook</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_outlook_access">Utiliser la licence Outlook</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_outlook_deactivate">Désactiver la licence Outlook</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_outlook_delete">Supprimer la licence Outlook</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_reset">Réinitialiser</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_delete">Supprimer</translation>
 
-   <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_DOING" qtlid="143863">Een taak is gepland of wordt uitgevoerd</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_ERROR" qtlid="143876">Er is een fout bij een taak opgetreden</translation>
    <translation id="exchange_tab_ACCOUNTS_edit_account_tooltip" qtlid="4406">Configuratie</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_account_tooltip" qtlid="19075">Meer acties</translation>
-   <translation id="exchange_tab_ACCOUNTS_menu_account_no_domain_tooltip" qtlid="148188">U moet een domein toevoegen en wachten totdat deze is gevalideerd voordat u dit account kunt gaan bewerken</translation>
    <translation id="exchange_tab_domain_no_domain_attached" qtlid="271361">Uw Exchange dienst is bijna gereed. U hoeft alleen maar een domein aan uw dienst te koppelen. Als u er geen heeft, <a href="https://www.ovh.com/fr/cgi-bin/newOrder/order.cgi" target="_blank">kunt u hier klikken</a> om er een te kopen. </translation>
    <translation id="exchange_tab_ACCOUNTS_warning" qtlid="108456">Opgelet!</translation>
    <translation id="exchange_tab_ACCOUNTS_partial" qtlid="143889">Sommige accounts konden niet correct geladen worden. Vernieuw de pagina om het probleem op te lossen.</translation>
@@ -191,12 +212,9 @@
    <translation id="exchange_tab_ALIAS_back_button" qtlid="4118">Terug</translation>
    <translation id="exchange_tab_ALIAS_header" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_delete_tooltip" qtlid="178848">Deze alias verwijderen</translation>
-   <translation id="exchange_tab_ALIAS_intro" qtlid="434512">Lijst van aliassen gemaakt voor het <strong>{0}</strong> account</translation>
    <translation id="exchange_tab_ALIAS_GROUP_intro" qtlid="434525">Lijst van aliassen gemaakt voor de <strong>{0}</strong> groep</translation>
    <translation id="exchange_tab_ALIAS_table_empty" qtlid="143954">U heeft geen alias voor deze account</translation>
    <translation id="exchange_tab_ALIAS_GROUP_table_empty" qtlid="178874">U heeft geen alias voor deze groep </translation>
-   <translation id="exchange_tab_ALIAS_state_TASK_ON_DOING" qtlid="26383">Wordt uitgevoerd</translation>
-   <translation id="exchange_tab_ALIAS_state_TASK_ON_DOING_tooltip" qtlid="143967">Een taak voor deze alias is gepland of in uitvoering</translation>
    <translation id="exchange_tab_ALIAS_add_button" qtlid="143538">Een alias toevoegen</translation>
    <translation id="exchange_tab_ALIAS_creation_quota_description" qtlid="433784">De quota moet liggen tussen <strong>{0} {1}</strong> en <strong>{2} {1}</strong>.</translation>
    <translation id="exchange_tab_ALIAS_creation_error_no_local_part" qtlid="433797">Geef alstublieft een persoonlijke accountnaam voor het e-mailadres (vóór het @-teken).</translation>
@@ -220,7 +238,7 @@
    <translation id="exchange_tab_ALIAS_add_alias_error_message" qtlid="143681">Er is een fout opgetreden tijdens het creëren van uw alias.</translation>
    <translation id="exchange_tab_ALIAS_add_no_domains" qtlid="170746">U heeft geen domein toegevoegd of het is nog niet gevalideerd. <br/>U moet eerst een domein toevoegen en wachten tot het is gevalideerd om een alias voor uw Exchange-account aan te maken.</translation>
    <translation id="exchange_tab_ALIAS_domain_loading_failure" qtlid="144045">Er is een fout opgetreden tijdens het laden van uw domeinen.</translation>
-   <translation id="exchange_tab_ALIAS_add_alias_limit_tooltip" qtlid="148201">U heeft de limiet van 1.000 aliassen per Exchange account bereikt.</translation>
+   <translation id="exchange_tab_ALIAS_add_alias_limit_tooltip">Vous avez atteint la limite de {0} alias par compte Exchange.</translation>
 
 <!-- ########################################## -->
 <!-- TASKS -->
@@ -385,7 +403,7 @@
    <translation id="exchange_tab_domain_diagnostic_srv_toolbox_ok" qtlid="137491">Automatische configuratie voltooid</translation>
    <translation id="exchange_tab_domain_error_message" qtlid="144045">Er is een fout opgetreden tijdens het laden van uw domeinen.</translation>
    <translation id="exchange_tab_domain_diagnostic_cname" qtlid="129847">CNAME</translation>
-   <translation id="exchange_tab_domain_status" qtlid="447690">Status</translation>
+   <translation id="exchange_tab_domain_status">Statut</translation>
    <translation id="exchange_tab_domain_task_in_progress" qtlid="2690">De taak wordt uitgevoerd</translation>
    <translation id="exchange_tab_domain_validation" qtlid="33802">Validatie</translation>
    <translation id="exchange_tab_domain_validation_doing" qtlid="136646">Validatie van het domein wordt uitgevoerd</translation>
@@ -406,6 +424,7 @@
    <translation id="exchange_ACTION_order_accounts_button" qtlid="139169">Accounts bestellen</translation>
    <translation id="exchange_ACTION_order_accounts_title" qtlid="139299">Exchange accounts bestellen</translation>
    <translation id="exchange_ACTION_order_accounts_step1_intro" qtlid="139312">Kies een betalingsmethode en het aantal Exchange accounts, dat u wilt bestellen.</translation>
+<translation id="exchange_ACTION_order_accounts_step1_not_configured_account_message">Attention, vous avez au moins un compte non configuré sur cette plateforme.</translation>
    <translation id="exchange_ACTION_order_accounts_step1_account_type" qtlid="368050">Account type: </translation>
    <translation id="exchange_ACTION_order_accounts_step1_account_type_50G" qtlid="368063">50 GiB</translation>
    <translation id="exchange_ACTION_order_accounts_step1_account_type_300G" qtlid="368076">300 GiB</translation>
@@ -433,50 +452,68 @@
    <translation id="exchange_ACTION_order_accounts_step3_continue" qtlid="169537">Klik hieronder op "Betalen", om uw bestelling te bevestigen.</translation>
    <translation id="exchange_ACTION_order_accounts_step3_explication" qtlid="139481">Hou er rekening mee dat het ongeveer 10 minuten kan duren, na de aanvaarding van uw betaling, voordat het account wordt aangemaakt.</translation>
    <translation id="exchange_ACTION_order_accounts_step3_explication2" qtlid="144175">Een nieuwe tab wordt geopend en u wordt automatisch doorgestuurd naar de betalingsinterface van OVH.</translation>
+
+<!-- ACCOUNT - ADD -->
+   <translation id="exchange_account_add_back_button">Ajout d'un compte</translation>
+   <translation id="exchange_account_add_header">Vous pouvez ajouter un compte e-mail à votre offre. Il sera pris en compte dans votre facture mensuelle.</translation>
+   <translation id="exchange_account_add_accountType_label">Type de compte</translation>
+<translation id="exchange_account_add_accountType_tooltip">E-mail pro&#160;: profitez de 10 Go de stockage, des protocoles POP, IMAP et SMTP.
+Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync.
+</translation>
+   <translation id="exchange_account_add_emailAddress_label">Adresse e-mail</translation>
+<translation id="exchange_account_add_emailAddress_hint">La partie locale de votre adresse e-mail (le texte situé avant le «&#160;@&#160;») doit respecter ces indications&#160;:<ul>
+<li>elle doit débuter et se terminer par une lettre ou un chiffre&#160;;</li>
+<li>les caractères spéciaux&#160;autorisés sont «&#160;.&#160;», «&#160;+&#160;», «&#160;- » et «&#160;_&#160;» ;</li>
+<li>il est impossible de mettre côte à côte des caractères spéciaux.</li>
+</ul></translation>
+   <translation id="exchange_account_add_emailAddress_error_emailAddressIsAlreadyTaken">Cette adresse e-mail existe déjà.</translation>
+   <translation id="exchange_account_add_samAccountName_label">Nom de compte Exchange 2010 (optionnel)</translation>
+   <translation id="exchange_account_add_firstName_label">Prénom (optionnel)</translation>
+   <translation id="exchange_account_add_lastName_label">Nom (optionnel)</translation>
+   <translation id="exchange_account_add_displayName_label">Nom à afficher (optionnel)</translation>
+   <translation id="exchange_account_add_password_label">Mot de passe</translation>
+   <translation id="exchange_account_add_password_button_show">Montrer le mot de passe</translation>
+   <translation id="exchange_account_add_password_button_hide">Cacher le mot de passe</translation>
+   <translation id="exchange_account_add_password_hint_simple">Ce champ doit avoir une longueur d'au moins {0} caractères.</translation>
+   <translation id="exchange_account_add_password_hint_complex_1">Pour des raisons de sécurité, ce champ doit respecter ces critères :</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_1">ne pas contenir le nom à afficher ou le nom de compte Exchange 2010 (sans respect de la casse) ;</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_2">doit comporter au moins entre {0} caractères ;</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_3">doit comporter les éléments de trois des quatre catégories suivantes :</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_3_1">des lettres minuscules,</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_3_2">des lettres majuscules,</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_3_3">des chiffres entre 0 et 9,</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_3_4">des caractères spéciaux.</translation>
+   <translation id="exchange_account_add_passwordConfirmation_label">Confirmation</translation>
+   <translation id="exchange_account_add_confirm_button">Ajouter</translation>
+   <translation id="exchange_account_add_field_error_required">Veuillez compléter ce champ.</translation>
+   <translation id="exchange_account_add_field_error_doesntRespectComplexityRules">Ce champ ne respecte pas les règles de complexité.</translation>
+   <translation id="exchange_account_add_field_error_passwordConfirmation">Mots de passe différents.</translation>
+   <translation id="exchange_account_add_field_error_pattern">Veuillez saisir un format valide.</translation>
+   <translation id="exchange_account_add_submit_success">La création du compte {0} a été effectuée. Vous pourrez l’utiliser dans quelques minutes.</translation>
    <translation id="exchange_ACTION_add_account_legal_warning" qtlid="209099">Ik erken dat OVH overgaat tot onmiddellijke uitvoering van de dienst, na de validatie van mijn bestelling, en derhalve bevestig ik dat ik uitdrukkelijk afstand doe van mijn herroepingsrecht.</translation>
    <translation id="exchange_ACTION_add_account_button" qtlid="21487">Een account toevoegen</translation>
-   <translation id="exchange_ACTION_add_account_title" qtlid="143225">Een Exchange account toevoegen</translation>
-   <translation id="exchange_ACTION_add_account_step1_email_label" qtlid="137244">E-mailaccount</translation>
    <translation id="exchange_ACTION_add_account_step1_first_name_label" qtlid="23323">Voornaam</translation>
    <translation id="exchange_ACTION_add_account_step1_last_name_label" qtlid="3818">Naam</translation>
    <translation id="exchange_ACTION_add_account_step1_display_name_label" qtlid="23515">Weergavenaam</translation>
-   <translation id="exchange_ACTION_add_account_step1_password_label" qtlid="2270">Wachtwoord</translation>
-   <translation id="exchange_ACTION_add_account_step1_password_confirmation_label" qtlid="9983">Bevestiging</translation>
-   <translation id="exchange_ACTION_add_account_step1_password_tooltip" qtlid="178809">Minimaal 8 alfanumerieke tekens, cijfers en speciale tekens.</translation>
-   <translation id="exchange_ACTION_add_account_step1_outlook_label" qtlid="136724">Outlook licentie</translation>
-   <translation id="exchange_ACTION_add_account_step1_security_label" qtlid="136750">Beveiligingsopties</translation>
-   <translation id="exchange_ACTION_add_account_step1_GAL_label" qtlid="191954">Het adres in Outlook verbergen</translation>
-   <translation id="exchange_ACTION_add_account_step1_option_fail" qtlid="137621">Er is een fout opgetreden tijdens het laden van de exchange account opties.</translation>
-   <translation id="exchange_ACTION_add_account_step1_mandatory_fields" qtlid="137634">Verplichte velden</translation>
    <translation id="exchange_ACTION_add_account_step2_confirmation_intro" qtlid="136841">Uw account:</translation>
    <translation id="exchange_ACTION_add_account_step2_email_label" qtlid="137244">E-mailaccount</translation>
    <translation id="exchange_ACTION_add_account_step2_first_name_label" qtlid="23323">Voornaam</translation>
    <translation id="exchange_ACTION_add_account_step2_last_name_label" qtlid="3818">Naam</translation>
    <translation id="exchange_ACTION_add_account_step2_display_name_label" qtlid="23515">Weergavenaam</translation>
-   <translation id="exchange_ACTION_add_account_step2_password_label" qtlid="2270">Wachtwoord</translation>
-   <translation id="exchange_ACTION_add_account_step2_password_confirmation_label" qtlid="9983">Bevestiging</translation>
-   <translation id="exchange_ACTION_add_account_step2_type_label" qtlid="48938">Type account</translation>
-   <translation id="exchange_ACTION_add_account_step2_outlook_label" qtlid="136724">Outlook licentie</translation>
-   <translation id="exchange_ACTION_add_account_step2_GAL_label" qtlid="191954">Het adres in Outlook verbergen</translation>
-   <translation id="exchange_ACTION_add_account_security_NONE" qtlid="8674">Geen</translation>
-   <translation id="exchange_ACTION_add_account_security_VADERETRO" qtlid="324821">Vade Secure bescherming</translation>
    <translation id="exchange_ACTION_add_account_GAL_true" qtlid="34776">Ja</translation>
    <translation id="exchange_ACTION_add_account_GAL_false" qtlid="34788">Nee</translation>
    <translation id="exchange_ACTION_add_account_outlook_true" qtlid="34776">Ja</translation>
    <translation id="exchange_ACTION_add_account_outlook_false" qtlid="136308">Zonder</translation>
-   <translation id="exchange_ACTION_add_account_helpwizard_title" qtlid="136854">Het aanmaken van een Exchange account</translation>
-   <translation id="exchange_ACTION_add_account_helpwizard_password_title" qtlid="2270">Wachtwoord</translation>
-   <translation id="exchange_ACTION_add_account_helpwizard_password" qtlid="171227">De wachtwoorden moeten voldoen aan de volgende eisen:<br/><br/>- Deze mogen niet de gehele of gedeeltelijke accountnaam van de gebruiker bevatten<br/>- Een lengte van minstens 8 tekens<br/>- Bevat tekens uit drie van de volgende vier categorieën:<br/><ul><li>Hoofdletters van het alfabet (A tot Z)<br/></li><li>Kleine letters van het alfabet (a tot z)<br/></li><li>Cijfers (0 tot 9)<br/></li><li>Niet-alfabetische tekens (bijvoorbeeld: !, $, #, %)<br/></li></ul></translation>
-   <translation id="exchange_ACTION_add_account_helpwizard_password_simple" qtlid="195139">De wachtwoorden moeten een lengte hebben van ten minste {0} tekens </translation>
    <translation id="exchange_ACTION_add_no_domains" qtlid="170798">U heeft nog geen domein toegevoegd of het is nog niet gevalideerd. <br/>U moet eerst een domein toevoegen en wachten tot het wordt gevalideerd om een Exchange account te creëren.</translation>
    <translation id="exchange_ACTION_add_account_option_fail" qtlid="144045">Er is een fout opgetreden tijdens het laden van uw domeinen.</translation>
-   <translation id="exchange_ACTION_add_account_success_message" qtlid="139507">Het account wordt aangemaakt</translation>
+   <translation id="exchange_ACTION_add_account_fetchingAccountCreationOptions_error">Une erreur est survenue lors de la récupération des options de création d'un compte Exchange.</translation>
    <translation id="exchange_ACTION_add_account_error_message" qtlid="136828">Er is een fout opgetreden tijdens het aanmaken van de Exchange account.</translation>
    <translation id="exchange_ACTION_update_account_step1_email_label" qtlid="137244">E-mailaccount</translation>
    <translation id="exchange_ACTION_update_account_step1_type_label" qtlid="191057">Account type</translation>
    <translation id="exchange_ACTION_update_account_step1_type_STANDARD" qtlid="48998">Standard</translation>
    <translation id="exchange_ACTION_update_account_step1_type_BASIC" qtlid="48986">Basis</translation>
    <translation id="exchange_ACTION_update_account_step1_type_ENTERPRISE" qtlid="49022">Bedrijf</translation>
+   <translation id="exchange_ACTION_update_account_step1_type_cant_change">Le type de compte ne peut être changé tant qu'une licence Outlook est associée à ce compte.</translation>
    <translation id="exchange_ACTION_update_account_step1_first_name_label" qtlid="23323">Voornaam</translation>
    <translation id="exchange_ACTION_update_account_step1_last_name_label" qtlid="3818">Naam</translation>
    <translation id="exchange_ACTION_update_account_step1_display_name_label" qtlid="23515">Weergavenaam</translation>
@@ -496,7 +533,7 @@
    <translation id="exchange_ACTION_update_account_step1_security_label" qtlid="136750">Beveiligingsopties</translation>
    <translation id="exchange_ACTION_update_account_step1_GAL_label" qtlid="191980">Het adres in het adresboek verbergen</translation>
    <translation id="exchange_ACTION_update_account_step1_exchange_guid_label" qtlid="174633">Exchange GUID</translation>
-   <translation id="exchange_ACTION_update_account_step1_exchange_SAMA_label" qtlid="201445">Login Exchange 2010</translation>
+   <translation id="exchange_ACTION_update_account_step1_exchange_SAMA_label">Nom de compte Exchange 2010</translation>
    <translation id="exchange_ACTION_update_account_step1_mandatory_fields" qtlid="137634">Verplichte velden</translation>
    <translation id="exchange_ACTION_update_account_step2_confirmation_intro" qtlid="136841">Uw account:</translation>
    <translation id="exchange_ACTION_update_account_step2_email_label" qtlid="137244">E-mailaccount</translation>
@@ -552,7 +589,7 @@
    <translation id="exchange_tab_domain_add_step1_order_domain_option" qtlid="136997">Een domeinnaam bestellen</translation>
    <translation id="exchange_tab_domain_add_step1_domain_none" qtlid="434538">Geen resultaten gevonden</translation>
 
-   <translation id="exchange_tab_domain_add_step3_cover_guide" qtlid="139572">Geen resultaat gevonden</translation>
+   <translation id="exchange_tab_domain_add_step3_cover_guide" qtlid="139572">Preview video-handleiding </translation>
 
    <translation id="exchange_tab_domain_add_step1_main_domain" qtlid="191070">Hoofddomein van een organisatie</translation>
    <translation id="exchange_tab_domain_add_step1_main_domain_tooltip" qtlid="191083">Hoofddomein van de organisatie</translation>
@@ -647,7 +684,7 @@
    <translation id="exchange_tab_DISCLAIMER_table_empty" qtlid="152258">U heeft geen signature.</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_content" qtlid="152271">Inhoud</translation>
    <translation id="exchange_tab_DISCLAIMER_associated_domains" qtlid="133110">Bijbehorend domein</translation>
-   <translation id="exchange_tab_DISCLAIMER_state_header" qtlid="447794">Status</translation>
+   <translation id="exchange_tab_DISCLAIMER_state_header">Statut</translation>
    <translation id="exchange_tab_DISCLAIMER_state_doing_tooltip" qtlid="143863">Een taak is gepland of wordt uitgevoerd</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_outside_only" qtlid="152284">Slechts voor externe verzendingen</translation>
    <translation id="exchange_tab_DISCLAIMER_disclaimer_outside_only_tooltip" qtlid="152297">Signature die slechts gebruikt wordt voor verzendingen naar buiten</translation>
@@ -687,7 +724,7 @@
    <translation id="exchange_ACTION_add_disclaimer_option_OtherPhoneNumber" qtlid="152479">Telefoon 2</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_PagerNumber" qtlid="152492">Pagernummer</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_PhoneNumber" qtlid="152505">Telefoonnummer</translation>
-   <translation id="exchange_ACTION_add_disclaimer_option_State" qtlid="447807">Status</translation>
+   <translation id="exchange_ACTION_add_disclaimer_option_State">Région</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Street" qtlid="152518">Straat</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Title" qtlid="16469">Titel</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_UserLogonName" qtlid="46792">Gebruikersnaam</translation>
@@ -742,7 +779,7 @@
    <translation id="exchange_tab_RESOURCES_table_capacity" qtlid="4334">Capaciteit</translation>
    <translation id="exchange_tab_RESOURCES_table_allow_conflicts" qtlid="156407">Conflict geautoriseerd</translation>
    <translation id="exchange_tab_RESOURCES_table_email" qtlid="69509">E-mail</translation>
-   <translation id="exchange_tab_RESOURCES_table_state" qtlid="447820">Status</translation>
+   <translation id="exchange_tab_RESOURCES_table_state">Statut</translation>
    <translation id="exchange_tab_RESOURCES_table_state_task" qtlid="156420">Taak wordt uitgevoerd</translation>
    <translation id="exchange_tab_RESOURCES_action_add_resource_account" qtlid="63710">Voeg een resource account toe</translation>
    <translation id="exchange_tab_RESOURCES_type_EQUIPMENT" qtlid="82063">Apparatuur</translation>
@@ -873,7 +910,7 @@
    <translation id="exchange_tab_GROUPS_all_table_address" qtlid="11315">E-mailadres</translation>
    <translation id="exchange_tab_GROUPS_all_table_manager" qtlid="81487">Beheerders</translation>
    <translation id="exchange_tab_GROUPS_all_table_user" qtlid="32206">Contacten</translation>
-   <translation id="exchange_tab_GROUPS_all_table_status" qtlid="447833">Status</translation>
+   <translation id="exchange_tab_GROUPS_all_table_status">Statut</translation>
    <translation id="exchange_tab_GROUPS_all_table_empty" qtlid="150346">U heeft geen groepen</translation>
    <translation id="exchange_tab_GROUPS_all_error_message" qtlid="150359">Er is een fout opgetreden tijdens het uploaden van uw groepenlijst.</translation>
    <translation id="exchange_tab_GROUPS_all_add_ml_button" qtlid="150372">Een contactgroep creëren</translation>
@@ -1000,13 +1037,22 @@
    <translation id="exchange_ACTION_add_outlook_order_step2_explication2" qtlid="167886">Er wordt een nieuwe tab geopend en u wordt automatisch doorgestuurd naar OVH's verlengingsscherm.</translation>
    <translation id="exchange_ACTION_activate_outlook_title" qtlid="397416">Activeer de Outlook licentie</translation>
    <translation id="exchange_ACTION_activate_outlook_intro_label" qtlid="397429">Wilt u de Outlook licentie activeren op uw Exchange account? </translation>
-   <translation id="exchange_ACTION_remove_outlook_intro_label" qtlid="397442">Wilt u uw Outlook licentie verwijderen?</translation>
-   <translation id="exchange_ACTION_remove_outlook_title" qtlid="397377">Outlook licentie verwijderen</translation>
-   <translation id="exchange_ACTION_remove_outlook_intro_label" qtlid="397442">Wilt u uw Outlook licentie verwijderen?</translation>
-   <translation id="exchange_ACTION_remove_outlook_note_label" qtlid="397455">Let op, de Outlook licentie zal worden verwijderd op de vervaldatum. </translation>
-   <translation id="exchange_ACTION_remove_outlook_cancel_title" qtlid="397468">Verwijdering van de Outlook licentie annuleren</translation>
-   <translation id="exchange_ACTION_remove_outlook_cancel_intro_label" qtlid="397481">Weet u zeker dat u de verwijdering van de Outlook licentie wilt annuleren?</translation>
-   <translation id="exchange_ACTION_remove_outlook_cancel_note_label" qtlid="397494">De Outlook licentie zal niet worden verwijderd op de vervaldatum.</translation>
+
+   <translation id="exchange_accounts_fetchOfficeAttachError_error">Une erreur est survenue lors de la récupération des préférences liées à Office Attach</translation>
+   <translation id="exchange_accounts_fetchAccountCreationOptions_error">Une erreur est survenue lors de la récupération des options de créations de comptes</translation>
+   <translation id="exchange_accounts_fetchAccounts_error">Une erreur est survenue lors de la récupération des comptes</translation>
+
+   <translation id="exchange_accounts_outlook_deactivate_title">Désactiver la licence Outlook</translation>
+   <translation id="exchange_accounts_outlook_deactivate_intro">Souhaitez-vous désactiver votre licence Outlook ?</translation>
+   <translation id="exchange_accounts_outlook_deactivate_success">La désaction du compte Outlook a été effectuée avec succès.</translation>
+   <translation id="exchange_accounts_outlook_deactivate_error">La désaction du compte Outlook a rencontré une erreur.</translation>
+
+   <translation id="exchange_accounts_outlook_delete_title">Supprimer la licence Outlook</translation>
+   <translation id="exchange_accounts_outlook_delete_intro">Souhaitez-vous supprimer votre licence Outlook ?</translation>
+   <translation id="exchange_accounts_outlook_delete_note">Veuillez prendre note que la suppression de la licence Outlook sera effective à sa date d'expiration.</translation>
+   <translation id="exchange_accounts_outlook_delete_success">La suppression du compte Outlook a été effectuée avec succès. Elle sera effective à sa date d'expiration.</translation>
+   <translation id="exchange_accounts_outlook_delete_error">La suppression du compte Outlook a rencontré une erreur.</translation>
+
    <translation id="exchange_ACTION_display_outlook_title" qtlid="136724">Outlook licentie</translation>
    <translation id="exchange_ACTION_display_outlook_step1_wait_label" qtlid="170941">Momenteel is een Outlook download-link actief. Wacht svp totdat deze klaar is (maximaal 5 minuten), voordat u een nieuwe licentie-key genereert.</translation>
    <translation id="exchange_ACTION_display_outlook_step1_intro_label" qtlid="156927">Selecteer svp het type Outlooklicentie dat u wilt gaan gebruiken:</translation>
@@ -1072,7 +1118,7 @@
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_externalEmailAddress" qtlid="30430">Adres</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_displayName" qtlid="80922">Weergavenaam</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_creationDate" qtlid="4358">Gemaakt op</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state" qtlid="447846">Status</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state">Statut</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_CREATING" qtlid="26227">Wordt gecreëerd</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_DELETING" qtlid="133929">Wordt verwijderd</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_REOPENING" qtlid="171279">Wordt heropend</translation>
@@ -1164,8 +1210,8 @@
    <translation id="exchange_ACTION_configure_services_label_minPasswordLength" qtlid="174828">Minimale lengte van het wachtwoord</translation>
    <translation id="exchange_ACTION_configure_services_label_complexityEnabled" qtlid="178003">Complexiteitsvereisten</translation>
    <translation id="exchange_ACTION_configure_services_label_incoming_messages" qtlid="81871">Inkomende berichten</translation>
-   <translation id="exchange_ACTION_configure_services_label_spf" qtlid="402399">SPF bescherming activeren</translation>
-   <translation id="exchange_ACTION_configure_services_label_dkim" qtlid="402412">DKIM signature activeren</translation>
+   <translation id="exchange_ACTION_configure_services_label_spf">Activer la vérification de la protection SPF</translation>
+   <translation id="exchange_ACTION_configure_services_label_dkim">Activer la vérification de la signature DKIM</translation>
    <translation id="exchange_ACTION_configure_services_label_spam" qtlid="402425">SPAM e-mail</translation>
    <translation id="exchange_ACTION_configure_services_label_tag_spam" qtlid="402438">Spam e-mail identificeren</translation>
    <translation id="exchange_ACTION_configure_services_label_putinjunk" qtlid="402451">Verplaats SPAM e-mail naar junk map. </translation>
@@ -1343,9 +1389,7 @@
    <translation id="exchange_action_license_history_units" qtlid="113658">Licenties </translation>
    <translation id="exchange_action_license_history_date" qtlid="66308">Datum:</translation>
    <translation id="exchange_action_license_history_type_outlook" qtlid="193111">Outlook licenties </translation>
-   <translation id="exchange_action_license_history_type_standard" qtlid="193124">Standard licenties </translation>
-   <translation id="exchange_action_license_history_type_enterprise" qtlid="193137">Enterprise licenties </translation>
-   <translation id="exchange_action_license_history_type_basic" qtlid="193150">Basic licenties </translation>
+   <translation id="exchange_action_license_history_label">Licences {0}</translation>
    <translation id="exchange_action_license_history_period_LASTMONTH" qtlid="169680">De vorige maand</translation>
    <translation id="exchange_action_license_history_period_LAST3MONTHS" qtlid="193163">De laatste 3 maanden</translation>
    <translation id="exchange_action_license_history_period_LASTWEEK" qtlid="169693">De laatste 7 dagen</translation>
@@ -1427,7 +1471,7 @@
    <translation id="exchange_action_SHARED_permissions_delete_error" qtlid="202056">Er is een fout opgetreden tijdens het verwijderen van de data die u heeft gedeeld.</translation>
 
    <translation id="exchange_action_SHARED_permissions_update_title" qtlid="202108">Instellen van toegangsrechten</translation>
-   <translation id="exchange_action_SHARED_permissions_update_intro" qtlid="209190">Met een toegangsrecht kunnen andere Exchange<sup>1</sup> accounts bepaalde rechten hebben in het delen van data {0}</translation>
+   <translation id="exchange_action_SHARED_permissions_update_intro" qtlid="209190">Met een toegangsrecht kunnen andere Exchange<sup>1</sup>-accounts bepaalde rechten hebben in het delen van data {0}</translation>
    <translation id="exchange_action_SHARED_permissions_update_legend" qtlid="209203">De "Basic" Exchange accounts worden niet weergegeven, omdat deze niet in aanmerking komen voor toegangsrechten tot gedeelde mappen.</translation>
    <translation id="exchange_action_SHARED_permissions_update_resume_intro" qtlid="202147">Overzicht van de wijzigingen op de toegangsrechten voor de gedeelde data {0}:</translation>
    <translation id="exchange_action_SHARED_permissions_update_success_message" qtlid="202160">De toegangsrechten voor de gedeelde data <span class="bold">{0}</span> worden gewijzigd.</translation>
@@ -1555,7 +1599,7 @@ Deze procedure kan tot een paar uur duren en gaat van start zodra de bestelling 
    <translation id="exchange_wizardHostedCreation_addDomainName_retrieval_error" qtlid="449947">Er is een fout opgetreden bij het laden van uw domeinlijst.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_error" qtlid="449960">Er is een fout opgetreden bij het maken van uw server.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyNonAuthoritativeEmailPro" qtlid="449973">Omdat uw domein al is gekoppeld aan een OVH Professional e-maildienst, hebben we de beste configuratieoptie voor uw service geselecteerd.</translation>
-   <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAuthoritativeEmailPro">Votre domaine est déjà associé à un service E-mail Pro OVH en mode autoritatif. Pour pouvoir continuer la configuration, veuillez paramétrer ce domaine en mode non-autoritatif pour le service E-mail Pro OVH associé.</translation>
+   <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAuthoritativeEmailPro" qtlid="454002">Uw domein is al gekoppeld aan een OVH Email Pro-dienst in de gezaghebbende modus. Als u wilt doorgaan met het bewerken van de configuratie, moet u het domein in de niet-gezaghebbende modus zetten voor de bijbehorende Email Pro-dienst.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAssociated_error" qtlid="449986">Het <strong>{0}</strong> domein is al gekoppeld aan een Exchange- of SharePoint-dienst. Koppel dit los van de dienst waaraan het momenteel is gekoppeld voordat u het aan deze dienst koppelt.</translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_cancelOperation_button" qtlid="449999">Installatieproces beëindigen </translation>
    <translation id="exchange_wizardHostedCreation_addDomainName_cancelOperation_details" qtlid="450012">Als u wilt teruggaan naar het configureren van uw dienst, klikt u op het tabblad 'Gekoppelde domeinen' en klikt u vervolgens op de knop 'Domein toevoegen'.</translation>
@@ -1565,7 +1609,7 @@ Deze procedure kan tot een paar uur duren en gaat van start zodra de bestelling 
    <translation id="exchange_wizardHostedCreation_emailCreation_introduction_2" qtlid="450051">Als u meer accounts nodig hebt, kunt u deze in een later stadium bestellen in het gedeelte <strong>E-mailaccounts</strong> van uw Hosted Exchange-dienst.</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_header_email" qtlid="11315">E-mailadres</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_header_displayName" qtlid="23515">Weergavenaam</translation>
-   <translation id="exchange_wizardHostedCreation_emailCreation_header_state" qtlid="8230">Status</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_header_state">Statut</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_operationInProgress" qtlid="450064">U kunt uw e-mailaccounts aanpassen zodra de bewerkingen zijn voltooid.</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_personnalizeButton" qtlid="450077">Personaliseren van een account</translation>
 
