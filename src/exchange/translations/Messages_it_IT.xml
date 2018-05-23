@@ -495,6 +495,7 @@
    <translation id="exchange_account_add_field_error_pattern" qtlid="472385">Inserisci un formato valido.</translation>
    <translation id="exchange_account_add_submit_success" qtlid="486217">La création du compte {0} a été effectuée. Vous pourrez l’utiliser dans quelques minutes.</translation>
    <translation id="exchange_ACTION_add_account_legal_warning" qtlid="209099">Riconosco che OVH procederà all'esecuzione immediata della prestazione a contare dalla conferma del mio ordine e a questo titolo rinuncio espressamente a esercitare il mio diritto di recesso, conformemente alle disposizione dell'articolo L.121-21-8 del "Code de la Consommation" (codice del consumo francese).</translation>
+   <translation id="exchange_account_add_confirm_button" qtlid="37923">Aggiungi</translation>
    <translation id="exchange_ACTION_add_account_title" qtlid="143225">Aggiungi un account Exchange</translation>
    <translation id="exchange_ACTION_add_account_step1_email_label" qtlid="137244">Account e-mail</translation>
    <translation id="exchange_ACTION_add_account_button" qtlid="21487">Aggiungi un account</translation>

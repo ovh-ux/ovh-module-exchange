@@ -458,7 +458,7 @@
 
 <!-- ACCOUNT - ADD -->
    <translation id="exchange_account_add_back_button" qtlid="485905">Ajout d'un compte</translation>
-   <translation id="exchange_account_add_header" qtlid="485918">Vous pouvez commander un compte E-mail Pro ou Exchange à ajouter à votre offre Dedicated Exchange. Il sera ajouté à votre facture mensuelle.</translation>
+   <translation id="exchange_account_add_header" qtlid="485918">Vous pouvez ajouter un compte e-mail à votre offre. Il sera pris en compte dans votre facture mensuelle.</translation>
    <translation id="exchange_account_add_accountType_label" qtlid="48938">Type de compte</translation>
 <translation id="exchange_account_add_accountType_tooltip" qtlid="485931">E-mail pro&#160;: profitez de 10 Go de stockage, des protocoles POP, IMAP et SMTP. Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync.
 </translation>
@@ -493,6 +493,7 @@
    <translation id="exchange_account_add_field_error_pattern" qtlid="472385">Veuillez saisir un format valide.</translation>
    <translation id="exchange_account_add_submit_success" qtlid="486217">La création du compte {0} a été effectuée. Vous pourrez l’utiliser dans quelques minutes.</translation>
    <translation id="exchange_ACTION_add_account_legal_warning" qtlid="209099">Je reconnais qu'OVH procédera à l’exécution immédiate de la prestation à compter de la validation de ma commande et à ce titre je renonce expressément à exercer mon droit de rétractation conformément aux dispositions de l’article L.121-21-8 du code de la consommation.</translation>
+   <translation id="exchange_account_add_confirm_button" qtlid="37923">Ajouter</translation>
    <translation id="exchange_ACTION_add_account_title" qtlid="143225">Ajouter un compte Exchange</translation>
    <translation id="exchange_ACTION_add_account_step1_email_label" qtlid="137244">Compte courriel</translation>
    <translation id="exchange_ACTION_add_account_button" qtlid="21487">Ajouter un compte</translation>

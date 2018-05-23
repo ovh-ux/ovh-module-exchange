@@ -90,7 +90,7 @@
 
 <!-- ########################################## -->
 <!-- TABS -->
-   <translation id="exchange_tab_INFORMATION" qtlid="27115"></translation>
+   <translation id="exchange_tab_INFORMATION" qtlid="27115">Informações gerais</translation>
    <translation id="exchange_tab_DOMAIN" qtlid="276311">Domínios associados</translation>
    <translation id="exchange_tab_ACCOUNT" qtlid="74273">Contas de e-mail</translation>
    <translation id="exchange_tab_SHARED_ACCOUNT" qtlid="215195">Contas partilhadas</translation>
@@ -165,7 +165,7 @@
    <translation id="exchange_tab_ACCOUNTS_state_INTERNAL_MIGRATION" qtlid="186713">Migração em curso</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Suspenso</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Suspensão em curso</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_BLOCKED" qtlid="108901"></translation>
+   <translation id="exchange_tab_ACCOUNTS_state_BLOCKED" qtlid="108901">Bloqueada</translation>
    <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_DOING" qtlid="485632">Tâche planifiée ou en cours d'exécution</translation>
    <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_ERROR" qtlid="485788">Tâche en erreur</translation>
    <translation id="exchange_tab_ACCOUNTS_state_UNKNOWN" qtlid="77142">Desconhecido</translation>
@@ -176,7 +176,7 @@
    <translation id="exchange_tab_ACCOUNTS_menu_delegations" qtlid="288782">Gerir as delegações</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_exportToPST" qtlid="485814">Exporter au format PST</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_upgradeTo300Gb" qtlid="485827">Augmenter la capacité à 300 {0}</translation>
-   <translation id="exchange_tab_ACCOUNTS_menu_contactSupportForSpam" qtlid="61824"></translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_contactSupportForSpam" qtlid="61824">Desbloquear</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_outlook_activate" qtlid="397416">Ativar a licença Outlook</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_outlook_order" qtlid="485840">Commander une licence Outlook</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_outlook_access" qtlid="485853">Utiliser la licence Outlook</translation>
@@ -376,7 +376,7 @@
    <translation id="exchange_tab_domain_table_empty_search" qtlid="150034">Não possui domínios que correspondam ao termo procurado</translation>
    <translation id="exchange_tab_domain_search" qtlid="136633">Procurar um domínio</translation>
    <translation id="exchange_tab_domain_domain" qtlid="170434">Domínio</translation>
-   <translation id="exchange_tab_domain_type" qtlid="15713"></translation>
+   <translation id="exchange_tab_domain_type" qtlid="15713">Modo</translation>
    <translation id="exchange_tab_domain_accounts_count" qtlid="28363">Contas</translation>
    <translation id="exchange_tab_domain_popover_delete" qtlid="210267">Eliminar este domínio</translation>
    <translation id="exchange_tab_domain_popover_update" qtlid="4406">Configuração</translation>
@@ -437,7 +437,7 @@
    <translation id="exchange_ACTION_order_accounts_step1_number" qtlid="139338">Número de contas:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_tooltip" qtlid="144110">Introduza um número entre 1 e 100</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_not_valid" qtlid="144123">Introduza um número válido</translation>
-   <translation id="exchange_ACTION_order_accounts_step1_loading_error" qtlid="135294"></translation>
+   <translation id="exchange_ACTION_order_accounts_step1_loading_error" qtlid="135294">Erro ao carregar a informação.</translation>
    <translation id="exchange_ACTION_order_accounts_step2_loader" qtlid="139377">A verificação dos parâmetros da encomenda está em curso</translation>
    <translation id="exchange_ACTION_order_accounts_step2_check_error" qtlid="144136">A sua encomenda não pode ser verificada, queria tentar mais tarde.</translation>
    <translation id="exchange_ACTION_order_accounts_step2_intro" qtlid="139403">Resumo da sua encomenda</translation>
@@ -493,6 +493,7 @@
    <translation id="exchange_account_add_field_error_pattern" qtlid="472385">Introduza um formato válido.</translation>
    <translation id="exchange_account_add_submit_success" qtlid="486217">La création du compte {0} a été effectuée. Vous pourrez l’utiliser dans quelques minutes.</translation>
    <translation id="exchange_ACTION_add_account_legal_warning" qtlid="209099">Reconheço que a OVH procederá a execução imediata da prestação a contar a partir da validação do pagamento e, a este título, renuncio expressamente o exercício do meu direito de resolução, de acordo com o DL n.º 24/2014 de 14 de Fevereiro.</translation>
+   <translation id="exchange_account_add_confirm_button" qtlid="37923">Adicionar</translation>
    <translation id="exchange_ACTION_add_account_title" qtlid="143225">Adicionar uma conta Exchange</translation>
    <translation id="exchange_ACTION_add_account_step1_email_label" qtlid="137244">Conta de e-mail</translation>
    <translation id="exchange_ACTION_add_account_button" qtlid="21487">Adicionar uma conta</translation>
@@ -687,7 +688,7 @@ Se usar o modo nonauthoritative com contas de e-mail não alojadas pela OVH, dev
 <!-- DISCLAIMER -->
    <translation id="exchange_tab_DISCLAIMER_error_message" qtlid="152245">Ocorreu um erro aquando do carregamento das assinaturas.</translation>
    <translation id="exchange_tab_DISCLAIMER_table_empty" qtlid="152258">Não possui uma assinatura.</translation>
-   <translation id="exchange_tab_DISCLAIMER_disclaimer_content" qtlid="152271"></translation>
+   <translation id="exchange_tab_DISCLAIMER_disclaimer_content" qtlid="152271">Conteúdo</translation>
    <translation id="exchange_tab_DISCLAIMER_associated_domains" qtlid="133110">Domínio associado</translation>
    <translation id="exchange_tab_DISCLAIMER_state_header" qtlid="26443">Estado</translation>
    <translation id="exchange_tab_DISCLAIMER_state_doing_tooltip" qtlid="143863">Um trabalho está planificado ou em curso de execução</translation>
@@ -704,7 +705,7 @@ Se usar o modo nonauthoritative com contas de e-mail não alojadas pela OVH, dev
    <translation id="exchange_ACTION_disclaimer_associated_domains" qtlid="133110">Domínio associado</translation>
    <translation id="exchange_ACTION_disclaimer_variables" qtlid="152323">Variáveis</translation>
    <translation id="exchange_ACTION_disclaimer_insert" qtlid="152336">Introduzir uma variável</translation>
-   <translation id="exchange_ACTION_add_disclaimer_content" qtlid="152271"></translation>
+   <translation id="exchange_ACTION_add_disclaimer_content" qtlid="152271">Conteúdo</translation>
    <translation id="exchange_ACTION_add_disclaimer_outside" qtlid="152349">Ativar a assinatura unicamente para os envios para o exterior</translation>
    <translation id="exchange_ACTION_add_disclaimer_success_message" qtlid="152362">A criação da assinatura vai ser efetuada.</translation>
    <translation id="exchange_ACTION_add_disclaimer_error_message" qtlid="152375">Ocorreu um erro durante a criação da assinatura.</translation>
@@ -756,7 +757,7 @@ Se usar o modo nonauthoritative com contas de e-mail não alojadas pela OVH, dev
    <translation id="exchange_tab_RESOURCES_add_resource_confirm" qtlid="39226">Criar</translation>
    <translation id="exchange_tab_RESOURCES_add_resource_name" qtlid="156186">Nome do recurso</translation>
    <translation id="exchange_tab_RESOURCES_add_resource_email" qtlid="156199">E-mail de recurso</translation>
-   <translation id="exchange_tab_RESOURCES_add_resource_capacity" qtlid="4334"></translation>
+   <translation id="exchange_tab_RESOURCES_add_resource_capacity" qtlid="4334">Capacidade</translation>
    <translation id="exchange_tab_RESOURCES_add_resource_capacity_tooltip" qtlid="156212">Valor máximo: 1024</translation>
    <translation id="exchange_tab_RESOURCES_add_resource_capacity_warning" qtlid="156225">Valor incorreto</translation>
    <translation id="exchange_tab_RESOURCES_add_resource_allow_conflict" qtlid="156238">Permitir conflitos</translation>
@@ -781,7 +782,7 @@ Se usar o modo nonauthoritative com contas de e-mail não alojadas pela OVH, dev
    <translation id="exchange_tab_RESOURCES_error_message" qtlid="156394">Ocorreu um erro aquando do carregamento das contas de recurso.</translation>
    <translation id="exchange_tab_RESOURCES_table_account" qtlid="3818">Apelido</translation>
    <translation id="exchange_tab_RESOURCES_table_type" qtlid="2642">Tipo</translation>
-   <translation id="exchange_tab_RESOURCES_table_capacity" qtlid="4334"></translation>
+   <translation id="exchange_tab_RESOURCES_table_capacity" qtlid="4334">Capacidade</translation>
    <translation id="exchange_tab_RESOURCES_table_allow_conflicts" qtlid="156407">Conflito autorizado</translation>
    <translation id="exchange_tab_RESOURCES_table_email" qtlid="69509">E-mail</translation>
    <translation id="exchange_tab_RESOURCES_table_state" qtlid="26443">Estado</translation>
@@ -1025,15 +1026,15 @@ Se usar o modo nonauthoritative com contas de e-mail não alojadas pela OVH, dev
    <translation id="exchange_ACTION_add_outlook_type_WINDOWS_X86_2016" qtlid="271923">Windows 32bits (2016)</translation>
    <translation id="exchange_ACTION_add_outlook_wizard_help_title" qtlid="136724">Licença Outlook</translation>
    <translation id="exchange_ACTION_add_outlook_wizard_help" qtlid="184893">Uma licença Outlook permite instalar o cliente de e-mails da Microsoft. Aquando da emissão da encomenda é-lhe fornecido um link para poder efetuar o download do software, e é-lhe comunicada uma chave de licenciamento para que possa efetuar a sua instalação.</translation>
-   <translation id="exchange_ACTION_add_outlook_duration_label" qtlid="156875"></translation>
+   <translation id="exchange_ACTION_add_outlook_duration_label" qtlid="156875">Período:</translation>
    <translation id="exchange_ACTION_add_outlook_price_withoutIVA_label" qtlid="169238">Preço s/IVA.</translation>
    <translation id="exchange_ACTION_add_outlook_price_withIVA_label" qtlid="169251">Preço c/IVA.</translation>
    <translation id="exchange_ACTION_add_outlook_price_label" qtlid="181084">Preço:</translation>
    <translation id="exchange_ACTION_add_outlook_contracts_label" qtlid="169472">Para confirmar o pedido, leia a aceite as condições de utilização, e clique no botão «Seguinte».</translation>
    <translation id="exchange_ACTION_add_outlook_contracts__checkbox" qtlid="170070">Eu reconheço ter tomado conhecimento dos seguintes elementos:</translation>
    <translation id="exchange_ACTION_add_outlook_intro_step2_label" qtlid="156888">Resumo da encomenda da licença Outlook para {0}</translation>
-   <translation id="exchange_ACTION_add_outlook_duration_type_01" qtlid="70241"></translation>
-   <translation id="exchange_ACTION_add_outlook_duration_type_12" qtlid="70277"></translation>
+   <translation id="exchange_ACTION_add_outlook_duration_type_01" qtlid="70241">1 mês</translation>
+   <translation id="exchange_ACTION_add_outlook_duration_type_12" qtlid="70277">1 ano</translation>
    <translation id="exchange_ACTION_add_outlook_step2_error_message" qtlid="156901">Ocorreu um erro aquando da encomenda da sua licença Outlook.</translation>
    <translation id="exchange_ACTION_add_outlook_order_step2_generation_bc" qtlid="169511">A gerar nota de encomenda ...</translation>
    <translation id="exchange_ACTION_add_outlook_order_step2_bc_ok" qtlid="169524">Nota de encomenda gerada com sucesso.</translation>
@@ -1279,10 +1280,10 @@ Se usar o modo nonauthoritative com contas de e-mail não alojadas pela OVH, dev
    <translation id="exchange_ACTION_configure_step2_label_minPasswordLength" qtlid="178380">Comprimento mínimo da password:</translation>
    <translation id="exchange_ACTION_configure_step2_label_complexityEnabled" qtlid="178393">Exigências da complexidade da password:</translation>
    <translation id="exchange_ACTION_configure_step2_label_dkim" qtlid="402464">Assinatura DKIM:</translation>
-   <translation id="dkim_value_true" qtlid="62028"></translation>
+   <translation id="dkim_value_true" qtlid="62028">Ativada</translation>
    <translation id="dkim_value_false" qtlid="125084">Desativada</translation>
    <translation id="exchange_ACTION_configure_step2_label_spf" qtlid="402477">Proteção SPF:</translation>
-   <translation id="spf_value_true" qtlid="62028"></translation>
+   <translation id="spf_value_true" qtlid="62028">Ativada</translation>
    <translation id="spf_value_false" qtlid="125084">Desativada</translation>
    <translation id="exchange_ACTION_configure_step2_label_putInJunk" qtlid="402490">Mover automaticamente as mensagens indesejadas para a lixeira:</translation>
    <translation id="putInJunk_value_true" qtlid="30250">Ativado</translation>
@@ -1296,15 +1297,15 @@ Se usar o modo nonauthoritative com contas de e-mail não alojadas pela OVH, dev
    <translation id="lockoutThreshold_unit_value_1" qtlid="178432">1 tentativa</translation>
    <translation id="lockoutThreshold_unit_value_many" qtlid="178445">{0} tentativas</translation>
    <translation id="lockoutDuration_unit_value_0" qtlid="178458">A conta será bloqueada até que um administrador a desbloqueie.</translation>
-   <translation id="lockoutDuration_unit_value_1" qtlid="32326"></translation>
+   <translation id="lockoutDuration_unit_value_1" qtlid="32326">1 minuto</translation>
    <translation id="lockoutDuration_unit_value_many" qtlid="146814">{0} minutos</translation>
-   <translation id="lockoutObservationWindow_unit_value_1" qtlid="32326"></translation>
+   <translation id="lockoutObservationWindow_unit_value_1" qtlid="32326">1 minuto</translation>
    <translation id="lockoutObservationWindow_unit_value_many" qtlid="146814">{0} minutos</translation>
    <translation id="minPasswordAge_unit_value_0" qtlid="178471">As modificações são autorizadas de imediato.</translation>
-   <translation id="minPasswordAge_unit_value_1" qtlid="28807"></translation>
+   <translation id="minPasswordAge_unit_value_1" qtlid="28807">1 dia</translation>
    <translation id="minPasswordAge_unit_value_many" qtlid="178484">{0} dias</translation>
    <translation id="maxPasswordAge_unit_value_0" qtlid="178497">As passwords não expiram.</translation>
-   <translation id="maxPasswordAge_unit_value_1" qtlid="28807"></translation>
+   <translation id="maxPasswordAge_unit_value_1" qtlid="28807">1 dia</translation>
    <translation id="maxPasswordAge_unit_value_many" qtlid="178484">{0} dias</translation>
    <translation id="passwordHistoryCount_unit_value_0" qtlid="376180">A password atual pode ser reutilizada.</translation>
    <translation id="passwordHistoryCount_unit_value_1" qtlid="376193">1 password</translation>
@@ -1420,7 +1421,7 @@ Se usar o modo nonauthoritative com contas de e-mail não alojadas pela OVH, dev
    <translation id="exchange_tab_SHARED_permissions_header_quota" qtlid="6874">Quota</translation>
    <translation id="exchange_tab_SHARED_permissions_header_type" qtlid="144253">Direitos de acesso</translation>
    <translation id="exchange_tab_SHARED_permissions_type_EDITOR" qtlid="17321">Escrita</translation>
-   <translation id="exchange_tab_SHARED_permissions_type_NONE" qtlid="108901"></translation>
+   <translation id="exchange_tab_SHARED_permissions_type_NONE" qtlid="108901">Bloqueada</translation>
    <translation id="exchange_tab_SHARED_permissions_type_DEFAULT" qtlid="6302">Defeito</translation>
    <translation id="exchange_tab_SHARED_permissions_type_REVIEWER" qtlid="6958">Leitura </translation>
    <translation id="exchange_tab_SHARED_permissions_delete_tooltip" qtlid="201614">Remover esta conta da lista de permissões</translation>
@@ -1517,7 +1518,7 @@ Se usar o modo nonauthoritative com contas de e-mail não alojadas pela OVH, dev
    <translation id="exchange_ACTION_upgrade_title" qtlid="271699">Atualizar o Exchange</translation>
    <translation id="exchange_ACTION_upgrade_intro" qtlid="271712">Poderá solicitar a atualização do seu serviço para o Exchange 2016. Esta operação pode levar algumas horas após a validação da nota de encomenda. Para gerar a sua nota de encomenda aceite o contrato e valide-o. Não será necessário efetuar nenhuma configuração (parâmetros idênticos).</translation>
    <translation id="exchange_ACTION_upgrade_get_contracts_error" qtlid="271725">Ocorreu um erro aquando do carregamento das informações:</translation>
-   <translation id="exchange_ACTION_order_upgrade_success" qtlid="181266"></translation>
+   <translation id="exchange_ACTION_order_upgrade_success" qtlid="181266">A encomenda número <a href='{0}' target='_blank'>{1}</a> foi registada.</translation>
    <translation id="exchange_ACTION_order_upgrade_error" qtlid="271738">Ocorreu um erro aquando da atualização da sua oferta Exchange.</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_menu_item" qtlid="368089">Aumentar a capacidade para 300GB</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_title_label" qtlid="368102">Aumentar a capacidade</translation>

@@ -493,6 +493,7 @@
    <translation id="exchange_account_add_field_error_pattern" qtlid="472385">Bitte geben Sie ein gültiges Format ein.</translation>
    <translation id="exchange_account_add_submit_success" qtlid="486217">La création du compte {0} a été effectuée. Vous pourrez l’utiliser dans quelques minutes.</translation>
    <translation id="exchange_ACTION_add_account_legal_warning" qtlid="209099">Ich möchte, dass OVH die sofortige Lieferung der Dienstleistung nach Validierung der Bestellung durchführt, und bestätige, dass ich in diesem Fall auf mein Widerrufsrecht verzichte.</translation>
+   <translation id="exchange_account_add_confirm_button" qtlid="37923">Hinzufügen</translation>
    <translation id="exchange_ACTION_add_account_title" qtlid="143225">Einen Exchange Account hinzufügen</translation>
    <translation id="exchange_ACTION_add_account_step1_email_label" qtlid="137244">E-Mail-Account</translation>
    <translation id="exchange_ACTION_add_account_button" qtlid="21487">Einen Account hinzufügen</translation>
