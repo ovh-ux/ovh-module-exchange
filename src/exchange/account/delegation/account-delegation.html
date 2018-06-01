@@ -68,7 +68,7 @@
                     </tbody>
 
                     <tbody data-ng-show="!ctrl.loading">
-                        <tr data-ng-repeat="account in (ctrl.accounts.list.results | orderBy: 'primaryEmailDisplayName':false) track by $index">
+                        <tr data-ng-repeat="account in ctrl.accounts.list.results | orderBy: 'primaryEmailDisplayName':false track by $index">
                             <td class="word-break"
                                 data-ng-bind="account.primaryEmailDisplayName"></td>
                             <td class="text-center">
@@ -137,7 +137,7 @@
                                 </div>
                             </td>
                             <td class="text-center">
-                                <label data-ng-attr-data-uib-tooltip="{{account.fullAccessOnDoing ? 'exchange_ACTION_delegation_step1_task_on_doing' | translate : ''}}">
+                                <label data-uib-tooltip="{{:: account.fullAccessOnDoing ? ('exchange_ACTION_delegation_step1_task_on_doing' | translate) : ''}}">
                                     <input type="checkbox"
                                            data-ng-disabled="account.fullAccessOnDoing"
                                            data-ng-model="account.newFullAccessValue">

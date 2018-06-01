@@ -80,7 +80,7 @@ angular
             if (domain.mxValid) {
                 domain.mxTooltip = this.services.$translate.instant("exchange_tab_domain_diagnostic_mx_toolbox_ok");
             } else {
-                domain.mxTooltip = this.services.$translate.instant("exchange_tab_domain_diagnostic_mx_toolbox", { t0: this.exchange.hostname });
+                domain.mxTooltip = this.services.$translate.instant("exchange_tab_domain_diagnostic_mx_toolbox", { t0: this.exchange.hostname });
             }
         }
 
@@ -88,7 +88,7 @@ angular
             if (domain.srvValid) {
                 domain.srvTooltip = this.services.$translate.instant("exchange_tab_domain_diagnostic_srv_toolbox_ok");
             } else {
-                domain.srvTooltip = this.services.$translate.instant("exchange_tab_domain_diagnostic_srv_toolbox", { t0: this.exchange.hostname });
+                domain.srvTooltip = this.services.$translate.instant("exchange_tab_domain_diagnostic_srv_toolbox", { t0: this.exchange.hostname });
             }
         }
 

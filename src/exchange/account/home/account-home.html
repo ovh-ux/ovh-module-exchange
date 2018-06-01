@@ -96,7 +96,7 @@
                 <oui-action-menu-item
                     data-text="{{:: 'exchange_tab_ACCOUNTS_menu_alias' | translate }}"
                     data-on-click="$ctrl.displayAliasManagementView($row)"
-                    data-ng-if="!$ctrl.exchangeAccount.CAN_DO.ALIASES()"
+                    data-ng-if="$ctrl.exchangeAccount.CAN_DO.ALIASES()"
                     data-disabled="!$ctrl.exchangeStates.constructor.isOk($row) || $ctrl.exchangeAccount.isPlaceholder($row)"></oui-action-menu-item>
                 <oui-action-menu-item
                     data-text="{{:: 'exchange_tab_ACCOUNTS_menu_delegations' | translate }}"

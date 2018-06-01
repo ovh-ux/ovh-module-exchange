@@ -437,7 +437,7 @@
    <translation id="exchange_ACTION_order_accounts_step1_number" qtlid="139338">Number of accounts:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_tooltip" qtlid="144110">Enter a number between 1 and 100</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_not_valid" qtlid="144123">Enter a valid number</translation>
-   <translation id="exchange_ACTION_order_accounts_step1_loading_error" qtlid="135294">An error has occurred when loading the information.</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_loading_error" qtlid="135294">An error has occurred loading the information.</translation>
    <translation id="exchange_ACTION_order_accounts_step2_loader" qtlid="139377">Verification of order settings in progress.</translation>
    <translation id="exchange_ACTION_order_accounts_step2_check_error" qtlid="144136">Your order could not be verified, please try again later.</translation>
    <translation id="exchange_ACTION_order_accounts_step2_intro" qtlid="139403">Resume your order</translation>
@@ -494,6 +494,7 @@
    <translation id="exchange_account_add_submit_success" qtlid="486217">La création du compte {0} a été effectuée. Vous pourrez l’utiliser dans quelques minutes.</translation>
    <translation id="exchange_ACTION_add_account_legal_warning" qtlid="209099">I accept that OVH will set up the service immediately on validating my order, and &#13;
 I therefore explicitly renounce my right to cancel under the provisions of Article L.121-21-8 of the Consumer Code.</translation>
+   <translation id="exchange_account_add_confirm_button" qtlid="37923">Add</translation>
    <translation id="exchange_ACTION_add_account_title" qtlid="143225">Add an Exchange account</translation>
    <translation id="exchange_ACTION_add_account_step1_email_label" qtlid="137244">E-mail account</translation>
    <translation id="exchange_ACTION_add_account_button" qtlid="21487">Add an account</translation>

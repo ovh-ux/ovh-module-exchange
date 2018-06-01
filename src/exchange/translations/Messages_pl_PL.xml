@@ -157,7 +157,7 @@
 
    <translation id="exchange_tab_ACCOUNTS_action_add_exchange" qtlid="139169">Zamówienie kont</translation>
    <translation id="exchange_tab_ACCOUNTS_action_add_extern" qtlid="136334">Dodaj zewnętrzny kontakt</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_OK" qtlid="424155">Opérationnel</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_OK" qtlid="424155">Uruchomiony</translation>
    <translation id="exchange_tab_ACCOUNTS_state_CREATING" qtlid="146632">Tworzenie w trakcie</translation>
    <translation id="exchange_tab_ACCOUNTS_state_DELETING" qtlid="146645">Usuwania w trakcie</translation>
    <translation id="exchange_tab_ACCOUNTS_state_RESETTING" qtlid="485762">Réinitialisation en cours</translation>
@@ -169,7 +169,7 @@
    <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_DOING" qtlid="485632">Tâche planifiée ou en cours d'exécution</translation>
    <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_ERROR" qtlid="485788">Tâche en erreur</translation>
    <translation id="exchange_tab_ACCOUNTS_state_UNKNOWN" qtlid="77142">Nieznany</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_TO_CONFIGURE" qtlid="424142">À configurer</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_TO_CONFIGURE" qtlid="424142">Wymagana konfiguracja</translation>
 
    <translation id="exchange_tab_ACCOUNTS_menu_edit" qtlid="37875">Zmień</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_alias" qtlid="485801">Gérer les alias</translation>
@@ -493,6 +493,7 @@
    <translation id="exchange_account_add_field_error_pattern" qtlid="472385">Użyj poprawnego formatu.</translation>
    <translation id="exchange_account_add_submit_success" qtlid="486217">La création du compte {0} a été effectuée. Vous pourrez l’utiliser dans quelques minutes.</translation>
    <translation id="exchange_ACTION_add_account_legal_warning" qtlid="209099"></translation>
+   <translation id="exchange_account_add_confirm_button" qtlid="37923">Dodaj</translation>
    <translation id="exchange_ACTION_add_account_title" qtlid="143225">Dodaj konto Exchange</translation>
    <translation id="exchange_ACTION_add_account_step1_email_label" qtlid="137244">Konto e-mail</translation>
    <translation id="exchange_ACTION_add_account_button" qtlid="21487">Dodaj konto</translation>

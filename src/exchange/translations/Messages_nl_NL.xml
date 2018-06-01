@@ -493,6 +493,7 @@
    <translation id="exchange_account_add_field_error_pattern" qtlid="472385">Voer een geldig formaat in.</translation>
    <translation id="exchange_account_add_submit_success" qtlid="486217">La création du compte {0} a été effectuée. Vous pourrez l’utiliser dans quelques minutes.</translation>
    <translation id="exchange_ACTION_add_account_legal_warning" qtlid="209099">Ik erken dat OVH overgaat tot onmiddellijke uitvoering van de dienst, na de validatie van mijn bestelling, en derhalve bevestig ik dat ik uitdrukkelijk afstand doe van mijn herroepingsrecht.</translation>
+   <translation id="exchange_account_add_confirm_button" qtlid="37923">Toevoegen</translation>
    <translation id="exchange_ACTION_add_account_title" qtlid="143225">Een Exchange account toevoegen</translation>
    <translation id="exchange_ACTION_add_account_step1_email_label" qtlid="137244">E-mailaccount</translation>
    <translation id="exchange_ACTION_add_account_button" qtlid="21487">Een account toevoegen</translation>

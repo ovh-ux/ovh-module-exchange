@@ -25,7 +25,7 @@ angular
         }
 
         is (versionNumber) {
-            return this.isVersion(2010);
+            return this.isVersion(versionNumber);
         }
 
         /**

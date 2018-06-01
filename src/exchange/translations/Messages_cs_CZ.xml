@@ -493,6 +493,7 @@
    <translation id="exchange_account_add_field_error_pattern" qtlid="472385">Zadejte platný formát.</translation>
    <translation id="exchange_account_add_submit_success" qtlid="486217">La création du compte {0} a été effectuée. Vous pourrez l’utiliser dans quelques minutes.</translation>
    <translation id="exchange_ACTION_add_account_legal_warning" qtlid="209099">Souhlasím, že OVH nastaví službu okamžitě po schválení objednávky a vzdávám se proto práva na zrušení služby podle Článku L.121-21-8.</translation>
+   <translation id="exchange_account_add_confirm_button" qtlid="37923">Přidat</translation>
    <translation id="exchange_ACTION_add_account_title" qtlid="143225">Přidat účet Exchange</translation>
    <translation id="exchange_ACTION_add_account_step1_email_label" qtlid="137244">E-mailový účet</translation>
    <translation id="exchange_ACTION_add_account_button" qtlid="21487">Přidat účet</translation>
@@ -1554,7 +1555,7 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
    <translation id="exchange_wizardHostedCreation_welcome_progressBar_summary" qtlid="82725">Shrnutí</translation>
    <translation id="exchange_wizardHostedCreation_welcome_header" qtlid="449427">Vaše služba Microsoft Exchange<br/> není doposud nakonfigurována</translation>
    <translation id="exchange_wizardHostedCreation_welcome_subtext" qtlid="449440">Nakonfigurujte svou službu pro přijímání e-mailů v rámci několika minut.</translation>
-   <translation id="exchange_wizardHostedCreation_welcome_startButton" qtlid="449453">Začít</translation>
+   <translation id="exchange_wizardHostedCreation_welcome_startButton" qtlid="449453">Začínáme</translation>
    <translation id="exchange_wizardHostedCreation_welcome_standardConfiguratorButton" qtlid="449466">Preferuji použití standardního konfigurátoru</translation>
    <translation id="exchange_wizardHostedCreation_welcome_closeButton" qtlid="4670">Zavřít</translation>
    <translation id="exchange_wizardHostedCreation_welcome_closeAndSaveButton" qtlid="449479">Zavřít a již více nezobrazovat průvodce konfigurací</translation>

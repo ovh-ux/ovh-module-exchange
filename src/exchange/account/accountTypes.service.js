@@ -13,8 +13,11 @@ angular
             };
 
             this.CAN_DO = {
-                BASIC: () => this.exchangeServiceInfrastructure.isDedicatedCluster() || (this.exchangeServiceInfrastructure.isProvider() && this.exchangeVersion.is(2010)),
-                ENTERPRISE: () => this.exchangeServiceInfrastructure.isDedicated()
+                BASIC: () => this.exchangeServiceInfrastructure.isDedicatedCluster() ||
+                        (this.exchangeServiceInfrastructure.isProvider() && this.exchangeVersion.is(2010)) ||
+                        (this.exchangeServiceInfrastructure.isDedicated() && this.exchangeVersion.is(2010)),
+                ENTERPRISE: () => this.exchangeServiceInfrastructure.isDedicated() ||
+                        (this.exchangeServiceInfrastructure.isDedicated() && this.exchangeVersion.is(2010))
             };
         }
 
