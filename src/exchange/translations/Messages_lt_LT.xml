@@ -5,9 +5,9 @@
    <translation id="optional_form_field" qtlid="356264">(neprivaloma)</translation>
    <translation id="exchange_reset_search_value" qtlid="433719">Inicijuoti paiešką</translation>
    <translation id="exchange_search_value" qtlid="55493">Paieška</translation>
-   <translation id="exchange_status_task_planned_or_executing" qtlid="485632">Tâche planifiée ou en cours d'exécution</translation>
-   <translation id="exchange_common_new_tab" qtlid="485645">Ouvre le lien dans un nouvel onglet</translation>
-   <translation id="exchange_contractTypes_prepaid" qtlid="485658">Prépayé</translation>
+   <translation id="exchange_status_task_planned_or_executing" qtlid="485632">Užduotis suplanuota arba jau yra vykdoma</translation>
+   <translation id="exchange_common_new_tab" qtlid="485645">Atverti nuoroda naujame skirtuke</translation>
+   <translation id="exchange_contractTypes_prepaid" qtlid="485658">Išankstinis apmokėjimas</translation>
    <translation id="exchange_contractTypes_payAsYouGo" qtlid="485671">Paiement à la consommation</translation>
    <translation id="exchange_accountCreationMethods_adding" qtlid="47781">Priskirti</translation>
    <translation id="exchange_accountCreationMethods_ordering" qtlid="8302">Užsakymas</translation>
@@ -166,7 +166,7 @@
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Pristabdytas</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Pristabdoma</translation>
    <translation id="exchange_tab_ACCOUNTS_state_BLOCKED" qtlid="108901">Užblokuotas</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_DOING" qtlid="485632">Tâche planifiée ou en cours d'exécution</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_DOING" qtlid="485632">Užduotis suplanuota arba jau yra vykdoma</translation>
    <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_ERROR" qtlid="485788">Tâche en erreur</translation>
    <translation id="exchange_tab_ACCOUNTS_state_UNKNOWN" qtlid="77142">Nepažįstamas</translation>
    <translation id="exchange_tab_ACCOUNTS_state_TO_CONFIGURE" qtlid="424142">Konfigūruoti</translation>

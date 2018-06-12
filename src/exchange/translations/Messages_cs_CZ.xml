@@ -5,10 +5,10 @@
    <translation id="optional_form_field" qtlid="356264">(volitelné)</translation>
    <translation id="exchange_reset_search_value" qtlid="433719">Vyhledat znovu</translation>
    <translation id="exchange_search_value" qtlid="55493">Hledat</translation>
-   <translation id="exchange_status_task_planned_or_executing" qtlid="485632">Tâche planifiée ou en cours d'exécution</translation>
-   <translation id="exchange_common_new_tab" qtlid="485645">Ouvre le lien dans un nouvel onglet</translation>
-   <translation id="exchange_contractTypes_prepaid" qtlid="485658">Prépayé</translation>
-   <translation id="exchange_contractTypes_payAsYouGo" qtlid="485671">Paiement à la consommation</translation>
+   <translation id="exchange_status_task_planned_or_executing" qtlid="485632">Úloha naplánována nebo spuštěna</translation>
+   <translation id="exchange_common_new_tab" qtlid="485645">Otevřít odkaz v nové záložce</translation>
+   <translation id="exchange_contractTypes_prepaid" qtlid="485658">Předplaceno</translation>
+   <translation id="exchange_contractTypes_payAsYouGo" qtlid="485671">Platba za spotřebu</translation>
    <translation id="exchange_accountCreationMethods_adding" qtlid="47781">Přidat</translation>
    <translation id="exchange_accountCreationMethods_ordering" qtlid="8302">Příkaz</translation>
 
@@ -115,7 +115,7 @@
    <translation id="exchange_tab_INFORMATIONS_go_far" qtlid="276337">Další akce</translation>
    <translation id="exchange_tab_INFORMATIONS_infrastructure" qtlid="125552">Infrastruktura</translation>
    <translation id="exchange_tab_INFORMATIONS_version" qtlid="276350">Verze Exchange</translation>
-   <translation id="exchange_tab_INFORMATIONS_webmail" qtlid="485697">Webmail :</translation>
+   <translation id="exchange_tab_INFORMATIONS_webmail" qtlid="485697">Webmail:</translation>
    <translation id="exchange_tab_INFORMATIONS_messaging" qtlid="276363">E-mailový klient</translation>
    <translation id="exchange_tab_INFORMATIONS_order_office" qtlid="276376">Objednat Office 365</translation>
    <translation id="exchange_tab_INFORMATIONS_order_sharepoint" qtlid="319427">Objednat SharePoint</translation>
@@ -150,37 +150,37 @@
    <translation id="exchange_tab_dedicatedCluster_account_type_BASIC" qtlid="485710">E-Mail Pro</translation>
    <translation id="exchange_tab_dedicatedCluster_account_type_STANDARD" qtlid="80430">Exchange</translation>
 
-   <translation id="exchange_tab_accounts_table_outlook_ALREADY_ORDERED" qtlid="485723">Commandé</translation>
+   <translation id="exchange_tab_accounts_table_outlook_ALREADY_ORDERED" qtlid="485723">Objednáno</translation>
    <translation id="exchange_tab_accounts_table_outlook_ALREADY_ACTIVATED" qtlid="30250">Aktivní</translation>
-   <translation id="exchange_tab_accounts_table_outlook_TO_ORDER" qtlid="485736">À commander</translation>
-   <translation id="exchange_tab_accounts_table_outlook_TO_ACTIVATE" qtlid="485749">À activer</translation>
+   <translation id="exchange_tab_accounts_table_outlook_TO_ORDER" qtlid="485736">Je nutné objednat</translation>
+   <translation id="exchange_tab_accounts_table_outlook_TO_ACTIVATE" qtlid="485749">Je nutné aktivovat</translation>
 
    <translation id="exchange_tab_ACCOUNTS_action_add_exchange" qtlid="139169">Objednávka účtů</translation>
    <translation id="exchange_tab_ACCOUNTS_action_add_extern" qtlid="136334">Přidat externí kontakt</translation>
    <translation id="exchange_tab_ACCOUNTS_state_OK" qtlid="424155">V provozu</translation>
    <translation id="exchange_tab_ACCOUNTS_state_CREATING" qtlid="146632">Vytváření...</translation>
    <translation id="exchange_tab_ACCOUNTS_state_DELETING" qtlid="146645">Odstraňování...</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_RESETTING" qtlid="485762">Réinitialisation en cours</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="485775">Réactivation en cours</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_RESETTING" qtlid="485762">Probíhá opětovné spuštění</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="485775">Probíhá opětovná aktivace</translation>
    <translation id="exchange_tab_ACCOUNTS_state_INTERNAL_MIGRATION" qtlid="186713">Migrování...</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Zrušený</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Ukončení...</translation>
    <translation id="exchange_tab_ACCOUNTS_state_BLOCKED" qtlid="108901">Blokován</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_DOING" qtlid="485632">Tâche planifiée ou en cours d'exécution</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_ERROR" qtlid="485788">Tâche en erreur</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_DOING" qtlid="485632">Úloha naplánována nebo spuštěna</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_ERROR" qtlid="485788">Chybný úkol</translation>
    <translation id="exchange_tab_ACCOUNTS_state_UNKNOWN" qtlid="77142">Neznámý</translation>
    <translation id="exchange_tab_ACCOUNTS_state_TO_CONFIGURE" qtlid="424142">Vyžadována konfigurace</translation>
 
    <translation id="exchange_tab_ACCOUNTS_menu_edit" qtlid="37875">Upravit</translation>
-   <translation id="exchange_tab_ACCOUNTS_menu_alias" qtlid="485801">Gérer les alias</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_alias" qtlid="485801">Spravovat aliasy</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_delegations" qtlid="288782">Správa delegací</translation>
-   <translation id="exchange_tab_ACCOUNTS_menu_exportToPST" qtlid="485814">Exporter au format PST</translation>
-   <translation id="exchange_tab_ACCOUNTS_menu_upgradeTo300Gb" qtlid="485827">Augmenter la capacité à 300 {0}</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_exportToPST" qtlid="485814">Export ve formátu PST</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_upgradeTo300Gb" qtlid="485827">Navýšit kapacitu na 300 {0}</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_contactSupportForSpam" qtlid="61824">Odblokovat</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_outlook_activate" qtlid="397416">Aktivovat licenci Outlook</translation>
-   <translation id="exchange_tab_ACCOUNTS_menu_outlook_order" qtlid="485840">Commander une licence Outlook</translation>
-   <translation id="exchange_tab_ACCOUNTS_menu_outlook_access" qtlid="485853">Utiliser la licence Outlook</translation>
-   <translation id="exchange_tab_ACCOUNTS_menu_outlook_deactivate" qtlid="485866">Désactiver la licence Outlook</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_outlook_order" qtlid="485840">Objednat licenci Outlook</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_outlook_access" qtlid="485853">Použít licenci Outlook</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_outlook_deactivate" qtlid="485866">Deaktivovat licenci Outlook</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_outlook_delete" qtlid="397377">Odstranit licenci Outlook</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_reset" qtlid="169654">Reset</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_delete" qtlid="2414">Odstranit</translation>
@@ -210,7 +210,7 @@
 
 <!-- ########################################## -->
 <!-- ALIAS -->
-   <translation id="exchange_tab_ALIAS_back_button" qtlid="485879">Gestion des alias pour {0}</translation>
+   <translation id="exchange_tab_ALIAS_back_button" qtlid="485879">Správa aliasů pro {0}</translation>
    <translation id="exchange_tab_ALIAS_header" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_delete_tooltip" qtlid="178848">Vymazat tento alias</translation>
    <translation id="exchange_tab_ALIAS_GROUP_intro" qtlid="434525">Seznam aliasů vytvořených pro skupinu <strong>{0}</strong></translation>
@@ -241,7 +241,7 @@
    <translation id="exchange_tab_ALIAS_add_alias_error_message" qtlid="143681">Při vytváření aliasu došlo k chybě.</translation>
    <translation id="exchange_tab_ALIAS_add_no_domains" qtlid="170746">Ještě jste nepřidali doménu nebo tato ještě nebyla přijata. <br/>K vytvoření aliasu pro účet Exchange musíte nejprve přidat doménu a počkat na její přijetí.</translation>
    <translation id="exchange_tab_ALIAS_domain_loading_failure" qtlid="144045">Při načítání Vašich domén došlo k chybě</translation>
-   <translation id="exchange_tab_ALIAS_add_alias_limit_tooltip" qtlid="485892">Vous avez atteint la limite de {0} alias par compte Exchange.</translation>
+   <translation id="exchange_tab_ALIAS_add_alias_limit_tooltip" qtlid="485892">Dosáhli jste limitu {0} aliasů na účet Exchange.</translation>
 
 <!-- ########################################## -->
 <!-- TASKS -->
@@ -457,41 +457,42 @@
    <translation id="exchange_ACTION_order_accounts_step3_explication2" qtlid="144175">Otevře se Vám nová záložka a budete automaticky přesměrováni do platebního rozhraní OVH.</translation>
 
 <!-- ACCOUNT - ADD -->
-   <translation id="exchange_account_add_back_button" qtlid="485905">Ajout d'un compte</translation>
-   <translation id="exchange_account_add_header" qtlid="485918">Vous pouvez commander un compte E-mail Pro ou Exchange à ajouter à votre offre Dedicated Exchange. Il sera ajouté à votre facture mensuelle.</translation>
+   <translation id="exchange_account_add_back_button" qtlid="485905">Přidání účtu</translation>
+   <translation id="exchange_account_add_header" qtlid="485918">Ke svému řešení Dedicated Exchange si můžete objednat účet E-mail Pro či Exchange. Tyto účty budou zahrnuty do Vašeho měsíčního vyúčtování.</translation>
    <translation id="exchange_account_add_accountType_label" qtlid="48938">Typ účtu</translation>
-<translation id="exchange_account_add_accountType_tooltip" qtlid="485931">E-mail pro&#160;: profitez de 10 Go de stockage, des protocoles POP, IMAP et SMTP. Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync.
+<translation id="exchange_account_add_accountType_tooltip" qtlid="485931">E-mail Pro: 10 GB prostoru, protokoly POP, IMAP a SMTP. Exchange: 50 GB prostoru, protokoly MAPI a ActiveSync.
 </translation>
    <translation id="exchange_account_add_emailAddress_label" qtlid="11315">E-mailová adresa</translation>
-<translation id="exchange_account_add_emailAddress_hint" qtlid="485944">La partie locale de votre adresse e-mail (le texte situé avant le «&#160;@&#160;») doit respecter ces indications&#160;:<ul>
-<li qtlid="485957">elle doit débuter et se terminer par une lettre ou un chiffre&#160;;</li>
-<li qtlid="485970">les caractères spéciaux&#160;autorisés sont «&#160;.&#160;», «&#160;+&#160;», «&#160;- » et «&#160;_&#160;» ;</li>
-<li qtlid="485983">il est impossible de mettre côte à côte des caractères spéciaux.</li>
+<translation id="exchange_account_add_emailAddress_hint" qtlid="485944">První část e-mailové adresy (text před @) musí vycházet z následujících pravidel:<ul>
+<li qtlid="485957">musí začínat a končit písmenem nebo číslicí;</li>
+<li qtlid="485970">může obsahovat jen následující speciální znaky: ".", "+", "-" and "_";</li>
+<li qtlid="485983">nesmí obsahovat dva po sobě jdoucí speciální znaky.</li>
 </ul></translation>
-   <translation id="exchange_account_add_emailAddress_error_emailAddressIsAlreadyTaken" qtlid="485996">Cette adresse e-mail existe déjà.</translation>
-   <translation id="exchange_account_add_samAccountName_label" qtlid="486009">Nom de compte Exchange 2010 (optionnel)</translation>
-   <translation id="exchange_account_add_firstName_label" qtlid="486022">Prénom (optionnel)</translation>
-   <translation id="exchange_account_add_lastName_label" qtlid="486035">Nom (optionnel)</translation>
-   <translation id="exchange_account_add_displayName_label" qtlid="486048">Nom à afficher (optionnel)</translation>
+   <translation id="exchange_account_add_emailAddress_error_emailAddressIsAlreadyTaken" qtlid="485996">Tato e-mailová adresa již existuje.</translation>
+   <translation id="exchange_account_add_samAccountName_label" qtlid="486009">Název účtu Exchange 2010 (nepovinné)</translation>
+   <translation id="exchange_account_add_firstName_label" qtlid="486022">Jméno (nepovinné)</translation>
+   <translation id="exchange_account_add_lastName_label" qtlid="486035">Příjmení (nepovinné)</translation>
+   <translation id="exchange_account_add_displayName_label" qtlid="486048">Název pro zobrazení (nepovinné)</translation>
    <translation id="exchange_account_add_password_label" qtlid="2270">Heslo</translation>
-   <translation id="exchange_account_add_password_button_show" qtlid="486061">Montrer le mot de passe</translation>
-   <translation id="exchange_account_add_password_button_hide" qtlid="486074">Cacher le mot de passe</translation>
-   <translation id="exchange_account_add_password_hint_simple" qtlid="486087">Ce champ doit avoir une longueur d'au moins {0} caractères.</translation>
-   <translation id="exchange_account_add_password_hint_complex_1" qtlid="486100">Pour des raisons de sécurité, ce champ doit respecter ces critères :</translation>
-   <translation id="exchange_account_add_password_hint_complex_1_1" qtlid="486113">ne pas contenir le nom à afficher ou le nom de compte Exchange 2010 (sans respect de la casse) ;</translation>
-   <translation id="exchange_account_add_password_hint_complex_1_2" qtlid="486126">doit comporter au moins entre {0} caractères ;</translation>
-   <translation id="exchange_account_add_password_hint_complex_1_3" qtlid="486139">doit comporter les éléments de trois des quatre catégories suivantes :</translation>
-   <translation id="exchange_account_add_password_hint_complex_1_3_1" qtlid="486152">des lettres minuscules,</translation>
-   <translation id="exchange_account_add_password_hint_complex_1_3_2" qtlid="486165">des lettres majuscules,</translation>
-   <translation id="exchange_account_add_password_hint_complex_1_3_3" qtlid="486178">des chiffres entre 0 et 9,</translation>
-   <translation id="exchange_account_add_password_hint_complex_1_3_4" qtlid="486191">des caractères spéciaux.</translation>
+   <translation id="exchange_account_add_password_button_show" qtlid="486061">Ukázat heslo</translation>
+   <translation id="exchange_account_add_password_button_hide" qtlid="486074">Skrýt heslo</translation>
+   <translation id="exchange_account_add_password_hint_simple" qtlid="486087">Toto pole musí obsahovat alespoň {0} znaků.</translation>
+   <translation id="exchange_account_add_password_hint_complex_1" qtlid="486100">Z bezpečnostních důvodů je zapotřebí dodržet následující pravidla:</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_1" qtlid="486113">nesmí obsahovat název pro zobrazení nebo název účtu Exchange 2010 (bez ohledu na velká a malá písmena);</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_2" qtlid="486126">musí obsahovat alespoň {0} znaků;&#13;
+</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_3" qtlid="486139">musí obsahovat prvky tří z následujících čtyř kategorií:</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_3_1" qtlid="486152">malá písmena,</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_3_2" qtlid="486165">velká písmena,</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_3_3" qtlid="486178">číslice od 0 do 9,</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_3_4" qtlid="486191">speciální znaky.</translation>
    <translation id="exchange_account_add_passwordConfirmation_label" qtlid="9983">Potvrzení hesla</translation>
    <translation id="exchange_account_add_order_button" qtlid="43558">Objednat</translation>
    <translation id="exchange_account_add_field_error_required" qtlid="472294">Vyplňte prosím toto pole.</translation>
-   <translation id="exchange_account_add_field_error_doesntRespectComplexityRules" qtlid="486204">Ce champ ne respecte pas les règles de complexité.</translation>
+   <translation id="exchange_account_add_field_error_doesntRespectComplexityRules" qtlid="486204">Toto pole neodpovídá kritériím složitosti.</translation>
    <translation id="exchange_account_add_field_error_passwordConfirmation" qtlid="139637">Hesla nejsou shodná</translation>
    <translation id="exchange_account_add_field_error_pattern" qtlid="472385">Zadejte platný formát.</translation>
-   <translation id="exchange_account_add_submit_success" qtlid="486217">La création du compte {0} a été effectuée. Vous pourrez l’utiliser dans quelques minutes.</translation>
+   <translation id="exchange_account_add_submit_success" qtlid="486217">Účet {0} byl úspěšně vytvořen. K dispozici bude za několik minut.</translation>
    <translation id="exchange_ACTION_add_account_legal_warning" qtlid="209099">Souhlasím, že OVH nastaví službu okamžitě po schválení objednávky a vzdávám se proto práva na zrušení služby podle Článku L.121-21-8.</translation>
    <translation id="exchange_account_add_confirm_button" qtlid="37923">Přidat</translation>
    <translation id="exchange_ACTION_add_account_title" qtlid="143225">Přidat účet Exchange</translation>
@@ -511,14 +512,14 @@
    <translation id="exchange_ACTION_add_account_outlook_false" qtlid="136308">Bez</translation>
    <translation id="exchange_ACTION_add_no_domains" qtlid="170798">Ještě jste nepřidali doménu nebo tato ještě nebyla přijata. <br/>K vytvoření účtu Exchange musíte nejprve přidat doménu a počkat na její přijetí.</translation>
    <translation id="exchange_ACTION_add_account_option_fail" qtlid="144045">Při načítání Vašich domén došlo k chybě</translation>
-   <translation id="exchange_ACTION_add_account_fetchingAccountCreationOptions_error" qtlid="486230">Une erreur est survenue lors de la récupération des options de création d'un compte Exchange.</translation>
+   <translation id="exchange_ACTION_add_account_fetchingAccountCreationOptions_error" qtlid="486230">Při načítání možností pro vytvoření Exchange účtu došlo k chybě.</translation>
    <translation id="exchange_ACTION_add_account_error_message" qtlid="136828">Při vytváření Exchange účtu došlo k chybě</translation>
    <translation id="exchange_ACTION_update_account_step1_email_label" qtlid="137244">E-mailový účet</translation>
    <translation id="exchange_ACTION_update_account_step1_type_label" qtlid="191057">Typ účtu</translation>
    <translation id="exchange_ACTION_update_account_step1_type_STANDARD" qtlid="48998">Standard</translation>
    <translation id="exchange_ACTION_update_account_step1_type_BASIC" qtlid="48986">Basic</translation>
    <translation id="exchange_ACTION_update_account_step1_type_ENTERPRISE" qtlid="49022">Společnost / OSVČ</translation>
-   <translation id="exchange_ACTION_update_account_step1_type_cant_change" qtlid="486243">Le type de compte ne peut être changé tant qu'une licence Outlook est associée à ce compte.</translation>
+   <translation id="exchange_ACTION_update_account_step1_type_cant_change" qtlid="486243">Pokud je k účtu připojena licence Outlook, nelze změnit jeho typ.</translation>
    <translation id="exchange_ACTION_update_account_step1_first_name_label" qtlid="23323">Jméno</translation>
    <translation id="exchange_ACTION_update_account_step1_last_name_label" qtlid="3818">Název</translation>
    <translation id="exchange_ACTION_update_account_step1_display_name_label" qtlid="23515">Zobrazit název</translation>
@@ -538,7 +539,7 @@
    <translation id="exchange_ACTION_update_account_step1_security_label" qtlid="136750">Možnosti zabezpečení</translation>
    <translation id="exchange_ACTION_update_account_step1_GAL_label" qtlid="191980">Skrýt adresu v adresáři</translation>
    <translation id="exchange_ACTION_update_account_step1_exchange_guid_label" qtlid="174633">Exchange GUID</translation>
-   <translation id="exchange_ACTION_update_account_step1_exchange_SAMA_label" qtlid="486256">Nom de compte Exchange 2010</translation>
+   <translation id="exchange_ACTION_update_account_step1_exchange_SAMA_label" qtlid="486256">Název účtu Exchange 2010</translation>
    <translation id="exchange_ACTION_update_account_step1_mandatory_fields" qtlid="137634">Povinná pole</translation>
    <translation id="exchange_ACTION_update_account_step2_confirmation_intro" qtlid="136841">Váš účet:</translation>
    <translation id="exchange_ACTION_update_account_step2_email_label" qtlid="137244">E-mailový účet</translation>
@@ -1051,20 +1052,21 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
    <translation id="exchange_ACTION_activate_outlook_title" qtlid="397416">Aktivovat licenci Outlook</translation>
    <translation id="exchange_ACTION_activate_outlook_intro_label" qtlid="397429">Přejete si na svém Exchange účtu aktivovat licenci Outlook?</translation>
 
-   <translation id="exchange_accounts_fetchOfficeAttachError_error" qtlid="486269">Une erreur est survenue lors de la récupération des préférences liées à Office Attach</translation>
-   <translation id="exchange_accounts_fetchAccountCreationOptions_error" qtlid="486282">Une erreur est survenue lors de la récupération des options de créations de comptes</translation>
-   <translation id="exchange_accounts_fetchAccounts_error" qtlid="486295">Une erreur est survenue lors de la récupération des comptes</translation>
+   <translation id="exchange_accounts_fetchOfficeAttachError_error" qtlid="486269">Při načítání preferencí Office Attach došlo k chybě&#13;
+</translation>
+   <translation id="exchange_accounts_fetchAccountCreationOptions_error" qtlid="486282">Při načítání možností pro vytváření účtů došlo k chybě</translation>
+   <translation id="exchange_accounts_fetchAccounts_error" qtlid="486295">Při načítání účtů došlo k chybě</translation>
 
-   <translation id="exchange_accounts_outlook_deactivate_title" qtlid="485866">Désactiver la licence Outlook</translation>
-   <translation id="exchange_accounts_outlook_deactivate_intro" qtlid="486308">Souhaitez-vous désactiver votre licence Outlook ?</translation>
-   <translation id="exchange_accounts_outlook_deactivate_success" qtlid="486321">La désaction du compte Outlook a été effectuée avec succès.</translation>
-   <translation id="exchange_accounts_outlook_deactivate_error" qtlid="486334">La désaction du compte Outlook a rencontré une erreur.</translation>
+   <translation id="exchange_accounts_outlook_deactivate_title" qtlid="485866">Deaktivovat licenci Outlook</translation>
+   <translation id="exchange_accounts_outlook_deactivate_intro" qtlid="486308">Přejete si deaktivovat licenci Outlook?</translation>
+   <translation id="exchange_accounts_outlook_deactivate_success" qtlid="486321">Váš Outlook účet byl úspěšně deaktivován.</translation>
+   <translation id="exchange_accounts_outlook_deactivate_error" qtlid="486334">Při deaktivaci Vašeho Outlook účtu došlo k chybě.</translation>
 
    <translation id="exchange_accounts_outlook_delete_title" qtlid="397377">Odstranit licenci Outlook</translation>
    <translation id="exchange_accounts_outlook_delete_intro" qtlid="397442">Přejete si odstranit svou licenci Outlook?</translation>
    <translation id="exchange_accounts_outlook_delete_note" qtlid="397455">Licence Outlook bude odstraněna ke dni své expirace.</translation>
-   <translation id="exchange_accounts_outlook_delete_success" qtlid="486347">La suppression du compte Outlook a été effectuée avec succès. Elle sera effective à sa date d'expiration.</translation>
-   <translation id="exchange_accounts_outlook_delete_error" qtlid="486360">La suppression du compte Outlook a rencontré une erreur.</translation>
+   <translation id="exchange_accounts_outlook_delete_success" qtlid="486347">Outlook účet byl úspěšně odstraněn. Provedené změny vstoupí v platnost společně s datem jeho expirace.</translation>
+   <translation id="exchange_accounts_outlook_delete_error" qtlid="486360">Při odstraňování Outlook účtu došlo k chybě.</translation>
 
    <translation id="exchange_ACTION_display_outlook_title" qtlid="136724">Licence Outlook</translation>
    <translation id="exchange_ACTION_display_outlook_step1_wait_label" qtlid="170941">Momentálně je aktivní odkaz ke stažení Outlooku. Pro vygenerování další licence (licenčního klíče) je nutno počkat na vypršení tohoto odkazu (cca 5 minut).</translation>
@@ -1401,7 +1403,7 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
    <translation id="exchange_action_license_history_units" qtlid="113658">Licence</translation>
    <translation id="exchange_action_license_history_date" qtlid="66308">Datum:</translation>
    <translation id="exchange_action_license_history_type_outlook" qtlid="193111">Licence Outlook</translation>
-   <translation id="exchange_action_license_history_label" qtlid="486373">Licences {0}</translation>
+   <translation id="exchange_action_license_history_label" qtlid="486373">Licence {0}</translation>
    <translation id="exchange_action_license_history_period_LASTMONTH" qtlid="169680">Poslední měsíc</translation>
    <translation id="exchange_action_license_history_period_LAST3MONTHS" qtlid="193163">Poslední 3 měsíce</translation>
    <translation id="exchange_action_license_history_period_LASTWEEK" qtlid="169693">Posledních 7 dní</translation>
