@@ -5,10 +5,10 @@
    <translation id="optional_form_field" qtlid="356264">(opcional)</translation>
    <translation id="exchange_reset_search_value" qtlid="433719">Reiniciar la búsqueda</translation>
    <translation id="exchange_search_value" qtlid="55493">Recherche</translation>
-   <translation id="exchange_status_task_planned_or_executing" qtlid="485632">Tâche planifiée ou en cours d'exécution</translation>
-   <translation id="exchange_common_new_tab" qtlid="485645">Ouvre le lien dans un nouvel onglet</translation>
-   <translation id="exchange_contractTypes_prepaid" qtlid="485658">Prépayé</translation>
-   <translation id="exchange_contractTypes_payAsYouGo" qtlid="485671">Paiement à la consommation</translation>
+   <translation id="exchange_status_task_planned_or_executing" qtlid="485632">Tarea planificada o en progreso</translation>
+   <translation id="exchange_common_new_tab" qtlid="485645">Abrir el enlace en una nueva pestaña</translation>
+   <translation id="exchange_contractTypes_prepaid" qtlid="485658">Prepagado</translation>
+   <translation id="exchange_contractTypes_payAsYouGo" qtlid="485671">Pago por consumo</translation>
    <translation id="exchange_accountCreationMethods_adding" qtlid="47781">Ajout</translation>
    <translation id="exchange_accountCreationMethods_ordering" qtlid="8302">Commande</translation>
 
@@ -79,7 +79,7 @@
 <!-- OFFICE ATTACHED -->
    <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Promoción:</strong> ¡Active Office 365 gratuitamente en sus cuentas Exchange!</translation>
    <translation id="exchange_office_attached_alert_details" qtlid="404213">Esta promoción se aplica solamente a la solución Office 365 Business. Puede utilizar un máximo de {0} direcciones Exchange. El primer mes es gratis. La renovación se realizará automáticamente al precio vigente indicado en la fecha de renovación en <a target="_blank" href="https://www.ovh.com:51043/us/es">https://www.ovh.com:51043/us/es</a></translation>
-   <translation id="exchange_office_attached_alert_button" qtlid="404226">Aprovecha la oferta</translation>
+   <translation id="exchange_office_attached_alert_button" qtlid="404226">Aproveche la oferta</translation>
    <translation id="exchange_office_attached_alert_modale_title" qtlid="404239">Activar la oferta promocional Office 365</translation>
    <translation id="exchange_office_attached_alert_modale_header" qtlid="404252">Disfrute de un mes gratis de Office 365 en un máximo de {0} cuentas Exchange elegidas por usted</translation>
    <translation id="exchange_office_attached_alert_modale_selected_accounts" qtlid="404265">{0} cuentas seleccionadas para un máximo de {1}</translation>
@@ -115,7 +115,7 @@
    <translation id="exchange_tab_INFORMATIONS_go_far" qtlid="276337">Ir más lejos</translation>
    <translation id="exchange_tab_INFORMATIONS_infrastructure" qtlid="125552">Infraestructura</translation>
    <translation id="exchange_tab_INFORMATIONS_version" qtlid="276350">Versión Exchange</translation>
-   <translation id="exchange_tab_INFORMATIONS_webmail" qtlid="485697">Webmail :</translation>
+   <translation id="exchange_tab_INFORMATIONS_webmail" qtlid="485697">Webmail:</translation>
    <translation id="exchange_tab_INFORMATIONS_messaging" qtlid="276363">Cliente de correo</translation>
    <translation id="exchange_tab_INFORMATIONS_order_office" qtlid="276376">Contratar Office 365</translation>
    <translation id="exchange_tab_INFORMATIONS_order_sharepoint" qtlid="319427">Contratar SharePoint</translation>
@@ -147,40 +147,40 @@
    <translation id="exchange_accounts_types_dedicatedCluster_BASIC" qtlid="374893">Correo electrónico profesional</translation>
    <translation id="exchange_accounts_types_dedicatedCluster_STANDARD" qtlid="80430">Exchange</translation>
 
-   <translation id="exchange_tab_dedicatedCluster_account_type_BASIC" qtlid="485710">E-Mail Pro</translation>
+   <translation id="exchange_tab_dedicatedCluster_account_type_BASIC" qtlid="485710">Email PRO</translation>
    <translation id="exchange_tab_dedicatedCluster_account_type_STANDARD" qtlid="80430">Exchange</translation>
 
-   <translation id="exchange_tab_accounts_table_outlook_ALREADY_ORDERED" qtlid="485723">Commandé</translation>
+   <translation id="exchange_tab_accounts_table_outlook_ALREADY_ORDERED" qtlid="485723">Pedido realizado</translation>
    <translation id="exchange_tab_accounts_table_outlook_ALREADY_ACTIVATED" qtlid="30250">Activé</translation>
-   <translation id="exchange_tab_accounts_table_outlook_TO_ORDER" qtlid="485736">À commander</translation>
-   <translation id="exchange_tab_accounts_table_outlook_TO_ACTIVATE" qtlid="485749">À activer</translation>
+   <translation id="exchange_tab_accounts_table_outlook_TO_ORDER" qtlid="485736">Pedido pendiente</translation>
+   <translation id="exchange_tab_accounts_table_outlook_TO_ACTIVATE" qtlid="485749">Activación pendiente</translation>
 
    <translation id="exchange_tab_ACCOUNTS_action_add_exchange" qtlid="139169">Añadir cuentas de correo</translation>
    <translation id="exchange_tab_ACCOUNTS_action_add_extern" qtlid="136334">Añadir un contacto externo</translation>
    <translation id="exchange_tab_ACCOUNTS_state_OK" qtlid="424155">Operativo</translation>
    <translation id="exchange_tab_ACCOUNTS_state_CREATING" qtlid="146632">Creando...</translation>
    <translation id="exchange_tab_ACCOUNTS_state_DELETING" qtlid="146645">Eliminando...</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_RESETTING" qtlid="485762">Réinitialisation en cours</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="485775">Réactivation en cours</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_RESETTING" qtlid="485762">Reiniciando...</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_REOPENING" qtlid="485775">Reactivando...</translation>
    <translation id="exchange_tab_ACCOUNTS_state_INTERNAL_MIGRATION" qtlid="186713">Migrando...</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDED" qtlid="136100">Suspendido</translation>
    <translation id="exchange_tab_ACCOUNTS_state_SUSPENDING" qtlid="171201">Suspendiendo...</translation>
    <translation id="exchange_tab_ACCOUNTS_state_BLOCKED" qtlid="108901">Bloqué</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_DOING" qtlid="485632">Tâche planifiée ou en cours d'exécution</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_ERROR" qtlid="485788">Tâche en erreur</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_DOING" qtlid="485632">Tarea planificada o en progreso</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_ERROR" qtlid="485788">Tarea en error</translation>
    <translation id="exchange_tab_ACCOUNTS_state_UNKNOWN" qtlid="77142">Inconnu</translation>
    <translation id="exchange_tab_ACCOUNTS_state_TO_CONFIGURE" qtlid="424142">Configuracion pendiente</translation>
 
    <translation id="exchange_tab_ACCOUNTS_menu_edit" qtlid="37875">Modifier</translation>
-   <translation id="exchange_tab_ACCOUNTS_menu_alias" qtlid="485801">Gérer les alias</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_alias" qtlid="485801">Gestionar los alias</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_delegations" qtlid="288782">Gestionar las delegaciones</translation>
-   <translation id="exchange_tab_ACCOUNTS_menu_exportToPST" qtlid="485814">Exporter au format PST</translation>
-   <translation id="exchange_tab_ACCOUNTS_menu_upgradeTo300Gb" qtlid="485827">Augmenter la capacité à 300 {0}</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_exportToPST" qtlid="485814">Exportar e formato PST</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_upgradeTo300Gb" qtlid="485827">Aumentar la capacidad a 300 {0}</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_contactSupportForSpam" qtlid="61824">Débloquer</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_outlook_activate" qtlid="397416">Activar la licencia Outlook</translation>
-   <translation id="exchange_tab_ACCOUNTS_menu_outlook_order" qtlid="485840">Commander une licence Outlook</translation>
-   <translation id="exchange_tab_ACCOUNTS_menu_outlook_access" qtlid="485853">Utiliser la licence Outlook</translation>
-   <translation id="exchange_tab_ACCOUNTS_menu_outlook_deactivate" qtlid="485866">Désactiver la licence Outlook</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_outlook_order" qtlid="485840">Contratar una licencia Outlook</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_outlook_access" qtlid="485853">Utilizar la licencia Outlook</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_outlook_deactivate" qtlid="485866">Desactivar la licencia Outlook</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_outlook_delete" qtlid="397377">Eliminar la licencia Outlook</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_reset" qtlid="169654">Reiniciar</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_delete" qtlid="2414">Eliminar</translation>
@@ -210,7 +210,7 @@
 
 <!-- ########################################## -->
 <!-- ALIAS -->
-   <translation id="exchange_tab_ALIAS_back_button" qtlid="485879">Gestion des alias pour {0}</translation>
+   <translation id="exchange_tab_ALIAS_back_button" qtlid="485879">Gestión de los alias para {0}</translation>
    <translation id="exchange_tab_ALIAS_header" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_delete_tooltip" qtlid="178848">Eliminar el alias</translation>
    <translation id="exchange_tab_ALIAS_GROUP_intro" qtlid="434525">Lista de los alias creados para el grupo <strong>{0}</strong></translation>
@@ -236,12 +236,12 @@
    <translation id="exchange_tab_ALIAS_add_alias_step2_intro" qtlid="144006">¿Seguro que desea añadir el alias que se indica a continuación?</translation>
    <translation id="exchange_tab_ALIAS_add_alias_step2_alias_label" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ALIAS_add_alias_step2_account_label" qtlid="143603">Cuenta asociada</translation>
-   <translation id="exchange_tab_ALIAS_add_alias_valid" qtlid="171747">Atención, algunos caracteres especiales no están permitidos en el nombre de un alias, por ejemplo + ? / () [] ;</translation>
+   <translation id="exchange_tab_ALIAS_add_alias_valid" qtlid="171747">Atención, algunos caracteres especiales no están permitidos en el nombre de un alias, por ejemplo + ? / () [];</translation>
    <translation id="exchange_tab_ALIAS_add_alias_success_message" qtlid="144032">Va a añadirse el alias.</translation>
    <translation id="exchange_tab_ALIAS_add_alias_error_message" qtlid="143681">Se ha producido un error al crear el alias.</translation>
    <translation id="exchange_tab_ALIAS_add_no_domains" qtlid="170746">Aún no ha añadido un dominio o este todavía no ha sido validado. <br/>Para crear un alias para su cuenta Exchange, es necesario añadir primero un dominio y esperar a que sea validado.</translation>
    <translation id="exchange_tab_ALIAS_domain_loading_failure" qtlid="144045">Se ha producido un error al cargar los dominios.</translation>
-   <translation id="exchange_tab_ALIAS_add_alias_limit_tooltip" qtlid="485892">Vous avez atteint la limite de {0} alias par compte Exchange.</translation>
+   <translation id="exchange_tab_ALIAS_add_alias_limit_tooltip" qtlid="485892">Usted ha alcanzado el límite de {0} alias por cuenta Exchange.</translation>
 
 <!-- ########################################## -->
 <!-- TASKS -->
@@ -363,10 +363,10 @@
    <translation id="exchange_update_billing_periode_value_MONTHLY" qtlid="79530">mensuel</translation>
    <translation id="exchange_update_billing_periode_value_DELETE_AT_EXPIRATION" qtlid="201406">Expira al vencimiento</translation>
    <translation id="exchange_update_billing_periode_delete_warning" qtlid="211593">Atención, esta acción implica que el servicio expirará en la fecha de vencimiento y los datos se borrarán, por lo que será imposible recuperarlos después.</translation>
-   <translation id="exchange_update_billing_periode_resume" qtlid="191005">Va a cambiar el periodo de renovación de sus cuentas:</translation>
-   <translation id="exchange_update_billing_periode_success" qtlid="191018">El cambio del periodo de renovación automática se ha realizado.</translation>
+   <translation id="exchange_update_billing_periode_resume" qtlid="191005">Va a cambiar el período de renovación de sus cuentas:</translation>
+   <translation id="exchange_update_billing_periode_success" qtlid="191018">El cambio del período de renovación automática se ha realizado.</translation>
    <translation id="exchange_update_billing_periode_partial" qtlid="191031">Una parte de los cambios del periodo de renovación ha generado errores.</translation>
-   <translation id="exchange_update_billing_periode_failure" qtlid="191044">Se ha producido un error al cargar el periodo de renovación automática.</translation>
+   <translation id="exchange_update_billing_periode_failure" qtlid="191044">Se ha producido un error al cargar el período de renovación automática.</translation>
 
 <!-- ########################################## -->
 <!-- DOMAIN -->
@@ -457,41 +457,41 @@
    <translation id="exchange_ACTION_order_accounts_step3_explication2" qtlid="144175">Se abrirá una nueva pestaña con la interfaz de pago de OVH.</translation>
 
 <!-- ACCOUNT - ADD -->
-   <translation id="exchange_account_add_back_button" qtlid="485905">Ajout d'un compte</translation>
-   <translation id="exchange_account_add_header" qtlid="485918">Vous pouvez commander un compte E-mail Pro ou Exchange à ajouter à votre offre Dedicated Exchange. Il sera ajouté à votre facture mensuelle.</translation>
+   <translation id="exchange_account_add_back_button" qtlid="485905">Añadir una cuenta</translation>
+   <translation id="exchange_account_add_header" qtlid="485918">Usted puede añadir una cuenta de correo eletrónico a su oferta. El costo de dicha cuenta será añadido a su factura mensual.</translation>
    <translation id="exchange_account_add_accountType_label" qtlid="48938">Type de compte</translation>
-<translation id="exchange_account_add_accountType_tooltip" qtlid="485931">E-mail pro&#160;: profitez de 10 Go de stockage, des protocoles POP, IMAP et SMTP. Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync.
+<translation id="exchange_account_add_accountType_tooltip" qtlid="485931">E-mail PRO: incluye 10 GB de almacenamiento y los protocolos POP, IMAP y SMTP. Exchange: incluye 50 GB de almacenamiento y los protocolos MAPI y ActiveSync.
 </translation>
    <translation id="exchange_account_add_emailAddress_label" qtlid="11315">Adresse e-mail</translation>
-<translation id="exchange_account_add_emailAddress_hint" qtlid="485944">La partie locale de votre adresse e-mail (le texte situé avant le «&#160;@&#160;») doit respecter ces indications&#160;:<ul>
-<li qtlid="485957">elle doit débuter et se terminer par une lettre ou un chiffre&#160;;</li>
-<li qtlid="485970">les caractères spéciaux&#160;autorisés sont «&#160;.&#160;», «&#160;+&#160;», «&#160;- » et «&#160;_&#160;» ;</li>
-<li qtlid="485983">il est impossible de mettre côte à côte des caractères spéciaux.</li>
+<translation id="exchange_account_add_emailAddress_hint" qtlid="485944">La parte local de su dirección de correo electrónico (el texto situado antes de la arroba) debe cumplir los siguientes requisitos:<ul>
+<li qtlid="485957">debe comenzar y terminar por una letra o una cifra;</li>
+<li qtlid="485970">los caracteres especiales autorizados son: «.», «+», «-» y «_»;</li>
+<li qtlid="485983">no se pueden poner caracteres especiales uno a continuación de otro.</li>
 </ul></translation>
-   <translation id="exchange_account_add_emailAddress_error_emailAddressIsAlreadyTaken" qtlid="485996">Cette adresse e-mail existe déjà.</translation>
-   <translation id="exchange_account_add_samAccountName_label" qtlid="486009">Nom de compte Exchange 2010 (optionnel)</translation>
-   <translation id="exchange_account_add_firstName_label" qtlid="486022">Prénom (optionnel)</translation>
-   <translation id="exchange_account_add_lastName_label" qtlid="486035">Nom (optionnel)</translation>
-   <translation id="exchange_account_add_displayName_label" qtlid="486048">Nom à afficher (optionnel)</translation>
+   <translation id="exchange_account_add_emailAddress_error_emailAddressIsAlreadyTaken" qtlid="485996">Esa dirección de correo electrónico ya existe.</translation>
+   <translation id="exchange_account_add_samAccountName_label" qtlid="486009">Nombre de cuenta Exchange 2010 (opcional)</translation>
+   <translation id="exchange_account_add_firstName_label" qtlid="486022">Nombre (opcional)</translation>
+   <translation id="exchange_account_add_lastName_label" qtlid="486035">Apellido(s) (opcional)</translation>
+   <translation id="exchange_account_add_displayName_label" qtlid="486048">Nombre que se visualizará (opcional)</translation>
    <translation id="exchange_account_add_password_label" qtlid="2270">Mot de passe</translation>
-   <translation id="exchange_account_add_password_button_show" qtlid="486061">Montrer le mot de passe</translation>
-   <translation id="exchange_account_add_password_button_hide" qtlid="486074">Cacher le mot de passe</translation>
-   <translation id="exchange_account_add_password_hint_simple" qtlid="486087">Ce champ doit avoir une longueur d'au moins {0} caractères.</translation>
-   <translation id="exchange_account_add_password_hint_complex_1" qtlid="486100">Pour des raisons de sécurité, ce champ doit respecter ces critères :</translation>
-   <translation id="exchange_account_add_password_hint_complex_1_1" qtlid="486113">ne pas contenir le nom à afficher ou le nom de compte Exchange 2010 (sans respect de la casse) ;</translation>
-   <translation id="exchange_account_add_password_hint_complex_1_2" qtlid="486126">doit comporter au moins entre {0} caractères ;</translation>
-   <translation id="exchange_account_add_password_hint_complex_1_3" qtlid="486139">doit comporter les éléments de trois des quatre catégories suivantes :</translation>
-   <translation id="exchange_account_add_password_hint_complex_1_3_1" qtlid="486152">des lettres minuscules,</translation>
-   <translation id="exchange_account_add_password_hint_complex_1_3_2" qtlid="486165">des lettres majuscules,</translation>
-   <translation id="exchange_account_add_password_hint_complex_1_3_3" qtlid="486178">des chiffres entre 0 et 9,</translation>
-   <translation id="exchange_account_add_password_hint_complex_1_3_4" qtlid="486191">des caractères spéciaux.</translation>
+   <translation id="exchange_account_add_password_button_show" qtlid="486061">Mostrar la contraseña</translation>
+   <translation id="exchange_account_add_password_button_hide" qtlid="486074">Ocultar la contraseña</translation>
+   <translation id="exchange_account_add_password_hint_simple" qtlid="486087">Este campo debe contener al menos {0} caracteres.</translation>
+   <translation id="exchange_account_add_password_hint_complex_1" qtlid="486100">Por razones de seguridad, este campo debe cumplir los siguientes requisitos:</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_1" qtlid="486113">no puede contener el nombre de pantalla ni el nombre de la cuenta Exchange 2010 (sin distinción de mayúsculas y minúsculas);</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_2" qtlid="486126">debe contener al menos {0} caracteres;</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_3" qtlid="486139">debe contener elementos de al menos tres de las cuatro categorías siguientes:</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_3_1" qtlid="486152">letras minúsculas,</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_3_2" qtlid="486165">letras mayúsculas,</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_3_3" qtlid="486178">cifras entre 0 y 9,</translation>
+   <translation id="exchange_account_add_password_hint_complex_1_3_4" qtlid="486191">caracteres especiales.</translation>
    <translation id="exchange_account_add_passwordConfirmation_label" qtlid="9983">Confirmation</translation>
    <translation id="exchange_account_add_order_button" qtlid="43558">Contratar</translation>
    <translation id="exchange_account_add_field_error_required" qtlid="472294">Debe llenar este campo.</translation>
-   <translation id="exchange_account_add_field_error_doesntRespectComplexityRules" qtlid="486204">Ce champ ne respecte pas les règles de complexité.</translation>
+   <translation id="exchange_account_add_field_error_doesntRespectComplexityRules" qtlid="486204">Este campo no cumple con los requisitos establecidos.</translation>
    <translation id="exchange_account_add_field_error_passwordConfirmation" qtlid="139637">Contraseñas diferentes</translation>
    <translation id="exchange_account_add_field_error_pattern" qtlid="472385">Debe introducir un formato válido.</translation>
-   <translation id="exchange_account_add_submit_success" qtlid="486217">La création du compte {0} a été effectuée. Vous pourrez l’utiliser dans quelques minutes.</translation>
+   <translation id="exchange_account_add_submit_success" qtlid="486217">La cuenta {0} se ha creado correctamente y podrá utilizarla en unos minutos.</translation>
    <translation id="exchange_ACTION_add_account_legal_warning" qtlid="209099">Acepto que OVH proceda a la ejecución inmediata del servicio una vez sea validado mi pedido y, por consiguiente, renuncio expresamente a ejercer mi derecho de retractación, con arreglo a lo dispuesto en el artículo L.121-21-8 del código de consumo.</translation>
    <translation id="exchange_account_add_confirm_button" qtlid="37923">Añadir</translation>
    <translation id="exchange_ACTION_add_account_title" qtlid="143225">Añadir una cuenta Exchange</translation>
@@ -511,14 +511,14 @@
    <translation id="exchange_ACTION_add_account_outlook_false" qtlid="136308">No</translation>
    <translation id="exchange_ACTION_add_no_domains" qtlid="170798">Aún no ha añadido un dominio o este todavía no ha sido validado. <br/>Para crear una cuenta Exchange, debe añadir un dominio y esperar a que sea validado.</translation>
    <translation id="exchange_ACTION_add_account_option_fail" qtlid="144045">Se ha producido un error al cargar los dominios.</translation>
-   <translation id="exchange_ACTION_add_account_fetchingAccountCreationOptions_error" qtlid="486230">Une erreur est survenue lors de la récupération des options de création d'un compte Exchange.</translation>
+   <translation id="exchange_ACTION_add_account_fetchingAccountCreationOptions_error" qtlid="486230">Se ha producido un error al intentar restablecer las opciones de creación de una cuenta Exchange.</translation>
    <translation id="exchange_ACTION_add_account_error_message" qtlid="136828">Se ha producido un error al crear la cuenta Exchange.</translation>
    <translation id="exchange_ACTION_update_account_step1_email_label" qtlid="137244">Cuenta de correo</translation>
    <translation id="exchange_ACTION_update_account_step1_type_label" qtlid="191057">Tipo de cuenta</translation>
    <translation id="exchange_ACTION_update_account_step1_type_STANDARD" qtlid="48998">Standard</translation>
    <translation id="exchange_ACTION_update_account_step1_type_BASIC" qtlid="48986">Basic</translation>
    <translation id="exchange_ACTION_update_account_step1_type_ENTERPRISE" qtlid="49022">Entreprise</translation>
-   <translation id="exchange_ACTION_update_account_step1_type_cant_change" qtlid="486243">Le type de compte ne peut être changé tant qu'une licence Outlook est associée à ce compte.</translation>
+   <translation id="exchange_ACTION_update_account_step1_type_cant_change" qtlid="486243">No es posible cambiar el tipo de cuenta mientras haya una licencia Outlook asociada a la misma.</translation>
    <translation id="exchange_ACTION_update_account_step1_first_name_label" qtlid="23323">Nombre</translation>
    <translation id="exchange_ACTION_update_account_step1_last_name_label" qtlid="3818">Nombre</translation>
    <translation id="exchange_ACTION_update_account_step1_display_name_label" qtlid="23515">Nom à afficher</translation>
@@ -538,7 +538,7 @@
    <translation id="exchange_ACTION_update_account_step1_security_label" qtlid="136750">Opciones de seguridad</translation>
    <translation id="exchange_ACTION_update_account_step1_GAL_label" qtlid="191980">Ocultar la dirección en la libreta de direcciones</translation>
    <translation id="exchange_ACTION_update_account_step1_exchange_guid_label" qtlid="174633">Exchange GUID</translation>
-   <translation id="exchange_ACTION_update_account_step1_exchange_SAMA_label" qtlid="486256">Nom de compte Exchange 2010</translation>
+   <translation id="exchange_ACTION_update_account_step1_exchange_SAMA_label" qtlid="486256">Nombre de cuenta Exchange 2010</translation>
    <translation id="exchange_ACTION_update_account_step1_mandatory_fields" qtlid="137634">Campos obligatorios</translation>
    <translation id="exchange_ACTION_update_account_step2_confirmation_intro" qtlid="136841">Su cuenta:</translation>
    <translation id="exchange_ACTION_update_account_step2_email_label" qtlid="137244">Cuenta de correo</translation>
@@ -897,7 +897,7 @@
    <translation id="exchange_tab_GROUPS_add_alias_step2_intro" qtlid="144006">¿Seguro que desea añadir el alias que se indica a continuación?</translation>
    <translation id="exchange_tab_GROUPS_add_alias_step2_alias_label" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_GROUPS_add_alias_step2_account_label" qtlid="150216">Grupo asociado</translation>
-   <translation id="exchange_tab_GROUPS_add_alias_valid" qtlid="171786">Atención, algunos caracteres especiales no están permitidos en el nombre de un alias, por ejemplo + ? / () [] ;</translation>
+   <translation id="exchange_tab_GROUPS_add_alias_valid" qtlid="171786">Atención, algunos caracteres especiales no están permitidos en el nombre de un alias, por ejemplo + ? / () [];</translation>
    <translation id="exchange_tab_GROUPS_add_alias_success_message" qtlid="144032">Va a añadirse el alias.</translation>
    <translation id="exchange_tab_GROUPS_add_alias_error_message" qtlid="143681">Se ha producido un error al crear el alias.</translation>
    <translation id="exchange_GROUPS_partial_account" qtlid="191161">Se ha producido un error al cargar: {0}</translation>
@@ -1042,20 +1042,20 @@
    <translation id="exchange_ACTION_activate_outlook_title" qtlid="397416">Activar la licencia Outlook</translation>
    <translation id="exchange_ACTION_activate_outlook_intro_label" qtlid="397429">¿Desea activar la licencia Outlook en su cuenta Exchange?</translation>
 
-   <translation id="exchange_accounts_fetchOfficeAttachError_error" qtlid="486269">Une erreur est survenue lors de la récupération des préférences liées à Office Attach</translation>
-   <translation id="exchange_accounts_fetchAccountCreationOptions_error" qtlid="486282">Une erreur est survenue lors de la récupération des options de créations de comptes</translation>
-   <translation id="exchange_accounts_fetchAccounts_error" qtlid="486295">Une erreur est survenue lors de la récupération des comptes</translation>
+   <translation id="exchange_accounts_fetchOfficeAttachError_error" qtlid="486269">Se ha producido un error al intentar restablecer las preferencias asociadas a Office Attach.</translation>
+   <translation id="exchange_accounts_fetchAccountCreationOptions_error" qtlid="486282">Se ha producido un error al intentar restablecer las opciones de creación de cuentas.</translation>
+   <translation id="exchange_accounts_fetchAccounts_error" qtlid="486295">Se ha producido un error al intentar restablecer las cuentas.</translation>
 
-   <translation id="exchange_accounts_outlook_deactivate_title" qtlid="485866">Désactiver la licence Outlook</translation>
-   <translation id="exchange_accounts_outlook_deactivate_intro" qtlid="486308">Souhaitez-vous désactiver votre licence Outlook ?</translation>
-   <translation id="exchange_accounts_outlook_deactivate_success" qtlid="486321">La désaction du compte Outlook a été effectuée avec succès.</translation>
-   <translation id="exchange_accounts_outlook_deactivate_error" qtlid="486334">La désaction du compte Outlook a rencontré une erreur.</translation>
+   <translation id="exchange_accounts_outlook_deactivate_title" qtlid="485866">Desactivar la licencia Outlook</translation>
+   <translation id="exchange_accounts_outlook_deactivate_intro" qtlid="486308">¿Desea desactivar su licencia Outlook?</translation>
+   <translation id="exchange_accounts_outlook_deactivate_success" qtlid="486321">La cuenta Outlook se ha desactivado correctamente.</translation>
+   <translation id="exchange_accounts_outlook_deactivate_error" qtlid="486334">Se ha producido un error al desactivar la cuenta Outlook.</translation>
 
    <translation id="exchange_accounts_outlook_delete_title" qtlid="397377">Eliminar la licencia Outlook</translation>
    <translation id="exchange_accounts_outlook_delete_intro" qtlid="397442">¿Desea eliminar su licencia Outlook?</translation>
    <translation id="exchange_accounts_outlook_delete_note" qtlid="397455">Tenga en cuenta que la eliminación de la licencia de Outlook se hará efectiva en su fecha de expiración.</translation>
-   <translation id="exchange_accounts_outlook_delete_success" qtlid="486347">La suppression du compte Outlook a été effectuée avec succès. Elle sera effective à sa date d'expiration.</translation>
-   <translation id="exchange_accounts_outlook_delete_error" qtlid="486360">La suppression du compte Outlook a rencontré une erreur.</translation>
+   <translation id="exchange_accounts_outlook_delete_success" qtlid="486347">La cuenta Outlook se ha eliminado correctamente. La eliminación se hará efectiva en la fecha de expiración.</translation>
+   <translation id="exchange_accounts_outlook_delete_error" qtlid="486360">Se ha producido un error al eliminar la cuenta Outlook.</translation>
 
    <translation id="exchange_ACTION_display_outlook_title" qtlid="136724">Licencia Outlook</translation>
    <translation id="exchange_ACTION_display_outlook_step1_wait_label" qtlid="170941">Actualmente hay un enlace de descarga de Outlook activo. Espere a que expire (máximo 5 minutos) antes de generar una nueva clave de licencia.</translation>
@@ -1391,7 +1391,7 @@
    <translation id="exchange_action_license_history_units" qtlid="113658">Licencias</translation>
    <translation id="exchange_action_license_history_date" qtlid="66308">Date :</translation>
    <translation id="exchange_action_license_history_type_outlook" qtlid="193111">Licencias Outlook</translation>
-   <translation id="exchange_action_license_history_label" qtlid="486373">Licences {0}</translation>
+   <translation id="exchange_action_license_history_label" qtlid="486373">Licencias {0}</translation>
    <translation id="exchange_action_license_history_period_LASTMONTH" qtlid="169680">El último mes</translation>
    <translation id="exchange_action_license_history_period_LAST3MONTHS" qtlid="193163">los 3 últimos meses</translation>
    <translation id="exchange_action_license_history_period_LASTWEEK" qtlid="169693">Los últimos 7 días</translation>
@@ -1517,7 +1517,7 @@
    <translation id="exchange_ACTION_upgrade_intro" qtlid="271712">Usted va a actualizar el servicio en Exchange 2016. Esta operación puede demorar algunas horas a partir de la validación de la orden de pedido. Para crear este último, debe aceptar el siguiente contrato. No se requiere ninguna configuración técnica (los parámetros de configuración son idénticos).</translation>
    <translation id="exchange_ACTION_upgrade_get_contracts_error" qtlid="271725">Se ha producido un error al cargar los datos:</translation>
    <translation id="exchange_ACTION_order_upgrade_success" qtlid="181266">El pedido número <a href='{0}' target='_blank'>{1}</a> se ha enviado.</translation>
-   <translation id="exchange_ACTION_order_upgrade_error" qtlid="271738">Se ha producido u error al actualizar la oferta Exchange.</translation>
+   <translation id="exchange_ACTION_order_upgrade_error" qtlid="271738">Se ha producido un error al actualizar la oferta Exchange.</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_menu_item" qtlid="368089">Aumentar la capacidad a 300 GiB</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_title_label" qtlid="368102">Aumentar la capacidad</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_question_intro" qtlid="368115">¿Está seguro(a) de que desea aumentar la capacidad de su cuenta Exchange a 300 GiB?</translation>
@@ -1616,7 +1616,7 @@
 
    <translation id="exchange_wizardHostedCreation_emailCreation_add_login_header" qtlid="11315">Adresse e-mail</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_add_login_required" qtlid="450090">Campo obligatorio</translation>
-   <translation id="exchange_wizardHostedCreation_emailCreation_add_login_pattern" qtlid="450103">La parte local (antes de la «@») solo puede contener letras, cifras, puntos (.) o guiones (- o _).</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_login_pattern" qtlid="450103">La parte local (antes de la arroba) solo puede contener letras, cifras, puntos (.) o guiones (- o _).</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_add_firstName_title" qtlid="450116">Personalizar una cuenta de correo</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_add_firstName_header" qtlid="23323">Nombre</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_add_name_header" qtlid="3818">Nombre</translation>
@@ -1648,7 +1648,7 @@
 
    <translation id="exchange_wizardHostedCreation_emailCreation_update_changePassword_checkbox" qtlid="80394">Changer le mot de passe</translation>
 
-   <translation id="exchange_wizardHostedCreation_configureDNSZone_header" qtlid="450350">Finalisación de su configuración</translation>
+   <translation id="exchange_wizardHostedCreation_configureDNSZone_header" qtlid="450350">Finalización de su configuración</translation>
    <translation id="exchange_wizardHostedCreation_configureDNSZone_summary" qtlid="4082">Résumé</translation>
    <translation id="exchange_wizardHostedCreation_configureDNSZone_domainName" qtlid="66428">Nom de domaine</translation>
    <translation id="exchange_wizardHostedCreation_configureDNSZone_authoritative" qtlid="450363">Utilice solo el servicio Exchange</translation>
