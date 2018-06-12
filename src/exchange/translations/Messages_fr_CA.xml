@@ -8,14 +8,14 @@
    <translation id="exchange_status_task_planned_or_executing" qtlid="485632">Tâche planifiée ou en cours d'exécution</translation>
    <translation id="exchange_common_new_tab" qtlid="485645">Ouvre le lien dans un nouvel onglet</translation>
    <translation id="exchange_contractTypes_prepaid" qtlid="485658">Prépayé</translation>
-   <translation id="exchange_contractTypes_payAsYouGo" qtlid="485671">Paiement à la consommation</translation>
+   <translation id="exchange_contractTypes_payAsYouGo" qtlid="485671">Paiement à l'utilisation</translation>
    <translation id="exchange_accountCreationMethods_adding" qtlid="47781">Ajout</translation>
    <translation id="exchange_accountCreationMethods_ordering" qtlid="8302">Commande</translation>
 
 <!-- ########################################## -->
 <!-- DASHBOARD -->
    <translation id="exchange_common_error" qtlid="299384">Une erreur est survenue :</translation>
-   <translation id="exchange_offer_type_DEDICATED_CLUSTER" qtlid="485684">Dedicated Exchange</translation>
+   <translation id="exchange_offer_type_DEDICATED_CLUSTER" qtlid="485684">Exchange Dédié</translation>
    <translation id="exchange_offer_type_DEDICATED" qtlid="137218">Exchange Privé </translation>
    <translation id="exchange_offer_type_HOSTED" qtlid="137231">Exchange Hébergé </translation>
    <translation id="exchange_offer_type_PROVIDER" qtlid="136152">Exchange revendeur</translation>
@@ -74,7 +74,7 @@
    <translation id="exchange_ACTION_export_error" qtlid="217041">Une erreur s'est produite lors de l'export de vos comptes Exchange.</translation>
    <translation id="exchange_ACTION_export_success" qtlid="217054">L'export de vos comptes Exchange est terminé.</translation>
    <translation id="exchange_ACTION_export_explain" qtlid="217067">L'export de vos comptes Exchange peut durer quelques minutes (en fonction du nombre de comptes que vous possédez).</translation>
-   <translation id="exchange_ACTION_export_confirm" qtlid="217080">Etes-vous certain de vouloir exporter vos comptes ?</translation>
+   <translation id="exchange_ACTION_export_confirm" qtlid="217080">Etes-vous certain de vouloir exporter vos comptes?</translation>
 
 <!-- OFFICE ATTACHED -->
    <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Promotion :</strong> activez gratuitement Office 365 sur vos adresses Exchange !</translation>
@@ -115,7 +115,7 @@
    <translation id="exchange_tab_INFORMATIONS_go_far" qtlid="276337">Aller plus loin</translation>
    <translation id="exchange_tab_INFORMATIONS_infrastructure" qtlid="125552">Infrastructure</translation>
    <translation id="exchange_tab_INFORMATIONS_version" qtlid="276350">Version Exchange</translation>
-   <translation id="exchange_tab_INFORMATIONS_webmail" qtlid="485697">Webmail :</translation>
+   <translation id="exchange_tab_INFORMATIONS_webmail" qtlid="485697">Messagerie en ligne :</translation>
    <translation id="exchange_tab_INFORMATIONS_messaging" qtlid="276363">Client de messagerie</translation>
    <translation id="exchange_tab_INFORMATIONS_order_office" qtlid="276376">Commander Office 365</translation>
    <translation id="exchange_tab_INFORMATIONS_order_sharepoint" qtlid="319427">Commander SharePoint</translation>
@@ -144,10 +144,10 @@
    <translation id="exchange_accounts_types_2010_BASIC" qtlid="48986">Basic</translation>
    <translation id="exchange_accounts_types_2010_STANDARD" qtlid="48998">Standard</translation>
    <translation id="exchange_accounts_types_2010_ENTERPRISE" qtlid="49022">Entreprise</translation>
-   <translation id="exchange_accounts_types_dedicatedCluster_BASIC" qtlid="374893">E-mail Pro</translation>
+   <translation id="exchange_accounts_types_dedicatedCluster_BASIC" qtlid="374893">Messagerie Pro</translation>
    <translation id="exchange_accounts_types_dedicatedCluster_STANDARD" qtlid="80430">Exchange</translation>
 
-   <translation id="exchange_tab_dedicatedCluster_account_type_BASIC" qtlid="485710">E-Mail Pro</translation>
+   <translation id="exchange_tab_dedicatedCluster_account_type_BASIC" qtlid="485710">Messagerie Pro</translation>
    <translation id="exchange_tab_dedicatedCluster_account_type_STANDARD" qtlid="80430">Exchange</translation>
 
    <translation id="exchange_tab_accounts_table_outlook_ALREADY_ORDERED" qtlid="485723">Commandé</translation>
@@ -458,17 +458,17 @@
 
 <!-- ACCOUNT - ADD -->
    <translation id="exchange_account_add_back_button" qtlid="485905">Ajout d'un compte</translation>
-   <translation id="exchange_account_add_header" qtlid="485918">Vous pouvez ajouter un compte e-mail à votre offre. Il sera pris en compte dans votre facture mensuelle.</translation>
+   <translation id="exchange_account_add_header" qtlid="485918">Vous pouvez ajouter un compte de messagerie électronique à votre offre. Il sera inclu dans votre facture mensuelle.</translation>
    <translation id="exchange_account_add_accountType_label" qtlid="48938">Type de compte</translation>
-<translation id="exchange_account_add_accountType_tooltip" qtlid="485931">E-mail pro&#160;: profitez de 10 Go de stockage, des protocoles POP, IMAP et SMTP. Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync.
+<translation id="exchange_account_add_accountType_tooltip" qtlid="485931">Messagerie Pro&#160;: profitez de 10 Go de stockage, des protocoles POP, IMAP et SMTP. Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync.
 </translation>
    <translation id="exchange_account_add_emailAddress_label" qtlid="11315">Adresse courriel</translation>
-<translation id="exchange_account_add_emailAddress_hint" qtlid="485944">La partie locale de votre adresse e-mail (le texte situé avant le «&#160;@&#160;») doit respecter ces indications&#160;:<ul>
+<translation id="exchange_account_add_emailAddress_hint" qtlid="485944">La partie locale de votre adresse courriel (le texte situé avant le «&#160;@&#160;») doit respecter ces indications&#160;:<ul>
 <li qtlid="485957">elle doit débuter et se terminer par une lettre ou un chiffre&#160;;</li>
 <li qtlid="485970">les caractères spéciaux&#160;autorisés sont «&#160;.&#160;», «&#160;+&#160;», «&#160;- » et «&#160;_&#160;» ;</li>
 <li qtlid="485983">il est impossible de mettre côte à côte des caractères spéciaux.</li>
 </ul></translation>
-   <translation id="exchange_account_add_emailAddress_error_emailAddressIsAlreadyTaken" qtlid="485996">Cette adresse e-mail existe déjà.</translation>
+   <translation id="exchange_account_add_emailAddress_error_emailAddressIsAlreadyTaken" qtlid="485996">Cette adresse courriel existe déjà.</translation>
    <translation id="exchange_account_add_samAccountName_label" qtlid="486009">Nom de compte Exchange 2010 (optionnel)</translation>
    <translation id="exchange_account_add_firstName_label" qtlid="486022">Prénom (optionnel)</translation>
    <translation id="exchange_account_add_lastName_label" qtlid="486035">Nom (optionnel)</translation>
@@ -1047,14 +1047,14 @@
    <translation id="exchange_accounts_fetchAccounts_error" qtlid="486295">Une erreur est survenue lors de la récupération des comptes</translation>
 
    <translation id="exchange_accounts_outlook_deactivate_title" qtlid="485866">Désactiver la licence Outlook</translation>
-   <translation id="exchange_accounts_outlook_deactivate_intro" qtlid="486308">Souhaitez-vous désactiver votre licence Outlook ?</translation>
+   <translation id="exchange_accounts_outlook_deactivate_intro" qtlid="486308">Souhaitez-vous désactiver votre licence Outlook?</translation>
    <translation id="exchange_accounts_outlook_deactivate_success" qtlid="486321">La désaction du compte Outlook a été effectuée avec succès.</translation>
    <translation id="exchange_accounts_outlook_deactivate_error" qtlid="486334">La désaction du compte Outlook a rencontré une erreur.</translation>
 
    <translation id="exchange_accounts_outlook_delete_title" qtlid="397377">Supprimer la licence Outlook</translation>
    <translation id="exchange_accounts_outlook_delete_intro" qtlid="397442">Souhaitez-vous supprimer votre licence Outlook?</translation>
    <translation id="exchange_accounts_outlook_delete_note" qtlid="397455">Veuillez prendre note que la suppression de la licence Outlook sera en vigueur à sa date d'expiration.</translation>
-   <translation id="exchange_accounts_outlook_delete_success" qtlid="486347">La suppression du compte Outlook a été effectuée avec succès. Elle sera effective à sa date d'expiration.</translation>
+   <translation id="exchange_accounts_outlook_delete_success" qtlid="486347">La suppression du compte Outlook a été effectuée avec succès. Elle entrera en vigueur à sa date d'expiration.</translation>
    <translation id="exchange_accounts_outlook_delete_error" qtlid="486360">La suppression du compte Outlook a rencontré une erreur.</translation>
 
    <translation id="exchange_ACTION_display_outlook_title" qtlid="136724">Licence Outlook</translation>
