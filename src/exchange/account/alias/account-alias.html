@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-9">
         <oui-back-button
-            data-title="{{:: 'exchange_tab_ALIAS_back_button' | translate: { t0: $ctrl.account.primaryEmailDisplayName } }}"
+            data-heading="{{:: 'exchange_tab_ALIAS_back_button' | translate: { t0: $ctrl.account.primaryEmailDisplayName } }}"
             data-on-click="$ctrl.messaging.resetMessages(); $ctrl.hide()"></oui-back-button>
 
         <oui-datagrid data-rows-loader="$ctrl.getAliases($config)">
