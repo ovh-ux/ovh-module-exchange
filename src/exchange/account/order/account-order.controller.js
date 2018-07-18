@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.controllers")
     .controller("ExchangeOrderAccountCtrl", class ExchangeOrderAccountCtrl {
-        constructor ($scope, Exchange, $window, messaging, $translate, navigation, exchangeServiceInfrastructure) {
+        constructor ($scope, Exchange, $window, messaging, $translate, navigation, exchangeServiceInfrastructure, User) {
             this.services = {
                 $scope,
                 Exchange,
@@ -11,6 +11,11 @@ angular
                 navigation,
                 exchangeServiceInfrastructure
             };
+
+            User.getUser()
+                .then((currentUser) => {
+                    this.isGermanSubsidiary = currentUser.ovhSubsidiary === "DE";
+                });
 
             this.$routerParams = Exchange.getParams();
             this.numConfigureMeAccount = navigation.currentActionData.numConfigureMeAccount;
@@ -91,6 +96,9 @@ angular
                 .getAccountsOptions(this.$routerParams.organization, this.$routerParams.productId, this.accountsToAdd)
                 .then((data) => {
                     data.duration = "01";
+                    _.forEach(data.prices, (price) => {
+                        price.localizedText = price.value.toLocaleString("de-DE", { style: "currency", currency: price.currencyCode });
+                    });
                     this.ordersList.push(data);
                 }).catch((failure) => {
                     this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_order_accounts_step1_loading_error"), failure);
@@ -103,6 +111,9 @@ angular
                 .getAccountsOptions(this.$routerParams.organization, this.$routerParams.productId, this.accountsToAdd)
                 .then((data) => {
                     data.duration = "12";
+                    _.forEach(data.prices, (price) => {
+                        price.localizedText = price.value.toLocaleString("de-DE", { style: "currency", currency: price.currencyCode });
+                    });
                     this.ordersList.push(data);
                 }).catch((failure) => {
                     this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_order_accounts_step1_loading_error"), failure);
