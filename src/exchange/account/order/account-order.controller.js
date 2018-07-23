@@ -15,6 +15,9 @@ angular
             User.getUser()
                 .then((currentUser) => {
                     this.isGermanSubsidiary = currentUser.ovhSubsidiary === "DE";
+                })
+                .catch(() => {
+                    this.isGermanSubsidiary = false;
                 });
 
             this.$routerParams = Exchange.getParams();
