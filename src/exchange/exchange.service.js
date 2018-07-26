@@ -1390,4 +1390,14 @@ angular
                     }
                 });
         }
+
+        /**
+         * @param {string} ovhSubsidiary
+         * @param {number} price
+         * @param {string} currencyCode
+         * @returns {string} The localized price according to the subsidiary
+         */
+        static getLocalizedPrice (ovhSubsidiary, price, currencyCode) {
+            return price.toLocaleString(ovhSubsidiary, { style: "currency", currency: currencyCode });
+        }
     });

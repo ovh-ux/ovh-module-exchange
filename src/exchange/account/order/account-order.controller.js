@@ -13,11 +13,21 @@ angular
             };
 
             User.getUser()
-                .then((currentUser) => {
-                    this.isGermanSubsidiary = currentUser.ovhSubsidiary === "DE";
+                .then(({ ovhSubsidiary }) => {
+                    this.ovhSubsidiary = ovhSubsidiary;
                 })
-                .catch(() => {
-                    this.isGermanSubsidiary = false;
+                .catch((failure) => {
+                    this.services.messaging.writeError(this.services.$translate.instant("exchange_ACTION_order_accounts_step1_user_error"), failure);
+                    this.ovhSubsidiary = "FR";
+                })
+                .then(() => {
+                    switch (this.ovhSubsidiary) {
+                    case "DE":
+                        this.showPriceWithTaxOnly = true;
+                        break;
+                    default:
+                        this.showPriceWithTaxOnly = false;
+                    }
                 });
 
             this.$routerParams = Exchange.getParams();
@@ -100,7 +110,11 @@ angular
                 .then((data) => {
                     data.duration = "01";
                     _.forEach(data.prices, (price) => {
-                        price.localizedText = price.value.toLocaleString("de-DE", { style: "currency", currency: price.currencyCode });
+                        price.localizedText = this.services.Exchange.constructor.getLocalizedPrice(
+                            this.ovhSubsidiary,
+                            price.value,
+                            price.currencyCode
+                        );
                     });
                     this.ordersList.push(data);
                 }).catch((failure) => {
@@ -115,7 +129,11 @@ angular
                 .then((data) => {
                     data.duration = "12";
                     _.forEach(data.prices, (price) => {
-                        price.localizedText = price.value.toLocaleString("de-DE", { style: "currency", currency: price.currencyCode });
+                        price.localizedText = this.services.Exchange.constructor.getLocalizedPrice(
+                            this.ovhSubsidiary,
+                            price.value,
+                            price.currencyCode
+                        );
                     });
                     this.ordersList.push(data);
                 }).catch((failure) => {
