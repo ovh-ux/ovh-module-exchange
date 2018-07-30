@@ -435,7 +435,7 @@
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_01" qtlid="79530">mensuel</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_12" qtlid="79542">annuel</translation>
    <translation id="exchange_ACTION_order_accounts_step1_price">{0} HT ({1} TTC)</translation>
-   <translation id="exchange_ACTION_order_accounts_step1_price_germany">{0} ({0} TTC)</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_price_with_tax_only">{0} ({0} TTC)</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number" qtlid="139338">Nombre de comptes :</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_tooltip" qtlid="144110">Entrez un nombre entre 1 et 100</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_not_valid" qtlid="144123">Entrez un nombre valide</translation>
