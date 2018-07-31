@@ -21,13 +21,7 @@ angular
                     this.ovhSubsidiary = "FR";
                 })
                 .then(() => {
-                    switch (this.ovhSubsidiary) {
-                    case "DE":
-                        this.showPriceWithTaxOnly = true;
-                        break;
-                    default:
-                        this.showPriceWithTaxOnly = false;
-                    }
+                    this.showPriceWithTaxOnly = _.includes(["DE"], this.ovhSubsidiary);
                 });
 
             this.$routerParams = Exchange.getParams();
