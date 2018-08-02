@@ -125,7 +125,7 @@ angular
                 this.messageSSL = this.$translate.instant("exchange_action_renew_ssl_info_expired");
             } else if (now.isAfter(aMonthBeforeSSLExpirationDate)) {
                 this.messageSSL = this.$translate.instant("exchange_action_renew_ssl_info_next", {
-                    t0: sslExpirationDate.format("L")
+                    date: sslExpirationDate.format("L")
                 });
             } else {
                 this.messageSSL = null;
@@ -148,8 +148,8 @@ angular
                 this.exchange.serverDiagnostic.aTooltip = this.$translate.instant("exchange_dashboard_diag_a_tooltip_ok");
             } else {
                 this.exchange.serverDiagnostic.aTooltip = this.$translate.instant("exchange_dashboard_diag_a_tooltip_error", {
-                    t0: this.exchange.hostname,
-                    t1: ipv4
+                    subdomain: this.exchange.hostname,
+                    target: ipv4
                 });
             }
         }
@@ -160,8 +160,8 @@ angular
                 this.exchange.serverDiagnostic.aaaaTooltip = this.$translate.instant("exchange_dashboard_diag_aaaa_tooltip_ok");
             } else {
                 this.exchange.serverDiagnostic.aaaaTooltip = this.$translate.instant("exchange_dashboard_diag_aaaa_tooltip_error", {
-                    t0: this.exchange.hostname,
-                    t1: ipv6
+                    subdomain: this.exchange.hostname,
+                    target: ipv6
                 });
             }
         }

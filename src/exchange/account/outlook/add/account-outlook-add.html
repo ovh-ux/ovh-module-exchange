@@ -9,7 +9,7 @@
              data-wizard-step-valid="isStep1Valid()"
              data-wizard-step-on-load="loadOptionsList">
 
-            <p data-translate="exchange_ACTION_add_outlook_into_label" data-translate-values="{ t0: ctrl.selectedAccount.primaryEmailDisplayName }"></p>
+            <p data-translate="exchange_ACTION_add_outlook_into_label" data-translate-values="{ name: ctrl.selectedAccount.primaryEmailDisplayName }"></p>
 
             <oui-spinner data-ng-if="!ctrl.optionsList"></oui-spinner>
 
@@ -82,7 +82,7 @@
         </div>
 
         <div data-wizard-step>
-            <p data-translate="exchange_ACTION_add_outlook_intro_step2_label" data-translate-values="{ t0: ctrl.selectedAccount.primaryEmailDisplayName }"></p>
+            <p data-translate="exchange_ACTION_add_outlook_intro_step2_label" data-translate-values="{ name: ctrl.selectedAccount.primaryEmailDisplayName }"></p>
 
             <dl class="dl-horizontal dl-lg">
                 <dt data-translate="exchange_ACTION_add_outlook_duration_label"></dt>

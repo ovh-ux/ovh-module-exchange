@@ -12,7 +12,7 @@
             <oui-spinner data-ng-if="!ctrl.availableDomains"></oui-spinner>
 
             <div data-ng-if="ctrl.availableDomains">
-                <p data-ng-bind-html="'exchange_tab_GROUPS_add_alias_intro' | translate:{ t0: ctrl.selectedMailingList.mailingListDisplayName }"></p>
+                <p data-ng-bind-html="'exchange_tab_GROUPS_add_alias_intro' | translate:{ name: ctrl.selectedMailingList.mailingListDisplayName }"></p>
 
                 <form name="ctrl.exchangeAddGroupAliasForm">
                     <div class="form-group"

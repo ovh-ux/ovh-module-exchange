@@ -173,8 +173,8 @@
                         <li class="help-block"
                             data-ng-repeat="(type, isError) in ctrl.serviceForm.passwordHistoryCount.$error track by $index"
                             data-ng-if="$index < 1">
-                            <span data-ng-if="type === 'min'" data-translate="passwordHistoryCount_min_error" data-translate-values="{ t0: 0 }"></span>
-                            <span data-ng-if="type === 'max'" data-translate="passwordHistoryCount_max_error" data-translate-values="{ t0: 100 }"></span>
+                            <span data-ng-if="type === 'min'" data-translate="passwordHistoryCount_min_error" data-translate-values="{ count: 0 }"></span>
+                            <span data-ng-if="type === 'max'" data-translate="passwordHistoryCount_max_error" data-translate-values="{ count: 100 }"></span>
                             <span data-ng-if="type !== 'min' && type !== 'max'">{{('passwordHistoryCount_' + type + '_error') | translate}}</span>
                         </li>
                     </ul>
@@ -261,7 +261,7 @@
         </div>
 
         <div data-wizard-step>
-            <p data-ng-bind-html="'exchange_ACTION_configure_step2_intro' | translate:{ t0: ctrl.service.displayName }"></p>
+            <p data-ng-bind-html="'exchange_ACTION_configure_step2_intro' | translate:{ name: ctrl.service.displayName }"></p>
 
             <dl>
                 <dt data-translate="exchange_ACTION_configure_step2_label_lockoutThreshold"></dt>
@@ -271,7 +271,7 @@
                     <span data-ng-if="ctrl.service.lockoutThreshold === 1"
                           data-translate="lockoutThreshold_unit_value_1"></span>
                     <span data-ng-if="ctrl.service.lockoutThreshold > 1"
-                          data-translate="lockoutThreshold_unit_value_many" data-translate-values="{ t0: ctrl.service.lockoutThreshold }"></span>
+                          data-translate="lockoutThreshold_unit_value_many" data-translate-values="{ threshold: ctrl.service.lockoutThreshold }"></span>
                 </dd>
 
                 <dt data-ng-if="ctrl.service.lockoutThreshold != null && ctrl.service.lockoutThreshold !== 0 && ctrl.service.lockoutObservationWindow != null && ctrl.service.lockoutObservationWindow !== 0"
@@ -280,7 +280,7 @@
                     <span data-ng-if="ctrl.service.lockoutObservationWindow === 1"
                           data-translate="lockoutObservationWindow_unit_value_1"></span>
                     <span data-ng-if="ctrl.service.lockoutObservationWindow > 1"
-                          data-translate="lockoutObservationWindow_unit_value_many" data-translate-values="{ t0: ctrl.service.lockoutObservationWindow }"></span>
+                          data-translate="lockoutObservationWindow_unit_value_many" data-translate-values="{ duration: ctrl.service.lockoutObservationWindow }"></span>
                 </dd>
 
                 <dt data-ng-if="ctrl.service.lockoutThreshold != null && service.lockoutThreshold !== 0"
@@ -291,7 +291,7 @@
                     <span data-ng-if="ctrl.service.lockoutDuration === 1"
                           data-translate="lockoutDuration_unit_value_1"></span>
                     <span data-ng-if="ctrl.service.lockoutDuration > 1"
-                          data-translate="lockoutDuration_unit_value_many" data-translate-values="{ t0: ctrl.service.lockoutDuration }"></span>
+                          data-translate="lockoutDuration_unit_value_many" data-translate-values="{ duration: ctrl.service.lockoutDuration }"></span>
                 </dd>
 
                 <dt data-translate="exchange_ACTION_configure_step2_label_complexityEnabled"></dt>
@@ -304,7 +304,7 @@
                     <span data-ng-if="ctrl.service.minPasswordAge === 1"
                           data-translate="minPasswordAge_unit_value_1"></span>
                     <span data-ng-if="ctrl.service.minPasswordAge > 1"
-                          data-translate="minPasswordAge_unit_value_many" data-translate-values="{ t0: ctrl.service.minPasswordAge }"></span>
+                          data-translate="minPasswordAge_unit_value_many" data-translate-values="{ age: ctrl.service.minPasswordAge }"></span>
                 </dd>
 
                 <dt data-translate="exchange_ACTION_configure_step2_label_maxPasswordAge"></dt>
@@ -314,7 +314,7 @@
                     <span data-ng-if="ctrl.service.maxPasswordAge === 1"
                           data-translate="maxPasswordAge_unit_value_1"></span>
                     <span data-ng-if="ctrl.service.maxPasswordAge > 1"
-                          data-translate="maxPasswordAge_unit_value_many" data-translate-values="{ t0: ctrl.service.maxPasswordAge }"></span>
+                          data-translate="maxPasswordAge_unit_value_many" data-translate-values="{ age: ctrl.service.maxPasswordAge }"></span>
                 </dd>
 
                 <dt data-translate="exchange_ACTION_configure_step2_label_passwordHistoryCount"
@@ -325,7 +325,7 @@
                     <span data-ng-if="ctrl.service.passwordHistoryCount === 1"
                           data-translate="passwordHistoryCount_unit_value_1"></span>
                     <span data-ng-if="ctrl.service.passwordHistoryCount > 1"
-                          data-translate="passwordHistoryCount_unit_value_many" data-translate-values="{ t0: ctrl.service.passwordHistoryCount }"></span>
+                          data-translate="passwordHistoryCount_unit_value_many" data-translate-values="{ count: ctrl.service.passwordHistoryCount }"></span>
                 </dd>
 
                 <dt data-translate="exchange_ACTION_configure_step2_label_minPasswordLength"></dt>
@@ -335,7 +335,7 @@
                     <span data-ng-if="ctrl.service.minPasswordLength === 1"
                           data-translate="minPasswordLength_unit_value_1"></span>
                     <span data-ng-if="ctrl.service.minPasswordLength > 1"
-                          data-translate="minPasswordLength_unit_value_many" data-translate-values="{ t0: ctrl.service.minPasswordLength }"></span>
+                          data-translate="minPasswordLength_unit_value_many" data-translate-values="{ length: ctrl.service.minPasswordLength }"></span>
                 </dd>
 
                 <dt data-translate="exchange_ACTION_configure_step2_label_dkim"></dt>

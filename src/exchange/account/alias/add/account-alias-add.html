@@ -11,7 +11,7 @@
             <oui-spinner data-ng-if="!ctrl.availableDomains"></oui-spinner>
 
             <div data-ng-if="ctrl.availableDomains">
-                <p data-ng-bind-html="'exchange_tab_ALIAS_add_alias_intro' | translate:{ t0: ctrl.selectedAccount.primaryEmailDisplayName }"></p>
+                <p data-ng-bind-html="'exchange_tab_ALIAS_add_alias_intro' | translate:{ name: ctrl.selectedAccount.primaryEmailDisplayName }"></p>
                 <div class="form-group"
                      data-ng-class="{'has-error': ctrl.takenEmailError}">
                     <div class="input-group">

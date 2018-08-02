@@ -217,13 +217,13 @@ angular
                 .then((data) => {
                     const updatePermissionsMessages = {
                         OK: this.services.$translate.instant("exchange_action_SHARED_permissions_update_success_message", {
-                            t0: this.folder.path
+                            path: this.folder.path
                         }),
                         PARTIAL: this.services.$translate.instant("exchange_action_SHARED_permissions_update_partial_message", {
-                            t0: this.folder.path
+                            path: this.folder.path
                         }),
                         ERROR: this.services.$translate.instant("exchange_action_SHARED_permissions_update_error_message", {
-                            t0: this.folder.path
+                            path: this.folder.path
                         })
                     };
 
@@ -231,7 +231,7 @@ angular
                 })
                 .catch((failure) => {
                     this.services.messaging.writeError(this.services.$translate.instant("exchange_action_SHARED_permissions_update_error_message", {
-                        t0: this.folder.path
+                        path: this.folder.path
                     }), failure);
                 });
         }

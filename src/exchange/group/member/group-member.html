@@ -4,7 +4,7 @@
         <span class="oui-icon oui-icon-chevron-left" aria-hidden="true"></span>
         <span data-translate="common_back"></span>
     </button>
-    <h2 data-ng-bind-html="'exchange_GROUPS_member_intro' | translate:{ t0: ctrl.services.navigation.selectedGroup.mailingListDisplayName }"></h2>
+    <h2 data-ng-bind-html="'exchange_GROUPS_member_intro' | translate:{ name: ctrl.services.navigation.selectedGroup.mailingListDisplayName }"></h2>
 
     <oui-datagrid data-rows-loader="ctrl.getMembersByGroup($config)">
         <oui-column data-title="'exchange_tab_GROUPS_all_table_user' | translate" data-property="displayAddress"></oui-column>

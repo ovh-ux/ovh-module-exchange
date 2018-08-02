@@ -138,7 +138,7 @@
                 .sendingNewAccount(this.$routerParams.organization, this.$routerParams.productId, formattedAccount)
                 .then((data) => {
                     this.messaging.writeSuccess(this.$translate.instant("exchange_account_add_submit_success", {
-                        t0: `${formattedAccount.login}@${formattedAccount.domain}`
+                        email: `${formattedAccount.login}@${formattedAccount.domain}`
                     }), data);
                 })
                 .catch((error) => {

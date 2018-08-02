@@ -176,9 +176,9 @@
              data-wizard-step-on-previous="checkDomainType"
              data-wizard-step-valid="isStep3Valid()">
 
-            <p data-ng-bind-html="'exchange_tab_domain_add_step2_auth_intro' | translate:{ t0: ctrl.model.displayName }"
+            <p data-ng-bind-html="'exchange_tab_domain_add_step2_auth_intro' | translate:{ name: ctrl.model.displayName }"
                data-ng-if="ctrl.model.type === 'AUTHORITATIVE'"></p>
-            <p data-ng-bind-html="'exchange_tab_domain_add_step2_non_auth_intro' | translate:{ t0: ctrl.model.displayName }"
+            <p data-ng-bind-html="'exchange_tab_domain_add_step2_non_auth_intro' | translate:{ name: ctrl.model.displayName }"
                data-ng-if="ctrl.model.type === 'NON_AUTHORITATIVE'"></p>
 
             <form name="exchangeAddDomainStep3Form">
@@ -229,7 +229,7 @@
                             </div>
                         </div>
                         <p class="oui-checkbox__description"
-                           data-ng-bind-html="'exchange_tab_domain_add_step1_new_organization_intro' | translate:{ t0: ctrl.model.displayName }"
+                           data-ng-bind-html="'exchange_tab_domain_add_step1_new_organization_intro' | translate:{ name: ctrl.model.displayName }"
                            data-ng-if="ctrl.model.main"></p>
                     </div>
                 </div>

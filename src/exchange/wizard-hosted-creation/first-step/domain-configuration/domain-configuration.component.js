@@ -304,7 +304,7 @@
                             this.messaging.writeWarning(this.$translate.instant("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAuthoritativeEmailPro"));
                         }
                     } else if (_(error.message).startsWith("UPN suffix")) {
-                        this.messaging.writeError(this.$translate.instant("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAssociated_error", { t0: formattedDomainName }));
+                        this.messaging.writeError(this.$translate.instant("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAssociated_error", { name: formattedDomainName }));
                         this.homepage.domainName = "";
                     } else {
                         this.messaging.writeError(this.$translate.instant("exchange_wizardHostedCreation_addDomainName_OVHDomain_error"), error);
@@ -336,7 +336,7 @@
                             this.messaging.writeWarning(this.$translate.instant("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAuthoritativeEmailPro"));
                         }
                     } else if (_(error.message).startsWith("UPN suffix")) {
-                        this.messaging.writeError(this.$translate.instant("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAssociated_error", { t0: formattedDomainName }));
+                        this.messaging.writeError(this.$translate.instant("exchange_wizardHostedCreation_addDomainName_OVHDomain_alreadyAssociated_error", { name: formattedDomainName }));
                         this.homepage.domainName = "";
                     } else {
                         this.messaging.writeError(this.$translate.instant("exchange_wizardHostedCreation_addDomainName_OVHDomain_error"), error);

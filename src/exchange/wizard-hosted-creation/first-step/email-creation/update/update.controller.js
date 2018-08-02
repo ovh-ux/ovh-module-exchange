@@ -147,7 +147,7 @@ angular
                 .catch((error) => {
                     if (error.message === "Email address is already used.") {
                         this.messaging.writeError(this.$translate.instant("exchange_wizardHostedCreation_emailCreation_add_accountCreation_alreadyExist_error", {
-                            t0: `${this.model.login}@${this.model.domain}`
+                            email: `${this.model.login}@${this.model.domain}`
                         }), error);
                     } else {
                         this.messaging.writeError(this.$translate.instant("exchange_wizardHostedCreation_emailCreation_add_accountCreation_error"), error);

@@ -11,7 +11,7 @@
             <oui-spinner data-ng-if="!ctrl.domainDiag"></oui-spinner>
 
             <div data-ng-if="ctrl.domainDiag">
-                <p data-translate="exchange_tab_domain_diagnostic_srv_intro_ovh" data-translate-values="{ t0: ctrl.domain.displayName}"
+                <p data-translate="exchange_tab_domain_diagnostic_srv_intro_ovh" data-translate-values="{ name: ctrl.domain.displayName}"
                    data-ng-if="ctrl.domainDiag.isOvhDomain"></p>
                 <p data-ng-bind="'exchange_tab_domain_diagnostic_srv_no_ovh' | translate"
                    data-ng-if="!ctrl.domainDiag.isOvhDomain"></p>
@@ -19,18 +19,18 @@
                 <dl class="dl-horizontal">
                     <dt data-translate="exchange_tab_domain_diagnostic_srv_label_champ"></dt>
                     <dd data-ng-bind-html="'exchange_tab_domain_diagnostic_srv_config' | translate:{
-                        t0: ctrl.domainDiag.srv.subDomain,
-                        t1: ctrl.domainDiag.srv.priority,
-                        t2: ctrl.domainDiag.srv.weight,
-                        t3: ctrl.domainDiag.srv.port,
-                        t4: ctrl.domainDiag.srv.target
+                        subdomain: ctrl.domainDiag.srv.subDomain,
+                        priority: ctrl.domainDiag.srv.priority,
+                        weight: ctrl.domainDiag.srv.weight,
+                        port: ctrl.domainDiag.srv.port,
+                        target: ctrl.domainDiag.srv.target
                     }"></dd>
                 </dl>
             </div>
         </div>
 
         <div data-wizard-step>
-            <p data-ng-bind-html="'exchange_tab_domain_diagnostic_srv_recap' | translate:{ t0: ctrl.domainDiag.srv.subDomain }"></p>
+            <p data-ng-bind-html="'exchange_tab_domain_diagnostic_srv_recap' | translate:{ subdomain: ctrl.domainDiag.srv.subDomain }"></p>
 
             <dl class="dl-horizontal">
                 <dt data-translate="exchange_tab_domain_domain"></dt>
@@ -39,11 +39,11 @@
 
                 <dt data-translate="exchange_tab_domain_diagnostic_srv_label_champ"></dt>
                 <dd data-ng-bind-html="'exchange_tab_domain_diagnostic_srv_config' | translate:{
-                    t0: ctrl.domainDiag.srv.subDomain,
-                    t1: ctrl.domainDiag.srv.priority,
-                    t2: ctrl.domainDiag.srv.weight,
-                    t3: ctrl.domainDiag.srv.port,
-                    t4: ctrl.domainDiag.srv.target
+                    subdomain: ctrl.domainDiag.srv.subDomain,
+                    priority: ctrl.domainDiag.srv.priority,
+                    weight: ctrl.domainDiag.srv.weight,
+                    port: ctrl.domainDiag.srv.port,
+                    target: ctrl.domainDiag.srv.target
                 }"></dd>
             </dl>
         </div>

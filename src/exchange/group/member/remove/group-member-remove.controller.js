@@ -26,14 +26,14 @@ angular
                 .removeMember(this.$routerParams.organization, this.$routerParams.productId, this.group.mailingListName, this.member.id, this.member.type)
                 .then((success) => {
                     this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_GROUPS_remove_member_success_message", {
-                        t0: this.member.primaryEmailAddress,
-                        t1: this.group.mailingListDisplayName
+                        email: this.member.primaryEmailAddress,
+                        name: this.group.mailingListDisplayName
                     }), success);
                 })
                 .catch((failure) => {
                     this.services.messaging.writeError(this.services.$translate.instant("exchange_GROUPS_remove_member_error_message", {
-                        t0: this.member.primaryEmailAddress,
-                        t1: this.group.mailingListDisplayName
+                        email: this.member.primaryEmailAddress,
+                        name: this.group.mailingListDisplayName
                     }), failure);
                 })
                 .finally(() => {

@@ -215,9 +215,9 @@
                 <h3 data-translate="exchange_ACTION_update_account_helpwizard_title"></h3>
                 <p data-ng-bind-html="'exchange_ACTION_update_account_helpwizard_intro' | translate"></p>
                 <h4 data-translate="exchange_ACTION_update_account_helpwizard_password_title"></h4>
-                <p data-ng-bind-html="'exchange_ACTION_update_account_helpwizard_password' | translate:{ t0: ctrl.newAccountOptions.minPasswordLength }"
+                <p data-ng-bind-html="'exchange_ACTION_update_account_helpwizard_password' | translate:{ minlength: ctrl.newAccountOptions.minPasswordLength }"
                    data-ng-if="ctrl.newAccountOptions.passwordComplexityEnabled"></p>
-                <p data-ng-bind-html="'exchange_ACTION_update_account_helpwizard_password_simple' | translate:{ t0: ctrl.newAccountOptions.minPasswordLength }"
+                <p data-ng-bind-html="'exchange_ACTION_update_account_helpwizard_password_simple' | translate:{ minlength: ctrl.newAccountOptions.minPasswordLength }"
                    data-ng-if="!ctrl.newAccountOptions.passwordComplexityEnabled"></p>
                 <div data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.selectedAccount.canBeConfigured">
                     <h4 data-translate="exchange_ACTION_update_account_helpwizard_hide_directory_title"></h4>

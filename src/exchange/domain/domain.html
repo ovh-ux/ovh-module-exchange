@@ -84,12 +84,12 @@
                                 <span data-ng-if="domain.taskInProgress && !domain.partial && ctrl.services.exchangeStates.constructor.isOk(domain) && domain.type === domainTypeAuthoritative"
                                       data-translate="exchange_tab_domain_modify_in_progress"
                                       data-translate-values="{
-                                          t0: ('exchange_tab_domain_inverse_NON_AUTHORITATIVE' | translate)
+                                        type: ('exchange_tab_domain_inverse_NON_AUTHORITATIVE' | translate)
                                       }">
                                 </span>
                                 <span data-ng-if="domain.taskInProgress && !domain.partial && ctrl.services.exchangeStates.constructor.isOk(domain) && domain.type === domainTypeNonAuthoritative"
                                       data-translate="exchange_tab_domain_modify_in_progress"
-                                      data-translate-values="{ t0: ('exchange_tab_domain_inverse_AUTHORITATIVE' | translate) }">
+                                      data-translate-values="{ type: ('exchange_tab_domain_inverse_AUTHORITATIVE' | translate) }">
                                 </span>
                                 <span data-ng-if="!domain.partial && ctrl.services.exchangeStates.constructor.isDeleting(domain)"
                                       data-ng-bind="('exchange_tab_domain_' + domain.type) | translate"></span>
@@ -144,7 +144,7 @@
                                 <button class="btn btn-danger btn-xs" type="button"
                                         data-translate="exchange_tab_domain_diagnostic_cname"
                                         data-ng-if="!domain.domainValidated && domain.cname"
-                                        data-simplepopover="{{ 'exchange_tab_domain_validation_cname_details' | translate:{ t0: domain.cname, t1: domain.name, t2: ctrl.cnameRedirection } }}"
+                                        data-simplepopover="{{ 'exchange_tab_domain_validation_cname_details' | translate:{ cname: domain.cname, name: domain.name, redirection: ctrl.cnameRedirection } }}"
                                         data-simplepopover-title="{{'exchange_tab_domain_validation_cname_title' | translate}}"
                                         data-simplepopover-placement="top"
                                         data-simplepopover-single="true">

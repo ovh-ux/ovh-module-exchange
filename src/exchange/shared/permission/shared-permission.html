@@ -7,7 +7,7 @@
                     <span class="fa fa-chevron-left mr-2" aria-hidden="true"></span>
                     <span data-translate="exchange_GROUPS_manager_back_button"></span>
                 </button>
-                <span class="ml-4" data-ng-bind-html="'exchange_tab_SHARED_permissions_intro' | translate:{ t0: ctrl.selectedFolder.path }"></span>
+                <span class="ml-4" data-ng-bind-html="'exchange_tab_SHARED_permissions_intro' | translate:{ path: ctrl.selectedFolder.path }"></span>
             </div>
 
             <div class="alert alert-info" role="alert"
@@ -54,7 +54,7 @@
                         data-ng-repeat="permission in ctrl.permissionsList.list.messages | orderBy:'id':false track by $index">
                         <td colspan="3">
                             <span class="fa fa-exclamation-triangle mr-2" aria-hidden="true"></span>
-                            <span data-ng-bind="permission.id" data-uib-tooltip="{{ 'exchange_GROUPS_partial_account' | translate: { t0: permission.message } }}"></span>
+                            <span data-ng-bind="permission.id" data-uib-tooltip="{{ 'exchange_GROUPS_partial_account' | translate: { message: permission.message } }}"></span>
                         </td>
                     </tr>
                 </tbody>
