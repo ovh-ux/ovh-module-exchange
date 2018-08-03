@@ -31,7 +31,7 @@ module.exports = {
     },
     resources: {
         i18n: [
-            "src/**/translations/**/*.xml"
+            "src/**/translations/*.xml"
         ]
     }
 };
