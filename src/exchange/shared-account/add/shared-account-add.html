@@ -51,12 +51,12 @@
                                data-ng-min="ctrl.optionsToCreateNewAccounts.minQuota.value" min="{{ctrl.optionsToCreateNewAccounts.minQuota.value}}"
                                data-ng-max="ctrl.optionsToCreateNewAccounts.maxQuota.value" max="{{ctrl.optionsToCreateNewAccounts.maxQuota.value}}"
                                data-ng-model="ctrl.accountBeingCreated.quota"
-                               data-uib-tooltip="{{ 'exchange_action_SHARED_add_quota_tooltip' | translate: { max: ctrl.optionsToCreateNewAccounts.maxQuota.value, unit: (('unit_size_' + ctrl.optionsToCreateNewAccounts.maxQuota.unit) | translate) } }}">
+                               data-uib-tooltip="{{ 'exchange_action_SHARED_add_quota_tooltip' | translate: { t0: ctrl.optionsToCreateNewAccounts.maxQuota.value, t1: (('unit_size_' + ctrl.optionsToCreateNewAccounts.maxQuota.unit) | translate) } }}">
                         <span class="input-group-addon"
                               data-ng-bind="('unit_size_' + ctrl.optionsToCreateNewAccounts.maxQuota.unit) | translate"></span>
                     </div>
                     <small class="help-block" id="quotaDescription"
-                           data-ng-bind-html="'exchange_tab_ALIAS_creation_quota_description' | translate: { min: ctrl.optionsToCreateNewAccounts.minQuota.value, unit: (('unit_size_' + ctrl.optionsToCreateNewAccounts.maxQuota.unit) | translate), max: ctrl.optionsToCreateNewAccounts.maxQuota.value }"></small>
+                           data-ng-bind-html="'exchange_tab_ALIAS_creation_quota_description' | translate: { t0: ctrl.optionsToCreateNewAccounts.minQuota.value, t1: (('unit_size_' + ctrl.optionsToCreateNewAccounts.maxQuota.unit) | translate), t2: ctrl.optionsToCreateNewAccounts.maxQuota.value }"></small>
                 </div>
 
                 <div class="form-group">

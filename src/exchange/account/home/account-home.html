@@ -107,7 +107,7 @@
                     data-on-click="$ctrl.displayDialog('exchange/account/export-as-pst/account-export-as-pst', $row)"
                     data-disabled="!$ctrl.exchangeStates.constructor.isOk($row) || $ctrl.exchangeAccount.isPlaceholder($row)"></oui-action-menu-item>
                 <oui-action-menu-item
-                    data-text="{{:: 'exchange_tab_ACCOUNTS_menu_upgradeTo300Gb' | translate:{ size: ('unit_size_GiB'|translate) } }}"
+                    data-text="{{:: 'exchange_tab_ACCOUNTS_menu_upgradeTo300Gb' | translate:{ t0: ('unit_size_GiB'|translate) } }}"
                     data-on-click="$ctrl.displayDialog('exchange/account/upgrade-300g/account-upgrade-300g', $row)"
                     data-ng-if="$ctrl.exchangeSelectedService.canUpgradeTo300Gb()"
                     data-disabled="!$ctrl.exchangeStates.constructor.isOk($row) || $ctrl.exchangeAccount.isPlaceholder($row)"></oui-action-menu-item>

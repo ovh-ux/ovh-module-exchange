@@ -54,11 +54,11 @@
                                data-ng-min="ctrl.publicFoldersOptions.minQuota.value" min="{{::ctrl.publicFoldersOptions.minQuota.value}}"
                                data-ng-model="ctrl.folderToAdd.quota"
                                data-ng-pattern="/^\d+$/"
-                               data-uib-tooltip="{{ 'exchange_action_SHARED_add_quota_tooltip' | translate: { max: ctrl.publicFoldersOptions.maxQuota.value, unit: ctrl.quotaUnitTranslation } }}">
+                               data-uib-tooltip="{{ 'exchange_action_SHARED_add_quota_tooltip' | translate: { t0: ctrl.publicFoldersOptions.maxQuota.value, t1: ctrl.quotaUnitTranslation } }}">
                         <span class="input-group-addon" data-ng-bind="ctrl.quotaUnitTranslation"></span>
                     </div>
                     <small class="help-block"
-                           data-ng-bind="'exchange_action_SHARED_add_quota_error_message' | translate: { min: ctrl.publicFoldersOptions.minQuota.value, max: ctrl.publicFoldersOptions.maxQuota.value, unit: ctrl.quotaUnitTranslation }"
+                           data-ng-bind="'exchange_action_SHARED_add_quota_error_message' | translate: { t0: ctrl.publicFoldersOptions.minQuota.value, t1: ctrl.publicFoldersOptions.maxQuota.value, t2: ctrl.quotaUnitTranslation }"
                            data-ng-if="!ctrl.errors.quotaIsValid"></small>
                 </div>
 

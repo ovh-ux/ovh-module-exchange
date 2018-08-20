@@ -94,19 +94,19 @@ angular
 
                     if (_(licenses.standard).isArray()) {
                         this.chart.addSerie(this.$translate.instant("exchange_action_license_history_label", {
-                            value: this.exchangeAccountTypes.getDisplayValue(this.exchangeAccountTypes.TYPES.STANDARD)
+                            t0: this.exchangeAccountTypes.getDisplayValue(this.exchangeAccountTypes.TYPES.STANDARD)
                         }), licenses.standard, serieOptions);
                     }
 
                     if (_(licenses.basic).isArray()) {
                         this.chart.addSerie(this.$translate.instant("exchange_action_license_history_label", {
-                            value: this.exchangeAccountTypes.getDisplayValue(this.exchangeAccountTypes.TYPES.BASIC)
+                            t0: this.exchangeAccountTypes.getDisplayValue(this.exchangeAccountTypes.TYPES.BASIC)
                         }), licenses.basic, serieOptions);
                     }
 
                     if (_(licenses.enterprise).isArray()) {
                         this.chart.addSerie(this.$translate.instant("exchange_action_license_history_label", {
-                            value: this.exchangeAccountTypes.getDisplayValue(this.exchangeAccountTypes.TYPES.ENTERPRISE)
+                            t0: this.exchangeAccountTypes.getDisplayValue(this.exchangeAccountTypes.TYPES.ENTERPRISE)
                         }), licenses.enterprise, serieOptions);
                     }
                 })

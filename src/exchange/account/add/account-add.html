@@ -238,14 +238,14 @@
             <div
                 class="oui-field__helper"
                 data-ng-if="!$ctrl.accountCreationOptions.passwordComplexityEnabled"
-                data-translate="exchange_account_add_password_hint_simple" data-translate-values="{ minlength: $ctrl.accountCreationOptions.minPasswordLength }"></div>
+                data-translate="exchange_account_add_password_hint_simple" data-translate-values="{ t0: $ctrl.accountCreationOptions.minPasswordLength }"></div>
             <div
                 class="oui-field__helper"
                 data-ng-if="$ctrl.accountCreationOptions.passwordComplexityEnabled">
                 <span data-ng-bind=":: 'exchange_account_add_password_hint_complex_1' | translate"></span>
                 <ul>
                     <li data-ng-bind=":: 'exchange_account_add_password_hint_complex_1_1' | translate"></li>
-                    <li data-translate="exchange_account_add_password_hint_complex_1_2" data-translate-values="{ minlength: $ctrl.accountCreationOptions.minPasswordLength }"></li>
+                    <li data-translate="exchange_account_add_password_hint_complex_1_2" data-translate-values="{ t0: $ctrl.accountCreationOptions.minPasswordLength }"></li>
                     <li>
                         <span data-ng-bind=":: 'exchange_account_add_password_hint_complex_1_3' | translate"></span>
                         <ul>

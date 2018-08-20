@@ -9,7 +9,7 @@
              data-wizard-step-on-load="getDelegationRight"
              data-wizard-step-valid="hasChanged()">
 
-            <p data-ng-bind-html="'exchange_GROUPS_delegation_step1_intro' | translate:{ name: ctrl.selectedGroup.mailingListDisplayName }"></p>
+            <p data-ng-bind-html="'exchange_GROUPS_delegation_step1_intro' | translate:{ t0: ctrl.selectedGroup.mailingListDisplayName }"></p>
 
             <div class="alert alert-warning" role="alert"
                  data-ng-if="!ctrl.loading && ctrl.delegationList && ctrl.delegationList.list.messages.length > 0">
@@ -147,7 +147,7 @@
                         <td colspan="3" >
                             <span class="a fa-exclamation-triangle mr-2" aria-hidden="true"></span>
                             <span data-ng-bind="account.id"
-                                  data-uib-tooltip="{{ 'exchange_GROUPS_partial_account' | translate: { message: account.message } }}"></span>
+                                  data-uib-tooltip="{{ 'exchange_GROUPS_partial_account' | translate: { t0: account.message } }}"></span>
                         </td>
                     </tr>
                 </tbody>
@@ -162,7 +162,7 @@
         </div>
 
         <div data-wizard-step>
-            <p data-ng-bind-html="'exchange_GROUPS_delegation_step2_intro' | translate:{ name: ctrl.selectedGroup.mailingListDisplayName }"></p>
+            <p data-ng-bind-html="'exchange_GROUPS_delegation_step2_intro' | translate:{ t0: ctrl.selectedGroup.mailingListDisplayName }"></p>
 
             <table class="table table-hover">
                 <thead>

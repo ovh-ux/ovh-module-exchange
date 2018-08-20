@@ -10,7 +10,7 @@
             <oui-spinner data-ng-if="ctrl.loadingData"></oui-spinner>
 
             <div data-ng-if="!ctrl.loadingData">
-                <p data-ng-bind-html="'exchange_ACTION_update_disclaimer_info' | translate:{ name: ctrl.data.domain.displayName }"></p>
+                <p data-ng-bind-html="'exchange_ACTION_update_disclaimer_info' | translate:{ t0: ctrl.data.domain.displayName }"></p>
 
                 <form name="updateDisclaimerForm">
                     <div class="text-center">

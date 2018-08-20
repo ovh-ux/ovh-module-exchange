@@ -76,7 +76,7 @@
         getAddAliasTooltip () {
             if (_(this.aliases).get("length", 0) >= this.aliasMaxLimit) {
                 return this.$translate.instant("exchange_tab_ALIAS_add_alias_limit_tooltip", {
-                    limit: this.aliasMaxLimit
+                    t0: this.aliasMaxLimit
                 });
             }
 

@@ -105,19 +105,19 @@ angular.module("Module.exchange.controllers")
                 .then((data) => {
                     const addGroupMessages = {
                         OK: this.services.$translate.instant("exchange_GROUPS_settings_success_message", {
-                            name: this.selectedGroup.mailingListDisplayName
+                            t0: this.selectedGroup.mailingListDisplayName
                         }),
                         PARTIAL: this.services.$translate.instant("exchange_GROUPS_settings_partial_message", {
-                            name: this.selectedGroup.mailingListDisplayName
+                            t0: this.selectedGroup.mailingListDisplayName
                         }),
                         ERROR: this.services.$translate.instant("exchange_GROUPS_settings_error_message", {
-                            name: this.selectedGroup.mailingListDisplayName
+                            t0: this.selectedGroup.mailingListDisplayName
                         })
                     };
 
                     if (data == null) {
                         this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_GROUPS_settings_success_message", {
-                            name: this.selectedGroup.mailingListDisplayName
+                            t0: this.selectedGroup.mailingListDisplayName
                         }));
                     } else {
                         this.services.messaging.setMessage(addGroupMessages, data);
@@ -125,7 +125,7 @@ angular.module("Module.exchange.controllers")
                 })
                 .catch((failure) => {
                     this.services.messaging.writeError(this.services.$translate.instant("exchange_GROUPS_settings_error_message", {
-                        name: this.selectedGroup.mailingListDisplayName
+                        t0: this.selectedGroup.mailingListDisplayName
                     }), failure);
                 })
                 .finally(() => {

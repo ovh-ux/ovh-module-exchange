@@ -162,7 +162,7 @@ angular
 
                     if (selectedAccount.samaccountName && _.includes(selectedAccount.password, selectedAccount.samaccountName)) {
                         if (!this.containsSamAccountNameLabel) {
-                            this.containsSamAccountNameLabel = this.services.$translate.instant("exchange_ACTION_update_account_step1_password_contains_samaccount_name", { name: selectedAccount.samaccountName });
+                            this.containsSamAccountNameLabel = this.services.$translate.instant("exchange_ACTION_update_account_step1_password_contains_samaccount_name", { t0: selectedAccount.samaccountName });
                         }
 
                         this.containsSamAccountNameFlag = true;
@@ -255,8 +255,8 @@ angular
                     }
 
                     this.passwordTooltip = this.newAccountOptions.passwordComplexityEnabled ?
-                        this.services.$translate.instant("exchange_ACTION_update_account_step1_complex_password_tooltip", { minlength: this.newAccountOptions.minPasswordLength }) :
-                        this.services.$translate.instant("exchange_ACTION_update_account_step1_simple_password_tooltip", { minlength: this.newAccountOptions.minPasswordLength });
+                        this.services.$translate.instant("exchange_ACTION_update_account_step1_complex_password_tooltip", { t0: this.newAccountOptions.minPasswordLength }) :
+                        this.services.$translate.instant("exchange_ACTION_update_account_step1_simple_password_tooltip", { t0: this.newAccountOptions.minPasswordLength });
 
                 })
                 .catch((failure) => {

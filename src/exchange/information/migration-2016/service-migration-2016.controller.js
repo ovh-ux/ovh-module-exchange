@@ -45,8 +45,8 @@ angular
                 .upgradeExchange(this.curExchange)
                 .then((order) => {
                     this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_ACTION_order_upgrade_success", {
-                        url: order.url,
-                        id: order.orderId
+                        t0: order.url,
+                        t1: order.orderId
                     }));
                     this.services.$window.open(order.url, "_blank");
                 })

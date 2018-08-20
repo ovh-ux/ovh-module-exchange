@@ -68,8 +68,8 @@ angular
                 .orderDiskSpace(this.$routerParams.organization, this.$routerParams.productId)
                 .then((order) => {
                     this.services.messaging.writeSuccess(this.services.$translate.instant("exchange_action_order_space_disk_success", {
-                        url: order.url,
-                        id: order.orderId
+                        t0: order.url,
+                        t1: order.orderId
                     }));
                     this.services.$window.open(order.url, "_blank");
                 })
