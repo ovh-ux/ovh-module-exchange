@@ -16,7 +16,7 @@ angular
             this.selectedAccount = navigation.currentActionData;
             this.model = {
                 primaryEmailAddress: this.selectedAccount.primaryEmailAddress,
-                language: $translate.getSelectedAvailableLanguage().value.split("_")[1]
+                language: $translate.use().split("_")[1]
             };
 
             this.exchange = Exchange.value;
