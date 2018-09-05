@@ -30,8 +30,7 @@ angular
             },
             resolve: {
                 navigationInformations: getNavigationInformations("exchange_dedicated")
-            },
-            translations: ["exchange"]
+            }
         }, {
             name: "app.microsoft.exchange.dedicatedCluster",
             url: "/configuration/exchange_dedicatedCluster/:organization/:productId?tab",
@@ -44,8 +43,7 @@ angular
             },
             resolve: {
                 navigationInformations: getNavigationInformations("exchange_dedicatedCluster")
-            },
-            translations: ["exchange"]
+            }
         }, {
             name: "app.microsoft.exchange.hosted",
             url: "/configuration/exchange_hosted/:organization/:productId?tab",
@@ -58,8 +56,7 @@ angular
             },
             resolve: {
                 navigationInformations: getNavigationInformations("exchange_hosted")
-            },
-            translations: ["exchange"]
+            }
         },
         {
             name: "app.microsoft.exchange.provider",
@@ -73,8 +70,7 @@ angular
             },
             resolve: {
                 navigationInformations: getNavigationInformations("exchange_provider")
-            },
-            translations: ["exchange"]
+            }
         },
         {
             name: "app.microsoft.exchange.order",
@@ -85,8 +81,7 @@ angular
             reloadOnSearch: false,
             resolve: {
                 navigationInformations: getNavigationInformations("exchange_order")
-            },
-            translations: ["exchange"]
+            }
         }];
 
         if ($routerProvider != null) {
