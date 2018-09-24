@@ -59,7 +59,7 @@ angular
         }
 
         getResumePrice (price) {
-            return price.value === 0 ? this.services.$translate.instant("price_free") : this.services.$translate.instant("price_ht_label", { t0: price.text });
+            return price.value === 0 ? this.services.$translate.instant("price_free") : this.services.$translate.instant("price_ht_label", { price: price.text });
         }
 
         submitting () {

@@ -77,7 +77,10 @@
                 <dt data-ng-if="!ctrl.model.antiSpam"
                     data-translate="exchange_tab_domain_diagnostic_mx_label_champs"></dt>
                 <dd data-ng-if="!ctrl.model.antiSpam"
-                    data-ng-bind-html="'exchange_tab_domain_diagnostic_mx_no_antispam_config', [ctrl.domainDiag.mx.noSpam[0].priority, ctrl.domainDiag.mx.noSpam[0].target])"></dd>
+                    data-ng-bind-html="'exchange_tab_domain_diagnostic_mx_no_antispam_config' | translate:{
+                        t0: ctrl.domainDiag.mx.noSpam[0].priority,
+                        t1: ctrl.domainDiag.mx.noSpam[0].target
+                    }"></dd>
 
                 <dt data-ng-if="ctrl.model.antiSpam"
                     data-translate="exchange_tab_domain_diagnostic_mx_label_champs"></dt>
