@@ -14,6 +14,7 @@ angular
 
         resetAction () {
             $("#currentAction").modal("hide");
+            $(".modal-backdrop").remove();
 
             this.currentActionData = null;
             this.stepPath = "";
