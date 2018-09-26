@@ -166,7 +166,7 @@
                                                 }"
                                                  data-ng-style="{'width': ctrl.exchange.diskPercent + '%'}">
                                                 <span class="oui-progress__label"
-                                                      data-ng-bind="ctrl.exchange.currentDiskUsage.value + ' ' + ('unit_size_'+ ctrl.exchange.currentDiskUsage.unit) | translate + ' / ' + ctrl.exchange.totalDiskSize.value + ' ' + ('unit_size_'+ ctrl.exchange.totalDiskSize.unit) | translate"></span>
+                                                      data-ng-bind="ctrl.exchange.currentDiskUsage.value + ' ' + ('unit_size_'+ ctrl.exchange.currentDiskUsage.unit | translate) + ' / ' + ctrl.exchange.totalDiskSize.value + ' ' + ('unit_size_'+ ctrl.exchange.totalDiskSize.unit | translate)"></span>
                                             </div>
                                         </div>
                                         <button class="btn btn-block btn-default" type="button"

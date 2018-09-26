@@ -17,7 +17,7 @@ angular
             "abstract": true,
             name: "app.microsoft.exchange",
             template: "<div ui-view></div>",
-            translations: ["exchange"]
+            translations: ["exchange", "sharepoint"]
         }, {
             name: "app.microsoft.exchange.dedicated",
             url: "/configuration/exchange_dedicated/:organization/:productId?tab",
