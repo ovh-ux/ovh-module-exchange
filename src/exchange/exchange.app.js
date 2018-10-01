@@ -1,9 +1,7 @@
 angular
     .module("Module.exchange", ["ovh-utils-angular", "ngRoute", "ui.bootstrap", "ngSanitize", "Module.exchange.controllers", "Module.exchange.services", "Module.exchange.filters", "Module.exchange.directives", "Module.exchange.components"])
-    .config(($injector) => {
+    .config(($stateProvider) => {
         "use strict";
-
-        let $routerProvider = $injector.get("$stateProvider");
 
         const getNavigationInformations = (currentSectionInformation) => ["Navigator", "$rootScope", (Navigator, $rootScope) => {
             $rootScope.currentSectionInformation = currentSectionInformation;
@@ -13,13 +11,13 @@ angular
             });
         }];
 
-        const exchangeStates = [{
+        $stateProvider.state("app.microsoft.exchange", {
             "abstract": true,
-            name: "app.microsoft.exchange",
             template: "<div ui-view></div>",
-            translations: ["exchange", "sharepoint"]
-        }, {
-            name: "app.microsoft.exchange.dedicated",
+            translations: ["."]
+        });
+
+        $stateProvider.state("app.microsoft.exchange.dedicated", {
             url: "/configuration/exchange_dedicated/:organization/:productId?tab",
             templateUrl: "exchange/exchange.html",
             controller: "ExchangeCtrl",
@@ -31,8 +29,9 @@ angular
             resolve: {
                 navigationInformations: getNavigationInformations("exchange_dedicated")
             }
-        }, {
-            name: "app.microsoft.exchange.dedicatedCluster",
+        });
+
+        $stateProvider.state("app.microsoft.exchange.dedicatedCluster", {
             url: "/configuration/exchange_dedicatedCluster/:organization/:productId?tab",
             templateUrl: "exchange/exchange.html",
             controller: "ExchangeCtrl",
@@ -44,8 +43,9 @@ angular
             resolve: {
                 navigationInformations: getNavigationInformations("exchange_dedicatedCluster")
             }
-        }, {
-            name: "app.microsoft.exchange.hosted",
+        });
+
+        $stateProvider.state("app.microsoft.exchange.hosted", {
             url: "/configuration/exchange_hosted/:organization/:productId?tab",
             templateUrl: "exchange/exchange.html",
             controller: "ExchangeCtrl",
@@ -57,9 +57,9 @@ angular
             resolve: {
                 navigationInformations: getNavigationInformations("exchange_hosted")
             }
-        },
-        {
-            name: "app.microsoft.exchange.provider",
+        });
+
+        $stateProvider.state("app.microsoft.exchange.provider", {
             url: "/configuration/exchange_provider/:organization/:productId?tab",
             templateUrl: "exchange/exchange.html",
             controller: "ExchangeCtrl",
@@ -71,9 +71,9 @@ angular
             resolve: {
                 navigationInformations: getNavigationInformations("exchange_provider")
             }
-        },
-        {
-            name: "app.microsoft.exchange.order",
+        });
+
+        $stateProvider.state("app.microsoft.exchange.order", {
             url: "/configuration/exchange/order",
             templateUrl: "exchange/order/order.html",
             controller: "ExchangeOrderCtrl",
@@ -82,14 +82,7 @@ angular
             resolve: {
                 navigationInformations: getNavigationInformations("exchange_order")
             }
-        }];
-
-        if ($routerProvider != null) {
-            _.forEach(exchangeStates, (state) => $routerProvider.state(state.name, _.omit(state, ["name"])));
-        } else {
-            $routerProvider = $injector.get("$routeProvider");
-            _.forEach(exchangeStates, (state) => $routerProvider.when(state.url, _.omit(state, ["name", "url"])));
-        }
+        });
     })
     .constant("EXCHANGE_MX_CONFIG", {
         EU: {

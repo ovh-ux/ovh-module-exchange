@@ -1,5 +1,5 @@
 angular
-    .module("App")
+    .module("Module.exchange.services")
     .controller("ExchangeServicesConfigureCtrl", class ExchangeServicesConfigureCtrl {
         constructor ($scope, APIExchange, Exchange, $translate, navigation, messaging) {
             this.services = {
