@@ -11,13 +11,13 @@ angular
             });
         }];
 
-        $stateProvider.state('app.microsoft.exchange', {
+        $stateProvider.state("app.microsoft.exchange", {
             "abstract": true,
             template: "<div ui-view></div>",
             translations: ["."]
         });
 
-        $stateProvider.state('app.microsoft.exchange.dedicated', {
+        $stateProvider.state("app.microsoft.exchange.dedicated", {
             url: "/configuration/exchange_dedicated/:organization/:productId?tab",
             templateUrl: "exchange/exchange.html",
             controller: "ExchangeCtrl",
@@ -31,7 +31,7 @@ angular
             }
         });
 
-        $stateProvider.state('app.microsoft.exchange.dedicatedCluster', {
+        $stateProvider.state("app.microsoft.exchange.dedicatedCluster", {
             url: "/configuration/exchange_dedicatedCluster/:organization/:productId?tab",
             templateUrl: "exchange/exchange.html",
             controller: "ExchangeCtrl",
@@ -45,7 +45,7 @@ angular
             }
         });
 
-        $stateProvider.state('app.microsoft.exchange.hosted', {
+        $stateProvider.state("app.microsoft.exchange.hosted", {
             url: "/configuration/exchange_hosted/:organization/:productId?tab",
             templateUrl: "exchange/exchange.html",
             controller: "ExchangeCtrl",
@@ -59,7 +59,7 @@ angular
             }
         });
 
-        $stateProvider.state('app.microsoft.exchange.provider', {
+        $stateProvider.state("app.microsoft.exchange.provider", {
             url: "/configuration/exchange_provider/:organization/:productId?tab",
             templateUrl: "exchange/exchange.html",
             controller: "ExchangeCtrl",
@@ -73,7 +73,7 @@ angular
             }
         });
 
-        $stateProvider.state('app.microsoft.exchange.order', {
+        $stateProvider.state("app.microsoft.exchange.order", {
             url: "/configuration/exchange/order",
             templateUrl: "exchange/order/order.html",
             controller: "ExchangeOrderCtrl",
