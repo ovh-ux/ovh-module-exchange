@@ -1,7 +1,7 @@
 angular
     .module("Module.exchange.services")
     .service("Exchange", class Exchange {
-        constructor ($cacheFactory, $rootScope, ovhUserPref, Products, $http, $q, OvhHttp, APIExchange, $injector, constants) {
+        constructor ($cacheFactory, $rootScope, ovhUserPref, Products, $http, $q, OvhHttp, APIExchange, $stateParams, constants) {
             this.services = {
                 $cacheFactory,
                 $rootScope,
@@ -11,7 +11,7 @@ angular
                 $q,
                 OvhHttp,
                 APIExchange,
-                $injector,
+                $stateParams,
                 constants
             };
 
@@ -96,7 +96,7 @@ angular
         }
 
         getParams () {
-            return this.services.$injector.get("$stateParams") || this.services.$injector.get("$routeParams");
+            return this.services.$stateParams;
         }
 
         resetDomains () {
