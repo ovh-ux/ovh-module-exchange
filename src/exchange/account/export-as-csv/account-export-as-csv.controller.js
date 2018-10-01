@@ -27,7 +27,7 @@ angular
 
         exportAccounts () {
             const exportOpts = {
-                count: 100,
+                count: 1000,
                 total: this.totalAccounts,
                 search: this.search,
                 filter: this.filterType === "ALL" ? null : this.filterType,
