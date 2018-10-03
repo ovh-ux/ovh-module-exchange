@@ -9,7 +9,6 @@ angular.module('Module.exchange.controllers').controller(
         messaging,
         $translate,
       };
-
       this.$routerParams = Exchange.getParams();
       this.mceId = 'update-disclaimer-editor';
       this.data = angular.copy(navigation.currentActionData);
@@ -38,6 +37,13 @@ angular.module('Module.exchange.controllers').controller(
 
     isStep1Valid() {
       return this.data.content && this.data.content.length < 5000;
+    }
+
+    /**
+     * Insert attributes at text field current cursor position
+     */
+    insertAttribute () {
+      this.data.content += `%%${this.data.selectedAttribute}%%`;
     }
 
     saveDisclaimer() {

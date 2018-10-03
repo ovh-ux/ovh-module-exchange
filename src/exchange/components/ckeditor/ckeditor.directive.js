@@ -9,6 +9,10 @@ angular.module('Module.exchange').directive('exchangeEditor', () => ({
       editor.model.document.on('change:data', () => {
         scope.ngModel = editor.getData();
       });
+
+      scope.$watch('ngModel', () => {
+        editor.setData(scope.ngModel);
+      });
     });
   },
 }));

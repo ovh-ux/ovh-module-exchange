@@ -66,6 +66,13 @@ angular.module('Module.exchange.controllers').controller(
       return this.data.completeDomain && this.data.content && this.data.content.length < 5000;
     }
 
+    /**
+     * Insert attributes at text field current cursor position
+     */
+    insertAttribute () {
+      this.data.content += `%%${this.data.selectedAttribute}%%`;
+    }
+
     saveDisclaimer() {
       const model = {
         domain: this.data.completeDomain.name,
