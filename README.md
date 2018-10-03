@@ -10,12 +10,6 @@
 
 ## Installation
 
-### Bower
-
-```sh
-$ bower install ovh-module-exchange --save
-```
-
 ### NPM
 
 ```sh
@@ -28,7 +22,6 @@ $ npm install ovh-module-exchange --save
 $ git clone https://github.com/ovh-ux/ovh-module-exchange.git
 $ cd ovh-module-exchange
 $ npm install
-$ bower install
 ```
 
 You've developed a new cool feature? Fixed an annoying bug? We'd be happy
