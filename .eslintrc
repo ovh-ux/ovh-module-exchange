@@ -1,18 +1,18 @@
 {
-    "extends": "airbnb-base",
-    "parser": "babel-eslint",
-    "env": {
-        "browser": true,
-        "jquery": true,
-    },
-    "globals": {
-        "angular": true,
-        "_": true,
-        "module": true,
-        "require": true,
-        "URI": true,
-        "punycode": true,
-        "JSURL": true,
-        "Clipboard": true
-    }
+  "extends": "airbnb-base",
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "jquery": true
+  },
+  "globals": {
+    "_": true,
+    "angular": true,
+    "Clipboard": true,
+    "JSURL": true,
+    "module": true,
+    "punycode": true,
+    "require": true,
+    "URI": true
+  }
 }
