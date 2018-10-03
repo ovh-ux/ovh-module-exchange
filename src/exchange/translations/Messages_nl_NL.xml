@@ -1683,5 +1683,5 @@ Deze procedure kan tot een paar uur duren en gaat van start zodra de bestelling 
    <translation id="exchange_wizardHostedCreation_lastDialog_closeButton" qtlid="450558">Voltooien</translation>
 
    <translation id="exchange_table_manage_entry" qtlid="404395">: beheer</translation>
-   <translation id="sharepoint_activate_which_service_label">Serveur Exchange à associer</translation>
+   <translation id="sharepoint_activate_which_service_label" qtlid="297592">Exchange server </translation>
 </translations>

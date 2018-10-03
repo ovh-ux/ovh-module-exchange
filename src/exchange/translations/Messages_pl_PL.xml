@@ -1681,5 +1681,5 @@ Zamknięta: administrator zapisuje członków grupy.</translation>
    <translation id="exchange_wizardHostedCreation_lastDialog_closeButton" qtlid="450558">Zakończ</translation>
 
    <translation id="exchange_table_manage_entry" qtlid="404395">: zarządzaj</translation>
-   <translation id="sharepoint_activate_which_service_label">Serveur Exchange à associer</translation>
+   <translation id="sharepoint_activate_which_service_label" qtlid="297592">Serwer Exchange do przypisania</translation>
 </translations>
