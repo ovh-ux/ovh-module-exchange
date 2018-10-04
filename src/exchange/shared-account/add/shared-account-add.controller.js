@@ -47,11 +47,12 @@ angular.module('Module.exchange.controllers').controller(
         'localPart',
         'required',
       );
-      this.errors.emailLocalPartDoesntRespectsPattern = this.services.formValidation.doesFieldContainsErrors(
-        this.sharedAccountForm,
-        'localPart',
-        'pattern',
-      );
+      this.errors.emailLocalPartDoesntRespectsPattern = this.services.formValidation
+        .doesFieldContainsErrors(
+          this.sharedAccountForm,
+          'localPart',
+          'pattern',
+        );
 
       return (
         this.errors.emailLocalPartIsEmpty
@@ -123,7 +124,7 @@ angular.module('Module.exchange.controllers').controller(
           );
           this.services.navigation.resetAction();
         } else {
-          this.domain = data.availableDomains[0];
+          this.domain = _.first(data.availableDomains);
           this.accountBeingCreated.quota = this.optionsToCreateNewAccounts.minQuota.value;
         }
       });

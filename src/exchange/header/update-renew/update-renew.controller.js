@@ -150,7 +150,7 @@ angular.module('Module.exchange.controllers').controller(
                 });
 
                 if (buffer != null) {
-                  currentBufferedAccount.renewPeriod = buffer.renewPeriod;
+                  _.set(currentBufferedAccount, 'renewPeriod', buffer.renewPeriod);
                 }
               });
             }
@@ -229,7 +229,7 @@ angular.module('Module.exchange.controllers').controller(
 
       if (_.has(this.buffer, 'changes') && this.buffer.changes != null) {
         _.forEach(this.buffer.changes, (change) => {
-          change.is25g = this.services.exchangeServiceInfrastructure.is25g();
+          _.set(change, 'is25g', this.services.exchangeServiceInfrastructure.is25g());
         });
       }
 

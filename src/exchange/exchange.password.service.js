@@ -2134,7 +2134,7 @@
       getWholeChar(inputString, position) {
         const charCode = inputString.charCodeAt(position);
 
-        if (isNaN(charCode)) {
+        if (Number.isNaN(charCode)) {
           return ''; // Position not found
         }
 
@@ -2145,13 +2145,13 @@
         if (charCode >= 0xd800 && charCode <= 0xdbff) {
           // High surrogate (could change last hex to 0xDB7F to treat high private surrogates as single characters)
           if (inputString.length <= position + 1) {
-            throw 'High surrogate without following low surrogate';
+            throw new Error('High surrogate without following low surrogate');
           }
 
           const nextCharacter = inputString.charCodeAt(position + 1);
 
           if (nextCharacter < 0xdc00 || nextCharacter > 0xdfff) {
-            throw 'High surrogate without following low surrogate';
+            throw new Error('High surrogate without following low surrogate');
           }
 
           return inputString.charAt(position) + inputString.charAt(position + 1);
@@ -2159,14 +2159,14 @@
 
         // Low surrogate (0xDC00 <= code && code <= 0xDFFF)
         if (position === 0) {
-          throw 'Low surrogate without preceding high surrogate';
+          throw new Error('Low surrogate without preceding high surrogate');
         }
 
         const previousCharacter = inputString.charCodeAt(position - 1);
 
         if (previousCharacter < 0xd800 || previousCharacter > 0xdbff) {
           // (could change last hex to 0xDB7F to treat high private surrogates as single characters)
-          throw 'Low surrogate without preceding high surrogate';
+          throw new Error('Low surrogate without preceding high surrogate');
         }
 
         return false; // We can pass over low surrogates now as the second component in a pair which we have already processed
@@ -2179,7 +2179,7 @@
             * The original monkeypatches strings to add the method there to match EcmaScript 6.
             */
       codePointAt(inputString, position) {
-        const fixedPosition = isNaN(position) ? 0 : position;
+        const fixedPosition = Number.isNaN(position) ? 0 : position;
         const characterCode = inputString.charCodeAt(fixedPosition);
         const nextCharacter = inputString.charCodeAt(fixedPosition + 1);
 
@@ -2206,7 +2206,7 @@
         }
 
         if (!_.isNumber(minPasswordLength)) {
-          throw 'minPasswordLength must be a number';
+          throw new Error('minPasswordLength must be a number');
         }
 
         // Length must be between minPasswordLength and 127 as per the Exchange spec
@@ -2227,10 +2227,11 @@
           false,
         );
 
+        /* eslint-disable no-restricted-syntax, camelcase */
         characters_loop: for (
           let currentCharIndex = 0;
           currentCharIndex < password.length;
-          currentCharIndex++
+          currentCharIndex += 1
         ) {
           const currentWholeChar = this.getWholeChar(password, currentCharIndex);
 
@@ -2244,7 +2245,7 @@
           for (
             let currentCategoryIndex = 0;
             currentCategoryIndex < ALL_ACCEPTED_CHARACTER_CATEGORIES.length;
-            currentCategoryIndex++
+            currentCategoryIndex += 1
           ) {
             if (alreadyUsedCategories[currentCategoryIndex]) {
               // No need to check if a character is uppercase or whatever if we already have one in that category
@@ -2254,7 +2255,7 @@
             for (
               let currentCategoryChar = 0;
               currentCategoryChar < ALL_ACCEPTED_CHARACTER_CATEGORIES[currentCategoryIndex].length;
-              currentCategoryChar++
+              currentCategoryChar += 1
             ) {
               // Did we already pass the code point?
 
@@ -2272,7 +2273,7 @@
                 ALL_ACCEPTED_CHARACTER_CATEGORIES[currentCategoryIndex][currentCategoryChar][1]
                 >= currentCharPoint
               ) {
-                numberOfCategoryUsed++;
+                numberOfCategoryUsed += 1;
 
                 if (numberOfCategoryUsed === 3) {
                   // If we already have three different password features, no need to
@@ -2290,6 +2291,7 @@
             }
           }
         }
+        /* eslint-enable no-restricted-syntax, camelcase */
 
         return false;
       }

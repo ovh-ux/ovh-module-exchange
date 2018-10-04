@@ -42,8 +42,8 @@ angular.module('Module.exchange.controllers').controller(
 
       this.$routerParams = Exchange.getParams();
 
-      navigation.$exchangeRootScope = $scope;
-      messaging.$exchangeRootScope = $scope;
+      _.set(navigation, '$exchangeRootScope', $scope);
+      _.set(messaging, '$exchangeRootScope', $scope);
 
       $scope.resetAction = navigation.resetAction.bind(navigation);
       $scope.setAction = navigation.setAction.bind(navigation);
@@ -145,7 +145,7 @@ angular.module('Module.exchange.controllers').controller(
           this.shouldOpenWizard = true;
         })
         .then(() => this.services.User.getUser().then((currentUser) => {
-          const ovhSubsidiary = currentUser.ovhSubsidiary;
+          const { ovhSubsidiary } = currentUser;
 
           this.shouldOpenWizard = this.shouldOpenWizard && ovhSubsidiary !== 'CA';
         }))
@@ -155,7 +155,9 @@ angular.module('Module.exchange.controllers').controller(
               .getValue('WIZARD_HOSTED_CREATION_CHECKPOINT')
               .catch(() => null)
               .then((preferences) => {
-                const preferenceToSave = !_(preferences).isObject() || _(preferences).isEmpty() ? {} : preferences;
+                const preferenceToSave = !_(preferences).isObject() || _(preferences).isEmpty()
+                  ? {}
+                  : preferences;
 
                 const hasNoDomain = this.exchange.domainsNumber === 0;
                 const isReturningToWizard = !_(
@@ -183,7 +185,8 @@ angular.module('Module.exchange.controllers').controller(
           this.displayName = exchange.displayName;
         })
         .then(() => this.canActivateSharepoint())
-        .then(() => this.services.officeAttach.retrievingIfUserAlreadyHasSubscribed(this.exchange.domain))
+        .then(() => this.services.officeAttach
+          .retrievingIfUserAlreadyHasSubscribed(this.exchange.domain))
         .then((userHasAlreadySubscribedToOfficeAttach) => {
           this.canUserSubscribeToOfficeAttach = !userHasAlreadySubscribedToOfficeAttach;
 
@@ -245,7 +248,8 @@ angular.module('Module.exchange.controllers').controller(
     }
 
     parseLocationForExchangeData() {
-      // expect something like "/configuration/exchange_dedicated/organization-ss51631-1/exchange-ss51631-001?action=billing&tab=DOMAINS"
+      // expect something like
+      // /configuration/exchange_dedicated/organization-ID/exchange-ID?action=billing&tab=DOMAINS"
       // extract "exchange_dedicated"
       const locationSplit = this.services.$location
         .url()

@@ -27,7 +27,7 @@ angular.module('Module.exchange.controllers').controller(
           this.availableAttributes = data.availableAttributes;
 
           if (!_.isEmpty(data.availableAttributes)) {
-            this.data.selectedAttribute = data.availableAttributes[0];
+            this.data.selectedAttribute = _.first(data.availableAttributes);
           }
         })
         .finally(() => {
@@ -42,7 +42,7 @@ angular.module('Module.exchange.controllers').controller(
     /**
      * Insert attributes at text field current cursor position
      */
-    insertAttribute () {
+    insertAttribute() {
       this.data.content += `%%${this.data.selectedAttribute}%%`;
     }
 

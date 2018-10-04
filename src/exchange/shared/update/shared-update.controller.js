@@ -39,7 +39,8 @@ angular.module('Module.exchange.controllers').controller(
           this.quotaUnitTranslation = this.services.$translate.instant(
             `unit_size_${this.publicFoldersOptions.maxQuota.unit}`,
           );
-          this.publicFoldersOptions.maxQuota.value = this.publicFoldersOptions.maxQuota.value + this.folderToUpdate.quota.value;
+          this.publicFoldersOptions.maxQuota.value = this.publicFoldersOptions.maxQuota.value
+            + this.folderToUpdate.quota.value;
         })
         .catch((failure) => {
           this.services.messaging.writeError(
@@ -60,7 +61,8 @@ angular.module('Module.exchange.controllers').controller(
 
     checkQuotaValidity() {
       this.errors.quotaIsValid = true;
-      const quotaIsWithinLimits = this.folderToUpdate.quota.value >= this.publicFoldersOptions.minQuota.value
+      const quotaIsWithinLimits = this.folderToUpdate.quota.value
+        >= this.publicFoldersOptions.minQuota.value
         && this.folderToUpdate.quota.value <= this.publicFoldersOptions.maxQuota.value;
 
       if (!_.isNumber(this.folderToUpdate.quota.value) || !quotaIsWithinLimits) {

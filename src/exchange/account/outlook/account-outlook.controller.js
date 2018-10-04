@@ -92,7 +92,8 @@ angular.module('Module.exchange.controllers').controller(
     }
 
     static checkForNoLanguageSpecificApiError(message) {
-      // hack to detect a specific API error like "There is no outlook for mac_x86_2011 in tr language"
+      // hack to detect a specific API error like
+      // "There is no outlook for mac_x86_2011 in tr language"
       return !_.isEmpty(message) && _.includes(message, 'There') && _.includes(message, 'language');
     }
 
@@ -113,7 +114,7 @@ angular.module('Module.exchange.controllers').controller(
           }
         })
         .catch(() => {
-          if (this.retryFlag--) {
+          if (this.retryFlag--) { // eslint-disable-line
             this.startTimeout();
           } else {
             this.services.navigation.resetAction();
@@ -162,7 +163,7 @@ angular.module('Module.exchange.controllers').controller(
           this.availableLicences = data;
           this.versionsList = _.uniq(this.availableLicences.map(item => item.outlookVersion));
           this.languageList = _.uniq(this.availableLicences.map(item => item.outlookLanguage));
-          this.model.licenceVersion = this.versionsList[0];
+          this.model.licenceVersion = _.first(this.versionsList);
         })
         .catch((fail) => {
           this.services.messaging.writeError(
@@ -185,7 +186,7 @@ angular.module('Module.exchange.controllers').controller(
           this.model,
         )
         .then((data) => {
-          if (data.status !== 'ERROR' && this.retryFlag--) {
+          if (data.status !== 'ERROR' && this.retryFlag--) { // eslint-disable-line
             this.startTimeout();
           } else {
             this.services.messaging.writeError(

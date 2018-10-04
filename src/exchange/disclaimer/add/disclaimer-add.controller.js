@@ -38,7 +38,7 @@ angular.module('Module.exchange.controllers').controller(
           this.availableDomains = data.availableDomains;
           this.selectCurrentDomain();
 
-          this.data.selectedAttribute = data.availableAttributes[0];
+          this.data.selectedAttribute = _.first(data.availableAttributes);
           this.availableAttributes = data.availableAttributes;
         } else {
           this.services.navigation.resetAction();
@@ -58,7 +58,7 @@ angular.module('Module.exchange.controllers').controller(
         );
       }
       if (!this.data.completeDomain) {
-        this.data.completeDomain = this.availableDomains[0];
+        this.data.completeDomain = _.first(this.availableDomains);
       }
     }
 
@@ -69,7 +69,7 @@ angular.module('Module.exchange.controllers').controller(
     /**
      * Insert attributes at text field current cursor position
      */
-    insertAttribute () {
+    insertAttribute() {
       this.data.content += `%%${this.data.selectedAttribute}%%`;
     }
 

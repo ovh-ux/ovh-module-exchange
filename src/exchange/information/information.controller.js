@@ -133,7 +133,8 @@ angular.module('Module.exchange.controllers').controller(
 
       const isDedicatedAccount = this.exchangeServiceInfrastructure.isDedicated()
         || this.exchangeServiceInfrastructure.isDedicatedCluster();
-      const is2010DedicatedOrProvider = this.exchangeVersion.isVersion(2010) && !this.exchangeServiceInfrastructure.isHosted();
+      const is2010DedicatedOrProvider = this.exchangeVersion.isVersion(2010)
+        && !this.exchangeServiceInfrastructure.isHosted();
 
       this.shouldDisplaySSLRenewValue = (isDedicatedAccount || is2010DedicatedOrProvider)
         && (canRenewBeforeExpiration || isAlreadyExpired);

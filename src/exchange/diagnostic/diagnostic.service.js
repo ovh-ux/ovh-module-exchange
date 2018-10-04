@@ -115,7 +115,7 @@ angular.module('Module.exchange.services').service(
       }
 
       if (!_.isArray(opts.successSates)) {
-        opts.successSates = [opts.successSates];
+        _.set(opts, 'successSates', [opts.successSates]);
       }
 
       const url = `apiv6/email/exchange/${this.services.Exchange.value.organization}/service/${

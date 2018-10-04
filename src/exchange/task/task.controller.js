@@ -67,10 +67,10 @@ angular.module('Module.exchange.controllers').controller(
       const config = { pageSize: this.pageSize, offset: this.offset };
       return this.getTasks(config)
         .then((response) => {
-          for (let i = 0; i < response.list.results.length; i++) {
+          for (let i = 0; i < response.list.results.length; i += 1) {
             this.tasksList.splice(i, 1, response.list.results[i]);
           }
-          for (let i = response.list.results.length; i < this.tasksList.length; i++) {
+          for (let i = response.list.results.length; i < this.tasksList.length; i += 1) {
             this.tasksList.splice(i, 1);
           }
         })

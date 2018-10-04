@@ -145,8 +145,8 @@ angular.module('Module.exchange.controllers').controller(
         timeoutObject,
       ).then((datas) => {
         if (datas != null) {
-          infos.accounts = infos.accounts.concat(datas.accounts);
-          infos.headers = _.isEmpty(infos.headers) ? datas.headers : infos.headers;
+          _.set(infos, 'accounts', infos.accounts.concat(datas.accounts));
+          _.set(infos, 'headers', _.isEmpty(infos.headers) ? datas.headers : infos.headers);
 
           if (offset + exportOpts.count < exportOpts.total) {
             return this.prepareForCsv(exportOpts, offset + exportOpts.count, infos, timeoutObject);
