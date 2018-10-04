@@ -162,7 +162,8 @@ angular.module('Module.exchange.services').service(
     }
 
     /**
-     * Accounts can have Outlook license if is not a placeholder account and if its type allows having an Outlook license
+     * Accounts can have Outlook license if is not a placeholder account
+     * and if its type allows having an Outlook license
      * @param {object} account
      * @returns {boolean} True if the `account` can have an Outlook license
      */
@@ -186,7 +187,7 @@ angular.module('Module.exchange.services').service(
         .value();
 
       if (!inputIsValid) {
-        throw 'Input is not a valid account';
+        throw new Error('Input is not a valid account');
       }
 
       const accountAlreadyHasLicence = account.outlook;

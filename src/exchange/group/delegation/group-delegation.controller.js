@@ -97,13 +97,14 @@ angular.module('Module.exchange.controllers').controller(
         this.form.search,
       )
         .then((accounts) => {
-          this.delegationList = angular.copy(accounts); // make a deep copy of accounts list to use it as model
+          // make a deep copy of accounts list to use it as model
+          this.delegationList = angular.copy(accounts);
 
           if (_.has(this.delegationList, 'list.results')) {
             // keep the original value to have a reference to compare changes
             _.forEach(this.delegationList.list.results, (account) => {
-              account.newSendAsValue = account.sendAs;
-              account.newSendOnBehalfToValue = account.sendOnBehalfTo;
+              _.set(account, 'newSendAsValue', account.sendAs);
+              _.set(account, 'newSendOnBehalfToValue', account.sendOnBehalfTo);
             });
           }
         })

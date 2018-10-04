@@ -26,7 +26,7 @@ angular.module('Module.exchange.controllers').controller(
       this.services.Products.getProductsByType()
         .then((productsByType) => {
           this.exchanges = _.map(productsByType.exchanges, (exchange) => {
-            exchange.domain = exchange.name;
+            _.set(exchange, 'domain', exchange.name);
 
             return exchange;
           });
@@ -35,7 +35,7 @@ angular.module('Module.exchange.controllers').controller(
             this.alreadyHasAnExchange = false;
           } else {
             this.alreadyHasAnExchange = true;
-            this.firstExchangeAccount = this.exchanges[0];
+            this.firstExchangeAccount = _.first(this.exchanges);
           }
         })
         .finally(() => {

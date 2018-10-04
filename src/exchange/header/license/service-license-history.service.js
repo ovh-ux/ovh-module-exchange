@@ -117,11 +117,11 @@ angular.module('Module.exchange.services').service(
         }))
         .then((formattedLicenses) => {
           if (!this.exchangeAccountTypes.CAN_DO.BASIC()) {
-            delete formattedLicenses.basic;
+            delete formattedLicenses.basic; // eslint-disable-line
           }
 
           if (!this.exchangeAccountTypes.CAN_DO.ENTERPRISE()) {
-            delete formattedLicenses.enterprise;
+            delete formattedLicenses.enterprise; // eslint-disable-line
           }
 
           return formattedLicenses;

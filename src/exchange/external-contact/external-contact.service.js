@@ -9,7 +9,8 @@ angular.module('Module.exchange.services').service(
       const accountIsEmpty = account == null;
       const emailIsValid = !_.isEmpty(account.externalEmailAddress)
         && this.services.Exchange.constructor.isEmailValid(account.externalEmailAddress);
-      const displayNameIsValid = !_.isEmpty(account.displayName) && account.displayName.length <= 255;
+      const displayNameIsValid = !_.isEmpty(account.displayName)
+        && account.displayName.length <= 255;
 
       return !accountIsEmpty && emailIsValid && displayNameIsValid;
     }
@@ -32,7 +33,7 @@ angular.module('Module.exchange.services').service(
     }
 
     modifyingContact(organization, serviceName, contactId, modifiedContact) {
-      modifiedContact.state = _.camelCase(modifiedContact.state);
+      _.set(modifiedContact, 'state', _.camelCase(modifiedContact.state));
 
       return this.services.OvhHttp.put(
         '/email/exchange/{organization}/service/{exchange}/externalContact/{externalEmailAddress}',

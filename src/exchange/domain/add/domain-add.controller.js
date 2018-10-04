@@ -81,7 +81,7 @@ angular.module('Module.exchange.controllers').controller(
       this.availableDomainsBuffer = data.availableDomains;
       this.availableTypes = data.types;
       this.availableMainDomains = data.mainDomains;
-      this.model.type = this.availableTypes[0];
+      this.model.type = _.first(this.availableTypes);
 
       if (_.isEmpty(this.availableDomains)) {
         this.model.domainType = this.NON_OVH_DOMAIN;
@@ -109,7 +109,7 @@ angular.module('Module.exchange.controllers').controller(
           this.model.organization2010 = null;
         } else {
           this.model.main = false;
-          this.model.attachOrganization2010 = this.availableMainDomains[0];
+          this.model.attachOrganization2010 = _.first(this.availableMainDomains);
         }
       }
     }
@@ -213,7 +213,10 @@ angular.module('Module.exchange.controllers').controller(
       this.resetName();
 
       if (!_.isEmpty(this.search.value)) {
-        this.availableDomains = _.filter(this.availableDomainsBuffer, currentItem => _.includes(currentItem.displayName, this.search.value));
+        this.availableDomains = _.filter(
+          this.availableDomainsBuffer,
+          currentItem => _.includes(currentItem.displayName, this.search.value),
+        );
       }
 
       this.services.$scope.$apply();

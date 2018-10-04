@@ -58,10 +58,10 @@ angular.module('Module.exchange.controllers').controller(
           this.groupParams.offset - 1,
         )
         .then((data) => {
-          for (let i = 0; i < data.list.results.length; i++) {
+          for (let i = 0; i < data.list.results.length; i += 1) {
             this.membersList.splice(i, 1, data.list.results[i]);
           }
-          for (let i = data.list.results.length; i < this.membersList.length; i++) {
+          for (let i = data.list.results.length; i < this.membersList.length; i += 1) {
             this.membersList.splice(i, 1);
           }
         })

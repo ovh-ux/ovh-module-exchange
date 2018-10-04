@@ -6,7 +6,7 @@
   "author": "OVH SAS",
   "repository": "ovh-ux/ovh-module-exchange",
   "scripts": {
-    "test": "echo 'TODO'",
+    "test": "yarn run lint",
     "lint": "run-p lint:css lint:js",
     "lint:css": "stylelint 'src/**/*.less' --fix",
     "lint:js": "eslint --quiet --fix ./src",

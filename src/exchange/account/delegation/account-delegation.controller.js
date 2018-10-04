@@ -21,7 +21,10 @@ angular.module('Module.exchange.controllers').controller(
       this.services.$scope.hasChanged = () => this.hasChanged();
       this.services.$scope.getAccounts = (count, offset) => this.getAccounts(count, offset);
 
-      this.services.$scope.$on(this.services.Exchange.events.accountsChanged, () => this.services.$scope.getAccounts());
+      this.services.$scope.$on(
+        this.services.Exchange.events.accountsChanged,
+        () => this.services.$scope.getAccounts(),
+      );
 
       this.bufferAccounts = [];
     }
@@ -100,10 +103,10 @@ angular.module('Module.exchange.controllers').controller(
           return false;
         }
         if (datum.status === 'ERROR') {
-          datum.message = this.services.$translate.instant(`exchange_tab_TASKS_${datum.function}`);
-          datum.type = 'ERROR';
+          _.set(datum, 'message', this.services.$translate.instant(`exchange_tab_TASKS_${datum.function}`));
+          _.set(datum, 'type', 'ERROR');
           state = 'PARTIAL';
-          numberOfErrors++;
+          numberOfErrors += 1;
         }
 
         return true;
@@ -139,9 +142,9 @@ angular.module('Module.exchange.controllers').controller(
     checkForBufferChanges(account) {
       _.forEach(this.bufferAccounts, (bufferAccount) => {
         if (bufferAccount.id === account.id) {
-          account.newSendAsValue = bufferAccount.newSendAsValue;
-          account.newSendOnBehalfToValue = bufferAccount.newSendOnBehalfToValue;
-          account.newFullAccessValue = bufferAccount.newFullAccessValue;
+          _.set(account, 'newSendAsValue', bufferAccount.newSendAsValue);
+          _.set(account, 'newSendOnBehalfToValue', bufferAccount.newSendOnBehalfToValue);
+          _.set(account, 'newFullAccessValue', bufferAccount.newFullAccessValue);
         }
       });
     }
@@ -175,13 +178,14 @@ angular.module('Module.exchange.controllers').controller(
           this.accounts = accounts;
 
           _.forEach(this.accounts.list.results, (account) => {
-            account.newSendAsValue = account.sendAs;
-            account.newSendOnBehalfToValue = account.sendOnBehalfTo;
-            account.newFullAccessValue = account.fullAccess;
+            _.set(account, 'newSendAsValue', account.sendAs);
+            _.set(account, 'newSendOnBehalfToValue', account.sendOnBehalfTo);
+            _.set(account, 'newFullAccessValue', account.fullAccess);
             this.checkForBufferChanges(account);
 
             if (!_.find(this.bufferAccounts, buffer => buffer.id === account.id)) {
-              this.bufferAccounts.push(account); // keep the original data as a reference point to compare changes
+              // keep the original data as a reference point to compare changes
+              this.bufferAccounts.push(account);
             }
           });
         })

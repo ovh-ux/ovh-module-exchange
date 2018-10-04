@@ -31,7 +31,8 @@ angular.module('Module.exchange.services').service(
     }
 
     /**
-     * @param {(string|number)} versionNumberToCompareTo - Version to compare current Exchange account to
+     * @param {(string|number)} versionNumberToCompareTo
+     *                          Version to compare current Exchange account to
      */
     isAfter(versionNumberToCompareTo) {
       const currentVersionNumber = this.services.Exchange.value.serverDiagnostic.version;
@@ -43,7 +44,8 @@ angular.module('Module.exchange.services').service(
     }
 
     /**
-     * @param {(string|number)} versionNumberToCompareTo - Version to compare current Exchange account to
+     * @param {(string|number)} versionNumberToCompareTo
+     *                          Version to compare current Exchange account to
      */
     isBefore(versionNumberToCompareTo) {
       const currentVersionNumber = this.services.Exchange.value.serverDiagnostic.version;

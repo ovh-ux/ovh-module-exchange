@@ -57,10 +57,10 @@ angular.module('Module.exchange.controllers').controller(
       )
         .then((data) => {
           this.aliasesParams.results.meta.totalCount = data.count;
-          for (let i = 0; i < data.list.results.length; i++) {
+          for (let i = 0; i < data.list.results.length; i += 1) {
             this.aliases.splice(i, 1, data.list.results[i]);
           }
-          for (let i = data.list.results.length; i < this.aliases.length; i++) {
+          for (let i = data.list.results.length; i < this.aliases.length; i += 1) {
             this.aliases.splice(i, 1);
           }
         })

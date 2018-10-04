@@ -33,9 +33,11 @@ angular.module('Module.exchange.controllers').controller(
       }
 
       this.selectedGroup.maxSendSize = Math.min(this.selectedGroup.maxSendSize, 100);
-      this.selectedGroup.sentSizeUnlimited = this.selectedGroup.maxSendSize === 0 || Number.isNaN(this.selectedGroup.maxSendSize);
+      this.selectedGroup.sentSizeUnlimited = this.selectedGroup.maxSendSize === 0
+        || Number.isNaN(this.selectedGroup.maxSendSize);
       this.selectedGroup.maxReceiveSize = Math.min(this.selectedGroup.maxReceiveSize, 100);
-      this.selectedGroup.receiveSizeUnlimited = this.selectedGroup.maxReceiveSize === 0 || Number.isNaN(this.selectedGroup.maxReceiveSize);
+      this.selectedGroup.receiveSizeUnlimited = this.selectedGroup.maxReceiveSize === 0
+        || Number.isNaN(this.selectedGroup.maxReceiveSize);
 
       // initialize the model with current domain
       this.groupOptions = {
@@ -54,7 +56,7 @@ angular.module('Module.exchange.controllers').controller(
         },
       ];
 
-      this.selectedGroup.completeDomain = this.groupOptions.availableDomains[0];
+      this.selectedGroup.completeDomain = _.first(this.groupOptions.availableDomains);
 
       $scope.retrievingOptionsToCreateNewGroup = () => this.retrievingOptionsToCreateNewGroup();
       $scope.groupIsValid = () => this.groupIsValid();

@@ -7,7 +7,7 @@ angular.module('Module.exchange').directive('exchangeEditor', () => ({
   link(scope, element) {
     ClassicEditor.create(element[0]).then((editor) => {
       editor.model.document.on('change:data', () => {
-        scope.ngModel = editor.getData();
+        _.set(scope, 'ngModel', editor.getData());
       });
 
       scope.$watch('ngModel', () => {

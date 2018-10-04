@@ -279,7 +279,8 @@ ${diagnosticJson}`;
 
       this.services.User.getUser()
         .then((data) => {
-          this.diagnosticGuideUrl = this.services.EXCHANGE_CONFIG.URLS.GUIDES.DIAGNOSTIC[data.ovhSubsidiary]
+          this.diagnosticGuideUrl = this.services
+            .EXCHANGE_CONFIG.URLS.GUIDES.DIAGNOSTIC[data.ovhSubsidiary]
             || this.services.EXCHANGE_CONFIG.URLS.GUIDES.DIAGNOSTIC[defaultSubsidiary];
         })
         .catch(() => {

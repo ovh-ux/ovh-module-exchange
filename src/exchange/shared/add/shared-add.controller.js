@@ -49,9 +49,9 @@ angular.module('Module.exchange.controllers').controller(
           this.quotaUnitTranslation = this.services.$translate.instant(
             `unit_size_${data.maxQuota.unit}`,
           );
-          this.folderToAdd.type = data.types[0];
-          this.folderToAdd.defaultPermission = data.defaultPermissions[0];
-          this.folderToAdd.anonymousPermission = data.anonymousPermissions[0];
+          this.folderToAdd.type = _.first(data.types);
+          this.folderToAdd.defaultPermission = _.first(data.defaultPermissions);
+          this.folderToAdd.anonymousPermission = _.first(data.anonymousPermissions);
           this.folderToAdd.quota = Math.min(100, data.maxQuota.value);
 
           if (data.maxQuota.value === 0) {
@@ -109,7 +109,7 @@ angular.module('Module.exchange.controllers').controller(
       }
 
       this.errors.pathIsValid = true;
-      const invalidCharacters = /[;%\/\'\"\?]/; // ; % / ' " ?
+      const invalidCharacters = /[;%/'"?]/; // ; % / ' " ?
       const pathContainsInvalidCharacters = invalidCharacters.test(this.folderToAdd.path);
       const pathEndsWithBackslash = _(this.folderToAdd.path).endsWith('\\');
 

@@ -117,7 +117,8 @@ angular.module('Module.exchange.controllers').controller(
       const model = this.getModelToUpdate(originalValues, modifiedBuffer);
 
       if (this.services.exchangeServiceInfrastructure.isProvider()) {
-        model.quota = originalValues.totalQuota.value && modifiedBuffer.quota !== originalValues.quota
+        model.quota = originalValues.totalQuota.value
+          && modifiedBuffer.quota !== originalValues.quota
           ? modifiedBuffer.quota
           : undefined;
       }
@@ -197,8 +198,8 @@ angular.module('Module.exchange.controllers').controller(
       this.containsNameFlag = false;
       this.containsSameAccountNameFlag = false;
 
-      selectedAccount.password = selectedAccount.password || '';
-      selectedAccount.passwordConfirmation = selectedAccount.passwordConfirmation || '';
+      _.set(selectedAccount, 'password', selectedAccount.password || '');
+      _.set(selectedAccount, 'passwordConfirmation', selectedAccount.passwordConfirmation || '');
 
       if (selectedAccount.password !== selectedAccount.passwordConfirmation) {
         this.differentPasswordFlag = true;
@@ -275,7 +276,7 @@ angular.module('Module.exchange.controllers').controller(
     setQuotaAvailable() {
       this.newAccountOptions.quotaArray = [];
 
-      for (let i = this.newAccountOptions.maxQuota; i >= this.newAccountOptions.minQuota; i--) {
+      for (let i = this.newAccountOptions.maxQuota; i >= this.newAccountOptions.minQuota; i -= 1) {
         this.newAccountOptions.quotaArray.push(i);
       }
     }
@@ -297,7 +298,8 @@ angular.module('Module.exchange.controllers').controller(
     }
 
     shouldDisplaySharepointPasswordWarning() {
-      const isChangingPassword = this.selectedAccount.password != null && this.selectedAccount.canBeConfigured;
+      const isChangingPassword = this.selectedAccount.password != null
+        && this.selectedAccount.canBeConfigured;
       const hasSharepoint = this.sharepoint != null;
 
       return isChangingPassword && hasSharepoint;
@@ -309,7 +311,8 @@ angular.module('Module.exchange.controllers').controller(
         value => value.name === domainName,
       );
 
-      // if the current domain is not in the domain's list (dummy account), select by default the first available
+      // if the current domain is not in the domain's list (dummy account),
+      // select by default the first available
       if (result == null) {
         return this.newAccountOptions.availableDomains[0];
       }

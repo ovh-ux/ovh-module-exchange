@@ -37,7 +37,8 @@ angular.module('Module.exchange.services').service(
     }
 
     retrievingIfUserAlreadyHasSubscribed(serviceName) {
-      return this.retrievingServiceName(serviceName).then(officeAttachServiceName => _(officeAttachServiceName).isString());
+      return this.retrievingServiceName(serviceName)
+        .then(officeAttachServiceName => _(officeAttachServiceName).isString());
     }
 
     savingHidingPreferences() {

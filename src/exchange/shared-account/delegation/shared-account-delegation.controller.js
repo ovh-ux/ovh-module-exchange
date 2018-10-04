@@ -65,7 +65,8 @@ angular.module('Module.exchange.controllers').controller(
           matchingBufferedAccount.newFullAccess = account.newFullAccess;
 
           const differentSendAs = matchingBufferedAccount.sendAs !== account.newSendAs;
-          const differentSendOnBehalfTo = matchingBufferedAccount.sendOnBehalfTo !== account.newSendOnBehalfTo;
+          const differentSendOnBehalfTo = matchingBufferedAccount.sendOnBehalfTo !== account
+            .newSendOnBehalfTo;
           const differentFullAccess = matchingBufferedAccount.fullAccess !== account.newFullAccess;
 
           if (differentSendAs || differentSendOnBehalfTo || differentFullAccess) {
@@ -90,14 +91,15 @@ angular.module('Module.exchange.controllers').controller(
         this.searchValue,
       )
         .then((accounts) => {
-          this.accounts = angular.copy(accounts); // make a deep copy of accounts list to use it as model
+          // make a deep copy of accounts list to use it as model
+          this.accounts = angular.copy(accounts);
           this.bufferedAccounts = angular.copy(accounts);
 
           if (_.has(this.accounts, 'list.results') && this.accounts.list.results != null) {
             _.forEach(this.accounts.list.results, (account) => {
-              account.newSendAs = account.sendAs;
-              account.newSendOnBehalfTo = account.sendOnBehalfTo;
-              account.newFullAccess = account.fullAccess;
+              _.set(account, 'newSendAs', account.sendAs);
+              _.set(account, 'newSendOnBehalfTo', account.sendOnBehalfTo);
+              _.set(account, 'newFullAccess', account.fullAccess);
             });
           }
         })
