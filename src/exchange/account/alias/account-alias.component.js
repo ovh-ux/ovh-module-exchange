@@ -66,11 +66,11 @@
         this.aliasesParams.offset - 1,
       )
         .then((aliases) => {
-          for (let i = 0; i < aliases.list.results.length; i++) {
+          for (let i = 0; i < aliases.list.results.length; i += 1) {
             this.aliases.splice(i, 1, aliases.list.results[i]);
           }
 
-          for (let i = aliases.list.results.length; i < this.aliases.length; i++) {
+          for (let i = aliases.list.results.length; i < this.aliases.length; i += 1) {
             this.aliases.splice(i, 1);
           }
         })

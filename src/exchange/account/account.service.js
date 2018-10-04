@@ -44,7 +44,8 @@ angular.module('Module.exchange.services').service(
             && this.exchangeVersion.isIndividual2010()
         ),
         UPGRADE_TO_300_GB: () => this.exchangeServiceInfrastructure.isHosted()
-          || (this.exchangeServiceInfrastructure.isProvider() && this.exchangeVersion.isAfter(2010)),
+          || (this.exchangeServiceInfrastructure.isProvider()
+            && this.exchangeVersion.isAfter(2010)),
       };
     }
 
@@ -95,7 +96,8 @@ angular.module('Module.exchange.services').service(
 
     /**
      * @param {object} account
-     * @returns {boolean} True if the `account` can't be used as it is a placeholder and not an actual account
+     * @returns {boolean} True if the `account` can't be used as it is a placeholder
+     *                    and not an actual account
      */
     isPlaceholder(account) {
       const inputIsValid = _(account)
@@ -105,7 +107,7 @@ angular.module('Module.exchange.services').service(
         .value();
 
       if (!inputIsValid) {
-        throw 'Input is not a valid account';
+        throw new Error('Input is not a valid account');
       }
 
       return account.domain.toUpperCase() === this.PLACEHOLDER_DOMAIN_NAME.toUpperCase();

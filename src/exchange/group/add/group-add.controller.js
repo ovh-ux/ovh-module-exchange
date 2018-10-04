@@ -151,9 +151,9 @@ angular.module('Module.exchange.controllers').controller(
             );
             this.services.navigation.resetAction();
           } else {
-            this.groupToAdd.completeDomain = data.availableDomains[0];
-            this.groupToAdd.subscribeRestriction = data.availableJoinRestrictions[0];
-            this.groupToAdd.unsubscribeRestriction = data.availableDepartRestrictions[0];
+            this.groupToAdd.completeDomain = _.first(data.availableDomains);
+            this.groupToAdd.subscribeRestriction = _.first(data.availableJoinRestrictions);
+            this.groupToAdd.unsubscribeRestriction = _.first(data.availableDepartRestrictions);
             this.groupIsValid();
           }
         })

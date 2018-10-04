@@ -41,8 +41,8 @@ angular.module('Module.exchange.controllers').controller(
             this.availableTypes = data.types;
             this.availableDomains = data.availableDomains;
             this.takenEmails = data.takenEmails;
-            this.model.resourceType = this.availableTypes[0];
-            this.model.resourceEmailDomain = this.availableDomains[0];
+            this.model.resourceType = _.first(this.availableTypes);
+            this.model.resourceEmailDomain = _.first(this.availableDomains);
           } else {
             this.services.navigation.resetAction();
             this.services.messaging.writeError(
@@ -118,10 +118,14 @@ angular.module('Module.exchange.controllers').controller(
         return false;
       }
 
-      const emailAddressIsCorrect = !_.isEmpty(this.model.resourceEmailAddress) && this.model.resourceEmailAddress.length <= 64;
+      const emailAddressIsCorrect = !_.isEmpty(this.model.resourceEmailAddress)
+        && this.model.resourceEmailAddress.length <= 64;
       const resourceTypeIsSelected = !_.isEmpty(this.model.resourceType);
-      const displayNameIsCorrect = !_.isEmpty(this.model.displayName) && this.model.displayName.length <= 256;
-      const capacityIsCorrect = this.model.capacity != null && this.model.capacity >= 0 && this.model.capacity <= 1024;
+      const displayNameIsCorrect = !_.isEmpty(this.model.displayName)
+        && this.model.displayName.length <= 256;
+      const capacityIsCorrect = this.model.capacity != null
+        && this.model.capacity >= 0
+        && this.model.capacity <= 1024;
       const emailIsFree = !this.takenEmailError;
 
       return (

@@ -37,10 +37,20 @@
     }
 
     fetchingAccountCreationOptions() {
-      return this.Exchange.fetchingAccountCreationOptions(
-        this.$routerParams.organization,
-        this.$routerParams.productId,
-      )
+      function transformAccountTypes(accountTypes) {
+        return _(accountTypes)
+          .map(accountType => ({
+            name: accountType,
+            displayName: this.exchangeAccountTypes.getDisplayValue(accountType),
+          }))
+          .value();
+      }
+
+      return this.Exchange
+        .fetchingAccountCreationOptions(
+          this.$routerParams.organization,
+          this.$routerParams.productId,
+        )
         .then((accountCreationOptions) => {
           this.accountCreationOptions = _(accountCreationOptions)
             .assign({
@@ -51,8 +61,8 @@
             })
             .value();
 
-          this.newAccount.accountType = this.accountCreationOptions.availableTypes[0];
-          this.newAccount.domain = this.accountCreationOptions.availableDomains[0];
+          this.newAccount.accountType = _.first(this.accountCreationOptions.availableTypes);
+          this.newAccount.domain = _.first(this.accountCreationOptions.availableDomains);
         })
         .catch((error) => {
           this.messaging.writeError(
@@ -66,15 +76,6 @@
         .finally(() => {
           this.isFetchingCreationOptions = false;
         });
-
-      function transformAccountTypes(accountTypes) {
-        return _(accountTypes)
-          .map(accountType => ({
-            name: accountType,
-            displayName: this.exchangeAccountTypes.getDisplayValue(accountType),
-          }))
-          .value();
-      }
     }
 
     checkEmailAddressIsAlreadyTaken() {
@@ -146,7 +147,8 @@
       this.$timeout(() => {
         if (touchednessStatus) {
           this.newAccountForm.password.$setTouched();
-          this.newAccountForm.password.$setDirty(); // It is intentional if the touchness impacts the dirtyness
+          // It is intentional if the touchness impacts the dirtyness
+          this.newAccountForm.password.$setDirty();
         }
 
         this.checkPasswordValidity();

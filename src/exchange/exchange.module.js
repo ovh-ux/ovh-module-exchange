@@ -15,7 +15,7 @@ angular
       'Navigator',
       '$rootScope',
       (Navigator, $rootScope) => {
-        $rootScope.currentSectionInformation = currentSectionInformation;
+        _.set($rootScope, 'currentSectionInformation', currentSectionInformation);
         return Navigator.setNavigationInformation({
           leftMenuVisible: true,
           configurationSelected: true,

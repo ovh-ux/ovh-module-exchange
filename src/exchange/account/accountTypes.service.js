@@ -29,7 +29,7 @@ angular.module('Module.exchange.services').service(
       switch (formattedAccountType) {
         case this.TYPES.BASIC:
           if (!this.CAN_DO.BASIC()) {
-            throw "Current service doesn't allow Basic account types";
+            throw new Error("Current service doesn't allow Basic account types");
           }
 
           return this.exchangeServiceInfrastructure.isDedicatedCluster()
@@ -45,7 +45,7 @@ angular.module('Module.exchange.services').service(
           return this.$translate.instant('exchange_accounts_types_2010_ENTERPRISE');
 
         default:
-          throw `Unknown account type ${accountType}`;
+          throw new Error(`Unknown account type ${accountType}`);
       }
     }
 
@@ -59,13 +59,13 @@ angular.module('Module.exchange.services').service(
         .snakeCase()
         .toUpperCase();
       if (_(formattedTypeName).isEmpty()) {
-        throw 'The input cannot be an empty value';
+        throw new Error('The input cannot be an empty value');
       }
 
       const matchingType = this.TYPES[formattedTypeName];
 
       if (matchingType === undefined) {
-        throw `${typeName} is not a valid account type name`;
+        throw new Error(`${typeName} is not a valid account type name`);
       }
 
       return (

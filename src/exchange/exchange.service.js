@@ -176,7 +176,7 @@ angular.module('Module.exchange.services').service(
       return (
         email
         && email.match(
-          /^[\w!#$%&'*+\/=?^`{|}~-]+(?:\.[\w!#$%&'*+\/=?^`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9]{2}(?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/,
+          /^[\w!#$%&'*+/=?^`{|}~-]+(?:\.[\w!#$%&'*+/=?^`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9]{2}(?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/,
         )
       );
     }
@@ -319,7 +319,8 @@ angular.module('Module.exchange.services').service(
      * @param pageSize - the size of page([10, 20, 40])
      * @param offset - page index
      * @param search - filter over primaryEmail value
-     * @param configurableOnly - Integer value: "0" to get all, "1" to filter out dummy accounts and creating/deleting ones
+     * @param configurableOnly - Integer value: "0" to get all, "1" to filter out dummy accounts
+     *                           and creating/deleting ones
      */
     getAccounts(pageSize, offset, search, configurableOnly, type, timeout) {
       return this.getSelected().then(exchange => this.getAccountsForExchange(
@@ -336,12 +337,15 @@ angular.module('Module.exchange.services').service(
 
     /**
      * Return paginated accounts list for the specified exchange.
-     * @param exchange - an object describing exchange service we want the accounts of. Use this.getSelected() for the currently selected exchange service
-     * @param cache - the cache to use. If getting for the selected exchange, use this.accountsCache.
+     * @param exchange - an object describing exchange service we want the accounts of.
+     *                   Use this.getSelected() for the currently selected exchange service
+     * @param cache - the cache to use. If getting for the selected exchange,
+     *                use this.accountsCache.
      * @param pageSize - the size of page([10, 20, 40])
      * @param offset - page index
      * @param search - filter over primaryEmail value
-     * @param configurableOnly - Integer value: "0" to get all, "1" to filter out dummy accounts and creating/deleting ones
+     * @param configurableOnly - Integer value: "0" to get all, "1" to filter out dummy accounts
+     *                           and creating/deleting ones
      */
     getAccountsForExchange(
       exchange,
@@ -398,7 +402,8 @@ angular.module('Module.exchange.services').service(
      * @param pageSize - the size of page([10, 20, 40])
      * @param offset - page index
      * @param search - filter over primaryEmail value
-     * @param configurableOnly - Integer value: "0" to get all, "1" to filter out dummy accounts and creating/deleting ones
+     * @param configurableOnly - Integer value: "0" to get all, "1" to filter out dummy accounts
+     *                           and creating/deleting ones
      */
     getAccountsAndContacts(
       organization,
@@ -509,7 +514,7 @@ angular.module('Module.exchange.services').service(
       const data = angular.copy(accountsToAdd);
       data.number = data.accountsNumber;
       delete data.accountsNumber;
-      const duration = data.duration;
+      const { duration } = data;
       delete data.duration;
       data.licence = data.accountLicense ? _.camelCase(data.accountLicense) : 'standard';
       delete data.accountLicense;
@@ -538,11 +543,11 @@ angular.module('Module.exchange.services').service(
       const accountToUpdate = angular.copy(account);
       accountToUpdate.outlookLicense = accountToUpdate.outlook;
       delete accountToUpdate.outlook;
-      accountToUpdate.deleteOutlookAtExpiration = accountToUpdate.outlookLicense && accountToUpdate.deleteOutlook;
+      _.set(accountToUpdate, 'deleteOutlookAtExpiration', accountToUpdate.outlookLicense && accountToUpdate.deleteOutlook);
       delete accountToUpdate.deleteOutlook;
 
       accountToUpdate.displayName = account.displayName ? account.displayName.trim() : undefined;
-      const password = accountToUpdate.password;
+      const { password } = accountToUpdate;
       delete accountToUpdate.password;
       if (accountToUpdate.accountLicense) {
         accountToUpdate.accountLicense = _.camelCase(accountToUpdate.accountLicense);
@@ -652,7 +657,7 @@ angular.module('Module.exchange.services').service(
     /**
      * Remove account if dedicated or provider 2010 is true, else reset it
      */
-    removeAccountInsteadOfReset(exchange) {
+    removeAccountInsteadOfReset() {
       const isDedicatedOrCluster = this.value.offer.toUpperCase() === 'DEDICATED'
         || this.value.offer.toUpperCase() === 'DEDICATED_CLUSTER';
       const isProvider = this.value.offer.toUpperCase() === 'PROVIDER';
@@ -1306,8 +1311,8 @@ angular.module('Module.exchange.services').service(
      * Order account upgrade
      */
     orderAccountUpgrade(organization, serviceName, options) {
-      const duration = options.duration;
-      delete options.duration;
+      const { duration } = options;
+      delete options.duration; // eslint-disable-line
 
       return this.services.OvhHttp.post(
         '/order/email/exchange/{organization}/service/{exchange}/accountUpgrade/{duration}',
@@ -1334,7 +1339,7 @@ angular.module('Module.exchange.services').service(
         (accounts) => {
           angular.forEach(accounts.list.results, (account) => {
             if (account.aliases > 0) {
-              account.aliases = [];
+              _.set(account, 'aliases', []);
               queue.push(
                 this.getAliases(
                   organization,
@@ -1348,7 +1353,7 @@ angular.module('Module.exchange.services').service(
                 }),
               );
             } else {
-              account.aliases = [];
+              _.set(account, 'aliases', []);
             }
           });
 
@@ -1389,8 +1394,7 @@ angular.module('Module.exchange.services').service(
     }
 
     doSharepointBeta(opts) {
-      const primaryEmailAddress = opts.primaryEmailAddress;
-      const subDomain = opts.subDomain;
+      const { primaryEmailAddress, subDomain } = opts;
 
       return this.getSelected().then(exchange => this.services.$http.post(
         [

@@ -130,11 +130,11 @@
             this.datagridParameters.sort,
           );
 
-          for (let i = 0; i < formattedAccounts.length; i++) {
+          for (let i = 0; i < formattedAccounts.length; i += 1) {
             this.accounts.splice(i, 1, formattedAccounts[i]);
           }
 
-          for (let i = formattedAccounts.length; i < this.accounts.length; i++) {
+          for (let i = formattedAccounts.length; i < this.accounts.length; i += 1) {
             this.accounts.splice(i, 1);
           }
         })
@@ -193,26 +193,6 @@
     }
 
     formatAccountsForDatagrid(accounts, sortingOptions) {
-      let formattedAccounts = _(accounts)
-        .get('list.results', [])
-        .map(account => _(account)
-          .assign({
-            emailAddress: unpunycodeEmailAddress(account.primaryEmailDisplayName),
-            size: transformSizeData.call(this, account),
-            numberOfAliases: account.aliases,
-            outlookStatus: transformOutlookStatus.call(this, account),
-            status: chooseStatusText.call(this, account),
-          })
-          .value());
-
-      formattedAccounts = this.$filter('orderBy')(
-        formattedAccounts,
-        sortingOptions.property,
-        sortingOptions.dir < 0,
-      );
-
-      return formattedAccounts;
-
       function unpunycodeEmailAddress(emailAddress) {
         const parts = emailAddress.split('@');
         const unpunycodedLocalPart = punycode.toUnicode(parts[0]);
@@ -222,7 +202,7 @@
 
       function transformSizeData(account) {
         return {
-          usage: Math.round(((account.currentUsage / Math.pow(1024, 2)) * 100) / account.quota), // eslint-disable-line no-restricted-properties
+          usage: Math.round(((account.currentUsage / Math.pow(1024, 2)) * 100) / account.quota), // eslint-disable-line
           progressionText: `${account.usedQuota.value} ${this.$translate.instant(
             `unit_size_${account.usedQuota.unit}`,
           )} / ${account.totalQuota.value} ${this.$translate.instant(
@@ -248,7 +228,7 @@
         }
 
         return {
-          status,
+          status, // eslint-disable-line
           displayValue: this.$translate.instant(
             `exchange_tab_accounts_table_outlook_${accountOutlookStatus}`,
           ),
@@ -284,6 +264,26 @@
 
         return this.$translate.instant('exchange_tab_ACCOUNTS_state_UNKNOWN');
       }
+
+      let formattedAccounts = _(accounts)
+        .get('list.results', [])
+        .map(account => _(account)
+          .assign({
+            emailAddress: unpunycodeEmailAddress(account.primaryEmailDisplayName),
+            size: transformSizeData.call(this, account),
+            numberOfAliases: account.aliases,
+            outlookStatus: transformOutlookStatus.call(this, account),
+            status: chooseStatusText.call(this, account),
+          })
+          .value());
+
+      formattedAccounts = this.$filter('orderBy')(
+        formattedAccounts,
+        sortingOptions.property,
+        sortingOptions.dir < 0,
+      );
+
+      return formattedAccounts;
     }
 
     displayAliasManagementView(account) {
@@ -304,7 +304,8 @@
     }
 
     openAccountOrderingDialog() {
-      const placeholderAccountAmount = _(this.accounts).sum(account => this.exchangeAccount.isPlaceholder(account));
+      const placeholderAccountAmount = _(this.accounts)
+        .sum(account => this.exchangeAccount.isPlaceholder(account));
       this.navigation.setAction('exchange/account/order/account-order', {
         placeholderAccountAmount,
       });

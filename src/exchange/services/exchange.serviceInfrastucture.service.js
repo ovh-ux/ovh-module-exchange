@@ -15,7 +15,7 @@ angular.module('Module.exchange.services').service(
 
     isType(infrastructure) {
       if (_(`${infrastructure}`).isEmpty()) {
-        throw "Can't work with empty input";
+        throw new Error("Can't work with empty input");
       }
 
       return (

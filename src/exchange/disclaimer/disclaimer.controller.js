@@ -16,7 +16,10 @@ angular.module('Module.exchange.controllers').controller(
       this.organization = params.organization;
       this.productId = params.productId;
 
-      this.services.$scope.$on(this.services.Exchange.events.disclaimersChanged, () => this.refreshList());
+      this.services.$scope.$on(
+        this.services.Exchange.events.disclaimersChanged,
+        () => this.refreshList(),
+      );
     }
 
     /* eslint-disable class-methods-use-this */
@@ -25,7 +28,7 @@ angular.module('Module.exchange.controllers').controller(
     }
     /* eslint-enable class-methods-use-this */
 
-    _getDisclaimers({ pageSize, offset }) {
+    getDisclaimers({ pageSize, offset }) {
       return this.services.Exchange.getDisclaimers(
         this.organization,
         this.productId,
@@ -39,12 +42,12 @@ angular.module('Module.exchange.controllers').controller(
         return undefined;
       }
       const config = { pageSize: this.pageSize, offset: this.offset };
-      return this._getDisclaimers(config)
+      return this.getDisclaimers(config)
         .then((disclaimers) => {
-          for (let i = 0; i < disclaimers.list.results.length; i++) {
+          for (let i = 0; i < disclaimers.list.results.length; i += 1) {
             this.disclaimersList.splice(i, 1, disclaimers.list.results[i]);
           }
-          for (let i = disclaimers.list.results.length; i < this.disclaimersList.length; i++) {
+          for (let i = disclaimers.list.results.length; i < this.disclaimersList.length; i += 1) {
             this.disclaimersList.splice(i, 1);
           }
           this.setMessagesFlags(this.disclaimers);
@@ -61,7 +64,7 @@ angular.module('Module.exchange.controllers').controller(
       this.disclaimersList = null;
       this.pageSize = $config.pageSize;
       this.offset = $config.offset;
-      return this._getDisclaimers($config)
+      return this.getDisclaimers($config)
         .then((disclaimers) => {
           this.disclaimersList = disclaimers.list.results;
           this.setMessagesFlags(this.disclaimers);

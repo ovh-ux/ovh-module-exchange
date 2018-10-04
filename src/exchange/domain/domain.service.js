@@ -42,9 +42,11 @@ angular.module('Module.exchange.services').service(
         }
 
         if (!_.isEmpty(_.pick(keyMapping, key))) {
-          result[keyMapping[key]] = value; // uses value from the keyMapping object
+          // uses value from the keyMapping object
+          result[keyMapping[key]] = value; // eslint-disable-line
         } else {
-          result[key] = value; // uses value from the domain
+          // uses value from the domain
+          result[key] = value; // eslint-disable-line
         }
       });
 

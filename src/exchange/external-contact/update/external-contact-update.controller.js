@@ -26,7 +26,8 @@ angular.module('Module.exchange.controllers').controller(
     isEmailValid() {
       return (
         _.has(this.model, 'newAccount.externalEmailAddress')
-        && this.services.Exchange.constructor.isEmailValid(this.model.newAccount.externalEmailAddress)
+        && this.services.Exchange.constructor
+          .isEmailValid(this.model.newAccount.externalEmailAddress)
       );
     }
 
