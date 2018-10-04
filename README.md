@@ -8,33 +8,29 @@
 
 > Exchange module.
 
-## Installation
-
-### NPM
+## Install
 
 ```sh
-$ npm install ovh-module-exchange --save
+yarn add ovh-module-exchange
 ```
 
-## Get the sources
+## Usage
 
-```sh
-$ git clone https://github.com/ovh-ux/ovh-module-exchange.git
-$ cd ovh-module-exchange
-$ npm install
+```js
+angular.module('App', [
+  '…',
+  'Module.exchange',
+  '…',
+])
 ```
 
-You've developed a new cool feature? Fixed an annoying bug? We'd be happy
-to hear from you!
+## Related
 
-Have a look in [CONTRIBUTING.md](https://github.com/ovh-ux/ovh-module-exchange/blob/master/CONTRIBUTING.md)
-
-## Related links
-
-* Contribute: https://github.com/ovh-ux/ovh-module-exchange/blob/master/CONTRIBUTING.md
-* Report bugs: https://github.com/ovh-ux/ovh-module-exchange/issues
-* Get latest version: https://github.com/ovh-ux/ovh-module-exchange
+* [Web Control Panel UI](https://github.com/ovh-ux/ovh-manager-web).
+* [Emailpro Module](https://github.com/ovh-ux/ovh-module-emailpro).
+* [Office Module](https://github.com/ovh-ux/ovh-module-office).
+* [Sharepoint Module](https://github.com/ovh-ux/ovh-module-sharepoint).
 
 ## License
 
-See https://github.com/ovh-ux/ovh-module-exchange/blob/master/LICENSE
+[BSD-3-Clause](LICENSE) © OVH SAS
