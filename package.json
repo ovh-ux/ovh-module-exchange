@@ -10,7 +10,7 @@
     "lint": "run-p lint:css lint:js",
     "lint:css": "stylelint 'src/**/*.less' --fix",
     "lint:js": "eslint --quiet --fix ./src",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+    "version": "npx conventional-changelog-cli -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "postversion": "git push && git push --tags"
   },
   "keywords": [
@@ -39,7 +39,6 @@
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
     "babel-plugin-angularjs-annotate": "^0.9.0",
-    "conventional-changelog-cli": "^2.0.5",
     "eslint": "^5.6.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-angular": "^3.3.0",
@@ -51,7 +50,7 @@
     "stylelint-config-standard": "^18.2.0"
   },
   "dependencies": {
-    "lodash": "~3.9.3",
-    "@ckeditor/ckeditor5-build-classic": "^11.0.1"
+    "@ckeditor/ckeditor5-build-classic": "^11.0.1",
+    "lodash": "~3.9.3"
   }
 }
