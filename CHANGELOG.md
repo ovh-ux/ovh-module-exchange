@@ -1,3 +1,16 @@
+<a name="9.0.1"></a>
+## [9.0.1](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.0.0...v9.0.1) (2018-10-09)
+
+
+### Bug Fixes
+
+* apply eslint rules ([c950b32](https://github.com/ovh-ux/ovh-module-exchange/commit/c950b32))
+* remove package-lock.json file ([1e80923](https://github.com/ovh-ux/ovh-module-exchange/commit/1e80923))
+* update license file ([76ea681](https://github.com/ovh-ux/ovh-module-exchange/commit/76ea681))
+* **disclaimer:** exclude editor usage for IE11 ([a48c398](https://github.com/ovh-ux/ovh-module-exchange/commit/a48c398))
+
+
+
 <a name="9.0.0"></a>
 # [9.0.0](https://github.com/ovh-ux/ovh-module-exchange/compare/v8.0.8...v9.0.0) (2018-10-03)
 
