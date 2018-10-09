@@ -36,7 +36,7 @@ angular.module('Module.exchange.controllers').controller(
           } else {
             this.availableDomains = data.availableDomains;
             this.takenEmails = data.takenEmails;
-            this.model.domain = data.availableDomains[0];
+            this.model.domain = _.first(data.availableDomains);
           }
         })
         .catch((err) => {

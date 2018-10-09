@@ -109,7 +109,7 @@ angular.module('Module.exchange.controllers').controller(
         this.accountsToAdd,
       )
         .then((data) => {
-          data.duration = '01';
+          _.set(data, 'duration', '01');
           this.ordersList.push(data);
         })
         .catch((failure) => {
@@ -127,7 +127,7 @@ angular.module('Module.exchange.controllers').controller(
         this.accountsToAdd,
       )
         .then((data) => {
-          data.duration = '12';
+          _.set(data, 'duration', '12');
           this.ordersList.push(data);
         })
         .catch((failure) => {

@@ -57,11 +57,12 @@ angular.module('Module.exchange.controllers').controller(
         'localPart',
         'required',
       );
-      this.errors.emailLocalPartDoesntRespectsPattern = this.services.formValidation.doesFieldContainsErrors(
-        this.sharedAccountForm,
-        'localPart',
-        'pattern',
-      );
+      this.errors.emailLocalPartDoesntRespectsPattern = this.services.formValidation
+        .doesFieldContainsErrors(
+          this.sharedAccountForm,
+          'localPart',
+          'pattern',
+        );
 
       return (
         this.errors.emailLocalPartIsEmpty

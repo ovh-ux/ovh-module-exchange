@@ -69,7 +69,7 @@ angular.module('Module.exchange.controllers').controller(
           this.paginated = domains;
 
           _.forEach(this.paginated.domains, (domain) => {
-            domain.domainTypes = domains.domainTypes;
+            _.set(domain, 'domainTypes', domains.domainTypes);
           });
 
           this.setTooltips();
@@ -92,27 +92,27 @@ angular.module('Module.exchange.controllers').controller(
 
     setMxTooltip(domain) {
       if (domain.mxValid) {
-        domain.mxTooltip = this.services.$translate.instant(
+        _.set(domain, 'mxTooltip', this.services.$translate.instant(
           'exchange_tab_domain_diagnostic_mx_toolbox_ok',
-        );
+        ));
       } else {
-        domain.mxTooltip = this.services.$translate.instant(
+        _.set(domain, 'mxTooltip', this.services.$translate.instant(
           'exchange_tab_domain_diagnostic_mx_toolbox',
           { t0: this.exchange.hostname },
-        );
+        ));
       }
     }
 
     setSrvTooltip(domain) {
       if (domain.srvValid) {
-        domain.srvTooltip = this.services.$translate.instant(
+        _.set(domain, 'srvTooltip', this.services.$translate.instant(
           'exchange_tab_domain_diagnostic_srv_toolbox_ok',
-        );
+        ));
       } else {
-        domain.srvTooltip = this.services.$translate.instant(
+        _.set(domain, 'srvTooltip', this.services.$translate.instant(
           'exchange_tab_domain_diagnostic_srv_toolbox',
           { t0: this.exchange.hostname },
-        );
+        ));
       }
     }
 

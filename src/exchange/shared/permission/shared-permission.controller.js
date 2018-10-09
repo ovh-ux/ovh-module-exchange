@@ -29,7 +29,7 @@ angular.module('Module.exchange.controllers').controller(
 
     retrievingPermissions(count, offset) {
       if (!_.has(this.selectedFolder, 'path') || this.selectedFolder.path == null) {
-        throw 'This screen needs a folder before working';
+        throw new Error('This screen needs a folder before working');
       }
 
       this.services.messaging.resetMessages();

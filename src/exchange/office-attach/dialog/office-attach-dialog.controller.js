@@ -184,7 +184,7 @@ angular.module('Module.exchange.controllers').controller(
               }
             }
 
-            i++;
+            i += 1;
           });
         })
         .finally(() => {
@@ -248,7 +248,8 @@ angular.module('Module.exchange.controllers').controller(
           key => this.selectedCheckboxes[key],
         );
         const currentlyDislayedAccountsThatAreSelected = this.accounts.list.results.filter(
-          account => currentlySelectedAccountsEmailAddresses.includes(account.primaryEmailDisplayName),
+          account => currentlySelectedAccountsEmailAddresses
+            .includes(account.primaryEmailDisplayName),
         );
 
         const alreadyPresentAccounts = currentlyDislayedAccountsThatAreSelected.map(
@@ -265,7 +266,8 @@ angular.module('Module.exchange.controllers').controller(
         ).filter(key => !this.selectedCheckboxes[key]);
 
         this.selectedAccounts = this.selectedAccounts.filter(
-          account => !currentlyNotSelectedAccountsEmailAddresses.includes(account.primaryEmailDisplayName),
+          account => !currentlyNotSelectedAccountsEmailAddresses
+            .includes(account.primaryEmailDisplayName),
         );
 
         this.numberOfSelectedCheckboxes = currentlySelectedAccountsEmailAddresses.length;

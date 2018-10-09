@@ -89,7 +89,7 @@ angular.module('Module.exchange.controllers').controller(
         !_.has(this.permissions, 'current.list.results')
         || this.permissions.current.list.results == null
       ) {
-        throw 'mapPermissionToArray() can only be used once the permission retrieved from the server';
+        throw new Error('mapPermissionToArray() can only be used once the permission retrieved from the server');
       }
 
       this.permissions.selectedPermissions = _.mapValues(
@@ -140,7 +140,7 @@ angular.module('Module.exchange.controllers').controller(
             break;
 
           default:
-            throw `Unknown case ${state}`;
+            throw new Error(`Unknown case ${state}`);
         }
       });
     }
