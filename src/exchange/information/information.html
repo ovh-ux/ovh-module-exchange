@@ -24,13 +24,15 @@
                                                         data-translate="exchange_tab_INFORMATIONS_version"></strong>
                                                 <span data-ng-bind="(('exchange_server_commercial_version' + ctrl.exchange.serverDiagnostic.commercialVersion) | translate) || ctrl.exchange.serverDiagnostic.commercialVersion"></span>
                                             </div>
-                                            <button class="btn btn-default ml-auto my-auto text-wrap" type="button"
-                                                    data-translate="exchange_upgrade_button_title"
-                                                    data-ng-click="setAction('exchange/information/migration-2016/service-migration-2016', ctrl.exchange)"
-                                                    data-ng-if="ctrl.shouldDisplayMigration2016()">
-                                            </button>
                                         </div>
                                     </div>
+                                    <oui-action-menu data-compact 
+                                                     data-align="end"
+                                                     data-ng-if="ctrl.shouldDisplayMigration2016()">
+                                        <oui-action-menu-item data-on-click="setAction('exchange/information/migration-2016/service-migration-2016', ctrl.exchange)">
+                                            <span data-translate="exchange_upgrade_button_title"></span>     
+                                        </oui-action-menu-item>
+                                    </oui-action-menu>
                                 </li>
                                 <li class="oui-tile__item">
                                     <div class="oui-tile__definition">
@@ -91,18 +93,20 @@
                                                         data-translate="exchange_dashboard_ssl_expiration"></strong>
                                                 <span data-ng-bind="ctrl.exchange.sslExpirationDate | date:'mediumDate'"></span>
                                             </div>
-                                            <button class="btn btn-default ml-auto my-auto" type="button" aria-describedby="sslRenewal"
-                                                    data-translate="exchange_action_renew_ssl"
-                                                    data-ng-click="ctrl.sslRenew()"
-                                                    data-ng-disabled="ctrl.hasSSLTask"
-                                                    data-ng-if="ctrl.shouldDisplaySSLRenewValue">
-                                            </button>
                                         </div>
                                         <div class="alert alert-info mt-3 mb-0" id="sslRenewal" role="alert"
                                              data-ng-bind="ctrl.messageSSL"
                                              data-ng-if="ctrl.messageSSL">
                                         </div>
                                     </div>
+                                    <oui-action-menu data-compact 
+                                                     data-align="end"
+                                                     data-disabled="ctrl.hasSSLTask"
+                                                     data-ng-if="ctrl.shouldDisplaySSLRenewValue">
+                                        <oui-action-menu-item data-on-click="ctrl.sslRenew()">
+                                            <span data-translate="exchange_action_renew_ssl"></span>     
+                                        </oui-action-menu-item>
+                                    </oui-action-menu>
                                 </li>
                                 <li class="oui-tile__item"
                                     data-ng-if="ctrl.displayRenewDate()">
@@ -169,13 +173,15 @@
                                                       data-ng-bind="ctrl.exchange.currentDiskUsage.value + ' ' + ('unit_size_'+ ctrl.exchange.currentDiskUsage.unit | translate) + ' / ' + ctrl.exchange.totalDiskSize.value + ' ' + ('unit_size_'+ ctrl.exchange.totalDiskSize.unit | translate)"></span>
                                             </div>
                                         </div>
-                                        <button class="btn btn-block btn-default" type="button"
-                                                data-translate="exchange_action_order_space_disk"
-                                                data-ng-click="ctrl.orderDiskSpace()"
-                                                data-ng-disabled="ctrl.exchangeServiceInfrastructure.is25g()"
-                                                data-ng-if="ctrl.displayOrderDiskSpace()">
-                                        </button>
                                     </div>
+                                    <oui-action-menu data-compact 
+                                                     data-align="end"
+                                                     data-disabled="ctrl.exchangeServiceInfrastructure.is25g()"
+                                                     data-ng-if="ctrl.displayOrderDiskSpace()">
+                                        <oui-action-menu-item data-on-click="ctrl.orderDiskSpace()">
+                                            <span data-translate="exchange_action_order_space_disk"></span>     
+                                        </oui-action-menu-item>
+                                    </oui-action-menu>
                                 </li>
                             </ul>
                         </div>
