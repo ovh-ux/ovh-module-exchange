@@ -1,6 +1,6 @@
 {
   "name": "ovh-module-exchange",
-  "version": "9.0.2",
+  "version": "9.0.3",
   "description": "Exchange module.",
   "license": "BSD-3-Clause",
   "author": "OVH SAS",
