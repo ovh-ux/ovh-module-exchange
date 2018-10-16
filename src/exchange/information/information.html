@@ -5,13 +5,13 @@
             <div class="row d-md-flex">
                 <div class="col-sm-6 mb-5">
                     <div class="oui-tile h-100">
-                        <h3 class="oui-tile__title"
+                        <h3 class="oui-header_4 oui-tile__title"
                             data-translate="exchange_tab_INFORMATIONS_summary"></h3>
                         <div class="oui-tile__body">
                             <ul class="list-unstyled">
                                 <li class="oui-tile__item">
                                     <div class="oui-tile__definition">
-                                        <strong class="d-block"
+                                        <strong class="oui-tile__term d-block"
                                                 data-translate="exchange_tab_INFORMATIONS_infrastructure"></strong>
                                         <span data-ng-bind="(('exchange_offer_type_' + ctrl.exchange.offer) | translate) || ctrl.exchange.offer"></span>
                                     </div>
@@ -20,7 +20,7 @@
                                     <div class="oui-tile__definition">
                                         <div class="d-flex w-100">
                                             <div>
-                                                <strong class="d-block"
+                                                <strong class="oui-tile__term d-block"
                                                         data-translate="exchange_tab_INFORMATIONS_version"></strong>
                                                 <span data-ng-bind="(('exchange_server_commercial_version' + ctrl.exchange.serverDiagnostic.commercialVersion) | translate) || ctrl.exchange.serverDiagnostic.commercialVersion"></span>
                                             </div>
@@ -34,7 +34,7 @@
                                 </li>
                                 <li class="oui-tile__item">
                                     <div class="oui-tile__definition">
-                                        <strong class="d-block"
+                                        <strong class="oui-tile__term d-block"
                                                 data-translate="exchange_dashboard_name"></strong>
                                         <span data-ng-bind="ctrl.exchange.domain"></span>
                                     </div>
@@ -42,42 +42,42 @@
                                 <li class="oui-tile__item"
                                     data-ng-if="ctrl.shouldDisplayDiagnostic()">
                                     <div class="oui-tile__definition">
-                                        <strong class="d-block"
+                                        <strong class="oui-tile__term d-block"
                                                 data-translate="exchange_dashboard_diag"></strong>
-                                        <button class="btn btn-xs" type="button"
+                                        <button class="oui-status" type="button"
                                                 data-translate="exchange_dashboard_diag_a_label"
-                                                data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isAValid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isAValid}"
+                                                data-ng-class="{'oui-status_success': ctrl.exchange.serverDiagnostic.isAValid, 'oui-status_warning': !ctrl.exchange.serverDiagnostic.isAValid}"
                                                 data-ng-if="!ctrl.exchangeServiceInfrastructure.isProvider()"
                                                 data-simplepopover="{{ctrl.exchange.serverDiagnostic.aTooltip}}"
                                                 data-simplepopover-title="{{'exchange_dashboard_diag_a_tooltip_title' | translate}}"
-                                                data-simplepopover-placement="bottom"
+                                                data-simplepopover-placement="right"
                                                 data-simplepopover-single="true">
                                         </button>
-                                        <button class="btn btn-xs" type="button"
+                                        <button class="oui-status" type="button"
                                                 data-translate="exchange_dashboard_diag_aaaa_label"
-                                                data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isAaaaValid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isAaaaValid}"
+                                                data-ng-class="{'oui-status_success': ctrl.exchange.serverDiagnostic.isAaaaValid, 'oui-status_warning': !ctrl.exchange.serverDiagnostic.isAaaaValid}"
                                                 data-ng-if="ctrl.exchangeServiceInfrastructure.isDedicated() || ctrl.exchangeServiceInfrastructure.isDedicatedCluster()"
                                                 data-simplepopover="{{ctrl.exchange.serverDiagnostic.aaaaTooltip}}"
                                                 data-simplepopover-title="{{'exchange_dashboard_diag_aaaa_tooltip_title' | translate}}"
-                                                data-simplepopover-placement="bottom"
+                                                data-simplepopover-placement="right"
                                                 data-simplepopover-single="true">
                                         </button>
-                                        <button class="btn btn-xs" type="button"
+                                        <button class="oui-status" type="button"
                                                 data-translate="exchange_dashboard_diag_ptr_label"
-                                                data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isPtrValid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isPtrValid}"
+                                                data-ng-class="{'oui-status_success': ctrl.exchange.serverDiagnostic.isPtrValid, 'oui-status_warning': !ctrl.exchange.serverDiagnostic.isPtrValid}"
                                                 data-ng-if="ctrl.exchangeServiceInfrastructure.isDedicated() || ctrl.exchangeServiceInfrastructure.isDedicatedCluster()"
                                                 data-simplepopover="{{ctrl.exchange.serverDiagnostic.ptrTooltip}}"
                                                 data-simplepopover-title="{{'exchange_dashboard_diag_ptr_tooltip_title' | translate}}"
-                                                data-simplepopover-placement="bottom"
+                                                data-simplepopover-placement="right"
                                                 data-simplepopover-single="true">
                                         </button>
-                                        <button class="btn btn-xs" type="button"
+                                        <button class="oui-status" type="button"
                                                 data-translate="exchange_dashboard_diag_ptrv6_label"
-                                                data-ng-class="{'btn-success': ctrl.exchange.serverDiagnostic.isPtrV6Valid, 'btn-warning': !ctrl.exchange.serverDiagnostic.isPtrV6Valid}"
+                                                data-ng-class="{'oui-status_success': ctrl.exchange.serverDiagnostic.isPtrV6Valid, 'oui-status_warning': !ctrl.exchange.serverDiagnostic.isPtrV6Valid}"
                                                 data-ng-if="ctrl.exchangeServiceInfrastructure.isDedicated() || ctrl.exchangeServiceInfrastructure.isDedicatedCluster()"
                                                 data-simplepopover="{{ctrl.exchange.serverDiagnostic.ptrv6Tooltip}}"
                                                 data-simplepopover-title="{{'exchange_dashboard_diag_ptrv6_tooltip_title' | translate}}"
-                                                data-simplepopover-placement="bottom"
+                                                data-simplepopover-placement="right"
                                                 data-simplepopover-single="true">
                                         </button>
                                     </div>
@@ -87,7 +87,7 @@
                                     <div class="oui-tile__definition">
                                         <div class="d-flex w-100">
                                             <div>
-                                                <strong class="d-block"
+                                                <strong class="oui-tile__term d-block"
                                                         data-translate="exchange_dashboard_ssl_expiration"></strong>
                                                 <span data-ng-bind="ctrl.exchange.sslExpirationDate | date:'mediumDate'"></span>
                                             </div>
@@ -107,7 +107,7 @@
                                 <li class="oui-tile__item"
                                     data-ng-if="ctrl.displayRenewDate()">
                                     <div class="oui-tile__definition">
-                                        <strong class="d-block"
+                                        <strong class="oui-tile__term d-block"
                                                 data-translate="exchange_dashboard_expiration"></strong>
                                         <span data-ng-bind="ctrl.exchange.expiration | date:'mediumDate'"></span>
                                     </div>
@@ -118,27 +118,27 @@
                 </div>
                 <div class="col-sm-6 mb-5">
                     <div class="oui-tile h-100">
-                        <h3 class="oui-tile__title"
+                        <h3 class="oui-header_4 oui-tile__title"
                             data-translate="exchange_tab_INFORMATIONS_stats"></h3>
                         <div class="oui-tile__body">
                             <ul class="list-unstyled">
                                 <li class="oui-tile__item">
                                     <div class="oui-tile__definition">
-                                        <strong class="d-block"
+                                        <strong class="oui-tile__term d-block"
                                                 data-translate="exchange_dashboard_domains"></strong>
                                         <span data-ng-bind="ctrl.exchange.domainsNumber"></span>
                                     </div>
                                 </li>
                                 <li class="oui-tile__item">
                                     <div class="oui-tile__definition">
-                                        <strong class="d-block"
+                                        <strong class="oui-tile__term d-block"
                                                 data-translate="exchange_dashboard_accounts"></strong>
                                         <span data-ng-bind="ctrl.exchange.accountsNumber"></span>
                                     </div>
                                 </li>
                                 <li class="oui-tile__item">
                                     <div class="oui-tile__definition">
-                                        <strong class="d-block"
+                                        <strong class="oui-tile__term d-block"
                                                 data-translate="exchange_dashboard_tasks"></strong>
                                         <span data-ng-bind="ctrl.exchange.tasksNumber"></span>
                                     </div>
@@ -147,7 +147,7 @@
                                     data-ng-if="ctrl.exchange.diskPercent">
                                     <div class="oui-tile__definition">
                                         <div>
-                                            <strong class="d-inline-block mr-2" data-translate="exchange_dashboard_disk_usage"></strong>
+                                            <strong class="oui-tile__term d-inline-block mr-2" data-translate="exchange_dashboard_disk_usage"></strong>
                                             <span class="fa fa-question-circle" aria-hidden="true"
                                                   data-uib-tooltip="{{'exchange_action_order_space_disk_tooltip' | translate}}"
                                                   data-tooltip-append-to-body="true"></span>
@@ -185,20 +185,20 @@
         </div>
         <div class="col-md-3">
             <div class="oui-tile mb-5">
-                <h3 class="oui-tile__title"
+                <h3 class="oui-header_4 oui-tile__title"
                     data-translate="exchange_tab_INFORMATIONS_connexion"></h3>
                 <div class="oui-tile__body">
                     <ul class="list-unstyled">
                         <li class="oui-tile__item" data-ng-if="ctrl.exchangeServiceInfrastructure.isHosted()">
                             <div class="oui-tile__definition">
-                                <strong class="d-block"
+                                <strong class="oui-tile__term d-block"
                                         data-translate="exchange_tab_INFORMATIONS_server"></strong>
                                     <span data-ng-bind="ctrl.exchange.hostname"></span>
                             </div>
                         </li>
                         <li class="oui-tile__item">
                             <div class="oui-tile__definition">
-                                <strong class="d-block"
+                                <strong class="oui-tile__term d-block"
                                         data-translate="exchange_tab_INFORMATIONS_webmail"></strong>
                                 <a class="word-break" target="_blank" title="{{'exchange_tab_INFORMATIONS_webmail' | translate}} ({{'common_newtab' | translate}})"
                                    data-ng-href="https://{{ctrl.exchange.hostname}}">
@@ -209,7 +209,7 @@
                         </li>
                         <li class="oui-tile__item">
                             <div class="oui-tile__definition">
-                                <strong class="d-block"
+                                <strong class="oui-tile__term d-block"
                                         data-translate="exchange_tab_INFORMATIONS_messaging"></strong>
                                 <a data-ng-href="{{ctrl.displayGuides}}" target="_blank" title="{{'exchange_dashboard_guides_url' | translate}} ({{'common_newtab' | translate}})">
                                     <span data-translate="exchange_dashboard_guides_url"></span>
@@ -224,13 +224,13 @@
             <oui-spinner data-ng-if="ctrl.loading.sharePoint"></oui-spinner>
 
             <div class="oui-tile mb-5" data-ng-if="!ctrl.loading.sharePoint && ctrl.sharepoint">
-                <h3 class="oui-tile__title"
+                <h3 class="oui-header_4 oui-tile__title"
                     data-translate="exchange_tab_INFORMATIONS_sharepoint"></h3>
                 <div class="oui-tile__body">
                     <ul class="list-unstyled">
                         <li class="oui-tile__item">
                             <div class="oui-tile__definition">
-                                <strong class="d-block"
+                                <strong class="oui-tile__term d-block"
                                         data-translate="exchange_tab_INFORMATIONS_sharepoint_url"></strong>
                                 <a class="word-break" target="_blank"
                                    data-ng-href="https://{{ctrl.sharepoint.url}}"
