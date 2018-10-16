@@ -175,15 +175,20 @@
 
                             <td class="text-center"
                                 data-ng-if="!domain.partial">
-                                <button class="btn btn-icon" type="button" title="{{domain.displayName}} {{'exchange_table_manage_entry' | translate}}"
-                                        data-ng-disabled="!ctrl.services.exchangeStates.constructor.isOk(domain)"
-                                        data-linkedpopover="exchange/domain/popover/domain.popover.html"
-                                        data-linkedpopover-placement="left"
-                                        data-linkedpopover-single="true"
-                                        data-linkedpopover-remote="true"
-                                        data-linkedpopover-title="{{'common_actions' | translate}}">
-                                    <span class="oui-icon oui-icon-gear_line oui-icon_small" aria-hidden="true"></span>
-                                </button>
+                                <oui-action-menu data-compact 
+                                                 data-align="end"
+                                                 data-disabled="!ctrl.services.exchangeStates.constructor.isOk(domain)">
+                                    <oui-action-menu-item data-on-click="setAction('exchange/domain/update/domain-update', domain)"
+                                                          data-disabled="ctrl.isUpdateDisabled(domain)">
+                                        <span data-translate="exchange_tab_domain_popover_update"></span>     
+                                    </oui-action-menu-item>
+                                    <oui-action-menu-item data-on-click="setAction('exchange/domain/remove/domain-remove', domain)"
+                                                          data-disabled="ctrl.isDeleteDisabled(domain)">
+                                        <span data-translate="exchange_tab_domain_popover_delete"
+                                              data-uib-tooltip="{{:: ctrl.getDeleteTooltip(domain)}}"
+                                              data-tooltip-append-to-body="true"></span>     
+                                    </oui-action-menu-item>
+                                </oui-action-menu>
                             </td>
                         </tr>
                     </tbody>
