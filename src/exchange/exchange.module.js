@@ -4,6 +4,7 @@ angular
     'ngRoute',
     'ui.bootstrap',
     'ngSanitize',
+    'ng.ckeditor',
     'Module.exchange.controllers',
     'Module.exchange.services',
     'Module.exchange.filters',
