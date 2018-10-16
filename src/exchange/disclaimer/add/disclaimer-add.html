@@ -37,11 +37,10 @@
                         </button>
                     </div>
 
-                    <textarea class="oui-textarea" id="add-disclaimer-editor"
-                              data-exchange-editor
-                              data-ng-model="ctrl.data.content"
-                              data-ng-value="ctrl.data.content">
-                    </textarea>
+                    <ng-ckeditor class="oui-textarea" id="add-disclaimer-editor"
+                                data-ng-model="ctrl.data.content"
+                                data-ng-value="ctrl.data.content">
+                    </ng-ckeditor>
 
                     <oui-checkbox class="mt-4" id="outsideOnly"
                         data-model="ctrl.data.outsideOnly"
