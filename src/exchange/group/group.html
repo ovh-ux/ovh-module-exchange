@@ -81,13 +81,15 @@
                             <td class="text-center">
                                 <button class="oui-status oui-status_success" type="button"
                                         data-ng-bind="ml.managers"
-                                        data-ng-click="ctrl.displayManagersByGroup(ml)">
+                                        data-ng-click="ctrl.displayManagersByGroup(ml)"
+                                        data-ng-if="ctrl.services.exchangeStates.constructor.isOk(ml)">
                                 </button>
                             </td>
                             <td class="text-center">
                                 <button class="oui-status oui-status_success" type="button"
                                         data-ng-bind="ml.members"
-                                        data-ng-click="ctrl.displayMembersByGroup(ml)">
+                                        data-ng-click="ctrl.displayMembersByGroup(ml)"
+                                        data-ng-if="ctrl.services.exchangeStates.constructor.isOk(ml)">
                                 </button>
                             </td>
                             <td class="text-center">
