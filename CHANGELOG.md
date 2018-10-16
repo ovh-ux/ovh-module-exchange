@@ -1,3 +1,13 @@
+<a name="9.0.4"></a>
+## [9.0.4](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.0.3...v9.0.4) (2018-10-16)
+
+
+### Bug Fixes
+
+* **disclaimer:** rollback to ckeditor 4 ([305affa](https://github.com/ovh-ux/ovh-module-exchange/commit/305affa))
+
+
+
 <a name="9.0.3"></a>
 ## [9.0.3](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.0.2...v9.0.3) (2018-10-16)
 
