@@ -94,7 +94,10 @@
                 <dd data-ng-bind="ctrl.accountBeingUpdated.sharedEmailAddress"></dd>
 
                 <dt data-translate="exchange_action_SHARED_add_quota_label"></dt>
-                <dd data-ng-bind="ctrl.accountBeingUpdated.quota + ' '+ ('unit_size_' + ctrl.optionsToUpdateAccount.maxQuota.unit) | translate"></dd>
+                <dd>
+                    <span data-ng-bind="ctrl.accountBeingUpdated.quota"></span>&nbsp;
+                    <span>{{ ('unit_size_' + ctrl.optionsToUpdateAccount.maxQuota.unit) | translate }}</span>
+                </dd>
 
                 <dt data-ng-if="ctrl.accountBeingUpdated.firstName" data-translate="exchange_ACTION_add_account_step2_first_name_label"></dt>
                 <dd data-ng-if="ctrl.accountBeingUpdated.firstName" data-ng-bind="ctrl.accountBeingUpdated.firstName | sliceContent: 150" class="word-break"></dd>
