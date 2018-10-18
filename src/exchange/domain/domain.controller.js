@@ -2,28 +2,28 @@ angular.module('Module.exchange.controllers').controller(
   'ExchangeTabDomainsCtrl',
   class ExchangeTabDomainsCtrl {
     constructor(
-      $scope,
       $http,
+      $scope,
+      $translate,
       Exchange,
       ExchangeDomains,
-      $translate,
-      exchangeStates,
       exchangeServiceInfrastructure,
-      navigation,
-      messaging,
+      exchangeStates,
       exchangeVersion,
+      messaging,
+      navigation,
     ) {
       this.services = {
-        $scope,
-        $http,
-        Exchange,
-        ExchangeDomains,
-        $translate,
-        exchangeStates,
-        exchangeServiceInfrastructure,
-        navigation,
-        messaging,
-        exchangeVersion,
+      $http,
+      $scope,
+      $translate,
+      Exchange,
+      ExchangeDomains,
+      exchangeServiceInfrastructure,
+      exchangeStates,
+      exchangeVersion,
+      messaging,
+      navigation,
       };
 
       this.$routerParams = Exchange.getParams();
