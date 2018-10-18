@@ -3,25 +3,25 @@ angular.module('Module.exchange.controllers').controller(
   class ExchangeTabSharedAccountsCtrl {
     constructor(
       $scope,
+      $translate,
       Exchange,
       exchangeSelectedService,
       ExchangeSharedAccounts,
+      exchangeStates,
       exchangeVersion,
       messaging,
-      $translate,
       navigation,
-      exchangeStates,
     ) {
       this.services = {
         $scope,
+        $translate,
         Exchange,
         exchangeSelectedService,
         ExchangeSharedAccounts,
+        exchangeStates,
         exchangeVersion,
         messaging,
-        $translate,
         navigation,
-        exchangeStates,
       };
 
       this.$routerParams = Exchange.getParams();
