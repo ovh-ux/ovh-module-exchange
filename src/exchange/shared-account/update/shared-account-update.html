@@ -96,7 +96,7 @@
                 <dt data-translate="exchange_action_SHARED_add_quota_label"></dt>
                 <dd>
                     <span data-ng-bind="ctrl.accountBeingUpdated.quota"></span>&nbsp;
-                    <span>{{ ('unit_size_' + ctrl.optionsToUpdateAccount.maxQuota.unit) | translate }}</span>
+                    <span data-translate="{{ 'unit_size_' + ctrl.optionsToUpdateAccount.maxQuota.unit }}"></span>
                 </dd>
 
                 <dt data-ng-if="ctrl.accountBeingUpdated.firstName" data-translate="exchange_ACTION_add_account_step2_first_name_label"></dt>
