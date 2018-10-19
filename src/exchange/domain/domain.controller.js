@@ -14,16 +14,16 @@ angular.module('Module.exchange.controllers').controller(
       navigation,
     ) {
       this.services = {
-      $http,
-      $scope,
-      $translate,
-      Exchange,
-      ExchangeDomains,
-      exchangeServiceInfrastructure,
-      exchangeStates,
-      exchangeVersion,
-      messaging,
-      navigation,
+        $http,
+        $scope,
+        $translate,
+        Exchange,
+        ExchangeDomains,
+        exchangeServiceInfrastructure,
+        exchangeStates,
+        exchangeVersion,
+        messaging,
+        navigation,
       };
 
       this.$routerParams = Exchange.getParams();
