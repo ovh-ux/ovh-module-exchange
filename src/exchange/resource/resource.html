@@ -95,15 +95,19 @@
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isOk(resource) && resource.taskPendingId === 0"></span>
                             </td>
                             <td>
-                                <button class="btn btn-icon" type="button"
-                                        data-ng-disabled="ctrl.services.exchangeStates.constructor.isCreating(resource)"
-                                        data-linkedpopover="exchange/resource/popover/resource.popover.html"
-                                        data-linkedpopover-placement="left"
-                                        data-linkedpopover-remote="true"
-                                        data-linkedpopover-single="true"
-                                        data-linkedpopover-title="{{'common_actions' | translate}}">
-                                    <span class="oui-icon oui-icon-gear_line oui-icon_small" aria-hidden="true"></span>
-                                </button>
+                                <oui-action-menu data-compact 
+                                                 data-align="end"
+                                                 data-disabled="ctrl.services.exchangeStates.constructor.isCreating(resource) || !ctrl.services.exchangeStates.constructor.isOk(resource)">
+                                    <oui-action-menu-item data-on-click="ctrl.updateResource(resource)">
+                                        <span data-translate="exchange_tab_RESOURCES_tooltip_edit"></span>     
+                                    </oui-action-menu-item>
+                                    <oui-action-menu-item data-on-click="ctrl.resourceDelegation(resource)">
+                                        <span data-translate="exchange_tab_ACCOUNTS_popover_delegation"></span>     
+                                    </oui-action-menu-item>
+                                    <oui-action-menu-item data-on-click="ctrl.deleteResource(resource)">
+                                        <span data-translate="exchange_tab_RESOURCES_popover_delete"></span>     
+                                    </oui-action-menu-item>
+                                </oui-action-menu>
                             </td>
                         </tr>
                         <tr data-ng-repeat="resource in (ctrl.resources.list.messages | orderBy:'id':false) track by $index">
