@@ -17,18 +17,6 @@
     "angular",
     "exchange"
   ],
-  "lint-staged": {
-    "*.less": [
-      "stylelint 'src/**/*.less' --fix",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
