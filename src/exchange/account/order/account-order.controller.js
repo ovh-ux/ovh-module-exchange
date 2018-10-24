@@ -9,6 +9,7 @@ angular.module('Module.exchange.controllers').controller(
       $translate,
       navigation,
       exchangeServiceInfrastructure,
+      User,
     ) {
       this.services = {
         $scope,
@@ -19,6 +20,18 @@ angular.module('Module.exchange.controllers').controller(
         navigation,
         exchangeServiceInfrastructure,
       };
+
+      User.getUser()
+        .then(({ ovhSubsidiary }) => {
+          this.ovhSubsidiary = ovhSubsidiary;
+        })
+        .catch((failure) => {
+          this.services.messaging.writeError(this.services.$translate.instant('exchange_ACTION_order_accounts_step1_user_error'), failure);
+          this.ovhSubsidiary = 'FR';
+        })
+        .then(() => {
+          this.showPriceWithTaxOnly = _.includes(['DE'], this.ovhSubsidiary);
+        });
 
       this.$routerParams = Exchange.getParams();
       this.numConfigureMeAccount = navigation.currentActionData.numConfigureMeAccount;
@@ -110,6 +123,13 @@ angular.module('Module.exchange.controllers').controller(
       )
         .then((data) => {
           _.set(data, 'duration', '01');
+          _.forEach(data.prices, (price) => {
+            _.set(price, 'localizedText', this.services.Exchange.constructor.getLocalizedPrice(
+              this.ovhSubsidiary,
+              price.value,
+              price.currencyCode,
+            ));
+          });
           this.ordersList.push(data);
         })
         .catch((failure) => {
@@ -128,6 +148,13 @@ angular.module('Module.exchange.controllers').controller(
       )
         .then((data) => {
           _.set(data, 'duration', '12');
+          _.forEach(data.prices, (price) => {
+            _.set(price, 'localizedText', this.services.Exchange.constructor.getLocalizedPrice(
+              this.ovhSubsidiary,
+              price.value,
+              price.currencyCode,
+            ));
+          });
           this.ordersList.push(data);
         })
         .catch((failure) => {

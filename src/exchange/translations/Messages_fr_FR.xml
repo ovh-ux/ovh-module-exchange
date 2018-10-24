@@ -434,6 +434,8 @@
    <translation id="exchange_ACTION_order_accounts_step1_pay_type" qtlid="139325">Type de paiement :</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_01" qtlid="79530">mensuel</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_12" qtlid="79542">annuel</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_price">{0} HT ({1} TTC)</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_price_with_tax_only">{0} TTC</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number" qtlid="139338">Nombre de comptes :</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_tooltip" qtlid="144110">Entrez un nombre entre 1 et 100</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_not_valid" qtlid="144123">Entrez un nombre valide</translation>
@@ -1530,6 +1532,7 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_ACTION_order_upgrade_300G_success_details" qtlid="368154">La migration du compte à une capacité de 300 Gio sera activé après le paiement de celui-ci.</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_message" qtlid="368167">Une erreur est survenue lors de l'augmentation de la capacité du compte Exchange.</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_options_message" qtlid="368180">Une erreur est survenue lors de lors de la récupération des tarifs.</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_user_error">Erreur lors de la récupération des informations de l'utilisateur</translation>
 <!-- Order Exchange -->
    <translation id="exchange_order_view_intro_title" qtlid="368193">Commander un Exchange</translation>
    <translation id="exchange_order_view_intro_question" qtlid="368206">Souhaitez-vous créer un nouveau service Exchange ou ajouter un compte à un service existant ?</translation>
