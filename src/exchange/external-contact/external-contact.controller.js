@@ -68,9 +68,5 @@ angular.module('Module.exchange.controllers').controller(
           );
         });
     }
-
-    getIsDisabled(element) {
-      return !_.isEmpty(element.taskPendingId);
-    }
   },
 );
