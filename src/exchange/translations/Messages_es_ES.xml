@@ -434,6 +434,8 @@
    <translation id="exchange_ACTION_order_accounts_step1_pay_type" qtlid="139325">Modo de pago:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_01" qtlid="79530">mensual</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_12" qtlid="79542">anual</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_price">{0} HT ({1} TTC)</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_price_with_tax_only">{0} TTC</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number" qtlid="139338">Número de cuentas:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_tooltip" qtlid="144110">Introduzca un número entre 1 y 100</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_not_valid" qtlid="144123">Introduzca un número válido</translation>
@@ -1530,6 +1532,7 @@
    <translation id="exchange_ACTION_order_upgrade_300G_success_details" qtlid="368154">La migración de la cuenta a una capacidad de 300 GiB se realizará una vez recibido el pago.</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_message" qtlid="368167">Se ha producido un error al aumentar la capacidad de la cuenta Exchange.</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_options_message" qtlid="368180">Se ha producido un error al cargar los precios.</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_user_error">Erreur lors de la récupération des informations de l'utilisateur</translation>
 <!-- Order Exchange -->
    <translation id="exchange_order_view_intro_title" qtlid="368193">Contratar un Exchange</translation>
    <translation id="exchange_order_view_intro_question" qtlid="368206">¿Quiere crear un nuevo servicio Exchange o añadir una cuenta a un servicio existente?</translation>

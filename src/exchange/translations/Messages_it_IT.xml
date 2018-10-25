@@ -436,6 +436,8 @@
    <translation id="exchange_ACTION_order_accounts_step1_pay_type" qtlid="139325">Metodo di pagamento:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_01" qtlid="79530">mensile</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_12" qtlid="79542">annuale</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_price">{0} HT ({1} TTC)</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_price_with_tax_only">{0} TTC</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number" qtlid="139338">Numero di account:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_tooltip" qtlid="144110">Digita un numero compreso fra 1 e 100</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_not_valid" qtlid="144123">Inserisci un numero valido</translation>
@@ -1537,6 +1539,7 @@ Definisci un valore compreso fra 3 e 14 caratteri o evita di inserire una passwo
 </translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_message" qtlid="368167">Si è verificato un errore durante l'operazione di aumento della capacità dell'account Exchange.</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_options_message" qtlid="368180">Si è verificato un errore durante il recupero delle tariffe.</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_user_error">Erreur lors de la récupération des informations de l'utilisateur</translation>
 <!-- Order Exchange -->
    <translation id="exchange_order_view_intro_title" qtlid="368193">Ordina Exchange</translation>
    <translation id="exchange_order_view_intro_question" qtlid="368206">Vuoi creare un nuovo servizio Exchange o aggiungere un account a un servizio esistente?</translation>
