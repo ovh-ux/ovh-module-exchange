@@ -168,7 +168,7 @@
    <translation id="exchange_tab_ACCOUNTS_state_BLOCKED" qtlid="108901">Bloqué</translation>
    <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_DOING" qtlid="485632">Tarea planificada o en progreso</translation>
    <translation id="exchange_tab_ACCOUNTS_state_TASK_ON_ERROR" qtlid="485788">Tarea en error</translation>
-   <translation id="exchange_tab_ACCOUNTS_state_UNKNOWN" qtlid="77142">Inconnu</translation>
+   <translation id="exchange_tab_ACCOUNTS_state_UNKNOWN" qtlid="77142">Desconocido</translation>
    <translation id="exchange_tab_ACCOUNTS_state_TO_CONFIGURE" qtlid="424142">Configuracion pendiente</translation>
 
    <translation id="exchange_tab_ACCOUNTS_menu_edit" qtlid="37875">Modificar</translation>
@@ -434,6 +434,8 @@
    <translation id="exchange_ACTION_order_accounts_step1_pay_type" qtlid="139325">Modo de pago:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_01" qtlid="79530">mensuel</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_12" qtlid="79542">annuel</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_price">{0} HT ({1} TTC)</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_price_with_tax_only">{0} TTC</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number" qtlid="139338">Número de cuentas:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_tooltip" qtlid="144110">Introduzca un número entre 1 y 100</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_not_valid" qtlid="144123">Introduzca un número válido</translation>
@@ -473,7 +475,7 @@
    <translation id="exchange_account_add_firstName_label" qtlid="486022">Nombre (opcional)</translation>
    <translation id="exchange_account_add_lastName_label" qtlid="486035">Apellido(s) (opcional)</translation>
    <translation id="exchange_account_add_displayName_label" qtlid="486048">Nombre que se visualizará (opcional)</translation>
-   <translation id="exchange_account_add_password_label" qtlid="2270">Mot de passe</translation>
+   <translation id="exchange_account_add_password_label" qtlid="2270">Contraseña</translation>
    <translation id="exchange_account_add_password_button_show" qtlid="486061">Mostrar la contraseña</translation>
    <translation id="exchange_account_add_password_button_hide" qtlid="486074">Ocultar la contraseña</translation>
    <translation id="exchange_account_add_password_hint_simple" qtlid="486087">Este campo debe contener al menos {0} caracteres.</translation>
@@ -521,7 +523,7 @@
    <translation id="exchange_ACTION_update_account_step1_first_name_label" qtlid="23323">Nombre</translation>
    <translation id="exchange_ACTION_update_account_step1_last_name_label" qtlid="3818">Nombre</translation>
    <translation id="exchange_ACTION_update_account_step1_display_name_label" qtlid="23515">Nom à afficher</translation>
-   <translation id="exchange_ACTION_update_account_step1_password_label" qtlid="2270">Mot de passe</translation>
+   <translation id="exchange_ACTION_update_account_step1_password_label" qtlid="2270">Contraseña</translation>
    <translation id="exchange_ACTION_update_account_step1_password_confirmation_label" qtlid="9983">Confirmation</translation>
    <translation id="exchange_ACTION_update_account_step1_complex_password_tooltip" qtlid="178822">Mínimo de {0} caracteres alfanuméricos, cifras y signos especiales.</translation>
    <translation id="exchange_ACTION_update_account_step1_simple_password_tooltip" qtlid="137595">Mínimo {0} caracteres.</translation>
@@ -556,7 +558,7 @@
    <translation id="exchange_ACTION_update_account_outlook_false" qtlid="136308">No</translation>
    <translation id="exchange_ACTION_update_account_helpwizard_title" qtlid="137712">Editar la cuenta Exchange</translation>
    <translation id="exchange_ACTION_update_account_helpwizard_intro" qtlid="178887">Puede cambiar la política de seguridad de las cuentas Exchange imponiendo, por ejemplo, un nivel de dificultad mínimo para las contraseñas. <br/>Para ello, haga clic en <strong>«Editar la política de seguridad»</strong> en el panel de administración de su servicio.</translation>
-   <translation id="exchange_ACTION_update_account_helpwizard_password_title" qtlid="2270">Mot de passe</translation>
+   <translation id="exchange_ACTION_update_account_helpwizard_password_title" qtlid="2270">Contraseña</translation>
    <translation id="exchange_ACTION_update_account_helpwizard_password" qtlid="171240">Las contraseñas deben cumplir los siguientes criterios mínimos:<br/><br/>- No contener la totalidad o parte del nombre de la cuenta del usuario.<br/>- Tener una longitud de al menos {0} caracteres.<br/>- Contener caracteres de tres de las siguientes cuatro categorías:<br/><ul><li>letras mayúsculas (A - Z)<br/></li><li>letras minúsculas (a - z)<br/></li><li>números (0 - 9)<br/></li><li>caracteres no alfanuméricos (por ejemplo: !, $, #, %)<br/></li></ul></translation>
    <translation id="exchange_ACTION_update_account_helpwizard_password_simple" qtlid="195139">Las contraseñas deben tener una longitud de al menos {0} caracteres</translation>
    <translation id="exchange_ACTION_update_account_helpwizard_hide_directory_title" qtlid="191980">Ocultar la dirección en la libreta de direcciones</translation>
@@ -809,7 +811,7 @@
    <translation id="exchange_DIAGNOSTICS_description" qtlid="297982">El dignóstico de una cuenta de correo electrónico permite la validación de varios elementos, tales como el bloqueo de la cuenta, la validez de los registros MX y SRV y de la suscripción a la cuenta, la autenticación al webmail y el envío y recepción desde esa cuenta. Recuerde que el diagnóstico puede demorar entre 3 y 10 minutos.</translation>
    <translation id="exchange_DIAGNOSTICS_stay_on_page_while_diagnostic_is_running" qtlid="324899">Si abandona la sección Web del manager, el resultado del diagnóstico se borrará.</translation>
    <translation id="exchange_DIAGNOSTICS_input_email" qtlid="291344">Cuenta de correo electrónico a diagnosticar</translation>
-   <translation id="exchange_DIAGNOSTICS_input_password" qtlid="2270">Mot de passe</translation>
+   <translation id="exchange_DIAGNOSTICS_input_password" qtlid="2270">Contraseña</translation>
    <translation id="exchange_DIAGNOSTICS_button_launch_diagnostic" qtlid="291357">Iniciar el diagnóstico</translation>
    <translation id="exchange_DIAGNOSTICS_button_diagnostic_in_progress" qtlid="291370">Diagnóstico en curso...</translation>
    <translation id="exchange_DIAGNOSTICS_button_new_diagnostic" qtlid="291383">Nuevo diagnóstico</translation>
@@ -1122,8 +1124,8 @@
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_displayName" qtlid="80922">Nom affiché</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_creationDate" qtlid="4358">Créé le</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state" qtlid="26443">Estado</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_CREATING" qtlid="26227">En création</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_DELETING" qtlid="133929">Eliminando</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_CREATING" qtlid="26227">En proceso de creación</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_DELETING" qtlid="133929">En proceso de eliminación</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_REOPENING" qtlid="171279">Reabriendo</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_SUSPENDED" qtlid="136100">Suspendido</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_SUSPENDING" qtlid="171292">Suspendiendo</translation>
@@ -1529,6 +1531,7 @@
    <translation id="exchange_ACTION_order_upgrade_300G_success_details" qtlid="368154">La migración de la cuenta a una capacidad de 300 GiB se activará después del pago.</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_message" qtlid="368167">Se ha producido un error al aumentar la capacidad de la cuenta Exchange.</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_options_message" qtlid="368180">Se ha producido un error al cargar los precios.</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_user_error">Erreur lors de la récupération des informations de l'utilisateur</translation>
 <!-- Order Exchange -->
    <translation id="exchange_order_view_intro_title" qtlid="368193">Contratar el servicio Exchange</translation>
    <translation id="exchange_order_view_intro_question" qtlid="368206">¿Desea crear un nuevo servicio Exchange o añadir una cuenta a un servicio ya existente?</translation>
@@ -1620,7 +1623,7 @@
    <translation id="exchange_wizardHostedCreation_emailCreation_add_firstName_header" qtlid="23323">Nombre</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_add_name_header" qtlid="3818">Nombre</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_add_displayName_header" qtlid="23515">Nom à afficher</translation>
-   <translation id="exchange_wizardHostedCreation_emailCreation_add_password_header" qtlid="2270">Mot de passe</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_password_header" qtlid="2270">Contraseña</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_add_password_error_confirmation" qtlid="450129">La contraseña debe ser idéntica a la confirmación.</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_add_password_error_short" qtlid="450142">Según sus preferencias de seguridad, la contraseña debe contener más de {0} caracteres.</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_add_password_error_exchangePreferences" qtlid="450155">Según sus preferencias de seguridad, la contraseña debe contener letras minúsculas, letras mayúsculas, números y/o caracteres especiales.</translation>

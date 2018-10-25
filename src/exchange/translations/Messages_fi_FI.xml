@@ -437,6 +437,8 @@ Valitse: <br /> Tyyppi: <span class="bold">A</span> <br /> Aliverkkotunnus: <spa
    <translation id="exchange_ACTION_order_accounts_step1_pay_type" qtlid="139325">Maksutapa:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_01" qtlid="79530">kuukausittain</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_12" qtlid="79542">vuosittain</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_price">{0} HT ({1} TTC)</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_price_with_tax_only">{0} TTC</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number" qtlid="139338">Tilien lukumäärä:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_tooltip" qtlid="144110">Syötä numero 1 ja 100 väliltä</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_not_valid" qtlid="144123">Syötä kelvollinen numero</translation>
@@ -1533,6 +1535,7 @@ Valitse: <br /> Tyyppi: <span class="bold">A</span> <br /> Aliverkkotunnus: <spa
    <translation id="exchange_ACTION_order_upgrade_300G_success_details" qtlid="368154">Tilin migraatio 300 GiB:n kapasiteettiin aktivoituu kun maksu on suoritettu.</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_message" qtlid="368167">Tapahtui virhe Exchange-tilin kapasiteetin nostamisessa.</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_options_message" qtlid="368180">Tapahtui virhe hintatietojen haussa.</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_user_error">Erreur lors de la récupération des informations de l'utilisateur</translation>
 <!-- Order Exchange -->
    <translation id="exchange_order_view_intro_title" qtlid="368193">Tilaa Exchange</translation>
    <translation id="exchange_order_view_intro_question" qtlid="368206">Haluatko luoda uuden Exchange-palvelun tai lisätä tilin olemassa olevaan palveluun?</translation>
