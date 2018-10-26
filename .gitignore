@@ -2,7 +2,5 @@
 node_modules/
 bower_components/
 tmp/
-src/resources/i18n/*/*.json
 *.log
 tools/
-**/translations/*.json
