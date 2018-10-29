@@ -3,22 +3,24 @@ angular.module('Module.exchange.controllers').controller(
   class ExchangeTabSharedAccountsCtrl {
     constructor(
       $scope,
+      $translate,
       Exchange,
       exchangeSelectedService,
       ExchangeSharedAccounts,
+      exchangeStates,
       exchangeVersion,
       messaging,
-      $translate,
       navigation,
     ) {
       this.services = {
         $scope,
+        $translate,
         Exchange,
         exchangeSelectedService,
         ExchangeSharedAccounts,
+        exchangeStates,
         exchangeVersion,
         messaging,
-        $translate,
         navigation,
       };
 
@@ -34,6 +36,9 @@ angular.module('Module.exchange.controllers').controller(
 
       this.stateTaskError = 'TASK_ON_ERROR';
       this.stateTaskDoing = 'TASK_ON_DOING';
+
+      this.stateDoing = 'TASK_ON_DOING';
+      this.stateError = 'TASK_ON_ERROR';
 
       this.loading = false;
       this.accounts = null;
@@ -94,6 +99,10 @@ angular.module('Module.exchange.controllers').controller(
       $scope.retrievingAccounts = (count, offset) => this.retrievingAccounts(count, offset);
       $scope.getAccounts = () => this.accounts;
       $scope.getLoading = () => this.loading;
+
+      $scope.isDisabled = () => this.isDisabled();
+      $scope.deleteAccount = account => this.deleteAccount(account);
+      $scope.delegationSettings = account => this.delegationSettings(account);
 
       this.debouncedRetrievingAccounts = _.debounce(this.retrievingAccounts, 300);
     }
@@ -171,6 +180,32 @@ angular.module('Module.exchange.controllers').controller(
       this.showAccounts = true;
       this.showAlias = false;
       this.selectedAccount = null;
+    }
+
+    isDisabled(account) {
+      return (
+        !this.services.exchangeStates.constructor.isOk(account)
+        || this.services.exchangeStates.constructor.isDoing(account)
+        || this.services.exchangeStates.constructor.isInError(account)
+      );
+    }
+
+    deleteAccount(account) {
+      if (!this.isDisabled(account)) {
+        this.services.navigation.setAction(
+          'exchange/shared-account/delete/shared-account-delete',
+          angular.copy(account),
+        );
+      }
+    }
+
+    delegationSettings(account) {
+      if (!this.isDisabled(account)) {
+        this.services.navigation.setAction(
+          'exchange/shared-account/delegation/shared-account-delegation',
+          angular.copy(account),
+        );
+      }
     }
   },
 );

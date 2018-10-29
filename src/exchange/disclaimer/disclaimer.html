@@ -19,13 +19,13 @@
                   data-uib-tooltip="{{'exchange_tab_DISCLAIMER_disclaimer_outside_only_tooltip' | translate}}"></span>
         </oui-column>
         <oui-column data-title="'exchange_tab_DISCLAIMER_state_header' | translate">
-            <span class="label label-success"
+            <span class="oui-status oui-status_info"
                   data-translate="exchange_tab_DISCLAIMER_state_doing_tooltip"
                   data-ng-if="$row.taskPendingId && $row.taskPendingId !== 0"></span>
-            <span class="label label-success"
+            <span class="oui-status oui-status_success"
                   data-translate="exchange_tab_ACCOUNTS_state_OK"
                   data-ng-if="$row.taskPendingId === 0"></span>
-            <span class="label label-warning"
+            <span class="oui-status oui-status_warning"
                   data-translate="common_not_configurated"
                   data-ng-if="$row.emptySlotFlag"></span>
         </oui-column>

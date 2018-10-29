@@ -434,6 +434,8 @@
    <translation id="exchange_ACTION_order_accounts_step1_pay_type" qtlid="139325">Mokėjimo tipas:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_01" qtlid="79530">mėnesinis</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_12" qtlid="79542">metinis</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_price">{0} HT ({1} TTC)</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_price_with_tax_only">{0} TTC</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number" qtlid="139338">Paskyrų kiekis:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_tooltip" qtlid="144110">Įveskite skaičių nuo 1 iki 100</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_not_valid" qtlid="144123">Įveskite teisingą skaičių</translation>
@@ -1529,6 +1531,7 @@
    <translation id="exchange_ACTION_order_upgrade_300G_success_details" qtlid="368154">Paskyros talpos didinimas iki 300 GiB įsigalios po mokėjimo gavimo ir patvirtinimo.</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_message" qtlid="368167">Įvyko klaida didinant Exchange paskyros pajėgumą.</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_options_message" qtlid="368180">Įvyko klaida atkuriant įkainių duomenis.</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_user_error">Erreur lors de la récupération des informations de l'utilisateur</translation>
 <!-- Order Exchange -->
    <translation id="exchange_order_view_intro_title" qtlid="368193">Užsakyti Exchange</translation>
    <translation id="exchange_order_view_intro_question" qtlid="368206">Pageidaujate sukurti naują Exchange paslaugą ar pridėti paskyrą šiuo metu naudojamai paslaugai?</translation>

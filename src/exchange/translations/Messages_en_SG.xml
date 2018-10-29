@@ -434,6 +434,8 @@
    <translation id="exchange_ACTION_order_accounts_step1_pay_type" qtlid="139325">Type of payment:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_01" qtlid="79530">monthly</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_12" qtlid="79542">annually </translation>
+   <translation id="exchange_ACTION_order_accounts_step1_price">{0} HT ({1} TTC)</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_price_with_tax_only">{0} TTC</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number" qtlid="139338">Number of accounts:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_tooltip" qtlid="144110">Enter a number between 1 and 100</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_not_valid" qtlid="144123">Enter a valid number</translation>
@@ -1532,6 +1534,7 @@ I therefore explicitly renounce my right to cancel under the provisions of Artic
    <translation id="exchange_ACTION_order_upgrade_300G_success_details" qtlid="368154">Once payment is complete the account will be upgraded to  a 300 GiB capacity account. </translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_message" qtlid="368167">There was an error when increasing the capacity of the Exchange account. </translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_options_message" qtlid="368180">There was an error when retrieving prices. </translation>
+   <translation id="exchange_ACTION_order_accounts_step1_user_error">Erreur lors de la récupération des informations de l'utilisateur</translation>
 <!-- Order Exchange -->
    <translation id="exchange_order_view_intro_title" qtlid="368193">Order Exchange </translation>
    <translation id="exchange_order_view_intro_question" qtlid="368206">Do you want to create a new Exchange service, or add an account to an existing service? </translation>

@@ -46,7 +46,18 @@
                             <label class="oui-radio__label-container" for="payTypeGroup-{{$index}}">
                                 <span class="oui-radio__label">
                                     <span data-ng-bind-html="('exchange_ACTION_order_accounts_step1_pay_type_' + orderAvailable.duration) | translate"></span>
-                                    (<span class="text-danger" data-ng-bind="orderAvailable.prices.withTax.text"></span>)
+                                    (<span
+                                        data-ng-if="!ctrl.showPriceWithTaxOnly"
+                                        class="text-danger"
+                                        data-translate="exchange_ACTION_order_accounts_step1_price"
+                                        data-translate-values="{ t0: orderAvailable.prices.withoutTax.text, t1: orderAvailable.prices.withTax.text }">
+                                    </span>
+                                     <span
+                                        data-ng-if="ctrl.showPriceWithTaxOnly"
+                                        class="text-danger"
+                                        data-translate="exchange_ACTION_order_accounts_step1_price_with_tax_only"
+                                        data-translate-values="{ t0: orderAvailable.prices.withTax.localizedText }">
+                                    </span>)
                                 </span>
                             </label>
                         </div>
@@ -124,5 +135,5 @@
                 </div>
             </div>
         </div>
-	</div>
+    </div>
 </div>

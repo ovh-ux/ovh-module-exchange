@@ -434,6 +434,8 @@
    <translation id="exchange_ACTION_order_accounts_step1_pay_type" qtlid="139325">Tipo de pagamento:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_01" qtlid="79530">mensal</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_12" qtlid="79542">anual</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_price">{0} HT ({1} TTC)</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_price_with_tax_only">{0} TTC</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number" qtlid="139338">Número de contas:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_tooltip" qtlid="144110">Introduza um número entre 1 e 100</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_not_valid" qtlid="144123">Introduza um número válido</translation>
@@ -1531,6 +1533,7 @@ Se usar o modo nonauthoritative com contas de e-mail não alojadas pela OVH, dev
    <translation id="exchange_ACTION_order_upgrade_300G_success_details" qtlid="368154">A migração da conta para uma capacidade de 300GB será efetuada após pagamento.</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_message" qtlid="368167">Ocorreu um erro aquando do aumento da capacidade da conta Exchange.</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_options_message" qtlid="368180">Ocorreu um erro aquando da recuperação dos preços.</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_user_error">Erreur lors de la récupération des informations de l'utilisateur</translation>
 <!-- Order Exchange -->
    <translation id="exchange_order_view_intro_title" qtlid="368193">Encomendar um serviço Exchange</translation>
    <translation id="exchange_order_view_intro_question" qtlid="368206">Deseja criar um novo serviço Exchange ou adicionar uma conta a um serviço já existente?</translation>

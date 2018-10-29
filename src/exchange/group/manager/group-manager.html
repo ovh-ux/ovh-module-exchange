@@ -1,9 +1,7 @@
 <div data-ng-controller="ExchangeTabManagersByGroupsCtrl as ctrl">
-    <button class="oui-button oui-button_link oui-button_icon-left" type="button"
-            data-ng-click="ctrl.hide()">
-        <span class="oui-icon oui-icon-chevron-left" aria-hidden="true"></span>
+    <oui-back-button data-on-click="ctrl.hide()">
         <span data-translate="common_back"></span>
-    </button>
+    </oui-back-button>
     <h2 data-ng-bind-html="'exchange_GROUPS_manager_intro' | translate:{ t0: ctrl.services.navigation.selectedGroup.mailingListDisplayName }"></h2>
 
     <oui-datagrid data-rows-loader="ctrl.getManagersByGroup($config)">

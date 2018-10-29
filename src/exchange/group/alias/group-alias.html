@@ -1,10 +1,8 @@
 <div class="row" data-ng-controller="ExchangeTabGroupAliasCtrl as ctrl">
     <div class="col-md-9">
-        <button class="oui-button oui-button_link oui-button_icon-left" type="button"
-                data-ng-click="ctrl.hide()">
-            <span class="oui-icon oui-icon-chevron-left" aria-hidden="true"></span>
+        <oui-back-button data-on-click="ctrl.hide()">
             <span data-translate="common_back"></span>
-        </button>
+        </oui-back-button>
         <h2 data-ng-bind-html="'exchange_tab_ALIAS_GROUP_intro' | translate:{ t0: ctrl.services.navigation.selectedGroup.mailingListDisplayName }"></h2>
 
         <div class="alert alert-info" role="alert"

@@ -434,6 +434,8 @@
    <translation id="exchange_ACTION_order_accounts_step1_pay_type" qtlid="139325">Betalingsmethode:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_01" qtlid="79530">maandelijks</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_12" qtlid="79542">jaarlijks</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_price">{0} HT ({1} TTC)</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_price_with_tax_only">{0} TTC</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number" qtlid="139338">Aantal accounts:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_tooltip" qtlid="144110">Voer een getal tussen 1 en 100 in</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_not_valid" qtlid="144123">Voer een geldig nummer in</translation>
@@ -1533,6 +1535,7 @@ Deze procedure kan tot een paar uur duren en gaat van start zodra de bestelling 
    <translation id="exchange_ACTION_order_upgrade_300G_success_details" qtlid="368154">Zodra de betaling is voltooid zal het account worden opgewaardeerd tot een account met een capaciteit van 300 GiB. </translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_message" qtlid="368167">Er is een fout opgetreden tijdens het verhogen van de capaciteit van het Exchange account. </translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_options_message" qtlid="368180">Er is een fout opgetreden tijdens het ophalen van de tarieven. </translation>
+   <translation id="exchange_ACTION_order_accounts_step1_user_error">Erreur lors de la récupération des informations de l'utilisateur</translation>
 <!-- Order Exchange -->
    <translation id="exchange_order_view_intro_title" qtlid="368193">Bestel Exchange</translation>
    <translation id="exchange_order_view_intro_question" qtlid="368206">Wilt u een nieuwe Exchange-dienst creëren of een account toevoegen aan een reeds bestaande dienst? </translation>

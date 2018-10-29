@@ -40,36 +40,6 @@ angular.module('Module.exchange.controllers').controller('ExchangeToolboxGroupsC
   },
 ]);
 
-angular.module('Module.exchange.controllers').controller('ExchangeToolboxResourcesCtrl', [
-  '$scope',
-  'Exchange',
-
-  function ($scope, Exchange) {
-    $scope.stateOk = Exchange.stateOk;
-
-    $scope.updateResource = function (resource) {
-      if (resource.state === $scope.stateOk) {
-        $scope.setAction('exchange/resource/update/resource-update', angular.copy(resource));
-      }
-    };
-
-    $scope.resourceDelegation = function (resource) {
-      if (resource.state === $scope.stateOk) {
-        $scope.setAction(
-          'exchange/resource/delegation/resource-delegation',
-          angular.copy(resource),
-        );
-      }
-    };
-
-    $scope.deleteResource = function (resource) {
-      if (resource.state === $scope.stateOk) {
-        $scope.setAction('exchange/resource/remove/resource-remove', angular.copy(resource));
-      }
-    };
-  },
-]);
-
 angular.module('Module.exchange.controllers').controller('ExchangeToolboxDisclaimerCtrl', [
   '$scope',
 

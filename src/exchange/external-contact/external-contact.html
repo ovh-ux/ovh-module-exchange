@@ -68,38 +68,41 @@
                             </td>
 
                             <td class="text-center">
-                                <span class="label label-info"
+                                <span class="oui-status oui-status_info"
                                       data-translate="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_MODIFYING"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isOk(element) && element.taskPendingId !== 0"></span>
-                                <span class="label label-info"
+                                <span class="oui-status oui-status_info"
                                       data-translate="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_CREATING"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isCreating(element)"></span>
-                                <span class="label label-info"
+                                <span class="oui-status oui-status_info"
                                       data-translate="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_DELETING"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isDeleting(element)"></span>
-                                <span class="label label-warning"
+                                <span class="oui-status oui-status_warning"
                                       data-translate="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_SUSPENDED"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isSuspended(element)"></span>
-                                <span class="label label-warning"
+                                <span class="oui-status oui-status_warning"
                                       data-translate="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_SUSPENDING"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isSuspending(element)"></span>
-                                <span class="label label-info"
+                                <span class="oui-status oui-status_info"
                                       data-translate="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_REOPENING"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isReopening(element)"></span>
-                                <span class="label label-success"
+                                <span class="oui-status oui-status_success"
                                       data-translate="exchange_tab_EXTERNAL_CONTACTS_table_headers_state_OK"
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isOk(element) && element.taskPendingId === 0"></span>
                             </td>
 
                             <td class="text-center">
-                                <button class="btn btn-icon" type="button" title="{{element.externalEmailAddress}} {{'exchange_table_manage_entry' | translate}}"
-                                        data-linkedpopover="exchange/external-contact/popover/external-contact-popover.html"
-                                        data-linkedpopover-placement="left"
-                                        data-linkedpopover-remote="true"
-                                        data-linkedpopover-single="true"
-                                        data-linkedpopover-title="{{'common_actions' | translate}}">
-                                    <span class="oui-icon oui-icon-gear_line oui-icon_small" aria-hidden="true"></span>
-                                </button>
+                                <oui-action-menu data-compact 
+                                                 data-align="end">
+                                    <oui-action-menu-item data-on-click="setAction('exchange/external-contact/update/external-contact-update', element)"
+                                                          data-disabled="!ctrl.services.exchangeStates.constructor.isOk(element)">
+                                        <span data-translate="exchange_tab_EXTERNAL_CONTACTS_table_actions_menu_modify"></span>     
+                                    </oui-action-menu-item>
+                                    <oui-action-menu-item data-on-click="setAction('exchange/external-contact/remove/external-contact-remove', element.externalEmailAddress)"
+                                                          data-disabled="!ctrl.services.exchangeStates.constructor.isOk(element)">
+                                        <span data-translate="exchange_tab_EXTERNAL_CONTACTS_table_actions_menu_delete"></span>     
+                                    </oui-action-menu-item>
+                                </oui-action-menu>
                             </td>
                         </tr>
                     </tbody>
