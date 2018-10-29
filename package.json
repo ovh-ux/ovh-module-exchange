@@ -2,15 +2,19 @@
   "name": "ovh-module-exchange",
   "version": "9.0.4",
   "description": "Exchange module.",
+  "keywords": [
+    "angular",
+    "exchange"
+  ],
+  "repository": "ovh-ux/ovh-module-exchange",
   "license": "BSD-3-Clause",
   "author": "OVH SAS",
-  "repository": "ovh-ux/ovh-module-exchange",
   "scripts": {
-    "test": "yarn run lint",
-    "lint": "run-p lint:html lint:css lint:js",
-    "lint:html": "htmlhint 'src/**/*.html'",
+    "lint": "run-p lint:css lint:html lint:js",
     "lint:css": "stylelint 'src/**/*.less' --fix",
+    "lint:html": "htmlhint 'src/**/*.html'",
     "lint:js": "eslint --quiet --fix ./src",
+    "test": "yarn run lint",
     "version": "npx conventional-changelog-cli -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "postversion": "git push && git push --tags"
   },
@@ -18,6 +22,9 @@
     "angular",
     "exchange"
   ],
+  "dependencies": {
+    "lodash": "~3.9.3"
+  },
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
@@ -37,8 +44,5 @@
     "npm-run-all": "^4.1.3",
     "stylelint": "^9.6.0",
     "stylelint-config-standard": "^18.2.0"
-  },
-  "dependencies": {
-    "lodash": "~3.9.3"
   }
 }
