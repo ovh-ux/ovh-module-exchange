@@ -108,17 +108,17 @@
                                     <oui-progress-bar data-ng-if="ctrl.exchange.diskPercent < 51"
                                                       data-type="success"
                                                       data-value="ctrl.exchange.diskPercent">
-                                        <span data-ng-bind="ctrl.exchange.currentDiskUsage.value + ' ' + ('unit_size_'+ ctrl.exchange.currentDiskUsage.unit | translate) + ' / ' + ctrl.exchange.totalDiskSize.value + ' ' + ('unit_size_'+ ctrl.exchange.totalDiskSize.unit | translate)"></span>
+                                        <span data-ng-bind="ctrl.getFormattedDiskUsage()"></span>
                                     </oui-progress-bar>
                                     <oui-progress-bar data-ng-if="ctrl.exchange.diskPercent > 50 && ctrl.exchange.diskPercent < 81"
                                                       data-type="warning"
                                                       data-value="ctrl.exchange.diskPercent">
-                                        <span data-ng-bind="ctrl.exchange.currentDiskUsage.value + ' ' + ('unit_size_'+ ctrl.exchange.currentDiskUsage.unit | translate) + ' / ' + ctrl.exchange.totalDiskSize.value + ' ' + ('unit_size_'+ ctrl.exchange.totalDiskSize.unit | translate)"></span>
+                                        <span data-ng-bind="ctrl.getFormattedDiskUsage()"></span>
                                     </oui-progress-bar>
                                     <oui-progress-bar data-ng-if="ctrl.exchange.diskPercent > 80"
                                                       data-type="error"
                                                       data-value="ctrl.exchange.diskPercent">
-                                        <span data-ng-bind="ctrl.exchange.currentDiskUsage.value + ' ' + ('unit_size_'+ ctrl.exchange.currentDiskUsage.unit | translate) + ' / ' + ctrl.exchange.totalDiskSize.value + ' ' + ('unit_size_'+ ctrl.exchange.totalDiskSize.unit | translate)"></span>
+                                        <span data-ng-bind="ctrl.getFormattedDiskUsage()"></span>
                                     </oui-progress-bar>
                                 </oui-progress>
                             </oui-tile-description>
