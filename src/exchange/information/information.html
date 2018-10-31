@@ -142,7 +142,7 @@
                 </oui-tile-definition>
                 <oui-tile-definition data-term="{{:: 'exchange_tab_INFORMATIONS_webmail' | translate}}">
                     <oui-tile-description>
-                        <a class="word-break"
+                        <a class="word-break oui-link"
                            target="_blank"
                            rel="noopener"
                            data-title="{{'exchange_tab_INFORMATIONS_webmail' | translate}} ({{'common_newtab' | translate}})"
@@ -154,7 +154,8 @@
                 </oui-tile-definition>
                 <oui-tile-definition data-term="{{:: 'exchange_tab_INFORMATIONS_messaging' | translate}}">
                     <oui-tile-description>
-                        <a data-ng-href="{{ctrl.displayGuides}}"
+                        <a class="oui-link"
+                           data-ng-href="{{ctrl.displayGuides}}"
                            target="_blank"
                            rel="noopener"
                            data-title="{{'exchange_dashboard_guides_url' | translate}} ({{'common_newtab' | translate}})">
@@ -169,7 +170,7 @@
                       data-ng-if="!ctrl.loading.sharePoint && ctrl.sharepoint">
                 <oui-tile-definition data-term="{{:: 'exchange_tab_INFORMATIONS_sharepoint_url' | translate}}">
                     <oui-tile-description>
-                        <a class="word-break"
+                        <a class="word-break oui-link"
                            target="_blank"
                            rel="noopener"
                            data-ng-href="https://{{ctrl.sharepoint.url}}"
@@ -180,7 +181,8 @@
                          <span data-translate="exchange_tab_INFORMATIONS_wait_activation"
                                data-ng-if="ctrl.sharepoint.state === 'creating'"></span>
                          <div class="mt-3">
-                             <a data-ng-href="#/configuration/sharepoint/{{ctrl.exchange.domain}}/{{ctrl.sharepoint.domain}}"
+                             <a class="oui-link"
+                                data-ng-href="#/configuration/sharepoint/{{ctrl.exchange.domain}}/{{ctrl.sharepoint.domain}}"
                                 data-translate="exchange_tab_INFORMATIONS_service_url"></a>
                          </div>
                     </oui-tile-description>
