@@ -243,7 +243,7 @@
                 <dt data-translate="exchange_tab_domain_domain"></dt>
                 <dd>
                     <span class="word-break"
-                          data-ng-bind="ctrl.model.displayName | sliceContent: 150"></span>
+                          data-ng-bind="ctrl.model.displayName | wucSliceContent: 150"></span>
                     <span data-ng-if="ctrl.model.isUTF8Domain"
                           data-ng-bind="'(' + ctrl.model.name + ')'"></span>
                 </dd>
@@ -272,10 +272,10 @@
                     data-ng-bind="ctrl.model.organization2010"></dd>
                 <dd class="word-break"
                     data-ng-if="ctrl.setOrganization2010 && ctrl.model.main && !ctrl.model.organization2010"
-                    data-ng-bind="ctrl.model.displayName | sliceContent: 150"></dd>
+                    data-ng-bind="ctrl.model.displayName | wucSliceContent: 150"></dd>
                 <dd class="word-break"
                     data-ng-if="ctrl.setOrganization2010 && !ctrl.model.main"
-                    data-ng-bind="ctrl.model.attachOrganization2010.displayName | sliceContent: 150"></dd>
+                    data-ng-bind="ctrl.model.attachOrganization2010.displayName | wucSliceContent: 150"></dd>
             </dl>
         </div>
     </div>

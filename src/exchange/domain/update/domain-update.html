@@ -75,12 +75,12 @@
             <dl class="dl-horizontal dl-lg">
                 <dt data-translate="exchange_tab_domain_domain"></dt>
                 <dd class="word-break"
-                    data-ng-bind="ctrl.originalValue.displayName | sliceContent: 150"></dd>
+                    data-ng-bind="ctrl.originalValue.displayName | wucSliceContent: 150"></dd>
 
                 <dt data-ng-if="ctrl.isMxRelayVisible() && ctrl.selectedDomain.type === 'NON_AUTHORITATIVE' && ctrl.selectedDomain.mxRelay"
                     data-translate="exchange_tab_domain_add_step2_mx_replay"></dt>
                 <dd data-ng-if="ctrl.isMxRelayVisible() && ctrl.selectedDomain.type === 'NON_AUTHORITATIVE' && ctrl.selectedDomain.mxRelay"
-                    data-ng-bind="ctrl.selectedDomain.mxRelay | sliceContent: 150" class="word-break"></dd>
+                    data-ng-bind="ctrl.selectedDomain.mxRelay | wucSliceContent: 150" class="word-break"></dd>
 
                 <dt data-translate="exchange_tab_domain_type"></dt>
                 <dd data-ng-bind="('exchange_tab_domain_' + ctrl.selectedDomain.type) | translate"></dd>

@@ -63,11 +63,11 @@
                         <tr data-ng-repeat="resource in (ctrl.resources.list.results | orderBy:'displayName':false) track by $index"
                             data-ng-class="isRowSelected(resource.id)">
                             <td class="word-break"
-                                data-ng-bind-html="resource.displayName | sliceContent: 150"></td>
+                                data-ng-bind-html="resource.displayName | wucSliceContent: 150"></td>
                             <td data-ng-bind="('exchange_tab_RESOURCES_type_' + resource.resourceType) | translate"></td>
                             <td data-ng-bind="resource.capacity"></td>
                             <td class="word-break"
-                                data-ng-bind="resource.resourceEmailDisplayName | sliceContent: 150"></td>
+                                data-ng-bind="resource.resourceEmailDisplayName | wucSliceContent: 150"></td>
                             <td class="text-center">
                                 <span class="oui-status oui-status_error"
                                       data-translate="exchange_tab_ACCOUNTS_state_TASK_ON_ERROR"

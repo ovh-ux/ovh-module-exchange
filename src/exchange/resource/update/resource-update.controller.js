@@ -14,7 +14,7 @@ angular.module('Module.exchange.controllers').controller(
 
       this.$routerParams = Exchange.getParams();
       this.model = navigation.currentActionData;
-      this.model.slicedEmail = $filter('sliceEmail')(this.model.resourceEmailDisplayName, 20);
+      this.model.slicedEmail = $filter('wucSliceEmail')(this.model.resourceEmailDisplayName, 20);
 
       $scope.updateResource = () => this.updateResource();
     }
