@@ -129,9 +129,8 @@
         return false;
       }
 
-      const thereAreAccountsBeingDeleted = _(this.homepage.otherAccounts.list.results)
-        .filter(account => this.exchangeStates.constructor.isDeleting(account))
-        .value().length > 0;
+      const thereAreAccountsBeingDeleted = !_.isEmpty(this.homepage.otherAccounts.list.results
+        .filter(account => this.exchangeStates.constructor.isDeleting(account)));
       const thereIsNoRoomForMoreAccountCreation = this.homepage.numberOfAvailableAccounts === 0;
 
       return thereIsNoRoomForMoreAccountCreation && thereAreAccountsBeingDeleted;
@@ -142,9 +141,8 @@
         return false;
       }
 
-      const atLeastOneEmailIsCustomized = _(this.homepage.otherAccounts.list.results)
-        .filter(account => !this.exchangeStates.constructor.isDeleting(account))
-        .value().length > 0;
+      const atLeastOneEmailIsCustomized = !_.isEmpty(this.homepage.otherAccounts.list.results
+        .filter(account => !this.exchangeStates.constructor.isDeleting(account)));
 
       return atLeastOneEmailIsCustomized;
     }
