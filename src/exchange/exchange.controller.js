@@ -2,43 +2,31 @@ angular.module('Module.exchange.controllers').controller(
   'ExchangeCtrl',
   class ExchangeCtrl {
     constructor(
-      exchangeServiceInfrastructure,
+      $location,
       $rootScope,
       $scope,
       $timeout,
-      $location,
-      Products,
       $translate,
       Exchange,
-      APIExchange,
-      User,
-      EXCHANGE_CONFIG,
+      exchangeServiceInfrastructure,
+      messaging,
       navigation,
       ovhUserPref,
-      messaging,
-      exchangeVersion,
-      officeAttach,
+      User,
     ) {
       this.services = {
-        exchangeServiceInfrastructure,
+        $location,
         $rootScope,
         $scope,
         $timeout,
-        $location,
-        Products,
         $translate,
         Exchange,
-        APIExchange,
-        User,
-        EXCHANGE_CONFIG,
+        exchangeServiceInfrastructure,
+        messaging,
         navigation,
         ovhUserPref,
-        messaging,
-        exchangeVersion,
-        officeAttach,
+        User,
       };
-
-      this.worldPart = this.services.$rootScope.worldPart;
 
       this.$routerParams = Exchange.getParams();
 
@@ -98,37 +86,6 @@ angular.module('Module.exchange.controllers').controller(
       this.services.$scope.resetMessages();
     }
 
-    submittingDisplayName() {
-      return this.services.APIExchange.put('/{organizationName}/service/{exchangeService}', {
-        urlParams: {
-          organizationName: this.exchange.organization,
-          exchangeService: this.exchange.domain,
-        },
-        data: {
-          displayName: this.displayName,
-        },
-      })
-        .then(() => {
-          this.exchange.displayName = this.displayName;
-          this.services.$rootScope.$broadcast('change.displayName', [
-            this.exchange.domain,
-            this.displayName,
-          ]);
-          this.services.messaging.writeSuccess(
-            this.services.$translate.instant('exchange_ACTION_configure_success'),
-          );
-        })
-        .catch((reason) => {
-          this.services.messaging.writeError(
-            this.services.$translate.instant('exchange_ACTION_configure_error'),
-            reason,
-          );
-        })
-        .finally(() => {
-          this.editMode = false;
-        });
-    }
-
     retrievingWizardPreference() {
       this.isLoading = true;
       this.shouldOpenWizard = this.services.exchangeServiceInfrastructure.isHosted();
@@ -182,14 +139,8 @@ angular.module('Module.exchange.controllers').controller(
         .then((exchange) => {
           this.services.Exchange.value = exchange;
           this.exchange = exchange;
-          this.displayName = exchange.displayName;
         })
-        .then(() => this.canActivateSharepoint())
-        .then(() => this.services.officeAttach
-          .retrievingIfUserAlreadyHasSubscribed(this.exchange.domain))
-        .then((userHasAlreadySubscribedToOfficeAttach) => {
-          this.canUserSubscribeToOfficeAttach = !userHasAlreadySubscribedToOfficeAttach;
-
+        .then(() => {
           if (!_.isEmpty(this.exchange.messages)) {
             this.services.messaging.writeError(
               this.services.$translate.instant('exchange_dashboard_loading_error'),
@@ -233,20 +184,6 @@ angular.module('Module.exchange.controllers').controller(
         });
     }
 
-    canActivateSharepoint() {
-      return this.services.Exchange.getSharepointService()
-        .then((sharepoint) => {
-          this.sharepoint = sharepoint;
-          const isAlreadyActivated = sharepoint != null;
-          const isSupportedExchangeType = this.services.exchangeServiceInfrastructure.isHosted();
-
-          this.canSubscribeToSharepoint = !isAlreadyActivated && isSupportedExchangeType && this.worldPart === 'EU';
-        })
-        .catch(() => {
-          this.canSubscribeToSharepoint = this.services.exchangeServiceInfrastructure.isHosted() && this.worldPart === 'EU';
-        });
-    }
-
     parseLocationForExchangeData() {
       // expect something like
       // /configuration/exchange_dedicated/organization-ID/exchange-ID?action=billing&tab=DOMAINS"
@@ -262,21 +199,6 @@ angular.module('Module.exchange.controllers').controller(
         organization: this.$routerParams.organization,
         type,
       };
-    }
-
-    editDisplayName() {
-      this.displayName = this.exchange.displayName;
-      this.editMode = true;
-    }
-
-    resetDisplayName() {
-      this.editMode = false;
-
-      if (this.formExchangeDisplayName.displayNameField.$invalid) {
-        this.services.messaging.writeError(
-          this.services.$translate.instant('exchange_dashboard_display_name_min'),
-        );
-      }
     }
   },
 );
