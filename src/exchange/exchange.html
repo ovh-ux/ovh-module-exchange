@@ -122,12 +122,12 @@
 
     <div data-ng-if="!ctrl.shouldOpenWizard || !ctrl.hasNoDomain">
         <div data-ng-controller="ExchangeTabsCtrl" data-ng-if="!ctrl.exchange.isExpired">
-            <ovh-tabs tabs="tabs"
+            <wuc-ovh-tabs tabs="tabs"
                       selected-tab="selectedTab"
                       change-tab="changeTab"
                       product="exchange"
                       menu="dropdownMenuItems"
-                      tr="tr"></ovh-tabs>
+                      tr="tr"></wuc-ovh-tabs>
             <div class="tab-content">
                 <div class="alert alert-dismissible"
                      role="alert"
