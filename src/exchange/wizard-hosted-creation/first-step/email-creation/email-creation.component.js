@@ -68,9 +68,8 @@
       return this.wizardHostedCreationEmailCreation
         .retrievingAvailableAccounts(this.$routerParams.organization, this.$routerParams.productId)
         .then((availableAccounts) => {
-          this.homepage.availableAccounts = _(availableAccounts)
-            .filter(account => this.exchangeStates.constructor.isOk(account))
-            .value();
+          this.homepage.availableAccounts = availableAccounts
+            .filter(account => this.exchangeStates.constructor.isOk(account));
           this.homepage.numberOfAvailableAccounts = this.homepage.availableAccounts.length;
         })
         .catch((error) => {

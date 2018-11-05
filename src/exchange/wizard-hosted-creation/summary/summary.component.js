@@ -111,9 +111,8 @@
         )
         .then((accounts) => {
           const copy = _(accounts).clone();
-          copy.list.results = _(accounts.list.results)
-            .filter(currentAccount => currentAccount.domain === this.homepage.domainName)
-            .value();
+          copy.list.results = accounts.list.results
+            .filter(currentAccount => currentAccount.domain === this.homepage.domainName);
           copy.count = copy.list.results.length;
           this.homepage.emailAccounts = copy;
           this.hasEmailAddresses = angular.isArray(this.homepage.emailAccounts.list.results)

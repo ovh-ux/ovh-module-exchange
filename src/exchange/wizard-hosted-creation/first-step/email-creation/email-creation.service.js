@@ -79,14 +79,13 @@ angular.module('Module.exchange.services').service(
           },
         },
       ).then((availableAccounts) => {
-        const promises = _(availableAccounts)
+        const promises = availableAccounts
           .map(availableAccount => this.OvhHttp.get(
             `/email/exchange/${organizationName}/service/${exchangeService}/account/${availableAccount}`,
             {
               rootPath: 'apiv6',
             },
-          ))
-          .value();
+          ));
 
         return this.$q.all(promises);
       });
