@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="oui-field mb-4"
-                     data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.newAccountOptions.availableTypes.length > 1">
+                     data-ng-if="ctrl.newAccountOptions.availableTypes.length > 1">
                     <label class="oui-field__label oui-label required" for="selectedAccountType"
                            data-translate="exchange_ACTION_update_account_step1_type_label"></label>
                     <div class="oui-field__content">
@@ -159,7 +159,7 @@
                 </div>
 
                 <div class="oui-field mb-4"
-                     data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.newAccountOptions && ctrl.services.exchangeServiceInfrastructure.isProvider()">
+                     data-ng-if="ctrl.newAccountOptions && ctrl.services.exchangeServiceInfrastructure.isProvider()">
                     <label class="oui-field__label oui-label" for="selectedAccountQuota"
                            data-translate="exchange_ACTION_update_account_step1_quota_label"></label>
                     <div class="oui-field__content">
@@ -180,13 +180,13 @@
                 </div>
 
                 <oui-checkbox class="mb-4"  id="hiddenFromGAL" name="selectedAccountHiddenFromGAL"
-                    data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.selectedAccount.canBeConfigured"
+                    data-ng-if="ctrl.selectedAccount.canBeConfigured"
                     data-model="ctrl.selectedAccount.hiddenFromGAL"
                     data-text="{{::'exchange_ACTION_update_account_step1_GAL_label' | translate}}">
                 </oui-checkbox>
 
                 <div class="mb-4"
-                     data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.services.exchangeAccountOutlook.canHaveLicense(ctrl.selectedAccount)">
+                     data-ng-if="ctrl.services.exchangeAccountOutlook.canHaveLicense(ctrl.selectedAccount)">
                     <span class="oui-label"
                           data-translate="exchange_ACTION_update_account_step1_outlook_label"></span>
                     <span data-ng-bind="('exchange_ACTION_add_account_outlook_' + ctrl.selectedAccount.outlook) | translate"></span>
@@ -219,7 +219,7 @@
                    data-ng-if="ctrl.newAccountOptions.passwordComplexityEnabled"></p>
                 <p data-ng-bind-html="'exchange_ACTION_update_account_helpwizard_password_simple' | translate:{ t0: ctrl.newAccountOptions.minPasswordLength }"
                    data-ng-if="!ctrl.newAccountOptions.passwordComplexityEnabled"></p>
-                <div data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.selectedAccount.canBeConfigured">
+                <div data-ng-if="ctrl.selectedAccount.canBeConfigured">
                     <h4 data-translate="exchange_ACTION_update_account_helpwizard_hide_directory_title"></h4>
                     <p data-ng-bind-html="'exchange_ACTION_update_account_helpwizard_hide_directory' | translate"></p>
                 </div>
@@ -262,20 +262,18 @@
                     <span data-ng-repeat="x in ctrl.selectedAccount.password track by $index">*</span>
                 </dd>
 
-                <dt data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.services.exchangeServiceInfrastructure.isProvider()"
+                <dt data-ng-if="ctrl.services.exchangeServiceInfrastructure.isProvider()"
                     data-translate="exchange_ACTION_update_account_step1_quota_label"></dt>
-                <dd data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.services.exchangeServiceInfrastructure.isProvider()"
+                <dd data-ng-if="ctrl.services.exchangeServiceInfrastructure.isProvider()"
                     data-ng-bind="ctrl.selectedAccount.quota + ' ' + 'unit_size_GB' | translate"></dd>
 
-                <dt data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.services.exchangeAccountOutlook.canHaveLicense(ctrl.selectedAccount)"
+                <dt data-ng-if="ctrl.services.exchangeAccountOutlook.canHaveLicense(ctrl.selectedAccount)"
                     data-translate="exchange_ACTION_update_account_step2_outlook_label"></dt>
-                <dd data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g() && ctrl.services.exchangeAccountOutlook.canHaveLicense(ctrl.selectedAccount)"
+                <dd data-ng-if="ctrl.services.exchangeAccountOutlook.canHaveLicense(ctrl.selectedAccount)"
                     data-ng-bind="('exchange_ACTION_update_account_outlook_' + ctrl.selectedAccount.outlook) | translate"></dd>
 
-                <dt data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g()"
-                    data-translate="exchange_ACTION_update_account_step2_GAL_label"></dt>
-                <dd data-ng-if="!ctrl.service.exchangeServiceInfrastructure.is25g()"
-                    data-ng-bind="('exchange_ACTION_update_account_GAL_' + ctrl.selectedAccount.hiddenFromGAL) | translate"></dd>
+                <dt data-translate="exchange_ACTION_update_account_step2_GAL_label"></dt>
+                <dd data-ng-bind="('exchange_ACTION_update_account_GAL_' + ctrl.selectedAccount.hiddenFromGAL) | translate"></dd>
             </dl>
         </div>
     </div>
