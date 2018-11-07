@@ -39,10 +39,6 @@ angular.module('Module.exchange.services').service(
           RESETTING: () => this.exchangeServiceInfrastructure.isHosted()
             || (this.exchangeServiceInfrastructure.isProvider() && !this.exchangeVersion.is(2010)),
         },
-        ALIASES: () => !(
-          this.exchangeServiceInfrastructure.isProvider()
-            && this.exchangeVersion.isIndividual2010()
-        ),
         UPGRADE_TO_300_GB: () => this.exchangeServiceInfrastructure.isHosted()
           || (this.exchangeServiceInfrastructure.isProvider()
             && this.exchangeVersion.isAfter(2010)),

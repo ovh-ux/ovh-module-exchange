@@ -50,9 +50,5 @@ angular.module('Module.exchange.services').service(
     isProvider() {
       return this.is(this.INFRASTRUCTURES.PROVIDER);
     }
-
-    is25g() {
-      return this.isProvider() && this.exchangeVersion.isIndividual2010();
-    }
   },
 );

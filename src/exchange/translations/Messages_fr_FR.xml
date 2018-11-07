@@ -19,7 +19,6 @@
    <translation id="exchange_offer_type_DEDICATED" qtlid="137218">Private Exchange</translation>
    <translation id="exchange_offer_type_HOSTED" qtlid="137231">Hosted Exchange</translation>
    <translation id="exchange_offer_type_PROVIDER" qtlid="136152">Exchange revendeur</translation>
-   <translation id="exchange_offer_type_25g" qtlid="264042">Exchange individuel</translation>
    <translation id="exchange_dashboard_loading_error" qtlid="168120">Une erreur s'est produite lors du chargement des informations.</translation>
    <translation id="exchange_dashboard_action_doing" qtlid="149787">Opération en cours...</translation>
    <translation id="exchange_dashboard_display_name_edit" qtlid="37875">Modifier</translation>
