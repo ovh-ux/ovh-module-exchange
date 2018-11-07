@@ -10,7 +10,7 @@ angular.module('Module.exchange.controllers').controller(
       navigation,
       ovhUserPref,
       $translate,
-      Validator,
+      WucValidator,
       exchangeVersion,
       exchangeServiceInfrastructure,
       User,
@@ -24,7 +24,7 @@ angular.module('Module.exchange.controllers').controller(
         navigation,
         ovhUserPref,
         $translate,
-        Validator,
+        WucValidator,
         exchangeVersion,
         exchangeServiceInfrastructure,
       };
@@ -251,7 +251,7 @@ angular.module('Module.exchange.controllers').controller(
       return (
         this.model.name
         && (this.model.domainType !== this.NON_OVH_DOMAIN
-          || this.services.Validator.isValidDomain(this.model.displayName))
+          || this.services.WucValidator.isValidDomain(this.model.displayName))
       );
     }
   },
