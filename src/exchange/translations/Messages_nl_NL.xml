@@ -447,7 +447,7 @@
    <translation id="exchange_ACTION_order_accounts_step2_pay_type_monthly" qtlid="79530">maandelijks</translation>
    <translation id="exchange_ACTION_order_accounts_step2_pay_type_yearly" qtlid="79542">jaarlijks</translation>
    <translation id="exchange_ACTION_order_accounts_step2_number" qtlid="139338">Aantal accounts:</translation>
-   <translation id="exchange_ACTION_order_accounts_step2_price" qtlid="139416">{0} excl. BTW ({1} incl. BTW)</translation>
+   <translation id="exchange_ACTION_order_accounts_step2_price" qtlid="139416">{0} excl. btw ({1} incl. btw)</translation>
    <translation id="exchange_ACTION_order_accounts_step2_total" qtlid="139429">Totaal gefactureerd:</translation>
    <translation id="exchange_ACTION_order_accounts_step2_doing_message" qtlid="144149">Bestelling van Exchange accounts wordt uitgevoerd</translation>
    <translation id="exchange_ACTION_order_accounts_step2_success_message" qtlid="171214">De accounts worden gemaakt na de betaling van de bestelling: <br /><a href="{0}">{0}</a></translation>
