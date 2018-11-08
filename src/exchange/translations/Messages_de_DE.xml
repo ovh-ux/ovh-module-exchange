@@ -1119,7 +1119,7 @@
 <!-- ########################################## -->
 <!-- TAB EXTERNAL CONTACTS -->
    <translation id="exchange_tab_EXTERNAL_CONTACT" qtlid="82015">Externe Kontakte</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_hiddenFromGAL" qtlid="28483">Telefonbuch</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_hiddenFromGAL" qtlid="28483">Adressbuch</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_externalEmailAddress" qtlid="30430">Adresse</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_displayName" qtlid="80922">Angezeigter Name</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_table_headers_creationDate" qtlid="4358">Erstellt am</translation>

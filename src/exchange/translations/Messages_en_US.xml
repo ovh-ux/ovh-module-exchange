@@ -447,7 +447,7 @@
    <translation id="exchange_ACTION_order_accounts_step2_pay_type_monthly" qtlid="79530">monthly</translation>
    <translation id="exchange_ACTION_order_accounts_step2_pay_type_yearly" qtlid="79542">annually </translation>
    <translation id="exchange_ACTION_order_accounts_step2_number" qtlid="139338">Number of accounts:</translation>
-   <translation id="exchange_ACTION_order_accounts_step2_price" qtlid="139416">{0} excl. taxes ({1} incl. taxes)</translation>
+   <translation id="exchange_ACTION_order_accounts_step2_price" qtlid="139416">{0} plus tax ({1} incl. tax)</translation>
    <translation id="exchange_ACTION_order_accounts_step2_total" qtlid="139429">Total invoiced:</translation>
    <translation id="exchange_ACTION_order_accounts_step2_doing_message" qtlid="144149">Exchange accounts order in progress...</translation>
    <translation id="exchange_ACTION_order_accounts_step2_success_message" qtlid="171214">The accounts will be created as soon as payment is received for this order: <br /><a href="{0}">{0}</a></translation>

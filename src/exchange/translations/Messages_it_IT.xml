@@ -449,7 +449,7 @@
    <translation id="exchange_ACTION_order_accounts_step2_pay_type_monthly" qtlid="79530">mensile</translation>
    <translation id="exchange_ACTION_order_accounts_step2_pay_type_yearly" qtlid="79542">annuale</translation>
    <translation id="exchange_ACTION_order_accounts_step2_number" qtlid="139338">Numero di account:</translation>
-   <translation id="exchange_ACTION_order_accounts_step2_price" qtlid="139416">{0} IVA esc. ({1} IVA comp.)</translation>
+   <translation id="exchange_ACTION_order_accounts_step2_price" qtlid="139416">{0} +IVA ({1} IVA incl.)</translation>
    <translation id="exchange_ACTION_order_accounts_step2_total" qtlid="139429">Totale fatturato:</translation>
    <translation id="exchange_ACTION_order_accounts_step2_doing_message" qtlid="144149">Ordine di account Exchange in corso...</translation>
    <translation id="exchange_ACTION_order_accounts_step2_success_message" qtlid="171214">Gli account vengono creati dopo che il pagamento dell'ordine è stato validato: <br /><a href="{0}">{0}</a></translation>
