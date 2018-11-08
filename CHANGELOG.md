@@ -1,3 +1,12 @@
+## [9.0.6](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.0.5...v9.0.6) (2018-11-08)
+
+
+### Bug Fixes
+
+* **wizard:** add support for a extreme case ([39a628a](https://github.com/ovh-ux/ovh-module-exchange/commit/39a628a))
+
+
+
 ## [9.0.5](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.0.4...v9.0.5) (2018-11-08)
 
 
