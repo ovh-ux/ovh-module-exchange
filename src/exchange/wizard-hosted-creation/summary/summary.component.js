@@ -95,6 +95,7 @@
 
     goBackToEmailCustomization() {
       this.homepage.shouldDisplayFirstStep = true;
+      this.homepage.shouldDisplaySummary = false;
       this.homepage.navigationState = 'email-creation';
 
       return this.homepage.savingCheckpoint();

@@ -38,7 +38,12 @@
       this.$scope.getIsLoading = () => this.isLoading;
 
       return this.$timeout(() => this.retrievingEmailAccounts().finally(() => {
-        this.scrollToBottom();
+        if (this.homepage.numberOfAvailableAccounts === 0) {
+          this.$rootScope.$broadcast('exchange.wizard_hosted_creation.hide');
+          this.homepage.deletingCheckpoint();
+        } else {
+          this.scrollToBottom();
+        }
       }));
     }
 
@@ -145,6 +150,11 @@
         .filter(account => !this.exchangeStates.constructor.isDeleting(account)));
 
       return atLeastOneEmailIsCustomized;
+    }
+
+    goToSummary() {
+      this.homepage.shouldDisplaySummary = true;
+      this.homepage.shouldDisplayFirstStep = false;
     }
   }
 
