@@ -1,3 +1,21 @@
+## [9.0.5](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.0.4...v9.0.5) (2018-11-08)
+
+
+### Bug Fixes
+
+* **exchange.external.contact:** disable menu-item not working correctly ([221f978](https://github.com/ovh-ux/ovh-module-exchange/commit/221f978))
+* **exchange.group:** indentation ([296e364](https://github.com/ovh-ux/ovh-module-exchange/commit/296e364))
+* **exchange.group:** wrong display button ([60c3d46](https://github.com/ovh-ux/ovh-module-exchange/commit/60c3d46))
+* **exchange.resource:** unnecessary condition ([0d7c71f](https://github.com/ovh-ux/ovh-module-exchange/commit/0d7c71f))
+* **external-contact:** remove unused method ([b6ad908](https://github.com/ovh-ux/ovh-module-exchange/commit/b6ad908))
+* **i18n:** retrieve translations ([acda260](https://github.com/ovh-ux/ovh-module-exchange/commit/acda260))
+* **i18n:** retrieve translations ([a795a4c](https://github.com/ovh-ux/ovh-module-exchange/commit/a795a4c))
+* **i18n:** submit translations ([8bcc62b](https://github.com/ovh-ux/ovh-module-exchange/commit/8bcc62b))
+* **order:** price without tax addition in order step1 ([a6bec0e](https://github.com/ovh-ux/ovh-module-exchange/commit/a6bec0e))
+* **package.json:** remove duplicate keywords entry ([48b0b71](https://github.com/ovh-ux/ovh-module-exchange/commit/48b0b71))
+
+
+
 <a name="9.0.4"></a>
 ## [9.0.4](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.0.3...v9.0.4) (2018-10-16)
 
