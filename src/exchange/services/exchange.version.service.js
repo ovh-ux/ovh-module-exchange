@@ -55,9 +55,5 @@ angular.module('Module.exchange.services').service(
 
       return versionNumberToCompare > currentVersionNumber;
     }
-
-    isIndividual2010() {
-      return this.services.Exchange.value.serverDiagnostic.individual2010;
-    }
   },
 );

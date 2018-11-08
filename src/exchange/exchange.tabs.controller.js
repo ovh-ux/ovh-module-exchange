@@ -87,7 +87,6 @@ angular.module('Module.exchange.controllers').controller(
               fn: () => {
                 navigation.setAction('exchange/configure/service-configure');
               },
-              disabled: this.services.exchangeServiceInfrastructure.is25g(),
             },
           );
         }

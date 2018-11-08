@@ -602,7 +602,7 @@
    <translation id="exchange_tab_domain_add_step1_new_organization_intro" qtlid="447716">El dominio de su empresa será <strong>{0}</strong></translation>
    <translation id="exchange_tab_domain_add_step1_new_organization_placeholder" qtlid="191109">Nombre de la organización</translation>
    <translation id="exchange_tab_domain_add_step2_main_domain" qtlid="191122">Dominio principal</translation>
-   <translation id="exchange_tab_domain_add_step2_organization" qtlid="32278">Organisation</translation>
+   <translation id="exchange_tab_domain_add_step2_organization" qtlid="32278">Organización</translation>
    <translation id="exchange_tab_domain_add_step2_main_domain_true" qtlid="34776">Oui</translation>
    <translation id="exchange_tab_domain_add_step2_main_domain_false" qtlid="34788">Non</translation>
    <translation id="exchange_tab_domain_add_step2_mx_replay" qtlid="316931">Servidor de correo de destino</translation>
@@ -711,7 +711,7 @@
    <translation id="exchange_ACTION_add_disclaimer_error_message" qtlid="152375">Se ha producido un error al crear la firma.</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_City" qtlid="33310">Ciudad</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Company" qtlid="49022">Entreprise</translation>
-   <translation id="exchange_ACTION_add_disclaimer_option_Country" qtlid="25171">Pays</translation>
+   <translation id="exchange_ACTION_add_disclaimer_option_Country" qtlid="25171">País</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Department" qtlid="30706">Département</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_DisplayName" qtlid="80922">Nom affiché</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Email" qtlid="69509">E-mail</translation>
@@ -1143,7 +1143,7 @@
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_question" qtlid="171357">Va a crear un contacto externo</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_email_label" qtlid="137244">Cuenta de correo</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_email_invalid" qtlid="171370">La dirección de correo electrónico introducida no es válida</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_organization2010_label" qtlid="32278">Organisation</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_organization2010_label" qtlid="32278">Organización</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_first_name_label" qtlid="23323">Nombre</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_last_name_label" qtlid="3818">Nombre</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_display_name_label" qtlid="23515">Nom à afficher</translation>

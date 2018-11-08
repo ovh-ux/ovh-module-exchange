@@ -227,12 +227,6 @@ angular.module('Module.exchange.controllers').controller(
         this.services.$translate.instant('exchange_dashboard_action_doing'),
       );
 
-      if (_.has(this.buffer, 'changes') && this.buffer.changes != null) {
-        _.forEach(this.buffer.changes, (change) => {
-          _.set(change, 'is25g', this.services.exchangeServiceInfrastructure.is25g());
-        });
-      }
-
       this.services.Exchange.updateRenew(
         this.$routerParams.organization,
         this.$routerParams.productId,

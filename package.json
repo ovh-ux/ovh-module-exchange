@@ -18,10 +18,6 @@
     "version": "npx conventional-changelog-cli -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "postversion": "git push && git push --tags"
   },
-  "keywords": [
-    "angular",
-    "exchange"
-  ],
   "dependencies": {
     "lodash": "~3.9.3"
   },

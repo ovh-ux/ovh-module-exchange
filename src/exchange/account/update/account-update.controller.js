@@ -282,10 +282,6 @@ angular.module('Module.exchange.controllers').controller(
     }
 
     canChangePrimary() {
-      if (this.services.exchangeServiceInfrastructure.is25g()) {
-        return this.selectedAccount.primaryEmailAddress.split('@')[1] === 'configureme.me';
-      }
-
       return this.newAccountOptions != null;
     }
 
