@@ -38,7 +38,12 @@
       this.$scope.getIsLoading = () => this.isLoading;
 
       return this.$timeout(() => this.retrievingEmailAccounts().finally(() => {
-        this.scrollToBottom();
+        if (this.homepage.numberOfAvailableAccounts === 0) {
+          this.$rootScope.$broadcast('exchange.wizard_hosted_creation.hide');
+          this.homepage.deletingCheckpoint();
+        } else {
+          this.scrollToBottom();
+        }
       }));
     }
 
@@ -68,9 +73,8 @@
       return this.wizardHostedCreationEmailCreation
         .retrievingAvailableAccounts(this.$routerParams.organization, this.$routerParams.productId)
         .then((availableAccounts) => {
-          this.homepage.availableAccounts = _(availableAccounts)
-            .filter(account => this.exchangeStates.constructor.isOk(account))
-            .value();
+          this.homepage.availableAccounts = availableAccounts
+            .filter(account => this.exchangeStates.constructor.isOk(account));
           this.homepage.numberOfAvailableAccounts = this.homepage.availableAccounts.length;
         })
         .catch((error) => {
@@ -130,9 +134,8 @@
         return false;
       }
 
-      const thereAreAccountsBeingDeleted = _(this.homepage.otherAccounts.list.results)
-        .filter(account => this.exchangeStates.constructor.isDeleting(account))
-        .value().length > 0;
+      const thereAreAccountsBeingDeleted = !_.isEmpty(this.homepage.otherAccounts.list.results
+        .filter(account => this.exchangeStates.constructor.isDeleting(account)));
       const thereIsNoRoomForMoreAccountCreation = this.homepage.numberOfAvailableAccounts === 0;
 
       return thereIsNoRoomForMoreAccountCreation && thereAreAccountsBeingDeleted;
@@ -143,11 +146,15 @@
         return false;
       }
 
-      const atLeastOneEmailIsCustomized = _(this.homepage.otherAccounts.list.results)
-        .filter(account => !this.exchangeStates.constructor.isDeleting(account))
-        .value().length > 0;
+      const atLeastOneEmailIsCustomized = !_.isEmpty(this.homepage.otherAccounts.list.results
+        .filter(account => !this.exchangeStates.constructor.isDeleting(account)));
 
       return atLeastOneEmailIsCustomized;
+    }
+
+    goToSummary() {
+      this.homepage.shouldDisplaySummary = true;
+      this.homepage.shouldDisplayFirstStep = false;
     }
   }
 
