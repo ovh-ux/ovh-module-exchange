@@ -3,31 +3,55 @@
 
   class controller {
     constructor(
-      Exchange,
-      messaging,
-      navigation,
-      ovhUserPref,
+      $q,
       $rootScope,
       $timeout,
       $translate,
+      Exchange,
+      exchangeStates,
+      messaging,
+      navigation,
+      ovhUserPref,
       wizardHostedCreationDomainConfiguration,
+      wizardHostedCreationEmailCreation,
     ) {
-      this.Exchange = Exchange;
-      this.messaging = messaging;
-      this.navigation = navigation;
-      this.ovhUserPref = ovhUserPref;
+      this.$q = $q;
       this.$rootScope = $rootScope;
       this.$timeout = $timeout;
       this.$translate = $translate;
+
+      this.Exchange = Exchange;
+      this.exchangeStates = exchangeStates;
+      this.messaging = messaging;
+      this.navigation = navigation;
+      this.ovhUserPref = ovhUserPref;
       this.wizardHostedCreationDomainConfiguration = wizardHostedCreationDomainConfiguration;
+      this.wizardHostedCreationEmailCreation = wizardHostedCreationEmailCreation;
     }
 
     $onInit() {
       this.$routerParams = this.Exchange.getParams();
       this.navigationState = '';
-      this.shouldDisplayFirstStep = true;
 
-      return this.restoringCheckpoint();
+      return this.fetchingIfShouldDisplayWizard()
+        .then((shouldDisplayWizard) => {
+          if (shouldDisplayWizard) {
+            this.shouldDisplayFirstStep = true;
+            this.shouldDisplaySummary = false;
+            return this.restoringCheckpoint();
+          }
+
+          this.$rootScope.$broadcast('exchange.wizard_hosted_creation.hide');
+          return this.deletingCheckpoint();
+        });
+    }
+
+    fetchingIfShouldDisplayWizard() {
+      return this.wizardHostedCreationEmailCreation
+        .retrievingAvailableAccounts(this.$routerParams.organization, this.$routerParams.productId)
+        .then(availableAccounts => !_.isEmpty(availableAccounts
+          .filter(account => this.exchangeStates.constructor.isOk(account))))
+        .catch(() => false);
     }
 
     retrievingCheckpoint() {
@@ -67,6 +91,7 @@
         domainIsNotManagedByCurrentNIC: this.domainIsNotManagedByCurrentNIC,
         domainIsOnlyForExchange: this.domainIsOnlyForExchange,
         shouldDisplayFirstStep: this.shouldDisplayFirstStep,
+        shouldDisplaySummary: this.shouldDisplaySummary,
         navigationState: this.navigationState,
         domainHasBeenAssociated: this.domainHasBeenAssociated,
         shouldDisabledDomainSelection: this.shouldDisabledDomainSelection,
@@ -130,6 +155,7 @@
               this.domainIsNotManagedByCurrentNIC = preferenceToUse.domainIsNotManagedByCurrentNIC;
               this.domainIsOnlyForExchange = preferenceToUse.domainIsOnlyForExchange;
               this.shouldDisplayFirstStep = preferenceToUse.shouldDisplayFirstStep;
+              this.shouldDisplaySummary = preferenceToUse.shouldDisplaySummary;
               this.navigationState = preferenceToUse.navigationState;
               this.domainHasBeenAssociated = preferenceToUse.domainHasBeenAssociated;
               this.shouldDisabledDomainSelection = preferenceToUse.shouldDisabledDomainSelection;
@@ -168,6 +194,7 @@
           this.domainIsNotManagedByCurrentNIC = null;
           this.domainIsOnlyForExchange = null;
           this.shouldDisplayFirstStep = true;
+          this.shouldDisplaySummary = false;
           this.navigationState = '';
           this.domainHasBeenAssociated = false;
           this.shouldDisabledDomainSelection = false;
