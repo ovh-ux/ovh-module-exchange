@@ -230,5 +230,9 @@ angular.module('Module.exchange.controllers').controller(
         );
       }
     }
+
+    getFormattedDiskUsage() {
+      return `${this.exchange.currentDiskUsage.value} ${this.$translate.instant(`unit_size_${this.exchange.currentDiskUsage.unit}`)} / ${this.exchange.totalDiskSize.value} ${this.$translate.instant(`unit_size_${this.exchange.totalDiskSize.unit}`)}`;
+    }
   },
 );
