@@ -67,7 +67,8 @@
                             <li data-ng-repeat="contract in ctrl.selectedOption.order.contracts track by $index">
                                 <a target="_blank"
                                    data-ng-bind="contract.name"
-                                   data-ng-href="{{contract.url}}"></a>
+                                   data-ng-href="{{contract.url}}"
+                                   rel="noopener"></a>
                             </li>
                         </ul>
                     </div>
