@@ -1,3 +1,7 @@
+## [9.0.7](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.0.6...v9.0.7) (2018-11-09)
+
+
+
 ## [9.0.6](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.0.5...v9.0.6) (2018-11-08)
 
 
