@@ -1,12 +1,8 @@
 # ovh-module-exchange
 
-![ovh-module-exchange](https://user-images.githubusercontent.com/3379410/27423240-3f944bc4-5731-11e7-87bb-3ff603aff8a7.png)
-
-[![Maintenance](https://img.shields.io/maintenance/yes/2018.svg)]() [![Chat on gitter](https://img.shields.io/gitter/room/ovh/ux.svg)](https://gitter.im/ovh/ux) [![Build Status](https://travis-ci.org/ovh-ux/ovh-module-exchange.svg)](https://travis-ci.org/ovh-ux/ovh-module-exchange)
-
-[![NPM](https://nodei.co/npm/ovh-module-exchange.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/ovh-module-exchange/)
-
 > Exchange module.
+
+[![Downloads](https://badgen.net/npm/dt/ovh-module-exchange)](https://npmjs.com/package/ovh-module-exchange) [![Dependencies](https://badgen.net/david/dep/ovh-ux/ovh-module-exchange)](https://npmjs.com/package/ovh-module-exchange?activeTab=dependencies) [![Dev Dependencies](https://badgen.net/david/dev/ovh-ux/ovh-module-exchange)](https://npmjs.com/package/ovh-module-exchange?activeTab=dependencies) [![Gitter](https://badgen.net/badge/gitter/ovh-ux/blue?icon=gitter)](https://gitter.im/ovh/ux)
 
 ## Install
 
