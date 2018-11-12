@@ -66,7 +66,7 @@
                         <ul class="list-unstyled">
                             <li data-ng-repeat="contract in ctrl.selectedOption.order.contracts track by $index">
                                 <a target="_blank"
-                                   data-ng-bind="contract.name"
+                                   data-ng-bind="::contract.name | translate"
                                    data-ng-href="{{contract.url}}"
                                    rel="noopener"></a>
                             </li>

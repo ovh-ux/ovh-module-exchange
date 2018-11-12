@@ -1114,7 +1114,7 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_ACTION_display_outlook_step2_close_button" qtlid="4670">Fermer</translation>
    <translation id="exchange_ACTION_display_outlook_step2_extra_label" qtlid="170967">La clef générée aura une validité de 5 minutes. Si cet intervalle ne vous a pas permis d'activer votre produit, vous pourrez réitérer l'opération afin d'obtenir une nouvelle clef.</translation>
    <translation id="exchange_ACTION_display_outlook_language_error_message" qtlid="157343">Une erreur est survenue lors du chargement de la licence Outlook.</translation>
-
+   <translation id="OVH_Data_Protection_Agreement">Contrat de protection des données OVH</translation>
 
 <!-- ########################################## -->
 <!-- TAB EXTERNAL CONTACTS -->
