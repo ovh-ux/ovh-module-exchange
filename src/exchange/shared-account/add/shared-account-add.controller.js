@@ -3,21 +3,21 @@ angular.module('Module.exchange.controllers').controller(
   class ExchangeAddSharedAccountCtrl {
     constructor(
       $scope,
+      $translate,
       Exchange,
       ExchangeSharedAccounts,
+      formValidation,
       messaging,
       navigation,
-      $translate,
-      formValidation,
     ) {
       this.services = {
         $scope,
+        $translate,
         Exchange,
         ExchangeSharedAccounts,
+        formValidation,
         messaging,
         navigation,
-        $translate,
-        formValidation,
       };
 
       this.$routerParams = Exchange.getParams();
@@ -79,7 +79,8 @@ angular.module('Module.exchange.controllers').controller(
           'max',
         );
 
-      return this.errors.quotaIsWrong;
+      return this.errors.quotaIsWrong
+      || (this.sharedAccountForm.unit.$dirty && !_.isEmpty(this.sharedAccountForm.quota.$error));
     }
 
     buildDisplayName() {
@@ -107,7 +108,7 @@ angular.module('Module.exchange.controllers').controller(
         this.$routerParams.organization,
         this.$routerParams.productId,
       ).then((data) => {
-        this.optionsToCreateNewAccounts = data;
+        this.optionsToCreateNewAccounts = angular.copy(data);
         this.alreadyTakenEmails = data.takenEmails;
 
         if (_.isEmpty(data.availableDomains)) {
@@ -117,15 +118,28 @@ angular.module('Module.exchange.controllers').controller(
           this.services.navigation.resetAction();
         } else if (
           this.optionsToCreateNewAccounts.maxQuota.value
-          < this.optionsToCreateNewAccounts.minQuota.value
-        ) {
+          < this.optionsToCreateNewAccounts.minQuota.value) {
           this.services.messaging.writeError(
             this.services.$translate.instant('exchange_SHARED_ACCOUNTS_total_quota_error_message'),
           );
           this.services.navigation.resetAction();
         } else {
           this.domain = _.first(data.availableDomains);
-          this.accountBeingCreated.quota = this.optionsToCreateNewAccounts.minQuota.value;
+          const { value, unit } = this.services.ExchangeSharedAccounts
+            .formatQuota(this.optionsToCreateNewAccounts.maxQuota);
+
+          Object.assign(this.optionsToCreateNewAccounts, {
+            quota: angular.copy(this.optionsToCreateNewAccounts.minQuota),
+            availableQuotaUnits: this.services.ExchangeSharedAccounts
+              .getQuotaUnitRange(this.optionsToCreateNewAccounts.minQuota.unit, unit),
+            maxQuota: Object.assign(angular.copy(this.optionsToCreateNewAccounts.maxQuota), {
+              toDisplay: { value, unit },
+            }),
+          });
+
+          this.accountBeingCreated.quota = this.optionsToCreateNewAccounts.quota.value;
+          this.minQuota = this.optionsToCreateNewAccounts.minQuota.value;
+          this.maxQuota = this.optionsToCreateNewAccounts.maxQuota.value;
         }
       });
     }
@@ -143,6 +157,38 @@ angular.module('Module.exchange.controllers').controller(
           .values()
           .includes(true)
       );
+    }
+
+    convertQuotas() {
+      this.selectQuota();
+
+      this.minQuota = this.services.ExchangeSharedAccounts
+        .convertQuota(
+          this.optionsToCreateNewAccounts.minQuota.value,
+          this.optionsToCreateNewAccounts.minQuota.unit,
+          this.optionsToCreateNewAccounts.quota.unit,
+        );
+
+      this.maxQuota = this.services.ExchangeSharedAccounts
+        .convertQuota(
+          this.optionsToCreateNewAccounts.maxQuota.value,
+          this.optionsToCreateNewAccounts.maxQuota.unit,
+          this.optionsToCreateNewAccounts.quota.unit,
+        );
+    }
+
+    selectQuota() {
+      if (this.optionsToCreateNewAccounts.quota.value) {
+        this.accountBeingCreated.quota = this.services.ExchangeSharedAccounts
+          .convertQuota(
+            this.optionsToCreateNewAccounts.quota.value,
+            this.optionsToCreateNewAccounts.quota.unit,
+            this.optionsToCreateNewAccounts.minQuota.unit,
+          );
+
+        this.formattedQuota = this.services.ExchangeSharedAccounts
+          .getFormattedQuota(this.optionsToCreateNewAccounts.quota);
+      }
     }
 
     addingAccount() {

@@ -1,10 +1,13 @@
 angular.module('Module.exchange.services').service(
   'ExchangeSharedAccounts',
   class ExchangeSharedAccounts {
-    constructor(Exchange, OvhHttp) {
+    constructor($translate, Exchange, OvhHttp, WucConverterFactory, WucConverterService) {
       this.services = {
+        $translate,
         Exchange,
         OvhHttp,
+        WucConverterFactory,
+        WucConverterService,
       };
     }
 
@@ -134,6 +137,50 @@ angular.module('Module.exchange.services').service(
         accounts: accounts.list.results,
         headers: _.keys(accounts.list.results[0]),
       }));
+    }
+
+    formatQuota({ value, unit }) {
+      const quota = filesize(this.services.WucConverterService.convertToOctet(
+        value,
+        unit,
+        'binary',
+      ),
+      {
+        output: 'object',
+        standard: 'iec',
+        round: 2,
+      });
+
+      return ({ value: quota.value, unit: quota.symbol });
+    }
+
+    getFormattedQuota(quota) {
+      const { value, unit } = this.formatQuota(quota);
+      return `${value} ${this.services.$translate.instant(`unit_size_${unit}`)}`;
+    }
+
+    getQuotaUnitRange(minQuotaUnit, maxQuotaUnit) {
+      return this.services.WucConverterService
+        .getUnitRange(minQuotaUnit, maxQuotaUnit, 'binary')
+        .map(({ unit }) => unit);
+    }
+
+    convertQuota(value, currentUnit, wantedUnit) {
+      const exponent = _.findIndex(
+        this.services.WucConverterFactory.binary.units,
+        { unit: wantedUnit },
+      );
+      return filesize(this.services.WucConverterService.convertToOctet(
+        value,
+        currentUnit,
+        'binary',
+      ),
+      {
+        output: 'object',
+        standard: 'iec',
+        round: 2,
+        exponent,
+      }).value;
     }
   },
 );

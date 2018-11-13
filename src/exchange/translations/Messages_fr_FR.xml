@@ -218,7 +218,7 @@
    <translation id="exchange_tab_ALIAS_state_TASK_ON_DOING" qtlid="26383">En cours</translation>
    <translation id="exchange_tab_ALIAS_state_TASK_ON_DOING_tooltip" qtlid="143967">Une tâche concernant cet alias est planifiée ou en cours d'exécution</translation>
    <translation id="exchange_tab_ALIAS_add_button" qtlid="143538">Ajouter un alias</translation>
-   <translation id="exchange_tab_ALIAS_creation_quota_description" qtlid="433784">Le quota doit être compris entre <strong>{0} {1}</strong> et <strong>{2} {1}</strong>.</translation>
+   <translation id="exchange_tab_ALIAS_creation_quota_description">Le quota doit être compris entre <strong>{0} {1}</strong> et <strong>{2} {3}</strong>.</translation>
    <translation id="exchange_tab_ALIAS_creation_error_no_local_part" qtlid="433797">Veuillez indiquer une partie locale à l'adresse email (avant l'arobase).</translation>
    <translation id="exchange_tab_ALIAS_creation_error_regex" qtlid="433810">La partie locale (avant l'arobase) doit contenir des caractères alphanumériques ou les caractères <strong>.-_+</strong> (exemple: e_mail-3.addresse+abc).</translation>
    <translation id="exchange_tab_ALIAS_taken_error_message" qtlid="190849">Adresse email déjà existante.</translation>
