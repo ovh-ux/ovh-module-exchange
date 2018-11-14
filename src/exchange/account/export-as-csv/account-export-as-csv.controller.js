@@ -4,25 +4,26 @@ angular.module('Module.exchange.controllers').controller(
     constructor(
       $scope,
       $q,
-      Exchange,
-      messaging,
       $translate,
-      navigation,
+      Exchange,
       ExchangeExternalContacts,
       ExchangeSharedAccounts,
+      messaging,
+      navigation,
     ) {
       this.services = {
         $scope,
         $q,
-        Exchange,
-        messaging,
         $translate,
-        navigation,
+        Exchange,
         ExchangeExternalContacts,
         ExchangeSharedAccounts,
+        messaging,
+        navigation,
       };
 
       this.headers = {
+        external: ['externalEmailAddress', 'firstName', 'lastName', 'displayName', 'creationDate'],
         group: [
           'displayName',
           'mailingListAddress',
@@ -32,7 +33,6 @@ angular.module('Module.exchange.controllers').controller(
           'members',
           'managers',
         ],
-        external: ['externalEmailAddress', 'firstName', 'lastName', 'displayName', 'creationDate'],
         shared: ['primaryEmailAddress', 'quota', 'firstName', 'lastName', 'displayName'],
       };
 

@@ -904,10 +904,8 @@ angular.module('Module.exchange.services').service(
               accounts: accounts.list.results,
               headers: _.keys(accounts.list.results[0]),
             }),
-            () => null,
           );
         },
-        () => null,
       );
     }
 
