@@ -65,21 +65,21 @@ angular.module('Module.exchange.controllers').controller(
         this.hasNoDomain = false;
       });
 
-      if ($location.search().action === 'billing') {
-        $timeout(() => {
-          $rootScope.$broadcast(
-            'leftNavigation.selectProduct.fromName',
-            this.parseLocationForExchangeData(),
-          );
-          $scope.setAction(
-            'exchange/header/update-renew/update-renew',
-            this.parseLocationForExchangeData(),
-          );
-          this.retrievingExchange();
-        }, 2000);
-      } else {
-        this.retrievingExchange();
-      }
+      this.retrievingExchange()
+        .then(() => {
+          if ($location.search().action === 'billing') {
+            $timeout(() => {
+              $rootScope.$broadcast(
+                'leftNavigation.selectProduct.fromName',
+                this.parseLocationForExchangeData(),
+              );
+              $scope.setAction(
+                'exchange/header/update-renew/update-renew',
+                this.parseLocationForExchangeData(),
+              );
+            });
+          }
+        });
     }
 
     $onInit() {
