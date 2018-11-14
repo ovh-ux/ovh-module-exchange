@@ -1,9 +1,8 @@
 angular.module('Module.exchange.services').service(
   'ExchangePublicFolders',
   class ExchangePublicFolders {
-    constructor(Products, $http, $q, constants, Exchange, OvhHttp, $window) {
+    constructor($http, $q, constants, Exchange, OvhHttp, $window) {
       this.services = {
-        Products,
         $http,
         $q,
         constants,
