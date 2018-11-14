@@ -103,5 +103,13 @@ angular.module('Module.exchange.services').service(
         formattedName: punycode.toUnicode(datum),
       })));
     }
+
+    prepareForCsv(organization, serviceName, opts, offset) {
+      return this.gettingContacts(organization, serviceName, opts.count, offset, opts.filter)
+        .then(accounts => ({
+          accounts: accounts.list.results,
+          headers: _.keys(accounts.list.results[0]),
+        }));
+    }
   },
 );

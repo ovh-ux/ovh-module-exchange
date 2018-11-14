@@ -122,5 +122,18 @@ angular.module('Module.exchange.services').service(
         },
       );
     }
+
+    prepareForCsv(organization, serviceName, opts, offset) {
+      return this.retrievingSharedAccounts(
+        organization,
+        serviceName,
+        opts.count,
+        offset,
+        opts.filter,
+      ).then(accounts => ({
+        accounts: accounts.list.results,
+        headers: _.keys(accounts.list.results[0]),
+      }));
+    }
   },
 );

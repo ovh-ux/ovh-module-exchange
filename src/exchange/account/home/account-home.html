@@ -184,7 +184,7 @@
         <button
             class="btn btn-block btn-default"
             type="button"
-            data-ng-click="$ctrl.navigation.setAction('exchange/account/export-as-csv/account-export-as-csv', { filterType : $ctrl.filterType, search : $ctrl.search.value, total : $ctrl.accounts.length, exchange : $ctrl.exchange })"
+            data-ng-click="$ctrl.navigation.setAction('exchange/account/export-as-csv/account-export-as-csv', { filterType : $ctrl.filterType, search : $ctrl.search.value, total : $ctrl.accounts.length, exchange : $ctrl.exchange, csvExportType: 'accounts'})"
             data-ng-disabled="$ctrl.accounts.count === 0 || $ctrl.accounts.list.messages.length > 0"
             data-ng-bind=":: 'exchange_ACTION_export_accounts_button' | translate"></button>
     </fieldset>

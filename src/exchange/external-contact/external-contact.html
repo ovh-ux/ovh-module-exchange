@@ -122,6 +122,11 @@
                     data-translate="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_title_button"
                     data-ng-click="setAction('exchange/external-contact/add/external-contact-add')">
             </button>
+            <button class="btn btn-block btn-default"
+                    type="button"
+                    data-ng-click="ctrl.services.navigation.setAction('exchange/account/export-as-csv/account-export-as-csv', { search : ctrl.filter, total : ctrl.contacts.list.results.length, exchange : ctrl.exchange, csvExportType: 'external' })"
+                    data-ng-disabled="ctrl.mailingLists.list.results.count === 0"
+                    data-ng-bind=":: 'exchange_ACTION_export_accounts_button' | translate"></button>
         </div>
     </div>
 </div>

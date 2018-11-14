@@ -805,6 +805,112 @@ angular.module('Module.exchange.services').service(
       });
     }
 
+    getGroupManagerList(organization, serviceName, groupName, count, offset) {
+      return this.services.OvhHttp.get(
+        '/sws/exchange/{organization}/{exchange}/groups/{mailinglist}/managers',
+        {
+          rootPath: '2api',
+          clearCache: true,
+          urlParams: {
+            organization,
+            exchange: serviceName,
+            mailinglist: groupName,
+          },
+          params: {
+            count,
+            offset,
+          },
+        },
+      );
+    }
+
+    getGroupMembersList(organization, serviceName, groupName) {
+      return this.services.OvhHttp.get(
+        '/sws/exchange/{organization}/{exchange}/groups/{groupName}/members',
+        {
+          rootPath: '2api',
+          clearCache: true,
+          urlParams: {
+            organization,
+            exchange: serviceName,
+            groupName,
+          },
+          params: {
+            state: 'ok',
+          },
+        },
+      );
+    }
+
+    prepareGroupsForCsv(organization, serviceName, opts, offset) {
+      const queue = [];
+      return this.getGroups(organization, serviceName, opts.count, offset, opts.search).then(
+        (accounts) => {
+          angular.forEach(accounts.list.results, (account) => {
+            if (account.aliases > 0) {
+              _.set(account, 'aliases', []);
+              queue.push(
+                this.getGroupAliasList(
+                  organization,
+                  serviceName,
+                  account.mailingListAddress,
+                  this.aliasMaxLimit,
+                  offset,
+                ).then((aliases) => {
+                  angular.forEach(aliases.list.results, (alias) => {
+                    account.aliases.push(alias.displayName);
+                  });
+                }),
+              );
+            } else {
+              _.set(account, 'aliases', []);
+            }
+            if (account.managers > 0) {
+              _.set(account, 'managers', []);
+              queue.push(
+                this.getGroupManagerList(
+                  organization,
+                  serviceName,
+                  account.mailingListAddress,
+                ).then((managers) => {
+                  angular.forEach(managers.list.results, (manager) => {
+                    account.managers.push(manager.displayAddress);
+                  });
+                }),
+              );
+            } else {
+              _.set(account, 'managers', []);
+            }
+            if (account.members > 0) {
+              _.set(account, 'members', []);
+              queue.push(
+                this.getGroupMembersList(
+                  organization,
+                  serviceName,
+                  account.mailingListAddress,
+                ).then((members) => {
+                  angular.forEach(members.list.results, (member) => {
+                    account.members.push(member.displayAddress);
+                  });
+                }),
+              );
+            } else {
+              _.set(account, 'members', []);
+            }
+          });
+
+          return this.services.$q.all(queue).then(
+            () => ({
+              accounts: accounts.list.results,
+              headers: _.keys(accounts.list.results[0]),
+            }),
+            () => null,
+          );
+        },
+        () => null,
+      );
+    }
+
     /**
      * Get groups this Exchange account belongs to
      */
