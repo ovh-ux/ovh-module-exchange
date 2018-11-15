@@ -162,30 +162,30 @@
         data-ng-if="!$ctrl.initialLoading"
         data-ng-disabled="$ctrl.initialAccountRetrieval">
         <button
-            class="btn btn-block btn-default"
+            class="oui-button oui-button_secondary w-100"
             type="button"
-            data-ng-bind=":: 'exchange_ACTION_export_accounts_office_attached_button' | translate"
+            data-translate="exchange_ACTION_export_accounts_office_attached_button"
             data-ng-click="$ctrl.navigation.setAction('exchange/office-attach/dialog/office-attach-dialog')"
             data-ng-if="$ctrl.userCanSubscribeToOfficeAttach"></button>
         <button
-            class="btn btn-block btn-default"
+            class="oui-button oui-button_secondary w-100 mt-2"
             type="button"
             data-ng-click="$ctrl.displayAccountAddingView()"
-            data-ng-bind=":: 'exchange_ACTION_add_account_button' | translate"
+            data-translate="exchange_ACTION_add_account_button"
             data-ng-if="$ctrl.exchangeAccount.CAN_DO.CREATION_METHOD.ADDING()"
             data-ng-disabled="!$ctrl.atLeastOneDomainIsAssociatedToCurrentExchangeService"></button>
         <button
-            class="btn btn-block btn-default"
+            class="oui-button oui-button_secondary w-100 mt-2"
             type="button"
             data-ng-click="$ctrl.openAccountOrderingDialog()"
-            data-ng-bind=":: 'exchange_ACTION_order_accounts_button' | translate"
+            data-translate="exchange_ACTION_order_accounts_button"
             data-ng-if="$ctrl.exchangeAccount.CAN_DO.CREATION_METHOD.ORDERING()"
             data-ng-disabled="!$ctrl.atLeastOneDomainIsAssociatedToCurrentExchangeService"></button>
         <button
-            class="btn btn-block btn-default"
+            class="oui-button oui-button_secondary w-100 mt-2"
             type="button"
             data-ng-click="$ctrl.navigation.setAction('exchange/account/export-as-csv/account-export-as-csv', { filterType : $ctrl.filterType, search : $ctrl.search.value, total : $ctrl.accounts.length, exchange : $ctrl.exchange, csvExportType: 'accounts'})"
             data-ng-disabled="$ctrl.accounts.count === 0 || $ctrl.accounts.list.messages.length > 0"
-            data-ng-bind=":: 'exchange_ACTION_export_accounts_button' | translate"></button>
+            data-translate="exchange_ACTION_export_accounts_button"></button>
     </fieldset>
 </div>

@@ -23,7 +23,7 @@ angular.module('Module.exchange.controllers').controller(
       };
 
       this.headers = {
-        external: ['externalEmailAddress', 'firstName', 'lastName', 'displayName', 'creationDate'],
+        external: ['externalEmailAddress', 'firstName', 'lastName', 'displayName', 'creationDate', 'hiddenFromGAL'],
         group: [
           'displayName',
           'mailingListAddress',
@@ -33,7 +33,7 @@ angular.module('Module.exchange.controllers').controller(
           'members',
           'managers',
         ],
-        shared: ['primaryEmailAddress', 'quota', 'firstName', 'lastName', 'displayName'],
+        shared: ['primaryEmailAddress', 'quota', 'firstName', 'lastName', 'displayName', 'hiddenFromGAL'],
       };
 
       this.$routerParams = Exchange.getParams();
@@ -205,12 +205,13 @@ angular.module('Module.exchange.controllers').controller(
         if (datas != null) {
           _.set(infos, 'accounts', infos.accounts.concat(datas.accounts));
           _.set(infos, 'headers', _.isEmpty(infos.headers) ? datas.headers : infos.headers);
-          switch (this.csvExportType) {
-            case 'group': _.set(infos, 'headers', this.headers.group); break;
-            case 'external': _.set(infos, 'headers', this.headers.external); break;
-            case 'shared': _.set(infos, 'headers', this.headers.shared); break;
-            default: _.set(infos, 'headers', _.difference(datas.headers, exportOpts.rejectAttrs)); break;
+
+          if (_.includes(['group', 'external', 'shared'], this.csvExportType)) {
+            _.set(infos, 'headers', this.headers[this.csvExportType]);
+          } else {
+            _.set(infos, 'headers', _.difference(datas.headers, exportOpts.rejectAttrs));
           }
+
           if (offset + exportOpts.count < exportOpts.total) {
             return this.prepareForCsv(exportOpts, offset + exportOpts.count, infos, timeoutObject);
           }
