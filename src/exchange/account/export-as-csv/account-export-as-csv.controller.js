@@ -163,10 +163,10 @@ angular.module('Module.exchange.controllers').controller(
     }
 
     prepareForCsv(exportOpts, offset, infos, timeoutObject) {
-      this.promise = null;
+      let promise = null;
       switch (this.csvExportType) {
         case 'accounts':
-          this.promise = this.services.Exchange.prepareForCsv(
+          promise = this.services.Exchange.prepareForCsv(
             this.$routerParams.organization,
             this.$routerParams.productId,
             exportOpts,
@@ -175,7 +175,7 @@ angular.module('Module.exchange.controllers').controller(
           );
           break;
         case 'group':
-          this.promise = this.services.Exchange.prepareGroupsForCsv(
+          promise = this.services.Exchange.prepareGroupsForCsv(
             this.$routerParams.organization,
             this.$routerParams.productId,
             exportOpts,
@@ -183,7 +183,7 @@ angular.module('Module.exchange.controllers').controller(
             timeoutObject,
           ); break;
         case 'external':
-          this.promise = this.services.ExchangeExternalContacts.prepareForCsv(
+          promise = this.services.ExchangeExternalContacts.prepareForCsv(
             this.$routerParams.organization,
             this.$routerParams.productId,
             exportOpts,
@@ -191,7 +191,7 @@ angular.module('Module.exchange.controllers').controller(
             timeoutObject,
           ); break;
         case 'shared':
-          this.promise = this.services.ExchangeSharedAccounts.prepareForCsv(
+          promise = this.services.ExchangeSharedAccounts.prepareForCsv(
             this.$routerParams.organization,
             this.$routerParams.productId,
             exportOpts,
@@ -201,7 +201,7 @@ angular.module('Module.exchange.controllers').controller(
         default: break;
       }
 
-      return this.promise.then((datas) => {
+      return promise.then((datas) => {
         if (datas != null) {
           _.set(infos, 'accounts', infos.accounts.concat(datas.accounts));
           _.set(infos, 'headers', _.isEmpty(infos.headers) ? datas.headers : infos.headers);
