@@ -63,11 +63,12 @@
                             data-text="{{::'exchange_ACTION_add_outlook_contracts__checkbox' | translate}}">
                         </oui-checkbox>
 
-                        <ul>
+                        <ul class="list-unstyled mt-2">
                             <li data-ng-repeat="contract in ctrl.selectedOption.order.contracts track by $index">
                                 <a target="_blank"
-                                   data-ng-bind="ctrl.contract.name"
-                                   data-ng-href="{{ctrl.contract.url}}"></a>
+                                   data-ng-bind="::contract.name | translate"
+                                   data-ng-href="{{contract.url}}"
+                                   rel="noopener"></a>
                             </li>
                         </ul>
                     </div>
