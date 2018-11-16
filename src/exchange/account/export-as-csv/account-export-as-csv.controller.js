@@ -1,14 +1,39 @@
 angular.module('Module.exchange.controllers').controller(
   'ExchangeExportToCsvAccountsCtrl',
   class ExchangeExportToCsvAccountsCtrl {
-    constructor($scope, $q, Exchange, messaging, $translate, navigation) {
+    constructor(
+      $scope,
+      $q,
+      $translate,
+      Exchange,
+      ExchangeExternalContacts,
+      ExchangeSharedAccounts,
+      messaging,
+      navigation,
+    ) {
       this.services = {
         $scope,
         $q,
-        Exchange,
-        messaging,
         $translate,
+        Exchange,
+        ExchangeExternalContacts,
+        ExchangeSharedAccounts,
+        messaging,
         navigation,
+      };
+
+      this.headers = {
+        external: ['externalEmailAddress', 'firstName', 'lastName', 'displayName', 'creationDate', 'hiddenFromGAL'],
+        group: [
+          'displayName',
+          'mailingListAddress',
+          'mailingListDisplayName',
+          'mailingListName',
+          'aliases',
+          'members',
+          'managers',
+        ],
+        shared: ['primaryEmailAddress', 'quota', 'firstName', 'lastName', 'displayName', 'hiddenFromGAL'],
       };
 
       this.$routerParams = Exchange.getParams();
@@ -19,6 +44,7 @@ angular.module('Module.exchange.controllers').controller(
       this.filterType = navigation.currentActionData.filterType;
       this.search = navigation.currentActionData.search;
       this.totalAccounts = navigation.currentActionData.total;
+      this.csvExportType = navigation.currentActionData.csvExportType;
       this.exchange = Exchange.value;
 
       $scope.exportAccounts = () => this.exportAccounts();
@@ -42,8 +68,8 @@ angular.module('Module.exchange.controllers').controller(
           'taskPendingId',
           'id',
         ],
-        toConcatAttrs: ['totalQuota', 'usedQuota'],
-        toJointAttrs: ['aliases'],
+        toConcatAttrs: ['totalQuota', 'usedQuota', 'quota'],
+        toJointAttrs: ['aliases', 'managers', 'members'],
       };
 
       this.loading.exportCsv = true;
@@ -69,7 +95,7 @@ angular.module('Module.exchange.controllers').controller(
         .then((datas) => {
           if (datas != null && !_.isEmpty(datas) && this.timeoutObject != null) {
             // get column name
-            const headers = _.difference(datas.headers, exportOpts.rejectAttrs);
+            const { headers } = datas;
             let csvContent = `${headers.join(';')}\n`;
 
             _.forEach(datas.accounts, (data, index) => {
@@ -92,7 +118,7 @@ angular.module('Module.exchange.controllers').controller(
               type: 'text/csv;charset=utf-8;',
             });
 
-            const fileName = `export_${this.exchange.displayName}_${moment().format(
+            const fileName = `export_${this.csvExportType}_${this.exchange.displayName}_${moment().format(
               'YYYY-MM-DD_HH:mm:ss',
             )}.csv`;
 
@@ -137,16 +163,54 @@ angular.module('Module.exchange.controllers').controller(
     }
 
     prepareForCsv(exportOpts, offset, infos, timeoutObject) {
-      return this.services.Exchange.prepareForCsv(
-        this.$routerParams.organization,
-        this.$routerParams.productId,
-        exportOpts,
-        offset,
-        timeoutObject,
-      ).then((datas) => {
+      let promise = null;
+      switch (this.csvExportType) {
+        case 'accounts':
+          promise = this.services.Exchange.prepareForCsv(
+            this.$routerParams.organization,
+            this.$routerParams.productId,
+            exportOpts,
+            offset,
+            timeoutObject,
+          );
+          break;
+        case 'group':
+          promise = this.services.Exchange.prepareGroupsForCsv(
+            this.$routerParams.organization,
+            this.$routerParams.productId,
+            exportOpts,
+            offset,
+            timeoutObject,
+          ); break;
+        case 'external':
+          promise = this.services.ExchangeExternalContacts.prepareForCsv(
+            this.$routerParams.organization,
+            this.$routerParams.productId,
+            exportOpts,
+            offset,
+            timeoutObject,
+          ); break;
+        case 'shared':
+          promise = this.services.ExchangeSharedAccounts.prepareForCsv(
+            this.$routerParams.organization,
+            this.$routerParams.productId,
+            exportOpts,
+            offset,
+            timeoutObject,
+          ); break;
+        default: break;
+      }
+
+      return promise.then((datas) => {
         if (datas != null) {
           _.set(infos, 'accounts', infos.accounts.concat(datas.accounts));
           _.set(infos, 'headers', _.isEmpty(infos.headers) ? datas.headers : infos.headers);
+
+          if (['group', 'external', 'shared'].includes(this.csvExportType)) {
+            _.set(infos, 'headers', this.headers[this.csvExportType]);
+          } else {
+            _.set(infos, 'headers', _.difference(datas.headers, exportOpts.rejectAttrs));
+          }
 
           if (offset + exportOpts.count < exportOpts.total) {
             return this.prepareForCsv(exportOpts, offset + exportOpts.count, infos, timeoutObject);

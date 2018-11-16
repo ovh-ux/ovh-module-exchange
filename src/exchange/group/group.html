@@ -158,10 +158,15 @@
         </div>
 
         <div class="col-md-3 mt-5 mt-lg-0">
-            <button class="btn btn-block btn-default" type="button"
+            <button class="oui-button oui-button_secondary w-100" type="button"
                     data-translate="exchange_tab_GROUPS_all_add_ml_button"
                     data-ng-click="ctrl.newGroup()">
             </button>
+            <button class="oui-button oui-button_secondary w-100 mt-2"
+                    type="button"
+                    data-ng-click="ctrl.services.navigation.setAction('exchange/account/export-as-csv/account-export-as-csv', { search : ctrl.search.value, total : ctrl.mailingLists.list.results.length, exchange : ctrl.exchange, csvExportType: 'group' })"
+                    data-ng-disabled="ctrl.mailingLists.list.results.count === 0"
+                    data-translate="exchange_GRUOUPS_accounts_export_csv"></button>
         </div>
     </div>
 
