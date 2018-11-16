@@ -19,7 +19,6 @@
    <translation id="exchange_offer_type_DEDICATED" qtlid="137218">Private Exchange</translation>
    <translation id="exchange_offer_type_HOSTED" qtlid="137231">Hosted Exchange</translation>
    <translation id="exchange_offer_type_PROVIDER" qtlid="136152">Exchange revendedor</translation>
-   <translation id="exchange_offer_type_25g" qtlid="264042">Exchange individual</translation>
    <translation id="exchange_dashboard_loading_error" qtlid="168120">Erro ao carregar a informação.</translation>
    <translation id="exchange_dashboard_action_doing" qtlid="149787">Operação em curso...</translation>
    <translation id="exchange_dashboard_display_name_edit" qtlid="37875">Alterar</translation>
@@ -219,7 +218,7 @@
    <translation id="exchange_tab_ALIAS_state_TASK_ON_DOING" qtlid="26383">Em curso</translation>
    <translation id="exchange_tab_ALIAS_state_TASK_ON_DOING_tooltip" qtlid="143967">Um trabalho relativo a este alias já se encontra planificado ou em curso de execução</translation>
    <translation id="exchange_tab_ALIAS_add_button" qtlid="143538">Adicionar um alias</translation>
-   <translation id="exchange_tab_ALIAS_creation_quota_description" qtlid="433784">Os limites de quota devem estar compreendidos entre <strong>{0} {1}</strong> e <strong>{2} {1}</strong>.</translation>
+   <translation id="exchange_tab_ALIAS_creation_quota_description">Le quota doit être compris entre <strong>{0} {1}</strong> et <strong>{2} {3}</strong>.</translation>
    <translation id="exchange_tab_ALIAS_creation_error_no_local_part" qtlid="433797">Por favor indique o local-part do endereço de email (parte do endereço antes da arroba @)</translation>
    <translation id="exchange_tab_ALIAS_creation_error_regex" qtlid="433810">A local-part (parte do endereço de e-mail antes da arroba @) deve conter caracteres alfanuméricos ou os caracteres <strong>.-_+</strong> (exemplo: e_mail-3.endereço+abc).</translation>
    <translation id="exchange_tab_ALIAS_taken_error_message" qtlid="190849">Endereço de e-mail já existente.</translation>
@@ -434,8 +433,8 @@
    <translation id="exchange_ACTION_order_accounts_step1_pay_type" qtlid="139325">Tipo de pagamento:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_01" qtlid="79530">mensal</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_12" qtlid="79542">anual</translation>
-   <translation id="exchange_ACTION_order_accounts_step1_price">{0} HT ({1} TTC)</translation>
-   <translation id="exchange_ACTION_order_accounts_step1_price_with_tax_only">{0} TTC</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_price" qtlid="139416">{0} s/IVA ({1} IVA incl.)</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_price_with_tax_only" qtlid="508221">{0} IVA incl.</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number" qtlid="139338">Número de contas:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_tooltip" qtlid="144110">Introduza um número entre 1 e 100</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_not_valid" qtlid="144123">Introduza um número válido</translation>
@@ -1011,6 +1010,7 @@ Se usar o modo nonauthoritative com contas de e-mail não alojadas pela OVH, dev
    <translation id="exchange_GROUPS_settings_error_message" qtlid="155977">Ocorreram erros durante a modificação do grupo <span class="bold">{0}</span>.</translation>
    <translation id="exchange_GROUPS_accounts_title" qtlid="382115">Configurar os utilizadores</translation>
    <translation id="exchange_GROUPS_accounts_step1_intro" qtlid="150866">Selecionar as contas a integrar no grupo</translation>
+   <translation id="exchange_GRUOUPS_accounts_export_csv">Exporter les groupes en CSV</translation>
 
 <!-- ########################################## -->
 <!-- OUTLOOK -->
@@ -1032,7 +1032,7 @@ Se usar o modo nonauthoritative com contas de e-mail não alojadas pela OVH, dev
    <translation id="exchange_ACTION_add_outlook_price_withIVA_label" qtlid="169251">Preço c/IVA.</translation>
    <translation id="exchange_ACTION_add_outlook_price_label" qtlid="181084">Preço:</translation>
    <translation id="exchange_ACTION_add_outlook_contracts_label" qtlid="169472">Para confirmar o pedido, leia a aceite as condições de utilização, e clique no botão «Seguinte».</translation>
-   <translation id="exchange_ACTION_add_outlook_contracts__checkbox" qtlid="170070">Eu reconheço ter tomado conhecimento dos seguintes elementos:</translation>
+   <translation id="exchange_ACTION_add_outlook_contracts__checkbox">J’accepte l’exécution immédiate de ma commande, reconnais que le(s) Service(s) objet de cette commande consistent en la fourniture de contenu numérique au sens de l’article L 221-28 13° du Code de la Consommation, et renonce expressément à mon droit de rétraction concernant le(s)dit(s) Service(s).</translation>
    <translation id="exchange_ACTION_add_outlook_intro_step2_label" qtlid="156888">Resumo da encomenda da licença Outlook para {0}</translation>
    <translation id="exchange_ACTION_add_outlook_duration_type_01" qtlid="70241">1 mês</translation>
    <translation id="exchange_ACTION_add_outlook_duration_type_12" qtlid="70277">1 ano</translation>
@@ -1116,7 +1116,7 @@ Se usar o modo nonauthoritative com contas de e-mail não alojadas pela OVH, dev
    <translation id="exchange_ACTION_display_outlook_step2_close_button" qtlid="4670">Encerrar</translation>
    <translation id="exchange_ACTION_display_outlook_step2_extra_label" qtlid="170967">A chave gerada terá uma validade de 5 minutos. Se neste intervalo não ativar o seu produto deverá repetir a operação de modo a obter uma nova chave.</translation>
    <translation id="exchange_ACTION_display_outlook_language_error_message" qtlid="157343">Ocorreu um erro aquando do carregamento da licença Outlook.</translation>
-
+   <translation id="OVH_Data_Protection_Agreement">Contrat de protection des données OVH</translation>
 
 <!-- ########################################## -->
 <!-- TAB EXTERNAL CONTACTS -->
@@ -1192,6 +1192,7 @@ Se usar o modo nonauthoritative com contas de e-mail não alojadas pela OVH, dev
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_delete_step1_contact" qtlid="171565">Contacto externo:</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_delete_success" qtlid="171578">O pedido de eliminação do contacto externo foi corretamente tomado em conta. A eliminação estará efetiva dentro de alguns minutos.</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_delete_fail" qtlid="171591">Ocorreu um erro durante o pedido de eliminação de um contacto externo.</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_export_csv">Exporter les contact externes en CSV</translation>
 
 <!-- ########################################## -->
 <!-- SSL RENEW -->
@@ -1513,6 +1514,7 @@ Se usar o modo nonauthoritative com contas de e-mail não alojadas pela OVH, dev
    <translation id="subDomain_pattern_error" qtlid="221890">O subdomínio não pode começar ou terminar por um número ou "-" e somente pode conter letras, números ou "-".</translation>
    <translation id="exchange_ACTION_beta_sharepoint_success" qtlid="221903">O pedido de participação no evento de lançamento foi tomado em conta</translation>
    <translation id="exchange_ACTION_beta_sharepoint_error" qtlid="221916">Ocorreu um erro aquando do pedido de participação no evento de lançamento</translation>
+   <translation id="exchange_SHARED_ACCOUNTS_export_csv">Exporter les comptes partages en CSV</translation>
 
 <!-- Upgrade Outlook 2013 -> 2016 -->
    <translation id="exchange_upgrade_button_title" qtlid="271686">Migrar para o Exchange 2016</translation>
@@ -1533,7 +1535,7 @@ Se usar o modo nonauthoritative com contas de e-mail não alojadas pela OVH, dev
    <translation id="exchange_ACTION_order_upgrade_300G_success_details" qtlid="368154">A migração da conta para uma capacidade de 300GB será efetuada após pagamento.</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_message" qtlid="368167">Ocorreu um erro aquando do aumento da capacidade da conta Exchange.</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_options_message" qtlid="368180">Ocorreu um erro aquando da recuperação dos preços.</translation>
-   <translation id="exchange_ACTION_order_accounts_step1_user_error">Erreur lors de la récupération des informations de l'utilisateur</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_user_error" qtlid="499943">Ocorreu um erro ao recuperar as informações do utilizador</translation>
 <!-- Order Exchange -->
    <translation id="exchange_order_view_intro_title" qtlid="368193">Encomendar um serviço Exchange</translation>
    <translation id="exchange_order_view_intro_question" qtlid="368206">Deseja criar um novo serviço Exchange ou adicionar uma conta a um serviço já existente?</translation>
