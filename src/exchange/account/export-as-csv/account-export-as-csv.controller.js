@@ -206,7 +206,7 @@ angular.module('Module.exchange.controllers').controller(
           _.set(infos, 'accounts', infos.accounts.concat(datas.accounts));
           _.set(infos, 'headers', _.isEmpty(infos.headers) ? datas.headers : infos.headers);
 
-          if (_.includes(['group', 'external', 'shared'], this.csvExportType)) {
+          if (['group', 'external', 'shared'].includes(this.csvExportType)) {
             _.set(infos, 'headers', this.headers[this.csvExportType]);
           } else {
             _.set(infos, 'headers', _.difference(datas.headers, exportOpts.rejectAttrs));

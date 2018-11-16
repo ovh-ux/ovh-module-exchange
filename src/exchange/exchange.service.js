@@ -857,9 +857,7 @@ angular.module('Module.exchange.services').service(
                   this.aliasMaxLimit,
                   offset,
                 ).then((aliases) => {
-                  angular.forEach(aliases.list.results, (alias) => {
-                    account.aliases.push(alias.displayName);
-                  });
+                  _.set(account, 'aliases', aliases.list.results.map(alias => alias.displayName));
                 }),
               );
             } else {
@@ -873,9 +871,7 @@ angular.module('Module.exchange.services').service(
                   serviceName,
                   account.mailingListAddress,
                 ).then((managers) => {
-                  angular.forEach(managers.list.results, (manager) => {
-                    account.managers.push(manager.displayAddress);
-                  });
+                  _.set(account, 'managers', managers.list.results.map(manager => manager.displayAddress));
                 }),
               );
             } else {
@@ -889,9 +885,7 @@ angular.module('Module.exchange.services').service(
                   serviceName,
                   account.mailingListAddress,
                 ).then((members) => {
-                  angular.forEach(members.list.results, (member) => {
-                    account.members.push(member.displayAddress);
-                  });
+                  _.set(account, 'members', members.list.results.map(member => member.displayAddress));
                 }),
               );
             } else {
@@ -906,6 +900,7 @@ angular.module('Module.exchange.services').service(
             }),
           );
         },
+        () => null,
       );
     }
 
