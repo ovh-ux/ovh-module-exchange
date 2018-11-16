@@ -19,6 +19,7 @@
     "postversion": "git push && git push --tags"
   },
   "dependencies": {
+    "filesize": "^3.6.1",
     "lodash": "~3.9.3"
   },
   "devDependencies": {

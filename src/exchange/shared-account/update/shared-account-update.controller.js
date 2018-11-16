@@ -89,7 +89,8 @@ angular.module('Module.exchange.controllers').controller(
           'max',
         );
 
-      return this.errors.quotaIsWrong;
+      return this.errors.quotaIsWrong
+      || (this.sharedAccountForm.unit.$dirty && !_.isEmpty(this.sharedAccountForm.quota.$error));
     }
 
     buildDisplayName() {
@@ -120,7 +121,7 @@ angular.module('Module.exchange.controllers').controller(
         this.$routerParams.productId,
       )
         .then((data) => {
-          this.optionsToUpdateAccount = data;
+          this.optionsToUpdateAccount = angular.copy(data);
           this.alreadyTakenEmails = data.takenEmails;
 
           // Check if max quota is not under min quota or account quota + max quota
@@ -129,20 +130,41 @@ angular.module('Module.exchange.controllers').controller(
           const maxUpdateQuota = Math.max(minQuota, this.originalQuota + maxQuota);
 
           if (maxQuota < maxUpdateQuota) {
-            this.optionsToUpdateAccount.maxQuota.value = maxUpdateQuota;
+            const { value, unit } = this.services.ExchangeSharedAccounts
+              .formatQuota({
+                value: maxUpdateQuota,
+                unit: this.optionsToUpdateAccount.maxQuota.unit,
+              });
+
+            Object.assign(this.optionsToUpdateAccount, {
+              quota: this.services.ExchangeSharedAccounts.formatQuota({
+                value: this.originalQuota,
+                unit: this.optionsToUpdateAccount.minQuota.unit,
+              }),
+              availableQuotaUnits: this.services.ExchangeSharedAccounts
+                .getQuotaUnitRange(this.optionsToUpdateAccount.minQuota.unit, unit),
+              maxQuota: Object.assign(angular.copy(this.optionsToUpdateAccount.maxQuota), {
+                value: maxUpdateQuota,
+                unit: this.optionsToUpdateAccount.maxQuota.unit,
+                toDisplay: { value, unit },
+              }),
+            });
+
+            this.accountBeingUpdated.quota = this.optionsToUpdateAccount.quota.value;
+            this.minQuota = this.optionsToUpdateAccount.minQuota.value;
+            this.maxQuota = this.optionsToUpdateAccount.maxQuota.value;
           }
 
-          if (_.isEmpty(data.availableDomains)) {
+          if (_.isEmpty(this.optionsToUpdateAccount.availableDomains)) {
             this.services.messaging.writeError(
               this.services.$translate.instant('exchange_ACTION_add_no_domains'),
             );
             this.services.navigation.resetAction();
           } else {
-            _.forEach(data.availableDomains, (domain) => {
-              if (this.domain.name === domain.name) {
-                this.domain = domain;
-              }
-            });
+            this.domain = _.find(
+              this.optionsToUpdateAccount.availableDomains,
+              domain => domain.name === this.domain.name,
+            );
           }
         })
         .catch((failure) => {
@@ -153,8 +175,40 @@ angular.module('Module.exchange.controllers').controller(
           );
         })
         .finally(() => {
-          this.isLoading = true;
+          this.isLoading = false;
         });
+    }
+
+    convertQuotas() {
+      this.selectQuota();
+
+      this.minQuota = this.services.ExchangeSharedAccounts
+        .convertQuota(
+          this.optionsToUpdateAccount.minQuota.value,
+          this.optionsToUpdateAccount.minQuota.unit,
+          this.optionsToUpdateAccount.quota.unit,
+        );
+
+      this.maxQuota = this.services.ExchangeSharedAccounts
+        .convertQuota(
+          this.optionsToUpdateAccount.maxQuota.value,
+          this.optionsToUpdateAccount.maxQuota.unit,
+          this.optionsToUpdateAccount.quota.unit,
+        );
+    }
+
+    selectQuota() {
+      if (this.optionsToUpdateAccount.quota.value) {
+        this.accountBeingUpdated.quota = this.services.ExchangeSharedAccounts
+          .convertQuota(
+            this.optionsToUpdateAccount.quota.value,
+            this.optionsToUpdateAccount.quota.unit,
+            this.optionsToUpdateAccount.minQuota.unit,
+          );
+
+        this.formattedQuota = this.services.ExchangeSharedAccounts
+          .getFormattedQuota(this.optionsToUpdateAccount.quota);
+      }
     }
 
     isAccountValid() {
