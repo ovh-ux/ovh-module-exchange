@@ -1,0 +1,50 @@
+<div data-ng-controller="exchangeAccountOutlookOrderCtrl as $ctrl">
+    <oui-modal
+        data-heading="{{:: 'exchange_account_outlook_order_title' | translate}}"
+        data-primary-action="$ctrl.openingNewTabToOrderForm()"
+        data-primary-label="{{:: 'exchange_account_outlook_order_confirmButton' | translate }}"
+        data-secondary-action="resetAction()"
+        data-secondary-label="{{:: 'exchange_account_outlook_order_cancelButton' | translate }}"
+        data-on-dismiss="resetAction()"
+        data-loading="$ctrl.isFetchingPrices">
+
+        <form
+            name="$ctrl.form"
+            novalidate>
+            <oui-field data-label="{{:: 'exchange_account_outlook_order_renewalPeriod_label' | translate }}">
+                <oui-radio-group
+                    data-name="renewalPeriod"
+                    data-model="$ctrl.renewalPeriod"
+                    data-on-change="$ctrl.updateValueOfTargetServiceExpiresBeforeEndOfRenewalPeriod(modelValue)">
+                    <oui-radio
+                        data-value="'P1M'"
+                        data-description="{{ $ctrl.prices.P1M.text }}">
+                        <span data-translate="exchange_account_outlook_order_renewalPeriod_item_P1M"></span>
+                    </oui-radio>
+                    <oui-radio
+                        data-value="'P1Y'"
+                        data-description="{{ $ctrl.prices.P1Y.text }}">
+                        <span data-translate="exchange_account_outlook_order_renewalPeriod_item_P1Y"></span>
+                    </oui-radio>
+                </oui-radio-group>
+            </oui-field>
+        </form>
+
+        <oui-message
+            data-ng-if="$ctrl.targets.service.expiresBeforeEndOfRenewalPeriod"
+            data-type="warning">
+            <p data-translate="{{ 'exchange_account_outlook_order_priceWarning_' + $ctrl.renewalPeriod }}"></p>
+
+            <p
+                data-translate="exchange_account_outlook_order_priceWarning_targetServiceExpiresBeforeEndOfRenewalPeriod_1"
+                data-translate-values="{
+                    serviceDisplayName: '<strong>' + $ctrl.targets.service.name.valueToDisplay + '</strong>',
+                    serviceExpirationDate: '<strong>' + $ctrl.targets.service.expirationDate.valueToDisplay + '</strong>',
+                }"></p>
+
+            <span data-translate="exchange_account_outlook_order_priceWarning_targetServiceExpiresBeforeEndOfRenewalPeriod_2"></span>
+
+            <span data-translate="{{ 'exchange_account_outlook_order_priceWarning_targetServiceExpiresBeforeEndOfRenewalPeriod_3_' + $ctrl.renewalPeriod }}"></span>
+        </oui-message>
+    </oui-modal>
+</div>

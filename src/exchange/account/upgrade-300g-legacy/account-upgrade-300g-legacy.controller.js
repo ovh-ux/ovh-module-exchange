@@ -1,6 +1,6 @@
 angular.module('Module.exchange.controllers').controller(
-  'ExchangeUpgrade300GCtrl',
-  class ExchangeUpgrade300GCtrl {
+  'ExchangeUpgrade300GLegacyCtrl',
+  class ExchangeUpgrade300GLegacyCtrl {
     constructor($scope, Exchange, $window, navigation, messaging, $translate) {
       this.services = {
         $scope,

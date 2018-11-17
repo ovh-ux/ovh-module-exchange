@@ -1,4 +1,12 @@
-<div class="row">
+<div
+    data-ng-if="$ctrl.initialLoading"
+    class="text-center">
+    <oui-spinner></oui-spinner>
+</div>
+
+<div
+    data-ng-if="!$ctrl.initialLoading"
+    class="row">
     <div class="col-md-9">
         <p class="text-nowrap">
             <strong data-ng-bind=":: 'exchange_tab_INFORMATIONS_webmail' | translate"></strong>
@@ -107,9 +115,22 @@
                     data-disabled="!$ctrl.exchangeStates.constructor.isOk($row) || $ctrl.exchangeAccount.isPlaceholder($row)"></oui-action-menu-item>
                 <oui-action-menu-item
                     data-text="{{:: 'exchange_tab_ACCOUNTS_menu_upgradeTo300Gb' | translate:{ t0: ('unit_size_GiB'|translate) } }}"
-                    data-on-click="$ctrl.displayDialog('exchange/account/upgrade-300g/account-upgrade-300g', $row)"
-                    data-ng-if="$ctrl.exchangeSelectedService.canUpgradeTo300Gb()"
-                    data-disabled="!$ctrl.exchangeStates.constructor.isOk($row) || $ctrl.exchangeAccount.isPlaceholder($row)"></oui-action-menu-item>
+                    data-on-click="$ctrl.displayDialog('exchange/account/upgrade-300g-legacy/account-upgrade-300g-legacy', $row)"
+                    data-ng-if="$ctrl.exchangeSelectedService.canUpgradeTo300Gb() && !$ctrl.serviceUsesAgora"
+                    data-disabled="!$ctrl.exchangeStates.constructor.isOk($row) || $ctrl.exchangeAccount.isPlaceholder($row)">
+                    <span
+                        data-translate="exchange_tab_ACCOUNTS_menu_upgradeTo300Gb"
+                        data-translate-values="{ t0: ('unit_size_GiB'|translate) }"></span>
+                </oui-action-menu-item>
+                <oui-action-menu-item
+                    data-text="{{:: 'exchange_accounts_home_item_orderUpgrade' | translate:{ t0: ('unit_size_GiB'|translate) } }}"
+                    data-on-click="$ctrl.displayDialog('exchange/account/order-upgrade/exchange-account-order-upgrade', $row)"
+                    data-ng-if="$ctrl.exchangeSelectedService.canUpgradeTo300Gb() && $ctrl.serviceUsesAgora"
+                    data-disabled="!$ctrl.exchangeStates.constructor.isOk($row) || $ctrl.exchangeAccount.isPlaceholder($row)">
+                    <span
+                        data-translate="exchange_accounts_home_item_orderUpgrade"
+                        data-translate-values="{ t0: ('unit_size_GiB' | translate) }"></span>
+                </oui-action-menu-item>
                 <oui-action-menu-item
                     data-text="{{:: 'exchange_tab_ACCOUNTS_menu_contactSupportForSpam' | translate }}"
                     data-ng-if="$row.spamDetected"
@@ -123,8 +144,13 @@
                     data-disabled="!$ctrl.exchangeStates.constructor.isOk($row)"></oui-action-menu-item>
                 <oui-action-menu-item
                     data-text="{{:: 'exchange_tab_ACCOUNTS_menu_outlook_order' | translate }}"
-                    data-on-click="$ctrl.displayDialog('exchange/account/outlook/add/account-outlook-add', $row)"
-                    data-ng-if="$ctrl.exchangeAccountOutlook.hasStatus($row, $ctrl.exchangeAccountOutlook.STATES.TO_ORDER) && $ctrl.exchangeAccountOutlook.canHaveLicense($row)"
+                    data-on-click="$ctrl.displayDialog('exchange/account/outlook/add-legacy/account-outlook-add-legacy', $row)"
+                    data-ng-if="$ctrl.exchangeAccountOutlook.hasStatus($row, $ctrl.exchangeAccountOutlook.STATES.TO_ORDER) && $ctrl.exchangeAccountOutlook.canHaveLicense($row) && !$ctrl.serviceUsesAgora"
+                    data-disabled="!$ctrl.exchangeStates.constructor.isOk($row)"></oui-action-menu-item>
+                <oui-action-menu-item
+                    data-text="{{:: 'exchange_accounts_home_item_orderOutlook' | translate }}"
+                    data-on-click="$ctrl.displayDialog('exchange/account/outlook/order/exchange-account-outlook-order', $row)"
+                    data-ng-if="$ctrl.exchangeAccountOutlook.hasStatus($row, $ctrl.exchangeAccountOutlook.STATES.TO_ORDER) && $ctrl.exchangeAccountOutlook.canHaveLicense($row) && $ctrl.serviceUsesAgora"
                     data-disabled="!$ctrl.exchangeStates.constructor.isOk($row)"></oui-action-menu-item>
                 <oui-action-menu-item
                     data-text="{{:: 'exchange_tab_ACCOUNTS_menu_outlook_access' | translate }}"
@@ -159,7 +185,6 @@
     <!-- This fieldset is used to disable all buttons for the same conditions -->
     <fieldset
         class="col-md-3"
-        data-ng-if="!$ctrl.initialLoading"
         data-ng-disabled="$ctrl.initialAccountRetrieval">
         <button
             class="oui-button oui-button_secondary w-100"
@@ -177,8 +202,8 @@
         <button
             class="oui-button oui-button_secondary w-100 mt-2"
             type="button"
-            data-ng-click="$ctrl.openAccountOrderingDialog()"
             data-translate="exchange_ACTION_order_accounts_button"
+            data-ng-click="$ctrl.openDialogToOrderAccounts()"
             data-ng-if="$ctrl.exchangeAccount.CAN_DO.CREATION_METHOD.ORDERING()"
             data-ng-disabled="!$ctrl.atLeastOneDomainIsAssociatedToCurrentExchangeService"></button>
         <button

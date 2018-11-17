@@ -9,6 +9,7 @@
       exchangeAccount,
       exchangeAccountTypes,
       exchangeAccountOutlook,
+      exchangeOrder,
       exchangeSelectedService,
       exchangeStates,
       messaging,
@@ -25,6 +26,7 @@
       this.exchangeAccount = exchangeAccount;
       this.exchangeAccountTypes = exchangeAccountTypes;
       this.exchangeAccountOutlook = exchangeAccountOutlook;
+      this.exchangeOrder = exchangeOrder;
       this.exchangeSelectedService = exchangeSelectedService;
       this.exchangeStates = exchangeStates;
       this.messaging = messaging;
@@ -35,7 +37,8 @@
 
     $onInit() {
       this.$routerParams = this.Exchange.getParams();
-      this.hostname = this.Exchange.value.hostname;
+      this.service = this.Exchange.value;
+      this.hostname = this.service.hostname;
 
       this.datagridParameters = {};
       this.linkToSpamTicket = `#/ticket?serviceName=${this.$routerParams.productId}`;
@@ -80,6 +83,7 @@
 
       this.fetchCanUserSubscribeToOfficeAttach()
         .then(() => this.fetchAccountCreationOptions())
+        .then(() => this.fetchingDoesServiceUseAgora())
         .finally(() => {
           this.initialLoading = false;
         });
@@ -123,6 +127,14 @@
             this.$translate.instant('exchange_accounts_fetchAccountCreationOptions_error'),
             error,
           );
+        });
+    }
+
+    fetchingDoesServiceUseAgora() {
+      return this.exchangeOrder
+        .fetchingDoesServiceUseAgora(this.$routerParams.productId)
+        .then((serviceUsesAgora) => {
+          this.serviceUsesAgora = serviceUsesAgora;
         });
     }
 
@@ -314,12 +326,22 @@
       this.$scope.$emit(this.exchangeAccount.EVENTS.CHANGE_STATE, { stateName: 'add' });
     }
 
-    openAccountOrderingDialog() {
-      const placeholderAccountAmount = _(this.accounts)
-        .sum(account => this.exchangeAccount.isPlaceholder(account));
-      this.navigation.setAction('exchange/account/order/account-order', {
-        placeholderAccountAmount,
-      });
+    openDialogToOrderAccounts() {
+      if (this.serviceUsesAgora) {
+        const navigationData = {
+          serviceToTarget: {
+            displayName: this.service.displayName,
+            expirationDate: {
+              value: moment(this.service.expiration, 'YYYY-MM-DD'),
+              valueToDisplay: moment(this.service.expiration, 'YYYY-MM-DD').format('LL'),
+            },
+          },
+        };
+
+        this.navigation.setAction('exchange/account/order/exchange-account-order', navigationData);
+      } else {
+        this.navigation.setAction('exchange/account/order-legacy/order-legacy');
+      }
     }
   }
 

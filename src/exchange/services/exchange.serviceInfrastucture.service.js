@@ -31,6 +31,13 @@ angular.module('Module.exchange.services').service(
       );
     }
 
+    /**
+     * @returns {string} name of the current infrastructure
+     */
+    getName() {
+      return this.Exchange.value.offer;
+    }
+
     is(infrastructure) {
       return this.isType(infrastructure);
     }
