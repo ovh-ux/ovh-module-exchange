@@ -178,9 +178,11 @@
    <translation id="exchange_tab_ACCOUNTS_menu_delegations" qtlid="288782">Gérer les délégations</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_exportToPST" qtlid="485814">Exporter au format PST</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_upgradeTo300Gb" qtlid="485827">Augmenter la capacité à 300 {0}</translation>
+   <translation id="exchange_accounts_home_item_orderUpgrade" qtlid="485827">Augmenter la capacité à 300 {0}</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_contactSupportForSpam" qtlid="61824">Débloquer</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_outlook_activate" qtlid="397416">Activer la licence Outlook</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_outlook_order" qtlid="485840">Commander une licence Outlook</translation>
+   <translation id="exchange_accounts_home_item_orderOutlook" qtlid="485840">Commander une licence Outlook</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_outlook_access" qtlid="485853">Utiliser la licence Outlook</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_outlook_deactivate" qtlid="485866">Désactiver la licence Outlook</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_outlook_delete" qtlid="397377">Supprimer la licence Outlook</translation>
@@ -458,6 +460,37 @@
    <translation id="exchange_ACTION_order_accounts_step3_continue" qtlid="169537">Afin de confirmer votre commande, veuillez cliquer sur le bouton "Régler" ci-dessous.</translation>
    <translation id="exchange_ACTION_order_accounts_step3_explication" qtlid="139481">Veuillez noter qu'un délai d'environ 10 minutes à compter de l'acceptation de votre paiement est nécessaire pour que le compte soit créé.</translation>
    <translation id="exchange_ACTION_order_accounts_step3_explication2" qtlid="144175">Un nouvel onglet s'ouvrira et vous serez automatiquement redirigé vers l'interface de paiement OVH.</translation>
+
+   <translation id="exchange_account_order_title" qtlid="139299">Commander des comptes Exchange</translation>
+   <translation id="exchange_account_order_accountType_label">Type de compte</translation>
+   <translation id="exchange_account_order_accountType_placeholder">Choisir</translation>
+   <translation id="exchange_account_order_accountType_item_exchange-account-hosted-2016">Compte Standard Exchange Hosted 2016 avec 50 Gio</translation>
+   <translation id="exchange_account_order_accountType_item_exchange-account-hosted-2016-300g">Compte Standard Exchange Hosted 2016 avec 300 Gio</translation>
+   <translation id="exchange_account_order_accountType_item_exchange-account-hosted-2016-enterprise">Compte Entreprise Exchange Hosted 2016 avec 50 Gio</translation>
+   <translation id="exchange_account_order_accountType_item_exchange-account-hosted-2016-300g-enterprise">Compte Entreprise Exchange Hosted 2016 avec 300 Gio</translation>
+   <translation id="exchange_account_order_accountType_item_priceLabel_P1M">Prix en cas de renouvellement mensuel : {{price}}</translation>
+   <translation id="exchange_account_order_accountType_item_priceLabel_P1Y">Prix en cas de renouvellement annuel : {{price}}</translation>
+   <translation id="exchange_account_order_confirmButton">Aller au bon de commande</translation>
+   <translation id="exchange_account_order_cancelButton">Annuler</translation>
+   <translation id="exchange_account_order_fetchingOffers_error">Une erreur est survenue lors de la récupération des tarifs : {{errorMessage}}.</translation>
+   <translation id="exchange_account_order_openingNewTabToOrderForm_error">Une erreur est survenue lors de la récupération du lien vers le bon de commande : {{errorMessage}}.</translation>
+
+   <translation id="exchange_account_order_numberOfAccountsToOrder_label">Nombre de comptes</translation>
+
+   <translation id="exchange_account_order_renewalPeriod_label">Période de renouvellement</translation>
+   <translation id="exchange_account_order_renewalPeriod_P1M">Mensuelle</translation>
+   <translation id="exchange_account_order_renewalPeriod_P1M_description">{{price}} par mois</translation>
+   <translation id="exchange_account_order_renewalPeriod_P1Y">Annuelle</translation>
+   <translation id="exchange_account_order_renewalPeriod_P1Y_description">{{price}} par an</translation>
+
+   <translation id="exchange_account_order_priceWarning_P1M">Le tarif affiché ci-dessus correspond à la facturation d'un mois complet.</translation>
+   <translation id="exchange_account_order_priceWarning_P1Y">Le tarif affiché ci-dessus correspond à la facturation d'une année complète.</translation>
+   <translation id="exchange_account_order_priceWarning_targetServiceExpiresBeforeEndOfRenewalPeriod_1">Cependant, le service {{serviceDisplayName}} expirera avant le {{serviceExpirationDate}}.</translation>
+   <translation id="exchange_account_order_priceWarning_targetServiceExpiresBeforeEndOfRenewalPeriod_2">Par conséquent, le tarif correspondant à votre utilisation réelle jusqu’à expiration de votre service sera affiché lors de l’étape suivante du processus de commande.</translation>
+   <translation id="exchange_account_order_priceWarning_targetServiceExpiresBeforeEndOfRenewalPeriod_3_P1M_1">Si le service est renouvellé, le compte Exchange sera aussi renouvellé à un rythme mensuel.</translation>
+   <translation id="exchange_account_order_priceWarning_targetServiceExpiresBeforeEndOfRenewalPeriod_3_P1M_many">Si le service est renouvellé, les comptes Exchange seront aussi renouvellés à un rythme mensuel.</translation>
+   <translation id="exchange_account_order_priceWarning_targetServiceExpiresBeforeEndOfRenewalPeriod_3_P1Y_1">Si le service est renouvellé, le compte Exchange sera aussi renouvellé à un rythme annuel.</translation>
+   <translation id="exchange_account_order_priceWarning_targetServiceExpiresBeforeEndOfRenewalPeriod_3_P1Y_many">Si le service est renouvellé, les comptes Exchange seront aussi renouvellés à un rythme annuel.</translation>
 
 <!-- ACCOUNT - ADD -->
    <translation id="exchange_account_add_back_button" qtlid="485905">Ajout d'un compte</translation>
@@ -1046,6 +1079,21 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_ACTION_activate_outlook_title" qtlid="397416">Activer la licence Outlook</translation>
    <translation id="exchange_ACTION_activate_outlook_intro_label" qtlid="397429">Souhaitez-vous activer la licence Outlook sur le compte Exchange ?</translation>
 
+   <translation id="exchange_account_outlook_order_title">Commander une licence Outlook</translation>
+   <translation id="exchange_account_outlook_order_renewalPeriod_label">Période de renouvellement</translation>
+   <translation id="exchange_account_outlook_order_renewalPeriod_item_P1M">Renouvellement mensuel</translation>
+   <translation id="exchange_account_outlook_order_renewalPeriod_item_P1Y">Renouvellement annuel</translation>
+   <translation id="exchange_account_outlook_order_priceWarning_P1M">Le tarif affiché ci-dessus correspond à la facturation d'un mois complet.</translation>
+   <translation id="exchange_account_outlook_order_priceWarning_P1Y">Le tarif affiché ci-dessus correspond à la facturation d'une année complète.</translation>
+   <translation id="exchange_account_outlook_order_priceWarning_targetServiceExpiresBeforeEndOfRenewalPeriod_1">Cependant, le service {{serviceDisplayName}} expirera le {{serviceExpirationDate}}.</translation>
+   <translation id="exchange_account_outlook_order_priceWarning_targetServiceExpiresBeforeEndOfRenewalPeriod_2">Par conséquent, le tarif correspondant à votre utilisation réelle jusqu’à expiration de votre service sera affiché lors de l’étape suivante du processus de commande.</translation>
+   <translation id="exchange_account_outlook_order_priceWarning_targetServiceExpiresBeforeEndOfRenewalPeriod_3_P1M">Si vous renouvellez votre service, la licence Outlook le sera également, à un rythme mensuel.</translation>
+   <translation id="exchange_account_outlook_order_priceWarning_targetServiceExpiresBeforeEndOfRenewalPeriod_3_P1Y">Si vous renouvellez votre service, la licence Outlook le sera également, à un rythme annuel.</translation>
+   <translation id="exchange_account_outlook_order_confirmButton">Aller au bon de commande</translation>
+   <translation id="exchange_account_outlook_order_cancelButton">Annuler</translation>
+   <translation id="exchange_account_outlook_order_fetchingPrices_error">Une erreur est survenue lors de la récupération des tarifs : {{errorMessage}}.</translation>
+   <translation id="exchange_account_outlook_order_openingNewTabToOrderForm_error">Une erreur est survenue lors de la récupération du lien vers le bon de commande : {{errorMessage}}.</translation>
+
    <translation id="exchange_accounts_fetchOfficeAttachError_error" qtlid="486269">Une erreur est survenue lors de la récupération des préférences liées à Office Attach</translation>
    <translation id="exchange_accounts_fetchAccountCreationOptions_error" qtlid="486282">Une erreur est survenue lors de la récupération des options de créations de comptes</translation>
    <translation id="exchange_accounts_fetchAccounts_error" qtlid="486295">Une erreur est survenue lors de la récupération des comptes</translation>
@@ -1524,6 +1572,8 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_ACTION_upgrade_get_contracts_error" qtlid="271725">Une erreur s'est produite lors du chargement des informations :</translation>
    <translation id="exchange_ACTION_order_upgrade_success" qtlid="181266">La commande numéro <a href='{0}' target='_blank'>{1}</a> a bien été prise en compte.</translation>
    <translation id="exchange_ACTION_order_upgrade_error" qtlid="271738">Une erreur est survenue lors de la mise à jour de votre offre Exchange.</translation>
+
+<!-- Upgrade Account -->
    <translation id="exchange_ACTION_order_upgrade_300G_menu_item" qtlid="368089">Augmenter la capacité à 300Gio</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_title_label" qtlid="368102">Augmenter la capacité</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_question_intro" qtlid="368115">Êtes-vous certain de vouloir augmenter la capacité de votre compte Exchange à 300Gio ?</translation>
@@ -1537,6 +1587,23 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_ACTION_order_upgrade_300G_error_message" qtlid="368167">Une erreur est survenue lors de l'augmentation de la capacité du compte Exchange.</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_options_message" qtlid="368180">Une erreur est survenue lors de lors de la récupération des tarifs.</translation>
    <translation id="exchange_ACTION_order_accounts_step1_user_error" qtlid="499943">Erreur lors de la récupération des informations de l'utilisateur</translation>
+
+   <translation id="exchange_account_orderUpgrade_title">Augmenter la capacité</translation>
+   <translation id="exchange_account_orderUpgrade_intro">La capacité actuelle du compte {{accountPrimaryEmailAddress}} est de 50 Gio. Vous pouvez l'augmenter jusqu'à 300 Gio.</translation>
+   <translation id="exchange_account_orderUpgrade_renewalPeriod_label">Période de renouvellement</translation>
+   <translation id="exchange_account_orderUpgrade_renewalPeriod_item_P1M">Renouvellement mensuel</translation>
+   <translation id="exchange_account_orderUpgrade_renewalPeriod_item_P1Y">Renouvellement annuel</translation>
+   <translation id="exchange_account_orderUpgrade_priceWarning_P1M">Le tarif affiché ci-dessus correspond à la facturation d'un mois complet.</translation>
+   <translation id="exchange_account_orderUpgrade_priceWarning_P1Y">Le tarif affiché ci-dessus correspond à la facturation d'une année complète.</translation>
+   <translation id="exchange_account_orderUpgrade_priceWarning_targetServiceExpiresBeforeEndOfRenewalPeriod_1">Cependant, le service {{serviceDisplayName}} expirera le {{serviceExpirationDate}}.</translation>
+   <translation id="exchange_account_orderUpgrade_priceWarning_targetServiceExpiresBeforeEndOfRenewalPeriod_2">Par conséquent, le tarif correspondant à votre utilisation réelle jusqu’à expiration de votre service sera affiché lors de l’étape suivante du processus de commande.</translation>
+   <translation id="exchange_account_orderUpgrade_priceWarning_targetServiceExpiresBeforeEndOfRenewalPeriod_3_P1M">Si vous renouvellez votre service, l'augmentation de capacité le sera également, à un rythme mensuel.</translation>
+   <translation id="exchange_account_orderUpgrade_priceWarning_targetServiceExpiresBeforeEndOfRenewalPeriod_3_P1Y">Si vous renouvellez votre service, l'augmentation de capacité le sera également, à un rythme annuel.</translation>
+   <translation id="exchange_account_orderUpgrade_confirmButton">Aller au bon de commande</translation>
+   <translation id="exchange_account_orderUpgrade_cancelButton">Annuler</translation>
+   <translation id="exchange_account_orderUpgrade_fetchingPrices_error">Une erreur est survenue lors de la récupération des tarifs : {{errorMessage}}.</translation>
+   <translation id="exchange_account_orderUpgrade_openingNewTabToOrderForm_error">Une erreur est survenue lors de la récupération du lien vers le bon de commande : {{errorMessage}}.</translation>
+
 <!-- Order Exchange -->
    <translation id="exchange_order_view_intro_title" qtlid="368193">Commander un Exchange</translation>
    <translation id="exchange_order_view_intro_question" qtlid="368206">Souhaitez-vous créer un nouveau service Exchange ou ajouter un compte à un service existant ?</translation>

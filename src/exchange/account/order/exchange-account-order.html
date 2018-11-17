@@ -1,0 +1,85 @@
+<div data-ng-controller="exchangeAccountOrderCtrl as $ctrl">
+    <oui-modal
+        data-heading="{{:: 'exchange_account_order_title' | translate}}"
+        data-primary-action="$ctrl.openingNewTabToOrderForm()"
+        data-primary-label="{{:: 'exchange_account_order_confirmButton' | translate }}"
+        data-secondary-action="resetAction()"
+        data-secondary-label="{{:: 'exchange_account_order_cancelButton' | translate }}"
+        data-on-dismiss="resetAction()"
+        data-loading="$ctrl.isFetchingOffers">
+
+        <form
+            name="$ctrl.form"
+            novalidate>
+            <oui-field data-label="{{:: 'exchange_account_order_accountType_label' | translate }}">
+                <oui-select
+                    data-name="options"
+                    data-model="$ctrl.offer"
+                    data-placeholder="{{:: 'exchange_account_order_accountType_placeholder' | translate }}"
+                    data-items="$ctrl.offers"
+                    required
+                    data-match="valueToDisplay"
+                    data-align="start">
+                    <strong data-ng-bind="$item.valueToDisplay"></strong>
+                    <p class="small">
+                        <span
+                            data-translate="exchange_account_order_accountType_item_priceLabel_P1M"
+                            data-translate-values="{ price: $item.prices.P1M.valueToDisplay }"></span>
+                        <span
+                            data-translate="exchange_account_order_accountType_item_priceLabel_P1Y"
+                            data-translate-values="{ price: $item.prices.P1Y.valueToDisplay }"></span>
+                    </p>
+                </oui-select>
+            </oui-field>
+
+            <div data-ng-if="$ctrl.offer">
+
+                <oui-field data-label="{{:: 'exchange_account_order_numberOfAccountsToOrder_label' | translate }}">
+                    <oui-numeric
+                        data-name="numberOfAccountsToOrder"
+                        data-min="1"
+                        data-max="1000"
+                        data-model="$ctrl.numberOfAccountsToOrder"></oui-numeric>
+                </oui-field>
+
+                <oui-field data-label="{{:: 'exchange_account_order_renewalPeriod_label' | translate }}">
+                    <oui-radio-group
+                        data-name="renewalPeriod"
+                        data-model="$ctrl.renewalPeriod"
+                        data-on-change="$ctrl.updateValueOfServiceToTargetExpiresBeforeEndOfRenewalPeriod(modelValue)">
+                        <oui-radio
+                            data-value="'P1M'"
+                            data-description="{{ $ctrl.offer.prices.P1M.description }}">
+                            <span data-translate="exchange_account_order_renewalPeriod_P1M"></span>
+                        </oui-radio>
+                        <oui-radio
+                            data-value="'P1Y'"
+                            data-description="{{ $ctrl.offer.prices.P1Y.description }}">
+                            <span data-translate="exchange_account_order_renewalPeriod_P1Y"></span>
+                        </oui-radio>
+                    </oui-radio-group>
+                </oui-field>
+
+                <oui-message
+                    data-ng-if="$ctrl.serviceToTargetExpiresBeforeEndOfRenewalPeriod"
+                    data-type="warning">
+                    <p data-translate="{{ 'exchange_account_order_priceWarning_' + $ctrl.renewalPeriod }}"></p>
+
+                    <p
+                        data-translate="exchange_account_order_priceWarning_targetServiceExpiresBeforeEndOfRenewalPeriod_1"
+                        data-translate-values="{
+                            serviceDisplayName: '<strong>' + $ctrl.serviceToTarget.displayName + '</strong>',
+                            serviceExpirationDate: '<strong>' + $ctrl.serviceToTarget.expirationDate.valueToDisplay + '</strong>',
+                        }"></p>
+
+                    <span data-translate="exchange_account_order_priceWarning_targetServiceExpiresBeforeEndOfRenewalPeriod_2"></span>
+
+                    <span data-translate="{{ 'exchange_account_order_priceWarning_targetServiceExpiresBeforeEndOfRenewalPeriod_3_'
+                        + $ctrl.renewalPeriod
+                        + '_'
+                        + ($ctrl.numberOfAccountsToOrder === 1 ? '1' : 'many') }}"></span>
+                </oui-message>
+            </div>
+        </form>
+    </oui-modal>
+</div>

@@ -1,6 +1,6 @@
 angular.module('Module.exchange.controllers').controller(
-  'ExchangeOrderAccountCtrl',
-  class ExchangeOrderAccountCtrl {
+  'ExchangeOrderAccountLegacyCtrl',
+  class ExchangeOrderAccountLegacyCtrl {
     constructor(
       $scope,
       Exchange,

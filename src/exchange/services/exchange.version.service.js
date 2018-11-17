@@ -31,6 +31,13 @@ angular.module('Module.exchange.services').service(
     }
 
     /**
+     * @returns {number} version number of the current service
+     */
+    get() {
+      return /\d+/.exec(this.services.Exchange.value.serverDiagnostic.commercialVersion)[0];
+    }
+
+    /**
      * @param {(string|number)} versionNumberToCompareTo
      *                          Version to compare current Exchange account to
      */

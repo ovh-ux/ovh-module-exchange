@@ -1,6 +1,6 @@
 angular.module('Module.exchange.controllers').controller(
-  'ExchangeAddOutlookCtrl',
-  class ExchangeAddOutlookCtrl {
+  'ExchangeAddOutlookLegacyCtrl',
+  class ExchangeAddOutlookLegacyCtrl {
     constructor(
       $scope,
       Exchange,
