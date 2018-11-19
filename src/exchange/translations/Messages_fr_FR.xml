@@ -1191,7 +1191,7 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_delete_step1_contact" qtlid="171565">Contact externe :</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_delete_success" qtlid="171578">La demande de supression du contact externe a bien été prise en compte. Elle sera effective sous quelques minutes.</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_delete_fail" qtlid="171591">Une erreur est survenue lors de la demande de suppression du contact externe.</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_export_csv" qtlid="509391">Exporter les contact externes en CSV</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_export_csv" qtlid="509391">Exporter les contacts externes en CSV</translation>
 
 <!-- ########################################## -->
 <!-- SSL RENEW -->
@@ -1513,7 +1513,7 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="subDomain_pattern_error" qtlid="221890">Le sous domaine ne peux pas commencer ou terminer par un chiffre ou "-" et ne peut contenir que des chiffres, des lettres ou "-"</translation>
    <translation id="exchange_ACTION_beta_sharepoint_success" qtlid="221903">La demande de participation à l'avant première a été prise en compte</translation>
    <translation id="exchange_ACTION_beta_sharepoint_error" qtlid="221916">Un erreur est survenue lors de la demande de participation à l'avant première</translation>
-   <translation id="exchange_SHARED_ACCOUNTS_export_csv" qtlid="509404">Exporter les comptes partages en CSV</translation>
+   <translation id="exchange_SHARED_ACCOUNTS_export_csv" qtlid="509404">Exporter les comptes partagés en CSV</translation>
 
 <!-- Upgrade Outlook 2013 -> 2016 -->
    <translation id="exchange_upgrade_button_title" qtlid="271686">Migrer vers Exchange 2016</translation>
