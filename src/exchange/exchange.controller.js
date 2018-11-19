@@ -64,26 +64,32 @@ angular.module('Module.exchange.controllers').controller(
         this.shouldOpenWizard = false;
         this.hasNoDomain = false;
       });
+    }
+
+    $onInit() {
+      this.services.$scope.resetMessages();
+
+      const modals = {
+        billing: 'exchange/header/update-renew/update-renew',
+        resiliate: 'exchange/header/remove/exchange-remove',
+      };
 
       this.retrievingExchange()
         .then(() => {
-          if ($location.search().action === 'billing') {
-            $timeout(() => {
-              $rootScope.$broadcast(
+          const urlParamAction = this.services.$location.search().action;
+          if (Object.keys(modals).includes(urlParamAction)) {
+            this.services.$timeout(() => {
+              this.services.$rootScope.$broadcast(
                 'leftNavigation.selectProduct.fromName',
                 this.parseLocationForExchangeData(),
               );
-              $scope.setAction(
-                'exchange/header/update-renew/update-renew',
+              this.services.$scope.setAction(
+                modals[urlParamAction],
                 this.parseLocationForExchangeData(),
               );
             });
           }
         });
-    }
-
-    $onInit() {
-      this.services.$scope.resetMessages();
     }
 
     retrievingWizardPreference() {
