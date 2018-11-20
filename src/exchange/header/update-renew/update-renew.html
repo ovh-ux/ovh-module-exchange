@@ -75,7 +75,9 @@
 
                 <tbody data-ng-if="ctrl.loading">
                     <tr>
-                        <td class="loader text-center" colspan="5"></td>
+                        <td class="text-center" colspan="5">
+                            <oui-spinner></oui-spinner>
+                        </td>
                     </tr>
                 </tbody>
 
@@ -93,7 +95,7 @@
                 <tbody data-ng-if="!ctrl.loading && (ctrl.bufferedAccounts.list.results.length > 0 || ctrl.bufferedAccounts.list.messages.length > 0)">
                     <tr data-ng-repeat="account in (ctrl.bufferedAccounts.list.results | orderBy:'primaryEmailAddress':false) track by $index">
                         <td class="word-break"
-                            data-ng-bind="account.primaryEmailDisplayName | sliceContent: 150"></td>
+                            data-ng-bind="account.primaryEmailDisplayName | wucSliceContent: 150"></td>
                         <td data-ng-bind="account.expirationDate | date:'mediumDate'"></td>
 
                         <td colspan="3" data-ng-if="ctrl.account.partial"></td>

@@ -50,7 +50,9 @@
 
                     <tbody data-ng-if="ctrl.loading">
                         <tr>
-                            <td class="loader text-center" colspan="7"></td>
+                            <td class="text-center" colspan="7">
+                                <oui-spinner></oui-spinner>
+                            </td>
                         </tr>
                     </tbody>
 
@@ -67,8 +69,8 @@
 
                     <tbody data-ng-if="!ctrl.loading && (ctrl.mailingLists.list.results.length > 0 || ctrl.mailingLists.list.messages.length > 0)">
                         <tr data-ng-repeat="ml in (ctrl.mailingLists.list.results | orderBy:'displayName':false) track by $index">
-                            <td data-ng-bind="ml.displayName | sliceContent: 150" class="word-break"></td>
-                            <th scope="row" data-ng-bind="ml.mailingListDisplayName | sliceContent: 150" class="word-break"></th>
+                            <td data-ng-bind="ml.displayName | wucSliceContent: 150" class="word-break"></td>
+                            <th scope="row" data-ng-bind="ml.mailingListDisplayName | wucSliceContent: 150" class="word-break"></th>
                             <td class="text-center">
                                 <span data-ng-if="!ctrl.account.partial">
                                     <button class="oui-status oui-status_success" type="button"
@@ -116,23 +118,23 @@
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isOk(ml) && ml.taskPendingId === 0"></span>
                             </td>
                             <td class="text-center">
-                                <oui-action-menu data-compact 
+                                <oui-action-menu data-compact
                                                  data-align="end">
                                     <oui-action-menu-item data-on-click="ctrl.updateGroup(ml)"
                                                           data-disabled="!ctrl.services.exchangeStates.constructor.isOk(ml)">
-                                        <span data-translate="exchange_tab_GROUPS_menu_settings"></span>     
+                                        <span data-translate="exchange_tab_GROUPS_menu_settings"></span>
                                     </oui-action-menu-item>
                                     <oui-action-menu-item data-on-click="ctrl.updateAccounts(ml)"
                                                           data-disabled="!ctrl.services.exchangeStates.constructor.isOk(ml)">
-                                        <span data-translate="exchange_tab_GROUPS_menu_accounts"></span>     
+                                        <span data-translate="exchange_tab_GROUPS_menu_accounts"></span>
                                     </oui-action-menu-item>
                                     <oui-action-menu-item data-on-click="ctrl.groupDelegation(ml)"
                                                           data-disabled="!ctrl.services.exchangeStates.constructor.isOk(ml)">
-                                        <span data-translate="exchange_tab_GROUPS_menu_delegation"></span>     
+                                        <span data-translate="exchange_tab_GROUPS_menu_delegation"></span>
                                     </oui-action-menu-item>
                                     <oui-action-menu-item data-on-click="ctrl.deleteGroup(ml)"
                                                           data-disabled="!ctrl.services.exchangeStates.constructor.isOk(ml)">
-                                        <span data-translate="exchange_tab_GROUPS_menu_delete"></span>     
+                                        <span data-translate="exchange_tab_GROUPS_menu_delete"></span>
                                     </oui-action-menu-item>
                                 </oui-action-menu>
                             </td>
@@ -158,10 +160,15 @@
         </div>
 
         <div class="col-md-3 mt-5 mt-lg-0">
-            <button class="btn btn-block btn-default" type="button"
+            <button class="oui-button oui-button_secondary w-100" type="button"
                     data-translate="exchange_tab_GROUPS_all_add_ml_button"
                     data-ng-click="ctrl.newGroup()">
             </button>
+            <button class="oui-button oui-button_secondary w-100 mt-2"
+                    type="button"
+                    data-ng-click="ctrl.services.navigation.setAction('exchange/account/export-as-csv/account-export-as-csv', { search : ctrl.search.value, total : ctrl.mailingLists.list.results.length, exchange : ctrl.exchange, csvExportType: 'group' })"
+                    data-ng-disabled="ctrl.mailingLists.list.results.count === 0"
+                    data-translate="exchange_GRUOUPS_accounts_export_csv"></button>
         </div>
     </div>
 

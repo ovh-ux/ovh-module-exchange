@@ -19,7 +19,6 @@
    <translation id="exchange_offer_type_DEDICATED" qtlid="137218">Private Exchange</translation>
    <translation id="exchange_offer_type_HOSTED" qtlid="137231">Hosted Exchange</translation>
    <translation id="exchange_offer_type_PROVIDER" qtlid="136152">Exchange dla resellerów</translation>
-   <translation id="exchange_offer_type_25g" qtlid="264042">Exchange individual</translation>
    <translation id="exchange_dashboard_loading_error" qtlid="168120">Wystąpił błąd podczas ładowania informacji.</translation>
    <translation id="exchange_dashboard_action_doing" qtlid="149787">Operacja w trakcie...</translation>
    <translation id="exchange_dashboard_display_name_edit" qtlid="37875">Zmień</translation>
@@ -219,7 +218,7 @@
    <translation id="exchange_tab_ALIAS_state_TASK_ON_DOING" qtlid="26383">W toku</translation>
    <translation id="exchange_tab_ALIAS_state_TASK_ON_DOING_tooltip" qtlid="143967">Zadanie dotyczące tego aliasu jest już zaplanowane lub wykonywane.</translation>
    <translation id="exchange_tab_ALIAS_add_button" qtlid="143538">Dodaj alias</translation>
-   <translation id="exchange_tab_ALIAS_creation_quota_description" qtlid="433784">Rozmiar musi być zawarty między <strong>{0} {1}</strong> i <strong>{2} {1}</strong>.</translation>
+   <translation id="exchange_tab_ALIAS_creation_quota_description" qtlid="509339">Wielkość limitu musi zawierać się między <strong>{0} {1}</strong> a <strong>{2} {3}</strong>.</translation>
    <translation id="exchange_tab_ALIAS_creation_error_no_local_part" qtlid="433797">Wskaż nazwę adresu e-mail (przed znakiem @).</translation>
    <translation id="exchange_tab_ALIAS_creation_error_regex" qtlid="433810">Nazwa adresu (przed znakiem @) musi zawierać znaki alfanumeryczne lub znaki <strong>.-_+</strong> (przykład: e_mail-3.adres+abc).</translation>
    <translation id="exchange_tab_ALIAS_taken_error_message" qtlid="190849">Istniejący adres email</translation>
@@ -434,8 +433,8 @@
    <translation id="exchange_ACTION_order_accounts_step1_pay_type" qtlid="139325">Typ płatności:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_01" qtlid="79530">miesięczny</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_12" qtlid="79542">rocznie</translation>
-   <translation id="exchange_ACTION_order_accounts_step1_price">{0} HT ({1} TTC)</translation>
-   <translation id="exchange_ACTION_order_accounts_step1_price_with_tax_only">{0} TTC</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_price" qtlid="139416">{0} netto ({1} brutto)</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_price_with_tax_only" qtlid="508221">{0} brutto</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number" qtlid="139338">Liczba kont:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_tooltip" qtlid="144110">Wpisz liczbę od 1 do 100.</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_not_valid" qtlid="144123">Wpisz poprawną liczbę.</translation>
@@ -1011,6 +1010,7 @@ Zamknięta: administrator zapisuje członków grupy.</translation>
    <translation id="exchange_GROUPS_settings_error_message" qtlid="155977">Wystąpiły błędy podczas modyfikowania grupy <span class="bold">{0}</span>.</translation>
    <translation id="exchange_GROUPS_accounts_title" qtlid="382115">Skonfiguruj użytkowników</translation>
    <translation id="exchange_GROUPS_accounts_step1_intro" qtlid="150866">Wybierz konta, które chcesz dodać do grupy</translation>
+   <translation id="exchange_GRUOUPS_accounts_export_csv" qtlid="509352">Eksportuj grupy w formacie CSV</translation>
 
 <!-- ########################################## -->
 <!-- OUTLOOK -->
@@ -1032,7 +1032,7 @@ Zamknięta: administrator zapisuje członków grupy.</translation>
    <translation id="exchange_ACTION_add_outlook_price_withIVA_label" qtlid="169251">Cena brutto:</translation>
    <translation id="exchange_ACTION_add_outlook_price_label" qtlid="181084">Cena:</translation>
    <translation id="exchange_ACTION_add_outlook_contracts_label" qtlid="169472">Aby potwierdzić zlecenie, zaakceptuj warunki korzystania z usługi i kliknij na przycisk "Dalej".</translation>
-   <translation id="exchange_ACTION_add_outlook_contracts__checkbox" qtlid="170070">Zapoznałem się z następującymi elementami:</translation>
+   <translation id="exchange_ACTION_add_outlook_contracts__checkbox" qtlid="509365">J’accepte l’exécution immédiate de ma commande, reconnais que le(s) Service(s) objet de cette commande consistent en la fourniture de contenu numérique au sens de l’article L 221-28 13° du Code de la Consommation, et renonce expressément à mon droit de rétraction concernant le(s)dit(s) Service(s).</translation>
    <translation id="exchange_ACTION_add_outlook_intro_step2_label" qtlid="156888">Podsumowanie zamówienia licencji Outlook dla {0}</translation>
    <translation id="exchange_ACTION_add_outlook_duration_type_01" qtlid="70241">1 m-c</translation>
    <translation id="exchange_ACTION_add_outlook_duration_type_12" qtlid="70277">1 rok</translation>
@@ -1116,7 +1116,7 @@ Zamknięta: administrator zapisuje członków grupy.</translation>
    <translation id="exchange_ACTION_display_outlook_step2_close_button" qtlid="4670">Zamknij</translation>
    <translation id="exchange_ACTION_display_outlook_step2_extra_label" qtlid="170967">Wygenerowany klucz jest ważny przez 5 minut. Jeśli w tym czasie nie mogłeś aktywować produktu, będziesz mógł usunąć operację, aby otrzymać nowy klucz.</translation>
    <translation id="exchange_ACTION_display_outlook_language_error_message" qtlid="157343">Wystąpił bład podczas pobierania licencji Outlook.</translation>
-
+   <translation id="OVH_Data_Protection_Agreement" qtlid="509378">Umowa powierzenia przetwarzania danych</translation>
 
 <!-- ########################################## -->
 <!-- TAB EXTERNAL CONTACTS -->
@@ -1192,6 +1192,7 @@ Zamknięta: administrator zapisuje członków grupy.</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_delete_step1_contact" qtlid="171565">Kontakt zewnętrzny:</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_delete_success" qtlid="171578">Zlecenie usunięcia kontaktu zewnętrznego zostało przyjęte. Zostanie ono wykonane w ciągu kilku minut.</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_delete_fail" qtlid="171591">Wystąpił błąd podczas zlecania usunięcia kontaktu zewnętrznego.</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_export_csv" qtlid="509391">Eksportuj kontakty zewnętrzne w formacie CSV</translation>
 
 <!-- ########################################## -->
 <!-- SSL RENEW -->
@@ -1513,6 +1514,7 @@ Zamknięta: administrator zapisuje członków grupy.</translation>
    <translation id="subDomain_pattern_error" qtlid="221890">Subdomena nie może się rozpoczynać ani kończyć od cyfry lub znaku "-" i może zawierać tylko cyfry, litery lub "-"</translation>
    <translation id="exchange_ACTION_beta_sharepoint_success" qtlid="221903">Zlecenie uczestnictwa w  korzystaniu z usługi przed premierowej zostało zarejestrowane</translation>
    <translation id="exchange_ACTION_beta_sharepoint_error" qtlid="221916">Wystąpił błąd podczas zlecania uczestnictwa w korzystaniu z usługi przed premierowej</translation>
+   <translation id="exchange_SHARED_ACCOUNTS_export_csv" qtlid="509404">Eksportuj konta współdzielone w formacie CSV</translation>
 
 <!-- Upgrade Outlook 2013 -> 2016 -->
    <translation id="exchange_upgrade_button_title" qtlid="271686">Przejdź na Exchange 2016</translation>
@@ -1533,7 +1535,7 @@ Zamknięta: administrator zapisuje członków grupy.</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_success_details" qtlid="368154">Migracja konta do rozmiaru 300 GiB zostanie wykonana po zaksięgowaniu płatności za złożone zamówienie.</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_message" qtlid="368167">Wystąpił błąd podczas zwiększania rozmiaru konta Exchange.</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_options_message" qtlid="368180">Wystąpił błąd podczas pobierania cennika.</translation>
-   <translation id="exchange_ACTION_order_accounts_step1_user_error">Erreur lors de la récupération des informations de l'utilisateur</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_user_error" qtlid="499943">Wystąpił błąd podczas pobierania informacji o użytkowniku</translation>
 <!-- Order Exchange -->
    <translation id="exchange_order_view_intro_title" qtlid="368193">Zamów usługę Exchange</translation>
    <translation id="exchange_order_view_intro_question" qtlid="368206">Chcesz utworzyć nową usługę Exchange czy dodać konto do istniejącej usługi?</translation>

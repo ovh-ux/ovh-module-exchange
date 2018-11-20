@@ -1,10 +1,9 @@
 angular.module('Module.exchange.services').service(
   'ExchangeDomains',
   class ExchangeDomains {
-    constructor($rootScope, Products, $http, $q, constants, Exchange, OvhHttp) {
+    constructor($rootScope, $http, $q, constants, Exchange, OvhHttp) {
       this.services = {
         $rootScope,
-        Products,
         $http,
         $q,
         constants,

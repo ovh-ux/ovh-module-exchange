@@ -51,7 +51,9 @@
 
                 <tbody data-ng-if="ctrl.loading">
                     <tr>
-                        <td class="loader text-center" colspan="3"></td>
+                        <td class="text-center" colspan="3">
+                            <oui-spinner></oui-spinner>
+                        </td>
                     </tr>
                 </tbody>
 
@@ -69,7 +71,7 @@
                 <tbody data-ng-if="!ctrl.loading && (ctrl.accountsList.list.results.length > 0 || ctrl.accountsList.list.messages.length > 0)">
                     <tr	data-ng-repeat="account in (ctrl.accountsList.list.results | orderBy:'formattedAddress':false) track by $index">
                         <th class="word-break" scope="row"
-                            data-ng-bind="account.displayAddress | sliceContent: 150"></th>
+                            data-ng-bind="account.displayAddress | wucSliceContent: 150"></th>
                         <td class="text-center">
                             <label data-ng-if="account.type === 'ACCOUNT'">
                                 <input type="checkbox"

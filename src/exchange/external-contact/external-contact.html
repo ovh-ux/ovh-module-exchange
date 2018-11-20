@@ -41,7 +41,9 @@
 
                     <tbody data-ng-if="ctrl.contactsLoading">
                         <tr>
-                            <td colspan="6" class="loader text-center"></td>
+                            <td colspan="6" class="text-center">
+                                <oui-spinner></oui-spinner>
+                            </td>
                         </tr>
                     </tbody>
 
@@ -55,9 +57,9 @@
                     <tbody data-ng-if="!ctrl.contactsLoading">
                         <tr data-ng-repeat="element in ctrl.contacts.list.results track by $index">
                             <th class="word-break" scope="row"
-                                data-ng-bind="element.externalEmailAddress | sliceContent: 150"></th>
+                                data-ng-bind="element.externalEmailAddress | wucSliceContent: 150"></th>
                             <td class="word-break"
-                                data-ng-bind="element.displayName | sliceContent: 150"></td>
+                                data-ng-bind="element.displayName | wucSliceContent: 150"></td>
                             <td class="text-center text-nowrap"
                                 data-ng-bind="element.creationDate | date:'mediumDate'"></td>
                             <td class="text-center">
@@ -92,15 +94,15 @@
                             </td>
 
                             <td class="text-center">
-                                <oui-action-menu data-compact 
+                                <oui-action-menu data-compact
                                                  data-align="end">
                                     <oui-action-menu-item data-on-click="setAction('exchange/external-contact/update/external-contact-update', element)"
                                                           data-disabled="!ctrl.services.exchangeStates.constructor.isOk(element)">
-                                        <span data-translate="exchange_tab_EXTERNAL_CONTACTS_table_actions_menu_modify"></span>     
+                                        <span data-translate="exchange_tab_EXTERNAL_CONTACTS_table_actions_menu_modify"></span>
                                     </oui-action-menu-item>
                                     <oui-action-menu-item data-on-click="setAction('exchange/external-contact/remove/external-contact-remove', element.externalEmailAddress)"
                                                           data-disabled="!ctrl.services.exchangeStates.constructor.isOk(element)">
-                                        <span data-translate="exchange_tab_EXTERNAL_CONTACTS_table_actions_menu_delete"></span>     
+                                        <span data-translate="exchange_tab_EXTERNAL_CONTACTS_table_actions_menu_delete"></span>
                                     </oui-action-menu-item>
                                 </oui-action-menu>
                             </td>
@@ -118,10 +120,15 @@
             </div>
         </div>
         <div class="col-md-3 mt-5 mt-lg-0">
-            <button class="btn btn-block btn-default" type="button"
+            <button class="oui-button oui-button_secondary w-100" type="button"
                     data-translate="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_title_button"
                     data-ng-click="setAction('exchange/external-contact/add/external-contact-add')">
             </button>
+            <button class="oui-button oui-button_secondary w-100 mt-2"
+                    type="button"
+                    data-ng-click="ctrl.services.navigation.setAction('exchange/account/export-as-csv/account-export-as-csv', { search : ctrl.filter, total : ctrl.contacts.list.results.length, exchange : ctrl.exchange, csvExportType: 'external' })"
+                    data-ng-disabled="ctrl.mailingLists.list.results.count === 0"
+                    data-translate="exchange_tab_EXTERNAL_CONTACTS_export_csv"></button>
         </div>
     </div>
 </div>

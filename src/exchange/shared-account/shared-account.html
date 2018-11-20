@@ -47,7 +47,9 @@
 
                     <tbody data-ng-if="ctrl.loading">
                         <tr>
-                            <td class="loader text-center" colspan="4"></td>
+                            <td class="text-center" colspan="4">
+                                <oui-spinner></oui-spinner>
+                            </td>
                         </tr>
                     </tbody>
 
@@ -69,10 +71,7 @@
                         <tr data-ng-repeat="account in ctrl.accounts.list.results | orderBy:'primaryEmailAddress':false track by $index">
                             <th class="word-break" scope="row"
                                 data-ng-bind="account.primaryEmailDisplayName"></th>
-                            <td class="text-center">
-                                <span data-ng-bind="account.quota.value"></span>
-                                <span>{{ ('unit_size_' + account.quota.unit) | translate }}</span>
-                            </td>
+                            <td class="text-center" data-ng-bind="ctrl.services.ExchangeSharedAccounts.getFormattedQuota(account.quota)"></td>
                             <td class="text-center">
                                 <span class="oui-status oui-status_warning"
                                       data-ng-if="account.state === ctrl.stateTaskError"
@@ -101,20 +100,20 @@
                             </td>
 
                             <td class="text-center text-nowrap">
-                                <oui-action-menu data-compact 
+                                <oui-action-menu data-compact
                                                  data-align="end"
                                                  data-disabled="!ctrl.isConfigurable(account)">
                                     <oui-action-menu-item data-on-click="ctrl.editAccount(account)"
                                                           data-disabled="!ctrl.isEditable(account)">
-                                        <span data-translate="exchange_tab_ACCOUNTS_edit_account_tooltip"></span>     
+                                        <span data-translate="exchange_tab_ACCOUNTS_edit_account_tooltip"></span>
                                     </oui-action-menu-item>
                                     <oui-action-menu-item data-on-click="ctrl.delegationSettings(account)"
                                                           data-disabled="ctrl.isDisabled(account)">
-                                        <span data-translate="exchange_tab_ACCOUNTS_popover_delegation"></span>     
+                                        <span data-translate="exchange_tab_ACCOUNTS_popover_delegation"></span>
                                     </oui-action-menu-item>
                                     <oui-action-menu-item data-on-click="ctrl.deleteAccount(account)"
                                                           data-disabled="ctrl.isDisabled(account)">
-                                        <span data-translate="exchange_tab_ACCOUNTS_popover_delete"></span>     
+                                        <span data-translate="exchange_tab_ACCOUNTS_popover_delete"></span>
                                     </oui-action-menu-item>
                                 </oui-action-menu>
                             </td>
@@ -139,11 +138,16 @@
         </div>
 
         <div class="col-md-3 mt-5 mt-lg-0">
-            <button class="btn btn-block btn-default" type="button"
+            <button class="oui-button oui-button_secondary w-100" type="button"
                     data-translate="exchange_SHARED_ACCOUNTS_add_button_label"
                     data-ng-click="ctrl.newSharedAccount()"
                     data-ng-if="ctrl.isSharedAccountAdjustable()">
             </button>
+            <button class="oui-button oui-button_secondary w-100 mt-2"
+                    type="button"
+                    data-ng-click="ctrl.services.navigation.setAction('exchange/account/export-as-csv/account-export-as-csv', { search : ctrl.searchValue, total : ctrl.accounts.list.results.length, exchange : ctrl.exchange, csvExportType: 'shared' })"
+                    data-ng-disabled="ctrl.mailingLists.list.results.count === 0"
+                    data-translate="exchange_SHARED_ACCOUNTS_export_csv"></button>
         </div>
     </div>
 </div>

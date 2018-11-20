@@ -84,24 +84,24 @@
             <dl class="dl-horizontal dl-lg">
                 <dt data-translate="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_email_label"></dt>
                 <dd class="word-break"
-                    data-ng-bind="ctrl.model.newAccount.externalEmailAddress | sliceContent: 150"></dd>
+                    data-ng-bind="ctrl.model.newAccount.externalEmailAddress | wucSliceContent: 150"></dd>
 
                 <dt data-ng-if="ctrl.model.newAccount.displayName"
                     data-translate="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_display_name_label"></dt>
                 <dd class="word-break"
                     data-ng-if="ctrl.model.newAccount.displayName"
-                    data-ng-bind="ctrl.model.newAccount.displayName | sliceContent: 150"></dd>
+                    data-ng-bind="ctrl.model.newAccount.displayName | wucSliceContent: 150"></dd>
 
                 <dt data-ng-if="ctrl.model.newAccount.firstName"
                     data-translate="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_first_name_label"></dt>
                 <dd class="word-break"
                     data-ng-if="ctrl.model.newAccount.firstName"
-                    data-ng-bind="ctrl.model.newAccount.firstName | sliceContent: 150"></dd>
+                    data-ng-bind="ctrl.model.newAccount.firstName | wucSliceContent: 150"></dd>
 
                 <dt data-ng-if="ctrl.model.newAccount.lastName"
                     data-translate="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_last_name_label"></dt>
                 <dd class="word-break"
-                    data-ng-if="ctrl.model.newAccount.lastName" data-ng-bind="ctrl.model.newAccount.lastName | sliceContent: 150"></dd>
+                    data-ng-if="ctrl.model.newAccount.lastName" data-ng-bind="ctrl.model.newAccount.lastName | wucSliceContent: 150"></dd>
 
                 <dt data-translate="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_GAL_label"></dt>
                 <dd data-ng-bind="('exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_GAL_' + ctrl.model.newAccount.hiddenFromGAL) | translate"></dd>

@@ -19,7 +19,6 @@
    <translation id="exchange_offer_type_DEDICATED" qtlid="137218">Private Exchange</translation>
    <translation id="exchange_offer_type_HOSTED" qtlid="137231">Hosted Exchange</translation>
    <translation id="exchange_offer_type_PROVIDER" qtlid="136152">Exchange for resellers </translation>
-   <translation id="exchange_offer_type_25g" qtlid="264042">Individual Exchange</translation>
    <translation id="exchange_dashboard_loading_error" qtlid="168120">An error has occurred loading the information.</translation>
    <translation id="exchange_dashboard_action_doing" qtlid="149787">Ongoing operation...</translation>
    <translation id="exchange_dashboard_display_name_edit" qtlid="37875">Edit</translation>
@@ -219,7 +218,7 @@
    <translation id="exchange_tab_ALIAS_state_TASK_ON_DOING" qtlid="26383">In progress</translation>
    <translation id="exchange_tab_ALIAS_state_TASK_ON_DOING_tooltip" qtlid="143967">A task involving this alias is scheduled or is currently in progress</translation>
    <translation id="exchange_tab_ALIAS_add_button" qtlid="143538">Add an alias</translation>
-   <translation id="exchange_tab_ALIAS_creation_quota_description" qtlid="433784">The quota must be between <strong>{0} {1}</strong> and <strong>{2} {1}</strong>.</translation>
+   <translation id="exchange_tab_ALIAS_creation_quota_description" qtlid="509339">The quota must be between <strong>{0} {1}</strong> and <strong>{2} {3}</strong>.</translation>
    <translation id="exchange_tab_ALIAS_creation_error_no_local_part" qtlid="433797">Please provide a personal account name for the email address (before the @ sign).</translation>
    <translation id="exchange_tab_ALIAS_creation_error_regex" qtlid="433810">The personal account name (before the @ sign) must contain both letters and numbers, or the characters <strong>.-_+</strong> (example: e_mail-3.address+abc).</translation>
    <translation id="exchange_tab_ALIAS_taken_error_message" qtlid="190849">The email address already exists.</translation>
@@ -434,8 +433,8 @@
    <translation id="exchange_ACTION_order_accounts_step1_pay_type" qtlid="139325">Type of payment:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_01" qtlid="79530">monthly</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_12" qtlid="79542">annually </translation>
-   <translation id="exchange_ACTION_order_accounts_step1_price">{0} HT ({1} TTC)</translation>
-   <translation id="exchange_ACTION_order_accounts_step1_price_with_tax_only">{0} TTC</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_price" qtlid="139416">{0} excl. VAT ({1} incl. VAT)</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_price_with_tax_only" qtlid="508221">{0} incl. VAT</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number" qtlid="139338">Number of accounts:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_tooltip" qtlid="144110">Enter a number between 1 and 100</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_not_valid" qtlid="144123">Enter a valid number</translation>
@@ -1011,6 +1010,7 @@ I therefore explicitly renounce my right to cancel under the provisions of Artic
    <translation id="exchange_GROUPS_settings_error_message" qtlid="155977">Errors occurred on modifying the group <span class="bold">{0}</span>.</translation>
    <translation id="exchange_GROUPS_accounts_title" qtlid="382115">Configure users </translation>
    <translation id="exchange_GROUPS_accounts_step1_intro" qtlid="150866">Select accounts to be included in the group</translation>
+   <translation id="exchange_GRUOUPS_accounts_export_csv" qtlid="509352">Export groups in CSV format</translation>
 
 <!-- ########################################## -->
 <!-- OUTLOOK -->
@@ -1032,7 +1032,7 @@ I therefore explicitly renounce my right to cancel under the provisions of Artic
    <translation id="exchange_ACTION_add_outlook_price_withIVA_label" qtlid="169251">Price incl. GST:</translation>
    <translation id="exchange_ACTION_add_outlook_price_label" qtlid="181084">Price:</translation>
    <translation id="exchange_ACTION_add_outlook_contracts_label" qtlid="169472">To confirm your request, please accept the terms and conditions and click "Next" below.</translation>
-   <translation id="exchange_ACTION_add_outlook_contracts__checkbox" qtlid="170070">I confirm having read and understood the following:</translation>
+   <translation id="exchange_ACTION_add_outlook_contracts__checkbox" qtlid="509365">I accept the immediate fulfillment of my order, I acknowledge that the Service(s) listed in this order are considered to be a supply of digital content under the terms of article L 221-28 13° of French Consumer Code, and I expressly renounce my right of retraction concerning the aforementioned Service(s).</translation>
    <translation id="exchange_ACTION_add_outlook_intro_step2_label" qtlid="156888">Outlook licence order summary for {0}</translation>
    <translation id="exchange_ACTION_add_outlook_duration_type_01" qtlid="70241">1 month</translation>
    <translation id="exchange_ACTION_add_outlook_duration_type_12" qtlid="70277">1 year</translation>
@@ -1116,7 +1116,7 @@ I therefore explicitly renounce my right to cancel under the provisions of Artic
    <translation id="exchange_ACTION_display_outlook_step2_close_button" qtlid="4670">Close</translation>
    <translation id="exchange_ACTION_display_outlook_step2_extra_label" qtlid="170967">The product activation key generated will be valid for 5 minutes. If you are not able to activate it within this time, you can repeat the operation to get a new key.</translation>
    <translation id="exchange_ACTION_display_outlook_language_error_message" qtlid="157343">An error occurred while loading the Outlook license.</translation>
-
+   <translation id="OVH_Data_Protection_Agreement" qtlid="509378">OVH Data Protection contract</translation>
 
 <!-- ########################################## -->
 <!-- TAB EXTERNAL CONTACTS -->
@@ -1192,6 +1192,7 @@ I therefore explicitly renounce my right to cancel under the provisions of Artic
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_delete_step1_contact" qtlid="171565">External contact:</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_delete_success" qtlid="171578">The request to delete an external contact has been registered. It will be effective shortly.</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_delete_fail" qtlid="171591">An error occurred on requesting to delete the external contact.</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_export_csv" qtlid="509391">Export external contacts in CSV format</translation>
 
 <!-- ########################################## -->
 <!-- SSL RENEW -->
@@ -1514,6 +1515,7 @@ I therefore explicitly renounce my right to cancel under the provisions of Artic
    <translation id="subDomain_pattern_error" qtlid="221890">The sub-domain must not begin or end with "-" and can only contain figures, letters or "-"</translation>
    <translation id="exchange_ACTION_beta_sharepoint_success" qtlid="221903">Your request to test out the pre-released software is being processed</translation>
    <translation id="exchange_ACTION_beta_sharepoint_error" qtlid="221916">An error occurred when you requested to test out the pre-released software</translation>
+   <translation id="exchange_SHARED_ACCOUNTS_export_csv" qtlid="509404">Export shared accounts in CSV format</translation>
 
 <!-- Upgrade Outlook 2013 -> 2016 -->
    <translation id="exchange_upgrade_button_title" qtlid="271686">Migrate to Exchange 2016</translation>
@@ -1534,7 +1536,7 @@ I therefore explicitly renounce my right to cancel under the provisions of Artic
    <translation id="exchange_ACTION_order_upgrade_300G_success_details" qtlid="368154">Once payment is complete the account will be upgraded to  a 300 GiB capacity account. </translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_message" qtlid="368167">There was an error when increasing the capacity of the Exchange account. </translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_options_message" qtlid="368180">There was an error when retrieving prices. </translation>
-   <translation id="exchange_ACTION_order_accounts_step1_user_error">Erreur lors de la récupération des informations de l'utilisateur</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_user_error" qtlid="499943">An error has occurred retrieving user information</translation>
 <!-- Order Exchange -->
    <translation id="exchange_order_view_intro_title" qtlid="368193">Order Exchange </translation>
    <translation id="exchange_order_view_intro_question" qtlid="368206">Do you want to create a new Exchange service, or add an account to an existing service? </translation>

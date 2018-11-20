@@ -48,7 +48,9 @@
 
                     <tbody data-ng-if="ctrl.loading">
                         <tr>
-                            <td class="loader text-center" colspan="6"></td>
+                            <td class="text-center" colspan="6">
+                                <oui-spinner></oui-spinner>
+                            </td>
                         </tr>
                     </tbody>
 
@@ -63,11 +65,11 @@
                         <tr data-ng-repeat="resource in (ctrl.resources.list.results | orderBy:'displayName':false) track by $index"
                             data-ng-class="isRowSelected(resource.id)">
                             <td class="word-break"
-                                data-ng-bind-html="resource.displayName | sliceContent: 150"></td>
+                                data-ng-bind-html="resource.displayName | wucSliceContent: 150"></td>
                             <td data-ng-bind="('exchange_tab_RESOURCES_type_' + resource.resourceType) | translate"></td>
                             <td data-ng-bind="resource.capacity"></td>
                             <td class="word-break"
-                                data-ng-bind="resource.resourceEmailDisplayName | sliceContent: 150"></td>
+                                data-ng-bind="resource.resourceEmailDisplayName | wucSliceContent: 150"></td>
                             <td class="text-center">
                                 <span class="oui-status oui-status_error"
                                       data-translate="exchange_tab_ACCOUNTS_state_TASK_ON_ERROR"
@@ -95,17 +97,17 @@
                                       data-ng-if="ctrl.services.exchangeStates.constructor.isOk(resource) && resource.taskPendingId === 0"></span>
                             </td>
                             <td>
-                                <oui-action-menu data-compact 
+                                <oui-action-menu data-compact
                                                  data-align="end"
                                                  data-disabled="!ctrl.services.exchangeStates.constructor.isOk(resource)">
                                     <oui-action-menu-item data-on-click="ctrl.updateResource(resource)">
-                                        <span data-translate="exchange_tab_RESOURCES_tooltip_edit"></span>     
+                                        <span data-translate="exchange_tab_RESOURCES_tooltip_edit"></span>
                                     </oui-action-menu-item>
                                     <oui-action-menu-item data-on-click="ctrl.resourceDelegation(resource)">
-                                        <span data-translate="exchange_tab_ACCOUNTS_popover_delegation"></span>     
+                                        <span data-translate="exchange_tab_ACCOUNTS_popover_delegation"></span>
                                     </oui-action-menu-item>
                                     <oui-action-menu-item data-on-click="ctrl.deleteResource(resource)">
-                                        <span data-translate="exchange_tab_RESOURCES_popover_delete"></span>     
+                                        <span data-translate="exchange_tab_RESOURCES_popover_delete"></span>
                                     </oui-action-menu-item>
                                 </oui-action-menu>
                             </td>

@@ -19,7 +19,6 @@
    <translation id="exchange_offer_type_DEDICATED" qtlid="137218">Private Exchange</translation>
    <translation id="exchange_offer_type_HOSTED" qtlid="137231">Hosted Exchange</translation>
    <translation id="exchange_offer_type_PROVIDER" qtlid="136152">Přeprodej Exchange</translation>
-   <translation id="exchange_offer_type_25g" qtlid="264042">Exchange Individual</translation>
    <translation id="exchange_dashboard_loading_error" qtlid="168120">Během načítání informací nastala chyba.</translation>
    <translation id="exchange_dashboard_action_doing" qtlid="149787">Probíhající operace...</translation>
    <translation id="exchange_dashboard_display_name_edit" qtlid="37875">Upravit</translation>
@@ -219,7 +218,7 @@
    <translation id="exchange_tab_ALIAS_state_TASK_ON_DOING" qtlid="26383">Probíhá</translation>
    <translation id="exchange_tab_ALIAS_state_TASK_ON_DOING_tooltip" qtlid="143967">Právě se provádí, nebo je naplánován úkol, který se vztahuje k tomuto aliasu.</translation>
    <translation id="exchange_tab_ALIAS_add_button" qtlid="143538">Přidat alias</translation>
-   <translation id="exchange_tab_ALIAS_creation_quota_description" qtlid="433784">Velikost musí být mezi <strong>{0} {1}</strong> a <strong>{2} {1}</strong>.</translation>
+   <translation id="exchange_tab_ALIAS_creation_quota_description" qtlid="509339">Le quota doit être compris entre <strong>{0} {1}</strong> et <strong>{2} {3}</strong>.</translation>
    <translation id="exchange_tab_ALIAS_creation_error_no_local_part" qtlid="433797">Zadejte prosím část e-mailové adresy před znakem "@".</translation>
    <translation id="exchange_tab_ALIAS_creation_error_regex" qtlid="433810">Název e-mailové adresy (ta část, která se nachází před znakem "@") musí obsahovat písmena a číslice, nebo znaky <strong>. - _ +</strong> (například: e_mail-3.address+abc).</translation>
    <translation id="exchange_tab_ALIAS_taken_error_message" qtlid="190849">E-mailová adresa již existuje.</translation>
@@ -434,8 +433,8 @@
    <translation id="exchange_ACTION_order_accounts_step1_pay_type" qtlid="139325">Způsob platby:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_01" qtlid="79530">měsíčně</translation>
    <translation id="exchange_ACTION_order_accounts_step1_pay_type_12" qtlid="79542">ročně</translation>
-   <translation id="exchange_ACTION_order_accounts_step1_price">{0} HT ({1} TTC)</translation>
-   <translation id="exchange_ACTION_order_accounts_step1_price_with_tax_only">{0} TTC</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_price" qtlid="139416">{0} bez DPH ({1} vč. DPH)</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_price_with_tax_only" qtlid="508221">{0} TTC</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number" qtlid="139338">Počet účtů:</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_tooltip" qtlid="144110">Zadejte číslo mezi 1 a 100</translation>
    <translation id="exchange_ACTION_order_accounts_step1_number_not_valid" qtlid="144123">Zadané číslo je neplatné</translation>
@@ -1019,6 +1018,7 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
    <translation id="exchange_GROUPS_settings_error_message" qtlid="155977">Při změně skupiny <span class="bold">{0}</span> došlo k chybám.</translation>
    <translation id="exchange_GROUPS_accounts_title" qtlid="382115">Konfigurace uživatelů</translation>
    <translation id="exchange_GROUPS_accounts_step1_intro" qtlid="150866">Zvolte účty, které mají být zahrnuty do skupiny</translation>
+   <translation id="exchange_GRUOUPS_accounts_export_csv" qtlid="509352">Exporter les groupes en CSV</translation>
 
 <!-- ########################################## -->
 <!-- OUTLOOK -->
@@ -1040,7 +1040,7 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
    <translation id="exchange_ACTION_add_outlook_price_withIVA_label" qtlid="169251">Cena vč. DPH:</translation>
    <translation id="exchange_ACTION_add_outlook_price_label" qtlid="181084">Cena:</translation>
    <translation id="exchange_ACTION_add_outlook_contracts_label" qtlid="169472">K potvrzení Vašeho požadavku musíte souhlasit s podmínkami užití a poté kliknout na tlačítko "Další".</translation>
-   <translation id="exchange_ACTION_add_outlook_contracts__checkbox" qtlid="170070">Potvrzuji, že jsem se seznámil s následujícím:</translation>
+   <translation id="exchange_ACTION_add_outlook_contracts__checkbox" qtlid="509365">J’accepte l’exécution immédiate de ma commande, reconnais que le(s) Service(s) objet de cette commande consistent en la fourniture de contenu numérique au sens de l’article L 221-28 13° du Code de la Consommation, et renonce expressément à mon droit de rétraction concernant le(s)dit(s) Service(s).</translation>
    <translation id="exchange_ACTION_add_outlook_intro_step2_label" qtlid="156888">Shrnutí objednávky licence Outlook {0}</translation>
    <translation id="exchange_ACTION_add_outlook_duration_type_01" qtlid="70241">1 měsíc</translation>
    <translation id="exchange_ACTION_add_outlook_duration_type_12" qtlid="70277">1 rok</translation>
@@ -1125,7 +1125,7 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
    <translation id="exchange_ACTION_display_outlook_step2_close_button" qtlid="4670">Zavřít</translation>
    <translation id="exchange_ACTION_display_outlook_step2_extra_label" qtlid="170967">Vygenerovaný aktivační klíč produktu bude platit 5 minut. Jestliže se Vám nepodaří aktivovat službu do této doby, můžete si opětovně vygenerovat klíč nový.</translation>
    <translation id="exchange_ACTION_display_outlook_language_error_message" qtlid="157343">Při načítání licence Outlook došlo k chybě.</translation>
-
+   <translation id="OVH_Data_Protection_Agreement" qtlid="509378">Contrat de protection des données OVH</translation>
 
 <!-- ########################################## -->
 <!-- TAB EXTERNAL CONTACTS -->
@@ -1201,6 +1201,7 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_delete_step1_contact" qtlid="171565">Externí kontakt:</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_delete_success" qtlid="171578">Požadavek na vymazání externího kontaktu byl přijat. Změna bude aktivní za několik minut.</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_delete_fail" qtlid="171591">Během požadavku o vymazání externího kontaktu došlo k chybě.</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_export_csv" qtlid="509391">Exporter les contact externes en CSV</translation>
 
 <!-- ########################################## -->
 <!-- SSL RENEW -->
@@ -1523,6 +1524,7 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
    <translation id="subDomain_pattern_error" qtlid="221890">Subdoména nesmí začínat ani končit znakem "-" a může obsahovat pouze písmena, číslice a "-".</translation>
    <translation id="exchange_ACTION_beta_sharepoint_success" qtlid="221903">Požadavek o účast v předpremiéře je zpracováván</translation>
    <translation id="exchange_ACTION_beta_sharepoint_error" qtlid="221916">Při požadavku o účast v předpremiéře došlo k chybě</translation>
+   <translation id="exchange_SHARED_ACCOUNTS_export_csv" qtlid="509404">Exporter les comptes partages en CSV</translation>
 
 <!-- Upgrade Outlook 2013 -> 2016 -->
    <translation id="exchange_upgrade_button_title" qtlid="271686">Migrovat na Exchange 2016</translation>
@@ -1543,7 +1545,7 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_success_details" qtlid="368154">Kapacita účtu bude navýšena na 300 GiB ihned po uhrazení objednávky.</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_message" qtlid="368167">Při pokusu o navýšení kapacity účtu Exchange došlo k chybě.</translation>
    <translation id="exchange_ACTION_order_upgrade_300G_error_options_message" qtlid="368180">Při načítání ceníku došlo k chybě.</translation>
-   <translation id="exchange_ACTION_order_accounts_step1_user_error">Erreur lors de la récupération des informations de l'utilisateur</translation>
+   <translation id="exchange_ACTION_order_accounts_step1_user_error" qtlid="499943">Při načítání informací o uživateli došlo k chybě</translation>
 <!-- Order Exchange -->
    <translation id="exchange_order_view_intro_title" qtlid="368193">Objednat Exchange</translation>
    <translation id="exchange_order_view_intro_question" qtlid="368206">Přejete si vytvořit novou službu Exchange, nebo přidat účet k již existující službě?</translation>

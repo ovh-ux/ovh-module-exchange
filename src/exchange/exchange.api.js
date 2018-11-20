@@ -4,7 +4,7 @@
   angular.module('Module.exchange.services').service(
     'APIExchange',
     class APIExchange {
-      constructor(Api, $q, constants, $cacheFactory) {
+      constructor(WucApi, $q, constants, $cacheFactory) {
         const cache = $cacheFactory.get('exchangeService') || $cacheFactory('exchangeService');
 
         _.forEach(VERBS, (verb) => {
@@ -13,7 +13,7 @@
             options.cache = cache;
             options.cache.removeAll();
 
-            return Api[verb](`${constants.swsProxyRootPath}email/exchange${path}`, options).then(
+            return WucApi[verb](`${constants.swsProxyRootPath}email/exchange${path}`, options).then(
               data => data,
               reason => $q.reject(reason),
             );

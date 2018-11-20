@@ -3,7 +3,7 @@ angular.module('Module.exchange.controllers').controller(
   class ExchangeLicenseHistoryCtrl {
     constructor(
       $scope,
-      ChartjsFactory,
+      WucChartjsFactory,
       Exchange,
       exchangeAccountTypes,
       exchangeHeaderLicence,
@@ -13,7 +13,7 @@ angular.module('Module.exchange.controllers').controller(
     ) {
       this.$scope = $scope;
 
-      this.ChartjsFactory = ChartjsFactory;
+      this.WucChartjsFactory = WucChartjsFactory;
       this.Exchange = Exchange;
       this.exchangeAccountTypes = exchangeAccountTypes;
       this.exchangeHeaderLicence = exchangeHeaderLicence;
@@ -39,7 +39,7 @@ angular.module('Module.exchange.controllers').controller(
           this.selectedPeriod.date,
         )
         .then((licenses) => {
-          this.chart = new this.ChartjsFactory({
+          this.chart = new this.WucChartjsFactory({
             type: 'line',
             data: {
               datasets: [],

@@ -233,7 +233,7 @@
             <dl class="dl-horizontal dl-lg">
                 <dt data-translate="exchange_ACTION_update_account_step2_email_label"></dt>
                 <dd class="word-break"
-                    data-ng-bind="ctrl.selectedAccount.login + '@' + ctrl.selectedAccount.completeDomain.displayName | sliceContent: 150"></dd>
+                    data-ng-bind="ctrl.selectedAccount.login + '@' + ctrl.selectedAccount.completeDomain.displayName | wucSliceContent: 150"></dd>
 
                 <dt data-ng-if="ctrl.newAccountOptions.availableTypes.length > 1"
                     data-translate="exchange_ACTION_update_account_step1_type_label"></dt>
@@ -244,18 +244,18 @@
                     data-translate="exchange_ACTION_update_account_step2_first_name_label"></dt>
                 <dd class="word-break"
                     data-ng-if="ctrl.selectedAccount.firstName"
-                    data-ng-bind="ctrl.selectedAccount.firstName | sliceContent: 150"></dd>
+                    data-ng-bind="ctrl.selectedAccount.firstName | wucSliceContent: 150"></dd>
 
                 <dt data-ng-if="ctrl.selectedAccount.lastName"
                     data-translate="exchange_ACTION_update_account_step2_last_name_label"></dt>
                 <dd class="word-break"
                     data-ng-if="ctrl.selectedAccount.lastName"
-                    data-ng-bind="ctrl.selectedAccount.lastName | sliceContent: 150"></dd>
+                    data-ng-bind="ctrl.selectedAccount.lastName | wucSliceContent: 150"></dd>
 
                 <dt data-ng-if="ctrl.selectedAccount.displayName"
                     data-translate="exchange_ACTION_update_account_step2_display_name_label"></dt>
                 <dd class="word-break"
-                    data-ng-if="ctrl.selectedAccount.displayName" data-ng-bind="ctrl.selectedAccount.displayName | sliceContent: 150"></dd>
+                    data-ng-if="ctrl.selectedAccount.displayName" data-ng-bind="ctrl.selectedAccount.displayName | wucSliceContent: 150"></dd>
 
                 <dt data-ng-if="ctrl.selectedAccount.password" data-translate="exchange_ACTION_update_account_step2_password_label"></dt>
                 <dd data-ng-if="ctrl.selectedAccount.password">
