@@ -430,7 +430,6 @@
    <translation id="exchange_ACTION_order_accounts_button" qtlid="139169">Commander des comptes</translation>
    <translation id="exchange_ACTION_order_accounts_title" qtlid="139299">Commander des comptes Exchange</translation>
    <translation id="exchange_ACTION_order_accounts_step1_intro" qtlid="139312">Veuillez choisir le type de paiement puis le nombre de comptes Exchange à commander.</translation>
-   <translation id="exchange_ACTION_order_accounts_step1_not_configured_account_message" qtlid="471951">Attention, vous avez au moins un compte non configuré sur cette plateforme.</translation>
    <translation id="exchange_ACTION_order_accounts_step1_account_type" qtlid="368050">Type de compte :</translation>
    <translation id="exchange_ACTION_order_accounts_step1_account_type_50G" qtlid="368063">50 Gio</translation>
    <translation id="exchange_ACTION_order_accounts_step1_account_type_300G" qtlid="368076">300 Gio</translation>

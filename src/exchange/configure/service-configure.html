@@ -89,9 +89,11 @@
                 </div>
 
                 <!-- Complexity Enabled -->
-                <oui-checkbox id="complexityEnabled" name="complexityEnabled"
-                    data-model="ctrl.service.complexityEnabled"
-                    data-text="{{::'exchange_ACTION_configure_services_label_complexityEnabled' | translate}}">
+                <oui-checkbox
+                    id="complexityEnabled"
+                    name="complexityEnabled"
+                    data-model="ctrl.service.complexityEnabled">
+                    <span data-translate="exchange_ACTION_configure_services_label_complexityEnabled"></span>
                 </oui-checkbox>
 
                 <!-- Min password Age -->
@@ -207,26 +209,30 @@
                 <div class="form-group">
                     <label class="oui-label"
                            data-translate="exchange_ACTION_configure_services_label_incoming_messages"></label>
-                    <oui-checkbox id="checkDKIM"
-                        data-model="ctrl.service.spamAndVirusConfiguration.checkDKIM"
-                        data-text="{{::'exchange_ACTION_configure_services_label_dkim' | translate}}">
+                    <oui-checkbox
+                        id="checkDKIM"
+                        data-model="ctrl.service.spamAndVirusConfiguration.checkDKIM">
+                        <span data-translate="exchange_ACTION_configure_services_label_dkim"></span>
                     </oui-checkbox>
-                    <oui-checkbox id="checkSPF"
-                        data-model="ctrl.service.spamAndVirusConfiguration.checkSPF"
-                        data-text="{{::'exchange_ACTION_configure_services_label_spf' | translate}}">
+                    <oui-checkbox
+                        id="checkSPF"
+                        data-model="ctrl.service.spamAndVirusConfiguration.checkSPF">
+                        <span data-translate="exchange_ACTION_configure_services_label_spf"></span>
                     </oui-checkbox>
                 </div>
 
                 <div class="form-group">
                     <label class="oui-label"
                            data-translate="exchange_ACTION_configure_services_label_spam"></label>
-                    <oui-checkbox id="tagSpam"
-                        data-model="ctrl.service.spamAndVirusConfiguration.tagSpam"
-                        data-text="{{::'exchange_ACTION_configure_services_label_tag_spam' | translate}}">
+                    <oui-checkbox
+                        id="tagSpam"
+                        data-model="ctrl.service.spamAndVirusConfiguration.tagSpam">
+                        <span data-translate="exchange_ACTION_configure_services_label_tag_spam"></span>
                     </oui-checkbox>
-                    <oui-checkbox id="putInJunk"
-                        data-model="ctrl.service.spamAndVirusConfiguration.putInJunk"
-                        data-text="{{::'exchange_ACTION_configure_services_label_putinjunk' | translate}}">
+                    <oui-checkbox
+                        id="putInJunk"
+                        data-model="ctrl.service.spamAndVirusConfiguration.putInJunk">
+                        <span data-translate="exchange_ACTION_configure_services_label_putinjunk"></span>
                     </oui-checkbox>
                 </div>
             </form>

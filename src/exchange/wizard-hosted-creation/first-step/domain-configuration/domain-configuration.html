@@ -25,10 +25,11 @@
             <legend class="styleless mb-0" data-ng-bind="'exchange_wizardHostedCreation_addDomainName_domainNameSelection_header' | translate"></legend>
             <div class="row m-0 mt-4 p-0">
                 <div class="checkbox">
-                    <oui-checkbox id="domainFromAnother"
+                    <oui-checkbox
+                        id="domainFromAnother"
                         data-model="$ctrl.homepage.domainIsNotManagedByCurrentNIC"
-                        data-on-change="$ctrl.onAnotherDomainCheckboxClick()"
-                        data-text="{{::'exchange_wizardHostedCreation_addDomainName_domainNameSelection_domainNotInList' | translate}}">
+                        data-on-change="$ctrl.onAnotherDomainCheckboxClick()">
+                        <span data-translate="exchange_wizardHostedCreation_addDomainName_domainNameSelection_domainNotInList"></span>
                     </oui-checkbox>
                     <form name="$ctrl.domainNameForm" data-ng-show="$ctrl.homepage.domainIsNotManagedByCurrentNIC">
                         <div class="oui-field"

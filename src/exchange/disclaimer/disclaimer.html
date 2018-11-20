@@ -32,17 +32,20 @@
 
         <oui-action-menu data-align="end" data-compact>
             <oui-action-menu-item
-                data-text="{{'exchange_tab_DISCLAIMER_menu_settings' | translate}}"
                 data-ng-click="ctrlDisclaimer.updateDisclaimer($row)"
-                data-ng-if="!$row.taskPendingId && $row.emptySlotFlag === false"></oui-action-menu-item>
+                data-ng-if="!$row.taskPendingId && $row.emptySlotFlag === false">
+                <span data-translate="exchange_tab_DISCLAIMER_menu_settings"></span>
+            </oui-action-menu-item>
             <oui-action-menu-item
-                data-text="{{'exchange_tab_DISCLAIMER_menu_delete' | translate}}"
                 data-ng-click="ctrlDisclaimer.deleteDisclaimer($row)"
-                data-ng-if="!$row.taskPendingId && $row.emptySlotFlag === false"></oui-action-menu-item>
+                data-ng-if="!$row.taskPendingId && $row.emptySlotFlag === false">
+                <span data-translate="exchange_tab_DISCLAIMER_menu_delete"></span>
+            </oui-action-menu-item>
             <oui-action-menu-item
-                data-text="{{'common_configure' | translate}}"
                 data-ng-click="ctrlDisclaimer.addDisclaimer($row)"
-                data-ng-if="!$row.taskPendingId && $row.emptySlotFlag"></oui-action-menu-item>
+                data-ng-if="!$row.taskPendingId && $row.emptySlotFlag">
+                <span data-translate="common_configure"></span>
+            </oui-action-menu-item>
         </oui-action-menu>
     </oui-datagrid>
 </div>

@@ -33,9 +33,11 @@
                               data-ng-value="ctrl.data.content">
                     </ng-ckeditor>
 
-                    <oui-checkbox class="mt-4" id="outsideOnly"
-                        data-model="ctrl.data.outsideOnly"
-                        data-text="{{::'exchange_ACTION_add_disclaimer_outside' | translate}}">
+                    <oui-checkbox
+                        class="mt-4"
+                        id="outsideOnly"
+                        data-model="ctrl.data.outsideOnly">
+                        <span data-translate="exchange_ACTION_add_disclaimer_outside"></span>
                     </oui-checkbox>
                 </form>
 

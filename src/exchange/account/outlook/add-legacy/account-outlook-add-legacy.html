@@ -58,9 +58,10 @@
                     <div class="mb-4" data-ng-show="ctrl.selectedOption.order.contracts.length > 0">
                         <label class="oui-label"
                                data-translate="exchange_ACTION_add_outlook_contracts_label"></label>
-                        <oui-checkbox id="contractsValidated"
-                            data-model="ctrl.selectedOption.contractsValidated"
-                            data-text="{{::'exchange_ACTION_add_outlook_contracts__checkbox' | translate}}">
+                        <oui-checkbox
+                            id="contractsValidated"
+                            data-model="ctrl.selectedOption.contractsValidated">
+                            <span data-translate="exchange_ACTION_add_outlook_contracts__checkbox"></span>
                         </oui-checkbox>
 
                         <ul class="list-unstyled mt-2">
