@@ -6,7 +6,7 @@ angular.module('Module.exchange.controllers').controller(
       Exchange,
       $rootScope,
       ExchangeDomains,
-      Validator,
+      WucValidator,
       navigation,
       messaging,
       $translate,
@@ -18,7 +18,7 @@ angular.module('Module.exchange.controllers').controller(
         Exchange,
         $rootScope,
         ExchangeDomains,
-        Validator,
+        WucValidator,
         navigation,
         messaging,
         $translate,
@@ -137,7 +137,7 @@ angular.module('Module.exchange.controllers').controller(
     isValidMxRelay() {
       const mxRelayBuffer = this.removeTrailingDot(this.selectedDomain.mxRelay);
 
-      return this.services.Validator.isValidDomain(mxRelayBuffer);
+      return this.services.WucValidator.isValidDomain(mxRelayBuffer);
     }
 
     submit() {
