@@ -1,3 +1,25 @@
+# [9.1.0](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.0.7...v9.1.0) (2018-11-20)
+
+
+### Bug Fixes
+
+* **agreement-link:** agreement link missing ([df0a492](https://github.com/ovh-ux/ovh-module-exchange/commit/df0a492))
+* **i18n:** retrieve translations ([96e8a36](https://github.com/ovh-ux/ovh-module-exchange/commit/96e8a36))
+* **i18n:** retrieve translations ([ecd929f](https://github.com/ovh-ux/ovh-module-exchange/commit/ecd929f))
+* **i18n:** submit translations ([0c7cf31](https://github.com/ovh-ux/ovh-module-exchange/commit/0c7cf31))
+* **i18n:** typo ([0bfafc4](https://github.com/ovh-ux/ovh-module-exchange/commit/0bfafc4))
+* **products:** remove use of Products service ([2c8ad21](https://github.com/ovh-ux/ovh-module-exchange/commit/2c8ad21))
+* **renew:** fix automatic opening of renew modal ([20273e3](https://github.com/ovh-ux/ovh-module-exchange/commit/20273e3))
+* **shared-account:** adapt maximum quota unit ([e8e678d](https://github.com/ovh-ux/ovh-module-exchange/commit/e8e678d))
+
+
+### Features
+
+* **export-csv:** export csv in exchange ([8c4b760](https://github.com/ovh-ux/ovh-module-exchange/commit/8c4b760))
+* **resiliation:** allow to open resiliation modal with url param ([0f7449c](https://github.com/ovh-ux/ovh-module-exchange/commit/0f7449c))
+
+
+
 ## [9.0.7](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.0.6...v9.0.7) (2018-11-09)
 
 
