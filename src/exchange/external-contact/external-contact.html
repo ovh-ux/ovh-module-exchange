@@ -41,7 +41,9 @@
 
                     <tbody data-ng-if="ctrl.contactsLoading">
                         <tr>
-                            <td colspan="6" class="loader text-center"></td>
+                            <td colspan="6" class="text-center">
+                                <oui-spinner></oui-spinner>
+                            </td>
                         </tr>
                     </tbody>
 
@@ -92,15 +94,15 @@
                             </td>
 
                             <td class="text-center">
-                                <oui-action-menu data-compact 
+                                <oui-action-menu data-compact
                                                  data-align="end">
                                     <oui-action-menu-item data-on-click="setAction('exchange/external-contact/update/external-contact-update', element)"
                                                           data-disabled="!ctrl.services.exchangeStates.constructor.isOk(element)">
-                                        <span data-translate="exchange_tab_EXTERNAL_CONTACTS_table_actions_menu_modify"></span>     
+                                        <span data-translate="exchange_tab_EXTERNAL_CONTACTS_table_actions_menu_modify"></span>
                                     </oui-action-menu-item>
                                     <oui-action-menu-item data-on-click="setAction('exchange/external-contact/remove/external-contact-remove', element.externalEmailAddress)"
                                                           data-disabled="!ctrl.services.exchangeStates.constructor.isOk(element)">
-                                        <span data-translate="exchange_tab_EXTERNAL_CONTACTS_table_actions_menu_delete"></span>     
+                                        <span data-translate="exchange_tab_EXTERNAL_CONTACTS_table_actions_menu_delete"></span>
                                     </oui-action-menu-item>
                                 </oui-action-menu>
                             </td>
