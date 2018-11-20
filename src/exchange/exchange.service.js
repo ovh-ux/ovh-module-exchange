@@ -3,26 +3,26 @@ angular.module('Module.exchange.services').service(
   class Exchange {
     constructor(
       $cacheFactory,
-      $rootScope,
-      ovhUserPref,
-      Products,
       $http,
       $q,
-      OvhHttp,
-      APIExchange,
+      $rootScope,
       $stateParams,
+      APIExchange,
+      OvhApiEmailExchange,
+      OvhHttp,
+      ovhUserPref,
       constants,
     ) {
       this.services = {
         $cacheFactory,
-        $rootScope,
-        ovhUserPref,
-        Products,
         $http,
         $q,
-        OvhHttp,
-        APIExchange,
+        $rootScope,
         $stateParams,
+        APIExchange,
+        OvhApiEmailExchange,
+        OvhHttp,
+        ovhUserPref,
         constants,
       };
 
@@ -191,6 +191,32 @@ angular.module('Module.exchange.services').service(
       );
     }
 
+    getExchangeServices() {
+      return this.services.OvhApiEmailExchange.service().v7()
+        .query()
+        .expand(false)
+        .aggregate('displayName')
+        .execute({ organizationName: '*' })
+        .$promise
+        .then(services => _.filter(services, service => _.has(service, 'value.displayName') && _.has(service, 'value.offer')))
+        .then(services => _.map(
+          services, service => ({
+            name: service.key,
+            displayName: service.value.displayName,
+            organization: _.get(service.path.split('/'), '[3]'),
+            type: `EXCHANGE_${service.value.offer.toUpperCase()}`,
+          }),
+        ));
+    }
+
+    getExchange(organization, exchangeId) {
+      return this.getExchangeServices()
+        .then(services => _.find(services, {
+          name: exchangeId,
+          organization,
+        }));
+    }
+
     /**
      * Get Selected Exchange
      */
@@ -199,7 +225,9 @@ angular.module('Module.exchange.services').service(
         this.resetCache();
       }
 
-      return this.services.Products.getSelectedProduct(forceRefresh)
+      const { organization, productId } = this.getParams();
+
+      return this.getExchange(organization, productId)
         .then((product) => {
           if (product && product.organization) {
             const selectedExchange = this.exchangeCache.get('exchange');

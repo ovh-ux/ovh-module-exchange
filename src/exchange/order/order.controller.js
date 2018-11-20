@@ -1,11 +1,11 @@
 angular.module('Module.exchange.controllers').controller(
   'ExchangeOrderCtrl',
   class ExchangeOrderCtrl {
-    constructor($scope, Products, Exchange, User) {
+    constructor($scope, Exchange, OvhApiEmailExchange, User) {
       this.services = {
         $scope,
-        Products,
         Exchange,
+        OvhApiEmailExchange,
         User,
       };
 
@@ -23,9 +23,9 @@ angular.module('Module.exchange.controllers').controller(
     getExchanges() {
       this.loaders.init = true;
 
-      this.services.Products.getProductsByType()
-        .then((productsByType) => {
-          this.exchanges = _.map(productsByType.exchanges, (exchange) => {
+      return this.services.Exchange.getExchangeServices()
+        .then((exchanges) => {
+          this.exchanges = _.map(exchanges, (exchange) => {
             _.set(exchange, 'domain', exchange.name);
 
             return exchange;
