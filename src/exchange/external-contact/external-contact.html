@@ -55,9 +55,9 @@
                     <tbody data-ng-if="!ctrl.contactsLoading">
                         <tr data-ng-repeat="element in ctrl.contacts.list.results track by $index">
                             <th class="word-break" scope="row"
-                                data-ng-bind="element.externalEmailAddress | sliceContent: 150"></th>
+                                data-ng-bind="element.externalEmailAddress | wucSliceContent: 150"></th>
                             <td class="word-break"
-                                data-ng-bind="element.displayName | sliceContent: 150"></td>
+                                data-ng-bind="element.displayName | wucSliceContent: 150"></td>
                             <td class="text-center text-nowrap"
                                 data-ng-bind="element.creationDate | date:'mediumDate'"></td>
                             <td class="text-center">

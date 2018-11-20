@@ -67,8 +67,8 @@
 
                     <tbody data-ng-if="!ctrl.loading && (ctrl.mailingLists.list.results.length > 0 || ctrl.mailingLists.list.messages.length > 0)">
                         <tr data-ng-repeat="ml in (ctrl.mailingLists.list.results | orderBy:'displayName':false) track by $index">
-                            <td data-ng-bind="ml.displayName | sliceContent: 150" class="word-break"></td>
-                            <th scope="row" data-ng-bind="ml.mailingListDisplayName | sliceContent: 150" class="word-break"></th>
+                            <td data-ng-bind="ml.displayName | wucSliceContent: 150" class="word-break"></td>
+                            <th scope="row" data-ng-bind="ml.mailingListDisplayName | wucSliceContent: 150" class="word-break"></th>
                             <td class="text-center">
                                 <span data-ng-if="!ctrl.account.partial">
                                     <button class="oui-status oui-status_success" type="button"

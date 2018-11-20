@@ -114,13 +114,13 @@
                 <dd data-ng-bind="ctrl.formattedQuota"></dd>
 
                 <dt data-ng-if="ctrl.accountBeingCreated.firstName" data-translate="exchange_ACTION_add_account_step2_first_name_label"></dt>
-                <dd data-ng-if="ctrl.accountBeingCreated.firstName" data-ng-bind="ctrl.accountBeingCreated.firstName | sliceContent: 150" class="word-break"></dd>
+                <dd data-ng-if="ctrl.accountBeingCreated.firstName" data-ng-bind="ctrl.accountBeingCreated.firstName | wucSliceContent: 150" class="word-break"></dd>
 
                 <dt data-ng-if="ctrl.accountBeingCreated.lastName" data-translate="exchange_ACTION_add_account_step2_last_name_label"></dt>
-                <dd data-ng-if="ctrl.accountBeingCreated.lastName" data-ng-bind="ctrl.accountBeingCreated.lastName | sliceContent: 150" class="word-break"></dd>
+                <dd data-ng-if="ctrl.accountBeingCreated.lastName" data-ng-bind="ctrl.accountBeingCreated.lastName | wucSliceContent: 150" class="word-break"></dd>
 
                 <dt data-ng-if="ctrl.accountBeingCreated.displayName" data-translate="exchange_ACTION_add_account_step2_display_name_label"></dt>
-                <dd data-ng-if="ctrl.accountBeingCreated.displayName" data-ng-bind="ctrl.accountBeingCreated.displayName | sliceContent: 150" class="word-break"></dd>
+                <dd data-ng-if="ctrl.accountBeingCreated.displayName" data-ng-bind="ctrl.accountBeingCreated.displayName | wucSliceContent: 150" class="word-break"></dd>
 
                 <dt data-translate="exchange_ACTION_update_account_step2_GAL_label"></dt>
                 <dd data-ng-bind="('exchange_ACTION_update_account_GAL_' + ctrl.accountBeingCreated.hiddenFromGAL) | translate"></dd>
