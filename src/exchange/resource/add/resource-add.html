@@ -58,9 +58,10 @@
                            data-ng-if="ctrl.addResourceForm.resourceCapacity.$dirty && ctrl.addResourceForm.resourceCapacity.$invalid"></small>
                 </div>
 
-                <oui-checkbox id="allowConflict"
-                    data-model="ctrl.model.allowConflict"
-                    data-text="{{::'exchange_tab_RESOURCES_add_resource_allow_conflict' | translate}}">
+                <oui-checkbox
+                    id="allowConflict"
+                    data-model="ctrl.model.allowConflict">
+                    <span data-translate="exchange_tab_RESOURCES_add_resource_allow_conflict"></span>
                 </oui-checkbox>
 
                 <div class="form-group">

@@ -179,10 +179,13 @@
                     </div>
                 </div>
 
-                <oui-checkbox class="mb-4"  id="hiddenFromGAL" name="selectedAccountHiddenFromGAL"
+                <oui-checkbox
+                    class="mb-4"
+                    id="hiddenFromGAL"
+                    name="selectedAccountHiddenFromGAL"
                     data-ng-if="ctrl.selectedAccount.canBeConfigured"
-                    data-model="ctrl.selectedAccount.hiddenFromGAL"
-                    data-text="{{::'exchange_ACTION_update_account_step1_GAL_label' | translate}}">
+                    data-model="ctrl.selectedAccount.hiddenFromGAL">
+                    <span data-translate="exchange_ACTION_update_account_step1_GAL_label"></span>
                 </oui-checkbox>
 
                 <div class="mb-4"

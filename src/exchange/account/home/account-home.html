@@ -98,23 +98,26 @@
             </oui-column>
             <oui-action-menu data-compact>
                 <oui-action-menu-item
-                    data-text="{{:: 'exchange_tab_ACCOUNTS_menu_edit' | translate }}"
                     data-on-click="$ctrl.displayDialog('exchange/account/update/account-update', $row)"
-                    data-disabled="!$ctrl.exchangeAccount.isEditable($row) || !$ctrl.atLeastOneDomainIsAssociatedToCurrentExchangeService"></oui-action-menu-item>
+                    data-disabled="!$ctrl.exchangeAccount.isEditable($row) || !$ctrl.atLeastOneDomainIsAssociatedToCurrentExchangeService">
+                    <span data-translate="exchange_tab_ACCOUNTS_menu_edit"></span>
+                </oui-action-menu-item>
                 <oui-action-menu-item
-                    data-text="{{:: 'exchange_tab_ACCOUNTS_menu_alias' | translate }}"
                     data-on-click="$ctrl.displayAliasManagementView($row)"
-                    data-disabled="!$ctrl.exchangeStates.constructor.isOk($row) || $ctrl.exchangeAccount.isPlaceholder($row)"></oui-action-menu-item>
+                    data-disabled="!$ctrl.exchangeStates.constructor.isOk($row) || $ctrl.exchangeAccount.isPlaceholder($row)">
+                    <span data-translate="exchange_tab_ACCOUNTS_menu_alias"></span>
+                </oui-action-menu-item>
                 <oui-action-menu-item
-                    data-text="{{:: 'exchange_tab_ACCOUNTS_menu_delegations' | translate }}"
                     data-on-click="$ctrl.displayDialog('exchange/account/delegation/account-delegation', $row)"
-                    data-disabled="!$ctrl.exchangeStates.constructor.isOk($row) || $ctrl.exchangeAccount.isPlaceholder($row)"></oui-action-menu-item>
+                    data-disabled="!$ctrl.exchangeStates.constructor.isOk($row) || $ctrl.exchangeAccount.isPlaceholder($row)">
+                    <span data-translate="exchange_tab_ACCOUNTS_menu_delegations"></span>
+                </oui-action-menu-item>
                 <oui-action-menu-item
-                    data-text="{{:: 'exchange_tab_ACCOUNTS_menu_exportToPST' | translate }}"
                     data-on-click="$ctrl.displayDialog('exchange/account/export-as-pst/account-export-as-pst', $row)"
-                    data-disabled="!$ctrl.exchangeStates.constructor.isOk($row) || $ctrl.exchangeAccount.isPlaceholder($row)"></oui-action-menu-item>
+                    data-disabled="!$ctrl.exchangeStates.constructor.isOk($row) || $ctrl.exchangeAccount.isPlaceholder($row)">
+                    <span data-translate="exchange_tab_ACCOUNTS_menu_exportToPST"></span>
+                </oui-action-menu-item>
                 <oui-action-menu-item
-                    data-text="{{:: 'exchange_tab_ACCOUNTS_menu_upgradeTo300Gb' | translate:{ t0: ('unit_size_GiB'|translate) } }}"
                     data-on-click="$ctrl.displayDialog('exchange/account/upgrade-300g-legacy/account-upgrade-300g-legacy', $row)"
                     data-ng-if="$ctrl.exchangeSelectedService.canUpgradeTo300Gb() && !$ctrl.serviceUsesAgora"
                     data-disabled="!$ctrl.exchangeStates.constructor.isOk($row) || $ctrl.exchangeAccount.isPlaceholder($row)">
@@ -123,7 +126,6 @@
                         data-translate-values="{ t0: ('unit_size_GiB'|translate) }"></span>
                 </oui-action-menu-item>
                 <oui-action-menu-item
-                    data-text="{{:: 'exchange_accounts_home_item_orderUpgrade' | translate:{ t0: ('unit_size_GiB'|translate) } }}"
                     data-on-click="$ctrl.displayDialog('exchange/account/order-upgrade/exchange-account-order-upgrade', $row)"
                     data-ng-if="$ctrl.exchangeSelectedService.canUpgradeTo300Gb() && $ctrl.serviceUsesAgora"
                     data-disabled="!$ctrl.exchangeStates.constructor.isOk($row) || $ctrl.exchangeAccount.isPlaceholder($row)">
@@ -132,52 +134,61 @@
                         data-translate-values="{ t0: ('unit_size_GiB' | translate) }"></span>
                 </oui-action-menu-item>
                 <oui-action-menu-item
-                    data-text="{{:: 'exchange_tab_ACCOUNTS_menu_contactSupportForSpam' | translate }}"
                     data-ng-if="$row.spamDetected"
                     data-external
-                    data-href="{{:: $ctrl.linkToSpamTicket }}"></oui-action-menu-item>
+                    data-href="{{:: $ctrl.linkToSpamTicket }}">
+                    <span data-translate="exchange_tab_ACCOUNTS_menu_contactSupportForSpam"></span>
+                </oui-action-menu-item>
                 <oui-action-menu-divider data-ng-if="$ctrl.exchangeAccountOutlook.canHaveLicense($row)"></oui-action-menu-divider>
                 <oui-action-menu-item
-                    data-text="{{:: 'exchange_tab_ACCOUNTS_menu_outlook_activate' | translate }}"
                     data-on-click="$ctrl.displayDialog('exchange/account/outlook/activate/account-outlook-activate', $row)"
                     data-ng-if="$ctrl.exchangeAccountOutlook.hasStatus($row, $ctrl.exchangeAccountOutlook.STATES.TO_ACTIVATE) && $ctrl.exchangeAccountOutlook.canHaveLicense($row)"
-                    data-disabled="!$ctrl.exchangeStates.constructor.isOk($row)"></oui-action-menu-item>
+                    data-disabled="!$ctrl.exchangeStates.constructor.isOk($row)">
+                    <span data-translate="exchange_tab_ACCOUNTS_menu_outlook_activate"></span>
+                </oui-action-menu-item>
                 <oui-action-menu-item
-                    data-text="{{:: 'exchange_tab_ACCOUNTS_menu_outlook_order' | translate }}"
                     data-on-click="$ctrl.displayDialog('exchange/account/outlook/add-legacy/account-outlook-add-legacy', $row)"
                     data-ng-if="$ctrl.exchangeAccountOutlook.hasStatus($row, $ctrl.exchangeAccountOutlook.STATES.TO_ORDER) && $ctrl.exchangeAccountOutlook.canHaveLicense($row) && !$ctrl.serviceUsesAgora"
-                    data-disabled="!$ctrl.exchangeStates.constructor.isOk($row)"></oui-action-menu-item>
+                    data-disabled="!$ctrl.exchangeStates.constructor.isOk($row)">
+                    <span data-translate="exchange_tab_ACCOUNTS_menu_outlook_order"></span>
+                </oui-action-menu-item>
                 <oui-action-menu-item
-                    data-text="{{:: 'exchange_accounts_home_item_orderOutlook' | translate }}"
                     data-on-click="$ctrl.displayDialog('exchange/account/outlook/order/exchange-account-outlook-order', $row)"
                     data-ng-if="$ctrl.exchangeAccountOutlook.hasStatus($row, $ctrl.exchangeAccountOutlook.STATES.TO_ORDER) && $ctrl.exchangeAccountOutlook.canHaveLicense($row) && $ctrl.serviceUsesAgora"
-                    data-disabled="!$ctrl.exchangeStates.constructor.isOk($row)"></oui-action-menu-item>
+                    data-disabled="!$ctrl.exchangeStates.constructor.isOk($row)">
+                    <span data-translate="exchange_accounts_home_item_orderOutlook"></span>
+                </oui-action-menu-item>
                 <oui-action-menu-item
-                    data-text="{{:: 'exchange_tab_ACCOUNTS_menu_outlook_access' | translate }}"
                     data-on-click="$ctrl.displayDialog('exchange/account/outlook/account-outlook', $row)"
                     data-ng-if="($ctrl.exchangeAccountOutlook.hasStatus($row, $ctrl.exchangeAccountOutlook.STATES.ALREADY_ACTIVATED) || $ctrl.exchangeAccountOutlook.hasStatus($row, $ctrl.exchangeAccountOutlook.STATES.ALREADY_ORDERED)) && $ctrl.exchangeAccountOutlook.canHaveLicense($row)"
-                    data-disabled="!$ctrl.exchangeStates.constructor.isOk($row)"></oui-action-menu-item>
+                    data-disabled="!$ctrl.exchangeStates.constructor.isOk($row)">
+                    <span data-translate="exchange_tab_ACCOUNTS_menu_outlook_access"></span>
+                </oui-action-menu-item>
                 <oui-action-menu-item
-                    data-text="{{:: 'exchange_tab_ACCOUNTS_menu_outlook_deactivate' | translate }}"
                     data-on-click="$ctrl.displayDialog('exchange/account/outlook/deactivate/account-outlook-deactivate', $row)"
                     data-ng-if="$ctrl.exchangeAccountOutlook.hasStatus($row, $ctrl.exchangeAccountOutlook.STATES.ALREADY_ACTIVATED) && $ctrl.exchangeAccountOutlook.canHaveLicense($row)"
-                    data-disabled="!$ctrl.exchangeStates.constructor.isOk($row)"></oui-action-menu-item>
+                    data-disabled="!$ctrl.exchangeStates.constructor.isOk($row)">
+                    <span data-translate="exchange_tab_ACCOUNTS_menu_outlook_deactivate"></span>
+                </oui-action-menu-item>
                 <oui-action-menu-item
-                    data-text="{{:: 'exchange_tab_ACCOUNTS_menu_outlook_delete' | translate }}"
                     data-on-click="$ctrl.displayDialog('exchange/account/outlook/delete/account-outlook-delete', $row)"
                     data-ng-if="$ctrl.exchangeAccountOutlook.hasStatus($row, $ctrl.exchangeAccountOutlook.STATES.ALREADY_ORDERED) && $ctrl.exchangeAccountOutlook.canHaveLicense($row)"
-                    data-disabled="!$ctrl.exchangeStates.constructor.isOk($row)"></oui-action-menu-item>
+                    data-disabled="!$ctrl.exchangeStates.constructor.isOk($row)">
+                    <span data-translate="exchange_tab_ACCOUNTS_menu_outlook_delete"></span>
+                </oui-action-menu-item>
                 <oui-action-menu-divider></oui-action-menu-divider>
                 <oui-action-menu-item
-                    data-text="{{:: 'exchange_tab_ACCOUNTS_menu_reset' | translate }}"
                     data-on-click="$ctrl.displayDialog('exchange/account/remove/account-remove', $row)"
                     data-ng-if="$ctrl.exchangeAccount.CAN_DO.DESTRUCTION_METHOD.RESETTING()"
-                    data-disabled="!$ctrl.exchangeStates.constructor.isOk($row) || $row.domain === 'configureme.me'"></oui-action-menu-item>
+                    data-disabled="!$ctrl.exchangeStates.constructor.isOk($row) || $row.domain === 'configureme.me'">
+                    <span data-translate="exchange_tab_ACCOUNTS_menu_reset"></span>
+                </oui-action-menu-item>
                 <oui-action-menu-item
-                    data-text="{{:: 'exchange_tab_ACCOUNTS_menu_delete' | translate }}"
                     data-on-click="$ctrl.displayDialog('exchange/account/remove/account-remove', $row)"
                     data-ng-if="$ctrl.exchangeAccount.CAN_DO.DESTRUCTION_METHOD.DELETING()"
-                    data-disabled="!$ctrl.exchangeStates.constructor.isOk($row)"></oui-action-menu-item>
+                    data-disabled="!$ctrl.exchangeStates.constructor.isOk($row)">
+                    <span data-translate="exchange_tab_ACCOUNTS_menu_delete"></span>
+                </oui-action-menu-item>
             </oui-action-menu>
         </oui-datagrid>
     </div>

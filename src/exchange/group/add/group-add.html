@@ -64,10 +64,11 @@
                         <span class="input-group-addon" data-translate="unit_size_MB"></span>
                     </div>
 
-                    <oui-checkbox id="receiveSizeUnlimited"
+                    <oui-checkbox
+                        id="receiveSizeUnlimited"
                         data-model="ctrl.groupToAdd.receiveSizeUnlimited"
-                        data-on-change="ctrl.onReceiveSizeChange()"
-                        data-text="{{::'exchange_GROUPS_add_group_size_unlimited' | translate}}">
+                        data-on-change="ctrl.onReceiveSizeChange()">
+                        <span data-translate="exchange_GROUPS_add_group_size_unlimited"></span>
                     </oui-checkbox>
                 </div>
 
@@ -84,10 +85,11 @@
                         <span class="input-group-addon" data-translate="unit_size_MB"></span>
                     </div>
 
-                    <oui-checkbox id="sentSizeUnlimited"
+                    <oui-checkbox
+                        id="sentSizeUnlimited"
                         data-model="ctrl.groupToAdd.sentSizeUnlimited"
-                        data-on-change="ctrl.onSentSizeChange()"
-                        data-text="{{::'exchange_GROUPS_add_group_size_unlimited' | translate}}">
+                        data-on-change="ctrl.onSentSizeChange()">
+                        <span data-translate="exchange_GROUPS_add_group_size_unlimited"></span>
                     </oui-checkbox>
                 </div>
 
@@ -119,14 +121,16 @@
                     </div>
                 </div>
 
-                <oui-checkbox id="hiddenFromGAL"
-                    data-model="ctrl.groupToAdd.hiddenFromGAL"
-                    data-text="{{::'exchange_GROUPS_add_group_hide_label' | translate}}">
+                <oui-checkbox
+                    id="hiddenFromGAL"
+                    data-model="ctrl.groupToAdd.hiddenFromGAL">
+                    <span data-translate="exchange_GROUPS_add_group_hide_label"></span>
                 </oui-checkbox>
 
-                <oui-checkbox id="senderAuthentification"
-                    data-model="ctrl.groupToAdd.auth"
-                    data-text="{{::'exchange_GROUPS_add_group_auth_label' | translate}}">
+                <oui-checkbox
+                    id="senderAuthentification"
+                    data-model="ctrl.groupToAdd.auth">
+                    <span data-translate="exchange_GROUPS_add_group_auth_label"></span>
                 </oui-checkbox>
             </form>
 

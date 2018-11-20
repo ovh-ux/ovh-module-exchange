@@ -11,11 +11,6 @@
 
             <oui-spinner data-ng-if="!ctrl.ordersList"></oui-spinner>
 
-            <div class="oui-message oui-message_info" role="alert" data-ng-if="ctrl.numConfigureMeAccount">
-                <i class="oui-icon oui-icon-info_circle oui-icon_bicolor" aria-hidden="true"></i>
-                <p class="oui-message__body" data-translate="exchange_ACTION_order_accounts_step1_not_configured_account_message"></p>
-            </div>
-
             <div data-ng-if="ctrl.ordersList">
                 <p data-translate="exchange_ACTION_order_accounts_step1_intro"></p>
 
@@ -79,10 +74,11 @@
                                data-ng-if="ctrl.orderAccountForm.accountNumber.$invalid"></small>
                     </div>
 
-                    <oui-checkbox id="worldPart-eu"
+                    <oui-checkbox
+                        id="worldPart-eu"
                         data-ng-if="ctrl.worldPart === 'EU'"
-                        data-model="ctrl.valid.legalWarning"
-                        data-text="{{::'exchange_ACTION_add_account_legal_warning' | translate}}">
+                        data-model="ctrl.valid.legalWarning">
+                        <span data-translate="exchange_ACTION_add_account_legal_warning"></span>
                     </oui-checkbox>
                 </form>
             </div>

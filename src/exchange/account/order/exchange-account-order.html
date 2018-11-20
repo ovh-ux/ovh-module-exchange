@@ -21,14 +21,16 @@
                     data-match="valueToDisplay"
                     data-align="start">
                     <strong data-ng-bind="$item.valueToDisplay"></strong>
-                    <p class="small">
+                    <div class="small">
                         <span
+                            class="d-block"
                             data-translate="exchange_account_order_accountType_item_priceLabel_P1M"
                             data-translate-values="{ price: $item.prices.P1M.valueToDisplay }"></span>
                         <span
+                            class="d-block"
                             data-translate="exchange_account_order_accountType_item_priceLabel_P1Y"
                             data-translate-values="{ price: $item.prices.P1Y.valueToDisplay }"></span>
-                    </p>
+                    </div>
                 </oui-select>
             </oui-field>
 

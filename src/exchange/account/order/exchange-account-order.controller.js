@@ -76,15 +76,14 @@ angular
         }
 
         const orderPayload = JSURL.stringify([{
-          duration: this.renewalPeriod,
-          planCode: `activedirectory-account-${this.exchangeServiceInfrastructure.getName().toLowerCase()}`,
-          quantity: this.numberOfAccountsToOrder,
           productId: 'microsoft',
+          planCode: `activedirectory-account-${this.exchangeServiceInfrastructure.getName().toLowerCase()}`,
           serviceName: this.$routerParams.productId,
+          quantity: this.numberOfAccountsToOrder,
           option: [{
-            duration: this.renewalPeriod,
             planCode: this.offer.planCode,
             quantity: this.numberOfAccountsToOrder,
+            duration: this.renewalPeriod,
           }],
         }]);
 
@@ -92,7 +91,7 @@ angular
           .getUrlOfEndsWithSubsidiary('express_order')
           .then((expressOrderUrl) => {
             this.$window.open(
-              `${expressOrderUrl}#/new/express/resume?products=${orderPayload}`,
+              `${expressOrderUrl}#/express/review?products=${orderPayload}`,
               '_blank',
             );
           })

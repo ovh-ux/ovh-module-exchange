@@ -96,9 +96,10 @@
                            data-ng-model="ctrl.accountBeingCreated.displayName">
                 </div>
 
-                <oui-checkbox id="hiddenFromGAL"
-                    data-model="ctrl.accountBeingCreated.hiddenFromGAL"
-                    data-text="{{::'exchange_ACTION_update_account_step1_GAL_label' | translate}}">
+                <oui-checkbox
+                    id="hiddenFromGAL"
+                    data-model="ctrl.accountBeingCreated.hiddenFromGAL">
+                    <span data-translate="exchange_ACTION_update_account_step1_GAL_label"></span>
                 </oui-checkbox>
             </form>
         </div>
