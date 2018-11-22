@@ -329,6 +329,7 @@
    <translation id="exchange_tab_TASKS_warning" qtlid="136347">Achtung!</translation>
    <translation id="exchange_tab_TASKS_partial" qtlid="137426">Die angezeigte Liste ist nicht vollständig, einige Aufgaben konnten nicht korrekt geladen werden.</translation>
    <translation id="exchange_tab_TASKS_error_message" qtlid="144097">Beim Laden der Tasks ist ein Fehler aufgetreten.</translation>
+   <translation id="exchange_tab_TASKS_DIAGNOSE_ACCOUNT">Diagnostiquer le compte</translation>
 
    <translation id="exchange_resilitation_action_title" qtlid="190888">Kündigung Ihrer Exchange Dienstleistung</translation>
    <translation id="exchange_resilitation_action_intro" qtlid="190901">Sind Sie sicher, dass Sie die Exchange Dienstleistung "{0}" kündigen möchten? <br />Diese Aktion unterbindet die weitere automatische Verlängerung der Dienstleistung zum Ende des Abrechnungszeitraums.<br /><br /> Die Dienstleistung kann bis zu deren Ablaufdatum normal genutzt werden.</translation>

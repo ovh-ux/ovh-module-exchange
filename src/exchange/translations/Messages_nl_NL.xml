@@ -329,6 +329,7 @@
    <translation id="exchange_tab_TASKS_warning" qtlid="136347">Let op!</translation>
    <translation id="exchange_tab_TASKS_partial" qtlid="137426">De getoonde lijst is niet compleet, sommige taken konden niet juist worden geladen.</translation>
    <translation id="exchange_tab_TASKS_error_message" qtlid="144097">Er is een fout opgetreden tijdens het laden van de taken.</translation>
+   <translation id="exchange_tab_TASKS_DIAGNOSE_ACCOUNT">Diagnostiquer le compte</translation>
 
    <translation id="exchange_resilitation_action_title" qtlid="190888">Beëindiging van uw Exchange dienst</translation>
    <translation id="exchange_resilitation_action_intro" qtlid="190901">Bent u er zeker van dat u de Exchange "{0}" dienst wilt beëindigen? <br />Deze actie annuleert de automatische verlenging aan het einde van de vervaldatum, waardoor de dienst stopt.<br /><br /> U kunt normaal gesproken gebruik maken van de dienst tot deze datum.</translation>

@@ -329,6 +329,7 @@
    <translation id="exchange_tab_TASKS_warning" qtlid="136347">¡Atención!</translation>
    <translation id="exchange_tab_TASKS_partial" qtlid="137426">La lista mostrada no está completa. Algunas tareas no han podido cargarse correctamente.</translation>
    <translation id="exchange_tab_TASKS_error_message" qtlid="144097">Se ha producido un error al cargar las tareas.</translation>
+   <translation id="exchange_tab_TASKS_DIAGNOSE_ACCOUNT">Diagnostiquer le compte</translation>
 
    <translation id="exchange_resilitation_action_title" qtlid="190888">Baja del servicio Exchange</translation>
    <translation id="exchange_resilitation_action_intro" qtlid="190901">¿Seguro que quiere dar de baja el servicio Exchange «{0}»? <br />Esta acción cancelará la renovación automática al finalizar el periodo de expiración, bloqueando el servicio.<br /><br /> Puede utilizar el servicio con normalidad hasta esa fecha.</translation>

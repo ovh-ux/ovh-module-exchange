@@ -331,6 +331,7 @@ Valitse: <br /> Tyyppi: <span class="bold">A</span> <br /> Aliverkkotunnus: <spa
    <translation id="exchange_tab_TASKS_warning" qtlid="136347">Huomio!</translation>
    <translation id="exchange_tab_TASKS_partial" qtlid="137426">Näytetty lista ei ole kokonainen, eräitä tehtäviä ei ladattu oikein.</translation>
    <translation id="exchange_tab_TASKS_error_message" qtlid="144097">Tapahtui virhe ladattaessa tehtäviä</translation>
+   <translation id="exchange_tab_TASKS_DIAGNOSE_ACCOUNT">Diagnostiquer le compte</translation>
 
    <translation id="exchange_resilitation_action_title" qtlid="190888">Résiliation de votre service Exchange</translation>
    <translation id="exchange_resilitation_action_intro" qtlid="190901">Oletko varma, että haluat irtisanoa Exchange-palvelun "{0}"? <br />Irtisanominen aiheuttaa palvelun sulkemisen automaattisesti tilausajan päättyessä.<br /><br /> Voit käyttää palvelua normaalisti siihen asti.</translation>

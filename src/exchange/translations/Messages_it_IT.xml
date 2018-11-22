@@ -329,6 +329,7 @@
    <translation id="exchange_tab_TASKS_warning" qtlid="136347">Attenzione!</translation>
    <translation id="exchange_tab_TASKS_partial" qtlid="137426">La lista visualizzata non è completa, non è stato possibile modificare alcuni task in modo corretto.</translation>
    <translation id="exchange_tab_TASKS_error_message" qtlid="144097">Si è verificato un errore nel caricamento dei task</translation>
+   <translation id="exchange_tab_TASKS_DIAGNOSE_ACCOUNT">Diagnostiquer le compte</translation>
 
    <translation id="exchange_resilitation_action_title" qtlid="190888">Chiusura del to servizio Exchange</translation>
    <translation id="exchange_resilitation_action_intro" qtlid="190901">Vuoi davvero chiudere il servizio Exchange "{0}"? <br />Questa azione annulla il rinnovo automatico alla scadenza del periodo di validità e comporta il blocco del servizio.<br /><br /> Puoi utilizzare normalmente il tuo servizio fino a quella data.</translation>
