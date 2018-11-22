@@ -1,4 +1,4 @@
-<div data-ng-controller="ExchangeGroupAccountsCtrl as ctrl">
+<div data-ng-controller="ExchangeGroupAccountsCtrl as $ctrl">
     <div data-wizard
          data-wizard-on-cancel="resetAction"
          data-wizard-on-finish="updateAccounts"
@@ -9,14 +9,14 @@
             <p data-translate="exchange_GROUPS_accounts_step1_intro"></p>
 
             <div class="alert alert-warning" role="alert"
-                 data-ng-if="!ctrl.loading && ctrl.accountsList && ctrl.accountsList.list.messages.length > 0">
+                 data-ng-if="!$ctrl.loading && $ctrl.accountsList && $ctrl.accountsList.list.messages.length > 0">
                 <div>
                     <strong data-translate="exchange_tab_ACCOUNTS_warning"></strong>
                     <span data-translate="exchange_tab_ACCOUNTS_partial"></span>
                 </div>
             </div>
 
-            <oui-datagrid data-rows-loader="ctrl.getAccounts($config)" data-page-size="10" data-row-loader="ctrl.applySelection($row)">
+            <oui-datagrid data-rows-loader="$ctrl.getAccounts($config)" data-page-size="10" data-row-loader="$ctrl.applySelection($row)">
                 <oui-column data-title=":: 'exchange_GROUPS_delegation_step1_email_header' | translate" data-type="string" data-searchable>
                     <p data-ng-if="$row.message">
                         <span class="oui-icon oui-icon-warning_circle mr-2" aria-hidden="true"></span>
@@ -25,10 +25,10 @@
                     <span class="word-break" data-ng-bind="$row.displayAddress | wucSliceContent: 150"></span>
                 </oui-column>
                 <oui-column data-title=":: 'exchange_tab_GROUPS_all_table_manager' | translate">
-                    <oui-checkbox data-ng-if="$row.type === 'ACCOUNT' || $row.type === 'CONTACT'" data-model="$row.manager" data-disabled="$row.type === 'CONTACT'" data-on-change="ctrl.updateManagersList(modelValue, $row)"></oui-checkbox>
+                    <oui-checkbox data-ng-if="$row.type === 'ACCOUNT' || $row.type === 'CONTACT'" data-model="$row.manager" data-disabled="$row.type === 'CONTACT'" data-on-change="$ctrl.updateManagersList(modelValue, $row)"></oui-checkbox>
                 </oui-column>
                 <oui-column data-title=":: 'exchange_tab_GROUPS_all_table_user' | translate">
-                    <oui-checkbox data-ng-if="!$row.message" data-model="$row.member" data-on-change="ctrl.updateMembersList(modelValue, $row)"></oui-checkbox>
+                    <oui-checkbox data-ng-if="!$row.message" data-model="$row.member" data-on-change="$ctrl.updateMembersList(modelValue, $row)"></oui-checkbox>
                 </oui-column>
             </oui-datagrid>
 
