@@ -25,10 +25,10 @@
                     <span class="word-break" data-ng-bind="$row.displayAddress | wucSliceContent: 150"></span>
                 </oui-column>
                 <oui-column data-title=":: 'exchange_tab_GROUPS_all_table_manager' | translate">
-                    <oui-checkbox data-ng-if="$row.type === 'ACCOUNT' || $row.type === 'CONTACT'" data-model="$row.manager" data-disabled="$row.type === 'CONTACT'"></oui-checkbox>
+                    <oui-checkbox data-ng-if="$row.type === 'ACCOUNT' || $row.type === 'CONTACT'" data-model="$row.manager" data-disabled="$row.type === 'CONTACT'" data-on-change="ctrl.updateManagersList(modelValue, $row)"></oui-checkbox>
                 </oui-column>
                 <oui-column data-title=":: 'exchange_tab_GROUPS_all_table_user' | translate">
-                    <oui-checkbox data-ng-if="!$row.message" data-model="$row.member"></oui-checkbox>
+                    <oui-checkbox data-ng-if="!$row.message" data-model="$row.member" data-on-change="ctrl.updateMembersList(modelValue, $row)"></oui-checkbox>
                 </oui-column>
             </oui-datagrid>
 

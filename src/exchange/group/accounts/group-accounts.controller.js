@@ -43,37 +43,32 @@ angular.module('Module.exchange.controllers').controller(
       this.services.$scope.$broadcast('paginationServerSide.loadPage', 1, 'accountsByGroupTable');
     }
 
-    saveSelection() {
-      this.model.managersList = [];
-      this.model.membersList = [];
+    updateManagersList(newManagerValue, account) {
+      const bufferedAccount = _.find(
+        this.accountsListBuffer.list.results,
+        bufferedAcc => bufferedAcc.id === account.id,
+      );
 
-      if (_.has(this.accountsList, 'list.results')) {
-        const accounts = this.accountsList.list.results;
+      if (newManagerValue !== _.get(bufferedAccount, 'manager')) {
+        this.model.managersList.push({
+          id: account.id,
+          operation: newManagerValue ? 'POST' : 'DELETE',
+          itemType: account.type,
+        });
+      }
+    }
 
-        _.forEach(accounts, (account) => {
-          const bufferedAccount = _.find(
-            this.accountsListBuffer.list.results,
-            bufferedAcc => bufferedAcc.id === account.id,
-          );
-          let bufferedAccountUserType = _.get(bufferedAccount, 'manager');
+    updateMembersList(newMemberValue, account) {
+      const bufferedAccount = _.find(
+        this.accountsListBuffer.list.results,
+        bufferedAcc => bufferedAcc.id === account.id,
+      );
 
-          if (account.manager !== bufferedAccountUserType) {
-            this.model.managersList.push({
-              id: account.id,
-              operation: account.manager ? 'POST' : 'DELETE',
-              itemType: account.type,
-            });
-          }
-
-          bufferedAccountUserType = _.get(bufferedAccount, 'member');
-
-          if (account.member !== bufferedAccountUserType) {
-            this.model.membersList.push({
-              id: account.id,
-              operation: account.member ? 'POST' : 'DELETE',
-              itemType: account.type,
-            });
-          }
+      if (newMemberValue !== _.get(bufferedAccount, 'manager')) {
+        this.model.membersList.push({
+          id: account.id,
+          operation: newMemberValue ? 'POST' : 'DELETE',
+          itemType: account.type,
         });
       }
     }
