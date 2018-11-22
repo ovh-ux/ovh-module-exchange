@@ -329,6 +329,7 @@
    <translation id="exchange_tab_TASKS_warning" qtlid="136347">Uwaga!</translation>
    <translation id="exchange_tab_TASKS_partial" qtlid="137426">Lista jest niekompletna. Niektóre zadania nie zostały poprawnie załadowane.</translation>
    <translation id="exchange_tab_TASKS_error_message" qtlid="144097">Wystąpił błąd podczas wyświetlania zadań.</translation>
+   <translation id="exchange_tab_TASKS_DIAGNOSE_ACCOUNT">Diagnostiquer le compte</translation>
 
    <translation id="exchange_resilitation_action_title" qtlid="190888">Rezygnacja z usługi Exchange</translation>
    <translation id="exchange_resilitation_action_intro" qtlid="190901">Czy chcesz zrezygnować z usługi Exchange "{0}"? <br />Operacja ta anuluje automatyczne odnowienie pod koniec abonamentu powodując zawieszenie usługi.<br /><br /> Do tej daty będziesz mógł korzystać z usługi.</translation>

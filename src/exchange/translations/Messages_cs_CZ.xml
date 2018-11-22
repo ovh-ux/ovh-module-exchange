@@ -329,6 +329,7 @@
    <translation id="exchange_tab_TASKS_warning" qtlid="136347">Pozor!</translation>
    <translation id="exchange_tab_TASKS_partial" qtlid="137426">Zobrazený seznam není kompletní, některé úkoly se nenačetli správně.</translation>
    <translation id="exchange_tab_TASKS_error_message" qtlid="144097">Při načítání úkolů došlo k chybě.</translation>
+   <translation id="exchange_tab_TASKS_DIAGNOSE_ACCOUNT">Diagnostiquer le compte</translation>
 
    <translation id="exchange_resilitation_action_title" qtlid="190888">Rušení služby Exchange</translation>
    <translation id="exchange_resilitation_action_intro" qtlid="190901">Opravdu si přejete zrušit službu Exchange "{0}"? <br />Tato akce zruší automatické obnovení v době expirace služby, což způsobí zablokování služby.<br /><br /> Službu budete moci do data expirace používat běžným způsobem.</translation>

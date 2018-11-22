@@ -329,6 +329,7 @@
    <translation id="exchange_tab_TASKS_warning" qtlid="136347">Dėmesio!</translation>
    <translation id="exchange_tab_TASKS_partial" qtlid="137426">Paskelbtas ne visas sąrašas, kai kurios užduotys negalėjo būti teisingai įkeltos.</translation>
    <translation id="exchange_tab_TASKS_error_message" qtlid="144097">Klaida įkeliant užduotis.</translation>
+   <translation id="exchange_tab_TASKS_DIAGNOSE_ACCOUNT">Diagnostiquer le compte</translation>
 
    <translation id="exchange_resilitation_action_title" qtlid="190888">Jūsų Exchange paslaugos atsisakymas</translation>
    <translation id="exchange_resilitation_action_intro" qtlid="190901">Ar tikrai norite atšaukti Exchange paslaugą "{0}"? <br />Atlikus šiuos veiksmus, automatinis paslaugos atnaujinimas bus atšauktas pasibaigus galiojimui, todėl paslauga bus užblokuota.<br /><br /> Jūs galite naudotis paslauga iki šios datos.</translation>

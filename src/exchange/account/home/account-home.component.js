@@ -2,7 +2,9 @@
   class ExchangeAccountHomeController {
     constructor(
       $filter,
+      $q,
       $scope,
+      $translate,
       Exchange,
       exchangeAccount,
       exchangeAccountTypes,
@@ -12,10 +14,12 @@
       messaging,
       navigation,
       officeAttach,
-      $translate,
+      OvhApiMe,
     ) {
       this.$filter = $filter;
+      this.$q = $q;
       this.$scope = $scope;
+      this.$translate = $translate;
 
       this.Exchange = Exchange;
       this.exchangeAccount = exchangeAccount;
@@ -26,7 +30,7 @@
       this.messaging = messaging;
       this.navigation = navigation;
       this.officeAttach = officeAttach;
-      this.$translate = $translate;
+      this.OvhApiMe = OvhApiMe;
     }
 
     $onInit() {
@@ -82,10 +86,17 @@
     }
 
     fetchCanUserSubscribeToOfficeAttach() {
-      return this.officeAttach
-        .retrievingIfUserAlreadyHasSubscribed(this.$routerParams.productId)
-        .then((userHasAlreadySubscribed) => {
-          this.userCanSubscribeToOfficeAttach = !userHasAlreadySubscribed;
+      return this.OvhApiMe.v6().get().$promise
+        .then(({ ovhSubsidiary }) => {
+          if (['CA'].includes(ovhSubsidiary)) {
+            return this.$q.when(true);
+          }
+
+          return this.officeAttach
+            .retrievingIfUserAlreadyHasSubscribed(this.$routerParams.productId);
+        })
+        .then((officeAttachIsNotAvailable) => {
+          this.userCanSubscribeToOfficeAttach = !officeAttachIsNotAvailable;
         })
         .catch((error) => {
           this.messaging.writeError(
