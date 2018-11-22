@@ -29,7 +29,6 @@ angular.module('Module.exchange.controllers').controller(
         membersList: [],
       };
 
-      $scope.getAccounts = (count, offset) => this.getAccounts(count, offset);
       $scope.updateAccounts = () => this.updateAccounts();
       $scope.getAccountsList = () => this.accountsList;
       $scope.getLoading = () => this.loading;
@@ -79,34 +78,51 @@ angular.module('Module.exchange.controllers').controller(
       }
     }
 
-    getAccounts(count, offset) {
-      this.services.messaging.resetMessages();
-      this.loading = true;
+    applySelection(account) {
+      const accountInManagerList = _.find(
+        this.model.managersList,
+        manager => manager.id === account.id,
+      );
+      const accountInMemberList = _.find(
+        this.model.membersList,
+        manager => manager.id === account.id,
+      );
 
-      this.services.Exchange.getAccountsByGroup(
+      const managerValue = accountInManagerList ? _.get(accountInManagerList, 'operation') === 'POST' : account.manager;
+      const memberValue = accountInMemberList ? _.get(accountInMemberList, 'operation') === 'POST' : account.member;
+
+      return Object.assign({}, account, {
+        manager: managerValue,
+        member: memberValue,
+      });
+    }
+
+    getAccounts({ pageSize, offset, criteria }) {
+      const [search] = criteria;
+      this.services.messaging.resetMessages();
+
+      return this.services.Exchange.getAccountsByGroup(
         this.$routerParams.organization,
         this.$routerParams.productId,
         this.selectedGroup.mailingListAddress,
-        count,
+        pageSize,
         offset,
-        this.search != null ? this.search.value : '',
+        search != null ? search.value : '',
       )
         .then((accounts) => {
           this.accountsListBuffer = accounts;
           this.accountsList = angular.copy(accounts);
+          return {
+            data: _.sortBy(accounts.list.results, 'formattedAddress').concat(_.sortBy(accounts.list.messages, 'id')),
+            meta: {
+              totalCount: accounts.count,
+            },
+          };
         })
         .catch((failure) => {
           this.services.messaging.writeError(
             this.services.$translate.instant('exchange_tab_ACCOUNTS_error_message'),
             failure,
-          );
-        })
-        .finally(() => {
-          this.loading = false;
-          this.services.$scope.$broadcast(
-            'paginationServerSide.loadPage',
-            1,
-            'accountsByGroupTable',
           );
         });
     }
@@ -115,7 +131,6 @@ angular.module('Module.exchange.controllers').controller(
       this.services.messaging.writeSuccess(
         this.services.$translate.instant('exchange_dashboard_action_doing'),
       );
-      this.saveSelection();
 
       this.services.Exchange.updateGroups(
         this.$routerParams.organization,
