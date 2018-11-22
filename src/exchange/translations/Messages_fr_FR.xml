@@ -11,6 +11,8 @@
    <translation id="exchange_contractTypes_payAsYouGo" qtlid="485671">Paiement à la consommation</translation>
    <translation id="exchange_accountCreationMethods_adding" qtlid="47781">Ajout</translation>
    <translation id="exchange_accountCreationMethods_ordering" qtlid="8302">Commande</translation>
+   <translation id="exchange_common_confirm">Valider</translation>
+   <translation id="exchange_common_cancel">Annuler</translation>
 
 <!-- ########################################## -->
 <!-- DASHBOARD -->
