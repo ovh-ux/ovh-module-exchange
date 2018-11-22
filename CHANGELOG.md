@@ -1,3 +1,15 @@
+## [9.1.1](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.1.0...v9.1.1) (2018-11-22)
+
+
+### Bug Fixes
+
+* **account.office:** hide office offer for some subsidiaries ([7259ade](https://github.com/ovh-ux/ovh-module-exchange/commit/7259ade))
+* **i18n:** retrieve translations ([83e61c6](https://github.com/ovh-ux/ovh-module-exchange/commit/83e61c6))
+* **i18n:** submit translations ([c3751e2](https://github.com/ovh-ux/ovh-module-exchange/commit/c3751e2))
+* **missing-status:** status missing in task ([9f1a8cf](https://github.com/ovh-ux/ovh-module-exchange/commit/9f1a8cf))
+
+
+
 # [9.1.0](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.0.7...v9.1.0) (2018-11-20)
 
 
