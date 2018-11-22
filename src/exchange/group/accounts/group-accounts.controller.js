@@ -28,19 +28,6 @@ angular.module('Module.exchange.controllers').controller(
         managersList: [],
         membersList: [],
       };
-
-      $scope.updateAccounts = () => this.updateAccounts();
-      $scope.getAccountsList = () => this.accountsList;
-      $scope.getLoading = () => this.loading;
-    }
-
-    resetSearch() {
-      this.search.value = null;
-      this.services.$scope.$broadcast('paginationServerSide.loadPage', 1, 'accountsByGroupTable');
-    }
-
-    onSearch() {
-      this.services.$scope.$broadcast('paginationServerSide.loadPage', 1, 'accountsByGroupTable');
     }
 
     updateManagersList(newManagerValue, account) {
@@ -119,6 +106,7 @@ angular.module('Module.exchange.controllers').controller(
             this.services.$translate.instant('exchange_tab_ACCOUNTS_error_message'),
             failure,
           );
+          this.services.navigation.resetAction();
         });
     }
 
