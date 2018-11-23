@@ -31,10 +31,8 @@ angular.module('Module.exchange.controllers').controller(
     }
 
     updateManagersList(newManagerValue, account) {
-      const bufferedAccount = _.find(
-        this.accountsListBuffer.list.results,
-        bufferedAcc => bufferedAcc.id === account.id,
-      );
+      const bufferedAccount = this.accountsListBuffer.list.results
+        .find(({ id }) => id === account.id);
 
       if (newManagerValue !== _.get(bufferedAccount, 'manager')) {
         this.model.managersList.push({
@@ -46,10 +44,8 @@ angular.module('Module.exchange.controllers').controller(
     }
 
     updateMembersList(newMemberValue, account) {
-      const bufferedAccount = _.find(
-        this.accountsListBuffer.list.results,
-        bufferedAcc => bufferedAcc.id === account.id,
-      );
+      const bufferedAccount = this.accountsListBuffer.list.results
+        .find(({ id }) => id === account.id);
 
       if (newMemberValue !== _.get(bufferedAccount, 'manager')) {
         this.model.membersList.push({
@@ -61,14 +57,8 @@ angular.module('Module.exchange.controllers').controller(
     }
 
     applySelection(account) {
-      const accountInManagerList = _.find(
-        this.model.managersList,
-        manager => manager.id === account.id,
-      );
-      const accountInMemberList = _.find(
-        this.model.membersList,
-        manager => manager.id === account.id,
-      );
+      const accountInManagerList = this.model.managersList.find(({ id }) => id === account.id);
+      const accountInMemberList = this.model.membersList.find(({ id }) => id === account.id);
 
       const managerValue = accountInManagerList ? _.get(accountInManagerList, 'operation') === 'POST' : account.manager;
       const memberValue = accountInMemberList ? _.get(accountInMemberList, 'operation') === 'POST' : account.member;

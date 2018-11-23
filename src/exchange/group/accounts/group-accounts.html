@@ -9,17 +9,16 @@
 
         <p data-translate="exchange_GROUPS_accounts_step1_intro"></p>
         <oui-message data-type="warning" data-ng-if="$ctrl.accountsList.list.messages.length > 0">
-            <div>
-                <strong data-translate="exchange_tab_ACCOUNTS_warning"></strong>
-                <span data-translate="exchange_tab_ACCOUNTS_partial"></span>
-            </div>
+            <strong data-translate="exchange_tab_ACCOUNTS_warning"></strong>
+            <span data-translate="exchange_tab_ACCOUNTS_partial"></span>
         </oui-message>
 
         <oui-datagrid data-rows-loader="$ctrl.getAccounts($config)" data-page-size="10" data-row-loader="$ctrl.applySelection($row)">
             <oui-column data-title=":: 'exchange_GROUPS_delegation_step1_email_header' | translate" data-type="string" data-searchable>
                 <p data-ng-if="$row.message">
                     <span class="oui-icon oui-icon-warning_circle mr-2" aria-hidden="true"></span>
-                    <span data-ng-bind="$row.id"></span>
+                    <span class="sr-only" data-translate="exchange_tab_ACCOUNTS_warning"></span>
+                    <span data-ng-bind="::$row.id"></span>
                 </p>
                 <span class="word-break" data-ng-bind="$row.displayAddress | wucSliceContent: 150"></span>
             </oui-column>
