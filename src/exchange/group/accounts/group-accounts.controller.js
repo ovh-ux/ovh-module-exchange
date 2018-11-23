@@ -88,7 +88,7 @@ angular.module('Module.exchange.controllers').controller(
         this.$routerParams.productId,
         this.selectedGroup.mailingListAddress,
         pageSize,
-        offset,
+        offset - 1,
         search != null ? search.value : '',
       )
         .then((accounts) => {
