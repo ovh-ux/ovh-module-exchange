@@ -10,14 +10,19 @@ angular.module('Module.exchange.controllers').controller(
         navigation,
         $translate,
       };
-
+      this.Exchange = Exchange;
       this.$routerParams = Exchange.getParams();
-
+      this.availableDomains = [];
+      this.loadingDomains = false;
+      this.currentAccount = this.services.navigation.currentActionData.mailingListAddress;
+      this.selectedDomain = {
+        displayName: _.last(this.currentAccount.split('@'))
+      };
       this.selectedGroup = navigation.currentActionData;
       this.form = {
         search: null,
       };
-
+      this.fetchAccountCreationOptions();
       $scope.$on(Exchange.events.accountsChanged, () => $scope.$broadcast('paginationServerSide.reload', 'delegationTable'));
 
       this.debouncedGetDelegationRight = _.debounce(this.getDelegationRight, 300);
@@ -30,7 +35,15 @@ angular.module('Module.exchange.controllers').controller(
     }
 
     onSearchValueChange() {
+      // clear filter by domain name
+      this.selectedDomain = null;
       this.debouncedGetDelegationRight();
+    }
+
+    onDomainValueChange() {
+      // clear filter by free text search
+      this.form.search = null;
+      this.services.$scope.$broadcast('paginationServerSide.loadPage', 1, 'delegationTable');
     }
 
     getChanges() {
@@ -84,17 +97,38 @@ angular.module('Module.exchange.controllers').controller(
         : false;
     }
 
+    fetchAccountCreationOptions() {
+      this.loadingDomains = true;
+      return this.Exchange.fetchingAccountCreationOptions(
+        this.$routerParams.organization,
+        this.$routerParams.productId,
+      )
+        .then((accountCreationOptions) => {
+          this.availableDomains = accountCreationOptions.availableDomains;
+        })
+        .catch((error) => {
+          this.services.messaging.writeError(
+            this.services.$translate.instant('exchange_accounts_fetchAccountCreationOptions_error'),
+            error,
+          );
+        })
+        .finally(() => {
+          this.loadingDomains = false;
+        });
+    }
+
     getDelegationRight(count, offset) {
       this.services.messaging.resetMessages();
       this.loading = true;
-
+      // filter by domai name or free text search
+      let filter = this.form.search || _.get(this.selectedDomain, 'displayName');
       this.services.Exchange.getMailingListDelegationRights(
         this.$routerParams.organization,
         this.$routerParams.productId,
         this.selectedGroup.mailingListName,
         count,
         offset,
-        this.form.search,
+        filter,
       )
         .then((accounts) => {
           // make a deep copy of accounts list to use it as model

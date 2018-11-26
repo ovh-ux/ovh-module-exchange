@@ -15,8 +15,8 @@ angular.module('Module.exchange.controllers').controller(
     $onInit() {
       this.$routerParams = this.services.Exchange.getParams();
       this.currentAccount = this.services.navigation.currentActionData.primaryEmailAddress;
-      this.searchValue = null;
-
+      this.availableDomains = this.services.navigation.currentActionData.availableDomains;
+      this.selectedDomain = this.services.navigation.currentActionData.completeDomain;
       this.services.$scope.updateDelegationRight = () => this.updateDelegationRight();
       this.services.$scope.hasChanged = () => this.hasChanged();
       this.services.$scope.getAccounts = (count, offset) => this.getAccounts(count, offset);
@@ -27,6 +27,28 @@ angular.module('Module.exchange.controllers').controller(
       );
 
       this.bufferAccounts = [];
+    }
+
+    getDomains() {
+      return this.services.Exchange.fetchingAccountCreationOptions(
+        this.$routerParams.organization,
+        this.$routerParams.productId,
+      )
+        .then((data) => {
+          this.services.messaging.writeSuccess(
+            this.services.$translate.instant('exchange_ACTION_delegation_doing_message'),
+          );
+          this.constructResult(data);
+        })
+        .catch((failure) => {
+          this.services.messaging.writeError(
+            this.services.$translate.instant('exchange_ACTION_delegation_error_message'),
+            failure.data,
+          );
+        })
+        .finally(() => {
+          this.services.navigation.resetAction();
+        });
     }
 
     /**
@@ -67,6 +89,14 @@ angular.module('Module.exchange.controllers').controller(
     }
 
     onSearchValueChange() {
+      // clear filter by domain name
+      this.selectedDomain = null;
+      this.services.$scope.$broadcast('paginationServerSide.loadPage', 1, 'delegationsStep1Table');
+    }
+
+    onDomainValueChange() {
+      // clear filter by free text search
+      this.searchValue = null;
       this.services.$scope.$broadcast('paginationServerSide.loadPage', 1, 'delegationsStep1Table');
     }
 
@@ -165,14 +195,15 @@ angular.module('Module.exchange.controllers').controller(
     getAccounts(count, offset) {
       this.services.messaging.resetMessages();
       this.loading = true;
-
+      // filter by domai name or free text search
+      let filter = this.searchValue || _.get(this.selectedDomain, 'displayName');
       return this.services.Exchange.retrieveAccountDelegationRight(
         this.$routerParams.organization,
         this.$routerParams.productId,
         this.currentAccount,
         count,
         offset,
-        this.searchValue,
+        filter,
       )
         .then((accounts) => {
           this.accounts = accounts;
