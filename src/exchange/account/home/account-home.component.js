@@ -308,7 +308,7 @@
 
     displayDialog(pathToFeature, account) {
       let accountCopy = _(account).clone();
-      if (_.includes(pathToFeature, 'account-delegation')) {
+      if (pathToFeature.includes('account-delegation')) {
         accountCopy.availableDomains = this.availableDomains;
       }
       this.navigation.setAction(pathToFeature, accountCopy);
