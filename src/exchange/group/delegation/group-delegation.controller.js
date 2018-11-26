@@ -121,7 +121,7 @@ angular.module('Module.exchange.controllers').controller(
       this.services.messaging.resetMessages();
       this.loading = true;
       // filter by domai name or free text search
-      let filter = this.form.search || _.get(this.selectedDomain, 'displayName');
+      const filter = this.form.search || _.get(this.selectedDomain, 'displayName');
       this.services.Exchange.getMailingListDelegationRights(
         this.$routerParams.organization,
         this.$routerParams.productId,
