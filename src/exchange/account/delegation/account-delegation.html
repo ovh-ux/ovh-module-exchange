@@ -28,7 +28,7 @@
                                 data-ng-model="ctrl.selectedDomain"
                                 data-ng-change="ctrl.onDomainValueChange()"
                                 data-ng-options="domain.displayName for domain in ctrl.availableDomains track by domain.displayName">
-                                <option value="">All domains</option>
+                                <option value="" data-translate="exchange_all_domains"></option>
                         </select>
                         <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
                     </div>

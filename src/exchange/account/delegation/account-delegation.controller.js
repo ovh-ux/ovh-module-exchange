@@ -15,6 +15,7 @@ angular.module('Module.exchange.controllers').controller(
     $onInit() {
       this.$routerParams = this.services.Exchange.getParams();
       this.currentAccount = this.services.navigation.currentActionData.primaryEmailAddress;
+      this.searchValue = null;
       this.availableDomains = this.services.navigation.currentActionData.availableDomains;
       this.selectedDomain = this.services.navigation.currentActionData.completeDomain;
       this.services.$scope.updateDelegationRight = () => this.updateDelegationRight();
@@ -27,28 +28,6 @@ angular.module('Module.exchange.controllers').controller(
       );
 
       this.bufferAccounts = [];
-    }
-
-    getDomains() {
-      return this.services.Exchange.fetchingAccountCreationOptions(
-        this.$routerParams.organization,
-        this.$routerParams.productId,
-      )
-        .then((data) => {
-          this.services.messaging.writeSuccess(
-            this.services.$translate.instant('exchange_ACTION_delegation_doing_message'),
-          );
-          this.constructResult(data);
-        })
-        .catch((failure) => {
-          this.services.messaging.writeError(
-            this.services.$translate.instant('exchange_ACTION_delegation_error_message'),
-            failure.data,
-          );
-        })
-        .finally(() => {
-          this.services.navigation.resetAction();
-        });
     }
 
     /**
