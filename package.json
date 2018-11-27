@@ -1,6 +1,6 @@
 {
   "name": "ovh-module-exchange",
-  "version": "9.1.1",
+  "version": "9.1.2",
   "description": "Exchange module.",
   "keywords": [
     "angular",
