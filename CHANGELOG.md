@@ -1,3 +1,15 @@
+## [9.1.2](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.1.1...v9.1.2) (2018-11-27)
+
+
+### Bug Fixes
+
+* replace translation ([f6cf8db](https://github.com/ovh-ux/ovh-module-exchange/commit/f6cf8db))
+* **deps:** upgrade npm-run-all to v4.1.5 ([60f2616](https://github.com/ovh-ux/ovh-module-exchange/commit/60f2616))
+* **i18n:** retrieve translations ([bd6edcd](https://github.com/ovh-ux/ovh-module-exchange/commit/bd6edcd))
+* **i18n:** submit translations ([7a2d87d](https://github.com/ovh-ux/ovh-module-exchange/commit/7a2d87d))
+
+
+
 ## [9.1.1](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.1.0...v9.1.1) (2018-11-22)
 
 
