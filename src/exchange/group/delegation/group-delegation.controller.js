@@ -10,23 +10,32 @@ angular.module('Module.exchange.controllers').controller(
         navigation,
         $translate,
       };
+    }
 
-      this.$routerParams = Exchange.getParams();
+    $onInit() {
+      this.$routerParams = this.services.Exchange.getParams();
 
-      this.selectedGroup = navigation.currentActionData;
+      this.selectedGroup = this.servicesnavigation.currentActionData;
       this.form = {
         search: null,
       };
 
-      $scope.$on(Exchange.events.accountsChanged, () => $scope.$broadcast('paginationServerSide.reload', 'delegationTable'));
+      this.accountChanges = {
+        sendRights: [],
+        sendOnBehalfToRights: [],
+      };
+
+      this.services.$scope.$on(this.services.Exchange.events.accountsChanged, () => this.services.$scope.$broadcast('paginationServerSide.reload', 'delegationTable'));
 
       this.debouncedGetDelegationRight = _.debounce(this.getDelegationRight, 300);
 
-      $scope.getLoading = () => this.loading;
-      $scope.getDelegationList = () => this.delegationList;
-      $scope.updateDelegationRight = () => this.updateDelegationRight();
-      $scope.getDelegationRight = (count, offset) => this.getDelegationRight(count, offset);
-      $scope.hasChanged = () => this.hasChanged();
+      this.services.$scope.getLoading = () => this.loading;
+      this.services.$scope.getDelegationList = () => this.delegationList;
+      this.services.$scope.updateDelegationRight = () => this.updateDelegationRight();
+      this.services.$scope.getDelegationRight = (count, offset) => {
+        this.getDelegationRight(count, offset);
+      };
+      this.services.$scope.hasChanged = () => this.hasChanged();
     }
 
     onSearchValueChange() {
