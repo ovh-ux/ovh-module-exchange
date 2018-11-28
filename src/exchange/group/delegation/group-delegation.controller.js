@@ -25,16 +25,19 @@ angular.module('Module.exchange.controllers').controller(
         sendRights: [],
         sendOnBehalfToRights: [],
       };
+      this.defaultOffset = 1;
+      this.delegationRightSelectionOffset = this.defaultOffset;
+      this.delegationRightCheckingOffset = this.defaultOffset;
+      this.pageSize = 10;
 
       this.services.$scope.$on(this.services.Exchange.events.accountsChanged, () => this.services.$scope.$broadcast('paginationServerSide.reload', 'delegationTable'));
 
       this.debouncedGetDelegationRight = _.debounce(this.getDelegationRight, 300);
-
       this.services.$scope.getLoading = () => this.loading;
       this.services.$scope.getDelegationList = () => this.delegationList;
       this.services.$scope.updateDelegationRight = () => this.updateDelegationRight();
-      this.services.$scope.getDelegationRight = (count, offset) => {
-        this.getDelegationRight(count, offset);
+      this.services.$scope.getDelegationRight = (pageSize, offset) => {
+        this.getDelegationRight(pageSize, offset);
       };
       this.services.$scope.hasChanged = () => this.hasChanged();
     }
@@ -45,7 +48,7 @@ angular.module('Module.exchange.controllers').controller(
 
     resetSearch() {
       this.form.search = null;
-      this.services.$scope.$broadcast('paginationServerSide.loadPage', 1, 'delegationTable');
+      this.getDelegationRight(this.pageSize, this.defaultOffset);
     }
 
     updateAccountSendAs(newSendAsValue, account) {
@@ -86,15 +89,29 @@ angular.module('Module.exchange.controllers').controller(
       || this.accountChanges.sendOnBehalfToRights.length > 0;
     }
 
-    getDelegationRight(count, offset) {
+    changeSelectionPage(offset) {
+      return this.getDelegationRight(this.pageSize, offset)
+        .then(() => {
+          this.delegationRightSelectionOffset = offset;
+        });
+    }
+
+    changeCheckingPage(offset) {
+      return this.getDelegationRight(this.pageSize, offset)
+        .then(() => {
+          this.delegationRightCheckingOffset = offset;
+        });
+    }
+
+    getDelegationRight(count = this.pageSize, offset = this.defaultOffset) {
       this.services.messaging.resetMessages();
       this.loading = true;
 
-      this.services.Exchange.getMailingListDelegationRights(
+      return this.services.Exchange.getMailingListDelegationRights(
         this.$routerParams.organization,
         this.$routerParams.productId,
         this.selectedGroup.mailingListName,
-        pageSize,
+        count,
         offset - 1,
         this.form.search,
       )
@@ -113,7 +130,6 @@ angular.module('Module.exchange.controllers').controller(
         })
         .finally(() => {
           this.loading = false;
-          this.services.$scope.$broadcast('paginationServerSide.loadPage', 1, 'delegationTable');
         });
     }
 

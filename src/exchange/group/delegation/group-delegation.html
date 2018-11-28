@@ -151,15 +151,15 @@
                 </tbody>
             </table>
 
-            <div class="clearfix"
-                 data-pagination-server-side="delegationTable"
-                 data-pagination-server-side-function="getDelegationRight"
-                 data-pagination-server-side-paginated-stuff="getDelegationList()"
-                 data-pagination-server-side-table-loading="getLoading()">
-            </div>
+            <oui-pagination data-current-offset="ctrl.delegationRightSelectionOffset"
+                            data-page-size="ctrl.pageSize"
+                            data-total-items="ctrl.delegationList.count"
+                            data-on-change="ctrl.changeSelectionPage($event.offset)">
+            </oui-pagination>
         </div>
 
-        <div data-wizard-step>
+        <div data-wizard-step
+             data-wizard-step-on-load="getDelegationRight">
             <p data-ng-bind-html="'exchange_GROUPS_delegation_step2_intro' | translate:{ t0: ctrl.selectedGroup.mailingListDisplayName }"></p>
 
             <table class="table table-hover">
@@ -190,12 +190,11 @@
                 </tbody>
             </table>
 
-            <div class="clearfix"
-                 data-pagination-server-side
-                 data-pagination-server-side-function="getDelegationRight"
-                 data-pagination-server-side-paginated-stuff="getDelegationList()"
-                 data-pagination-server-side-table-loading="getLoading()">
-            </div>
+            <oui-pagination data-current-offset="ctrl.delegationRightCheckingOffset"
+                            data-page-size="ctrl.pageSize"
+                            data-total-items="ctrl.delegationList.count"
+                            data-on-change="ctrl.changeCheckingPage($event.offset)">
+            </oui-pagination>
         </div>
     </div>
 </div>
