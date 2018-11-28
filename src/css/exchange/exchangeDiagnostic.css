@@ -73,3 +73,7 @@
 .image-container:hover .overlay-transition{
   opacity: 1;
 }
+
+.select-domain .oui-field__component {
+    margin-bottom: 0px;
+}

@@ -23,16 +23,6 @@
                 <div class="form-group">
                     <label class="sr-only" for="delegationSearch"
                            data-translate="common_search"></label>
-                    <oui-spinner data-size="s" data-ng-if="ctrl.loadingDomains"></oui-spinner>
-                    <div class="oui-select oui-select_inline" data-ng-if="!ctrl.loadingDomains">
-                        <select class="oui-select__input" id="available-domains" name="available-domains"
-                                data-ng-model="ctrl.selectedDomain"
-                                data-ng-change="ctrl.onDomainValueChange()"
-                                data-ng-options="domain.displayName for domain in ctrl.availableDomains track by domain.displayName">
-                                <option value="" data-translate="exchange_all_domains"></option>
-                        </select>
-                        <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
-                    </div>
                     <div class="input-group">
                         <input type="text" class="form-control" id="delegationSearch" maxlength="256" name="delegationSearch" placeholder="{{'exchange_tab_ACCOUNTS_table_email' | translate}}"
                                data-ng-change="ctrl.onSearchValueChange()"

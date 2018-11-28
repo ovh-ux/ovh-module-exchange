@@ -14,6 +14,11 @@ angular.module('Module.exchange.controllers').controller(
 
       this.timeout = null;
       this.selectedGroup = navigation.currentActionData;
+      this.availableDomains = [];
+      this.loadingDomains = false;
+      this.currentAccount = this.services.navigation.currentActionData.mailingListAddress;
+      this.allDomainsOption = { displayName: this.services.$translate.instant('exchange_all_domains'), name: '' };
+      this.selectedDomain = this.getDefaultDomain();
 
       this.search = {
         value: null,
@@ -28,7 +33,7 @@ angular.module('Module.exchange.controllers').controller(
         managersList: [],
         membersList: [],
       };
-
+      this.fetchAccountCreationOptions();
       $scope.getAccounts = (count, offset) => this.getAccounts(count, offset);
       $scope.updateAccounts = () => this.updateAccounts();
       $scope.getAccountsList = () => this.accountsList;
@@ -41,6 +46,14 @@ angular.module('Module.exchange.controllers').controller(
     }
 
     onSearch() {
+      // clear filter by domain name
+      this.selectedDomain = this.allDomainsOption;
+      this.services.$scope.$broadcast('paginationServerSide.loadPage', 1, 'accountsByGroupTable');
+    }
+
+    onDomainValueChange() {
+      // clear filter by free text search
+      this.search.value = null;
       this.services.$scope.$broadcast('paginationServerSide.loadPage', 1, 'accountsByGroupTable');
     }
 
@@ -79,17 +92,53 @@ angular.module('Module.exchange.controllers').controller(
       }
     }
 
+    getDefaultDomain() {
+      const name = _.last(this.currentAccount.split('@'))
+      return {
+        displayName: name,
+        name: name
+      };
+    }
+
+    fetchAccountCreationOptions() {
+      this.loadingDomains = true;
+      return this.services.Exchange.fetchingAccountCreationOptions(
+        this.$routerParams.organization,
+        this.$routerParams.productId,
+      )
+        .then((accountCreationOptions) => {
+          const domains = [this.allDomainsOption];
+          _.forEach(accountCreationOptions.availableDomains, domain => {
+            domains.push(domain);
+            if (domain.name === this.selectedDomain.name) {
+              this.selectedDomain = domain;
+            }
+          });
+          this.availableDomains = domains;
+        })
+        .catch((error) => {
+          this.services.messaging.writeError(
+            this.services.$translate.instant('exchange_accounts_fetchAccountCreationOptions_error'),
+            error,
+          );
+        })
+        .finally(() => {
+          this.loadingDomains = false;
+        });
+    }
+
     getAccounts(count, offset) {
       this.services.messaging.resetMessages();
       this.loading = true;
-
+      // filter by domain name or free text search
+      const filter = _.get(this.search, 'value') || _.get(this.selectedDomain, 'name');
       this.services.Exchange.getAccountsByGroup(
         this.$routerParams.organization,
         this.$routerParams.productId,
         this.selectedGroup.mailingListAddress,
         count,
         offset,
-        this.search != null ? this.search.value : '',
+        filter,
       )
         .then((accounts) => {
           this.accountsListBuffer = accounts;
