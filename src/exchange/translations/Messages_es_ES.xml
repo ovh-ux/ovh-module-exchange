@@ -329,7 +329,7 @@
    <translation id="exchange_tab_TASKS_warning" qtlid="136347">¡Atención!</translation>
    <translation id="exchange_tab_TASKS_partial" qtlid="137426">La lista mostrada no está completa. Algunas tareas no han podido cargarse correctamente.</translation>
    <translation id="exchange_tab_TASKS_error_message" qtlid="144097">Se ha producido un error al cargar las tareas.</translation>
-   <translation id="exchange_tab_TASKS_DIAGNOSE_ACCOUNT" qtlid="509443">Diagnostiquer le compte</translation>
+   <translation id="exchange_tab_TASKS_DIAGNOSE_ACCOUNT" qtlid="509443">Realizar el diagnóstico de la cuenta</translation>
 
    <translation id="exchange_resilitation_action_title" qtlid="190888">Baja del servicio Exchange</translation>
    <translation id="exchange_resilitation_action_intro" qtlid="190901">¿Seguro que quiere dar de baja el servicio Exchange «{0}»? <br />Esta acción cancelará la renovación automática al finalizar el periodo de expiración, bloqueando el servicio.<br /><br /> Puede utilizar el servicio con normalidad hasta esa fecha.</translation>
@@ -1514,7 +1514,7 @@
    <translation id="subDomain_pattern_error" qtlid="221890">El subdominio no puede empezar o terminar por una cifra o «-» y solo puede contener cifras, letras o «-».</translation>
    <translation id="exchange_ACTION_beta_sharepoint_success" qtlid="221903">La solicitud de participación en el preestreno se ha enviado</translation>
    <translation id="exchange_ACTION_beta_sharepoint_error" qtlid="221916">Se ha producido un error al enviar la solicitud de participación en el preestreno</translation>
-   <translation id="exchange_SHARED_ACCOUNTS_export_csv" qtlid="509404">Exportar las cuentas compartidas CSV</translation>
+   <translation id="exchange_SHARED_ACCOUNTS_export_csv" qtlid="509404">Exportar las cuentas compartidas en CSV</translation>
 
 <!-- Upgrade Outlook 2013 -> 2016 -->
    <translation id="exchange_upgrade_button_title" qtlid="271686">Migrar a Exchange 2016</translation>

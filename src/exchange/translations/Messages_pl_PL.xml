@@ -408,7 +408,7 @@
    <translation id="exchange_tab_domain_diagnostic_cname" qtlid="129847">CNAME</translation>
    <translation id="exchange_tab_domain_status" qtlid="26443">Status</translation>
    <translation id="exchange_tab_domain_task_in_progress" qtlid="2690">Zadania w trakcie</translation>
-   <translation id="exchange_tab_domain_validation" qtlid="33802">Zatwierdź</translation>
+   <translation id="exchange_tab_domain_validation" qtlid="33802">Zatwierdzenie</translation>
    <translation id="exchange_tab_domain_validation_doing" qtlid="136646">Trwa potwierdzanie domeny</translation>
    <translation id="exchange_tab_domain_validation_cname" qtlid="139260">Należy stworzyć wpis CNAME.</translation>
    <translation id="exchange_tab_domain_validation_cname_title" qtlid="139273">Weryfikacja kontaktu właściciela</translation>

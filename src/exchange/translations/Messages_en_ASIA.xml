@@ -329,7 +329,7 @@
    <translation id="exchange_tab_TASKS_warning" qtlid="136347">Attention!</translation>
    <translation id="exchange_tab_TASKS_partial" qtlid="137426">The list displayed is incomplete, some tasks did not load correctly.</translation>
    <translation id="exchange_tab_TASKS_error_message" qtlid="144097">An error has occurred loading the tasks.</translation>
-   <translation id="exchange_tab_TASKS_DIAGNOSE_ACCOUNT" qtlid="509443">Diagnostiquer le compte</translation>
+   <translation id="exchange_tab_TASKS_DIAGNOSE_ACCOUNT" qtlid="509443">Diagnose account</translation>
 
    <translation id="exchange_resilitation_action_title" qtlid="190888">Cancel your Exchange service</translation>
    <translation id="exchange_resilitation_action_intro" qtlid="190901">Are you sure you want to cancel the Exchange "{0}" service? <br />This action will cancel the automatic renewal at the end of the expiry period, causing the service to be blocked.<br /><br /> You should be able to use the service up until this date.</translation>
