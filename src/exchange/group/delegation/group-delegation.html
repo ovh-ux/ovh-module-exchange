@@ -102,7 +102,8 @@
                                     </oui-checkbox>
                                     <!-- Mutual exclusive option (sendOnBehalf) is deactivated-->
                                     <oui-checkbox data-ng-if="!account.sendOnBehalfTo && !account.newSendOnBehalfToValue"
-                                                  data-model="account.newSendAsValue">
+                                                  data-model="account.newSendAsValue"
+                                                  data-on-change="ctrl.updateAccountSendAs(modelValue, account)">
                                     </oui-checkbox>
                                 </div>
                             </div>
@@ -132,7 +133,8 @@
                                     </oui-checkbox>
                                     <!-- Mutual exclusive option (sendAs) is deactivated-->
                                     <oui-checkbox data-ng-if="!account.sendAs && !account.newSendAsValue"
-                                                  data-model="account.newSendOnBehalfToValue">
+                                                  data-model="account.newSendOnBehalfToValue"
+                                                  data-on-change="ctrl.updateAccountSendOnBehalfTo(modelValue, account)">
                                     </oui-checkbox>
                                 </div>
                             </div>

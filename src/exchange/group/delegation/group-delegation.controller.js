@@ -15,12 +15,13 @@ angular.module('Module.exchange.controllers').controller(
     $onInit() {
       this.$routerParams = this.services.Exchange.getParams();
 
-      this.selectedGroup = this.servicesnavigation.currentActionData;
+      this.selectedGroup = this.services.navigation.currentActionData;
       this.form = {
         search: null,
       };
 
       this.accountChanges = {
+        account: this.selectedGroup.mailingListName,
         sendRights: [],
         sendOnBehalfToRights: [],
       };
@@ -42,55 +43,47 @@ angular.module('Module.exchange.controllers').controller(
       this.debouncedGetDelegationRight();
     }
 
-    getChanges() {
-      const changesList = {
-        account: this.selectedGroup.mailingListName,
-        sendRights: [],
-        sendOnBehalfToRights: [],
-      };
-
-      if (_.has(this.delegationList, 'list.results')) {
-        _.forEach(this.delegationList.list.results, (account) => {
-          this.recordChangeOperations(account, changesList);
-        });
-      }
-
-      return changesList;
-    }
-
     resetSearch() {
       this.form.search = null;
       this.services.$scope.$broadcast('paginationServerSide.loadPage', 1, 'delegationTable');
     }
 
-    /* eslint-disable class-methods-use-this */
-    recordChangeOperations(account, changesList) {
-      // record the operation to be done for sendAs rights:
-      if (account.newSendAsValue !== account.sendAs) {
-        changesList.sendRights.push({
+    updateAccountSendAs(newSendAsValue, account) {
+      if (newSendAsValue !== account.sendAs) {
+        this.accountChanges.sendRights.push({
           id: account.id,
-          operation: account.newSendAsValue ? 'POST' : 'DELETE',
+          operation: newSendAsValue ? 'POST' : 'DELETE',
         });
       }
-
-      // records the operation for sendOnBehalfTo rights:
-      if (account.newSendOnBehalfToValue !== account.sendOnBehalfTo) {
-        changesList.sendOnBehalfToRights.push({
-          id: account.id,
-          operation: account.newSendOnBehalfToValue ? 'POST' : 'DELETE',
-        });
-      }
-
-      return changesList;
     }
-    /* eslint-enable class-methods-use-this */
+
+    updateAccountSendOnBehalfTo(newSendOnBehalfToValue, account) {
+      if (newSendOnBehalfToValue !== account.sendOnBehalfTo) {
+        this.accountChanges.sendOnBehalfToRights.push({
+          id: account.id,
+          operation: newSendOnBehalfToValue ? 'POST' : 'DELETE',
+        });
+      }
+    }
+
+    applyAccountSelection(account) {
+      const sendAsAccountChange = this.accountChanges.sendRights
+        .find(({ id }) => id === account.id);
+      const sendOnBehalfToAccountChange = this.accountChanges.sendOnBehalfToRights
+        .find(({ id }) => id === account.id);
+
+      const newSendAsValue = sendAsAccountChange ? _.get(sendAsAccountChange, 'operation') === 'POST' : account.sendAs;
+      const newSendOnBehalfToValue = sendOnBehalfToAccountChange ? _.get(sendOnBehalfToAccountChange, 'operation') === 'POST' : account.sendOnBehalfTo;
+
+      return Object.assign({}, account, {
+        newSendAsValue,
+        newSendOnBehalfToValue,
+      });
+    }
 
     hasChanged() {
-      const changesList = this.getChanges();
-
-      return changesList != null
-        ? changesList.sendRights.length > 0 || changesList.sendOnBehalfToRights.length > 0
-        : false;
+      return this.accountChanges.sendRights.length > 0
+      || this.accountChanges.sendOnBehalfToRights.length > 0;
     }
 
     getDelegationRight(count, offset) {
@@ -101,21 +94,16 @@ angular.module('Module.exchange.controllers').controller(
         this.$routerParams.organization,
         this.$routerParams.productId,
         this.selectedGroup.mailingListName,
-        count,
-        offset,
+        pageSize,
+        offset - 1,
         this.form.search,
       )
         .then((accounts) => {
           // make a deep copy of accounts list to use it as model
           this.delegationList = angular.copy(accounts);
 
-          if (_.has(this.delegationList, 'list.results')) {
-            // keep the original value to have a reference to compare changes
-            _.forEach(this.delegationList.list.results, (account) => {
-              _.set(account, 'newSendAsValue', account.sendAs);
-              _.set(account, 'newSendOnBehalfToValue', account.sendOnBehalfTo);
-            });
-          }
+          this.delegationList.list.results = accounts.list.results
+            .map(account => this.applyAccountSelection(account));
         })
         .catch((failure) => {
           this.services.messaging.writeError(
@@ -137,7 +125,7 @@ angular.module('Module.exchange.controllers').controller(
       this.services.Exchange.updateMailingListDelegationRights(
         this.$routerParams.organization,
         this.$routerParams.productId,
-        this.getChanges(),
+        this.accountChanges,
       )
         .then((data) => {
           this.services.messaging.writeSuccess(
