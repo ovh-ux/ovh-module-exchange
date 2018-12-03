@@ -16,10 +16,13 @@ angular.module('Module.exchange.controllers').controller(
       this.form = {
         search: null,
       };
+      this.currentAccount = this.services.navigation.currentActionData.mailingListAddress;
+      this.allDomainsOption = { displayName: this.services.$translate.instant('exchange_all_domains'), name: '' };
+      this.selectedDomain = this.getDefaultDomain();
       $scope.$on(Exchange.events.accountsChanged, () => $scope.$broadcast('paginationServerSide.reload', 'delegationTable'));
 
       this.debouncedGetDelegationRight = _.debounce(this.getDelegationRight, 300);
-
+      this.fetchAccountCreationOptions();
       $scope.getLoading = () => this.loading;
       $scope.getDelegationList = () => this.delegationList;
       $scope.updateDelegationRight = () => this.updateDelegationRight();
@@ -28,6 +31,8 @@ angular.module('Module.exchange.controllers').controller(
     }
 
     onSearchValueChange() {
+      // clear filter by domain name
+      this.selectedDomain = this.allDomainsOption;
       this.debouncedGetDelegationRight();
     }
 
@@ -48,6 +53,12 @@ angular.module('Module.exchange.controllers').controller(
     }
 
     resetSearch() {
+      this.form.search = null;
+      this.services.$scope.$broadcast('paginationServerSide.loadPage', 1, 'delegationTable');
+    }
+
+    onDomainValueChange() {
+      // clear filter by free text search
       this.form.search = null;
       this.services.$scope.$broadcast('paginationServerSide.loadPage', 1, 'delegationTable');
     }
@@ -85,13 +96,15 @@ angular.module('Module.exchange.controllers').controller(
     getDelegationRight(count, offset) {
       this.services.messaging.resetMessages();
       this.loading = true;
+      // filter by domain name or free text search
+      const filter = _.get(this.form, 'search') || _.get(this.selectedDomain, 'name');
       this.services.Exchange.getMailingListDelegationRights(
         this.$routerParams.organization,
         this.$routerParams.productId,
         this.selectedGroup.mailingListName,
         count,
         offset,
-        this.form.search,
+        filter,
       )
         .then((accounts) => {
           // make a deep copy of accounts list to use it as model
@@ -141,6 +154,41 @@ angular.module('Module.exchange.controllers').controller(
         })
         .finally(() => {
           this.services.navigation.resetAction();
+        });
+    }
+
+    getDefaultDomain() {
+      const name = _.last(this.currentAccount.split('@'))
+      return {
+        displayName: name,
+        name: name
+      };
+    }
+
+    fetchAccountCreationOptions() {
+      this.loadingDomains = true;
+      return this.services.Exchange.fetchingAccountCreationOptions(
+        this.$routerParams.organization,
+        this.$routerParams.productId,
+      )
+        .then((accountCreationOptions) => {
+          const domains = [this.allDomainsOption];
+          _.forEach(accountCreationOptions.availableDomains, domain => {
+            domains.push(domain);
+            if (domain.name === this.selectedDomain.name) {
+              this.selectedDomain = domain;
+            }
+          });
+          this.availableDomains = domains;
+        })
+        .catch((error) => {
+          this.services.messaging.writeError(
+            this.services.$translate.instant('exchange_accounts_fetchAccountCreationOptions_error'),
+            error,
+          );
+        })
+        .finally(() => {
+          this.loadingDomains = false;
         });
     }
   },
