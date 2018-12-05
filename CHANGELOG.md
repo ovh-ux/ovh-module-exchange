@@ -1,3 +1,20 @@
+# [9.2.0](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.1.2...v9.2.0) (2018-12-05)
+
+
+### Bug Fixes
+
+* **i18n:** retrieve translations ([b5790c8](https://github.com/ovh-ux/ovh-module-exchange/commit/b5790c8))
+* **i18n:** retrieve translations ([1a5427a](https://github.com/ovh-ux/ovh-module-exchange/commit/1a5427a))
+* **i18n:** submit translations ([d182971](https://github.com/ovh-ux/ovh-module-exchange/commit/d182971))
+
+
+### Features
+
+* **group.accounts:** keep selection on page change ([ef7dfcb](https://github.com/ovh-ux/ovh-module-exchange/commit/ef7dfcb))
+* **groups.delegation:** keep selection between pages ([4d84254](https://github.com/ovh-ux/ovh-module-exchange/commit/4d84254))
+
+
+
 ## [9.1.2](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.1.1...v9.1.2) (2018-11-27)
 
 
