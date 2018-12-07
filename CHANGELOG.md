@@ -1,3 +1,13 @@
+## [9.2.1](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.2.0...v9.2.1) (2018-12-07)
+
+
+### Bug Fixes
+
+* **domain.add:** add missing translation ([babe088](https://github.com/ovh-ux/ovh-module-exchange/commit/babe088))
+* **i18n:** retrieve translations ([2cdef7c](https://github.com/ovh-ux/ovh-module-exchange/commit/2cdef7c))
+
+
+
 # [9.2.0](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.1.2...v9.2.0) (2018-12-05)
 
 
