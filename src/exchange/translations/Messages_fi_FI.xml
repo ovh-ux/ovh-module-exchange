@@ -11,8 +11,8 @@
    <translation id="exchange_contractTypes_payAsYouGo" qtlid="485671">Maksu kulutuksen mukaan</translation>
    <translation id="exchange_accountCreationMethods_adding" qtlid="47781">Lisää</translation>
    <translation id="exchange_accountCreationMethods_ordering" qtlid="8302">Tilaus</translation>
-   <translation id="exchange_common_confirm">Valider</translation>
-   <translation id="exchange_common_cancel">Annuler</translation>
+   <translation id="exchange_common_confirm" qtlid="26047">Vahvista</translation>
+   <translation id="exchange_common_cancel" qtlid="37863">Peruuta</translation>
 
 <!-- ########################################## -->
 <!-- DASHBOARD -->
@@ -78,6 +78,7 @@ Valitse: <br /> Tyyppi: <span class="bold">A</span> <br /> Aliverkkotunnus: <spa
    <translation id="exchange_ACTION_export_success" qtlid="217054">Exchange-tilien vienti valmistui.</translation>
    <translation id="exchange_ACTION_export_explain" qtlid="217067">Exchange-tilien vienti voi viedä muutaman minuutin (riippuen aktiivisten tilien lukumäärästä).</translation>
    <translation id="exchange_ACTION_export_confirm" qtlid="217080">Haluatko varmasti viedä tilisi?</translation>
+   <translation id="exchange_ACTION_add_domain_invalid_domain" qtlid="375998">Annettu verkkotunnus ei kelpaa.</translation>
 
 <!-- OFFICE ATTACHED -->
    <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Tarjous:</strong> aktivoi Office 365 maksutta Exchange-osoitteillesi!</translation>

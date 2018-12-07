@@ -11,8 +11,8 @@
    <translation id="exchange_contractTypes_payAsYouGo" qtlid="485671">Platba za spotřebu</translation>
    <translation id="exchange_accountCreationMethods_adding" qtlid="47781">Přidat</translation>
    <translation id="exchange_accountCreationMethods_ordering" qtlid="8302">Příkaz</translation>
-   <translation id="exchange_common_confirm">Valider</translation>
-   <translation id="exchange_common_cancel">Annuler</translation>
+   <translation id="exchange_common_confirm" qtlid="26047">Schválit</translation>
+   <translation id="exchange_common_cancel" qtlid="37863">Zrušit</translation>
 
 <!-- ########################################## -->
 <!-- DASHBOARD -->
@@ -76,6 +76,7 @@
    <translation id="exchange_ACTION_export_success" qtlid="217054">Export Vašich účtů Exchange byl dokončen.</translation>
    <translation id="exchange_ACTION_export_explain" qtlid="217067">Export Vašich účtů Exchange může trvat několik minut (v závislosti na počtu účtů, které máte).</translation>
    <translation id="exchange_ACTION_export_confirm" qtlid="217080">Opravdu chcete exportovat své účty?</translation>
+   <translation id="exchange_ACTION_add_domain_invalid_domain" qtlid="375998">Zadaná doména je neplatná.</translation>
 
 <!-- OFFICE ATTACHED -->
    <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Promo akce:</strong> bezplatná aktivace služby Office 365 na Vašich adresách Exchange!</translation>

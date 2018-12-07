@@ -11,8 +11,8 @@
    <translation id="exchange_contractTypes_payAsYouGo" qtlid="485671">Pay-as-you-go</translation>
    <translation id="exchange_accountCreationMethods_adding" qtlid="47781">Toevoegen</translation>
    <translation id="exchange_accountCreationMethods_ordering" qtlid="8302">Bestel</translation>
-   <translation id="exchange_common_confirm">Valider</translation>
-   <translation id="exchange_common_cancel">Annuler</translation>
+   <translation id="exchange_common_confirm" qtlid="26047">Bevestigen</translation>
+   <translation id="exchange_common_cancel" qtlid="37863">Annuleren</translation>
 
 <!-- ########################################## -->
 <!-- DASHBOARD -->
@@ -76,6 +76,7 @@
    <translation id="exchange_ACTION_export_success" qtlid="217054">De export van uw Exchange-accounts is voltooid.</translation>
    <translation id="exchange_ACTION_export_explain" qtlid="217067">Het exporteren van uw Exchange accounts kan enkele minuten duren (afhankelijk van het aantal accounts waarvan u eigenaar bent).</translation>
    <translation id="exchange_ACTION_export_confirm" qtlid="217080">Weet u zeker dat u uw accounts wilt exporteren?</translation>
+   <translation id="exchange_ACTION_add_domain_invalid_domain" qtlid="375998">Het ingevoerde domein is niet geldig</translation>
 
 <!-- OFFICE ATTACHED -->
    <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Actie:</strong> activeer Office 365 gratis op uw Exchange-adressen!</translation>
