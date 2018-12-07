@@ -11,8 +11,8 @@
    <translation id="exchange_contractTypes_payAsYouGo" qtlid="485671">Płatność według zużycia</translation>
    <translation id="exchange_accountCreationMethods_adding" qtlid="47781">Dodaj</translation>
    <translation id="exchange_accountCreationMethods_ordering" qtlid="8302">Zamówienie</translation>
-   <translation id="exchange_common_confirm">Valider</translation>
-   <translation id="exchange_common_cancel">Annuler</translation>
+   <translation id="exchange_common_confirm" qtlid="26047">Zatwierdź</translation>
+   <translation id="exchange_common_cancel" qtlid="37863">Anuluj</translation>
 
 <!-- ########################################## -->
 <!-- DASHBOARD -->
@@ -76,6 +76,7 @@
    <translation id="exchange_ACTION_export_success" qtlid="217054">Wykonano eksport kont Exchange.</translation>
    <translation id="exchange_ACTION_export_explain" qtlid="217067">Eksport kont Exchange może trwać kilka minut (w zależności od liczby posiadanych kont).</translation>
    <translation id="exchange_ACTION_export_confirm" qtlid="217080">Czy chcesz wyeksportować swoje konta?</translation>
+   <translation id="exchange_ACTION_add_domain_invalid_domain" qtlid="375998">Podana domena jest nieprawidłowa.</translation>
 
 <!-- OFFICE ATTACHED -->
    <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Promocja:</strong> Włącz za darmo usługę Office 365 dla swoich adresów Exchange!</translation>

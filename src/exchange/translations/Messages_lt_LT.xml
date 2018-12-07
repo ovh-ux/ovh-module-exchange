@@ -11,8 +11,8 @@
    <translation id="exchange_contractTypes_payAsYouGo" qtlid="485671">Apmokėjimas po naudojimo</translation>
    <translation id="exchange_accountCreationMethods_adding" qtlid="47781">Priskirti</translation>
    <translation id="exchange_accountCreationMethods_ordering" qtlid="8302">Užsakymas</translation>
-   <translation id="exchange_common_confirm">Valider</translation>
-   <translation id="exchange_common_cancel">Annuler</translation>
+   <translation id="exchange_common_confirm" qtlid="26047">Patvirtinti</translation>
+   <translation id="exchange_common_cancel" qtlid="37863">Anuliuoti</translation>
 
 <!-- ########################################## -->
 <!-- DASHBOARD -->
@@ -76,6 +76,7 @@
    <translation id="exchange_ACTION_export_success" qtlid="217054">Exchange paskyrų eksportavimas baigtas.</translation>
    <translation id="exchange_ACTION_export_explain" qtlid="217067">Exchange paskyrų eksportavimas gali užtrukti kelias minutes (priklausomai nuo egzistuojančių paskyrų skaičiaus).</translation>
    <translation id="exchange_ACTION_export_confirm" qtlid="217080">Ar tikrai norite eksportuoti paskyras?</translation>
+   <translation id="exchange_ACTION_add_domain_invalid_domain" qtlid="375998">Įvestas domenas negaliojantis</translation>
 
 <!-- OFFICE ATTACHED -->
    <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Specialus pasiūlymas:</strong> Office 365 nemokamai Exchange el. pašto dėžutėms!</translation>
