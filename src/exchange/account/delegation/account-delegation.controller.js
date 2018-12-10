@@ -18,11 +18,12 @@ angular.module('Module.exchange.controllers').controller(
       this.searchValue = null;
       this.selectedDomain = this.services.navigation.currentActionData.completeDomain;
       this.allDomainsOption = { displayName: this.services.$translate.instant('exchange_all_domains'), name: '' };
-      this.availableDomains = [this.allDomainsOption].concat(this.services.navigation.currentActionData.availableDomains);
+      this.availableDomains = [this.allDomainsOption]
+        .concat(this.services.navigation.currentActionData.availableDomains);
       this.services.$scope.updateDelegationRight = () => this.updateDelegationRight();
       this.services.$scope.hasChanged = () => this.hasChanged();
       this.services.$scope.getAccounts = (count, offset) => this.getAccounts(count, offset);
-      
+
       this.services.$scope.$on(
         this.services.Exchange.events.accountsChanged,
         () => this.services.$scope.getAccounts(),

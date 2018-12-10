@@ -158,10 +158,10 @@ angular.module('Module.exchange.controllers').controller(
     }
 
     getDefaultDomain() {
-      const name = _.last(this.currentAccount.split('@'))
+      const name = _.last(this.currentAccount.split('@'));
       return {
         displayName: name,
-        name: name
+        name,
       };
     }
 
@@ -173,7 +173,7 @@ angular.module('Module.exchange.controllers').controller(
       )
         .then((accountCreationOptions) => {
           const domains = [this.allDomainsOption];
-          _.forEach(accountCreationOptions.availableDomains, domain => {
+          _.forEach(accountCreationOptions.availableDomains, (domain) => {
             domains.push(domain);
             if (domain.name === this.selectedDomain.name) {
               this.selectedDomain = domain;
