@@ -176,7 +176,7 @@ angular.module('Module.exchange.controllers').controller(
     getAccounts(count, offset) {
       this.services.messaging.resetMessages();
       this.loading = true;
-      // filter by domai name or free text search
+      // filter by domain name or free text search
       const filter = this.searchValue || _.get(this.selectedDomain, 'name');
       return this.services.Exchange.retrieveAccountDelegationRight(
         this.$routerParams.organization,
