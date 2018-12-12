@@ -87,7 +87,7 @@ angular.module('Module.exchange.controllers').controller(
                 modals[urlParamAction],
                 this.parseLocationForExchangeData(),
               );
-            });
+            }, 2000);
           }
         });
     }
