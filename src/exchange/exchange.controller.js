@@ -51,10 +51,6 @@ angular.module('Module.exchange.controllers').controller(
         this.retrievingExchange();
       });
 
-      $scope.$on('$locationChangeStart', () => {
-        this.services.navigation.resetAction();
-      });
-
       $scope.$on('exchange.wizard_hosted_creation.display', () => {
         this.shouldOpenWizard = this.services.exchangeServiceInfrastructure.isHosted();
         this.hasNoDomain = true;
