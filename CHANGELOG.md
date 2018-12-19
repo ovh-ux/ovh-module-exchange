@@ -1,3 +1,12 @@
+## [9.2.2](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.2.1...v9.2.2) (2018-12-19)
+
+
+### Bug Fixes
+
+* **renew:** fix automatic modal opening ([d8c29fb](https://github.com/ovh-ux/ovh-module-exchange/commit/d8c29fb))
+
+
+
 ## [9.2.1](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.2.0...v9.2.1) (2018-12-07)
 
 
