@@ -107,7 +107,7 @@ angular.module('Module.exchange.controllers').controller(
 
     hasChanged() {
       return this.accountChanges.sendRights.length > 0
-  || this.accountChanges.sendOnBehalfToRights.length > 0;
+        || this.accountChanges.sendOnBehalfToRights.length > 0;
     }
 
     changeSelectionPage(offset) {
