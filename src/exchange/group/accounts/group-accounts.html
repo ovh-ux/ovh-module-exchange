@@ -1,124 +1,48 @@
-<div data-ng-controller="ExchangeGroupAccountsCtrl as ctrl">
-    <div data-wizard
-         data-wizard-on-cancel="resetAction"
-         data-wizard-on-finish="updateAccounts"
-         data-wizard-title="'exchange_GROUPS_accounts_title' | translate">
+<div data-ng-controller="ExchangeGroupAccountsCtrl as $ctrl">
+    <oui-modal data-heading="{{:: 'exchange_GROUPS_accounts_title' | translate }}"
+               data-primary-action="$ctrl.updateAccounts()"
+               data-primary-label="{{:: 'exchange_common_confirm' | translate }}"
+               data-secondary-action="resetAction()"
+               data-secondary-label="{{:: 'exchange_common_cancel' | translate }}"
+               data-on-dismiss="resetAction()"
+               data-loading="!$ctrl.accountsList">
 
-        <div data-wizard-step>
+        <p data-translate="exchange_GROUPS_accounts_step1_intro"></p>
+        <oui-message data-type="warning" data-ng-if="$ctrl.accountsList.list.messages.length > 0">
+            <strong data-translate="exchange_tab_ACCOUNTS_warning"></strong>
+            <span data-translate="exchange_tab_ACCOUNTS_partial"></span>
+        </oui-message>
 
-            <p data-translate="exchange_GROUPS_accounts_step1_intro"></p>
+        <oui-datagrid data-rows-loader="$ctrl.getAccounts($config)" data-page-size="10" data-row-loader="$ctrl.applySelection($row)" id="group-accounts">
+            <oui-column data-title=":: 'exchange_GROUPS_delegation_step1_email_header' | translate" data-type="string" data-searchable>
+                <p data-ng-if="$row.message">
+                    <span class="oui-icon oui-icon-warning_circle mr-2" aria-hidden="true"></span>
+                    <span class="sr-only" data-translate="exchange_tab_ACCOUNTS_warning"></span>
+                    <span data-ng-bind="::$row.id"></span>
+                </p>
+                <span class="word-break" data-ng-bind="$row.displayAddress | wucSliceContent: 150"></span>
+            </oui-column>
+            <oui-column data-title=":: 'exchange_tab_GROUPS_all_table_manager' | translate">
+                <oui-checkbox data-ng-if="$row.type === 'ACCOUNT' || $row.type === 'CONTACT'" data-model="$row.manager" data-disabled="$row.type === 'CONTACT'" data-on-change="$ctrl.updateManagersList(modelValue, $row)"></oui-checkbox>
+            </oui-column>
+            <oui-column data-title=":: 'exchange_tab_GROUPS_all_table_user' | translate">
+                <oui-checkbox data-ng-if="!$row.message" data-model="$row.member" data-on-change="$ctrl.updateMembersList(modelValue, $row)"></oui-checkbox>
+            </oui-column>
+            <extra-top>
+                <oui-spinner data-size="s" data-ng-if="$ctrl.loadingDomains"></oui-spinner>
+                <oui-select class="select-domain oui-select_inline" data-ng-if="!$ctrl.loadingDomains"
+                    data-model="$ctrl.selectedDomain"
+                    data-items="$ctrl.availableDomains"
+                    data-match="displayName"
+                    data-align="start"
+                    data-on-change="$ctrl.onDomainValueChange(modelValue)">
+                    <span data-ng-bind="$item.displayName"></span>
+                </oui-select>
+            </extra-top>
+        </oui-datagrid>
 
-            <div class="alert alert-warning" role="alert"
-                 data-ng-if="!ctrl.loading && ctrl.accountsList && ctrl.accountsList.list.messages.length > 0">
-                <div>
-                    <strong data-translate="exchange_tab_ACCOUNTS_warning"></strong>
-                    <span data-translate="exchange_tab_ACCOUNTS_partial"></span>
-                </div>
-            </div>
-
-            <form class="form-inline d-md-flex justify-content-md-end mb-3">
-                <div class="form-group">
-                    <label class="sr-only" for="accountSearch"
-                           data-translate="common_search"></label>
-                    <oui-spinner data-size="s" data-ng-if="ctrl.loadingDomains"></oui-spinner>
-                    <oui-select class="select-domain oui-select_inline" data-ng-if="!ctrl.loadingDomains"
-                        data-model="ctrl.selectedDomain"
-                        data-items="ctrl.availableDomains"
-                        data-match="displayName"
-                        data-align="start"
-                        data-on-change="ctrl.onDomainValueChange(modelValue)">
-                        <span data-ng-bind="$item.displayName"></span>
-                    </oui-select>
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="accountSearch" maxlength="256" placeholder="{{::'exchange_tab_ACCOUNTS_table_email' | translate}}"
-                               data-ng-change="ctrl.onSearch()"
-                               data-ng-disabled="ctrl.loading"
-                               data-ng-model="ctrl.search.value"
-                               data-ng-model-options="{ debounce: 800 }">
-                        <div class="input-group-btn" data-ng-if="ctrl.search.value">
-                            <button class="btn btn-default" type="button" aria-label="{{'common_cancel' | translate}}"
-                                    data-ng-click="ctrl.resetSearch()"
-                                    data-ng-disabled="ctrl.loading">
-                                <span class="fa fa-times" aria-hidden="true"></span>
-                            </button>
-                        </div>
-                        <span class="input-group-addon" data-ng-if="!ctrl.search.value">
-                            <span class="fa fa-search" aria-hidden="true"></span>
-                        </span>
-                    </div>
-                </div>
-            </form>
-
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col" data-translate="exchange_GROUPS_delegation_step1_email_header"></th>
-                        <th class="text-center" scope="col" data-translate="exchange_tab_GROUPS_all_table_manager"></th>
-                        <th class="text-center" scope="col" data-translate="exchange_tab_GROUPS_all_table_user"></th>
-                    </tr>
-                </thead>
-
-                <tbody data-ng-if="ctrl.loading">
-                    <tr>
-                        <td class="text-center" colspan="3">
-                            <oui-spinner></oui-spinner>
-                        </td>
-                    </tr>
-                </tbody>
-
-                <tbody data-ng-if="!ctrl.loading && ctrl.accountsList.list.results.length === 0 && ctrl.accountsList.list.messages.length === 0">
-                    <tr>
-                        <td class="text-center" colspan="3">
-                            <span data-translate="exchange_tab_GROUPS_table_empty"
-                                  data-ng-if="!ctrl.search.value"></span>
-                            <span data-translate="exchange_tab_GROUPS_table_empty_search"
-                                  data-ng-if="ctrl.search.value"></span>
-                        </td>
-                    </tr>
-                </tbody>
-
-                <tbody data-ng-if="!ctrl.loading && (ctrl.accountsList.list.results.length > 0 || ctrl.accountsList.list.messages.length > 0)">
-                    <tr	data-ng-repeat="account in (ctrl.accountsList.list.results | orderBy:'formattedAddress':false) track by $index">
-                        <th class="word-break" scope="row"
-                            data-ng-bind="account.displayAddress | wucSliceContent: 150"></th>
-                        <td class="text-center">
-                            <label data-ng-if="account.type === 'ACCOUNT'">
-                                <input type="checkbox"
-                                       data-ng-model="account.manager">
-                            </label>
-
-                            <label data-ng-if="account.type === 'CONTACT'"
-                                   data-uib-tooltip="{{'exchange_GROUPS_add_group_contact_as_manager_info' | translate}}">
-                                <input type="checkbox" disabled/>
-                            </label>
-                        </td>
-                        <td class="text-center">
-                            <label>
-                                <input type="checkbox"
-                                       data-ng-model="account.member">
-                            </label>
-                        </td>
-                    </tr>
-
-                    <tr data-ng-repeat="account in (ctrl.accountsList.list.messages | orderBy:'id':false) track by $index">
-                        <td colspan="3" data-uib-tooltip="{{ 'exchange_GROUPS_partial_account' | translate: { t0: account.message } }}">
-                            <span class="fa fa-exclamation-triangle mr-2" aria-hidden="true"></span>
-                            <span data-ng-bind="account.id"></span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="clearfix"
-                 data-pagination-server-side="accountsByGroupTable"
-                 data-pagination-server-side-function="getAccounts"
-                 data-pagination-server-side-paginated-stuff="getAccountsList()"
-                 data-pagination-server-side-table-loading="getLoading()">
-            </div>
-
-            <div class="alert alert-info mt-5" role="alert"
-                 data-translate="exchange_GROUPS_add_group_contact_as_manager_info">
-            </div>
-        </div>
-    </div>
+        <oui-message data-type="info">
+            <span data-translate="exchange_GROUPS_add_group_contact_as_manager_info"></span>
+        </oui-message>
+    </oui-modal>
 </div>

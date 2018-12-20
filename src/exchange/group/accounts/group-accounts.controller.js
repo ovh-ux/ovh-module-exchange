@@ -1,13 +1,14 @@
 angular.module('Module.exchange.controllers').controller(
   'ExchangeGroupAccountsCtrl',
   class ExchangeGroupAccountsCtrl {
-    constructor($scope, Exchange, messaging, navigation, $translate) {
+    constructor($scope, Exchange, messaging, navigation, $translate, ouiDatagridService) {
       this.services = {
         $scope,
         Exchange,
         messaging,
         navigation,
         $translate,
+        ouiDatagridService,
       };
 
       this.$routerParams = Exchange.getParams();
@@ -34,62 +35,55 @@ angular.module('Module.exchange.controllers').controller(
         membersList: [],
       };
       this.fetchAccountCreationOptions();
-      $scope.getAccounts = (count, offset) => this.getAccounts(count, offset);
-      $scope.updateAccounts = () => this.updateAccounts();
-      $scope.getAccountsList = () => this.accountsList;
-      $scope.getLoading = () => this.loading;
-    }
-
-    resetSearch() {
-      this.search.value = null;
-      this.services.$scope.$broadcast('paginationServerSide.loadPage', 1, 'accountsByGroupTable');
-    }
-
-    onSearch() {
-      // clear filter by domain name
-      this.selectedDomain = this.allDomainsOption;
-      this.services.$scope.$broadcast('paginationServerSide.loadPage', 1, 'accountsByGroupTable');
     }
 
     onDomainValueChange() {
       // clear filter by free text search
       this.search.value = null;
-      this.services.$scope.$broadcast('paginationServerSide.loadPage', 1, 'accountsByGroupTable');
+      this.refreshDatagrid('group-accounts', true);
     }
 
-    saveSelection() {
-      this.model.managersList = [];
-      this.model.membersList = [];
+    refreshDatagrid(datagridId, showSpinner) {
+      this.services.ouiDatagridService.refresh(datagridId, showSpinner);
+    }
 
-      if (_.has(this.accountsList, 'list.results')) {
-        const accounts = this.accountsList.list.results;
+    updateManagersList(newManagerValue, account) {
+      const bufferedAccount = this.accountsListBuffer.list.results
+        .find(({ id }) => id === account.id);
 
-        _.forEach(accounts, (account) => {
-          const bufferedAccount = _.find(
-            this.accountsListBuffer.list.results,
-            bufferedAcc => bufferedAcc.id === account.id,
-          );
-          let bufferedAccountUserType = _.get(bufferedAccount, 'manager');
-
-          if (account.manager !== bufferedAccountUserType) {
-            this.model.managersList.push({
-              id: account.id,
-              operation: account.manager ? 'POST' : 'DELETE',
-              itemType: account.type,
-            });
-          }
-
-          bufferedAccountUserType = _.get(bufferedAccount, 'member');
-
-          if (account.member !== bufferedAccountUserType) {
-            this.model.membersList.push({
-              id: account.id,
-              operation: account.member ? 'POST' : 'DELETE',
-              itemType: account.type,
-            });
-          }
+      if (newManagerValue !== _.get(bufferedAccount, 'manager')) {
+        this.model.managersList.push({
+          id: account.id,
+          operation: newManagerValue ? 'POST' : 'DELETE',
+          itemType: account.type,
         });
       }
+    }
+
+    updateMembersList(newMemberValue, account) {
+      const bufferedAccount = this.accountsListBuffer.list.results
+        .find(({ id }) => id === account.id);
+
+      if (newMemberValue !== _.get(bufferedAccount, 'manager')) {
+        this.model.membersList.push({
+          id: account.id,
+          operation: newMemberValue ? 'POST' : 'DELETE',
+          itemType: account.type,
+        });
+      }
+    }
+
+    applySelection(account) {
+      const accountInManagerList = this.model.managersList.find(({ id }) => id === account.id);
+      const accountInMemberList = this.model.membersList.find(({ id }) => id === account.id);
+
+      const managerValue = accountInManagerList ? _.get(accountInManagerList, 'operation') === 'POST' : account.manager;
+      const memberValue = accountInMemberList ? _.get(accountInMemberList, 'operation') === 'POST' : account.member;
+
+      return Object.assign({}, account, {
+        manager: managerValue,
+        member: memberValue,
+      });
     }
 
     getDefaultDomain() {
@@ -127,36 +121,38 @@ angular.module('Module.exchange.controllers').controller(
         });
     }
 
-    getAccounts(count, offset) {
+    getAccounts({ pageSize, offset, criteria }) {
+      const [search] = criteria;
       this.services.messaging.resetMessages();
-      this.loading = true;
-      // filter by domain name or free text search
-      const filter = _.get(this.search, 'value') || _.get(this.selectedDomain, 'name');
-      this.services.Exchange.getAccountsByGroup(
+      if (_.get(search, 'value')) {
+        // clear filter by domain name
+        this.selectedDomain = this.allDomainsOption;
+      }
+      const filter = _.get(search, 'value') || _.get(this.selectedDomain, 'name');
+      return this.services.Exchange.getAccountsByGroup(
         this.$routerParams.organization,
         this.$routerParams.productId,
         this.selectedGroup.mailingListAddress,
-        count,
-        offset,
+        pageSize,
+        offset - 1,
         filter,
       )
         .then((accounts) => {
           this.accountsListBuffer = accounts;
           this.accountsList = angular.copy(accounts);
+          return {
+            data: _.sortBy(accounts.list.results, 'formattedAddress').concat(_.sortBy(accounts.list.messages, 'id')),
+            meta: {
+              totalCount: accounts.count,
+            },
+          };
         })
         .catch((failure) => {
           this.services.messaging.writeError(
             this.services.$translate.instant('exchange_tab_ACCOUNTS_error_message'),
             failure,
           );
-        })
-        .finally(() => {
-          this.loading = false;
-          this.services.$scope.$broadcast(
-            'paginationServerSide.loadPage',
-            1,
-            'accountsByGroupTable',
-          );
+          this.services.navigation.resetAction();
         });
     }
 
@@ -164,7 +160,6 @@ angular.module('Module.exchange.controllers').controller(
       this.services.messaging.writeSuccess(
         this.services.$translate.instant('exchange_dashboard_action_doing'),
       );
-      this.saveSelection();
 
       this.services.Exchange.updateGroups(
         this.$routerParams.organization,

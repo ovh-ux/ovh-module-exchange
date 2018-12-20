@@ -10,151 +10,42 @@ angular.module('Module.exchange.controllers').controller(
         navigation,
         $translate,
       };
-      this.Exchange = Exchange;
-      this.$routerParams = Exchange.getParams();
-      this.selectedGroup = navigation.currentActionData;
-      this.form = {
-        search: null,
-      };
+    }
+
+    $onInit() {
+      this.$routerParams = this.services.Exchange.getParams();
+      this.availableDomains = [];
+      this.loadingDomains = false;
       this.currentAccount = this.services.navigation.currentActionData.mailingListAddress;
       this.allDomainsOption = { displayName: this.services.$translate.instant('exchange_all_domains'), name: '' };
       this.selectedDomain = this.getDefaultDomain();
-      $scope.$on(Exchange.events.accountsChanged, () => $scope.$broadcast('paginationServerSide.reload', 'delegationTable'));
 
-      this.debouncedGetDelegationRight = _.debounce(this.getDelegationRight, 300);
-      this.fetchAccountCreationOptions();
-      $scope.getLoading = () => this.loading;
-      $scope.getDelegationList = () => this.delegationList;
-      $scope.updateDelegationRight = () => this.updateDelegationRight();
-      $scope.getDelegationRight = (count, offset) => this.getDelegationRight(count, offset);
-      $scope.hasChanged = () => this.hasChanged();
-    }
+      this.selectedGroup = this.services.navigation.currentActionData;
+      this.form = {
+        search: null,
+      };
 
-    onSearchValueChange() {
-      // clear filter by domain name
-      this.selectedDomain = this.allDomainsOption;
-      this.debouncedGetDelegationRight();
-    }
-
-    getChanges() {
-      const changesList = {
+      this.accountChanges = {
         account: this.selectedGroup.mailingListName,
         sendRights: [],
         sendOnBehalfToRights: [],
       };
+      this.defaultOffset = 1;
+      this.delegationRightSelectionOffset = this.defaultOffset;
+      this.delegationRightCheckingOffset = this.defaultOffset;
+      this.pageSize = 10;
 
-      if (_.has(this.delegationList, 'list.results')) {
-        _.forEach(this.delegationList.list.results, (account) => {
-          this.recordChangeOperations(account, changesList);
-        });
-      }
+      this.services.$scope.$on(this.services.Exchange.events.accountsChanged, () => this.services.$scope.$broadcast('paginationServerSide.reload', 'delegationTable'));
 
-      return changesList;
-    }
-
-    resetSearch() {
-      this.form.search = null;
-      this.services.$scope.$broadcast('paginationServerSide.loadPage', 1, 'delegationTable');
-    }
-
-    onDomainValueChange() {
-      // clear filter by free text search
-      this.form.search = null;
-      this.services.$scope.$broadcast('paginationServerSide.loadPage', 1, 'delegationTable');
-    }
-
-    /* eslint-disable class-methods-use-this */
-    recordChangeOperations(account, changesList) {
-      // record the operation to be done for sendAs rights:
-      if (account.newSendAsValue !== account.sendAs) {
-        changesList.sendRights.push({
-          id: account.id,
-          operation: account.newSendAsValue ? 'POST' : 'DELETE',
-        });
-      }
-
-      // records the operation for sendOnBehalfTo rights:
-      if (account.newSendOnBehalfToValue !== account.sendOnBehalfTo) {
-        changesList.sendOnBehalfToRights.push({
-          id: account.id,
-          operation: account.newSendOnBehalfToValue ? 'POST' : 'DELETE',
-        });
-      }
-
-      return changesList;
-    }
-    /* eslint-enable class-methods-use-this */
-
-    hasChanged() {
-      const changesList = this.getChanges();
-
-      return changesList != null
-        ? changesList.sendRights.length > 0 || changesList.sendOnBehalfToRights.length > 0
-        : false;
-    }
-
-    getDelegationRight(count, offset) {
-      this.services.messaging.resetMessages();
-      this.loading = true;
-      // filter by domain name or free text search
-      const filter = _.get(this.form, 'search') || _.get(this.selectedDomain, 'name');
-      this.services.Exchange.getMailingListDelegationRights(
-        this.$routerParams.organization,
-        this.$routerParams.productId,
-        this.selectedGroup.mailingListName,
-        count,
-        offset,
-        filter,
-      )
-        .then((accounts) => {
-          // make a deep copy of accounts list to use it as model
-          this.delegationList = angular.copy(accounts);
-
-          if (_.has(this.delegationList, 'list.results')) {
-            // keep the original value to have a reference to compare changes
-            _.forEach(this.delegationList.list.results, (account) => {
-              _.set(account, 'newSendAsValue', account.sendAs);
-              _.set(account, 'newSendOnBehalfToValue', account.sendOnBehalfTo);
-            });
-          }
-        })
-        .catch((failure) => {
-          this.services.messaging.writeError(
-            this.services.$translate.instant('exchange_tab_GROUPS_error_message'),
-            failure,
-          );
-        })
-        .finally(() => {
-          this.loading = false;
-          this.services.$scope.$broadcast('paginationServerSide.loadPage', 1, 'delegationTable');
-        });
-    }
-
-    updateDelegationRight() {
-      this.services.messaging.writeSuccess(
-        this.services.$translate.instant('exchange_GROUPS_delegation_doing_message'),
-      );
-
-      this.services.Exchange.updateMailingListDelegationRights(
-        this.$routerParams.organization,
-        this.$routerParams.productId,
-        this.getChanges(),
-      )
-        .then((data) => {
-          this.services.messaging.writeSuccess(
-            this.services.$translate.instant('exchange_GROUPS_delegation_success_message'),
-            data,
-          );
-        })
-        .catch((failure) => {
-          this.services.messaging.writeError(
-            this.services.$translate.instant('exchange_GROUPS_delegation_error_message'),
-            failure,
-          );
-        })
-        .finally(() => {
-          this.services.navigation.resetAction();
-        });
+      this.debouncedGetDelegationRight = _.debounce(this.getDelegationRight, 300);
+      this.services.$scope.getLoading = () => this.loading;
+      this.services.$scope.getDelegationList = () => this.delegationList;
+      this.services.$scope.updateDelegationRight = () => this.updateDelegationRight();
+      this.services.$scope.getDelegationRight = (pageSize, offset) => {
+        this.getDelegationRight(pageSize, offset);
+      };
+      this.services.$scope.hasChanged = () => this.hasChanged();
+      this.fetchAccountCreationOptions();
     }
 
     getDefaultDomain() {
@@ -163,6 +54,74 @@ angular.module('Module.exchange.controllers').controller(
         displayName: name,
         name,
       };
+    }
+
+    onSearchValueChange() {
+      this.selectedDomain = this.allDomainsOption;
+      this.debouncedGetDelegationRight();
+    }
+
+    resetSearch() {
+      this.form.search = null;
+      this.getDelegationRight(this.pageSize, this.defaultOffset);
+    }
+
+    onDomainValueChange() {
+      // clear filter by free text search
+      this.form.search = null;
+      this.getDelegationRight(this.pageSize, this.defaultOffset);
+    }
+
+    updateAccountSendAs(newSendAsValue, account) {
+      if (newSendAsValue !== account.sendAs) {
+        this.accountChanges.sendRights.push({
+          id: account.id,
+          operation: newSendAsValue ? 'POST' : 'DELETE',
+        });
+      }
+    }
+
+    updateAccountSendOnBehalfTo(newSendOnBehalfToValue, account) {
+      if (newSendOnBehalfToValue !== account.sendOnBehalfTo) {
+        this.accountChanges.sendOnBehalfToRights.push({
+          id: account.id,
+          operation: newSendOnBehalfToValue ? 'POST' : 'DELETE',
+        });
+      }
+    }
+
+    applyAccountSelection(account) {
+      const sendAsAccountChange = this.accountChanges.sendRights
+        .find(({ id }) => id === account.id);
+      const sendOnBehalfToAccountChange = this.accountChanges.sendOnBehalfToRights
+        .find(({ id }) => id === account.id);
+
+      const newSendAsValue = sendAsAccountChange ? _.get(sendAsAccountChange, 'operation') === 'POST' : account.sendAs;
+      const newSendOnBehalfToValue = sendOnBehalfToAccountChange ? _.get(sendOnBehalfToAccountChange, 'operation') === 'POST' : account.sendOnBehalfTo;
+
+      return Object.assign({}, account, {
+        newSendAsValue,
+        newSendOnBehalfToValue,
+      });
+    }
+
+    hasChanged() {
+      return this.accountChanges.sendRights.length > 0
+  || this.accountChanges.sendOnBehalfToRights.length > 0;
+    }
+
+    changeSelectionPage(offset) {
+      return this.getDelegationRight(this.pageSize, offset)
+        .then(() => {
+          this.delegationRightSelectionOffset = offset;
+        });
+    }
+
+    changeCheckingPage(offset) {
+      return this.getDelegationRight(this.pageSize, offset)
+        .then(() => {
+          this.delegationRightCheckingOffset = offset;
+        });
     }
 
     fetchAccountCreationOptions() {
@@ -189,6 +148,65 @@ angular.module('Module.exchange.controllers').controller(
         })
         .finally(() => {
           this.loadingDomains = false;
+        });
+    }
+
+    getDelegationRight(count = this.pageSize, offset = this.defaultOffset) {
+      console.log('getDelegationRight');
+      this.services.messaging.resetMessages();
+      this.loading = true;
+      // filter by domai name or free text search
+      const filter = this.form.search || _.get(this.selectedDomain, 'name');
+      return this.services.Exchange.getMailingListDelegationRights(
+        this.$routerParams.organization,
+        this.$routerParams.productId,
+        this.selectedGroup.mailingListName,
+        count,
+        offset - 1,
+        filter,
+      )
+        .then((accounts) => {
+          // make a deep copy of accounts list to use it as model
+          this.delegationList = angular.copy(accounts);
+
+          this.delegationList.list.results = accounts.list.results
+            .map(account => this.applyAccountSelection(account));
+        })
+        .catch((failure) => {
+          this.services.messaging.writeError(
+            this.services.$translate.instant('exchange_tab_GROUPS_error_message'),
+            failure,
+          );
+        })
+        .finally(() => {
+          this.loading = false;
+        });
+    }
+
+    updateDelegationRight() {
+      this.services.messaging.writeSuccess(
+        this.services.$translate.instant('exchange_GROUPS_delegation_doing_message'),
+      );
+
+      this.services.Exchange.updateMailingListDelegationRights(
+        this.$routerParams.organization,
+        this.$routerParams.productId,
+        this.accountChanges,
+      )
+        .then((data) => {
+          this.services.messaging.writeSuccess(
+            this.services.$translate.instant('exchange_GROUPS_delegation_success_message'),
+            data,
+          );
+        })
+        .catch((failure) => {
+          this.services.messaging.writeError(
+            this.services.$translate.instant('exchange_GROUPS_delegation_error_message'),
+            failure,
+          );
+        })
+        .finally(() => {
+          this.services.navigation.resetAction();
         });
     }
   },

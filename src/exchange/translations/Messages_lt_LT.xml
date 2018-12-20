@@ -11,6 +11,8 @@
    <translation id="exchange_contractTypes_payAsYouGo" qtlid="485671">Apmokėjimas po naudojimo</translation>
    <translation id="exchange_accountCreationMethods_adding" qtlid="47781">Priskirti</translation>
    <translation id="exchange_accountCreationMethods_ordering" qtlid="8302">Užsakymas</translation>
+   <translation id="exchange_common_confirm" qtlid="26047">Patvirtinti</translation>
+   <translation id="exchange_common_cancel" qtlid="37863">Anuliuoti</translation>
 
 <!-- ########################################## -->
 <!-- DASHBOARD -->
@@ -74,6 +76,7 @@
    <translation id="exchange_ACTION_export_success" qtlid="217054">Exchange paskyrų eksportavimas baigtas.</translation>
    <translation id="exchange_ACTION_export_explain" qtlid="217067">Exchange paskyrų eksportavimas gali užtrukti kelias minutes (priklausomai nuo egzistuojančių paskyrų skaičiaus).</translation>
    <translation id="exchange_ACTION_export_confirm" qtlid="217080">Ar tikrai norite eksportuoti paskyras?</translation>
+   <translation id="exchange_ACTION_add_domain_invalid_domain" qtlid="375998">Įvestas domenas negaliojantis</translation>
 
 <!-- OFFICE ATTACHED -->
    <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Specialus pasiūlymas:</strong> Office 365 nemokamai Exchange el. pašto dėžutėms!</translation>
@@ -1031,7 +1034,7 @@
    <translation id="exchange_ACTION_add_outlook_price_withIVA_label" qtlid="169251">Kaina su PVM:</translation>
    <translation id="exchange_ACTION_add_outlook_price_label" qtlid="181084">Kaina:</translation>
    <translation id="exchange_ACTION_add_outlook_contracts_label" qtlid="169472">Jūsų užsakymas bus patvirtintas, kai sutiksite su sutartimis ir spragtelėsite mygtuką "Toliau".</translation>
-   <translation id="exchange_ACTION_add_outlook_contracts__checkbox">J’accepte l’exécution immédiate de ma commande, reconnais que le(s) Service(s) objet de cette commande consistent en la fourniture de contenu numérique au sens de la directive 2011/83/UE du Parlement européen et du Conseil du 25 octobre 2011, et renonce expressément à mon droit de rétraction concernant le(s)dit(s) Service(s).</translation>
+   <translation id="exchange_ACTION_add_outlook_contracts__checkbox" qtlid="509560">J’accepte l’exécution immédiate de ma commande, reconnais que le(s) Service(s) objet de cette commande consistent en la fourniture de contenu numérique au sens de la directive 2011/83/UE du Parlement européen et du Conseil du 25 octobre 2011, et renonce expressément à mon droit de rétraction concernant le(s)dit(s) Service(s).</translation>
    <translation id="exchange_ACTION_add_outlook_intro_step2_label" qtlid="156888">{0} paskyros Putlook licencijų užsakymo peržiūra</translation>
    <translation id="exchange_ACTION_add_outlook_duration_type_01" qtlid="70241">1 mėn.</translation>
    <translation id="exchange_ACTION_add_outlook_duration_type_12" qtlid="70277">1 metai</translation>

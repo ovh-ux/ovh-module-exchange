@@ -11,6 +11,8 @@
    <translation id="exchange_contractTypes_payAsYouGo" qtlid="485671">Pagamento em função do consumo</translation>
    <translation id="exchange_accountCreationMethods_adding" qtlid="47781">Adicionar</translation>
    <translation id="exchange_accountCreationMethods_ordering" qtlid="8302">Comando</translation>
+   <translation id="exchange_common_confirm" qtlid="26047">Validar</translation>
+   <translation id="exchange_common_cancel" qtlid="37863">Anular</translation>
 
 <!-- ########################################## -->
 <!-- DASHBOARD -->
@@ -74,6 +76,7 @@
    <translation id="exchange_ACTION_export_success" qtlid="217054">A exportação das suas contas Exchange está concluída.</translation>
    <translation id="exchange_ACTION_export_explain" qtlid="217067">A exportação das suas contas Exchange pode durar alguns minutos (em função do número de contas que possui).</translation>
    <translation id="exchange_ACTION_export_confirm" qtlid="217080">Quer mesmo exportar as suas contas?</translation>
+   <translation id="exchange_ACTION_add_domain_invalid_domain" qtlid="375998">O domínio introduzido não é válido</translation>
 
 <!-- OFFICE ATTACHED -->
    <translation id="exchange_office_attached_alert_main" qtlid="404200"><strong>Promoção:</strong> ativação grátis do Office 365 para os seus endereços Exchange!</translation>
@@ -329,7 +332,7 @@
    <translation id="exchange_tab_TASKS_warning" qtlid="136347">Atenção!</translation>
    <translation id="exchange_tab_TASKS_partial" qtlid="137426">A lista não está completa, não é possível mostrar algumas operações</translation>
    <translation id="exchange_tab_TASKS_error_message" qtlid="144097">Erro ao processar apresentação das tarefas.</translation>
-   <translation id="exchange_tab_TASKS_DIAGNOSE_ACCOUNT" qtlid="509443">Diagnostiquer le compte</translation>
+   <translation id="exchange_tab_TASKS_DIAGNOSE_ACCOUNT" qtlid="509443">Realizar o diagnóstico da conta</translation>
 
    <translation id="exchange_resilitation_action_title" qtlid="190888">Encerramento do seu serviço Exchange</translation>
    <translation id="exchange_resilitation_action_intro" qtlid="190901">Tẽm a certeza de que deseja eliminar o seu serviço Exchange "{0}"? <br />Esta ação anulará a renovação automática no final do período de expiração e levará ao bloqueio do serviço.<br /><br /> Poderá utilizar normalmente o serviço até essa data.</translation>
@@ -1033,7 +1036,7 @@ Se usar o modo nonauthoritative com contas de e-mail não alojadas pela OVH, dev
    <translation id="exchange_ACTION_add_outlook_price_withIVA_label" qtlid="169251">Preço c/IVA.</translation>
    <translation id="exchange_ACTION_add_outlook_price_label" qtlid="181084">Preço:</translation>
    <translation id="exchange_ACTION_add_outlook_contracts_label" qtlid="169472">Para confirmar o pedido, leia a aceite as condições de utilização, e clique no botão «Seguinte».</translation>
-   <translation id="exchange_ACTION_add_outlook_contracts__checkbox">J’accepte l’exécution immédiate de ma commande, reconnais que le(s) Service(s) objet de cette commande consistent en la fourniture de contenu numérique au sens de la directive 2011/83/UE du Parlement européen et du Conseil du 25 octobre 2011, et renonce expressément à mon droit de rétraction concernant le(s)dit(s) Service(s).</translation>
+   <translation id="exchange_ACTION_add_outlook_contracts__checkbox" qtlid="509560">Aceito a execução imediata da minha encomenda, reconheço que o(s) serviço(s) objeto desta encomenda consiste no fornecimento de conteúdos digitais na aceção da Diretiva 2011/83/UE do Parlamento Europeu e do Conselho, de 25 de outubro de 2011, e renuncio expressamente ao meu direito de retratação relativamente a este(s) Serviço(s).</translation>
    <translation id="exchange_ACTION_add_outlook_intro_step2_label" qtlid="156888">Resumo da encomenda da licença Outlook para {0}</translation>
    <translation id="exchange_ACTION_add_outlook_duration_type_01" qtlid="70241">1 mês</translation>
    <translation id="exchange_ACTION_add_outlook_duration_type_12" qtlid="70277">1 ano</translation>
