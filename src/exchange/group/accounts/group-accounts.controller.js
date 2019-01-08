@@ -1,7 +1,7 @@
 angular.module('Module.exchange.controllers').controller(
   'ExchangeGroupAccountsCtrl',
   class ExchangeGroupAccountsCtrl {
-    constructor($scope, Exchange, messaging, navigation, $translate, ouiDatagridService) {
+    constructor($scope, $translate, Exchange, messaging, navigation, ouiDatagridService) {
       this.services = {
         $scope,
         Exchange,
@@ -101,14 +101,12 @@ angular.module('Module.exchange.controllers').controller(
         this.$routerParams.productId,
       )
         .then((accountCreationOptions) => {
-          const domains = [this.allDomainsOption];
-          _.forEach(accountCreationOptions.availableDomains, (domain) => {
-            domains.push(domain);
-            if (domain.name === this.selectedDomain.name) {
-              this.selectedDomain = domain;
-            }
-          });
-          this.availableDomains = domains;
+          this.availableDomains = [
+            this.allDomainsOption,
+            ...accountCreationOptions.availableDomains,
+          ];
+          this.selectedDomain = _.find(accountCreationOptions.availableDomains,
+            domain => domain.name === this.selectedDomain.name);
         })
         .catch((error) => {
           this.services.messaging.writeError(

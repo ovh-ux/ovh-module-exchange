@@ -131,14 +131,12 @@ angular.module('Module.exchange.controllers').controller(
         this.$routerParams.productId,
       )
         .then((accountCreationOptions) => {
-          const domains = [this.allDomainsOption];
-          _.forEach(accountCreationOptions.availableDomains, (domain) => {
-            domains.push(domain);
-            if (domain.name === this.selectedDomain.name) {
-              this.selectedDomain = domain;
-            }
-          });
-          this.availableDomains = domains;
+          this.availableDomains = [
+            this.allDomainsOption,
+            ...accountCreationOptions.availableDomains,
+          ];
+          this.selectedDomain = _.find(accountCreationOptions.availableDomains,
+            domain => domain.name === this.selectedDomain.name);
         })
         .catch((error) => {
           this.services.messaging.writeError(
@@ -152,10 +150,9 @@ angular.module('Module.exchange.controllers').controller(
     }
 
     getDelegationRight(count = this.pageSize, offset = this.defaultOffset) {
-      console.log('getDelegationRight');
       this.services.messaging.resetMessages();
       this.loading = true;
-      // filter by domai name or free text search
+      // filter by domain name or free text search
       const filter = this.form.search || _.get(this.selectedDomain, 'name');
       return this.services.Exchange.getMailingListDelegationRights(
         this.$routerParams.organization,
