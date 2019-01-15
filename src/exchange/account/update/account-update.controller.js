@@ -99,6 +99,8 @@ angular.module('Module.exchange.controllers').controller(
             : undefined,
         outlook:
           modifiedBuffer.outlook !== originalValues.outlook ? modifiedBuffer.outlook : undefined,
+        company:
+          modifiedBuffer.company !== originalValues.company ? modifiedBuffer.company : undefined,
         deleteOutlook:
           modifiedBuffer.deleteOutlook !== originalValues.deleteOutlook
             ? modifiedBuffer.deleteOutlook
@@ -265,6 +267,7 @@ angular.module('Module.exchange.controllers').controller(
         || this.originalValues.firstName !== modifiedBuffer.firstName
         || this.originalValues.lastName !== modifiedBuffer.lastName
         || this.originalValues.hiddenFromGAL !== modifiedBuffer.hiddenFromGAL
+        || this.originalValues.company !== modifiedBuffer.company
         || this.originalValues.accountLicense !== modifiedBuffer.accountLicense
         || this.originalValues.quota !== modifiedBuffer.quota
         || this.originalValues.outlook !== modifiedBuffer.outlook
@@ -375,10 +378,9 @@ angular.module('Module.exchange.controllers').controller(
             this.services.messaging.setMessage(this.getActionMessage(data.messages), data);
           })
           .catch((failure) => {
-            this.services.messaging.writeError(
-              this.services.$translate.instant('exchange_common_error'),
-              failure,
-            );
+            this.services.messaging.writeError(`
+              ${this.services.$translate.instant('exchange_common_error')} ${_.get(failure, 'message', failure)}
+            `);
           })
           .finally(() => {
             this.services.navigation.resetAction();

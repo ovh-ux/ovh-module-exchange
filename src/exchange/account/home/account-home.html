@@ -1,7 +1,8 @@
 <div class="row">
     <div class="col-md-9">
         <p class="text-nowrap">
-            <strong data-translate="exchange_tab_ACCOUNTS_webmail"></strong>
+            <strong data-translate="exchange_tab_INFORMATIONS_webmail"></strong>
+
             <a
                 class="oui-link_icon"
                 target="_blank"
@@ -18,8 +19,8 @@
             role="alert"
             data-ng-if="!$ctrl.loading && $ctrl.accounts && $ctrl.accounts.list.messages.length > 0">
             <div>
-                <strong data-ng-bind=":: 'exchange_tab_ACCOUNTS_warning' | translate"></strong>
-                <span data-ng-bind=":: 'exchange_tab_ACCOUNTS_partial' | translate"></span>
+                <strong data-translate="exchange_tab_ACCOUNTS_warning"></strong>
+                <span data-translate="exchange_tab_ACCOUNTS_partial"></span>
             </div>
         </div>
 

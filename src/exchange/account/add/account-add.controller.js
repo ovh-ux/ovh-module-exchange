@@ -171,6 +171,7 @@
 
       const formattedAccount = {
         SAMAccountName: this.newAccount.samAccountName,
+        company: this.newAccount.company,
         displayName: this.newAccount.displayName,
         domain: this.newAccount.domain.name,
         firstName: this.newAccount.firstName,
