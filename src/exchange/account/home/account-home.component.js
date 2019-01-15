@@ -36,6 +36,7 @@
     $onInit() {
       this.$routerParams = this.Exchange.getParams();
       this.hostname = this.Exchange.value.hostname;
+      this.webUrl = this.Exchange.value.webUrl;
 
       this.datagridParameters = {};
       this.linkToSpamTicket = `#/ticket?serviceName=${this.$routerParams.productId}`;
