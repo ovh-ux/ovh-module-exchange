@@ -358,12 +358,10 @@
    <translation id="exchange_update_billing_expiration_date_label" qtlid="30406">Expiration</translation>
    <translation id="exchange_update_billing_current_periode_label" qtlid="190979">Current value</translation>
    <translation id="exchange_update_billing_periode_label" qtlid="168172">Renewal</translation>
-   <translation id="exchange_update_billing_header_1Y" qtlid="60390">Yearly</translation>
-   <translation id="exchange_update_billing_header_1M" qtlid="60378">Monthly</translation>
+   <translation id="exchange_update_billing_header_1Y">Annuelle</translation>
+   <translation id="exchange_update_billing_header_1M">Mensuelle</translation>
    <translation id="exchange_update_billing_header_terminate" qtlid="209177">None</translation>
    <translation id="exchange_update_billing_header_new_periode" qtlid="190992">New period</translation>
-   <translation id="exchange_update_billing_periode_value_YEARLY" qtlid="79542">annually </translation>
-   <translation id="exchange_update_billing_periode_value_MONTHLY" qtlid="79530">monthly</translation>
    <translation id="exchange_update_billing_periode_value_DELETE_AT_EXPIRATION" qtlid="201406">Expires on end</translation>
    <translation id="exchange_update_billing_periode_delete_warning" qtlid="211593">Please note that this choice implies that the service will expire on the expiry date and the data will be lost. It will be then impossible to recover the account data.</translation>
    <translation id="exchange_update_billing_periode_resume" qtlid="191005">You are about to change the renewal period of your accounts:</translation>
