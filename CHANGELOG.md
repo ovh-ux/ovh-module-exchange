@@ -1,3 +1,15 @@
+## [9.2.3](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.2.2...v9.2.3) (2019-01-16)
+
+
+### Bug Fixes
+
+* **exchange.disclaimer:** disable oui-action-menu ([#249](https://github.com/ovh-ux/ovh-module-exchange/issues/249)) ([d6492cc](https://github.com/ovh-ux/ovh-module-exchange/commit/d6492cc))
+* **header.renew:** fix renewal frequency translation ([388f692](https://github.com/ovh-ux/ovh-module-exchange/commit/388f692))
+* **i18n:** retrieve translations ([6c2261e](https://github.com/ovh-ux/ovh-module-exchange/commit/6c2261e))
+* **i18n:** submit translations ([be4876b](https://github.com/ovh-ux/ovh-module-exchange/commit/be4876b))
+
+
+
 ## [9.2.2](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.2.1...v9.2.2) (2018-12-19)
 
 
