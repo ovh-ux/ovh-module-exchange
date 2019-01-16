@@ -360,12 +360,10 @@ Valitse: <br /> Tyyppi: <span class="bold">A</span> <br /> Aliverkkotunnus: <spa
    <translation id="exchange_update_billing_expiration_date_label" qtlid="30406">Vanhenee</translation>
    <translation id="exchange_update_billing_current_periode_label" qtlid="190979">Nykyinen arvo</translation>
    <translation id="exchange_update_billing_periode_label" qtlid="168172">Uusinta</translation>
-   <translation id="exchange_update_billing_header_1Y" qtlid="60390">Vuosittainen</translation>
-   <translation id="exchange_update_billing_header_1M" qtlid="60378">Kuukausittainen</translation>
+   <translation id="exchange_update_billing_header_1Y">Annuelle</translation>
+   <translation id="exchange_update_billing_header_1M">Mensuelle</translation>
    <translation id="exchange_update_billing_header_terminate" qtlid="209177">Ei</translation>
    <translation id="exchange_update_billing_header_new_periode" qtlid="190992">Uusi ajanjakso</translation>
-   <translation id="exchange_update_billing_periode_value_YEARLY" qtlid="79542">vuosittain</translation>
-   <translation id="exchange_update_billing_periode_value_MONTHLY" qtlid="79530">kuukausittain</translation>
    <translation id="exchange_update_billing_periode_value_DELETE_AT_EXPIRATION" qtlid="201406">Erääntyy tilausjakson päätyttyä</translation>
    <translation id="exchange_update_billing_periode_delete_warning" qtlid="211593">Ota huomioon että tämä valinta aiheuttaa palvelun vanhentumisen ja data menetetään pysyvästi. Datan palautus ei ole mahdollista.</translation>
    <translation id="exchange_update_billing_periode_resume" qtlid="191005">Olet vaihtamassa automaattisen uudistamisen ajanjaksoa seuraaville tileillesi:</translation>
