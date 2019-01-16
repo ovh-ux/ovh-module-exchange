@@ -358,12 +358,10 @@
    <translation id="exchange_update_billing_expiration_date_label" qtlid="30406">Expirace</translation>
    <translation id="exchange_update_billing_current_periode_label" qtlid="190979">Současná hodnota</translation>
    <translation id="exchange_update_billing_periode_label" qtlid="168172">Obnovení</translation>
-   <translation id="exchange_update_billing_header_1Y" qtlid="60390">Ročně</translation>
-   <translation id="exchange_update_billing_header_1M" qtlid="60378">Měsíc</translation>
+   <translation id="exchange_update_billing_header_1Y">Annuelle</translation>
+   <translation id="exchange_update_billing_header_1M">Mensuelle</translation>
    <translation id="exchange_update_billing_header_terminate" qtlid="209177">Žádný</translation>
    <translation id="exchange_update_billing_header_new_periode" qtlid="190992">Nové období</translation>
-   <translation id="exchange_update_billing_periode_value_YEARLY" qtlid="79542">ročně</translation>
-   <translation id="exchange_update_billing_periode_value_MONTHLY" qtlid="79530">měsíčně</translation>
    <translation id="exchange_update_billing_periode_value_DELETE_AT_EXPIRATION" qtlid="201406">Expirace na konci</translation>
    <translation id="exchange_update_billing_periode_delete_warning" qtlid="211593">Berte prosím na vědomí, že tato volba způsobí zrušení služby k datu expirace a ztrátu všech dat. Tato data již nebude možné obnovit.</translation>
    <translation id="exchange_update_billing_periode_resume" qtlid="191005">Chystáte se změnit obnovovací období Vašich účtů:</translation>
