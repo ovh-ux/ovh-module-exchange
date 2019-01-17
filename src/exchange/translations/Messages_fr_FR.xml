@@ -1358,7 +1358,7 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
 <!-- EXPORT PST -->
    <translation id="exchange_ACTION_display_pst_check_existing_export" qtlid="255898">Vérification si un export est déjà en cours, veuillez patienter.</translation>
    <translation id="exchange_ACTION_display_pst_wait_label" qtlid="255911">L'export vers un fichier .pst peut prendre jusqu'à quelques heures, vous pourrez suivre sa progression à tout moment (vous pouvez fermer cette fenêtre et revenir plus tard).</translation>
-   <translation id="exchange_ACTION_display_pst_get_file" qtlid="255924">Votre fichier est maintenant disponible, vous pouvez le télécharger depuis l'URL suivante. ATTENTION : cette URL est valable uniquement pour une durée de 10 minutes.</translation>
+   <translation id="exchange_ACTION_display_pst_get_file">Votre fichier est maintenant disponible, vous pouvez le télécharger depuis l'URL suivante. ATTENTION : cette URL est valable uniquement pour une durée de 30 minutes.</translation>
    <translation id="exchange_ACTION_display_pst_start" qtlid="255937">Lancer l'exportation</translation>
    <translation id="exchange_ACTION_display_pst_progress" qtlid="255950">Votre export est en cours : {0}% effectué.</translation>
    <translation id="exchange_ACTION_display_pst_export_done" qtlid="255963">L'export du fichier .pst est terminé. Vous pouvez maintenant le télécharger.</translation>
