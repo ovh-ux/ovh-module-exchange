@@ -24,7 +24,12 @@
             </div>
         </div>
 
-        <oui-datagrid data-rows-loader="$ctrl.fetchAccounts($config)">
+        <oui-datagrid
+            data-id="exchangeAccountHome"
+            data-rows-loader="$ctrl.fetchAccounts($config)"
+            data-customizable
+            data-columns-parameters="$ctrl.getColumnParameters()"
+            data-on-columns-parameters-change="$ctrl.onColumnsParametersChange(id, columns)">
             <oui-column
                 data-title=":: 'exchange_tab_ACCOUNTS_table_email' | translate"
                 data-property="emailAddress"
@@ -36,7 +41,8 @@
                 }"
                 data-searchable
                 data-filterable
-                data-sortable="asc"></oui-column>
+                data-sortable="asc"
+                data-prevent-customization></oui-column>
             <oui-column
                 data-title=":: 'exchange_tab_ACCOUNTS_table_type' | translate"
                 data-property="accountLicense"
@@ -46,6 +52,12 @@
                 data-sortable>
                 <span data-ng-bind=":: $ctrl.exchangeAccountTypes.getDisplayValue($value)"></span>
             </oui-column>
+            <oui-column
+                data-title=":: 'exchange_tab_ACCOUNTS_table_company' | translate"
+                data-property="company"
+                data-type="string"
+                data-sortable
+                data-filterable></oui-column>
             <oui-column
                 data-title=":: 'exchange_tab_ACCOUNTS_table_size' | translate"
                 data-property="size">

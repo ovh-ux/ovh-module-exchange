@@ -13,6 +13,7 @@ angular.module('Module.exchange.services').service(
       };
 
       this.CAN_DO = {
+        HAVE_ENTREPRISE_FIELD: () => !this.exchangeVersion.is(2010),
         BASIC: () => this.exchangeServiceInfrastructure.isDedicatedCluster()
           || (this.exchangeServiceInfrastructure.isProvider() && this.exchangeVersion.is(2010))
           || (this.exchangeServiceInfrastructure.isDedicated() && this.exchangeVersion.is(2010)),

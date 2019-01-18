@@ -135,6 +135,7 @@
    <translation id="exchange_tab_ACCOUNTS_table_empty_search" qtlid="149813">Vous n'avez pas de compte correspondant au terme recherché</translation>
    <translation id="exchange_tab_ACCOUNTS_table_email" qtlid="137244">Compte e-mail</translation>
    <translation id="exchange_tab_ACCOUNTS_table_type" qtlid="2642">Type</translation>
+   <translation id="exchange_tab_ACCOUNTS_table_company">Entreprise</translation>
    <translation id="exchange_tab_ACCOUNTS_table_size" qtlid="7726">Taille</translation>
    <translation id="exchange_tab_ACCOUNTS_table_alias" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ACCOUNTS_table_group" qtlid="59507">Groupe</translation>
