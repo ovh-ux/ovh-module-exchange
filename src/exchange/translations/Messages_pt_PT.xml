@@ -358,8 +358,8 @@
    <translation id="exchange_update_billing_expiration_date_label" qtlid="30406">Expiração</translation>
    <translation id="exchange_update_billing_current_periode_label" qtlid="190979">Valor atual</translation>
    <translation id="exchange_update_billing_periode_label" qtlid="168172">Renovação</translation>
-   <translation id="exchange_update_billing_header_1Y">Annuelle</translation>
-   <translation id="exchange_update_billing_header_1M">Mensuelle</translation>
+   <translation id="exchange_update_billing_header_1Y" qtlid="213258">Anual</translation>
+   <translation id="exchange_update_billing_header_1M" qtlid="8818">Mensal </translation>
    <translation id="exchange_update_billing_header_terminate" qtlid="209177">Nenhuma</translation>
    <translation id="exchange_update_billing_header_new_periode" qtlid="190992">Novo período</translation>
    <translation id="exchange_update_billing_periode_value_DELETE_AT_EXPIRATION" qtlid="201406">Expira na data de vencimento</translation>
@@ -1359,7 +1359,7 @@ Se usar o modo nonauthoritative com contas de e-mail não alojadas pela OVH, dev
 <!-- EXPORT PST -->
    <translation id="exchange_ACTION_display_pst_check_existing_export" qtlid="255898">Verificação da existência de uma exportação já em curso, por favor aguarde.</translation>
    <translation id="exchange_ACTION_display_pst_wait_label" qtlid="255911">A exportação para um ficheiro .PST pode levar algumas horas; poderá seguir o estado de progressão a qualquer altura (poderá fechar esta janela e voltar a abri-la mais tarde).</translation>
-   <translation id="exchange_ACTION_display_pst_get_file" qtlid="255924">O seu ficheiro .PST está agora disponível, poderá fazer o download com recurso ao URL em baixo indicado. ATENÇÃO: esse URL só é válido por um período de 10 minutos.</translation>
+   <translation id="exchange_ACTION_display_pst_get_file">Votre fichier est maintenant disponible, vous pouvez le télécharger depuis l'URL suivante. ATTENTION : cette URL est valable uniquement pour une durée de 30 minutes.</translation>
    <translation id="exchange_ACTION_display_pst_start" qtlid="255937">Iniciar a exportação</translation>
    <translation id="exchange_ACTION_display_pst_progress" qtlid="255950">A sua exportação está em curso {0}% de progressão.</translation>
    <translation id="exchange_ACTION_display_pst_export_done" qtlid="255963">A exportação do ficheiro .PST está concluída. Já pode efetuar o download do ficheiro.</translation>

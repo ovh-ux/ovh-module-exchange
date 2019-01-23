@@ -358,8 +358,8 @@
    <translation id="exchange_update_billing_expiration_date_label" qtlid="30406">Expiración</translation>
    <translation id="exchange_update_billing_current_periode_label" qtlid="190979">Valor actual</translation>
    <translation id="exchange_update_billing_periode_label" qtlid="168172">Renovación</translation>
-   <translation id="exchange_update_billing_header_1Y">Annuelle</translation>
-   <translation id="exchange_update_billing_header_1M">Mensuelle</translation>
+   <translation id="exchange_update_billing_header_1Y" qtlid="213258">Anual</translation>
+   <translation id="exchange_update_billing_header_1M" qtlid="8818">Mensual</translation>
    <translation id="exchange_update_billing_header_terminate" qtlid="209177">Ninguna</translation>
    <translation id="exchange_update_billing_header_new_periode" qtlid="190992">Nuevo periodo</translation>
    <translation id="exchange_update_billing_periode_value_DELETE_AT_EXPIRATION" qtlid="201406">Expira al vencimiento</translation>
@@ -1358,7 +1358,7 @@
 <!-- EXPORT PST -->
    <translation id="exchange_ACTION_display_pst_check_existing_export" qtlid="255898">Comprobando si ya hay una exportación en curso...</translation>
    <translation id="exchange_ACTION_display_pst_wait_label" qtlid="255911">La exportación a un archivo .pst puede tardar hasta unas horas. Puede seguir el progreso en cualquier momento (aunque cierre esta ventana puede volver más adelante).</translation>
-   <translation id="exchange_ACTION_display_pst_get_file" qtlid="255924">El archivo ya está disponible. Puede descargarlo desde la URL que se indica a continuación. ATENCIÓN: La URL solo es válida durante 10 minutos.</translation>
+   <translation id="exchange_ACTION_display_pst_get_file">Votre fichier est maintenant disponible, vous pouvez le télécharger depuis l'URL suivante. ATTENTION : cette URL est valable uniquement pour une durée de 30 minutes.</translation>
    <translation id="exchange_ACTION_display_pst_start" qtlid="255937">Ejecutar la exportación</translation>
    <translation id="exchange_ACTION_display_pst_progress" qtlid="255950">Exportando: {0}% realizado.</translation>
    <translation id="exchange_ACTION_display_pst_export_done" qtlid="255963">La exportación del archivo .pst ha finalizado. Ta puede descargarlo.</translation>

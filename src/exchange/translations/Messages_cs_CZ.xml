@@ -358,8 +358,8 @@
    <translation id="exchange_update_billing_expiration_date_label" qtlid="30406">Expirace</translation>
    <translation id="exchange_update_billing_current_periode_label" qtlid="190979">Současná hodnota</translation>
    <translation id="exchange_update_billing_periode_label" qtlid="168172">Obnovení</translation>
-   <translation id="exchange_update_billing_header_1Y">Annuelle</translation>
-   <translation id="exchange_update_billing_header_1M">Mensuelle</translation>
+   <translation id="exchange_update_billing_header_1Y" qtlid="213258">Roční</translation>
+   <translation id="exchange_update_billing_header_1M" qtlid="8818">Měsíčně</translation>
    <translation id="exchange_update_billing_header_terminate" qtlid="209177">Žádný</translation>
    <translation id="exchange_update_billing_header_new_periode" qtlid="190992">Nové období</translation>
    <translation id="exchange_update_billing_periode_value_DELETE_AT_EXPIRATION" qtlid="201406">Expirace na konci</translation>
@@ -1369,7 +1369,7 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
 <!-- EXPORT PST -->
    <translation id="exchange_ACTION_display_pst_check_existing_export" qtlid="255898">Kontroluji probíhající export. Vyčkejte prosím.</translation>
    <translation id="exchange_ACTION_display_pst_wait_label" qtlid="255911">Export .pst souboru může trvat několik hodin. Pokrok můžete sledovat kdykoli v tomto okně (můžete ho nyní uzavřít a později opět otevřít).</translation>
-   <translation id="exchange_ACTION_display_pst_get_file" qtlid="255924">Váš soubor je nyní dostupný. Můžete ho stáhnout z následující URL. POZOR: toto URL je platné pouze 10 minut.</translation>
+   <translation id="exchange_ACTION_display_pst_get_file">Votre fichier est maintenant disponible, vous pouvez le télécharger depuis l'URL suivante. ATTENTION : cette URL est valable uniquement pour une durée de 30 minutes.</translation>
    <translation id="exchange_ACTION_display_pst_start" qtlid="255937">Spustit export</translation>
    <translation id="exchange_ACTION_display_pst_progress" qtlid="255950">Váš export probíhá: {0} % dokončeno.</translation>
    <translation id="exchange_ACTION_display_pst_export_done" qtlid="255963">Export souboru .pst byl dokončen. Nyní si ho můžete stáhnout.</translation>

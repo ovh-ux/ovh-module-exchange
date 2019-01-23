@@ -358,8 +358,8 @@
    <translation id="exchange_update_billing_expiration_date_label" qtlid="30406">Galioja iki</translation>
    <translation id="exchange_update_billing_current_periode_label" qtlid="190979">Esama vertė</translation>
    <translation id="exchange_update_billing_periode_label" qtlid="168172">Atnaujinimas</translation>
-   <translation id="exchange_update_billing_header_1Y">Annuelle</translation>
-   <translation id="exchange_update_billing_header_1M">Mensuelle</translation>
+   <translation id="exchange_update_billing_header_1Y" qtlid="213258">Kartą per metus</translation>
+   <translation id="exchange_update_billing_header_1M" qtlid="8818">Kas mėnesį</translation>
    <translation id="exchange_update_billing_header_terminate" qtlid="209177">None</translation>
    <translation id="exchange_update_billing_header_new_periode" qtlid="190992">Naujas laikotarpis</translation>
    <translation id="exchange_update_billing_periode_value_DELETE_AT_EXPIRATION" qtlid="201406">Nustos galioti pagal galiojimo laiką</translation>
@@ -1357,7 +1357,7 @@
 <!-- EXPORT PST -->
    <translation id="exchange_ACTION_display_pst_check_existing_export" qtlid="255898">Tikrinama, ar eksportas jau vykdomas, prašome palaukti.</translation>
    <translation id="exchange_ACTION_display_pst_wait_label" qtlid="255911">Eksportas į .pst failą gali užtrukti keletą valandų, jūs galite stebėti progresą bet kuriuo metu (jūs galite uždaryti šį langą ir grįžti vėliau).</translation>
-   <translation id="exchange_ACTION_display_pst_get_file" qtlid="255924">Jūsų failas dabar prieinamas, jūs galite jį parsisiųsti per jums pateiktą URL. DĖMESIO: nuoroda prieinama tik 10 minučių.</translation>
+   <translation id="exchange_ACTION_display_pst_get_file">Votre fichier est maintenant disponible, vous pouvez le télécharger depuis l'URL suivante. ATTENTION : cette URL est valable uniquement pour une durée de 30 minutes.</translation>
    <translation id="exchange_ACTION_display_pst_start" qtlid="255937">Pradėti eksportą</translation>
    <translation id="exchange_ACTION_display_pst_progress" qtlid="255950">Jūsų eksportas vykdomas: atlikta {0}%.</translation>
    <translation id="exchange_ACTION_display_pst_export_done" qtlid="255963">Failo .pst eksportas baigtas. Jūs galite parsisiųsti failą.</translation>

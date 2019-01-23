@@ -360,8 +360,8 @@ Valitse: <br /> Tyyppi: <span class="bold">A</span> <br /> Aliverkkotunnus: <spa
    <translation id="exchange_update_billing_expiration_date_label" qtlid="30406">Vanhenee</translation>
    <translation id="exchange_update_billing_current_periode_label" qtlid="190979">Nykyinen arvo</translation>
    <translation id="exchange_update_billing_periode_label" qtlid="168172">Uusinta</translation>
-   <translation id="exchange_update_billing_header_1Y">Annuelle</translation>
-   <translation id="exchange_update_billing_header_1M">Mensuelle</translation>
+   <translation id="exchange_update_billing_header_1Y" qtlid="213258">Vuosittain</translation>
+   <translation id="exchange_update_billing_header_1M" qtlid="8818">Kerran kuukaudessa</translation>
    <translation id="exchange_update_billing_header_terminate" qtlid="209177">Ei</translation>
    <translation id="exchange_update_billing_header_new_periode" qtlid="190992">Uusi ajanjakso</translation>
    <translation id="exchange_update_billing_periode_value_DELETE_AT_EXPIRATION" qtlid="201406">Erääntyy tilausjakson päätyttyä</translation>
@@ -1361,7 +1361,7 @@ Valitse: <br /> Tyyppi: <span class="bold">A</span> <br /> Aliverkkotunnus: <spa
 <!-- EXPORT PST -->
    <translation id="exchange_ACTION_display_pst_check_existing_export" qtlid="255898">Tarkistetaan, onko vientioperaatioita kesken. Ole hyvä ja odota.</translation>
    <translation id="exchange_ACTION_display_pst_wait_label" qtlid="255911">.pst-tiedoston vienti voi kestää useita tunteja. Voit tarkistaa viennin tilan milloin tahansa tässä ikkunassa. Voit sulkea ja avata ikkunan myös uudestaan myöhemmin.</translation>
-   <translation id="exchange_ACTION_display_pst_get_file" qtlid="255924">Tiedostosi on saatavilla. Voit ladata sen seuraavan osoitteen kautta. Huomioi: linkki on voimassa vain 10 minuuttia.</translation>
+   <translation id="exchange_ACTION_display_pst_get_file">Votre fichier est maintenant disponible, vous pouvez le télécharger depuis l'URL suivante. ATTENTION : cette URL est valable uniquement pour une durée de 30 minutes.</translation>
    <translation id="exchange_ACTION_display_pst_start" qtlid="255937">Käynnistä vienti</translation>
    <translation id="exchange_ACTION_display_pst_progress" qtlid="255950">Vienti on meneillään: {0} % valmis.</translation>
    <translation id="exchange_ACTION_display_pst_export_done" qtlid="255963">.pst-tiedoston vienti on valmis. Voit nyt ladata sen.</translation>
