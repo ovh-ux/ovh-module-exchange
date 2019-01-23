@@ -358,12 +358,10 @@
    <translation id="exchange_update_billing_expiration_date_label" qtlid="30406">Expiry</translation>
    <translation id="exchange_update_billing_current_periode_label" qtlid="190979">Current value</translation>
    <translation id="exchange_update_billing_periode_label" qtlid="168172">Renewal</translation>
-   <translation id="exchange_update_billing_header_1Y" qtlid="60390">Yearly</translation>
-   <translation id="exchange_update_billing_header_1M" qtlid="60378">Monthly</translation>
+   <translation id="exchange_update_billing_header_1Y" qtlid="213258">Yearly </translation>
+   <translation id="exchange_update_billing_header_1M" qtlid="8818">Monthly</translation>
    <translation id="exchange_update_billing_header_terminate" qtlid="209177">None</translation>
    <translation id="exchange_update_billing_header_new_periode" qtlid="190992">New period</translation>
-   <translation id="exchange_update_billing_periode_value_YEARLY" qtlid="79542">annually </translation>
-   <translation id="exchange_update_billing_periode_value_MONTHLY" qtlid="79530">monthly</translation>
    <translation id="exchange_update_billing_periode_value_DELETE_AT_EXPIRATION" qtlid="201406">Expires on end</translation>
    <translation id="exchange_update_billing_periode_delete_warning" qtlid="211593">Please note that this choice implies that the service will expire on the expiry date and the data will be lost. It will be then impossible to recover the account data.</translation>
    <translation id="exchange_update_billing_periode_resume" qtlid="191005">You are about to change the renewal period of your accounts:</translation>
@@ -1362,7 +1360,7 @@ I therefore explicitly renounce my right to cancel under the provisions of Artic
 <!-- EXPORT PST -->
    <translation id="exchange_ACTION_display_pst_check_existing_export" qtlid="255898">Checking for any exports in progress. Please wait.</translation>
    <translation id="exchange_ACTION_display_pst_wait_label" qtlid="255911">It may take several hours to export toa .pst file. You may check the progress at any time in this window (you may close it and re-open it later).</translation>
-   <translation id="exchange_ACTION_display_pst_get_file" qtlid="255924">Your file is now available. You may download it from the following URL. ATTENTION: this URL is only valid for 10 minutes.</translation>
+   <translation id="exchange_ACTION_display_pst_get_file">Votre fichier est maintenant disponible, vous pouvez le télécharger depuis l'URL suivante. ATTENTION : cette URL est valable uniquement pour une durée de 30 minutes.</translation>
    <translation id="exchange_ACTION_display_pst_start" qtlid="255937">Launch the export</translation>
    <translation id="exchange_ACTION_display_pst_progress" qtlid="255950">Your export is in progress: {0}% complete.</translation>
    <translation id="exchange_ACTION_display_pst_export_done" qtlid="255963">The export of the .pst file is complete. You may now download it.</translation>

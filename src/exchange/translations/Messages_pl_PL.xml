@@ -358,12 +358,10 @@
    <translation id="exchange_update_billing_expiration_date_label" qtlid="30406">Data wygasania</translation>
    <translation id="exchange_update_billing_current_periode_label" qtlid="190979">Aktualna wartość</translation>
    <translation id="exchange_update_billing_periode_label" qtlid="168172">Odnowienie</translation>
-   <translation id="exchange_update_billing_header_1Y" qtlid="60390">Roczny</translation>
-   <translation id="exchange_update_billing_header_1M" qtlid="60378">Co miesiąc </translation>
+   <translation id="exchange_update_billing_header_1Y" qtlid="213258">Co rok</translation>
+   <translation id="exchange_update_billing_header_1M" qtlid="8818">Co miesiąc</translation>
    <translation id="exchange_update_billing_header_terminate" qtlid="209177">Brak</translation>
    <translation id="exchange_update_billing_header_new_periode" qtlid="190992">Nowy okres</translation>
-   <translation id="exchange_update_billing_periode_value_YEARLY" qtlid="79542">rocznie</translation>
-   <translation id="exchange_update_billing_periode_value_MONTHLY" qtlid="79530">miesięczny</translation>
    <translation id="exchange_update_billing_periode_value_DELETE_AT_EXPIRATION" qtlid="201406">Wygasa z końcem</translation>
    <translation id="exchange_update_billing_periode_delete_warning" qtlid="211593">Uwaga! Ten wybór sprawi, że usługa wygaśnie a dane zostaną usunięte. Nie będziesz mógł odzyskać danych z konta.</translation>
    <translation id="exchange_update_billing_periode_resume" qtlid="191005">Zmienisz okres odnowienia dla kont:</translation>
@@ -1361,7 +1359,7 @@ Zamknięta: administrator zapisuje członków grupy.</translation>
 <!-- EXPORT PST -->
    <translation id="exchange_ACTION_display_pst_check_existing_export" qtlid="255898">Trwa weryfikowanie, czy wykonywany jest eksport.</translation>
    <translation id="exchange_ACTION_display_pst_wait_label" qtlid="255911">Eksport do pliku .pst może zająć kilka godzin. W każdej chwili będziesz mógł sprawdzić postęp operacji (możesz zamknąć to okno i później do niego powrócić).</translation>
-   <translation id="exchange_ACTION_display_pst_get_file" qtlid="255924">Plik jest już dostępny. Możesz go pobrać z tego adresu URL. UWAGA: adres tej jest ważny tylko przez 10 minut.</translation>
+   <translation id="exchange_ACTION_display_pst_get_file">Votre fichier est maintenant disponible, vous pouvez le télécharger depuis l'URL suivante. ATTENTION : cette URL est valable uniquement pour une durée de 30 minutes.</translation>
    <translation id="exchange_ACTION_display_pst_start" qtlid="255937">Rozpocznij eksportowanie</translation>
    <translation id="exchange_ACTION_display_pst_progress" qtlid="255950">Eksport w trakcie: wykonano {0}%</translation>
    <translation id="exchange_ACTION_display_pst_export_done" qtlid="255963">Eksport pliku .pst został zakończony. Możesz pobrać plik.</translation>
