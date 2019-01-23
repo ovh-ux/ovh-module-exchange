@@ -358,12 +358,10 @@
    <translation id="exchange_update_billing_expiration_date_label" qtlid="30406">Expiração</translation>
    <translation id="exchange_update_billing_current_periode_label" qtlid="190979">Valor atual</translation>
    <translation id="exchange_update_billing_periode_label" qtlid="168172">Renovação</translation>
-   <translation id="exchange_update_billing_header_1Y" qtlid="60390">Anual</translation>
-   <translation id="exchange_update_billing_header_1M" qtlid="60378">Mensal</translation>
+   <translation id="exchange_update_billing_header_1Y">Annuelle</translation>
+   <translation id="exchange_update_billing_header_1M">Mensuelle</translation>
    <translation id="exchange_update_billing_header_terminate" qtlid="209177">Nenhuma</translation>
    <translation id="exchange_update_billing_header_new_periode" qtlid="190992">Novo período</translation>
-   <translation id="exchange_update_billing_periode_value_YEARLY" qtlid="79542">anual</translation>
-   <translation id="exchange_update_billing_periode_value_MONTHLY" qtlid="79530">mensal</translation>
    <translation id="exchange_update_billing_periode_value_DELETE_AT_EXPIRATION" qtlid="201406">Expira na data de vencimento</translation>
    <translation id="exchange_update_billing_periode_delete_warning" qtlid="211593">Atenção! Esta escolha implica que o serviço vai expirar no seu termo e os dados serão perdidos. Será depois impossível recuperar os dados da conta.</translation>
    <translation id="exchange_update_billing_periode_resume" qtlid="191005">Queira alterar o período de renovação das suas contas:</translation>

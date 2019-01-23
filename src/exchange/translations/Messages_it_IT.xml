@@ -358,12 +358,10 @@
    <translation id="exchange_update_billing_expiration_date_label" qtlid="30406">Scadenza</translation>
    <translation id="exchange_update_billing_current_periode_label" qtlid="190979">Valore corrente</translation>
    <translation id="exchange_update_billing_periode_label" qtlid="168172">Rinnovo</translation>
-   <translation id="exchange_update_billing_header_1Y" qtlid="60390">Annuale</translation>
-   <translation id="exchange_update_billing_header_1M" qtlid="60378">Mensile</translation>
+   <translation id="exchange_update_billing_header_1Y">Annuelle</translation>
+   <translation id="exchange_update_billing_header_1M">Mensuelle</translation>
    <translation id="exchange_update_billing_header_terminate" qtlid="209177">Nessuna </translation>
    <translation id="exchange_update_billing_header_new_periode" qtlid="190992">Nuovo periodo</translation>
-   <translation id="exchange_update_billing_periode_value_YEARLY" qtlid="79542">annuale</translation>
-   <translation id="exchange_update_billing_periode_value_MONTHLY" qtlid="79530">mensile</translation>
    <translation id="exchange_update_billing_periode_value_DELETE_AT_EXPIRATION" qtlid="201406">Scade al termine</translation>
    <translation id="exchange_update_billing_periode_delete_warning" qtlid="211593">Attenzione! Questa opzione comporta la scadenza del servizio al termine e la perdita dei dati. Sarà impossibile recuperare i dati dell'account.</translation>
    <translation id="exchange_update_billing_periode_resume" qtlid="191005">Stai per modificare il periodo di rinnovo automatico dei tuoi account:</translation>

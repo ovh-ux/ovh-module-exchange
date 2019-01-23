@@ -358,12 +358,10 @@
    <translation id="exchange_update_billing_expiration_date_label" qtlid="30406">Galioja iki</translation>
    <translation id="exchange_update_billing_current_periode_label" qtlid="190979">Esama vertė</translation>
    <translation id="exchange_update_billing_periode_label" qtlid="168172">Atnaujinimas</translation>
-   <translation id="exchange_update_billing_header_1Y" qtlid="60390">Metams</translation>
-   <translation id="exchange_update_billing_header_1M" qtlid="60378">Mėnesio</translation>
+   <translation id="exchange_update_billing_header_1Y">Annuelle</translation>
+   <translation id="exchange_update_billing_header_1M">Mensuelle</translation>
    <translation id="exchange_update_billing_header_terminate" qtlid="209177">None</translation>
    <translation id="exchange_update_billing_header_new_periode" qtlid="190992">Naujas laikotarpis</translation>
-   <translation id="exchange_update_billing_periode_value_YEARLY" qtlid="79542">metinis</translation>
-   <translation id="exchange_update_billing_periode_value_MONTHLY" qtlid="79530">mėnesinis</translation>
    <translation id="exchange_update_billing_periode_value_DELETE_AT_EXPIRATION" qtlid="201406">Nustos galioti pagal galiojimo laiką</translation>
    <translation id="exchange_update_billing_periode_delete_warning" qtlid="211593">Dėmesio! Paslauga nustos galioti numatytą galiojimo pabaigos datą, po kurios visi duomenys bus pašalinti. Jūs nebegalėsite atkurti paskyros duomenų.</translation>
    <translation id="exchange_update_billing_periode_resume" qtlid="191005">Jūs keisite savo paskyrų atnaujinimo laikotarpį:</translation>
