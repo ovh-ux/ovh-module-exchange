@@ -1,3 +1,15 @@
+## [9.2.4](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.2.3...v9.2.4) (2019-01-23)
+
+
+### Bug Fixes
+
+* export email as .pst time not valid ([#256](https://github.com/ovh-ux/ovh-module-exchange/issues/256)) ([97e3f4e](https://github.com/ovh-ux/ovh-module-exchange/commit/97e3f4e))
+* **i18n:** retrieve translations ([1c642cc](https://github.com/ovh-ux/ovh-module-exchange/commit/1c642cc))
+* **i18n:** retrieve translations ([902792e](https://github.com/ovh-ux/ovh-module-exchange/commit/902792e))
+* **i18n:** submit translations ([725e22b](https://github.com/ovh-ux/ovh-module-exchange/commit/725e22b))
+
+
+
 ## [9.2.3](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.2.2...v9.2.3) (2019-01-16)
 
 
