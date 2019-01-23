@@ -358,8 +358,8 @@
    <translation id="exchange_update_billing_expiration_date_label" qtlid="30406">Vervaldatum</translation>
    <translation id="exchange_update_billing_current_periode_label" qtlid="190979">Huidige waarde</translation>
    <translation id="exchange_update_billing_periode_label" qtlid="168172">Verlenging</translation>
-   <translation id="exchange_update_billing_header_1Y">Annuelle</translation>
-   <translation id="exchange_update_billing_header_1M">Mensuelle</translation>
+   <translation id="exchange_update_billing_header_1Y" qtlid="213258">Jaarlijks</translation>
+   <translation id="exchange_update_billing_header_1M" qtlid="8818">Maandelijks</translation>
    <translation id="exchange_update_billing_header_terminate" qtlid="209177">Geen</translation>
    <translation id="exchange_update_billing_header_new_periode" qtlid="190992">Nieuwe periode</translation>
    <translation id="exchange_update_billing_periode_value_DELETE_AT_EXPIRATION" qtlid="201406">Vervalt op de einddatum</translation>
@@ -1358,7 +1358,7 @@
 <!-- EXPORT PST -->
    <translation id="exchange_ACTION_display_pst_check_existing_export" qtlid="255898">Controle of er al een export in behandeling is, een moment geduld.</translation>
    <translation id="exchange_ACTION_display_pst_wait_label" qtlid="255911">Het exporteren naar een .pst bestand kan een paar uur duren. U kunt de voortgang op elk moment volgen (u kunt dit venster sluiten en later terugkomen). </translation>
-   <translation id="exchange_ACTION_display_pst_get_file" qtlid="255924">Uw bestand is nu beschikbaar, u kunt hem via de volgende URL downloaden. LET OP: Deze URL blijft maar tien minuten geldig.</translation>
+   <translation id="exchange_ACTION_display_pst_get_file">Votre fichier est maintenant disponible, vous pouvez le télécharger depuis l'URL suivante. ATTENTION : cette URL est valable uniquement pour une durée de 30 minutes.</translation>
    <translation id="exchange_ACTION_display_pst_start" qtlid="255937">Het exporteren lanceren</translation>
    <translation id="exchange_ACTION_display_pst_progress" qtlid="255950">Exporteren in behandeling : {0}% voltooid.</translation>
    <translation id="exchange_ACTION_display_pst_export_done" qtlid="255963">Het exporteren van het .pst bestand is afgerond. U kunt hem nu downloaden.</translation>
