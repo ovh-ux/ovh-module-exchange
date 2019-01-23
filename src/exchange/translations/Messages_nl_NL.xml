@@ -358,12 +358,10 @@
    <translation id="exchange_update_billing_expiration_date_label" qtlid="30406">Vervaldatum</translation>
    <translation id="exchange_update_billing_current_periode_label" qtlid="190979">Huidige waarde</translation>
    <translation id="exchange_update_billing_periode_label" qtlid="168172">Verlenging</translation>
-   <translation id="exchange_update_billing_header_1Y" qtlid="60390">Jaarlijks</translation>
-   <translation id="exchange_update_billing_header_1M" qtlid="60378">Maandelijks</translation>
+   <translation id="exchange_update_billing_header_1Y">Annuelle</translation>
+   <translation id="exchange_update_billing_header_1M">Mensuelle</translation>
    <translation id="exchange_update_billing_header_terminate" qtlid="209177">Geen</translation>
    <translation id="exchange_update_billing_header_new_periode" qtlid="190992">Nieuwe periode</translation>
-   <translation id="exchange_update_billing_periode_value_YEARLY" qtlid="79542">jaarlijks</translation>
-   <translation id="exchange_update_billing_periode_value_MONTHLY" qtlid="79530">maandelijks</translation>
    <translation id="exchange_update_billing_periode_value_DELETE_AT_EXPIRATION" qtlid="201406">Vervalt op de einddatum</translation>
    <translation id="exchange_update_billing_periode_delete_warning" qtlid="211593">Let op! Deze keuze houdt in dat de dienst uiteindelijk zal vervallen en de gegevens verloren zullen gaan. Het is dan niet meer mogelijk om de gegevens van de account te herstellen.</translation>
    <translation id="exchange_update_billing_periode_resume" qtlid="191005">U gaat de verlengingsperiode van uw rekeningen wijzigen:</translation>
