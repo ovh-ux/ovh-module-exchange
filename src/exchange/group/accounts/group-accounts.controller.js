@@ -47,7 +47,7 @@ angular.module('Module.exchange.controllers').controller(
       const bufferedAccount = this.accountsListBuffer.list.results
         .find(({ id }) => id === account.id);
 
-      if (newMemberValue !== _.get(bufferedAccount, 'manager')) {
+      if (newMemberValue !== _.get(bufferedAccount, 'member')) {
         this.model.membersList.push({
           id: account.id,
           operation: newMemberValue ? 'POST' : 'DELETE',
