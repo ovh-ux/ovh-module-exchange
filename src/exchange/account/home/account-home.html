@@ -1,14 +1,15 @@
 <div class="row">
     <div class="col-md-9">
         <p class="text-nowrap">
-            <strong data-ng-bind=":: 'exchange_tab_INFORMATIONS_webmail' | translate"></strong>
+            <strong data-translate="exchange_tab_ACCOUNTS_webmail"></strong>
             <a
+                class="oui-link_icon"
                 target="_blank"
-                data-ng-href="https://{{:: $ctrl.hostname }}"
+                data-ng-href="https://{{:: $ctrl.webUrl }}"
                 rel="noopener">
-                <span data-ng-bind=":: 'https://' + $ctrl.hostname"></span>
-                <span class="fa fa-external-link" aria-hidden="true"></span>
-                <span class="sr-only" data-ng-bind=":: 'exchange_common_new_tab' | translate"></span>
+                https://<span data-ng-bind=":: $ctrl.webUrl"></span>
+                <span class="oui-icon oui-icon-external_link" aria-hidden="true"></span>
+                <span class="sr-only" data-translate="common_newtab"></span>
             </a>
         </p>
 

@@ -137,18 +137,18 @@
         <div class="col-md-3">
             <oui-tile class="h-100 mb-5" data-heading="{{:: 'exchange_tab_INFORMATIONS_connexion' | translate}}">
                 <oui-tile-definition data-term="{{:: 'exchange_tab_INFORMATIONS_server' | translate}}"
-                                     data-description="{{:: ctrl.exchange.hostname}}"
+                                     data-description="{{:: ctrl.exchange.webUrl}}"
                                      data-ng-if="ctrl.exchangeServiceInfrastructure.isHosted()">
                 </oui-tile-definition>
                 <oui-tile-definition data-term="{{:: 'exchange_tab_INFORMATIONS_webmail' | translate}}">
                     <oui-tile-description>
-                        <a class="word-break oui-link"
+                        <a class="word-break oui-link_icon"
                            target="_blank"
                            rel="noopener"
-                           data-ng-href="https://{{ctrl.exchange.hostname}}">
+                           data-ng-href="https://{{:: ctrl.exchange.webUrl}}">
+                           https://<span data-ng-bind=":: ctrl.exchange.webUrl"></span>
+                           <span class="oui-icon oui-icon-external_link" aria-hidden="true"></span>
                            <span class="sr-only" data-translate="common_newtab"></span>
-                           <span data-ng-bind="'https://' + ctrl.exchange.hostname"></span>
-                           <span class="fa fa-external-link" aria-hidden="true"></span>
                         </a>
                     </oui-tile-description>
                 </oui-tile-definition>
