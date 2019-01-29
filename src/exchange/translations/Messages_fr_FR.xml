@@ -11,7 +11,7 @@
    <translation id="exchange_contractTypes_payAsYouGo" qtlid="485671">Paiement à la consommation</translation>
    <translation id="exchange_accountCreationMethods_adding" qtlid="47781">Ajout</translation>
    <translation id="exchange_accountCreationMethods_ordering" qtlid="8302">Commande</translation>
-   <translation id="exchange_all_domains">Tous les domaines</translation>
+   <translation id="exchange_all_domains" qtlid="127372">Tous les domaines</translation>
    <translation id="exchange_common_confirm" qtlid="26047">Valider</translation>
    <translation id="exchange_common_cancel" qtlid="37863">Annuler</translation>
 
@@ -37,7 +37,7 @@
    <translation id="exchange_dashboard_tasks" qtlid="136217">Tâches récentes</translation>
    <translation id="exchange_dashboard_diag" qtlid="136230">Diagnostic serveur</translation>
    <translation id="exchange_dashboard_guides" qtlid="366359">Besoin d'aide pour configurer votre service Exchange ?</translation>
-   <translation id="exchange_dashboard_guides_url">Consultez nos guides en ligne</translation>
+   <translation id="exchange_dashboard_guides_url" qtlid="519090">Consultez nos guides en ligne</translation>
    <translation id="exchange_diagnostic_guide" qtlid="297891">Le diagnostic a décelé des erreurs. Pour plus d'information sur chacune d'entre elles</translation>
    <translation id="exchange_diagnostic_guides_url" qtlid="297904">consultez notre guide en ligne.</translation>
    <translation id="exchange_dashboard_2016_migration" qtlid="287072">Consulter le programme des migrations vers Exchange 2016.</translation>
@@ -118,7 +118,7 @@
    <translation id="exchange_tab_INFORMATIONS_go_far" qtlid="276337">Aller plus loin</translation>
    <translation id="exchange_tab_INFORMATIONS_infrastructure" qtlid="125552">Infrastructure</translation>
    <translation id="exchange_tab_INFORMATIONS_version" qtlid="276350">Version Exchange</translation>
-   <translation id="exchange_tab_INFORMATIONS_webmail">Webmail</translation>
+   <translation id="exchange_tab_INFORMATIONS_webmail" qtlid="15473">Webmail</translation>
    <translation id="exchange_tab_INFORMATIONS_messaging" qtlid="276363">Client de messagerie</translation>
    <translation id="exchange_tab_INFORMATIONS_order_office" qtlid="276376">Commander Office 365</translation>
    <translation id="exchange_tab_INFORMATIONS_order_sharepoint" qtlid="319427">Commander SharePoint</translation>
@@ -127,7 +127,7 @@
    <translation id="exchange_server_commercial_version_2016" qtlid="276415">2016</translation>
 
 <!-- ACCOUNTS -->
-   <translation id="exchange_tab_ACCOUNTS_webmail">Webmail :</translation>
+   <translation id="exchange_tab_ACCOUNTS_webmail" qtlid="485697">Webmail :</translation>
    <translation id="exchange_tab_ACCOUNTS_table_empty" qtlid="149800">Vous n'avez pas de compte</translation>
    <translation id="exchange_tab_ACCOUNTS_table_empty_type_BASIC" qtlid="190810">Vous n'avez pas de compte de type Basic</translation>
    <translation id="exchange_tab_ACCOUNTS_table_empty_type_STANDARD" qtlid="190823">Vous n'avez pas de compte de type Standard</translation>
