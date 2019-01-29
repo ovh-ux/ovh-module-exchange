@@ -1,19 +1,25 @@
 angular.module('Module.exchange.controllers').controller(
   'ExchangeGroupAccountsCtrl',
   class ExchangeGroupAccountsCtrl {
-    constructor($scope, Exchange, messaging, navigation, $translate) {
+    constructor($scope, $translate, Exchange, messaging, navigation, ouiDatagridService) {
       this.services = {
         $scope,
         Exchange,
         messaging,
         navigation,
         $translate,
+        ouiDatagridService,
       };
 
       this.$routerParams = Exchange.getParams();
 
       this.timeout = null;
       this.selectedGroup = navigation.currentActionData;
+      this.availableDomains = [];
+      this.loadingDomains = false;
+      this.currentAccount = this.services.navigation.currentActionData.mailingListAddress;
+      this.allDomainsOption = { displayName: this.services.$translate.instant('exchange_all_domains'), name: '' };
+      this.selectedDomain = this.getDefaultDomain();
 
       this.search = {
         value: null,
@@ -28,6 +34,17 @@ angular.module('Module.exchange.controllers').controller(
         managersList: [],
         membersList: [],
       };
+      this.fetchAccountCreationOptions();
+    }
+
+    onDomainValueChange() {
+      // clear filter by free text search
+      this.search.value = null;
+      this.refreshDatagrid('group-accounts', true);
+    }
+
+    refreshDatagrid(datagridId, showSpinner) {
+      this.services.ouiDatagridService.refresh(datagridId, showSpinner);
     }
 
     updateManagersList(newManagerValue, account) {
@@ -47,7 +64,7 @@ angular.module('Module.exchange.controllers').controller(
       const bufferedAccount = this.accountsListBuffer.list.results
         .find(({ id }) => id === account.id);
 
-      if (newMemberValue !== _.get(bufferedAccount, 'manager')) {
+      if (newMemberValue !== _.get(bufferedAccount, 'member')) {
         this.model.membersList.push({
           id: account.id,
           operation: newMemberValue ? 'POST' : 'DELETE',
@@ -69,17 +86,54 @@ angular.module('Module.exchange.controllers').controller(
       });
     }
 
+    getDefaultDomain() {
+      const name = _.last(this.currentAccount.split('@'));
+      return {
+        displayName: name,
+        name,
+      };
+    }
+
+    fetchAccountCreationOptions() {
+      this.loadingDomains = true;
+      return this.services.Exchange.fetchingAccountCreationOptions(
+        this.$routerParams.organization,
+        this.$routerParams.productId,
+      )
+        .then((accountCreationOptions) => {
+          this.availableDomains = [
+            this.allDomainsOption,
+            ...accountCreationOptions.availableDomains,
+          ];
+          this.selectedDomain = _.find(accountCreationOptions.availableDomains,
+            domain => domain.name === this.selectedDomain.name);
+        })
+        .catch((error) => {
+          this.services.messaging.writeError(
+            this.services.$translate.instant('exchange_accounts_fetchAccountCreationOptions_error'),
+            error,
+          );
+        })
+        .finally(() => {
+          this.loadingDomains = false;
+        });
+    }
+
     getAccounts({ pageSize, offset, criteria }) {
       const [search] = criteria;
       this.services.messaging.resetMessages();
-
+      if (_.get(search, 'value')) {
+        // clear filter by domain name
+        this.selectedDomain = this.allDomainsOption;
+      }
+      const filter = _.get(search, 'value') || _.get(this.selectedDomain, 'name');
       return this.services.Exchange.getAccountsByGroup(
         this.$routerParams.organization,
         this.$routerParams.productId,
         this.selectedGroup.mailingListAddress,
         pageSize,
         offset - 1,
-        search != null ? search.value : '',
+        filter,
       )
         .then((accounts) => {
           this.accountsListBuffer = accounts;

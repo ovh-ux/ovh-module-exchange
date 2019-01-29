@@ -36,12 +36,13 @@
     $onInit() {
       this.$routerParams = this.Exchange.getParams();
       this.hostname = this.Exchange.value.hostname;
+      this.webUrl = this.Exchange.value.webUrl;
 
       this.datagridParameters = {};
       this.linkToSpamTicket = `#/ticket?serviceName=${this.$routerParams.productId}`;
       this.initialAccountRetrieval = true;
       this.atLeastOneDomainIsAssociatedToCurrentExchangeService = true;
-
+      this.availableDomains = [];
       this.accountTypeOptions = {
         operators: ['is'],
       };
@@ -112,6 +113,7 @@
         this.$routerParams.productId,
       )
         .then((accountCreationOptions) => {
+          this.availableDomains = accountCreationOptions.availableDomains;
           this.atLeastOneDomainIsAssociatedToCurrentExchangeService = !_(accountCreationOptions)
             .chain()
             .get('availableDomains')
@@ -306,7 +308,11 @@
     }
 
     displayDialog(pathToFeature, account) {
-      this.navigation.setAction(pathToFeature, _(account).clone());
+      const accountCopy = _(account).clone();
+      if (pathToFeature.includes('account-delegation')) {
+        accountCopy.availableDomains = this.availableDomains;
+      }
+      this.navigation.setAction(pathToFeature, accountCopy);
     }
 
     displayAccountAddingView() {

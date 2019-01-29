@@ -11,6 +11,7 @@
    <translation id="exchange_contractTypes_payAsYouGo" qtlid="485671">Pagamento in base al consumo</translation>
    <translation id="exchange_accountCreationMethods_adding" qtlid="47781">Aggiunta</translation>
    <translation id="exchange_accountCreationMethods_ordering" qtlid="8302">Ordine</translation>
+   <translation id="exchange_all_domains">Tous les domaines</translation>
    <translation id="exchange_common_confirm" qtlid="26047">Conferma</translation>
    <translation id="exchange_common_cancel" qtlid="37863">Annulla</translation>
 
@@ -36,7 +37,7 @@
    <translation id="exchange_dashboard_tasks" qtlid="136217">Task recenti</translation>
    <translation id="exchange_dashboard_diag" qtlid="136230">Diagnostica server</translation>
    <translation id="exchange_dashboard_guides" qtlid="366359">Non sai come configurare il tuo servizio Exchange?</translation>
-   <translation id="exchange_dashboard_guides_url" qtlid="156732">Consulta le nostre guide online</translation>
+   <translation id="exchange_dashboard_guides_url">Consultez nos guides en ligne</translation>
    <translation id="exchange_diagnostic_guide" qtlid="297891">La diagnostica ha identificato alcuni errori. Per maggiori informazioni sui problemi riscontrati,</translation>
    <translation id="exchange_diagnostic_guides_url" qtlid="297904">consulta le nostre guide disponibili online.</translation>
    <translation id="exchange_dashboard_2016_migration" qtlid="287072">Visualizza il programma delle migrazioni alla versione Exchange 2016.</translation>
@@ -117,7 +118,7 @@
    <translation id="exchange_tab_INFORMATIONS_go_far" qtlid="276337">E se vuoi di più...</translation>
    <translation id="exchange_tab_INFORMATIONS_infrastructure" qtlid="125552">Infrastruttura</translation>
    <translation id="exchange_tab_INFORMATIONS_version" qtlid="276350">Versione Exchange</translation>
-   <translation id="exchange_tab_INFORMATIONS_webmail" qtlid="485697">Webmail:</translation>
+   <translation id="exchange_tab_INFORMATIONS_webmail">Webmail</translation>
    <translation id="exchange_tab_INFORMATIONS_messaging" qtlid="276363">Client di posta</translation>
    <translation id="exchange_tab_INFORMATIONS_order_office" qtlid="276376">Ordina Office 365</translation>
    <translation id="exchange_tab_INFORMATIONS_order_sharepoint" qtlid="319427">Ordina SharePoint</translation>
@@ -126,6 +127,7 @@
    <translation id="exchange_server_commercial_version_2016" qtlid="276415">2016</translation>
 
 <!-- ACCOUNTS -->
+   <translation id="exchange_tab_ACCOUNTS_webmail">Webmail :</translation>
    <translation id="exchange_tab_ACCOUNTS_table_empty" qtlid="149800">Non hai un account</translation>
    <translation id="exchange_tab_ACCOUNTS_table_empty_type_BASIC" qtlid="190810">Non hai account di tipo Basic</translation>
    <translation id="exchange_tab_ACCOUNTS_table_empty_type_STANDARD" qtlid="190823">Non hai account di tipo Standard</translation>
@@ -1363,7 +1365,7 @@ Definisci un valore compreso fra 3 e 14 caratteri o evita di inserire una passwo
 <!-- EXPORT PST -->
    <translation id="exchange_ACTION_display_pst_check_existing_export" qtlid="255898">Stiamo verificando se sono in corso altre esportazioni, ti preghiamo di attendere...</translation>
    <translation id="exchange_ACTION_display_pst_wait_label" qtlid="255911">L'esportazione in un file .pst può richiedere fino a qualche ora. Puoi controllare lo stato dell'operazione in qualsiasi momento (è possibile chiudere questa finestra e riaprirla in seguito).</translation>
-   <translation id="exchange_ACTION_display_pst_get_file">Votre fichier est maintenant disponible, vous pouvez le télécharger depuis l'URL suivante. ATTENTION : cette URL est valable uniquement pour une durée de 30 minutes.</translation>
+   <translation id="exchange_ACTION_display_pst_get_file" qtlid="517985">Votre fichier est maintenant disponible, vous pouvez le télécharger depuis l'URL suivante. ATTENTION : cette URL est valable uniquement pour une durée de 30 minutes.</translation>
    <translation id="exchange_ACTION_display_pst_start" qtlid="255937">Avvia l'esportazione</translation>
    <translation id="exchange_ACTION_display_pst_progress" qtlid="255950">Esportazione in corso: {0}% completato.</translation>
    <translation id="exchange_ACTION_display_pst_export_done" qtlid="255963">L'esportazione del file .pst è stata completata. Adesso è possibile scaricarlo.</translation>

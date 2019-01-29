@@ -16,7 +16,10 @@ angular.module('Module.exchange.controllers').controller(
       this.$routerParams = this.services.Exchange.getParams();
       this.currentAccount = this.services.navigation.currentActionData.primaryEmailAddress;
       this.searchValue = null;
-
+      this.selectedDomain = this.services.navigation.currentActionData.completeDomain;
+      this.allDomainsOption = { displayName: this.services.$translate.instant('exchange_all_domains'), name: '' };
+      this.availableDomains = [this.allDomainsOption]
+        .concat(this.services.navigation.currentActionData.availableDomains);
       this.services.$scope.updateDelegationRight = () => this.updateDelegationRight();
       this.services.$scope.hasChanged = () => this.hasChanged();
       this.services.$scope.getAccounts = (count, offset) => this.getAccounts(count, offset);
@@ -67,6 +70,14 @@ angular.module('Module.exchange.controllers').controller(
     }
 
     onSearchValueChange() {
+      // clear filter by domain name
+      this.selectedDomain = this.allDomainsOption;
+      this.services.$scope.$broadcast('paginationServerSide.loadPage', 1, 'delegationsStep1Table');
+    }
+
+    onDomainValueChange() {
+      // clear filter by free text search
+      this.searchValue = null;
       this.services.$scope.$broadcast('paginationServerSide.loadPage', 1, 'delegationsStep1Table');
     }
 
@@ -165,14 +176,15 @@ angular.module('Module.exchange.controllers').controller(
     getAccounts(count, offset) {
       this.services.messaging.resetMessages();
       this.loading = true;
-
+      // filter by domain name or free text search
+      const filter = this.searchValue || _.get(this.selectedDomain, 'name');
       return this.services.Exchange.retrieveAccountDelegationRight(
         this.$routerParams.organization,
         this.$routerParams.productId,
         this.currentAccount,
         count,
         offset,
-        this.searchValue,
+        filter,
       )
         .then((accounts) => {
           this.accounts = accounts;

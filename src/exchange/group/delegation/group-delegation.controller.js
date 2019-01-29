@@ -14,6 +14,11 @@ angular.module('Module.exchange.controllers').controller(
 
     $onInit() {
       this.$routerParams = this.services.Exchange.getParams();
+      this.availableDomains = [];
+      this.loadingDomains = false;
+      this.currentAccount = this.services.navigation.currentActionData.mailingListAddress;
+      this.allDomainsOption = { displayName: this.services.$translate.instant('exchange_all_domains'), name: '' };
+      this.selectedDomain = this.getDefaultDomain();
 
       this.selectedGroup = this.services.navigation.currentActionData;
       this.form = {
@@ -40,13 +45,29 @@ angular.module('Module.exchange.controllers').controller(
         this.getDelegationRight(pageSize, offset);
       };
       this.services.$scope.hasChanged = () => this.hasChanged();
+      this.fetchAccountCreationOptions();
+    }
+
+    getDefaultDomain() {
+      const name = _.last(this.currentAccount.split('@'));
+      return {
+        displayName: name,
+        name,
+      };
     }
 
     onSearchValueChange() {
+      this.selectedDomain = this.allDomainsOption;
       this.debouncedGetDelegationRight();
     }
 
     resetSearch() {
+      this.form.search = null;
+      this.getDelegationRight(this.pageSize, this.defaultOffset);
+    }
+
+    onDomainValueChange() {
+      // clear filter by free text search
       this.form.search = null;
       this.getDelegationRight(this.pageSize, this.defaultOffset);
     }
@@ -103,17 +124,43 @@ angular.module('Module.exchange.controllers').controller(
         });
     }
 
+    fetchAccountCreationOptions() {
+      this.loadingDomains = true;
+      return this.services.Exchange.fetchingAccountCreationOptions(
+        this.$routerParams.organization,
+        this.$routerParams.productId,
+      )
+        .then((accountCreationOptions) => {
+          this.availableDomains = [
+            this.allDomainsOption,
+            ...accountCreationOptions.availableDomains,
+          ];
+          this.selectedDomain = _.find(accountCreationOptions.availableDomains,
+            domain => domain.name === this.selectedDomain.name);
+        })
+        .catch((error) => {
+          this.services.messaging.writeError(
+            this.services.$translate.instant('exchange_accounts_fetchAccountCreationOptions_error'),
+            error,
+          );
+        })
+        .finally(() => {
+          this.loadingDomains = false;
+        });
+    }
+
     getDelegationRight(count = this.pageSize, offset = this.defaultOffset) {
       this.services.messaging.resetMessages();
       this.loading = true;
-
+      // filter by domain name or free text search
+      const filter = this.form.search || _.get(this.selectedDomain, 'name');
       return this.services.Exchange.getMailingListDelegationRights(
         this.$routerParams.organization,
         this.$routerParams.productId,
         this.selectedGroup.mailingListName,
         count,
         offset - 1,
-        this.form.search,
+        filter,
       )
         .then((accounts) => {
           // make a deep copy of accounts list to use it as model

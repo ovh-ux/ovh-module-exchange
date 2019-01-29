@@ -9,7 +9,7 @@ angular.module('Module.exchange.controllers').controller(
     }
 
     $onInit() {
-      this.hostname = this.Exchange.value.hostname;
+      this.webUrl = this.Exchange.value.webUrl;
       this.domainName = this.navigation.currentActionData.domainName;
 
       this.$scope.hideCancelButton = () => true;

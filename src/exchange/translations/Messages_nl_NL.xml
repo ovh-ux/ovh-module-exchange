@@ -11,6 +11,7 @@
    <translation id="exchange_contractTypes_payAsYouGo" qtlid="485671">Pay-as-you-go</translation>
    <translation id="exchange_accountCreationMethods_adding" qtlid="47781">Toevoegen</translation>
    <translation id="exchange_accountCreationMethods_ordering" qtlid="8302">Bestel</translation>
+   <translation id="exchange_all_domains">Tous les domaines</translation>
    <translation id="exchange_common_confirm" qtlid="26047">Bevestigen</translation>
    <translation id="exchange_common_cancel" qtlid="37863">Annuleren</translation>
 
@@ -36,7 +37,7 @@
    <translation id="exchange_dashboard_tasks" qtlid="136217">Recente taken</translation>
    <translation id="exchange_dashboard_diag" qtlid="136230">Diagnose-server </translation>
    <translation id="exchange_dashboard_guides" qtlid="366359">Heeft u hulp nodig bij de configuratie van uw Exchange oplossing? </translation>
-   <translation id="exchange_dashboard_guides_url" qtlid="156732">Raadpleeg onze online handleidingen.</translation>
+   <translation id="exchange_dashboard_guides_url">Consultez nos guides en ligne</translation>
    <translation id="exchange_diagnostic_guide" qtlid="297891">Bij de diagnose zijn fouten opgemerkt. Meer informatie kunt u vinden in onze</translation>
    <translation id="exchange_diagnostic_guides_url" qtlid="297904">raadpleeg onze online handleiding</translation>
    <translation id="exchange_dashboard_2016_migration" qtlid="287072">Bekijk het programma over migratie naar Exchange 2016.</translation>
@@ -117,7 +118,7 @@
    <translation id="exchange_tab_INFORMATIONS_go_far" qtlid="276337">Verdergaan</translation>
    <translation id="exchange_tab_INFORMATIONS_infrastructure" qtlid="125552">Infrastructuur</translation>
    <translation id="exchange_tab_INFORMATIONS_version" qtlid="276350">Exchange versie</translation>
-   <translation id="exchange_tab_INFORMATIONS_webmail" qtlid="485697">Webmail:</translation>
+   <translation id="exchange_tab_INFORMATIONS_webmail">Webmail</translation>
    <translation id="exchange_tab_INFORMATIONS_messaging" qtlid="276363">E-mailprogramma</translation>
    <translation id="exchange_tab_INFORMATIONS_order_office" qtlid="276376">Bestel Office 365</translation>
    <translation id="exchange_tab_INFORMATIONS_order_sharepoint" qtlid="319427">Bestel SharePoint</translation>
@@ -126,6 +127,7 @@
    <translation id="exchange_server_commercial_version_2016" qtlid="276415">2016</translation>
 
 <!-- ACCOUNTS -->
+   <translation id="exchange_tab_ACCOUNTS_webmail">Webmail :</translation>
    <translation id="exchange_tab_ACCOUNTS_table_empty" qtlid="149800">U heeft geen accounts</translation>
    <translation id="exchange_tab_ACCOUNTS_table_empty_type_BASIC" qtlid="190810">U heeft geen Basic account.</translation>
    <translation id="exchange_tab_ACCOUNTS_table_empty_type_STANDARD" qtlid="190823">U heeft geen Standard account.</translation>
@@ -1358,7 +1360,7 @@
 <!-- EXPORT PST -->
    <translation id="exchange_ACTION_display_pst_check_existing_export" qtlid="255898">Controle of er al een export in behandeling is, een moment geduld.</translation>
    <translation id="exchange_ACTION_display_pst_wait_label" qtlid="255911">Het exporteren naar een .pst bestand kan een paar uur duren. U kunt de voortgang op elk moment volgen (u kunt dit venster sluiten en later terugkomen). </translation>
-   <translation id="exchange_ACTION_display_pst_get_file">Votre fichier est maintenant disponible, vous pouvez le télécharger depuis l'URL suivante. ATTENTION : cette URL est valable uniquement pour une durée de 30 minutes.</translation>
+   <translation id="exchange_ACTION_display_pst_get_file" qtlid="517985">Votre fichier est maintenant disponible, vous pouvez le télécharger depuis l'URL suivante. ATTENTION : cette URL est valable uniquement pour une durée de 30 minutes.</translation>
    <translation id="exchange_ACTION_display_pst_start" qtlid="255937">Het exporteren lanceren</translation>
    <translation id="exchange_ACTION_display_pst_progress" qtlid="255950">Exporteren in behandeling : {0}% voltooid.</translation>
    <translation id="exchange_ACTION_display_pst_export_done" qtlid="255963">Het exporteren van het .pst bestand is afgerond. U kunt hem nu downloaden.</translation>

@@ -7,7 +7,15 @@
          data-wizard-title="'exchange_wizardHostedCreation_ending_dialog' | translate">
         <div data-wizard-step>
             <span data-ng-bind-html="'exchange_wizardHostedCreation_configureDNSZone_auto_explanation1' | translate:{ t0: $ctrl.domainName }"></span>
-            <a data-ng-href="https://{{:: $ctrl.hostname }}" target="_blank" data-ng-bind="'https://' + $ctrl.hostname"></a>
+            <a
+                data-ng-href="https://{{:: $ctrl.webUrl }}"
+                target="_blank"
+                rel="noopener"
+                class="oui-link_icon">
+                https://<span data-ng-bind=":: $ctrl.webUrl"></span>
+                <span class="oui-icon oui-icon-external_link" aria-hidden="true"></span>
+                <span class="sr-only" data-translate="common_newtab"></span>
+            </a>
             <span data-ng-bind-html="'exchange_wizardHostedCreation_configureDNSZone_auto_explanation2' | translate"></span>
         </div>
     </div>
