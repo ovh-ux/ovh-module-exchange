@@ -13,7 +13,7 @@
             <span data-translate="exchange_tab_ACCOUNTS_partial"></span>
         </oui-message>
 
-        <oui-datagrid data-rows-loader="$ctrl.getAccounts($config)" data-page-size="10" data-row-loader="$ctrl.applySelection($row)">
+        <oui-datagrid data-rows-loader="$ctrl.getAccounts($config)" data-page-size="10" data-row-loader="$ctrl.applySelection($row)" id="group-accounts">
             <oui-column data-title=":: 'exchange_GROUPS_delegation_step1_email_header' | translate" data-type="string" data-searchable>
                 <p data-ng-if="$row.message">
                     <span class="oui-icon oui-icon-warning_circle mr-2" aria-hidden="true"></span>
@@ -28,6 +28,19 @@
             <oui-column data-title=":: 'exchange_tab_GROUPS_all_table_user' | translate">
                 <oui-checkbox data-ng-if="!$row.message" data-model="$row.member" data-on-change="$ctrl.updateMembersList(modelValue, $row)"></oui-checkbox>
             </oui-column>
+            <extra-top>
+                <form class="form-inline d-md-flex justify-content-md-end mb-3">
+                    <oui-spinner data-size="s" data-ng-if="$ctrl.loadingDomains"></oui-spinner>
+                    <oui-select class="select-domain oui-select_inline" data-ng-if="!$ctrl.loadingDomains"
+                        data-model="$ctrl.selectedDomain"
+                        data-items="$ctrl.availableDomains"
+                        data-match="displayName"
+                        data-align="start"
+                        data-on-change="$ctrl.onDomainValueChange(modelValue)">
+                        <span data-ng-bind="$item.displayName"></span>
+                    </oui-select>
+                </form>
+            </extra-top>
         </oui-datagrid>
 
         <oui-message data-type="info">
