@@ -11,6 +11,7 @@
    <translation id="exchange_contractTypes_payAsYouGo" qtlid="485671">Apmokėjimas po naudojimo</translation>
    <translation id="exchange_accountCreationMethods_adding" qtlid="47781">Priskirti</translation>
    <translation id="exchange_accountCreationMethods_ordering" qtlid="8302">Užsakymas</translation>
+   <translation id="exchange_all_domains">Tous les domaines</translation>
    <translation id="exchange_common_confirm" qtlid="26047">Patvirtinti</translation>
    <translation id="exchange_common_cancel" qtlid="37863">Anuliuoti</translation>
 
@@ -36,7 +37,7 @@
    <translation id="exchange_dashboard_tasks" qtlid="136217">Paskutinės užduotys</translation>
    <translation id="exchange_dashboard_diag" qtlid="136230">Serverio diagnostika </translation>
    <translation id="exchange_dashboard_guides" qtlid="366359">Reikia pagalbos konfigūruojant Exchange paslaugą?</translation>
-   <translation id="exchange_dashboard_guides_url" qtlid="156732">Skaityti gidus internete.</translation>
+   <translation id="exchange_dashboard_guides_url">Consultez nos guides en ligne</translation>
    <translation id="exchange_diagnostic_guide" qtlid="297891">Diagnozuojant aptikta klaidų. Norėdami sužinoti daugiau</translation>
    <translation id="exchange_diagnostic_guides_url" qtlid="297904">peržiūrėkite mūsų gidą.</translation>
    <translation id="exchange_dashboard_2016_migration" qtlid="287072">Peržiūrėti migravimo į Exchange 2016 planus.</translation>
@@ -117,7 +118,7 @@
    <translation id="exchange_tab_INFORMATIONS_go_far" qtlid="276337">Toliau</translation>
    <translation id="exchange_tab_INFORMATIONS_infrastructure" qtlid="125552">Infrastruktūra</translation>
    <translation id="exchange_tab_INFORMATIONS_version" qtlid="276350">Exchange versija</translation>
-   <translation id="exchange_tab_INFORMATIONS_webmail" qtlid="485697">Webmail:</translation>
+   <translation id="exchange_tab_INFORMATIONS_webmail">Webmail</translation>
    <translation id="exchange_tab_INFORMATIONS_messaging" qtlid="276363">El. pranešimų siuntumo klientas</translation>
    <translation id="exchange_tab_INFORMATIONS_order_office" qtlid="276376">Užsakyti Office 365</translation>
    <translation id="exchange_tab_INFORMATIONS_order_sharepoint" qtlid="319427">Užsakyti SharePoint</translation>
@@ -126,6 +127,7 @@
    <translation id="exchange_server_commercial_version_2016" qtlid="276415">2016</translation>
 
 <!-- ACCOUNTS -->
+   <translation id="exchange_tab_ACCOUNTS_webmail">Webmail :</translation>
    <translation id="exchange_tab_ACCOUNTS_table_empty" qtlid="149800">Jūs neturite paskyrų</translation>
    <translation id="exchange_tab_ACCOUNTS_table_empty_type_BASIC" qtlid="190810">Jūs neturite Basic paskyros</translation>
    <translation id="exchange_tab_ACCOUNTS_table_empty_type_STANDARD" qtlid="190823">Jūs neturite Standard paskyros</translation>
@@ -1357,7 +1359,7 @@
 <!-- EXPORT PST -->
    <translation id="exchange_ACTION_display_pst_check_existing_export" qtlid="255898">Tikrinama, ar eksportas jau vykdomas, prašome palaukti.</translation>
    <translation id="exchange_ACTION_display_pst_wait_label" qtlid="255911">Eksportas į .pst failą gali užtrukti keletą valandų, jūs galite stebėti progresą bet kuriuo metu (jūs galite uždaryti šį langą ir grįžti vėliau).</translation>
-   <translation id="exchange_ACTION_display_pst_get_file">Votre fichier est maintenant disponible, vous pouvez le télécharger depuis l'URL suivante. ATTENTION : cette URL est valable uniquement pour une durée de 30 minutes.</translation>
+   <translation id="exchange_ACTION_display_pst_get_file" qtlid="517985">Votre fichier est maintenant disponible, vous pouvez le télécharger depuis l'URL suivante. ATTENTION : cette URL est valable uniquement pour une durée de 30 minutes.</translation>
    <translation id="exchange_ACTION_display_pst_start" qtlid="255937">Pradėti eksportą</translation>
    <translation id="exchange_ACTION_display_pst_progress" qtlid="255950">Jūsų eksportas vykdomas: atlikta {0}%.</translation>
    <translation id="exchange_ACTION_display_pst_export_done" qtlid="255963">Failo .pst eksportas baigtas. Jūs galite parsisiųsti failą.</translation>

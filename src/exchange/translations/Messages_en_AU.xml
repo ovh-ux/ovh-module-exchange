@@ -11,6 +11,7 @@
    <translation id="exchange_contractTypes_payAsYouGo" qtlid="485671">Pay-as-you-go</translation>
    <translation id="exchange_accountCreationMethods_adding" qtlid="47781">Add</translation>
    <translation id="exchange_accountCreationMethods_ordering" qtlid="8302">Order</translation>
+   <translation id="exchange_all_domains">Tous les domaines</translation>
    <translation id="exchange_common_confirm" qtlid="26047">Confirm</translation>
    <translation id="exchange_common_cancel" qtlid="37863">Cancel</translation>
 
@@ -36,7 +37,7 @@
    <translation id="exchange_dashboard_tasks" qtlid="136217">Recent tasks</translation>
    <translation id="exchange_dashboard_diag" qtlid="136230">Server diagnostic</translation>
    <translation id="exchange_dashboard_guides" qtlid="366359">Do you need help configuring your Exchange solution? </translation>
-   <translation id="exchange_dashboard_guides_url" qtlid="156732">Read our online guides.</translation>
+   <translation id="exchange_dashboard_guides_url">Consultez nos guides en ligne</translation>
    <translation id="exchange_diagnostic_guide" qtlid="297891">The diagnostic detected some errors. For more information on each error</translation>
    <translation id="exchange_diagnostic_guides_url" qtlid="297904">refer to our online guide. </translation>
    <translation id="exchange_dashboard_2016_migration" qtlid="287072">View the roadmap for migrations to Exchange 2016. </translation>
@@ -117,7 +118,7 @@
    <translation id="exchange_tab_INFORMATIONS_go_far" qtlid="276337">Go further </translation>
    <translation id="exchange_tab_INFORMATIONS_infrastructure" qtlid="125552">Infrastructure</translation>
    <translation id="exchange_tab_INFORMATIONS_version" qtlid="276350">Exchange version </translation>
-   <translation id="exchange_tab_INFORMATIONS_webmail" qtlid="485697">Webmail:</translation>
+   <translation id="exchange_tab_INFORMATIONS_webmail">Webmail</translation>
    <translation id="exchange_tab_INFORMATIONS_messaging" qtlid="276363">Email client </translation>
    <translation id="exchange_tab_INFORMATIONS_order_office" qtlid="276376">Order Office 365</translation>
    <translation id="exchange_tab_INFORMATIONS_order_sharepoint" qtlid="319427">Order SharePoint</translation>
@@ -126,6 +127,7 @@
    <translation id="exchange_server_commercial_version_2016" qtlid="276415">2016</translation>
 
 <!-- ACCOUNTS -->
+   <translation id="exchange_tab_ACCOUNTS_webmail">Webmail :</translation>
    <translation id="exchange_tab_ACCOUNTS_table_empty" qtlid="149800">You don't have any accounts</translation>
    <translation id="exchange_tab_ACCOUNTS_table_empty_type_BASIC" qtlid="190810">You don't have any Basic accounts.</translation>
    <translation id="exchange_tab_ACCOUNTS_table_empty_type_STANDARD" qtlid="190823">You don't have any Standard accounts.</translation>
@@ -1360,7 +1362,7 @@ I therefore explicitly renounce my right to cancel under the provisions of Artic
 <!-- EXPORT PST -->
    <translation id="exchange_ACTION_display_pst_check_existing_export" qtlid="255898">Checking for any exports in progress. Please wait.</translation>
    <translation id="exchange_ACTION_display_pst_wait_label" qtlid="255911">It may take several hours to export toa .pst file. You may check the progress at any time in this window (you may close it and re-open it later).</translation>
-   <translation id="exchange_ACTION_display_pst_get_file">Votre fichier est maintenant disponible, vous pouvez le télécharger depuis l'URL suivante. ATTENTION : cette URL est valable uniquement pour une durée de 30 minutes.</translation>
+   <translation id="exchange_ACTION_display_pst_get_file" qtlid="517985">Votre fichier est maintenant disponible, vous pouvez le télécharger depuis l'URL suivante. ATTENTION : cette URL est valable uniquement pour une durée de 30 minutes.</translation>
    <translation id="exchange_ACTION_display_pst_start" qtlid="255937">Launch the export</translation>
    <translation id="exchange_ACTION_display_pst_progress" qtlid="255950">Your export is in progress: {0}% complete.</translation>
    <translation id="exchange_ACTION_display_pst_export_done" qtlid="255963">The export of the .pst file is complete. You may now download it.</translation>

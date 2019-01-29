@@ -11,6 +11,7 @@
    <translation id="exchange_contractTypes_payAsYouGo" qtlid="485671">Platba za spotřebu</translation>
    <translation id="exchange_accountCreationMethods_adding" qtlid="47781">Přidat</translation>
    <translation id="exchange_accountCreationMethods_ordering" qtlid="8302">Příkaz</translation>
+   <translation id="exchange_all_domains">Tous les domaines</translation>
    <translation id="exchange_common_confirm" qtlid="26047">Schválit</translation>
    <translation id="exchange_common_cancel" qtlid="37863">Zrušit</translation>
 
@@ -36,7 +37,7 @@
    <translation id="exchange_dashboard_tasks" qtlid="136217">Nedávné úkoly</translation>
    <translation id="exchange_dashboard_diag" qtlid="136230">Diagnostika serveru</translation>
    <translation id="exchange_dashboard_guides" qtlid="366359">Potřebujete pomoc s nastavením služby Exchange?</translation>
-   <translation id="exchange_dashboard_guides_url" qtlid="156732">Podívejte se na naše příručky.</translation>
+   <translation id="exchange_dashboard_guides_url">Consultez nos guides en ligne</translation>
    <translation id="exchange_diagnostic_guide" qtlid="297891">Diagnostika zjistila chyby. Pro více informací</translation>
    <translation id="exchange_diagnostic_guides_url" qtlid="297904">si otevřete naši příručku.</translation>
    <translation id="exchange_dashboard_2016_migration" qtlid="287072">Prohlédněte si roadmap pro migraci na Exchange 2016.</translation>
@@ -117,7 +118,7 @@
    <translation id="exchange_tab_INFORMATIONS_go_far" qtlid="276337">Další akce</translation>
    <translation id="exchange_tab_INFORMATIONS_infrastructure" qtlid="125552">Infrastruktura</translation>
    <translation id="exchange_tab_INFORMATIONS_version" qtlid="276350">Verze Exchange</translation>
-   <translation id="exchange_tab_INFORMATIONS_webmail" qtlid="485697">Webmail:</translation>
+   <translation id="exchange_tab_INFORMATIONS_webmail">Webmail</translation>
    <translation id="exchange_tab_INFORMATIONS_messaging" qtlid="276363">E-mailový klient</translation>
    <translation id="exchange_tab_INFORMATIONS_order_office" qtlid="276376">Objednat Office 365</translation>
    <translation id="exchange_tab_INFORMATIONS_order_sharepoint" qtlid="319427">Objednat SharePoint</translation>
@@ -126,6 +127,7 @@
    <translation id="exchange_server_commercial_version_2016" qtlid="276415">2016</translation>
 
 <!-- ACCOUNTS -->
+   <translation id="exchange_tab_ACCOUNTS_webmail">Webmail :</translation>
    <translation id="exchange_tab_ACCOUNTS_table_empty" qtlid="149800">Nemáte žádné účty</translation>
    <translation id="exchange_tab_ACCOUNTS_table_empty_type_BASIC" qtlid="190810">Nemáte žádné účty Basic.</translation>
    <translation id="exchange_tab_ACCOUNTS_table_empty_type_STANDARD" qtlid="190823">Nemáte žádné účty Standard.</translation>
@@ -1369,7 +1371,7 @@ Uzavřená: administrátor sám přidává členy do skupiny.</translation>
 <!-- EXPORT PST -->
    <translation id="exchange_ACTION_display_pst_check_existing_export" qtlid="255898">Kontroluji probíhající export. Vyčkejte prosím.</translation>
    <translation id="exchange_ACTION_display_pst_wait_label" qtlid="255911">Export .pst souboru může trvat několik hodin. Pokrok můžete sledovat kdykoli v tomto okně (můžete ho nyní uzavřít a později opět otevřít).</translation>
-   <translation id="exchange_ACTION_display_pst_get_file">Votre fichier est maintenant disponible, vous pouvez le télécharger depuis l'URL suivante. ATTENTION : cette URL est valable uniquement pour une durée de 30 minutes.</translation>
+   <translation id="exchange_ACTION_display_pst_get_file" qtlid="517985">Votre fichier est maintenant disponible, vous pouvez le télécharger depuis l'URL suivante. ATTENTION : cette URL est valable uniquement pour une durée de 30 minutes.</translation>
    <translation id="exchange_ACTION_display_pst_start" qtlid="255937">Spustit export</translation>
    <translation id="exchange_ACTION_display_pst_progress" qtlid="255950">Váš export probíhá: {0} % dokončeno.</translation>
    <translation id="exchange_ACTION_display_pst_export_done" qtlid="255963">Export souboru .pst byl dokončen. Nyní si ho můžete stáhnout.</translation>
