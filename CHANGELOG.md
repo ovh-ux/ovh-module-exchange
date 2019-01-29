@@ -1,3 +1,16 @@
+## [9.2.5](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.2.4...v9.2.5) (2019-01-29)
+
+
+### Bug Fixes
+
+* can access webmails again ([#250](https://github.com/ovh-ux/ovh-module-exchange/issues/250)) ([c405f24](https://github.com/ovh-ux/ovh-module-exchange/commit/c405f24))
+* **group.accounts:** make possible to add account as member of group ([#262](https://github.com/ovh-ux/ovh-module-exchange/issues/262)) ([5babf53](https://github.com/ovh-ux/ovh-module-exchange/commit/5babf53))
+* fix: add support to filter by domain name in email and group delegation ([#225](https://github.com/ovh-ux/ovh-module-exchange/issues/225)) ([fd1b1c3](https://github.com/ovh-ux/ovh-module-exchange/commit/fd1b1c3))
+* **i18n:** retrieve translations ([8ea8a75](https://github.com/ovh-ux/ovh-module-exchange/commit/8ea8a75))
+* **i18n:** submit translations ([64a1724](https://github.com/ovh-ux/ovh-module-exchange/commit/64a1724))
+
+
+
 ## [9.2.4](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.2.3...v9.2.4) (2019-01-23)
 
 
