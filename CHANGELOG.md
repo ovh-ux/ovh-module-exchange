@@ -1,3 +1,18 @@
+# [9.3.0](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.2.5...v9.3.0) (2019-01-30)
+
+
+### Bug Fixes
+
+* **i18n:** retrieve translations ([1866cc7](https://github.com/ovh-ux/ovh-module-exchange/commit/1866cc7))
+* **i18n:** submit translations ([100d655](https://github.com/ovh-ux/ovh-module-exchange/commit/100d655))
+
+
+### Features
+
+* **account:** handle new Company field ([#257](https://github.com/ovh-ux/ovh-module-exchange/issues/257)) ([3f180e8](https://github.com/ovh-ux/ovh-module-exchange/commit/3f180e8))
+
+
+
 ## [9.2.5](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.2.4...v9.2.5) (2019-01-29)
 
 
