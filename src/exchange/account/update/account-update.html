@@ -69,6 +69,26 @@
                         data-ng-if="ctrl.selectedAccount.outlook"></small>
                 </div>
 
+                <div
+                    class="oui-field mb-4"
+                    data-ng-if="!ctrl.services.exchangeVersion.isVersion(2010)">
+                    <label
+                        class="oui-field__label oui-label"
+                        for="selectedAccountCompany"
+                        data-translate="exchange_ACTION_update_account_step1_company_label"></label>
+                    <div class="oui-field__content">
+                        <div class="oui-field-control">
+                            <input
+                                type="text"
+                                class="oui-input"
+                                id="selectedAccountCompany"
+                                maxlength="256"
+                                name="selectedAccountCompany"
+                                data-ng-model="ctrl.selectedAccount.company">
+                        </div>
+                    </div>
+                </div>
+
                 <div class="oui-field mb-4">
                     <label class="oui-field__label oui-label" for="selectedAccountFirstName"
                            data-translate="exchange_ACTION_update_account_step1_first_name_label"></label>
@@ -240,8 +260,14 @@
                 <dd data-ng-if="ctrl.newAccountOptions.availableTypes.length > 1"
                     data-ng-bind="ctrl.services.exchangeAccountTypes.getDisplayValue(ctrl.selectedAccount.accountLicense)"></dd>
 
-                <dt data-ng-if="ctrl.selectedAccount.firstName"
+                <dt data-ng-if="ctrl.selectedAccount.company"
                     data-translate="exchange_ACTION_update_account_step2_first_name_label"></dt>
+                <dd class="word-break"
+                    data-ng-if="ctrl.selectedAccount.company"
+                    data-ng-bind="ctrl.selectedAccount.company | wucSliceContent: 150"></dd>
+
+                <dt data-ng-if="ctrl.selectedAccount.firstName"
+                    data-translate="exchange_ACTION_update_account_step2_company_label"></dt>
                 <dd class="word-break"
                     data-ng-if="ctrl.selectedAccount.firstName"
                     data-ng-bind="ctrl.selectedAccount.firstName | wucSliceContent: 150"></dd>
