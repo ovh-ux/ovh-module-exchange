@@ -11,7 +11,7 @@
    <translation id="exchange_contractTypes_payAsYouGo" qtlid="485671">Apmokėjimas po naudojimo</translation>
    <translation id="exchange_accountCreationMethods_adding" qtlid="47781">Priskirti</translation>
    <translation id="exchange_accountCreationMethods_ordering" qtlid="8302">Užsakymas</translation>
-   <translation id="exchange_all_domains">Tous les domaines</translation>
+   <translation id="exchange_all_domains" qtlid="127372">Visi domenai </translation>
    <translation id="exchange_common_confirm" qtlid="26047">Patvirtinti</translation>
    <translation id="exchange_common_cancel" qtlid="37863">Anuliuoti</translation>
 
@@ -37,7 +37,7 @@
    <translation id="exchange_dashboard_tasks" qtlid="136217">Paskutinės užduotys</translation>
    <translation id="exchange_dashboard_diag" qtlid="136230">Serverio diagnostika </translation>
    <translation id="exchange_dashboard_guides" qtlid="366359">Reikia pagalbos konfigūruojant Exchange paslaugą?</translation>
-   <translation id="exchange_dashboard_guides_url">Consultez nos guides en ligne</translation>
+   <translation id="exchange_dashboard_guides_url" qtlid="519090">Consultez nos guides en ligne</translation>
    <translation id="exchange_diagnostic_guide" qtlid="297891">Diagnozuojant aptikta klaidų. Norėdami sužinoti daugiau</translation>
    <translation id="exchange_diagnostic_guides_url" qtlid="297904">peržiūrėkite mūsų gidą.</translation>
    <translation id="exchange_dashboard_2016_migration" qtlid="287072">Peržiūrėti migravimo į Exchange 2016 planus.</translation>
@@ -118,7 +118,7 @@
    <translation id="exchange_tab_INFORMATIONS_go_far" qtlid="276337">Toliau</translation>
    <translation id="exchange_tab_INFORMATIONS_infrastructure" qtlid="125552">Infrastruktūra</translation>
    <translation id="exchange_tab_INFORMATIONS_version" qtlid="276350">Exchange versija</translation>
-   <translation id="exchange_tab_INFORMATIONS_webmail">Webmail</translation>
+   <translation id="exchange_tab_INFORMATIONS_webmail" qtlid="15473">Žiniatinklio paštas</translation>
    <translation id="exchange_tab_INFORMATIONS_messaging" qtlid="276363">El. pranešimų siuntumo klientas</translation>
    <translation id="exchange_tab_INFORMATIONS_order_office" qtlid="276376">Užsakyti Office 365</translation>
    <translation id="exchange_tab_INFORMATIONS_order_sharepoint" qtlid="319427">Užsakyti SharePoint</translation>
@@ -127,7 +127,7 @@
    <translation id="exchange_server_commercial_version_2016" qtlid="276415">2016</translation>
 
 <!-- ACCOUNTS -->
-   <translation id="exchange_tab_ACCOUNTS_webmail">Webmail :</translation>
+   <translation id="exchange_tab_ACCOUNTS_webmail" qtlid="485697">Webmail:</translation>
    <translation id="exchange_tab_ACCOUNTS_table_empty" qtlid="149800">Jūs neturite paskyrų</translation>
    <translation id="exchange_tab_ACCOUNTS_table_empty_type_BASIC" qtlid="190810">Jūs neturite Basic paskyros</translation>
    <translation id="exchange_tab_ACCOUNTS_table_empty_type_STANDARD" qtlid="190823">Jūs neturite Standard paskyros</translation>
@@ -135,6 +135,7 @@
    <translation id="exchange_tab_ACCOUNTS_table_empty_search" qtlid="149813">Nėra paieškos kriterijus atitinkančių paskyrų</translation>
    <translation id="exchange_tab_ACCOUNTS_table_email" qtlid="137244">El. pašto paskyra</translation>
    <translation id="exchange_tab_ACCOUNTS_table_type" qtlid="2642">Tipas</translation>
+   <translation id="exchange_tab_ACCOUNTS_table_company">Entreprise</translation>
    <translation id="exchange_tab_ACCOUNTS_table_size" qtlid="7726">Dydis</translation>
    <translation id="exchange_tab_ACCOUNTS_table_alias" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ACCOUNTS_table_group" qtlid="59507">Grupė</translation>
@@ -475,6 +476,7 @@
 </ul></translation>
    <translation id="exchange_account_add_emailAddress_error_emailAddressIsAlreadyTaken" qtlid="485996">Šis el. pašto adresas jau egzistuoja.</translation>
    <translation id="exchange_account_add_samAccountName_label" qtlid="486009">Exchange 2010 paskyros pavadinimas (pasirinktinai)</translation>
+   <translation id="exchange_account_add_company_label">Entreprise (optionnel)</translation>
    <translation id="exchange_account_add_firstName_label" qtlid="486022">Vardas (pasirinktinai)</translation>
    <translation id="exchange_account_add_lastName_label" qtlid="486035">Pavardė (pasirinktinai)</translation>
    <translation id="exchange_account_add_displayName_label" qtlid="486048">Rodyti pavadinimą (pasirinktinai)</translation>
@@ -523,6 +525,7 @@
    <translation id="exchange_ACTION_update_account_step1_type_BASIC" qtlid="48986">Basic</translation>
    <translation id="exchange_ACTION_update_account_step1_type_ENTERPRISE" qtlid="49022">Entreprise</translation>
    <translation id="exchange_ACTION_update_account_step1_type_cant_change" qtlid="486243">Paskyros tipas negali būti pakeistas, kol Outlook licencija susieta su šia paskyra.</translation>
+   <translation id="exchange_ACTION_update_account_step1_company_label">Entreprise</translation>
    <translation id="exchange_ACTION_update_account_step1_first_name_label" qtlid="23323">Vardas</translation>
    <translation id="exchange_ACTION_update_account_step1_last_name_label" qtlid="3818">Pavadinimas</translation>
    <translation id="exchange_ACTION_update_account_step1_display_name_label" qtlid="23515">Rodomas vardas</translation>
@@ -543,9 +546,11 @@
    <translation id="exchange_ACTION_update_account_step1_GAL_label" qtlid="191980">Slėpti adresą adresų knygelėje</translation>
    <translation id="exchange_ACTION_update_account_step1_exchange_guid_label" qtlid="174633">Exchange GUID</translation>
    <translation id="exchange_ACTION_update_account_step1_exchange_SAMA_label" qtlid="486256">Exchange 2010 paskyros pavadinimas</translation>
+   <translation id="exchange_ACTION_update_account_step1_exchange_company_label">Entreprise (optionnel)</translation>
    <translation id="exchange_ACTION_update_account_step1_mandatory_fields" qtlid="137634">Privalomi laukai </translation>
    <translation id="exchange_ACTION_update_account_step2_confirmation_intro" qtlid="136841">Jūsų paskyra:</translation>
    <translation id="exchange_ACTION_update_account_step2_email_label" qtlid="137244">El. pašto paskyra</translation>
+   <translation id="exchange_ACTION_update_account_step2_company_label">Entreprise</translation>
    <translation id="exchange_ACTION_update_account_step2_first_name_label" qtlid="23323">Vardas</translation>
    <translation id="exchange_ACTION_update_account_step2_last_name_label" qtlid="3818">Pavadinimas</translation>
    <translation id="exchange_ACTION_update_account_step2_display_name_label" qtlid="23515">Rodomas vardas</translation>

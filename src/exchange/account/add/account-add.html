@@ -125,6 +125,20 @@
         </oui-field>
 
         <oui-field
+            data-label="{{:: 'exchange_account_add_company_label' | translate }}"
+            data-size="m"
+            data-ng-if="!$ctrl.exchangeVersion.isVersion(2010)">
+            <input
+                class="oui-input"
+                type="text"
+                id="company"
+                name="company"
+                maxlength="256"
+                data-ng-model="$ctrl.newAccount.company"
+                data-ng-model-options="{ updateOn: 'blur' }">
+        </oui-field>
+
+        <oui-field
             data-label="{{:: 'exchange_account_add_firstName_label' | translate }}"
             data-size="m">
             <input
