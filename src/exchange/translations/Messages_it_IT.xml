@@ -37,7 +37,7 @@
    <translation id="exchange_dashboard_tasks" qtlid="136217">Task recenti</translation>
    <translation id="exchange_dashboard_diag" qtlid="136230">Diagnostica server</translation>
    <translation id="exchange_dashboard_guides" qtlid="366359">Non sai come configurare il tuo servizio Exchange?</translation>
-   <translation id="exchange_dashboard_guides_url" qtlid="519090">Consultez nos guides en ligne</translation>
+   <translation id="exchange_dashboard_guides_url" qtlid="519090">Consulta le nostre guide</translation>
    <translation id="exchange_diagnostic_guide" qtlid="297891">La diagnostica ha identificato alcuni errori. Per maggiori informazioni sui problemi riscontrati,</translation>
    <translation id="exchange_diagnostic_guides_url" qtlid="297904">consulta le nostre guide disponibili online.</translation>
    <translation id="exchange_dashboard_2016_migration" qtlid="287072">Visualizza il programma delle migrazioni alla versione Exchange 2016.</translation>
@@ -1370,7 +1370,7 @@ Definisci un valore compreso fra 3 e 14 caratteri o evita di inserire una passwo
 <!-- EXPORT PST -->
    <translation id="exchange_ACTION_display_pst_check_existing_export" qtlid="255898">Stiamo verificando se sono in corso altre esportazioni, ti preghiamo di attendere...</translation>
    <translation id="exchange_ACTION_display_pst_wait_label" qtlid="255911">L'esportazione in un file .pst può richiedere fino a qualche ora. Puoi controllare lo stato dell'operazione in qualsiasi momento (è possibile chiudere questa finestra e riaprirla in seguito).</translation>
-   <translation id="exchange_ACTION_display_pst_get_file" qtlid="517985">Votre fichier est maintenant disponible, vous pouvez le télécharger depuis l'URL suivante. ATTENTION : cette URL est valable uniquement pour une durée de 30 minutes.</translation>
+   <translation id="exchange_ACTION_display_pst_get_file" qtlid="517985">Il tuo file è disponibile, scaricalo da questo URL. ATTENZIONE: l'URL è valido solo per 30 minuti.</translation>
    <translation id="exchange_ACTION_display_pst_start" qtlid="255937">Avvia l'esportazione</translation>
    <translation id="exchange_ACTION_display_pst_progress" qtlid="255950">Esportazione in corso: {0}% completato.</translation>
    <translation id="exchange_ACTION_display_pst_export_done" qtlid="255963">L'esportazione del file .pst è stata completata. Adesso è possibile scaricarlo.</translation>
