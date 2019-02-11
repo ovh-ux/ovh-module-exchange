@@ -37,7 +37,7 @@
    <translation id="exchange_dashboard_tasks" qtlid="136217">Tareas recientes</translation>
    <translation id="exchange_dashboard_diag" qtlid="136230">Diagnóstico del servidor</translation>
    <translation id="exchange_dashboard_guides" qtlid="366359">¿Necesita ayuda para configurar su servicio Exchange?</translation>
-   <translation id="exchange_dashboard_guides_url" qtlid="519090">Consultez nos guides en ligne</translation>
+   <translation id="exchange_dashboard_guides_url" qtlid="519090">Consulte nuestras guías online</translation>
    <translation id="exchange_diagnostic_guide" qtlid="297891">El diagnóstico ha detectado errores. Para más información sobre cada uno de ellos, consulte nuestra</translation>
    <translation id="exchange_diagnostic_guides_url" qtlid="297904">guía.</translation>
    <translation id="exchange_dashboard_2016_migration" qtlid="287072">Consultar el programa de migraciones a Exchange 2016.</translation>
@@ -53,11 +53,11 @@
    <translation id="exchange_dashboard_diag_ptr_label" qtlid="143303">PTR</translation>
    <translation id="exchange_dashboard_diag_ptr_tooltip_title" qtlid="143303">PTR</translation>
    <translation id="exchange_dashboard_diag_ptr_tooltip_ok" qtlid="137491">Configuración automática realizada</translation>
-   <translation id="exchange_dashboard_diag_ptr_tooltip_error" qtlid="143316">Existe un problema en la resolución inversa de su dirección IP. Por favor, contacte con el soporte.</translation>
+   <translation id="exchange_dashboard_diag_ptr_tooltip_error" qtlid="143316">Existe un problema en la resolución inversa de su dirección IP. Por favor, contacte con el Soporte.</translation>
    <translation id="exchange_dashboard_diag_ptrv6_label" qtlid="143329">PTR v6</translation>
    <translation id="exchange_dashboard_diag_ptrv6_tooltip_title" qtlid="143329">PTR v6</translation>
    <translation id="exchange_dashboard_diag_ptrv6_tooltip_ok" qtlid="137491">Configuración automática realizada</translation>
-   <translation id="exchange_dashboard_diag_ptrv6_tooltip_error" qtlid="143342">Existe un problema en la resolución inversa de su dirección IPv6. Por favor, contacte con el soporte.</translation>
+   <translation id="exchange_dashboard_diag_ptrv6_tooltip_error" qtlid="143342">Existe un problema en la resolución inversa de su dirección IPv6. Por favor, contacte con el Soporte.</translation>
    <translation id="exchange_dashboard_billing" qtlid="32950">Facturación</translation>
    <translation id="exchange_dashboard_expiration" qtlid="168172">Renovación</translation>
    <translation id="exchange_dashboard_ssl_expiration" qtlid="190797">Expiración SSL</translation>
@@ -367,10 +367,10 @@
    <translation id="exchange_update_billing_header_new_periode" qtlid="190992">Nuevo periodo</translation>
    <translation id="exchange_update_billing_periode_value_DELETE_AT_EXPIRATION" qtlid="201406">Expira al vencimiento</translation>
    <translation id="exchange_update_billing_periode_delete_warning" qtlid="211593">Atención, al seleccionar esta opción, el servicio caducará en la fecha de vencimiento. Los datos de la cuenta se perderán y no podrá recuperarlos posteriormente.</translation>
-   <translation id="exchange_update_billing_periode_resume" qtlid="191005">Va a cambiar el periodo de renovación de sus cuentas:</translation>
+   <translation id="exchange_update_billing_periode_resume" qtlid="191005">Va a cambiar el período de renovación de sus cuentas:</translation>
    <translation id="exchange_update_billing_periode_success" qtlid="191018">El cambio del periodo de renovación automática se ha realizado.</translation>
    <translation id="exchange_update_billing_periode_partial" qtlid="191031">Una parte de los cambios del periodo de renovación han generado errores.</translation>
-   <translation id="exchange_update_billing_periode_failure" qtlid="191044">Se ha producido un error al cargar el periodo de renovación automática.</translation>
+   <translation id="exchange_update_billing_periode_failure" qtlid="191044">Se ha producido un error al cargar el período de renovación automática.</translation>
 
 <!-- ########################################## -->
 <!-- DOMAIN -->
@@ -639,7 +639,7 @@
    <translation id="exchange_tab_domain_add_step3_configuration_true" qtlid="137842">Automáticamente</translation>
    <translation id="exchange_tab_domain_add_step3_configuration_false" qtlid="34788">No</translation>
    <translation id="exchange_tab_domain_add_step3_confirmation" qtlid="137855">¿Seguro que quiere añadir el siguiente dominio al servidor Exchange?</translation>
-   <translation id="exchange_tab_domain_add_success" qtlid="137868">El dominio va a añadirse al servidor Exchange.</translation>
+   <translation id="exchange_tab_domain_add_success" qtlid="137868">El dominio va a añadirse a su servidor Exchange.</translation>
    <translation id="exchange_tab_domain_add_failure" qtlid="137049">Se ha producido un error al añadir el dominio a su servidor Exchange.</translation>
    <translation id="exchange_tab_domain_modify_success" qtlid="137907">El dominio va a actualizarse.</translation>
    <translation id="exchange_tab_domain_modify_failure" qtlid="137075">Se ha producido un error al actualizar el dominio.</translation>
@@ -1365,7 +1365,7 @@
 <!-- EXPORT PST -->
    <translation id="exchange_ACTION_display_pst_check_existing_export" qtlid="255898">Comprobando si ya hay una exportación en curso...</translation>
    <translation id="exchange_ACTION_display_pst_wait_label" qtlid="255911">La exportación a un archivo .pst puede tardar hasta unas horas. Puede seguir el progreso en cualquier momento (aunque cierre esta ventana puede volver más adelante).</translation>
-   <translation id="exchange_ACTION_display_pst_get_file" qtlid="517985">Votre fichier est maintenant disponible, vous pouvez le télécharger depuis l'URL suivante. ATTENTION : cette URL est valable uniquement pour une durée de 30 minutes.</translation>
+   <translation id="exchange_ACTION_display_pst_get_file" qtlid="517985">Su archivo ya está disponible y puede descargarlo en la siguiente URL. Atención: esta URL solo será válida durante 30 minutos.</translation>
    <translation id="exchange_ACTION_display_pst_start" qtlid="255937">Ejecutar la exportación</translation>
    <translation id="exchange_ACTION_display_pst_progress" qtlid="255950">Exportando: {0}% realizado.</translation>
    <translation id="exchange_ACTION_display_pst_export_done" qtlid="255963">La exportación del archivo .pst ha finalizado. Ta puede descargarlo.</translation>

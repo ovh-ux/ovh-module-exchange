@@ -37,7 +37,7 @@
    <translation id="exchange_dashboard_tasks" qtlid="136217">Ostatnie zadania</translation>
    <translation id="exchange_dashboard_diag" qtlid="136230">Diagnostyka serwera</translation>
    <translation id="exchange_dashboard_guides" qtlid="366359">Potrzebujesz pomocy w skonfigurowaniu usługi Exchange?</translation>
-   <translation id="exchange_dashboard_guides_url" qtlid="519090">Consultez nos guides en ligne</translation>
+   <translation id="exchange_dashboard_guides_url" qtlid="519090">Zapoznaj się z naszymi przewodnikami online.</translation>
    <translation id="exchange_diagnostic_guide" qtlid="297891">Podczas diagnostyki wykryto błędy. Aby uzyskać informacje na temat każdego z nich,</translation>
    <translation id="exchange_diagnostic_guides_url" qtlid="297904">zapoznaj się z naszym przewodnikiem.</translation>
    <translation id="exchange_dashboard_2016_migration" qtlid="287072">Sprawdź program migracji na Exchange 2016.</translation>
@@ -335,7 +335,7 @@
    <translation id="exchange_tab_TASKS_warning" qtlid="136347">Uwaga!</translation>
    <translation id="exchange_tab_TASKS_partial" qtlid="137426">Lista jest niekompletna. Niektóre zadania nie zostały poprawnie załadowane.</translation>
    <translation id="exchange_tab_TASKS_error_message" qtlid="144097">Wystąpił błąd podczas wyświetlania zadań.</translation>
-   <translation id="exchange_tab_TASKS_DIAGNOSE_ACCOUNT" qtlid="509443">Diagnostiquer le compte</translation>
+   <translation id="exchange_tab_TASKS_DIAGNOSE_ACCOUNT" qtlid="509443">Przeprowadź diagnostykę konta</translation>
 
    <translation id="exchange_resilitation_action_title" qtlid="190888">Rezygnacja z usługi Exchange</translation>
    <translation id="exchange_resilitation_action_intro" qtlid="190901">Czy chcesz zrezygnować z usługi Exchange "{0}"? <br />Operacja ta anuluje automatyczne odnowienie pod koniec abonamentu powodując zawieszenie usługi.<br /><br /> Do tej daty będziesz mógł korzystać z usługi.</translation>
@@ -1366,7 +1366,7 @@ Zamknięta: administrator zapisuje członków grupy.</translation>
 <!-- EXPORT PST -->
    <translation id="exchange_ACTION_display_pst_check_existing_export" qtlid="255898">Trwa weryfikowanie, czy wykonywany jest eksport.</translation>
    <translation id="exchange_ACTION_display_pst_wait_label" qtlid="255911">Eksport do pliku .pst może zająć kilka godzin. W każdej chwili będziesz mógł sprawdzić postęp operacji (możesz zamknąć to okno i później do niego powrócić).</translation>
-   <translation id="exchange_ACTION_display_pst_get_file" qtlid="517985">Votre fichier est maintenant disponible, vous pouvez le télécharger depuis l'URL suivante. ATTENTION : cette URL est valable uniquement pour une durée de 30 minutes.</translation>
+   <translation id="exchange_ACTION_display_pst_get_file" qtlid="517985">Twój plik jest teraz dostępny. Możesz go pobrać, klikając link. UWAGA: link jest ważny tylko przez 30 minut.</translation>
    <translation id="exchange_ACTION_display_pst_start" qtlid="255937">Rozpocznij eksportowanie</translation>
    <translation id="exchange_ACTION_display_pst_progress" qtlid="255950">Eksport w trakcie: wykonano {0}%</translation>
    <translation id="exchange_ACTION_display_pst_export_done" qtlid="255963">Eksport pliku .pst został zakończony. Możesz pobrać plik.</translation>
