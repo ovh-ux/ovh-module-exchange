@@ -1,3 +1,12 @@
+## [9.3.2](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.3.1...v9.3.2) (2019-02-12)
+
+
+### Bug Fixes
+
+* **account.update:** display correct label next to the data ([#275](https://github.com/ovh-ux/ovh-module-exchange/issues/275)) ([a6d6a89](https://github.com/ovh-ux/ovh-module-exchange/commit/a6d6a89))
+
+
+
 ## [9.3.1](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.3.0...v9.3.1) (2019-02-11)
 
 
