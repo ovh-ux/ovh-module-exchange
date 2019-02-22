@@ -291,7 +291,7 @@
                 <dt data-ng-if="ctrl.services.exchangeServiceInfrastructure.isProvider()"
                     data-translate="exchange_ACTION_update_account_step1_quota_label"></dt>
                 <dd data-ng-if="ctrl.services.exchangeServiceInfrastructure.isProvider()"
-                    data-ng-bind="ctrl.selectedAccount.quota + ' ' + 'unit_size_GB' | translate"></dd>
+                    data-ng-bind="ctrl.selectedAccount.quota + ' ' + ('unit_size_GB' | translate)"></dd>
 
                 <dt data-ng-if="ctrl.services.exchangeAccountOutlook.canHaveLicense(ctrl.selectedAccount)"
                     data-translate="exchange_ACTION_update_account_step2_outlook_label"></dt>
