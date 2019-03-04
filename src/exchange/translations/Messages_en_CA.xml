@@ -37,7 +37,7 @@
    <translation id="exchange_dashboard_tasks" qtlid="136217">Recent tasks</translation>
    <translation id="exchange_dashboard_diag" qtlid="136230">Server diagnosis</translation>
    <translation id="exchange_dashboard_guides" qtlid="366359">Do you need help configuring your Exchange solution? </translation>
-   <translation id="exchange_dashboard_guides_url" qtlid="519090">Consultez nos guides en ligne</translation>
+   <translation id="exchange_dashboard_guides_url" qtlid="519090">View guides online</translation>
    <translation id="exchange_diagnostic_guide" qtlid="297891">The diagnostic detected some errors. For more information on each error</translation>
    <translation id="exchange_diagnostic_guides_url" qtlid="297904">refer to our online guide. </translation>
    <translation id="exchange_dashboard_2016_migration" qtlid="287072">View the roadmap for migrations to Exchange 2016. </translation>
@@ -1367,7 +1367,7 @@ I therefore explicitly renounce my right to cancel under the provisions of Artic
 <!-- EXPORT PST -->
    <translation id="exchange_ACTION_display_pst_check_existing_export" qtlid="255898">Checking for any exports in progress. Please wait.</translation>
    <translation id="exchange_ACTION_display_pst_wait_label" qtlid="255911">It may take several hours to export toa .pst file. You may check the progress at any time in this window (you may close it and re-open it later).</translation>
-   <translation id="exchange_ACTION_display_pst_get_file" qtlid="517985">Votre fichier est maintenant disponible, vous pouvez le télécharger depuis l'URL suivante. ATTENTION : cette URL est valable uniquement pour une durée de 30 minutes.</translation>
+   <translation id="exchange_ACTION_display_pst_get_file" qtlid="517985">Your file is now available to download via the following URL. IMPORTANT: this URL is only valid for 30 minutes.</translation>
    <translation id="exchange_ACTION_display_pst_start" qtlid="255937">Launch the export</translation>
    <translation id="exchange_ACTION_display_pst_progress" qtlid="255950">Your export is in progress: {0}% complete.</translation>
    <translation id="exchange_ACTION_display_pst_export_done" qtlid="255963">The export of the .pst file is complete. You may now download it.</translation>

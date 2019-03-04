@@ -504,12 +504,12 @@
    <translation id="exchange_ACTION_add_account_step1_email_label" qtlid="137244">Cuenta de correo</translation>
    <translation id="exchange_ACTION_add_account_button" qtlid="21487">Añadir una cuenta</translation>
    <translation id="exchange_ACTION_add_account_step1_first_name_label" qtlid="23323">Nombre</translation>
-   <translation id="exchange_ACTION_add_account_step1_last_name_label" qtlid="3818">Nombre</translation>
+   <translation id="exchange_ACTION_add_account_step1_last_name_label" qtlid="3818">Apellidos</translation>
    <translation id="exchange_ACTION_add_account_step1_display_name_label" qtlid="23515">Nombre mostrado</translation>
    <translation id="exchange_ACTION_add_account_step2_confirmation_intro" qtlid="136841">Su cuenta:</translation>
    <translation id="exchange_ACTION_add_account_step2_email_label" qtlid="137244">Cuenta de correo</translation>
    <translation id="exchange_ACTION_add_account_step2_first_name_label" qtlid="23323">Nombre</translation>
-   <translation id="exchange_ACTION_add_account_step2_last_name_label" qtlid="3818">Nombre</translation>
+   <translation id="exchange_ACTION_add_account_step2_last_name_label" qtlid="3818">Apellidos</translation>
    <translation id="exchange_ACTION_add_account_step2_display_name_label" qtlid="23515">Nombre mostrado</translation>
    <translation id="exchange_ACTION_add_account_GAL_true" qtlid="34776">Sí</translation>
    <translation id="exchange_ACTION_add_account_GAL_false" qtlid="34788">No</translation>
@@ -527,7 +527,7 @@
    <translation id="exchange_ACTION_update_account_step1_type_cant_change" qtlid="486243">No es posible modificar el tipo de cuenta porque tiene asociada una licencia Outlook.</translation>
    <translation id="exchange_ACTION_update_account_step1_company_label">Entreprise</translation>
    <translation id="exchange_ACTION_update_account_step1_first_name_label" qtlid="23323">Nombre</translation>
-   <translation id="exchange_ACTION_update_account_step1_last_name_label" qtlid="3818">Nombre</translation>
+   <translation id="exchange_ACTION_update_account_step1_last_name_label" qtlid="3818">Apellidos</translation>
    <translation id="exchange_ACTION_update_account_step1_display_name_label" qtlid="23515">Nombre mostrado</translation>
    <translation id="exchange_ACTION_update_account_step1_password_label" qtlid="2270">Contraseña</translation>
    <translation id="exchange_ACTION_update_account_step1_password_confirmation_label" qtlid="9983">Confirmar</translation>
@@ -552,7 +552,7 @@
    <translation id="exchange_ACTION_update_account_step2_email_label" qtlid="137244">Cuenta de correo</translation>
    <translation id="exchange_ACTION_update_account_step2_company_label">Entreprise</translation>
    <translation id="exchange_ACTION_update_account_step2_first_name_label" qtlid="23323">Nombre</translation>
-   <translation id="exchange_ACTION_update_account_step2_last_name_label" qtlid="3818">Nombre</translation>
+   <translation id="exchange_ACTION_update_account_step2_last_name_label" qtlid="3818">Apellidos</translation>
    <translation id="exchange_ACTION_update_account_step2_display_name_label" qtlid="23515">Nombre mostrado</translation>
    <translation id="exchange_ACTION_update_account_step2_password_label" qtlid="139650">Contraseña</translation>
    <translation id="exchange_ACTION_update_account_step2_outlook_label" qtlid="136724">Licencia Outlook</translation>
@@ -710,7 +710,7 @@
    <translation id="exchange_tab_DISCLAIMER_menu_delete" qtlid="2414">Eliminar</translation>
    <translation id="exchange_ACTION_add_disclaimer_button" qtlid="152206">Añadir una firma</translation>
    <translation id="exchange_ACTION_add_disclaimer_title" qtlid="152206">Añadir una firma</translation>
-   <translation id="exchange_ACTION_disclaimer_name" qtlid="3818">Nombre</translation>
+   <translation id="exchange_ACTION_disclaimer_name" qtlid="3818">Apellidos</translation>
    <translation id="exchange_ACTION_disclaimer_associated_domains" qtlid="133110">Dominio asociado</translation>
    <translation id="exchange_ACTION_disclaimer_variables" qtlid="152323">Variables</translation>
    <translation id="exchange_ACTION_disclaimer_insert" qtlid="152336">Insertar una variable</translation>
@@ -728,7 +728,7 @@
    <translation id="exchange_ACTION_add_disclaimer_option_FirstName" qtlid="23323">Nombre</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_HomePhoneNumber" qtlid="152401">Teléfono fijo</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Initials" qtlid="152414">Iniciales</translation>
-   <translation id="exchange_ACTION_add_disclaimer_option_LastName" qtlid="3818">Nombre</translation>
+   <translation id="exchange_ACTION_add_disclaimer_option_LastName" qtlid="3818">Apellidos</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Manager" qtlid="152427">Responsable</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_MobileNumber" qtlid="152440">Teléfono móvil</translation>
    <translation id="exchange_ACTION_add_disclaimer_option_Name" qtlid="109614">No completo</translation>
@@ -789,7 +789,7 @@
    <translation id="exchange_tab_RESOURCES_remove_resource_failure" qtlid="156368">Se ha producido un error al eliminar la cuenta de recursos.</translation>
    <translation id="exchange_tab_RESOURCES_table_empty" qtlid="156381">No hay cuentas de recursos.</translation>
    <translation id="exchange_tab_RESOURCES_error_message" qtlid="156394">Se ha producido un error al cargar los recursos.</translation>
-   <translation id="exchange_tab_RESOURCES_table_account" qtlid="3818">Nombre</translation>
+   <translation id="exchange_tab_RESOURCES_table_account" qtlid="3818">Apellidos</translation>
    <translation id="exchange_tab_RESOURCES_table_type" qtlid="2642">Tipo</translation>
    <translation id="exchange_tab_RESOURCES_table_capacity" qtlid="4334">Capacidad</translation>
    <translation id="exchange_tab_RESOURCES_table_allow_conflicts" qtlid="156407">Conflicto autorizado</translation>
@@ -1155,7 +1155,7 @@
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_email_invalid" qtlid="171370">La dirección de correo electrónico introducida no es válida</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_organization2010_label" qtlid="32278">Organización</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_first_name_label" qtlid="23323">Nombre</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_last_name_label" qtlid="3818">Nombre</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_last_name_label" qtlid="3818">Apellidos</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_display_name_label" qtlid="23515">Nombre mostrado</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_GAL_label" qtlid="184932">Ocultar en Outlook</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step1_option_fail" qtlid="137621">Se ha producido un error al cargar las opciones de la cuenta Exchange.</translation>
@@ -1165,7 +1165,7 @@
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_question" qtlid="171435">¿Seguro que quiere añadir el siguiente contacto externo?</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_email_label" qtlid="137244">Cuenta de correo</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_first_name_label" qtlid="23323">Nombre</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_last_name_label" qtlid="3818">Nombre</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_last_name_label" qtlid="3818">Apellidos</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_display_name_label" qtlid="23515">Nombre mostrado</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_step2_GAL_label" qtlid="191954">Ocultar la dirección en Outlook</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_add_GAL_true" qtlid="34776">Sí</translation>
@@ -1178,7 +1178,7 @@
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_email_label" qtlid="137244">Cuenta de correo</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_email_invalid" qtlid="171370">La dirección de correo electrónico introducida no es válida</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_first_name_label" qtlid="23323">Nombre</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_last_name_label" qtlid="3818">Nombre</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_last_name_label" qtlid="3818">Apellidos</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_display_name_label" qtlid="23515">Nombre mostrado</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_GAL_label" qtlid="191954">Ocultar la dirección en Outlook</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step1_mandatory_fields" qtlid="137634">Campos obligatorios</translation>
@@ -1187,7 +1187,7 @@
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_question" qtlid="171500">¿Seguro que quiere modificar el siguiente contacto externo?</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_email_label" qtlid="137244">Cuenta de correo</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_first_name_label" qtlid="23323">Nombre</translation>
-   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_last_name_label" qtlid="3818">Nombre</translation>
+   <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_last_name_label" qtlid="3818">Apellidos</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_display_name_label" qtlid="23515">Nombre mostrado</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_step2_GAL_label" qtlid="191954">Ocultar la dirección en Outlook</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACTS_configuration_contact_modify_GAL_true" qtlid="34776">Sí</translation>
@@ -1633,7 +1633,7 @@
    <translation id="exchange_wizardHostedCreation_emailCreation_add_login_pattern" qtlid="450103">La parte local (antes de la «@») solo puede contener letras, cifras, puntos (.) o guiones (- o _).</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_add_firstName_title" qtlid="450116">Personalizar una cuenta de correo</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_add_firstName_header" qtlid="23323">Nombre</translation>
-   <translation id="exchange_wizardHostedCreation_emailCreation_add_name_header" qtlid="3818">Nombre</translation>
+   <translation id="exchange_wizardHostedCreation_emailCreation_add_name_header" qtlid="3818">Apellidos</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_add_displayName_header" qtlid="23515">Nombre mostrado</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_add_password_header" qtlid="2270">Contraseña</translation>
    <translation id="exchange_wizardHostedCreation_emailCreation_add_password_error_confirmation" qtlid="450129">La confirmación de la contraseña deber ser idéntica a la contraseña.</translation>
