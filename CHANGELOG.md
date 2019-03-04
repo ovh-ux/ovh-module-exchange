@@ -1,3 +1,12 @@
+## [9.3.3](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.3.2...v9.3.3) (2019-03-04)
+
+
+### Bug Fixes
+
+* **shared.account:** calculate quota on change of input ([#279](https://github.com/ovh-ux/ovh-module-exchange/issues/279)) ([50cfc06](https://github.com/ovh-ux/ovh-module-exchange/commit/50cfc06))
+
+
+
 ## [9.3.2](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.3.1...v9.3.2) (2019-02-12)
 
 
