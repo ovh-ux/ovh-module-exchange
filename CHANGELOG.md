@@ -1,3 +1,12 @@
+## [9.3.4](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.3.3...v9.3.4) (2019-03-04)
+
+
+### Bug Fixes
+
+* **i18n:** retrieve translations ([385af0e](https://github.com/ovh-ux/ovh-module-exchange/commit/385af0e))
+
+
+
 ## [9.3.3](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.3.2...v9.3.3) (2019-03-04)
 
 
