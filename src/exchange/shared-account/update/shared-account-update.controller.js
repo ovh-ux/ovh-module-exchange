@@ -72,6 +72,7 @@ angular.module('Module.exchange.controllers').controller(
     }
 
     hasQuotaFieldErrors() {
+      this.convertQuotas();
       const quotaIsntANumber = this.services.formValidation.doesFieldContainsErrors(
         this.sharedAccountForm,
         'quota',
