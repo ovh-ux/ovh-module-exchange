@@ -1,24 +1,24 @@
 class ExchangeUpdateRenewCtrl {
   constructor(
-    $scope,
-    Exchange,
     $location,
-    navigation,
+    $scope,
     $translate,
-    messaging,
+    Exchange,
     exchangeServiceInfrastructure,
     exchangeVersion,
+    messaging,
+    navigation,
     EXCHANGE_RENEW_PERIODS,
   ) {
     this.services = {
-      $scope,
-      Exchange,
       $location,
-      navigation,
+      $scope,
       $translate,
-      messaging,
+      Exchange,
       exchangeServiceInfrastructure,
       exchangeVersion,
+      messaging,
+      navigation,
     };
     this.RENEW_PERIODS = EXCHANGE_RENEW_PERIODS;
   }
