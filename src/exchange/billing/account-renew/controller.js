@@ -19,10 +19,12 @@ class ExchangeUpdateRenewCtrl {
       exchangeServiceInfrastructure,
       exchangeVersion,
     };
+  }
 
-    this.$routerParams = Exchange.getParams();
+  $onInit() {
+    this.$routerParams = this.servicesExchange.getParams();
 
-    this.exchange = Exchange.value;
+    this.exchange = this.services.Exchange.value;
     this.search = {
       value: null,
     };
@@ -43,11 +45,15 @@ class ExchangeUpdateRenewCtrl {
 
     this.debouncedRetrieveAccounts = _.debounce(this.setFilter, 300);
 
-    $scope.submit = () => this.submit();
-    $scope.hasChanged = () => this.buffer.hasChanged;
-    $scope.getBufferedAccounts = () => this.bufferedAccounts;
-    $scope.getLoading = () => this.loading;
-    $scope.retrieveAccounts = (count, offset) => this.retrieveAccounts(count, offset);
+    this.initScope();
+  }
+
+  initScope() {
+    this.services.$scope.submit = () => this.submit();
+    this.services.$scope.hasChanged = () => this.buffer.hasChanged;
+    this.services.$scope.getBufferedAccounts = () => this.bufferedAccounts;
+    this.services.$scope.getLoading = () => this.loading;
+    this.services.$scope.retrieveAccounts = (count, offset) => this.retrieveAccounts(count, offset);
   }
 
   setFilter() {
