@@ -24,8 +24,6 @@ class ExchangeUpdateRenewCtrl {
   }
 
   $onInit() {
-    this.$routerParams = this.services.Exchange.getParams();
-
     this.exchange = this.services.Exchange.value;
     this.search = {
       value: null,
@@ -229,8 +227,8 @@ class ExchangeUpdateRenewCtrl {
     );
 
     this.services.Exchange.updateRenew(
-      this.$routerParams.organization,
-      this.$routerParams.productId,
+      this.organization,
+      this.productId,
       this.buffer.changes,
     )
       .then((data) => {
