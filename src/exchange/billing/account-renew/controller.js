@@ -8,6 +8,7 @@ class ExchangeUpdateRenewCtrl {
     messaging,
     exchangeServiceInfrastructure,
     exchangeVersion,
+    EXCHANGE_RENEW_PERIODS,
   ) {
     this.services = {
       $scope,
@@ -19,10 +20,11 @@ class ExchangeUpdateRenewCtrl {
       exchangeServiceInfrastructure,
       exchangeVersion,
     };
+    this.RENEW_PERIODS = EXCHANGE_RENEW_PERIODS;
   }
 
   $onInit() {
-    this.$routerParams = this.servicesExchange.getParams();
+    this.$routerParams = this.services.Exchange.getParams();
 
     this.exchange = this.services.Exchange.value;
     this.search = {
@@ -36,8 +38,6 @@ class ExchangeUpdateRenewCtrl {
       selectedDeleteAtExpiration: [],
       ids: [],
     };
-
-    this.periods = ['YEARLY', 'MONTHLY', 'DELETE_AT_EXPIRATION'];
 
     this.model = {
       displayDeleteWarning: false,
@@ -200,7 +200,7 @@ class ExchangeUpdateRenewCtrl {
         this.buffer[matchingProperty].push(matchingAccount.primaryEmailAddress);
       }
 
-      const otherPeriods = this.periods.filter(currentPeriod => currentPeriod !== period);
+      const otherPeriods = this.RENEW_PERIODS.filter(currentPeriod => currentPeriod !== period);
 
       _.forEach(otherPeriods, (otherPeriod) => {
         const matchingOtherProperty = ExchangeUpdateRenewCtrl.GetPropertyNameFromPeriodName(
