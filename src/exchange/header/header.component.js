@@ -11,6 +11,7 @@
       messaging,
       navigation,
       officeAttach,
+      AUTORENEW_URL,
     ) {
       this.$q = $q;
       this.$rootScope = $rootScope;
@@ -23,6 +24,7 @@
       this.messaging = messaging;
       this.navigation = navigation;
       this.officeAttach = officeAttach;
+      this.AUTORENEW_URL = _.get(AUTORENEW_URL, constants.target, 'EU');
     }
 
     $onInit() {
