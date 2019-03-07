@@ -217,6 +217,13 @@ angular.module('Module.exchange.services').service(
         }));
     }
 
+    getExchangeDetails(organization, exchangeName) {
+      return this.services.OvhApiEmailExchange.service().Aapi().get({
+        organization,
+        exchange: exchangeName,
+      }).$promise;
+    }
+
     /**
      * Get Selected Exchange
      */

@@ -1,30 +1,26 @@
 class ExchangeUpdateRenewCtrl {
   constructor(
-    $location,
     $scope,
     $translate,
     Exchange,
     exchangeServiceInfrastructure,
     exchangeVersion,
-    messaging,
-    navigation,
     EXCHANGE_RENEW_PERIODS,
   ) {
     this.services = {
-      $location,
       $scope,
       $translate,
       Exchange,
       exchangeServiceInfrastructure,
       exchangeVersion,
-      messaging,
-      navigation,
     };
     this.RENEW_PERIODS = EXCHANGE_RENEW_PERIODS;
+
+    $scope.resetAction = () => this.onSuccess();
+    $scope.submit = () => this.submit();
   }
 
   $onInit() {
-    this.exchange = this.services.Exchange.value;
     this.search = {
       value: null,
     };
@@ -43,15 +39,37 @@ class ExchangeUpdateRenewCtrl {
 
     this.debouncedRetrieveAccounts = _.debounce(this.setFilter, 300);
 
-    this.initScope();
+    this.getExchange()
+      .then(() => {
+        this.initScope();
+      });
   }
 
   initScope() {
-    this.services.$scope.submit = () => this.submit();
     this.services.$scope.hasChanged = () => this.buffer.hasChanged;
     this.services.$scope.getBufferedAccounts = () => this.bufferedAccounts;
     this.services.$scope.getLoading = () => this.loading;
     this.services.$scope.retrieveAccounts = (count, offset) => this.retrieveAccounts(count, offset);
+  }
+
+  getExchange() {
+    return this.services.Exchange.getExchangeDetails(this.organization, this.exchangeName)
+      .then((exchange) => {
+        this.exchange = exchange;
+      })
+      .catch(() => this.onError({ result: this.$translate.instant('exchange_tab_ACCOUNTS_error_message') }));
+  }
+
+  canHaveMonthlyRenewal() {
+    return !(
+      this.services.exchangeServiceInfrastructure.isProvider(this.exchange)
+      && this.services.exchangeVersion.isVersion(2010, this.exchange)
+    );
+  }
+
+  canBeDeletedAtExpiration() {
+    return this.services.exchangeServiceInfrastructure.isHosted(this.exchange)
+    || this.services.exchangeServiceInfrastructure.isProvider(this.exchange);
   }
 
   setFilter() {
@@ -122,10 +140,10 @@ class ExchangeUpdateRenewCtrl {
   }
 
   retrieveAccounts(count, offset) {
-    this.services.messaging.resetMessages();
     this.loading = true;
 
-    this.services.Exchange.getAccounts(count, offset, this.search.value)
+    this.services.Exchange
+      .getAccountsForExchange(this.exchange, count, offset, this.search.value)
       .then((accounts) => {
         this.accounts = accounts;
         this.bufferedAccounts = _.cloneDeep(accounts);
@@ -161,11 +179,9 @@ class ExchangeUpdateRenewCtrl {
         }
       })
       .catch((failure) => {
-        this.services.messaging.writeError(
-          this.services.$translate.instant('exchange_tab_ACCOUNTS_error_message'),
-          failure,
-        );
-        this.services.navigation.resetAction();
+        this.onError({
+          result: `${this.services.$translate.instant('exchange_tab_ACCOUNTS_error_message')} ${failure}`,
+        });
       })
       .finally(() => {
         this.loading = false;
@@ -221,33 +237,31 @@ class ExchangeUpdateRenewCtrl {
   }
 
   submit() {
-    this.services.$location.search('action', null);
-    this.services.messaging.writeSuccess(
-      this.services.$translate.instant('exchange_dashboard_action_doing'),
-    );
+    this.submitLoader = true;
 
-    this.services.Exchange.updateRenew(
-      this.organization,
-      this.productId,
+    return this.services.Exchange.updateRenew(
+      this.exchange.organization,
+      this.exchange.domain,
       this.buffer.changes,
     )
-      .then((data) => {
+      .then(({ state }) => {
         const updateRenewMessages = {
           OK: this.services.$translate.instant('exchange_update_billing_periode_success'),
           PARTIAL: this.services.$translate.instant('exchange_update_billing_periode_partial'),
           ERROR: this.services.$translate.instant('exchange_update_billing_periode_failure'),
         };
 
-        this.services.messaging.setMessage(updateRenewMessages, data);
+        this.onSuccess({
+          result: updateRenewMessages[state],
+        });
       })
       .catch((failure) => {
-        this.services.messaging.writeError(
-          this.services.$translate.instant('exchange_update_billing_periode_failure'),
-          failure,
-        );
+        this.onError({
+          result: `${this.services.$translate.instant('exchange_update_billing_periode_failure')} ${failure}`,
+        });
       })
       .finally(() => {
-        this.services.navigation.resetAction();
+        this.submitLoader = false;
       });
   }
 }
