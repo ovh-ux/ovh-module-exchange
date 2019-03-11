@@ -26,10 +26,8 @@ class ExchangeUpdateRenewCtrl {
     };
     this.buffer = {
       hasChanged: false,
+      periodSelectedForAll: null,
       changes: [],
-      selectedMonthly: [],
-      selectedYearly: [],
-      selectedDeleteAtExpiration: [],
       ids: [],
     };
 
@@ -147,9 +145,6 @@ class ExchangeUpdateRenewCtrl {
       .then((accounts) => {
         this.accounts = accounts;
         this.bufferedAccounts = _.cloneDeep(accounts);
-        this.buffer.selectedMonthly = [];
-        this.buffer.selectedYearly = [];
-        this.buffer.selectedDeleteAtExpiration = [];
 
         if (
           _(this.bufferedAccounts).has('list.results')
@@ -205,27 +200,18 @@ class ExchangeUpdateRenewCtrl {
       primaryEmailAddress,
     });
 
-    const matchingProperty = ExchangeUpdateRenewCtrl.GetPropertyNameFromPeriodName(period);
+    if (period !== this.buffer.periodSelectedForAll) {
+      this.buffer.periodSelectedForAll = null;
+    }
 
     if (matchingAccount != null) {
       matchingAccount.renewPeriod = period;
 
-      if (!_(this.buffer[matchingProperty]).includes(matchingAccount.primaryEmailAddress)) {
-        this.buffer[matchingProperty].push(matchingAccount.primaryEmailAddress);
-      }
-
-      const otherPeriods = this.RENEW_PERIODS.filter(currentPeriod => currentPeriod !== period);
-
-      _.forEach(otherPeriods, (otherPeriod) => {
-        const matchingOtherProperty = ExchangeUpdateRenewCtrl.GetPropertyNameFromPeriodName(
-          otherPeriod,
-        );
-        this.buffer[matchingOtherProperty] = this.buffer[matchingOtherProperty].filter(
-          bufferedAccount => bufferedAccount !== matchingAccount.primaryEmailAddress,
-        );
-      });
-
       this.checkForChanges();
+    }
+
+    if (this.bufferedAccounts.list.results.every(({ renewPeriod }) => renewPeriod === period)) {
+      this.buffer.periodSelectedForAll = period;
     }
   }
 

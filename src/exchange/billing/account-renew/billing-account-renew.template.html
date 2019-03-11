@@ -63,34 +63,31 @@
                                         class="oui-datagrid__header"
                                         data-ng-if="$ctrl.canHaveMonthlyRenewal()">
                                         <input
-                                            type="checkbox"
+                                            type="radio"
                                             class="mr-2"
-                                            data-tri-state-checkbox="monthlySelectAll"
-                                            data-tsc-ids-all="$ctrl.buffer.ids"
-                                            data-tsc-ids-selected="$ctrl.buffer.selectedMonthly"
-                                            data-tsc-on-click="$ctrl.checkboxStateChange('MONTHLY')">
+                                            value="MONTHLY"
+                                            data-ng-model="$ctrl.buffer.periodSelectedForAll"
+                                            data-ng-change="$ctrl.checkboxStateChange('MONTHLY')">
                                         <span data-translate="exchange_update_billing_header_1M"></span>
                                     </th>
                                     <th scope="col" class="oui-datagrid__header">
                                         <input
-                                            type="checkbox"
+                                            type="radio"
                                             class="mr-2"
-                                            data-tri-state-checkbox="yearlySelectAll"
-                                            data-tsc-ids-all="$ctrl.buffer.ids"
-                                            data-tsc-ids-selected="$ctrl.buffer.selectedYearly"
-                                            data-tsc-on-click="$ctrl.checkboxStateChange('YEARLY')">
+                                            value="YEARLY"
+                                            data-ng-model="$ctrl.buffer.periodSelectedForAll"
+                                            data-ng-change="$ctrl.checkboxStateChange('YEARLY')">
                                         <span data-translate="exchange_update_billing_header_1Y"></span>
                                     </th>
                                     <th scope="col"
                                         class="oui-datagrid__header"
                                         data-ng-if="$ctrl.canBeDeletedAtExpiration()">
                                         <input
-                                            type="checkbox"
+                                            type="radio"
                                             class="mr-2"
-                                            data-tri-state-checkbox="deleteSelectAll"
-                                            data-tsc-ids-all="$ctrl.buffer.ids"
-                                            data-tsc-ids-selected="$ctrl.buffer.selectedDeleteAtExpiration"
-                                            data-tsc-on-click="$ctrl.checkboxStateChange('DELETE_AT_EXPIRATION')">
+                                            value="DELETE_AT_EXPIRATION"
+                                            data-ng-model="$ctrl.buffer.periodSelectedForAll"
+                                            data-ng-change="$ctrl.checkboxStateChange('DELETE_AT_EXPIRATION')">
                                         <span data-ng-bind-html="'exchange_update_billing_header_terminate' | translate"></span>
                                     </th>
                                 </tr>
