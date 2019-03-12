@@ -215,13 +215,6 @@ class ExchangeUpdateRenewCtrl {
     }
   }
 
-  static GetPropertyNameFromPeriodName(period) {
-    const capitalizedPeriod = _.capitalize(_.camelCase(period));
-    const matchingProperty = _.camelCase(`selected${capitalizedPeriod}`);
-
-    return matchingProperty;
-  }
-
   submit() {
     this.submitLoader = true;
 
@@ -249,6 +242,13 @@ class ExchangeUpdateRenewCtrl {
       .finally(() => {
         this.submitLoader = false;
       });
+  }
+
+  static GetPropertyNameFromPeriodName(period) {
+    const capitalizedPeriod = _.capitalize(_.camelCase(period));
+    const matchingProperty = _.camelCase(`selected${capitalizedPeriod}`);
+
+    return matchingProperty;
   }
 }
 
