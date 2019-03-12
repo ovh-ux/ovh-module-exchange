@@ -163,8 +163,7 @@
 
         <div class="alert alert-warning mt-5" role="alert"
             data-translate="exchange_update_billing_periode_delete_warning"
-            data-ng-if="$ctrl.canBeDeletedAtExpiration() && $ctrl.services.exchangeVersion.isAfter(2010, $ctrl.exchange) && !$ctrl.account.partial"
-            data-ng-show="$ctrl.model.displayDeleteWarning">
+            data-ng-if="$ctrl.canBeDeletedAtExpiration() && $ctrl.services.exchangeVersion.isAfter(2010, $ctrl.exchange) && !$ctrl.account.partial && $ctrl.model.displayDeleteWarning">
         </div>
     </div>
 
