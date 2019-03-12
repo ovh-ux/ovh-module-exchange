@@ -84,34 +84,31 @@ class ExchangeUpdateRenewCtrl {
   }
 
   checkForChanges() {
+    const bufferedAccountList = _.get(this.bufferedAccounts, 'list.results', []);
+
     if (this.buffer.changes == null) {
       this.buffer.changes = [];
     }
 
     this.model.displayDeleteWarning = false;
 
-    if (
-      _(this.bufferedAccounts).has('list.results')
-        && this.bufferedAccounts.list.results != null
-    ) {
-      _.forEach(this.bufferedAccounts.list.results, (bufferedAccount) => {
-        const currentAccount = _(this.accounts.list.results).find({
-          primaryEmailAddress: bufferedAccount.primaryEmailAddress,
-        });
-
-        if (currentAccount.renewPeriod !== bufferedAccount.renewPeriod) {
-          this.bufferChanges(bufferedAccount);
-
-          if (bufferedAccount.renewPeriod === 'DELETE_AT_EXPIRATION') {
-            this.model.displayDeleteWarning = true;
-          }
-        } else {
-          this.buffer.changes = this.buffer.changes.filter(
-            change => change.primaryEmailAddress !== currentAccount.primaryEmailAddress,
-          );
-        }
+    _.forEach(bufferedAccountList, (bufferedAccount) => {
+      const currentAccount = _(this.accounts.list.results).find({
+        primaryEmailAddress: bufferedAccount.primaryEmailAddress,
       });
-    }
+
+      if (currentAccount.renewPeriod !== bufferedAccount.renewPeriod) {
+        this.bufferChanges(bufferedAccount);
+
+        if (bufferedAccount.renewPeriod === 'DELETE_AT_EXPIRATION') {
+          this.model.displayDeleteWarning = true;
+        }
+      } else {
+        this.buffer.changes = this.buffer.changes.filter(
+          change => change.primaryEmailAddress !== currentAccount.primaryEmailAddress,
+        );
+      }
+    });
 
     this.buffer.hasChanged = !_.isEmpty(this.buffer.changes);
   }
@@ -146,32 +143,29 @@ class ExchangeUpdateRenewCtrl {
         this.accounts = accounts;
         this.bufferedAccounts = _.cloneDeep(accounts);
 
-        if (
-          _(this.bufferedAccounts).has('list.results')
-            && this.bufferedAccounts.list.results != null
-        ) {
-          this.buffer.ids = this.bufferedAccounts.list.results.map(
-            item => item.primaryEmailAddress,
-          );
+        const bufferedAccountList = _.get(this.bufferedAccounts, 'list.results', []);
 
-          // roll previous buffered changes
-          if (this.buffer.hasChanged) {
-            _.forEach(this.bufferedAccounts.list.results, (currentBufferedAccount) => {
-              const buffer = _(this.buffer.changes).find({
-                primaryEmailAddress: currentBufferedAccount.primaryEmailAddress,
-              });
+        this.buffer.ids = bufferedAccountList.map(item => item.primaryEmailAddress);
 
-              if (buffer != null) {
-                _.set(currentBufferedAccount, 'renewPeriod', buffer.renewPeriod);
-              }
+        // roll previous buffered changes
+        if (this.buffer.hasChanged) {
+          _.forEach(bufferedAccountList, (currentBufferedAccount) => {
+            const buffer = _(this.buffer.changes).find({
+              primaryEmailAddress: currentBufferedAccount.primaryEmailAddress,
             });
-          }
 
-          // needed by selectAll checkbox
-          _.forEach(this.bufferedAccounts.list.results, (account) => {
-            this.trackSelected(account.primaryEmailAddress, account.renewPeriod);
+            if (buffer != null) {
+              _.set(currentBufferedAccount, 'renewPeriod', buffer.renewPeriod);
+            }
           });
         }
+
+        // needed by selectAll checkbox
+        _.forEach(bufferedAccountList, (account) => {
+          this.trackSelected(account.primaryEmailAddress, account.renewPeriod);
+        });
+
+        _.set(this.bufferedAccounts, 'list.results', bufferedAccountList);
       })
       .catch((failure) => {
         this.onError({
