@@ -44,6 +44,6 @@
     "stylelint-config-standard": "^18.2.0"
   },
   "peerDependencies": {
-    "ovh-api-services": "^3.22.0"
+    "ovh-api-services": "^6.1.0"
   }
 }

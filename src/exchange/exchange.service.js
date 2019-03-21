@@ -217,6 +217,13 @@ angular.module('Module.exchange.services').service(
         }));
     }
 
+    getExchangeDetails(organization, exchangeName) {
+      return this.services.OvhApiEmailExchange.service().Aapi().get({
+        organization,
+        exchange: exchangeName,
+      }).$promise;
+    }
+
     /**
      * Get Selected Exchange
      */
@@ -353,7 +360,6 @@ angular.module('Module.exchange.services').service(
     getAccounts(pageSize, offset, search, configurableOnly, type, timeout) {
       return this.getSelected().then(exchange => this.getAccountsForExchange(
         exchange,
-        this.accountsCache,
         pageSize,
         offset,
         search,
@@ -377,7 +383,6 @@ angular.module('Module.exchange.services').service(
      */
     getAccountsForExchange(
       exchange,
-      cache,
       count = 10,
       offset = 0,
       search = '',
