@@ -135,7 +135,7 @@
    <translation id="exchange_tab_ACCOUNTS_table_empty_search" qtlid="149813">Non sono presenti account che corrispondono alla ricerca</translation>
    <translation id="exchange_tab_ACCOUNTS_table_email" qtlid="137244">Account e-mail</translation>
    <translation id="exchange_tab_ACCOUNTS_table_type" qtlid="2642">Tipo</translation>
-   <translation id="exchange_tab_ACCOUNTS_table_company">Entreprise</translation>
+   <translation id="exchange_tab_ACCOUNTS_table_company" qtlid="49022">Società</translation>
    <translation id="exchange_tab_ACCOUNTS_table_size" qtlid="7726">Dimensione</translation>
    <translation id="exchange_tab_ACCOUNTS_table_alias" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ACCOUNTS_table_group" qtlid="59507">Gruppo</translation>
@@ -355,7 +355,7 @@
    <translation id="exchange_resilitation_cancel_action_button" qtlid="4070">Continua</translation>
 
 <!-- RENEW -->
-   <translation id="exchange_update_billing_button_title" qtlid="190953">Modalità di fatturazione.</translation>
+   <translation id="exchange_update_billing_button_title" qtlid="521685">Configuration du renouvellement</translation>
    <translation id="exchange_update_billing_action_title" qtlid="98324">Periodo di rinnovo</translation>
    <translation id="exchange_update_billing_periode_intro" qtlid="190966">Scegli la periodicità per il rinnovo automatico di ogni account. <br /> Sarà applicata a partire dal prossimo rinnovo.</translation>
    <translation id="exchange_update_billing_expiration_date_label" qtlid="30406">Scadenza</translation>
@@ -365,6 +365,8 @@
    <translation id="exchange_update_billing_header_1M" qtlid="8818">Mensile</translation>
    <translation id="exchange_update_billing_header_terminate" qtlid="209177">Nessuna </translation>
    <translation id="exchange_update_billing_header_new_periode" qtlid="190992">Nuovo periodo</translation>
+   <translation id="exchange_update_billing_periode_value_MONTHLY" qtlid="8818">Mensile</translation>
+   <translation id="exchange_update_billing_periode_value_YEARLY" qtlid="213258">Annuale</translation>
    <translation id="exchange_update_billing_periode_value_DELETE_AT_EXPIRATION" qtlid="201406">Scade al termine</translation>
    <translation id="exchange_update_billing_periode_delete_warning" qtlid="211593">Attenzione! Questa opzione comporta la scadenza del servizio al termine e la perdita dei dati. Sarà impossibile recuperare i dati dell'account.</translation>
    <translation id="exchange_update_billing_periode_resume" qtlid="191005">Stai per modificare il periodo di rinnovo automatico dei tuoi account:</translation>
@@ -478,7 +480,7 @@
 </ul></translation>
    <translation id="exchange_account_add_emailAddress_error_emailAddressIsAlreadyTaken" qtlid="485996">Questo indirizzo email è già esistente.</translation>
    <translation id="exchange_account_add_samAccountName_label" qtlid="486009">Nome dell'account Exchange 2010 (facoltativo)</translation>
-   <translation id="exchange_account_add_company_label">Entreprise (optionnel)</translation>
+   <translation id="exchange_account_add_company_label" qtlid="519376">Enterprise (opzionale)</translation>
    <translation id="exchange_account_add_firstName_label" qtlid="486022">Nome (facoltativo)</translation>
    <translation id="exchange_account_add_lastName_label" qtlid="486035">Cognome (facoltativo)</translation>
    <translation id="exchange_account_add_displayName_label" qtlid="486048">Nome da visualizzare (facoltativo)</translation>
@@ -527,7 +529,7 @@
    <translation id="exchange_ACTION_update_account_step1_type_BASIC" qtlid="48986">Basic</translation>
    <translation id="exchange_ACTION_update_account_step1_type_ENTERPRISE" qtlid="49022">Società</translation>
    <translation id="exchange_ACTION_update_account_step1_type_cant_change" qtlid="486243">Il tipo di account non può essere cambiato poiché una licenza Outlook risulta associata a questo account.</translation>
-   <translation id="exchange_ACTION_update_account_step1_company_label">Entreprise</translation>
+   <translation id="exchange_ACTION_update_account_step1_company_label" qtlid="49022">Società</translation>
    <translation id="exchange_ACTION_update_account_step1_first_name_label" qtlid="23323">Nome</translation>
    <translation id="exchange_ACTION_update_account_step1_last_name_label" qtlid="3818">Nome</translation>
    <translation id="exchange_ACTION_update_account_step1_display_name_label" qtlid="23515">Nome da visualizzare</translation>
@@ -548,11 +550,11 @@
    <translation id="exchange_ACTION_update_account_step1_GAL_label" qtlid="191980">Nascondi l'indirizzo in rubrica</translation>
    <translation id="exchange_ACTION_update_account_step1_exchange_guid_label" qtlid="174633">Exchange GUID</translation>
    <translation id="exchange_ACTION_update_account_step1_exchange_SAMA_label" qtlid="486256">Nome dell'account Exchange 2010</translation>
-   <translation id="exchange_ACTION_update_account_step1_exchange_company_label">Entreprise (optionnel)</translation>
+   <translation id="exchange_ACTION_update_account_step1_exchange_company_label" qtlid="519376">Enterprise (opzionale)</translation>
    <translation id="exchange_ACTION_update_account_step1_mandatory_fields" qtlid="137634">Campi obbligatori</translation>
    <translation id="exchange_ACTION_update_account_step2_confirmation_intro" qtlid="136841">Il tuo account:</translation>
    <translation id="exchange_ACTION_update_account_step2_email_label" qtlid="137244">Account e-mail</translation>
-   <translation id="exchange_ACTION_update_account_step2_company_label">Entreprise</translation>
+   <translation id="exchange_ACTION_update_account_step2_company_label" qtlid="49022">Società</translation>
    <translation id="exchange_ACTION_update_account_step2_first_name_label" qtlid="23323">Nome</translation>
    <translation id="exchange_ACTION_update_account_step2_last_name_label" qtlid="3818">Nome</translation>
    <translation id="exchange_ACTION_update_account_step2_display_name_label" qtlid="23515">Nome da visualizzare</translation>

@@ -135,7 +135,7 @@
    <translation id="exchange_tab_ACCOUNTS_table_empty_search" qtlid="149813">Nemáte žádný účet odpovídající těmto vyhledávacím kritériím.</translation>
    <translation id="exchange_tab_ACCOUNTS_table_email" qtlid="137244">E-mailový účet</translation>
    <translation id="exchange_tab_ACCOUNTS_table_type" qtlid="2642">Typ</translation>
-   <translation id="exchange_tab_ACCOUNTS_table_company">Entreprise</translation>
+   <translation id="exchange_tab_ACCOUNTS_table_company" qtlid="49022">Společnost / OSVČ</translation>
    <translation id="exchange_tab_ACCOUNTS_table_size" qtlid="7726">Velikost</translation>
    <translation id="exchange_tab_ACCOUNTS_table_alias" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ACCOUNTS_table_group" qtlid="59507">Skupina</translation>
@@ -355,7 +355,7 @@
    <translation id="exchange_resilitation_cancel_action_button" qtlid="4070">Pokračovat</translation>
 
 <!-- RENEW -->
-   <translation id="exchange_update_billing_button_title" qtlid="190953">Fakturační režim</translation>
+   <translation id="exchange_update_billing_button_title" qtlid="521685">Configuration du renouvellement</translation>
    <translation id="exchange_update_billing_action_title" qtlid="98324">Období obnovení</translation>
    <translation id="exchange_update_billing_periode_intro" qtlid="190966">Zvolte si požadovanou frekvenci automatických obnovení u každého účtu. <br />Tyto změny budou aktivní od dalšího obnovení.</translation>
    <translation id="exchange_update_billing_expiration_date_label" qtlid="30406">Expirace</translation>
@@ -365,6 +365,8 @@
    <translation id="exchange_update_billing_header_1M" qtlid="8818">Měsíčně</translation>
    <translation id="exchange_update_billing_header_terminate" qtlid="209177">Žádný</translation>
    <translation id="exchange_update_billing_header_new_periode" qtlid="190992">Nové období</translation>
+   <translation id="exchange_update_billing_periode_value_MONTHLY" qtlid="8818">Měsíčně</translation>
+   <translation id="exchange_update_billing_periode_value_YEARLY" qtlid="213258">Roční</translation>
    <translation id="exchange_update_billing_periode_value_DELETE_AT_EXPIRATION" qtlid="201406">Expirace na konci</translation>
    <translation id="exchange_update_billing_periode_delete_warning" qtlid="211593">Berte prosím na vědomí, že tato volba způsobí zrušení služby k datu expirace a ztrátu všech dat. Tato data již nebude možné obnovit.</translation>
    <translation id="exchange_update_billing_periode_resume" qtlid="191005">Chystáte se změnit obnovovací období Vašich účtů:</translation>
@@ -476,7 +478,7 @@
 </ul></translation>
    <translation id="exchange_account_add_emailAddress_error_emailAddressIsAlreadyTaken" qtlid="485996">Tato e-mailová adresa již existuje.</translation>
    <translation id="exchange_account_add_samAccountName_label" qtlid="486009">Název účtu Exchange 2010 (nepovinné)</translation>
-   <translation id="exchange_account_add_company_label">Entreprise (optionnel)</translation>
+   <translation id="exchange_account_add_company_label" qtlid="519376">Entreprise (optionnel)</translation>
    <translation id="exchange_account_add_firstName_label" qtlid="486022">Jméno (nepovinné)</translation>
    <translation id="exchange_account_add_lastName_label" qtlid="486035">Příjmení (nepovinné)</translation>
    <translation id="exchange_account_add_displayName_label" qtlid="486048">Název pro zobrazení (nepovinné)</translation>
@@ -526,7 +528,7 @@
    <translation id="exchange_ACTION_update_account_step1_type_BASIC" qtlid="48986">Basic</translation>
    <translation id="exchange_ACTION_update_account_step1_type_ENTERPRISE" qtlid="49022">Společnost / OSVČ</translation>
    <translation id="exchange_ACTION_update_account_step1_type_cant_change" qtlid="486243">Pokud je k účtu připojena licence Outlook, nelze změnit jeho typ.</translation>
-   <translation id="exchange_ACTION_update_account_step1_company_label">Entreprise</translation>
+   <translation id="exchange_ACTION_update_account_step1_company_label" qtlid="49022">Společnost / OSVČ</translation>
    <translation id="exchange_ACTION_update_account_step1_first_name_label" qtlid="23323">Jméno</translation>
    <translation id="exchange_ACTION_update_account_step1_last_name_label" qtlid="3818">Název</translation>
    <translation id="exchange_ACTION_update_account_step1_display_name_label" qtlid="23515">Zobrazit název</translation>
@@ -547,11 +549,11 @@
    <translation id="exchange_ACTION_update_account_step1_GAL_label" qtlid="191980">Skrýt adresu v adresáři</translation>
    <translation id="exchange_ACTION_update_account_step1_exchange_guid_label" qtlid="174633">Exchange GUID</translation>
    <translation id="exchange_ACTION_update_account_step1_exchange_SAMA_label" qtlid="486256">Název účtu Exchange 2010</translation>
-   <translation id="exchange_ACTION_update_account_step1_exchange_company_label">Entreprise (optionnel)</translation>
+   <translation id="exchange_ACTION_update_account_step1_exchange_company_label" qtlid="519376">Entreprise (optionnel)</translation>
    <translation id="exchange_ACTION_update_account_step1_mandatory_fields" qtlid="137634">Povinná pole</translation>
    <translation id="exchange_ACTION_update_account_step2_confirmation_intro" qtlid="136841">Váš účet:</translation>
    <translation id="exchange_ACTION_update_account_step2_email_label" qtlid="137244">E-mailový účet</translation>
-   <translation id="exchange_ACTION_update_account_step2_company_label">Entreprise</translation>
+   <translation id="exchange_ACTION_update_account_step2_company_label" qtlid="49022">Společnost / OSVČ</translation>
    <translation id="exchange_ACTION_update_account_step2_first_name_label" qtlid="23323">Jméno</translation>
    <translation id="exchange_ACTION_update_account_step2_last_name_label" qtlid="3818">Název</translation>
    <translation id="exchange_ACTION_update_account_step2_display_name_label" qtlid="23515">Zobrazit název</translation>

@@ -135,7 +135,7 @@
    <translation id="exchange_tab_ACCOUNTS_table_empty_search" qtlid="149813">Nie posiadasz kont odpowiadających kryteriom wyszukiwania.</translation>
    <translation id="exchange_tab_ACCOUNTS_table_email" qtlid="137244">Konto e-mail</translation>
    <translation id="exchange_tab_ACCOUNTS_table_type" qtlid="2642">Typ</translation>
-   <translation id="exchange_tab_ACCOUNTS_table_company">Entreprise</translation>
+   <translation id="exchange_tab_ACCOUNTS_table_company" qtlid="49022">Firma</translation>
    <translation id="exchange_tab_ACCOUNTS_table_size" qtlid="7726">Rozmiar</translation>
    <translation id="exchange_tab_ACCOUNTS_table_alias" qtlid="9466">Alias</translation>
    <translation id="exchange_tab_ACCOUNTS_table_group" qtlid="59507">Grupa</translation>
@@ -355,7 +355,7 @@
    <translation id="exchange_resilitation_cancel_action_button" qtlid="4070">Kontynuuj</translation>
 
 <!-- RENEW -->
-   <translation id="exchange_update_billing_button_title" qtlid="190953">Sposób płatności</translation>
+   <translation id="exchange_update_billing_button_title" qtlid="521685">Configuration du renouvellement</translation>
    <translation id="exchange_update_billing_action_title" qtlid="98324">Okres odnowienia</translation>
    <translation id="exchange_update_billing_periode_intro" qtlid="190966">Wybierz okres automatycznego odnowienia każdego konta. <br />Zostanie on zastosowany od kolejnego odnowienia.</translation>
    <translation id="exchange_update_billing_expiration_date_label" qtlid="30406">Data wygasania</translation>
@@ -365,6 +365,8 @@
    <translation id="exchange_update_billing_header_1M" qtlid="8818">Co miesiąc</translation>
    <translation id="exchange_update_billing_header_terminate" qtlid="209177">Brak</translation>
    <translation id="exchange_update_billing_header_new_periode" qtlid="190992">Nowy okres</translation>
+   <translation id="exchange_update_billing_periode_value_MONTHLY" qtlid="8818">Co miesiąc</translation>
+   <translation id="exchange_update_billing_periode_value_YEARLY" qtlid="213258">Co rok</translation>
    <translation id="exchange_update_billing_periode_value_DELETE_AT_EXPIRATION" qtlid="201406">Wygasa z końcem</translation>
    <translation id="exchange_update_billing_periode_delete_warning" qtlid="211593">Uwaga! Ten wybór sprawi, że usługa wygaśnie a dane zostaną usunięte. Nie będziesz mógł odzyskać danych z konta.</translation>
    <translation id="exchange_update_billing_periode_resume" qtlid="191005">Zmienisz okres odnowienia dla kont:</translation>
@@ -476,7 +478,7 @@
 </ul></translation>
    <translation id="exchange_account_add_emailAddress_error_emailAddressIsAlreadyTaken" qtlid="485996">Ten adres e-mail już istnieje.</translation>
    <translation id="exchange_account_add_samAccountName_label" qtlid="486009">Nazwa konta Exchange 2010 (opcjonalnie)</translation>
-   <translation id="exchange_account_add_company_label">Entreprise (optionnel)</translation>
+   <translation id="exchange_account_add_company_label" qtlid="519376">Firma (opcjonalnie)</translation>
    <translation id="exchange_account_add_firstName_label" qtlid="486022">Imię (opcjonalnie)</translation>
    <translation id="exchange_account_add_lastName_label" qtlid="486035">Nazwisko (opcjonalnie)</translation>
    <translation id="exchange_account_add_displayName_label" qtlid="486048">Nazwa wyświetlana (opcjonalnie)</translation>
@@ -525,7 +527,7 @@
    <translation id="exchange_ACTION_update_account_step1_type_BASIC" qtlid="48986">Basic</translation>
    <translation id="exchange_ACTION_update_account_step1_type_ENTERPRISE" qtlid="49022">Firma</translation>
    <translation id="exchange_ACTION_update_account_step1_type_cant_change" qtlid="486243">Typ konta nie może zostać zmieniony dopóki przypisana jest do niego licencja Outlook.</translation>
-   <translation id="exchange_ACTION_update_account_step1_company_label">Entreprise</translation>
+   <translation id="exchange_ACTION_update_account_step1_company_label" qtlid="49022">Firma</translation>
    <translation id="exchange_ACTION_update_account_step1_first_name_label" qtlid="23323">Imię</translation>
    <translation id="exchange_ACTION_update_account_step1_last_name_label" qtlid="3818">Nazwa</translation>
    <translation id="exchange_ACTION_update_account_step1_display_name_label" qtlid="23515">Nazwa do wyświetlenia</translation>
@@ -546,11 +548,11 @@
    <translation id="exchange_ACTION_update_account_step1_GAL_label" qtlid="191980">Ukryj adres w książce adresowej</translation>
    <translation id="exchange_ACTION_update_account_step1_exchange_guid_label" qtlid="174633">Exchange GUID</translation>
    <translation id="exchange_ACTION_update_account_step1_exchange_SAMA_label" qtlid="486256">Nazwa konta Exchange 2010</translation>
-   <translation id="exchange_ACTION_update_account_step1_exchange_company_label">Entreprise (optionnel)</translation>
+   <translation id="exchange_ACTION_update_account_step1_exchange_company_label" qtlid="519376">Firma (opcjonalnie)</translation>
    <translation id="exchange_ACTION_update_account_step1_mandatory_fields" qtlid="137634">Pola obowiązkowe</translation>
    <translation id="exchange_ACTION_update_account_step2_confirmation_intro" qtlid="136841">Twoje konto:</translation>
    <translation id="exchange_ACTION_update_account_step2_email_label" qtlid="137244">Konto e-mail</translation>
-   <translation id="exchange_ACTION_update_account_step2_company_label">Entreprise</translation>
+   <translation id="exchange_ACTION_update_account_step2_company_label" qtlid="49022">Firma</translation>
    <translation id="exchange_ACTION_update_account_step2_first_name_label" qtlid="23323">Imię</translation>
    <translation id="exchange_ACTION_update_account_step2_last_name_label" qtlid="3818">Nazwa</translation>
    <translation id="exchange_ACTION_update_account_step2_display_name_label" qtlid="23515">Nazwa do wyświetlenia</translation>
