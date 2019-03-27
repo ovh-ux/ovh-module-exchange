@@ -355,7 +355,7 @@
    <translation id="exchange_resilitation_cancel_action_button" qtlid="4070">Weiter</translation>
 
 <!-- RENEW -->
-   <translation id="exchange_update_billing_button_title" qtlid="521685">Configuration du renouvellement</translation>
+   <translation id="exchange_update_billing_button_title" qtlid="521685">Verlängerung konfigurieren</translation>
    <translation id="exchange_update_billing_action_title" qtlid="98324">Verlängerungs-Zeitraum</translation>
    <translation id="exchange_update_billing_periode_intro" qtlid="190966">Wählen Sie den gewünschten Zeitraum für die automatische Verlängerung jedes Accounts aus. <br />Die Änderung wird bei der nächsten Verlängerung aktiv.</translation>
    <translation id="exchange_update_billing_expiration_date_label" qtlid="30406">Ablaufdatum</translation>

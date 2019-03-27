@@ -355,7 +355,7 @@
    <translation id="exchange_resilitation_cancel_action_button" qtlid="4070">Doorgaan</translation>
 
 <!-- RENEW -->
-   <translation id="exchange_update_billing_button_title" qtlid="521685">Configuration du renouvellement</translation>
+   <translation id="exchange_update_billing_button_title" qtlid="521685">Configuratie van de verlenging</translation>
    <translation id="exchange_update_billing_action_title" qtlid="98324">Verlengingsperiode</translation>
    <translation id="exchange_update_billing_periode_intro" qtlid="190966">Selecteer de gewenste periode voor de automatische verlenging van elk account. <br /> Dit gaat in vanaf de volgende verlenging.</translation>
    <translation id="exchange_update_billing_expiration_date_label" qtlid="30406">Vervaldatum</translation>

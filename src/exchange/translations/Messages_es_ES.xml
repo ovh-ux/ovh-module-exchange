@@ -355,7 +355,7 @@
    <translation id="exchange_resilitation_cancel_action_button" qtlid="4070">Continuar</translation>
 
 <!-- RENEW -->
-   <translation id="exchange_update_billing_button_title" qtlid="521685">Configuration du renouvellement</translation>
+   <translation id="exchange_update_billing_button_title" qtlid="521685">Configuración de la renovación</translation>
    <translation id="exchange_update_billing_action_title" qtlid="98324">Período de renovación</translation>
    <translation id="exchange_update_billing_periode_intro" qtlid="190966">Elija la frecuencia para la renovación automática de cada cuenta. <br />Se aplicará a partir de la siguiente renovación.</translation>
    <translation id="exchange_update_billing_expiration_date_label" qtlid="30406">Expiración</translation>
