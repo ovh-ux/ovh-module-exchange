@@ -1,3 +1,24 @@
+# [9.4.0](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.3.4...v9.4.0) (2019-03-28)
+
+
+### Bug Fixes
+
+* **billing.account-renew:** add missing translations ([7540861](https://github.com/ovh-ux/ovh-module-exchange/commit/7540861))
+* **billing.account-renew:** prevent content from overflowing in modal ([8d95798](https://github.com/ovh-ux/ovh-module-exchange/commit/8d95798))
+* **i18n:** retrieve ([297f890](https://github.com/ovh-ux/ovh-module-exchange/commit/297f890))
+* **i18n:** retrieve ([ab67211](https://github.com/ovh-ux/ovh-module-exchange/commit/ab67211))
+* **i18n:** submit ([8b673bc](https://github.com/ovh-ux/ovh-module-exchange/commit/8b673bc))
+
+
+### Features
+
+* **billing.account-renew:** adapt component for reuse ([0587a79](https://github.com/ovh-ux/ovh-module-exchange/commit/0587a79))
+* **billing.account-renew:** replace checkbox by radio button ([7137856](https://github.com/ovh-ux/ovh-module-exchange/commit/7137856))
+* **billing.account-renew:** turn into a component ([e168eec](https://github.com/ovh-ux/ovh-module-exchange/commit/e168eec))
+* **header:** redirect to billing section ([c211395](https://github.com/ovh-ux/ovh-module-exchange/commit/c211395))
+
+
+
 ## [9.3.4](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.3.3...v9.3.4) (2019-03-04)
 
 
