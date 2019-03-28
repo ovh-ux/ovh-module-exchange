@@ -18,9 +18,9 @@ angular.module('Module.exchange.services').service(
     /**
      * @param {(string|number)} versionNumber - Version to test
      */
-    isVersion(versionNumber) {
+    isVersion(versionNumber, exchange = this.services.Exchange.getValue()) {
       const isMatchingVersion = _(
-        this.services.Exchange.value.serverDiagnostic.commercialVersion,
+        exchange.serverDiagnostic.commercialVersion,
       ).includes(versionNumber);
 
       return isMatchingVersion;
@@ -34,8 +34,8 @@ angular.module('Module.exchange.services').service(
      * @param {(string|number)} versionNumberToCompareTo
      *                          Version to compare current Exchange account to
      */
-    isAfter(versionNumberToCompareTo) {
-      const currentVersionNumber = this.services.Exchange.value.serverDiagnostic.version;
+    isAfter(versionNumberToCompareTo, exchange = this.services.Exchange.getValue()) {
+      const currentVersionNumber = exchange.serverDiagnostic.version;
 
       const propertyName = `v${versionNumberToCompareTo}`;
       const versionNumberToCompare = this[propertyName];
@@ -47,8 +47,8 @@ angular.module('Module.exchange.services').service(
      * @param {(string|number)} versionNumberToCompareTo
      *                          Version to compare current Exchange account to
      */
-    isBefore(versionNumberToCompareTo) {
-      const currentVersionNumber = this.services.Exchange.value.serverDiagnostic.version;
+    isBefore(versionNumberToCompareTo, exchange = this.services.Exchange.getValue()) {
+      const currentVersionNumber = exchange.serverDiagnostic.version;
 
       const propertyName = `v${versionNumberToCompareTo}`;
       const versionNumberToCompare = this[propertyName];

@@ -13,15 +13,15 @@ angular.module('Module.exchange.services').service(
       };
     }
 
-    isType(infrastructure) {
+    isType(infrastructure, exchange = this.Exchange.getValue()) {
       if (_(`${infrastructure}`).isEmpty()) {
         throw new Error("Can't work with empty input");
       }
 
       return (
-        _(this.Exchange)
+        _(exchange)
           .chain()
-          .get('value.offer', '')
+          .get('offer', '')
           .camelCase()
           .value()
           .toUpperCase()
@@ -31,24 +31,20 @@ angular.module('Module.exchange.services').service(
       );
     }
 
-    is(infrastructure) {
-      return this.isType(infrastructure);
+    isDedicated(exchange) {
+      return this.isType(this.INFRASTRUCTURES.DEDICATED, exchange);
     }
 
-    isDedicated() {
-      return this.is(this.INFRASTRUCTURES.DEDICATED);
+    isDedicatedCluster(exchange) {
+      return this.isType(this.INFRASTRUCTURES.DEDICATED_CLUSTER, exchange);
     }
 
-    isDedicatedCluster() {
-      return this.is(this.INFRASTRUCTURES.DEDICATED_CLUSTER);
+    isHosted(exchange) {
+      return this.isType(this.INFRASTRUCTURES.HOSTED, exchange);
     }
 
-    isHosted() {
-      return this.is(this.INFRASTRUCTURES.HOSTED);
-    }
-
-    isProvider() {
-      return this.is(this.INFRASTRUCTURES.PROVIDER);
+    isProvider(exchange) {
+      return this.isType(this.INFRASTRUCTURES.PROVIDER, exchange);
     }
   },
 );
