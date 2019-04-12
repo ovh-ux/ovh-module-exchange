@@ -5,7 +5,7 @@
                data-secondary-action="resetAction()"
                data-secondary-label="{{:: 'exchange_common_cancel' | translate }}"
                data-on-dismiss="resetAction()"
-               data-loading="!$ctrl.accountsList">
+               data-loading="$ctrl.loadingDomains">
 
         <p data-translate="exchange_GROUPS_accounts_step1_intro"></p>
         <oui-message data-type="warning" data-ng-if="$ctrl.accountsList.list.messages.length > 0">
