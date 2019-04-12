@@ -1,3 +1,12 @@
+## [9.4.1](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.4.0...v9.4.1) (2019-04-12)
+
+
+### Bug Fixes
+
+* load of group accounts modal ([da1d0f5](https://github.com/ovh-ux/ovh-module-exchange/commit/da1d0f5))
+
+
+
 # [9.4.0](https://github.com/ovh-ux/ovh-module-exchange/compare/v9.3.4...v9.4.0) (2019-03-28)
 
 
