@@ -356,7 +356,7 @@
 
 <!-- RENEW -->
    <translation id="exchange_update_billing_button_title" qtlid="521685">Verlängerung konfigurieren</translation>
-   <translation id="exchange_update_billing_action_title" qtlid="98324">Verlängerungs-Zeitraum</translation>
+   <translation id="exchange_update_billing_action_title" qtlid="98324">Verlängerungszeitraum</translation>
    <translation id="exchange_update_billing_periode_intro" qtlid="190966">Wählen Sie den gewünschten Zeitraum für die automatische Verlängerung jedes Accounts aus. <br />Die Änderung wird bei der nächsten Verlängerung aktiv.</translation>
    <translation id="exchange_update_billing_expiration_date_label" qtlid="30406">Ablaufdatum</translation>
    <translation id="exchange_update_billing_current_periode_label" qtlid="190979">Derzeitiger Wert</translation>
@@ -500,6 +500,7 @@
    <translation id="exchange_account_add_field_error_doesntRespectComplexityRules" qtlid="486204">Das Feld entspricht nicht den Komplexitätsanforderungen.</translation>
    <translation id="exchange_account_add_field_error_passwordConfirmation" qtlid="139637">Passwörter stimmen nicht überein</translation>
    <translation id="exchange_account_add_field_error_pattern" qtlid="472385">Bitte geben Sie ein gültiges Format ein.</translation>
+   <translation id="exchange_account_add_emailAddress_error_alreadyExists" qtlid="522865">Un compte avec cette adresse e-mail existe déjà.</translation>
    <translation id="exchange_account_add_submit_success" qtlid="486217">Der Account {0} wurde erstellt. Sie können ihn in wenigen Minuten verwenden.</translation>
    <translation id="exchange_ACTION_add_account_legal_warning" qtlid="209099">Ich möchte, dass OVH die sofortige Lieferung der Dienstleistung nach Validierung der Bestellung durchführt, und bestätige, dass ich in diesem Fall auf mein Widerrufsrecht verzichte.</translation>
    <translation id="exchange_ACTION_add_account_title" qtlid="143225">Einen Exchange Account hinzufügen</translation>
