@@ -500,6 +500,7 @@
    <translation id="exchange_account_add_field_error_doesntRespectComplexityRules" qtlid="486204">Este campo no cumple con los requisitos establecidos.</translation>
    <translation id="exchange_account_add_field_error_passwordConfirmation" qtlid="139637">Contraseñas diferentes.</translation>
    <translation id="exchange_account_add_field_error_pattern" qtlid="472385">Introduzca un formato válido.</translation>
+   <translation id="exchange_account_add_emailAddress_error_alreadyExists" qtlid="522865">Un compte avec cette adresse e-mail existe déjà.</translation>
    <translation id="exchange_account_add_submit_success" qtlid="486217">La cuenta {0} se ha creado correctamente. Podrá empezar a utilizarla en unos minutos.</translation>
    <translation id="exchange_ACTION_add_account_legal_warning" qtlid="209099">Acepto que OVH proceda a la ejecución inmediata del servicio una vez sea validado mi pedido y, por consiguiente, renuncio expresamente a ejercer mi derecho de desistimiento, con arreglo a lo dispuesto en los artículos 102 y 103 del Real Decreto Legislativo 1/2007, por el que se aprueba el texto refundido de la Ley General para la Defensa de los Consumidores y Usuarios y otras leyes complementarias.</translation>
    <translation id="exchange_ACTION_add_account_title" qtlid="143225">Añadir una cuenta Exchange</translation>
