@@ -500,6 +500,7 @@
    <translation id="exchange_account_add_field_error_doesntRespectComplexityRules" qtlid="486204">Dit veld voldoet niet aan de regels voor complexiteit.</translation>
    <translation id="exchange_account_add_field_error_passwordConfirmation" qtlid="139637">Verschillende wachtwoorden</translation>
    <translation id="exchange_account_add_field_error_pattern" qtlid="472385">Voer een geldig formaat in.</translation>
+   <translation id="exchange_account_add_emailAddress_error_alreadyExists" qtlid="522865">Un compte avec cette adresse e-mail existe déjà.</translation>
    <translation id="exchange_account_add_submit_success" qtlid="486217">Het account {0} is gemaakt. U zult het over een paar minuten kunnen gebruiken.</translation>
    <translation id="exchange_ACTION_add_account_legal_warning" qtlid="209099">Ik erken dat OVH overgaat tot onmiddellijke uitvoering van de dienst, na de validatie van mijn bestelling, en derhalve bevestig ik dat ik uitdrukkelijk afstand doe van mijn herroepingsrecht.</translation>
    <translation id="exchange_ACTION_add_account_title" qtlid="143225">Een Exchange account toevoegen</translation>

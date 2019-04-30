@@ -501,6 +501,7 @@
    <translation id="exchange_account_add_field_error_doesntRespectComplexityRules" qtlid="486204">Toto pole neodpovídá kritériím složitosti.</translation>
    <translation id="exchange_account_add_field_error_passwordConfirmation" qtlid="139637">Hesla nejsou shodná</translation>
    <translation id="exchange_account_add_field_error_pattern" qtlid="472385">Zadejte platný formát.</translation>
+   <translation id="exchange_account_add_emailAddress_error_alreadyExists" qtlid="522865">Un compte avec cette adresse e-mail existe déjà.</translation>
    <translation id="exchange_account_add_submit_success" qtlid="486217">Účet {0} byl úspěšně vytvořen. K dispozici bude za několik minut.</translation>
    <translation id="exchange_ACTION_add_account_legal_warning" qtlid="209099">Souhlasím, že OVH nastaví službu okamžitě po schválení objednávky a vzdávám se proto práva na zrušení služby podle Článku L.121-21-8.</translation>
    <translation id="exchange_ACTION_add_account_title" qtlid="143225">Přidat účet Exchange</translation>

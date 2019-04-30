@@ -500,6 +500,7 @@
    <translation id="exchange_account_add_field_error_doesntRespectComplexityRules" qtlid="486204">Šis laukas neatitinka sudėtingumo reikalavimų.</translation>
    <translation id="exchange_account_add_field_error_passwordConfirmation" qtlid="139637">Slaptažodžiai nesutampa</translation>
    <translation id="exchange_account_add_field_error_pattern" qtlid="472385">Prašome naudoti priimtiną formatą</translation>
+   <translation id="exchange_account_add_emailAddress_error_alreadyExists" qtlid="522865">Un compte avec cette adresse e-mail existe déjà.</translation>
    <translation id="exchange_account_add_submit_success" qtlid="486217">Paskyra {0} sukurta. Jūs galėsite pradėti ja naudotis po kelių minučių.</translation>
    <translation id="exchange_ACTION_add_account_legal_warning" qtlid="209099">Sutinku, kad OVH pradės teikti paslaugą nedelsiant nuo mano užsakymo patvirtinimo momento, todėl negalėsiu pasinaudoti paslaugos atsisakymo teise.</translation>
    <translation id="exchange_ACTION_add_account_title" qtlid="143225">Įtraukti Exchange paskyrą</translation>
