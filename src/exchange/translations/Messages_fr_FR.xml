@@ -501,7 +501,7 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_account_add_field_error_doesntRespectComplexityRules" qtlid="486204">Ce champ ne respecte pas les règles de complexité.</translation>
    <translation id="exchange_account_add_field_error_passwordConfirmation" qtlid="139637">Mots de passe différents.</translation>
    <translation id="exchange_account_add_field_error_pattern" qtlid="472385">Veuillez saisir un format valide.</translation>
-   <translation id="exchange_account_add_emailAddress_error_alreadyExists">Un compte avec cette adresse e-mail existe déjà.</translation>
+   <translation id="exchange_account_add_emailAddress_error_alreadyExists" qtlid="522865">Un compte avec cette adresse e-mail existe déjà.</translation>
    <translation id="exchange_account_add_submit_success" qtlid="486217">La création du compte {0} a été effectuée. Vous pourrez l’utiliser dans quelques minutes.</translation>
    <translation id="exchange_ACTION_add_account_legal_warning" qtlid="209099">Je reconnais qu'OVH procédera à l’exécution immédiate de la prestation à compter de la validation de ma commande et à ce titre je renonce expressément à exercer mon droit de rétractation conformément aux dispositions de l’article L.121-21-8 du code de la consommation.</translation>
    <translation id="exchange_ACTION_add_account_title" qtlid="143225">Ajouter un compte Exchange</translation>
