@@ -500,7 +500,7 @@
    <translation id="exchange_account_add_field_error_doesntRespectComplexityRules" qtlid="486204">To pole nie spełnia kryteriów złożoności.</translation>
    <translation id="exchange_account_add_field_error_passwordConfirmation" qtlid="139637">Różne hasła</translation>
    <translation id="exchange_account_add_field_error_pattern" qtlid="472385">Użyj poprawnego formatu.</translation>
-   <translation id="exchange_account_add_emailAddress_error_alreadyExists" qtlid="522865">Un compte avec cette adresse e-mail existe déjà.</translation>
+   <translation id="exchange_account_add_emailAddress_error_alreadyExists" qtlid="522865">Konto z tym adresem e-mail już istnieje.</translation>
    <translation id="exchange_account_add_submit_success" qtlid="486217">Konto {0} zostało utworzone. Będziesz mógł z niego korzystać po upływie kilku minut.</translation>
    <translation id="exchange_ACTION_add_account_legal_warning" qtlid="209099">Przyjmuję do wiadomości, że OVH przystąpi do świadczenia usługi natychmiast po zatwierdzeniu mojego zamówienia i w związku z tym świadomie rezygnuję z mojego prawa do odstąpienia od umowy zgodnie z postanowieniami artykułu 27 Ustawy o prawach konsumenta.</translation>
    <translation id="exchange_ACTION_add_account_title" qtlid="143225">Dodaj konto Exchange</translation>
