@@ -37,7 +37,7 @@
    <translation id="exchange_dashboard_tasks" qtlid="136217">Recente taken</translation>
    <translation id="exchange_dashboard_diag" qtlid="136230">Diagnose-server </translation>
    <translation id="exchange_dashboard_guides" qtlid="366359">Heeft u hulp nodig bij de configuratie van uw Exchange oplossing? </translation>
-   <translation id="exchange_dashboard_guides_url" qtlid="519090">Consultez nos guides en ligne</translation>
+   <translation id="exchange_dashboard_guides_url" qtlid="519090">Bekijk onze online gidsen</translation>
    <translation id="exchange_diagnostic_guide" qtlid="297891">Bij de diagnose zijn fouten opgemerkt. Meer informatie kunt u vinden in onze</translation>
    <translation id="exchange_diagnostic_guides_url" qtlid="297904">raadpleeg onze online handleiding</translation>
    <translation id="exchange_dashboard_2016_migration" qtlid="287072">Bekijk het programma over migratie naar Exchange 2016.</translation>
@@ -478,7 +478,7 @@
 </ul></translation>
    <translation id="exchange_account_add_emailAddress_error_emailAddressIsAlreadyTaken" qtlid="485996">Dit e-mailadres bestaat al.</translation>
    <translation id="exchange_account_add_samAccountName_label" qtlid="486009">Naam van Exchange 2010-account (optioneel)</translation>
-   <translation id="exchange_account_add_company_label" qtlid="519376">Entreprise (optionnel)</translation>
+   <translation id="exchange_account_add_company_label" qtlid="519376">Bedrijf (optioneel)</translation>
    <translation id="exchange_account_add_firstName_label" qtlid="486022">Voornaam (optioneel)</translation>
    <translation id="exchange_account_add_lastName_label" qtlid="486035">Naam (optioneel)</translation>
    <translation id="exchange_account_add_displayName_label" qtlid="486048">Weergavenaam (optioneel)</translation>
@@ -500,7 +500,7 @@
    <translation id="exchange_account_add_field_error_doesntRespectComplexityRules" qtlid="486204">Dit veld voldoet niet aan de regels voor complexiteit.</translation>
    <translation id="exchange_account_add_field_error_passwordConfirmation" qtlid="139637">Verschillende wachtwoorden</translation>
    <translation id="exchange_account_add_field_error_pattern" qtlid="472385">Voer een geldig formaat in.</translation>
-   <translation id="exchange_account_add_emailAddress_error_alreadyExists" qtlid="522865">Un compte avec cette adresse e-mail existe déjà.</translation>
+   <translation id="exchange_account_add_emailAddress_error_alreadyExists" qtlid="522865">Een account met dit e-mailadres bestaat al.</translation>
    <translation id="exchange_account_add_submit_success" qtlid="486217">Het account {0} is gemaakt. U zult het over een paar minuten kunnen gebruiken.</translation>
    <translation id="exchange_ACTION_add_account_legal_warning" qtlid="209099">Ik erken dat OVH overgaat tot onmiddellijke uitvoering van de dienst, na de validatie van mijn bestelling, en derhalve bevestig ik dat ik uitdrukkelijk afstand doe van mijn herroepingsrecht.</translation>
    <translation id="exchange_ACTION_add_account_title" qtlid="143225">Een Exchange account toevoegen</translation>
@@ -549,7 +549,7 @@
    <translation id="exchange_ACTION_update_account_step1_GAL_label" qtlid="191980">Het adres in het adresboek verbergen</translation>
    <translation id="exchange_ACTION_update_account_step1_exchange_guid_label" qtlid="174633">Exchange GUID</translation>
    <translation id="exchange_ACTION_update_account_step1_exchange_SAMA_label" qtlid="486256">Naam van Exchange 2010-account</translation>
-   <translation id="exchange_ACTION_update_account_step1_exchange_company_label" qtlid="519376">Entreprise (optionnel)</translation>
+   <translation id="exchange_ACTION_update_account_step1_exchange_company_label" qtlid="519376">Bedrijf (optioneel)</translation>
    <translation id="exchange_ACTION_update_account_step1_mandatory_fields" qtlid="137634">Verplichte velden</translation>
    <translation id="exchange_ACTION_update_account_step2_confirmation_intro" qtlid="136841">Uw account:</translation>
    <translation id="exchange_ACTION_update_account_step2_email_label" qtlid="137244">E-mailaccount</translation>
@@ -1368,7 +1368,7 @@
 <!-- EXPORT PST -->
    <translation id="exchange_ACTION_display_pst_check_existing_export" qtlid="255898">Controle of er al een export in behandeling is, een moment geduld.</translation>
    <translation id="exchange_ACTION_display_pst_wait_label" qtlid="255911">Het exporteren naar een .pst bestand kan een paar uur duren. U kunt de voortgang op elk moment volgen (u kunt dit venster sluiten en later terugkomen). </translation>
-   <translation id="exchange_ACTION_display_pst_get_file" qtlid="517985">Votre fichier est maintenant disponible, vous pouvez le télécharger depuis l'URL suivante. ATTENTION : cette URL est valable uniquement pour une durée de 30 minutes.</translation>
+   <translation id="exchange_ACTION_display_pst_get_file" qtlid="517985">Uw bestand is nu beschikbaar, u kunt het downloaden vanaf de volgende URL.  LET OP: deze URL is slechts 30 minuten geldig.</translation>
    <translation id="exchange_ACTION_display_pst_start" qtlid="255937">Het exporteren lanceren</translation>
    <translation id="exchange_ACTION_display_pst_progress" qtlid="255950">Exporteren in behandeling : {0}% voltooid.</translation>
    <translation id="exchange_ACTION_display_pst_export_done" qtlid="255963">Het exporteren van het .pst bestand is afgerond. U kunt hem nu downloaden.</translation>
