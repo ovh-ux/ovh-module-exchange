@@ -26,8 +26,8 @@ angular.module('Module.exchange.services').controller(
 
       this.retrievingDetails();
 
-      $scope.submitting = () => this.submitting();
-      $scope.isFormValid = () => this.formIsValid.value;
+      // $scope.submitting = () => this.submitting();
+      // $scope.isFormValid = () => this.formIsValid.value;
     }
 
     retrievingDetails() {
@@ -55,11 +55,16 @@ angular.module('Module.exchange.services').controller(
             ? this.service.passwordHistoryCount
             : 0;
 
+          this.originalService = _.clone(this.service);
           return this.service;
         })
         .finally(() => {
           this.loaders.details = false;
         });
+    }
+
+    resetValues() {
+      this.service = _.clone(this.originalService);
     }
 
     submitting() {
@@ -100,6 +105,7 @@ angular.module('Module.exchange.services').controller(
         })
         .finally(() => {
           this.services.navigation.resetAction();
+          this.loaders.put = false;
         });
     }
 

@@ -104,6 +104,7 @@
    <translation id="exchange_tab_TASKS" qtlid="136217">Tâches récentes</translation>
    <translation id="exchange_tab_EXTERNAL_CONTACT" qtlid="82015">Contacts externes</translation>
    <translation id="exchange_tab_DIAGNOSTIC" qtlid="136282">Diagnostics</translation>
+   <translation id="exchange_tab_SECURITY">Sécurité</translation>
 
 <!-- ########################################## -->
 
@@ -1220,6 +1221,8 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
 
 <!-- ########################################## -->
 <!-- CONFIGURE SERVICE -->
+   <translation id="exchange_ACTION_configure_services_label_mfa">Double authentification</translation>
+   <translation id="exchange_ACTION_configure_services_label_account_locker">Vérouillage des comptes</translation>
    <translation id="exchange_ACTION_configure_services_label_lockoutDuration" qtlid="179706">Durée de verrouillage</translation>
    <translation id="exchange_ACTION_configure_services_label_lockoutObservationWindow" qtlid="179719">Délai de réinitialisation</translation>
    <translation id="exchange_ACTION_configure_services_label_lockoutThreshold" qtlid="179732">Seuil de verrouillage</translation>
