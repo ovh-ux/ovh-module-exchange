@@ -1,0 +1,21 @@
+<div data-ng-controller="ExchangeAccountMfaCtrl as $ctrl">
+    <div data-wizard
+         data-wizard-on-cancel="resetAction"
+         data-wizard-on-finish="submit"
+         data-wizard-title="'exchange_tab_ACCOUNTS_menu_mfa_' + $ctrl.action | translate">
+
+        <div data-wizard-step>
+            <p data-translate="{{'exchange_mfa_description_' + $ctrl.action}}"
+               data-translate-values="{ account: $ctrl.account.primaryEmailAddress}"></p>
+
+            <form novalidate name="numericForm"
+                  data-ng-if="$ctrl.action === 'DISABLE'">
+                <oui-field label="{{'exchange_mfa_description_DISABLE_period' | translate}}"
+                           help-text="{{ 'exchange_mfa_description_DISABLE_period_help' | translate}}">
+                    <oui-numeric id="period" name="period" model="$ctrl.disablePeriod" min="1">
+                    </oui-numeric>
+                </oui-field>
+            </form>
+        </div>
+    </div>
+</div>
