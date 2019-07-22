@@ -119,7 +119,9 @@ angular.module('Module.exchange.services').controller(
         })
         .catch((failure) => {
           this.services.messaging.writeError(
-            this.services.$translate.instant('exchange_ACTION_configure_error'),
+            this.services.$translate.instant('exchange_ACTION_configure_error', {
+              error: failure.message,
+            }),
             failure,
           );
         })

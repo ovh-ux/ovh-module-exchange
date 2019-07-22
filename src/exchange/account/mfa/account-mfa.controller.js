@@ -79,7 +79,9 @@ angular.module('Module.exchange.controllers')
         );
       }).catch((error) => {
         this.messaging.writeError(
-          this.$translate.instant(messages.error, { error }),
+          this.$translate.instant(messages.error, {
+            error: error.message,
+          }),
         );
       }).finally(() => this.$scope.resetAction());
     }
