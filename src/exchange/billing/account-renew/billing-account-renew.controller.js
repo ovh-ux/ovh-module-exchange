@@ -1,4 +1,4 @@
-class ExchangeUpdateRenewCtrl {
+export default class ExchangeUpdateRenewCtrl {
   constructor(
     $scope,
     $translate,
@@ -21,9 +21,6 @@ class ExchangeUpdateRenewCtrl {
   }
 
   $onInit() {
-    this.search = {
-      value: null,
-    };
     this.buffer = {
       hasChanged: false,
       periodSelectedForAll: null,
@@ -34,8 +31,6 @@ class ExchangeUpdateRenewCtrl {
     this.model = {
       displayDeleteWarning: false,
     };
-
-    this.debouncedRetrieveAccounts = _.debounce(this.setFilter, 300);
 
     this.getExchange()
       .then(() => {
@@ -68,19 +63,6 @@ class ExchangeUpdateRenewCtrl {
   canBeDeletedAtExpiration() {
     return this.services.exchangeServiceInfrastructure.isHosted(this.exchange)
     || this.services.exchangeServiceInfrastructure.isProvider(this.exchange);
-  }
-
-  setFilter() {
-    this.services.$scope.$broadcast('paginationServerSide.loadPage', 1, 'accountsTable');
-  }
-
-  onSearchValueChange() {
-    this.debouncedRetrieveAccounts();
-  }
-
-  resetSearch() {
-    this.search.value = null;
-    this.services.$scope.$broadcast('paginationServerSide.loadPage', 1, 'accountsTable');
   }
 
   checkForChanges() {
@@ -134,11 +116,21 @@ class ExchangeUpdateRenewCtrl {
     }
   }
 
-  retrieveAccounts(count, offset) {
+  static getCriterion(criteria, property) {
+    return _.get(_.find(criteria, { property }), 'value');
+  }
+
+  // retrieveAccounts(count, offset) {
+  retrieveAccounts({ criteria, offset, pageSize }) {
     this.loading = true;
 
-    this.services.Exchange
-      .getAccountsForExchange(this.exchange, count, offset, this.search.value)
+    return this.services.Exchange
+      .getAccountsForExchange(
+        this.exchange,
+        pageSize,
+        (offset - 1), // Avoid offset to start at 1
+        ExchangeUpdateRenewCtrl.getCriterion(criteria, null),
+      )
       .then((accounts) => {
         this.accounts = accounts;
         this.bufferedAccounts = _.cloneDeep(accounts);
@@ -166,6 +158,16 @@ class ExchangeUpdateRenewCtrl {
         });
 
         _.set(this.bufferedAccounts, 'list.results', bufferedAccountList);
+
+        return {
+          data: bufferedAccountList,
+          meta: {
+            currentOffset: offset,
+            pageCount: Math.ceil(accounts.count / pageSize),
+            totalCount: accounts.count,
+            pageSize,
+          },
+        };
       })
       .catch((failure) => {
         this.onError({
