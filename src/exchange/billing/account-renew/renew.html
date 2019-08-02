@@ -61,7 +61,7 @@
                 <oui-column
                     data-title="::'exchange_update_billing_periode_label' | translate">
                     <oui-radio class="oui-radio_inline" name="renewPeriod-{{::$rowIndex}}"
-                        data-ng-if="!$ctrl.account.partial && $ctrl.canHaveMonthlyRenewal()"
+                        data-ng-if="!$ctrl.account.partial && $ctrl.exchange.canBeRenewedMonthly()"
                         data-model="$row.renewPeriod"
                         data-on-change="$ctrl.trackSelected($row.primaryEmailAddress, $row.renewPeriod)"
                         data-value="$ctrl.RENEW_PERIODS.MONTHLY">
@@ -77,7 +77,7 @@
                     </oui-radio>
 
                     <oui-radio class="oui-radio_inline" name="renewPeriod-{{::$rowIndex}}"
-                        data-ng-if="!$ctrl.account.partial && $ctrl.canBeDeletedAtExpiration()"
+                        data-ng-if="!$ctrl.account.partial && $ctrl.exchange.canBeDeletedAtExpiration()"
                         data-model="$row.renewPeriod"
                         data-on-change="$ctrl.trackSelected($row.primaryEmailAddress, $row.renewPeriod)"
                         data-value="$ctrl.RENEW_PERIODS.DELETE_AT_EXPIRATION">
@@ -88,7 +88,7 @@
 
             <oui-message class="mb-5"
                 data-type="warning"
-                data-ng-if="$ctrl.canBeDeletedAtExpiration() && $ctrl.services.exchangeVersion.isAfter(2010, $ctrl.exchange) && !$ctrl.account.partial && $ctrl.displayDeleteWarning">
+                data-ng-if="$ctrl.exchange.canBeDeletedAtExpiration() && $ctrl.services.exchangeVersion.isAfter(2010, $ctrl.exchange) && !$ctrl.account.partial && $ctrl.displayDeleteWarning">
                 <span data-translate="exchange_update_billing_periode_delete_warning"></span>
             </oui-message>
         </oui-step-form>
@@ -100,35 +100,13 @@
             <oui-datagrid
                 data-ng-if="!$ctrl.submitLoader"
                 data-rows="$ctrl.bufferedAccounts.list.results">
-                <oui-column data-title="{{::'exchange_tab_ACCOUNTS_table_email' | translate}}">
+                <oui-column data-title="::'exchange_tab_ACCOUNTS_table_email' | translate">
                     <span data-ng-bind="$row.primaryEmailDisplayName"></span>
                 </oui-column>
-                <oui-column data-title="{{::'exchange_update_billing_header_new_periode' | translate}}">
+                <oui-column data-title="::'exchange_update_billing_header_new_periode' | translate">
                     <span data-ng-bind="('exchange_update_billing_periode_value_' + $row.renewPeriod) | translate"></span>
                 </oui-column>
             </oui-datagrid>
-            <!-- <div class="oui-datagrid-responsive-container" data-ng-if="!$ctrl.submitLoader">
-                <div class="oui-datagrid-responsive-container__sticky-container">
-                    <div class="oui-datagrid-responsive-container__overflow-container">
-                        <table class="oui-datagrid">
-                            <thead class="oui-datagrid__headers">
-                                <tr>
-                                    <th scope="col" data-translate="exchange_tab_ACCOUNTS_table_email" class="oui-datagrid__header"></th>
-                                    <th class="text-center oui-datagrid__header" scope="col" data-translate="exchange_update_billing_header_new_periode"></th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr class="oui-datagrid__row" data-ng-repeat="account in ($ctrl.bufferedAccounts.list.results | orderBy:'primaryEmailAddress':false) track by $index">
-                                    <td data-ng-bind="account.primaryEmailDisplayName" class="oui-datagrid__cell"></td>
-                                    <td class="text-center oui-datagrid__cell" data-ng-bind="('exchange_update_billing_periode_value_' + account.renewPeriod) | translate"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div> -->
-
             <oui-message
                 data-ng-if="$ctrl.displayDeleteWarning"
                 data-type="warning">

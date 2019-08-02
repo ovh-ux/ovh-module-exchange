@@ -1,20 +1,10 @@
-import { RENEW_PERIODS } from './billing-account-renew.constants';
+import { RENEW_PERIODS } from './renew.constants';
 
 export default class ExchangeUpdateRenewCtrl {
   constructor(
-    $scope,
     $translate,
-    Exchange,
-    exchangeServiceInfrastructure,
-    exchangeVersion,
   ) {
-    this.services = {
-      $scope,
-      $translate,
-      Exchange,
-      exchangeServiceInfrastructure,
-      exchangeVersion,
-    };
+    this.$translate = $translate;
   }
 
   $onInit() {
@@ -27,31 +17,6 @@ export default class ExchangeUpdateRenewCtrl {
     };
 
     this.displayDeleteWarning = false;
-
-    this.getExchange();
-  }
-
-  getExchange() {
-    return this.services.Exchange.getExchangeDetails(this.organization, this.exchangeName)
-      .then((exchange) => {
-        this.exchange = exchange;
-      })
-      .catch(() => this.goBack(
-        this.$translate.instant('exchange_tab_ACCOUNTS_error_message'),
-        'danger',
-      ));
-  }
-
-  canHaveMonthlyRenewal() {
-    return !(
-      this.services.exchangeServiceInfrastructure.isProvider(this.exchange)
-      && this.services.exchangeVersion.isVersion(2010, this.exchange)
-    );
-  }
-
-  canBeDeletedAtExpiration() {
-    return this.services.exchangeServiceInfrastructure.isHosted(this.exchange)
-    || this.services.exchangeServiceInfrastructure.isProvider(this.exchange);
   }
 
   checkForChanges() {
@@ -111,15 +76,11 @@ export default class ExchangeUpdateRenewCtrl {
 
   // retrieveAccounts(count, offset) {
   retrieveAccounts({ criteria, offset, pageSize }) {
-    this.loading = true;
-
-    return this.services.Exchange
-      .getAccountsForExchange(
-        this.exchange,
-        pageSize,
-        (offset - 1), // Avoid offset to start at 1
-        ExchangeUpdateRenewCtrl.getCriterion(criteria, null),
-      )
+    return this.getAccounts(
+      pageSize,
+      (offset - 1), // Avoid offset to start at 1
+      ExchangeUpdateRenewCtrl.getCriterion(criteria, null),
+    )
       .then((accounts) => {
         this.accounts = accounts;
         this.bufferedAccounts = _.cloneDeep(accounts);
@@ -131,7 +92,7 @@ export default class ExchangeUpdateRenewCtrl {
         // roll previous buffered changes
         if (this.buffer.hasChanged) {
           _.forEach(bufferedAccountList, (currentBufferedAccount) => {
-            const buffer = _(this.buffer.changes).find({
+            const buffer = _.find(this.buffer.changes, {
               primaryEmailAddress: currentBufferedAccount.primaryEmailAddress,
             });
 
@@ -160,7 +121,7 @@ export default class ExchangeUpdateRenewCtrl {
       })
       .catch((failure) => {
         this.goBack(
-          `${this.services.$translate.instant('exchange_tab_ACCOUNTS_error_message')} ${failure}`,
+          `${this.$translate.instant('exchange_tab_ACCOUNTS_error_message')} ${failure}`,
           'danger',
         );
       })
@@ -204,23 +165,19 @@ export default class ExchangeUpdateRenewCtrl {
   submit() {
     this.submitLoader = true;
 
-    return this.services.Exchange.updateRenew(
-      this.exchange.organization,
-      this.exchange.domain,
-      this.buffer.changes,
-    )
+    return this.updateRenew(this.buffer.changes)
       .then(({ state }) => {
         const updateRenewMessages = {
-          OK: this.services.$translate.instant('exchange_update_billing_periode_success'),
-          PARTIAL: this.services.$translate.instant('exchange_update_billing_periode_partial'),
-          ERROR: this.services.$translate.instant('exchange_update_billing_periode_failure'),
+          OK: this.$translate.instant('exchange_update_billing_periode_success'),
+          PARTIAL: this.$translate.instant('exchange_update_billing_periode_partial'),
+          ERROR: this.$translate.instant('exchange_update_billing_periode_failure'),
         };
 
         this.goBack(updateRenewMessages[state]);
       })
       .catch((failure) => {
         this.goBack(
-          `${this.services.$translate.instant('exchange_update_billing_periode_failure')} ${failure}`,
+          `${this.$translate.instant('exchange_update_billing_periode_failure')} ${failure}`,
           'danger',
         );
       })
@@ -228,16 +185,4 @@ export default class ExchangeUpdateRenewCtrl {
         this.submitLoader = false;
       });
   }
-
-  static GetPropertyNameFromPeriodName(period) {
-    const capitalizedPeriod = _.capitalize(_.camelCase(period));
-    const matchingProperty = _.camelCase(`selected${capitalizedPeriod}`);
-
-    return matchingProperty;
-  }
 }
-
-angular.module('Module.exchange.controllers')
-  .controller(
-    'ExchangeUpdateRenewCtrl', ExchangeUpdateRenewCtrl,
-  );
