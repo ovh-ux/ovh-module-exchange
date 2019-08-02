@@ -4,13 +4,13 @@
     </oui-back-button>
 
     <oui-stepper
-        data-on-finish="submit()">
+        data-on-finish="$ctrl.submit()">
         <oui-step-form
             data-header="{{::'exchange_update_billing_button_title' | translate}}"
             data-description="{{::'exchange_update_billing_periode_intro' | translate}}"
             data-loading="!$ctrl.exchange"
             data-on-cancel="$ctrl.goBack()"
-            data-valid="hasChanged()"
+            data-valid="$ctrl.buffer.hasChanged"
             data-prevent-next>
 
             <oui-message class="mb-5"
@@ -29,27 +29,24 @@
                 data-ng-if="$ctrl.exchange"
                 data-rows-loader="$ctrl.retrieveAccounts($config)">
                 <extra-top>
-                    <oui-action-menu text="Actions">
+                    <oui-action-menu text="{{::'exchange_update_billing_actions_label' | translate}}">
                         <oui-action-menu-item
-                            data-ng-click="$ctrl.checkboxStateChange('MONTHLY')">
-                            <span data-translate="exchange_update_billing_periode_action"></span>
-                            <strong data-translate="exchange_update_billing_periode_value_MONTHLY"></strong>
+                            data-ng-click="$ctrl.checkboxStateChange($ctrl.RENEW_PERIODS.MONTHLY)">
+                            <span data-translate="exchange_update_billing_periode_action_MONTHLY"></span>
                         </oui-action-menu-item>
                         <oui-action-menu-item
-                            data-ng-click="$ctrl.checkboxStateChange('YEARLY')">
-                            <span data-translate="exchange_update_billing_periode_action"></span>
-                            <strong data-translate="exchange_update_billing_periode_value_YEARLY"></strong>
+                            data-ng-click="$ctrl.checkboxStateChange($ctrl.RENEW_PERIODS.YEARLY)">
+                            <span data-translate="exchange_update_billing_periode_action_YEARLY"></span>
                         </oui-action-menu-item>
                         <oui-action-menu-item
-                            data-ng-click="$ctrl.checkboxStateChange('DELETE_AT_EXPIRATION')">
-                            <span data-translate="exchange_update_billing_periode_action"></span>
-                            <strong data-translate="exchange_update_billing_periode_value_DELETE_AT_EXPIRATION"></strong>
+                            data-ng-click="$ctrl.checkboxStateChange($ctrl.RENEW_PERIODS.DELETE_AT_EXPIRATION)">
+                            <span data-translate="exchange_update_billing_periode_action_DELETE_AT_EXPIRATION"></span>
                         </oui-action-menu-item>
                     </oui-action-menu>
                 </extra-top>
 
                 <oui-column
-                    data-title="::'exchange_tab_ACCOUNTS_table_email' | translate"
+                    data-title="::'exchange_update_billing_email_label' | translate"
                     data-property="primaryEmailDisplayName"
                     data-type="string"
                     data-searchable>
@@ -62,40 +59,36 @@
                     <span data-ng-bind="$row.expirationDate | date:'mediumDate'"></span>
                 </oui-column>
                 <oui-column
-                    data-title="::'exchange_update_billing_header_1M' | translate">
-                    <oui-radio name="renewPeriod-{{::$rowIndex}}"
+                    data-title="::'exchange_update_billing_periode_label' | translate">
+                    <oui-radio class="oui-radio_inline" name="renewPeriod-{{::$rowIndex}}"
                         data-ng-if="!$ctrl.account.partial && $ctrl.canHaveMonthlyRenewal()"
                         data-model="$row.renewPeriod"
                         data-on-change="$ctrl.trackSelected($row.primaryEmailAddress, $row.renewPeriod)"
-                        data-value="'MONTHLY'">
-                        {{::'exchange_update_billing_periode_value_MONTHLY' | translate}}
+                        data-value="$ctrl.RENEW_PERIODS.MONTHLY">
+                        <span data-translate="exchange_update_billing_periode_value_MONTHLY"></span>
                     </oui-radio>
-                </oui-column>
-                <oui-column
-                    data-title="::'exchange_update_billing_header_1Y' | translate">
-                    <oui-radio name="renewPeriod-{{::$rowIndex}}"
+
+                    <oui-radio class="oui-radio_inline" name="renewPeriod-{{::$rowIndex}}"
                         data-ng-if="!$ctrl.account.partial"
                         data-model="$row.renewPeriod"
                         data-on-change="$ctrl.trackSelected($row.primaryEmailAddress, $row.renewPeriod)"
-                        data-value="'YEARLY'">
-                        {{::'exchange_update_billing_periode_value_YEARLY' | translate}}
+                        data-value="$ctrl.RENEW_PERIODS.YEARLY">
+                        <span data-translate="exchange_update_billing_periode_value_YEARLY"></span>
                     </oui-radio>
-                </oui-column>
-                <oui-column
-                    data-title="::'exchange_update_billing_header_terminate' | translate">
-                    <oui-radio name="renewPeriod-{{::$rowIndex}}"
+
+                    <oui-radio class="oui-radio_inline" name="renewPeriod-{{::$rowIndex}}"
                         data-ng-if="!$ctrl.account.partial && $ctrl.canBeDeletedAtExpiration()"
                         data-model="$row.renewPeriod"
                         data-on-change="$ctrl.trackSelected($row.primaryEmailAddress, $row.renewPeriod)"
-                        data-value="'DELETE_AT_EXPIRATION'">
-                        {{::'exchange_update_billing_periode_value_DELETE_AT_EXPIRATION' | translate}}
+                        data-value="$ctrl.RENEW_PERIODS.DELETE_AT_EXPIRATION">
+                        <span data-translate="exchange_update_billing_periode_value_DELETE_AT_EXPIRATION"></span>
                     </oui-radio>
                 </oui-column>
             </oui-datagrid>
 
             <oui-message class="mb-5"
                 data-type="warning"
-                data-ng-if="$ctrl.canBeDeletedAtExpiration() && $ctrl.services.exchangeVersion.isAfter(2010, $ctrl.exchange) && !$ctrl.account.partial && $ctrl.model.displayDeleteWarning">
+                data-ng-if="$ctrl.canBeDeletedAtExpiration() && $ctrl.services.exchangeVersion.isAfter(2010, $ctrl.exchange) && !$ctrl.account.partial && $ctrl.displayDeleteWarning">
                 <span data-translate="exchange_update_billing_periode_delete_warning"></span>
             </oui-message>
         </oui-step-form>
@@ -104,7 +97,17 @@
             data-header="{{::'exchange_update_billing_validation_title' | translate}}"
             data-description="{{::'exchange_update_billing_periode_resume' | translate}}"
             data-loading="$ctrl.submitLoader">
-            <div class="oui-datagrid-responsive-container" data-ng-if="!$ctrl.submitLoader">
+            <oui-datagrid
+                data-ng-if="!$ctrl.submitLoader"
+                data-rows="$ctrl.bufferedAccounts.list.results">
+                <oui-column data-title="{{::'exchange_tab_ACCOUNTS_table_email' | translate}}">
+                    <span data-ng-bind="$row.primaryEmailDisplayName"></span>
+                </oui-column>
+                <oui-column data-title="{{::'exchange_update_billing_header_new_periode' | translate}}">
+                    <span data-ng-bind="('exchange_update_billing_periode_value_' + $row.renewPeriod) | translate"></span>
+                </oui-column>
+            </oui-datagrid>
+            <!-- <div class="oui-datagrid-responsive-container" data-ng-if="!$ctrl.submitLoader">
                 <div class="oui-datagrid-responsive-container__sticky-container">
                     <div class="oui-datagrid-responsive-container__overflow-container">
                         <table class="oui-datagrid">
@@ -124,13 +127,13 @@
                         </table>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="alert alert-warning"
-                role="alert"
-                data-translate="exchange_update_billing_periode_delete_warning"
-                data-ng-if="$ctrl.model.displayDeleteWarning">
-            </div>
+            <oui-message
+                data-ng-if="$ctrl.displayDeleteWarning"
+                data-type="warning">
+                <span data-translate="exchange_update_billing_periode_delete_warning"></span>
+            </oui-message>
         </oui-step-form>
     </oui-stepper>
 </div>

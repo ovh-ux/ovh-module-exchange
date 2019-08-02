@@ -1,8 +1,9 @@
-const RENEW_PERIODS = [
-  'YEARLY',
-  'MONTHLY',
-  'DELETE_AT_EXPIRATION',
-];
+export const RENEW_PERIODS = {
+  YEARLY: 'YEARLY',
+  MONTHLY: 'MONTHLY',
+  DELETE_AT_EXPIRATION: 'DELETE_AT_EXPIRATION',
+};
 
-angular.module('Module.exchange')
-  .constant('EXCHANGE_RENEW_PERIODS', RENEW_PERIODS);
+export default {
+  RENEW_PERIODS,
+};

@@ -7,8 +7,6 @@ angular.module('Module.exchange.components')
       organization: '<',
       exchangeName: '<',
       goBack: '<',
-      onSuccess: '&',
-      onError: '&',
     },
     controller,
     template,

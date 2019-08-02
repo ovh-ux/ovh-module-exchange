@@ -1,3 +1,5 @@
+import { RENEW_PERIODS } from './billing-account-renew.constants';
+
 export default class ExchangeUpdateRenewCtrl {
   constructor(
     $scope,
@@ -5,7 +7,6 @@ export default class ExchangeUpdateRenewCtrl {
     Exchange,
     exchangeServiceInfrastructure,
     exchangeVersion,
-    EXCHANGE_RENEW_PERIODS,
   ) {
     this.services = {
       $scope,
@@ -14,13 +15,10 @@ export default class ExchangeUpdateRenewCtrl {
       exchangeServiceInfrastructure,
       exchangeVersion,
     };
-    this.RENEW_PERIODS = EXCHANGE_RENEW_PERIODS;
-
-    $scope.resetAction = () => this.onSuccess();
-    $scope.submit = () => this.submit();
   }
 
   $onInit() {
+    this.RENEW_PERIODS = RENEW_PERIODS;
     this.buffer = {
       hasChanged: false,
       periodSelectedForAll: null,
@@ -28,21 +26,9 @@ export default class ExchangeUpdateRenewCtrl {
       ids: [],
     };
 
-    this.model = {
-      displayDeleteWarning: false,
-    };
+    this.displayDeleteWarning = false;
 
-    this.getExchange()
-      .then(() => {
-        this.initScope();
-      });
-  }
-
-  initScope() {
-    this.services.$scope.hasChanged = () => this.buffer.hasChanged;
-    this.services.$scope.getBufferedAccounts = () => this.bufferedAccounts;
-    this.services.$scope.getLoading = () => this.loading;
-    this.services.$scope.retrieveAccounts = (count, offset) => this.retrieveAccounts(count, offset);
+    this.getExchange();
   }
 
   getExchange() {
@@ -50,7 +36,10 @@ export default class ExchangeUpdateRenewCtrl {
       .then((exchange) => {
         this.exchange = exchange;
       })
-      .catch(() => this.onError({ result: this.$translate.instant('exchange_tab_ACCOUNTS_error_message') }));
+      .catch(() => this.goBack(
+        this.$translate.instant('exchange_tab_ACCOUNTS_error_message'),
+        'danger',
+      ));
   }
 
   canHaveMonthlyRenewal() {
@@ -72,7 +61,7 @@ export default class ExchangeUpdateRenewCtrl {
       this.buffer.changes = [];
     }
 
-    this.model.displayDeleteWarning = false;
+    this.displayDeleteWarning = false;
 
     _.forEach(bufferedAccountList, (bufferedAccount) => {
       const currentAccount = _(this.accounts.list.results).find({
@@ -83,7 +72,7 @@ export default class ExchangeUpdateRenewCtrl {
         this.bufferChanges(bufferedAccount);
 
         if (bufferedAccount.renewPeriod === 'DELETE_AT_EXPIRATION') {
-          this.model.displayDeleteWarning = true;
+          this.displayDeleteWarning = true;
         }
       } else {
         this.buffer.changes = this.buffer.changes.filter(
@@ -170,9 +159,10 @@ export default class ExchangeUpdateRenewCtrl {
         };
       })
       .catch((failure) => {
-        this.onError({
-          result: `${this.services.$translate.instant('exchange_tab_ACCOUNTS_error_message')} ${failure}`,
-        });
+        this.goBack(
+          `${this.services.$translate.instant('exchange_tab_ACCOUNTS_error_message')} ${failure}`,
+          'danger',
+        );
       })
       .finally(() => {
         this.loading = false;
@@ -226,14 +216,13 @@ export default class ExchangeUpdateRenewCtrl {
           ERROR: this.services.$translate.instant('exchange_update_billing_periode_failure'),
         };
 
-        this.onSuccess({
-          result: updateRenewMessages[state],
-        });
+        this.goBack(updateRenewMessages[state]);
       })
       .catch((failure) => {
-        this.onError({
-          result: `${this.services.$translate.instant('exchange_update_billing_periode_failure')} ${failure}`,
-        });
+        this.goBack(
+          `${this.services.$translate.instant('exchange_update_billing_periode_failure')} ${failure}`,
+          'danger',
+        );
       })
       .finally(() => {
         this.submitLoader = false;

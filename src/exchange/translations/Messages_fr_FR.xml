@@ -359,14 +359,15 @@
    <translation id="exchange_update_billing_action_title" qtlid="98324">Période de renouvellement</translation>
    <translation id="exchange_update_billing_validation_title">Validation</translation>
    <translation id="exchange_update_billing_periode_intro" qtlid="190966">Choisissez la périodicité souhaitée pour le renouvellement automatique de chaque compte. <br />Celle-ci sera appliquée à partir du prochain renouvellement.</translation>
+   <translation id="exchange_update_billing_actions_label">Actions</translation>
+   <translation id="exchange_update_billing_email_label" qtlid="137244">Compte e-mail</translation>
    <translation id="exchange_update_billing_expiration_date_label" qtlid="30406">Expiration</translation>
    <translation id="exchange_update_billing_current_periode_label" qtlid="190979">Valeur actuelle</translation>
    <translation id="exchange_update_billing_periode_label" qtlid="168172">Renouvellement</translation>
-   <translation id="exchange_update_billing_header_1Y" qtlid="213258">Annuelle</translation>
-   <translation id="exchange_update_billing_header_1M" qtlid="8818">Mensuelle</translation>
-   <translation id="exchange_update_billing_header_terminate" qtlid="209177">Aucune</translation>
    <translation id="exchange_update_billing_header_new_periode" qtlid="190992">Nouvelle période</translation>
-   <translation id="exchange_update_billing_periode_action">Modifier les périodes de renouvellement en</translation>
+   <translation id="exchange_update_billing_periode_action_MONTHLY">Modifier en "Mensuelle"</translation>
+   <translation id="exchange_update_billing_periode_action_YEARLY">Modifier en "Annuelle"</translation>
+   <translation id="exchange_update_billing_periode_action_DELETE_AT_EXPIRATION">Modifier en "Expire à terme"</translation>
    <translation id="exchange_update_billing_periode_value_MONTHLY" qtlid="8818">Mensuelle</translation>
    <translation id="exchange_update_billing_periode_value_YEARLY" qtlid="213258">Annuelle</translation>
    <translation id="exchange_update_billing_periode_value_DELETE_AT_EXPIRATION" qtlid="201406">Expire au terme</translation>
