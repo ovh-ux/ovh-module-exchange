@@ -74,7 +74,6 @@ export default class ExchangeUpdateRenewCtrl {
     return _.get(_.find(criteria, { property }), 'value');
   }
 
-  // retrieveAccounts(count, offset) {
   retrieveAccounts({ criteria, offset, pageSize }) {
     return this.getAccounts(
       pageSize,
