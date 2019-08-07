@@ -15,9 +15,10 @@
         data-ng-submit="ctrl.submitting()">
 
         <h2 class="oui-heading_underline"
+            data-ng-if="ctrl.service.offer !== 'dedicatedCluster'"
             data-translate="exchange_ACTION_configure_services_label_mfa"></h2>
 
-        <div class="form-group">
+        <div class="form-group" data-ng-if="ctrl.service.offer !== 'dedicatedCluster'">
             <oui-radio-toggle-group model="ctrl.owaMfa" class="float-left">
                 <oui-radio value="true">
                     {{:: 'spf_value_true' | translate}}
