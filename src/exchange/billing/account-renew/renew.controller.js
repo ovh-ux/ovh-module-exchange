@@ -1,6 +1,8 @@
+import _ from 'lodash';
 import { RENEW_PERIODS } from './renew.constants';
 
 export default class ExchangeUpdateRenewCtrl {
+  /* @ngInject */
   constructor(
     $translate,
   ) {
