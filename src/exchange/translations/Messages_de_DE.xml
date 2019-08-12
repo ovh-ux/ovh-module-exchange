@@ -505,7 +505,7 @@
    <translation id="exchange_ACTION_add_account_legal_warning" qtlid="209099">Ich möchte, dass OVH die sofortige Lieferung der Dienstleistung nach Validierung der Bestellung durchführt, und bestätige, dass ich in diesem Fall auf mein Widerrufsrecht verzichte.</translation>
    <translation id="exchange_ACTION_add_account_title" qtlid="143225">Einen Exchange Account hinzufügen</translation>
    <translation id="exchange_ACTION_add_account_step1_email_label" qtlid="137244">E-Mail-Account</translation>
-   <translation id="exchange_ACTION_add_account_button" qtlid="21487">Einen Account hinzufügen</translation>
+   <translation id="exchange_ACTION_add_account_button" qtlid="21487">Account hinzufügen</translation>
    <translation id="exchange_ACTION_add_account_step1_first_name_label" qtlid="23323">Vorname</translation>
    <translation id="exchange_ACTION_add_account_step1_last_name_label" qtlid="3818">Name</translation>
    <translation id="exchange_ACTION_add_account_step1_display_name_label" qtlid="23515">Anzeigename</translation>
