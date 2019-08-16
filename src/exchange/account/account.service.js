@@ -109,6 +109,20 @@ angular.module('Module.exchange.services').service(
      * @param {string} serviceName
      * @param {object} userPrincipalName
      */
+    deleteMfa(serviceName, userPrincipalName) {
+      return this.OvhHttp.delete(
+        `/msServices/${serviceName}/account/${userPrincipalName}/mfa`,
+        {
+          rootPath: 'apiv6',
+          broadcast: this.Exchange.events.accountsChanged,
+        },
+      );
+    }
+
+    /**
+     * @param {string} serviceName
+     * @param {object} userPrincipalName
+     */
     disableMfa(serviceName, userPrincipalName, period) {
       return this.OvhHttp.post(
         `/msServices/${serviceName}/account/${userPrincipalName}/mfa/disable`,

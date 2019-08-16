@@ -20,10 +20,6 @@ angular.module('Module.exchange.services').controller(
       };
 
       this.service = {};
-
-      this.formIsValid = {
-        value: true,
-      };
     }
 
     $onInit() {
@@ -87,7 +83,7 @@ angular.module('Module.exchange.services').controller(
         maxPasswordAge: this.service.maxPasswordAge || null,
         minPasswordAge: this.service.minPasswordAge || null,
         passwordHistoryCount:
-          this.service.maxPasswordAge > 0 ? this.service.passwordHistoryCount || null : null,
+        this.service.maxPasswordAge > 0 ? this.service.passwordHistoryCount || null : null,
         minPasswordLength: this.service.minPasswordLength || null,
         spamAndVirusConfiguration: this.service.spamAndVirusConfiguration,
       };

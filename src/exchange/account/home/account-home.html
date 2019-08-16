@@ -108,7 +108,7 @@
                 data-type="boolean">
                 <span data-translate="{{:: 'exchange_tab_ACCOUNTS_table_mfa_' + $value.status | translate}}"></span>
             </oui-column>
-            <oui-action-menu data-compact>
+            <oui-action-menu data-compact align="bottom-end">
                 <oui-action-menu-item
                     data-text="{{:: 'exchange_tab_ACCOUNTS_menu_edit' | translate }}"
                     data-on-click="$ctrl.displayDialog('exchange/account/update/account-update', $row)"
@@ -137,6 +137,10 @@
                     data-text="{{:: 'exchange_tab_ACCOUNTS_menu_mfa_RESET' | translate }}"
                     data-on-click="$ctrl.navigation.setAction('exchange/account/mfa/account-mfa', { account: $row, action: 'RESET' })"
                     data-ng-if="$row.mfa.status === 'ENABLED'"></oui-action-menu-item>
+                <oui-action-menu-item
+                    data-text="{{:: 'exchange_tab_ACCOUNTS_menu_mfa_DELETE' | translate }}"
+                    data-on-click="$ctrl.navigation.setAction('exchange/account/mfa/account-mfa', { account: $row, action: 'DELETE' })"
+                    data-ng-if="$row.mfa.status === 'ENABLED' || $row.mfa.status === 'DISABLED'"></oui-action-menu-item>
                 <oui-action-menu-item
                     data-text="{{:: 'exchange_tab_ACCOUNTS_menu_upgradeTo300Gb' | translate:{ t0: ('unit_size_GiB'|translate) } }}"
                     data-on-click="$ctrl.displayDialog('exchange/account/upgrade-300g/account-upgrade-300g', $row)"

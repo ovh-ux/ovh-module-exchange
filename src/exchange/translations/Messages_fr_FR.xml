@@ -185,8 +185,9 @@
    <translation id="exchange_tab_ACCOUNTS_menu_exportToPST" qtlid="485814">Exporter au format PST</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_mfa_ENABLE">Activer la double authentification</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_mfa_DISABLE">Désactiver la double authentification</translation>
+   <translation id="exchange_tab_ACCOUNTS_menu_mfa_DELETE">Supprimer la double authentification</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_mfa_RESET">Réinitialiser la double authentification</translation>
-   
+
    <translation id="exchange_tab_ACCOUNTS_menu_upgradeTo300Gb" qtlid="485827">Augmenter la capacité à 300 {0}</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_contactSupportForSpam" qtlid="61824">Débloquer</translation>
    <translation id="exchange_tab_ACCOUNTS_menu_outlook_activate" qtlid="397416">Activer la licence Outlook</translation>
@@ -219,7 +220,7 @@
    <translation id="exchange_tab_ACCOUNTS_error_message" qtlid="143915">Une erreur est survenue lors du chargement de vos comptes.</translation>
    <translation id="exchange_tab_ACCOUNTS_popover_span_title" qtlid="277676">Compte bloqué SPAM</translation>
    <translation id="exchange_tab_ACCOUNTS_popover_span_text" qtlid="277689">L'envoi d'e-mail à partir de ce compte a été bloqué pour cause de SPAM. <br />Afin de débloquer ce compte, il est nécessaire de répondre au ticket en attente.<br /><br /><a href="{0}" class="link pull-right">Répondre au ticket</a><br /></translation>
-   
+
    <translation id="exchange_tab_ACCOUNTS_table_mfa_ENABLED" qtlid="62028">Activée</translation>
    <translation id="exchange_tab_ACCOUNTS_table_mfa_NOT_CREATED" qtlid="125084">Désactivée</translation>
    <translation id="exchange_tab_ACCOUNTS_table_mfa_DISABLED" qtlid="125084">Désactivée</translation>
@@ -1354,7 +1355,7 @@ Exchange&#160;: profitez de 50 Go de stockage, des protocoles MAPI et ActiveSync
    <translation id="exchange_ACTION_configure_help_title" qtlid="178614">Configuration service Exchange</translation>
    <translation id="exchange_ACTION_configure_help_lockoutThreshold_title" qtlid="177990">Seuil de verrouillage du compte</translation>
    <translation id="exchange_ACTION_configure_help_mfa_text"><p>Cette fonctionnalité vous permet d'activer ou de désactiver la double authentification pour <strong>l'ensemble de votre service Exchange</strong>.</p><p>
-Cette fonctionnalité vous permet d'activer ou de désactiver la double authentification pour l'ensemble de votre service Exchange. L'utilisateur final devra télécharger une application d'authification (Microsoft Authenticator, Google Authenticator, Authy...), scanner le QR code affiché à la prochaine connexion à son compte exchange, puis saisir le code fourni.</p></translation>
+L'utilisateur final devra télécharger une application d'authification (Microsoft Authenticator, Google Authenticator, Authy...), scanner le QR code affiché à la prochaine connexion à son compte exchange, puis saisir le code fourni.</p></translation>
    <translation id="exchange_ACTION_configure_help_lockoutThreshold_text" qtlid="178627"><p>Ce paramètre de sécurité détermine le nombre de tentatives d'ouverture de session infructueuses qui provoque le verrouillage d'un compte utilisateur.</p><p>Un compte verrouillé ne peut pas être utilisé jusqu'à sa réinitialisation par un administrateur ou jusqu'à ce que la durée de verrouillage du compte soit expirée. Vous pouvez définir une valeur comprise entre 1 et 14 tentatives d'ouverture de session infructueuses.</p><p><strong>Si vous définissez la valeur sur 0, le compte ne se verrouille jamais.</strong></p></translation>
    <translation id="exchange_ACTION_configure_help_lockoutDuration_title" qtlid="178640">Durée de verrouillage des comptes</translation>
    <translation id="exchange_ACTION_configure_help_lockoutDuration_text" qtlid="178653"><p>Ce paramètre de sécurité détermine le nombre de minutes durant lequel un compte reste verrouillé avant d'être déverrouillé automatiquement.</p><p> La plage disponible s'étend de 1 à 90 minutes.</p><p><strong>Si le seuil de verrouillage d'un compte est défini, la durée de verrouillage des comptes doit être supérieure ou égale à la durée de réinitialisation.</strong></p></translation>
@@ -1713,6 +1714,7 @@ Cette fonctionnalité vous permet d'activer ou de désactiver la double authenti
    <translation id="sharepoint_activate_which_service_label" qtlid="297592">Serveur Exchange à associer</translation>
 
    <translation id="exchange_mfa_description_ENABLE">Êtes-vous sûr de vouloir activer la double authentification pour le compte <strong>{{account}}</strong>?</translation>
+   <translation id="exchange_mfa_description_DELETE">Êtes-vous sûr de vouloir supprimer la double authentification pour le compte <strong>{{account}}</strong>?</translation>
    <translation id="exchange_mfa_description_DISABLE">Êtes-vous sûr de vouloir désactiver la double authentification pour le compte <strong>{{account}}</strong> ?</translation>
    <translation id="exchange_mfa_description_DISABLE_period">Période de désactivation de la double authentification : </translation>
    <translation id="exchange_mfa_description_DISABLE_period_help">durée en heures</translation>
@@ -1724,4 +1726,6 @@ Cette fonctionnalité vous permet d'activer ou de désactiver la double authenti
    <translation id="exchange_reset_mfa_error">Une erreur est survenue lors de la réinitialisation de la double authentification : {{error}}</translation>
    <translation id="exchange_reset_mfa_success">La double authentification a été réinitialisé avec succès.</translation>
    <translation id="exchange_mfa_error">Une erreur est survenue : {{error}}</translation>
+   <translation id="exchange_delete_mfa_success">La double authentification a été supprimée avec succès.</translation>
+   <translation id="exchange_delete_mfa_error">Une erreur est survenue lors de la suppression de la double authentification : {{error}}</translation>
 </translations>

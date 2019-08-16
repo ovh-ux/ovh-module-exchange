@@ -15,17 +15,17 @@ angular.module('Module.exchange.controllers')
       this.$timeout = $timeout;
       this.$translate = $translate;
       this.exchangeAccount = exchangeAccount;
+      this.isLoading = false;
       this.messaging = messaging;
       this.navigation = navigation;
       this.exchangeService = Exchange.value;
       this.Exchange = Exchange;
-      $scope.submit = () => this.submit();
     }
 
     $onInit() {
       this.account = this.navigation.currentActionData.account;
       this.action = this.navigation.currentActionData.action;
-
+      this.isLoading = true;
       this.Exchange.getExchangeServer(
         this.exchangeService.organization,
         this.exchangeService.domain,
@@ -39,6 +39,8 @@ angular.module('Module.exchange.controllers')
         );
 
         this.$scope.resetAction();
+      }).finally(() => {
+        this.isLoading = false;
       });
     }
 
@@ -49,8 +51,8 @@ angular.module('Module.exchange.controllers')
       );
     }
 
-    enable() {
-      return this.exchangeAccount.enableMfa(
+    delete() {
+      return this.exchangeAccount.deleteMfa(
         this.exchangeService.domain,
         this.account.primaryEmailAddress,
       );
@@ -64,6 +66,13 @@ angular.module('Module.exchange.controllers')
       );
     }
 
+    enable() {
+      return this.exchangeAccount.enableMfa(
+        this.exchangeService.domain,
+        this.account.primaryEmailAddress,
+      );
+    }
+
     reset() {
       return this.exchangeAccount.resetMfa(
         this.exchangeService.domain,
@@ -72,6 +81,7 @@ angular.module('Module.exchange.controllers')
     }
 
     submit() {
+      this.isLoading = true;
       const serverMfaPromise = this.server.owaMfa
         ? this.$q.resolve(true)
         : this.Exchange.updateExchangeServer(
@@ -83,11 +93,11 @@ angular.module('Module.exchange.controllers')
       let accountMfaPromise = null;
       let messages = {};
       switch (this.action) {
-        case 'RESET':
-          accountMfaPromise = this.reset();
+        case 'DELETE':
+          accountMfaPromise = this.delete();
           messages = {
-            success: 'exchange_reset_mfa_success',
-            error: 'exchange_reset_mfa_error',
+            success: 'exchange_delete_mfa_success',
+            error: 'exchange_delete_mfa_error',
           };
           break;
         case 'DISABLE':
@@ -104,12 +114,19 @@ angular.module('Module.exchange.controllers')
             error: 'exchange_enable_mfa_error',
           };
           break;
+        case 'RESET':
+          accountMfaPromise = this.reset();
+          messages = {
+            success: 'exchange_reset_mfa_success',
+            error: 'exchange_reset_mfa_error',
+          };
+          break;
         default:
           this.$scope.resetAction();
       }
 
       return serverMfaPromise
-        .then(() => this.$timeout(2000))
+        .then(() => this.$timeout(4000))
         .then(() => accountMfaPromise)
         .then(() => {
           this.messaging.writeSuccess(
