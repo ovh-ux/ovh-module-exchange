@@ -208,14 +208,6 @@ angular.module('Module.exchange.controllers').controller(
       }
 
       this.services.$timeout(() => {
-        const body = this.makingSupportTicketBody();
-        const subject = this.services.$translate.instant(
-          'exchange_DIAGNOSTICS_status_support_ticket_subject',
-        );
-        this.services.OtrsPopupService.changeTicket({
-          subject,
-          body,
-        });
         this.services.OtrsPopupService.restore();
       });
     }
