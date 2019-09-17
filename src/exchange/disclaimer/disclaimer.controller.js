@@ -24,7 +24,7 @@ angular.module('Module.exchange.controllers').controller(
 
     /* eslint-disable class-methods-use-this */
     hasEmptySlot(list) {
-      return _.some(list, item => item.emptySlotFlag);
+      return _.some(list, (item) => item.emptySlotFlag);
     }
     /* eslint-enable class-methods-use-this */
 

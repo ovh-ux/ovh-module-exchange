@@ -20,7 +20,7 @@
       return this.officeAttach
         .retrievingIfPreferencesAllowBannerDisplaying()
         .then(
-          preferencesAllowBannerDisplaying => (preferencesAllowBannerDisplaying
+          (preferencesAllowBannerDisplaying) => (preferencesAllowBannerDisplaying
             ? this.officeAttach.retrievingIfUserAlreadyHasSubscribed(this.$routerParams.productId)
             : true),
         )

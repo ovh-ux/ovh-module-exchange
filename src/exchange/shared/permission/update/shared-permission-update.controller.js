@@ -97,11 +97,11 @@ angular.module('Module.exchange.controllers').controller(
         () => [],
       );
       this.permissions.ids = this.permissions.current.list.results.map(
-        permission => permission.accessRights,
+        (permission) => permission.accessRights,
       );
       this.permissions.former.list.results.forEach((permission) => {
         const account = _.keys(this.permissions.changes).find(
-          accountName => accountName === permission.primaryAddressDisplayName,
+          (accountName) => accountName === permission.primaryAddressDisplayName,
         );
 
         if (account == null) {
@@ -157,7 +157,7 @@ angular.module('Module.exchange.controllers').controller(
 
       if (updateAccounts) {
         const formerPermission = this.permissions.former.list.results.find(
-          formerPerm => formerPerm.primaryAddressDisplayName === accountName,
+          (formerPerm) => formerPerm.primaryAddressDisplayName === accountName,
         );
         const formerPermissionName = this.getPermissionName(formerPermission);
         const newPermissionName = this.getPermissionName(permission);
@@ -179,7 +179,7 @@ angular.module('Module.exchange.controllers').controller(
     updateAccountPermission(accountName, permission) {
       const permissionName = this.getPermissionName(permission);
       const matchingAccount = this.permissions.current.list.results.find(
-        currentAccount => currentAccount.primaryAddressDisplayName === accountName,
+        (currentAccount) => currentAccount.primaryAddressDisplayName === accountName,
       );
 
       if (matchingAccount != null) {
@@ -194,12 +194,12 @@ angular.module('Module.exchange.controllers').controller(
         this.permissions.selectedPermissions[
           previousPermissionName
         ] = this.permissions.selectedPermissions[previousPermissionName].filter(
-          currentAccountName => currentAccountName !== accountName,
+          (currentAccountName) => currentAccountName !== accountName,
         );
       }
 
       const formerPermission = this.permissions.former.list.results.find(
-        formerPerm => formerPerm.primaryAddressDisplayName === accountName,
+        (formerPerm) => formerPerm.primaryAddressDisplayName === accountName,
       );
       const formerPermissionName = this.getPermissionName(formerPermission);
 
@@ -207,7 +207,7 @@ angular.module('Module.exchange.controllers').controller(
         this.permissions.selectedPermissions[
           formerPermissionName
         ] = this.permissions.selectedPermissions[formerPermissionName].filter(
-          currentAccountName => currentAccountName !== accountName,
+          (currentAccountName) => currentAccountName !== accountName,
         );
       }
     }
@@ -227,14 +227,14 @@ angular.module('Module.exchange.controllers').controller(
 
     getOperationType(accountName) {
       const former = this.permissions.former.list.results.find(
-        formerPermission => formerPermission.primaryAddressDisplayName === accountName,
+        (formerPermission) => formerPermission.primaryAddressDisplayName === accountName,
       );
       if (former.accessRights === 'DEFAULT') {
         return 'POST';
       }
 
       const current = this.permissions.current.list.results.find(
-        formerPermission => formerPermission.primaryAddressDisplayName === accountName,
+        (formerPermission) => formerPermission.primaryAddressDisplayName === accountName,
       );
       if (current.accessRights === 'DEFAULT') {
         return 'DELETE';
@@ -254,7 +254,7 @@ angular.module('Module.exchange.controllers').controller(
       _.forEach(Object.keys(this.permissions.changes), (accountName) => {
         const newPermission = this.permissions.changes[accountName];
         const former = this.permissions.former.list.results.find(
-          formerPermission => formerPermission.primaryAddressDisplayName === accountName,
+          (formerPermission) => formerPermission.primaryAddressDisplayName === accountName,
         );
 
         model.push({

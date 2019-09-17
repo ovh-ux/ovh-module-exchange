@@ -16,7 +16,7 @@ angular.module('Module.exchange.services').service(
     }
 
     isValidState(value) {
-      return _.some(this.states, state => state.toUpperCase() === value);
+      return _.some(this.states, (state) => state.toUpperCase() === value);
     }
 
     static isState(account, state) {

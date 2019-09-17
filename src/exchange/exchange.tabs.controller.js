@@ -25,8 +25,8 @@ angular.module('Module.exchange.controllers').controller(
       const $routerParams = Exchange.getParams();
 
       $scope.services = this.services;
-      $scope.kebabCase = text => _.kebabCase(text);
-      $scope.changeTab = tab => this.changeTab(tab);
+      $scope.kebabCase = (text) => _.kebabCase(text);
+      $scope.changeTab = (tab) => this.changeTab(tab);
 
       Exchange.updateValue().then(() => {
         if (Exchange.value.serverDiagnostic.individual2010) {
@@ -111,7 +111,7 @@ angular.module('Module.exchange.controllers').controller(
       const tabHasAName = upperCaseSelectedTab != null;
       const tabExists = _(this.tabs).includes(upperCaseSelectedTab);
       const tabIsMenuItem = this.dropdownMenuItems != null
-        && _(this.dropdownMenuItems.items).find(item => item.target === upperCaseSelectedTab);
+        && _(this.dropdownMenuItems.items).find((item) => item.target === upperCaseSelectedTab);
 
       if (tabHasAName && (tabExists || tabIsMenuItem)) {
         this.selectedTab = upperCaseSelectedTab;

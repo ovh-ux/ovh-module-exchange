@@ -74,7 +74,7 @@
         .retrievingAvailableAccounts(this.$routerParams.organization, this.$routerParams.productId)
         .then((availableAccounts) => {
           this.homepage.availableAccounts = availableAccounts
-            .filter(account => this.exchangeStates.constructor.isOk(account));
+            .filter((account) => this.exchangeStates.constructor.isOk(account));
           this.homepage.numberOfAvailableAccounts = this.homepage.availableAccounts.length;
         })
         .catch((error) => {
@@ -92,7 +92,7 @@
 
       return this.wizardHostedCreationEmailCreation
         .retrievingAccounts(this.$routerParams.organization, this.$routerParams.productId)
-        .then(accounts => this.wizardHostedCreationEmailCreation.retrievingAccounts(
+        .then((accounts) => this.wizardHostedCreationEmailCreation.retrievingAccounts(
           this.$routerParams.organization,
           this.$routerParams.productId,
           this.homepage.domainName,
@@ -135,7 +135,7 @@
       }
 
       const thereAreAccountsBeingDeleted = !_.isEmpty(this.homepage.otherAccounts.list.results
-        .filter(account => this.exchangeStates.constructor.isDeleting(account)));
+        .filter((account) => this.exchangeStates.constructor.isDeleting(account)));
       const thereIsNoRoomForMoreAccountCreation = this.homepage.numberOfAvailableAccounts === 0;
 
       return thereIsNoRoomForMoreAccountCreation && thereAreAccountsBeingDeleted;
@@ -147,7 +147,7 @@
       }
 
       const atLeastOneEmailIsCustomized = !_.isEmpty(this.homepage.otherAccounts.list.results
-        .filter(account => !this.exchangeStates.constructor.isDeleting(account)));
+        .filter((account) => !this.exchangeStates.constructor.isDeleting(account)));
 
       return atLeastOneEmailIsCustomized;
     }

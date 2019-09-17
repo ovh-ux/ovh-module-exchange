@@ -108,7 +108,7 @@ angular.module('Module.exchange.controllers').controller(
       }`.toLowerCase();
       this.errors.emailIsAlreadyTaken = false;
       const matchingEmaiAddress = this.alreadyTakenEmails.find(
-        alreadyTakenEmail => this.accountBeingUpdated.sharedEmailAddress.toUpperCase()
+        (alreadyTakenEmail) => this.accountBeingUpdated.sharedEmailAddress.toUpperCase()
           === alreadyTakenEmail.toUpperCase(),
       );
       this.errors.emailIsAlreadyTaken = matchingEmaiAddress != null;
@@ -164,7 +164,7 @@ angular.module('Module.exchange.controllers').controller(
           } else {
             this.domain = _.find(
               this.optionsToUpdateAccount.availableDomains,
-              domain => domain.name === this.domain.name,
+              (domain) => domain.name === this.domain.name,
             );
           }
         })

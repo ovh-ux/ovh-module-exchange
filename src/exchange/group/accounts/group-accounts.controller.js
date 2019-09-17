@@ -80,10 +80,11 @@ angular.module('Module.exchange.controllers').controller(
       const managerValue = accountInManagerList ? _.get(accountInManagerList, 'operation') === 'POST' : account.manager;
       const memberValue = accountInMemberList ? _.get(accountInMemberList, 'operation') === 'POST' : account.member;
 
-      return Object.assign({}, account, {
+      return {
+        ...account,
         manager: managerValue,
         member: memberValue,
-      });
+      };
     }
 
     getDefaultDomain() {
@@ -106,7 +107,7 @@ angular.module('Module.exchange.controllers').controller(
             ...accountCreationOptions.availableDomains,
           ];
           this.selectedDomain = _.find(accountCreationOptions.availableDomains,
-            domain => domain.name === this.selectedDomain.name);
+            (domain) => domain.name === this.selectedDomain.name);
         })
         .catch((error) => {
           this.services.messaging.writeError(

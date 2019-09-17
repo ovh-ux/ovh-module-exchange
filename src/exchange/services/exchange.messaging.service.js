@@ -21,13 +21,13 @@ angular.module('Module.exchange.services').service(
             } else if (_.isString(currentValue.message)) {
               this.messageDetails.push({ id: currentValue.id, message: currentValue.message });
             } else if (currentValue.messages != null) {
-              this.messageDetails = currentValue.messages.map(currentMessage => ({
+              this.messageDetails = currentValue.messages.map((currentMessage) => ({
                 id: currentMessage.code,
                 message: currentMessage.message,
               }));
               this.messageDetails = _.uniq(
                 this.messageDetails,
-                currentMessage => `${currentMessage.id}${currentMessage.message}`,
+                (currentMessage) => `${currentMessage.id}${currentMessage.message}`,
               );
             }
           }
@@ -122,9 +122,9 @@ angular.module('Module.exchange.services').service(
 
             messageDetails = failure.messages
               .filter(
-                currentMessage => _.isString(currentMessage.type) && currentMessage.type.toUpperCase() !== 'INFO',
+                (currentMessage) => _.isString(currentMessage.type) && currentMessage.type.toUpperCase() !== 'INFO',
               )
-              .map(currentMessage => ({
+              .map((currentMessage) => ({
                 id: currentMessage.code,
                 message: currentMessage.message,
               }));

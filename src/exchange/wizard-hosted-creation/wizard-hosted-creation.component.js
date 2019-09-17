@@ -49,8 +49,8 @@
     fetchingIfShouldDisplayWizard() {
       return this.wizardHostedCreationEmailCreation
         .retrievingAvailableAccounts(this.$routerParams.organization, this.$routerParams.productId)
-        .then(availableAccounts => !_.isEmpty(availableAccounts
-          .filter(account => this.exchangeStates.constructor.isOk(account))))
+        .then((availableAccounts) => !_.isEmpty(availableAccounts
+          .filter((account) => this.exchangeStates.constructor.isOk(account))))
         .catch(() => false);
     }
 
@@ -170,7 +170,9 @@
 
     deletingCheckpoint() {
       return this.retrievingCheckpoint()
-        .then(preferences => this.ovhUserPref.remove(PREFERENCE_CHECKPOINT).then(() => preferences))
+        .then((preferences) => this.ovhUserPref
+          .remove(PREFERENCE_CHECKPOINT)
+          .then(() => preferences))
         .then((preferences) => {
           if (
             !_(preferences).isObject()

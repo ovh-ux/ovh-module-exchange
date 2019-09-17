@@ -54,7 +54,7 @@ angular.module('Module.exchange.controllers').controller(
       };
 
       if (this.buffer.changes != null) {
-        changesList.delegationRights = this.buffer.changes.map(account => ({
+        changesList.delegationRights = this.buffer.changes.map((account) => ({
           id: account.id,
           operation: account.newDelegationValue ? 'POST' : 'DELETE',
         }));
@@ -67,7 +67,7 @@ angular.module('Module.exchange.controllers').controller(
       if (account.newDelegationValue) {
         this.buffer.selected.push(account.id);
       } else {
-        _.remove(this.buffer.selected, item => item === account.id);
+        _.remove(this.buffer.selected, (item) => item === account.id);
       }
     }
 

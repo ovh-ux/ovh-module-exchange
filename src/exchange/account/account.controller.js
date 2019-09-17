@@ -35,7 +35,7 @@ angular.module('Module.exchange.controllers').controller(
         return _(this.STATES)
           .chain()
           .keys()
-          .find(key => this.STATES[key].isDefault)
+          .find((key) => this.STATES[key].isDefault)
           .value();
       }
 

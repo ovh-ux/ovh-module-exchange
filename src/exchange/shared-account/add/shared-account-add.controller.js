@@ -97,7 +97,7 @@ angular.module('Module.exchange.controllers').controller(
       }`.toLowerCase();
       this.errors.emailIsAlreadyTaken = false;
       const matchingEmaiAddress = this.alreadyTakenEmails.find(
-        alreadyTakenEmail => this.accountBeingCreated.sharedEmailAddress.toUpperCase()
+        (alreadyTakenEmail) => this.accountBeingCreated.sharedEmailAddress.toUpperCase()
           === alreadyTakenEmail.toUpperCase(),
       );
       this.errors.emailIsAlreadyTaken = matchingEmaiAddress != null;

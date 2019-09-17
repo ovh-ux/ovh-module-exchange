@@ -215,7 +215,7 @@ angular.module('Module.exchange.controllers').controller(
       if (!_.isEmpty(this.search.value)) {
         this.availableDomains = _.filter(
           this.availableDomainsBuffer,
-          currentItem => _.includes(currentItem.displayName, this.search.value),
+          (currentItem) => _.includes(currentItem.displayName, this.search.value),
         );
       }
 

@@ -133,7 +133,7 @@ angular.module('Module.exchange.services').service(
         opts.count,
         offset,
         opts.filter,
-      ).then(accounts => ({
+      ).then((accounts) => ({
         accounts: accounts.list.results,
         headers: _.keys(accounts.list.results[0]),
       }));

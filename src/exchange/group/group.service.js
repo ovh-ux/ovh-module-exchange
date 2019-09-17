@@ -11,7 +11,7 @@ angular.module('Module.exchange.services').service(
     getModels() {
       return this.services.OvhHttp.get('/email/exchange.json', {
         rootPath: 'apiv6',
-      }).then(data => data.models);
+      }).then((data) => data.models);
     }
 
     retrievingOptionsToCreateNewGroup(organization, serviceName) {
@@ -33,8 +33,8 @@ angular.module('Module.exchange.services').service(
       return this.services.$q.all({ models, options }).then((data) => {
         const availableDepartRestrictions = data.models[
           'email.exchange.MailingListDepartRestrictionEnum'
-        ].enum.map(m => _.snakeCase(m).toUpperCase());
-        const availableDomains = data.options.map(domain => ({
+        ].enum.map((m) => _.snakeCase(m).toUpperCase());
+        const availableDomains = data.options.map((domain) => ({
           name: domain,
           displayName: punycode.toUnicode(domain),
           formattedName: punycode.toUnicode(domain),
@@ -42,7 +42,7 @@ angular.module('Module.exchange.services').service(
 
         const availableJoinRestrictions = data.models[
           'email.exchange.MailingListJoinRestrictionEnum'
-        ].enum.map(m => _.snakeCase(m).toUpperCase());
+        ].enum.map((m) => _.snakeCase(m).toUpperCase());
 
         return {
           availableDepartRestrictions,

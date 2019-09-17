@@ -126,7 +126,7 @@ angular.module('Module.exchange.controllers').controller(
         },
       ];
 
-      answer[0].option = _.map(this.selectedAccounts, account => ({
+      answer[0].option = _.map(this.selectedAccounts, (account) => ({
         planCode: 'office-business-pp',
         configuration: [
           {
@@ -221,11 +221,11 @@ angular.module('Module.exchange.controllers').controller(
 
       if (!_.isEmpty(accounts)) {
         const alreadyPresentAccounts = this.selectedAccounts.map(
-          account => account.primaryEmailDisplayName,
+          (account) => account.primaryEmailDisplayName,
         );
         this.selectedAccounts = this.selectedAccounts.concat(
           accounts.list.results.filter(
-            account => !alreadyPresentAccounts.includes(account.primaryEmailDisplayName),
+            (account) => !alreadyPresentAccounts.includes(account.primaryEmailDisplayName),
           ),
         );
       }
@@ -236,37 +236,37 @@ angular.module('Module.exchange.controllers').controller(
     countNumberOfCheckedAccounts() {
       if (!_.isEmpty(this.accounts)) {
         const currentDisplayedAccountEmailAddresses = this.accounts.list.results.map(
-          account => account.primaryEmailDisplayName,
+          (account) => account.primaryEmailDisplayName,
         );
         const selectedAccountsCurrentBeingDisplayed = this.selectedAccounts.filter(
-          currentSelectedAccount => currentDisplayedAccountEmailAddresses.includes(
+          (currentSelectedAccount) => currentDisplayedAccountEmailAddresses.includes(
             currentSelectedAccount.primaryEmailDisplayName,
           ),
         );
 
         const currentlySelectedAccountsEmailAddresses = Object.keys(this.selectedCheckboxes).filter(
-          key => this.selectedCheckboxes[key],
+          (key) => this.selectedCheckboxes[key],
         );
         const currentlyDislayedAccountsThatAreSelected = this.accounts.list.results.filter(
-          account => currentlySelectedAccountsEmailAddresses
+          (account) => currentlySelectedAccountsEmailAddresses
             .includes(account.primaryEmailDisplayName),
         );
 
         const alreadyPresentAccounts = currentlyDislayedAccountsThatAreSelected.map(
-          account => account.primaryEmailDisplayName,
+          (account) => account.primaryEmailDisplayName,
         );
         this.selectedAccounts = currentlyDislayedAccountsThatAreSelected.concat(
           selectedAccountsCurrentBeingDisplayed.filter(
-            account => !alreadyPresentAccounts.includes(account.primaryEmailDisplayName),
+            (account) => !alreadyPresentAccounts.includes(account.primaryEmailDisplayName),
           ),
         );
 
         const currentlyNotSelectedAccountsEmailAddresses = Object.keys(
           this.selectedCheckboxes,
-        ).filter(key => !this.selectedCheckboxes[key]);
+        ).filter((key) => !this.selectedCheckboxes[key]);
 
         this.selectedAccounts = this.selectedAccounts.filter(
-          account => !currentlyNotSelectedAccountsEmailAddresses
+          (account) => !currentlyNotSelectedAccountsEmailAddresses
             .includes(account.primaryEmailDisplayName),
         );
 
@@ -277,7 +277,7 @@ angular.module('Module.exchange.controllers').controller(
 
     loadSelectedAccounts() {
       const keys = Object.keys(this.selectedCheckboxes);
-      const accounts = _.filter(keys, key => this.selectedCheckboxes[key]);
+      const accounts = _.filter(keys, (key) => this.selectedCheckboxes[key]);
 
       return accounts;
     }

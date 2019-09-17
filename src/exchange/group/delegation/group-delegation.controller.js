@@ -99,10 +99,11 @@ angular.module('Module.exchange.controllers').controller(
       const newSendAsValue = sendAsAccountChange ? _.get(sendAsAccountChange, 'operation') === 'POST' : account.sendAs;
       const newSendOnBehalfToValue = sendOnBehalfToAccountChange ? _.get(sendOnBehalfToAccountChange, 'operation') === 'POST' : account.sendOnBehalfTo;
 
-      return Object.assign({}, account, {
+      return {
+        ...account,
         newSendAsValue,
         newSendOnBehalfToValue,
-      });
+      };
     }
 
     hasChanged() {
@@ -136,7 +137,7 @@ angular.module('Module.exchange.controllers').controller(
             ...accountCreationOptions.availableDomains,
           ];
           this.selectedDomain = _.find(accountCreationOptions.availableDomains,
-            domain => domain.name === this.selectedDomain.name);
+            (domain) => domain.name === this.selectedDomain.name);
         })
         .catch((error) => {
           this.services.messaging.writeError(
@@ -167,7 +168,7 @@ angular.module('Module.exchange.controllers').controller(
           this.delegationList = angular.copy(accounts);
 
           this.delegationList.list.results = accounts.list.results
-            .map(account => this.applyAccountSelection(account));
+            .map((account) => this.applyAccountSelection(account));
         })
         .catch((failure) => {
           this.services.messaging.writeError(

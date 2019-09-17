@@ -124,7 +124,7 @@ angular.module('Module.exchange.services').service(
       const pollParameters = {
         interval: 2000,
         successRule: {
-          state: task => _.includes(opts.successSates, task.status),
+          state: (task) => _.includes(opts.successSates, task.status),
         },
         namespace: opts.namespace,
       };

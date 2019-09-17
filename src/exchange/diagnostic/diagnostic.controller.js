@@ -56,7 +56,7 @@ angular.module('Module.exchange.controllers').controller(
       };
 
       $scope.$on(`${this.POLL_NAMESPACE}.done`, () => this.writeDoneMessage());
-      $scope.$on(`${this.POLL_NAMESPACE}.error`, error => this.writeErrorMessage(error));
+      $scope.$on(`${this.POLL_NAMESPACE}.error`, (error) => this.writeErrorMessage(error));
 
       $scope.$on('$destroy', () => {
         diagnostic.killAllPolling({
@@ -124,11 +124,11 @@ angular.module('Module.exchange.controllers').controller(
 
       this.services.diagnostic
         .gettingTasks(email)
-        .then(taskIds => this.services.$q.all(
-          _.map(taskIds, taskId => this.services.diagnostic.gettingTask(email, taskId)),
+        .then((taskIds) => this.services.$q.all(
+          _.map(taskIds, (taskId) => this.services.diagnostic.gettingTask(email, taskId)),
         ))
         .then((tasks) => {
-          const currentTask = _.find(tasks, task => _.includes(['todo', 'doing'], task.status));
+          const currentTask = _.find(tasks, (task) => _.includes(['todo', 'doing'], task.status));
 
           if (currentTask != null) {
             this.pollDiagnosticTask(currentTask);
@@ -151,7 +151,7 @@ angular.module('Module.exchange.controllers').controller(
 
       this.services.diagnostic
         .launchingDiagnostic(this.email, this.password)
-        .then(task => this.pollDiagnosticTask(task))
+        .then((task) => this.pollDiagnosticTask(task))
         .catch((error) => {
           this.services.messaging.writeError(
             this.services.$translate.instant('exchange_DIAGNOSTIC_launch_diagnostic_failure'),

@@ -101,8 +101,8 @@ angular.module('Module.exchange.controllers').controller(
       $scope.getLoading = () => this.loading;
 
       $scope.isDisabled = () => this.isDisabled();
-      $scope.deleteAccount = account => this.deleteAccount(account);
-      $scope.delegationSettings = account => this.delegationSettings(account);
+      $scope.deleteAccount = (account) => this.deleteAccount(account);
+      $scope.delegationSettings = (account) => this.delegationSettings(account);
 
       this.debouncedRetrievingAccounts = _.debounce(this.retrievingAccounts, 300);
     }

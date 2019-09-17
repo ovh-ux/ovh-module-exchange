@@ -2320,7 +2320,7 @@
 
         if (splittedDisplayName != null) {
           const splittedNameWithoutShortWords = splittedDisplayName.filter(
-            word => word.length >= 3,
+            (word) => word.length >= 3,
           );
 
           _.forEach(splittedNameWithoutShortWords, (word) => {

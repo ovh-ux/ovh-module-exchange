@@ -51,7 +51,7 @@ angular.module('Module.exchange.services').service(
           },
         },
       )
-        .then(licenses => ({
+        .then((licenses) => ({
           maxValue: _.max(
             _(licenses)
               .map('outlookQuantity')
@@ -59,7 +59,7 @@ angular.module('Module.exchange.services').service(
               .concat(
                 _(licenses)
                   .map(
-                    license => _(license.accountLicense)
+                    (license) => _(license.accountLicense)
                       .filter({ license: 'standard' })
                       .value()[0].licenseQuantity,
                   )
@@ -68,7 +68,7 @@ angular.module('Module.exchange.services').service(
               .concat(
                 _(licenses)
                   .map(
-                    license => _(license.accountLicense)
+                    (license) => _(license.accountLicense)
                       .filter({ license: 'basic' })
                       .value()[0].licenseQuantity,
                   )
@@ -77,7 +77,7 @@ angular.module('Module.exchange.services').service(
               .concat(
                 _(licenses)
                   .map(
-                    license => _(license.accountLicense)
+                    (license) => _(license.accountLicense)
                       .filter({ license: 'enterprise' })
                       .value()[0].licenseQuantity,
                   )
@@ -85,13 +85,13 @@ angular.module('Module.exchange.services').service(
               ),
           ),
           outlook: _(licenses)
-            .map(license => ({
+            .map((license) => ({
               x: ExchangeHeaderLicence.getDate(license.date),
               y: license.outlookQuantity,
             }))
             .value(),
           standard: _(licenses)
-            .map(license => ({
+            .map((license) => ({
               x: ExchangeHeaderLicence.getDate(license.date),
               y: _(license.accountLicense)
                 .filter({ license: 'standard' })
@@ -99,7 +99,7 @@ angular.module('Module.exchange.services').service(
             }))
             .value(),
           basic: _(licenses)
-            .map(license => ({
+            .map((license) => ({
               x: ExchangeHeaderLicence.getDate(license.date),
               y: _(license.accountLicense)
                 .filter({ license: 'basic' })
@@ -107,7 +107,7 @@ angular.module('Module.exchange.services').service(
             }))
             .value(),
           enterprise: _(licenses)
-            .map(license => ({
+            .map((license) => ({
               x: ExchangeHeaderLicence.getDate(license.date),
               y: _(license.accountLicense)
                 .filter({ license: 'enterprise' })

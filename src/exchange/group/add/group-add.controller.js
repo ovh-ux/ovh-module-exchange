@@ -77,7 +77,7 @@ angular.module('Module.exchange.controllers').controller(
     }
 
     saveManagers(account) {
-      const managerObject = _.find(this.model.managersList, manager => manager.id === account.id);
+      const managerObject = _.find(this.model.managersList, (manager) => manager.id === account.id);
 
       if (account.manager && managerObject == null) {
         this.model.managersList.push({
@@ -88,7 +88,7 @@ angular.module('Module.exchange.controllers').controller(
     }
 
     saveMembers(account) {
-      const memberObject = _.find(this.model.membersList, member => member.id === account.id);
+      const memberObject = _.find(this.model.membersList, (member) => member.id === account.id);
 
       if (account.member && memberObject == null) {
         this.model.membersList.push({
@@ -109,7 +109,7 @@ angular.module('Module.exchange.controllers').controller(
         _.forEach(this.model.managersList, (account) => {
           const toLoad = _.find(
             this.accountsList.list.results,
-            manager => manager.id === account.id,
+            (manager) => manager.id === account.id,
           );
 
           if (toLoad != null) {
@@ -122,7 +122,10 @@ angular.module('Module.exchange.controllers').controller(
     loadMembers() {
       if (this.model.membersList != null) {
         _.forEach(this.model.membersList, (account) => {
-          const toLoad = _.find(this.accountsList.list.results, member => member.id === account.id);
+          const toLoad = _.find(
+            this.accountsList.list.results,
+            (member) => member.id === account.id,
+          );
 
           if (toLoad != null) {
             toLoad.member = true;

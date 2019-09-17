@@ -60,7 +60,7 @@ angular.module('Module.exchange.controllers').controller(
                 mode: 'index',
                 intersect: false,
                 callbacks: {
-                  title: data => _(data)
+                  title: (data) => _(data)
                     .chain()
                     .first()
                     .get('xLabel')

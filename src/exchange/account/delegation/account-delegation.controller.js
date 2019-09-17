@@ -46,22 +46,22 @@ angular.module('Module.exchange.controllers').controller(
       this.checkForLocalChanges();
 
       changesList.sendRights = this.bufferAccounts
-        .filter(account => account.newSendAsValue !== account.sendAs)
-        .map(account => ({
+        .filter((account) => account.newSendAsValue !== account.sendAs)
+        .map((account) => ({
           id: account.id,
           operation: account.newSendAsValue ? 'POST' : 'DELETE',
         }));
 
       changesList.sendOnBehalfToRights = this.bufferAccounts
-        .filter(account => account.newSendOnBehalfToValue !== account.sendOnBehalfTo)
-        .map(account => ({
+        .filter((account) => account.newSendOnBehalfToValue !== account.sendOnBehalfTo)
+        .map((account) => ({
           id: account.id,
           operation: account.newSendOnBehalfToValue ? 'POST' : 'DELETE',
         }));
 
       changesList.fullAccessRights = this.bufferAccounts
-        .filter(account => account.newFullAccessValue !== account.fullAccess)
-        .map(account => ({
+        .filter((account) => account.newFullAccessValue !== account.fullAccess)
+        .map((account) => ({
           id: account.id,
           operation: account.newFullAccessValue ? 'POST' : 'DELETE',
         }));
@@ -140,7 +140,7 @@ angular.module('Module.exchange.controllers').controller(
     checkForLocalChanges() {
       if (_.has(this.accounts, 'list.results')) {
         _.forEach(this.accounts.list.results, (account) => {
-          const matchBuffer = _.find(this.bufferAccounts, buffer => buffer.id === account.id);
+          const matchBuffer = _.find(this.bufferAccounts, (buffer) => buffer.id === account.id);
           if (matchBuffer) {
             matchBuffer.newSendOnBehalfToValue = account.newSendOnBehalfToValue;
             matchBuffer.newSendAsValue = account.newSendAsValue;
@@ -195,7 +195,7 @@ angular.module('Module.exchange.controllers').controller(
             _.set(account, 'newFullAccessValue', account.fullAccess);
             this.checkForBufferChanges(account);
 
-            if (!_.find(this.bufferAccounts, buffer => buffer.id === account.id)) {
+            if (!_.find(this.bufferAccounts, (buffer) => buffer.id === account.id)) {
               // keep the original data as a reference point to compare changes
               this.bufferAccounts.push(account);
             }

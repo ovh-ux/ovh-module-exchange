@@ -45,7 +45,7 @@ angular.module('Module.exchange.controllers').controller(
             },
           };
         })
-        .catch(failure => this.services.messaging.writeError(
+        .catch((failure) => this.services.messaging.writeError(
           this.services.$translate.instant('exchange_tab_ACCOUNTS_error_message'),
           failure,
         ));
@@ -68,7 +68,7 @@ angular.module('Module.exchange.controllers').controller(
             this.managersList.splice(i, 1);
           }
         })
-        .catch(failure => this.services.messaging.writeError(
+        .catch((failure) => this.services.messaging.writeError(
           this.services.$translate.instant('exchange_tab_ACCOUNTS_error_message'),
           failure,
         ));

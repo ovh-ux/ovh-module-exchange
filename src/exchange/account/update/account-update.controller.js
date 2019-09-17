@@ -185,7 +185,7 @@ angular.module('Module.exchange.controllers').controller(
         }`;
         this.takenEmailError = _.some(
           this.takenEmails,
-          value => currentEmail === value.toLowerCase(),
+          (value) => currentEmail === value.toLowerCase(),
         );
 
         if (this.selectedAccount.primaryEmailAddress === currentEmail) {
@@ -307,7 +307,7 @@ angular.module('Module.exchange.controllers').controller(
     getCompleteDomain(domainName) {
       const result = _.find(
         this.newAccountOptions.availableDomains,
-        value => value.name === domainName,
+        (value) => value.name === domainName,
       );
 
       // if the current domain is not in the domain's list (dummy account),

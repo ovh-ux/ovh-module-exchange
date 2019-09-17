@@ -174,7 +174,7 @@ angular.module('Module.exchange.controllers').controller(
           },
         },
       )
-        .then(data => this.checkExportUrlTask(exchange, data.id))
+        .then((data) => this.checkExportUrlTask(exchange, data.id))
         .catch((failure) => {
           this.services.messaging.writeError(
             this.services.$translate.instant('exchange_ACTION_display_pst_error'),

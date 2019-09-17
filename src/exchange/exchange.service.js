@@ -187,7 +187,7 @@ angular.module('Module.exchange.services').service(
 
     currentUserHasConfigurationRights() {
       return _(this.value.nicType).some(
-        nicType => nicType === this.nicAdmin || nicType === this.nicTech,
+        (nicType) => nicType === this.nicAdmin || nicType === this.nicTech,
       );
     }
 
@@ -198,9 +198,9 @@ angular.module('Module.exchange.services').service(
         .aggregate('displayName')
         .execute({ organizationName: '*' })
         .$promise
-        .then(services => _.filter(services, service => _.has(service, 'value.displayName') && _.has(service, 'value.offer')))
-        .then(services => _.map(
-          services, service => ({
+        .then((services) => _.filter(services, (service) => _.has(service, 'value.displayName') && _.has(service, 'value.offer')))
+        .then((services) => _.map(
+          services, (service) => ({
             name: service.key,
             displayName: service.value.displayName,
             organization: _.get(service.path.split('/'), '[3]'),
@@ -211,7 +211,7 @@ angular.module('Module.exchange.services').service(
 
     getExchange(organization, exchangeId) {
       return this.getExchangeServices()
-        .then(services => _.find(services, {
+        .then((services) => _.find(services, {
           name: exchangeId,
           organization,
         }));
@@ -260,7 +260,7 @@ angular.module('Module.exchange.services').service(
           return this.services.$q.reject(product);
         })
         .then(() => this.exchangeCache.get('exchange'))
-        .catch(reason => this.services.$q.reject(reason));
+        .catch((reason) => this.services.$q.reject(reason));
     }
 
     updateValue() {
@@ -321,7 +321,7 @@ angular.module('Module.exchange.services').service(
       ).then((dcvs) => {
         const data = dcvs || dcvs.data;
 
-        return data.map(dcv => ({
+        return data.map((dcv) => ({
           name: dcv,
           displayName: punycode.toUnicode(dcv),
           formattedName: punycode.toUnicode(dcv),
@@ -358,7 +358,7 @@ angular.module('Module.exchange.services').service(
      *                           and creating/deleting ones
      */
     getAccounts(pageSize, offset, search, configurableOnly, type, timeout) {
-      return this.getSelected().then(exchange => this.getAccountsForExchange(
+      return this.getSelected().then((exchange) => this.getAccountsForExchange(
         exchange,
         pageSize,
         offset,
@@ -536,7 +536,7 @@ angular.module('Module.exchange.services').service(
             storageQuota: params.storageQuota || '50',
           },
         },
-      ).then(data => data);
+      ).then((data) => data);
     }
 
     /**
@@ -634,7 +634,7 @@ angular.module('Module.exchange.services').service(
 
         return {
           messages: data,
-          state: data.filter(message => message.type === 'ERROR').length > 0 ? 'ERROR' : 'OK',
+          state: data.filter((message) => message.type === 'ERROR').length > 0 ? 'ERROR' : 'OK',
         };
       });
     }
@@ -890,7 +890,7 @@ angular.module('Module.exchange.services').service(
                   this.aliasMaxLimit,
                   offset,
                 ).then((aliases) => {
-                  _.set(account, 'aliases', aliases.list.results.map(alias => alias.displayName));
+                  _.set(account, 'aliases', aliases.list.results.map((alias) => alias.displayName));
                 }),
               );
             } else {
@@ -904,7 +904,7 @@ angular.module('Module.exchange.services').service(
                   serviceName,
                   account.mailingListAddress,
                 ).then((managers) => {
-                  _.set(account, 'managers', managers.list.results.map(manager => manager.displayAddress));
+                  _.set(account, 'managers', managers.list.results.map((manager) => manager.displayAddress));
                 }),
               );
             } else {
@@ -918,7 +918,7 @@ angular.module('Module.exchange.services').service(
                   serviceName,
                   account.mailingListAddress,
                 ).then((members) => {
-                  _.set(account, 'members', members.list.results.map(member => member.displayAddress));
+                  _.set(account, 'members', members.list.results.map((member) => member.displayAddress));
                 }),
               );
             } else {
@@ -1528,7 +1528,7 @@ angular.module('Module.exchange.services').service(
     doSharepointBeta(opts) {
       const { primaryEmailAddress, subDomain } = opts;
 
-      return this.getSelected().then(exchange => this.services.$http.post(
+      return this.getSelected().then((exchange) => this.services.$http.post(
         [
           'apiv6/email/exchange',
           exchange.organization,
@@ -1629,7 +1629,7 @@ angular.module('Module.exchange.services').service(
      * Return information related to sharepoint order
      */
     getSharepointService() {
-      return this.getSelected().then(exchange => this.getSharepointServiceForExchange(exchange));
+      return this.getSelected().then((exchange) => this.getSharepointServiceForExchange(exchange));
     }
 
     getSharepointServiceForExchange(exchange) {

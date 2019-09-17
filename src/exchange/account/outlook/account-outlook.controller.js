@@ -161,8 +161,8 @@ angular.module('Module.exchange.controllers').controller(
       )
         .then((data) => {
           this.availableLicences = data;
-          this.versionsList = _.uniq(this.availableLicences.map(item => item.outlookVersion));
-          this.languageList = _.uniq(this.availableLicences.map(item => item.outlookLanguage));
+          this.versionsList = _.uniq(this.availableLicences.map((item) => item.outlookVersion));
+          this.languageList = _.uniq(this.availableLicences.map((item) => item.outlookLanguage));
           this.model.licenceVersion = _.first(this.versionsList);
         })
         .catch((fail) => {

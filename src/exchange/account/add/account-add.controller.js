@@ -39,7 +39,7 @@
     fetchingAccountCreationOptions() {
       function transformAccountTypes(accountTypes) {
         return _(accountTypes)
-          .map(accountType => ({
+          .map((accountType) => ({
             name: accountType,
             displayName: this.exchangeAccountTypes.getDisplayValue(accountType),
           }))
@@ -82,7 +82,7 @@
       const emailAddressIsAlreadyTaken = !_(this.accountCreationOptions.takenEmails)
         .chain()
         .find(
-          emailAddress => emailAddress === `${this.newAccount.login}@${this.newAccount.domain.name}`,
+          (emailAddress) => emailAddress === `${this.newAccount.login}@${this.newAccount.domain.name}`,
         )
         .isEmpty()
         .value();

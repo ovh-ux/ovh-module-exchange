@@ -15,7 +15,7 @@ angular.module('Module.exchange.services').service(
       }
 
       return this.OvhHttp.get(`/msServices/${serviceName}`, { rootPath: 'apiv6' }).then(
-        service => service.officeTenantServiceName,
+        (service) => service.officeTenantServiceName,
       );
     }
 
@@ -38,7 +38,7 @@ angular.module('Module.exchange.services').service(
 
     retrievingIfUserAlreadyHasSubscribed(serviceName) {
       return this.retrievingServiceName(serviceName)
-        .then(officeAttachServiceName => _(officeAttachServiceName).isString());
+        .then((officeAttachServiceName) => _(officeAttachServiceName).isString());
     }
 
     savingHidingPreferences() {

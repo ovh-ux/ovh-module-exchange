@@ -97,7 +97,7 @@ angular.module('Module.exchange.services').service(
           main: true,
           state: 'ok',
         },
-      }).then(data => data.map(datum => ({
+      }).then((data) => data.map((datum) => ({
         name: datum,
         displayName: punycode.toUnicode(datum),
         formattedName: punycode.toUnicode(datum),
@@ -106,7 +106,7 @@ angular.module('Module.exchange.services').service(
 
     prepareForCsv(organization, serviceName, opts, offset) {
       return this.gettingContacts(organization, serviceName, opts.count, offset, opts.filter)
-        .then(accounts => ({
+        .then((accounts) => ({
           accounts: accounts.list.results,
           headers: _.keys(accounts.list.results[0]),
         }));

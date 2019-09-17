@@ -1,7 +1,7 @@
 angular
   .module('Module.exchange')
   .config(($stateProvider) => {
-    const getNavigationInformations = currentSectionInformation => [
+    const getNavigationInformations = (currentSectionInformation) => [
       'Navigator',
       '$rootScope',
       (Navigator, $rootScope) => {

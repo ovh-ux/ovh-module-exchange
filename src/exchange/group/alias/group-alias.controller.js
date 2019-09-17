@@ -41,7 +41,7 @@ angular.module('Module.exchange.controllers').controller(
           };
           return this.aliasesParams.results;
         })
-        .catch(err => this.services.messaging.writeError(
+        .catch((err) => this.services.messaging.writeError(
           this.services.$translate.instant('exchange_tab_ALIAS_error_message'),
           err,
         ));
@@ -64,7 +64,7 @@ angular.module('Module.exchange.controllers').controller(
             this.aliases.splice(i, 1);
           }
         })
-        .catch(err => this.services.messaging.writeError(
+        .catch((err) => this.services.messaging.writeError(
           this.services.$translate.instant('exchange_tab_ALIAS_error_message'),
           err,
         ));
