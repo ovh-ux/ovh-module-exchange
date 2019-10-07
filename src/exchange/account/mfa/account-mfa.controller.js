@@ -126,7 +126,7 @@ angular.module('Module.exchange.controllers')
       }
 
       return serverMfaPromise
-        .then(() => this.$timeout(4000))
+        .then(() => this.$timeout(6000))
         .then(() => accountMfaPromise)
         .then(() => {
           this.messaging.writeSuccess(
