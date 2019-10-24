@@ -15,6 +15,7 @@ angular.module('Module.exchange.services').service(
     resetAction() {
       $('#currentAction').modal('hide');
       $('.modal-backdrop').remove();
+      $('.help4wizards').hide();
 
       this.currentActionData = null;
       this.stepPath = '';
