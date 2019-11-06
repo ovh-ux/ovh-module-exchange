@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "filesize": "^3.6.1",
-    "lodash": "~3.9.3"
+    "lodash": "~4.17.13"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
